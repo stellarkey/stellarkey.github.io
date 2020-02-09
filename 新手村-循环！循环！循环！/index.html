@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="洛谷,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……">
+<meta name="keywords" content="洛谷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新手村-循环！循环！循环！">
+<meta property="og:url" content="https://vel.life/新手村-循环！循环！循环！/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/新手村-循环！循环！循环！/1548149844523.png">
+<meta property="og:updated_time" content="2019-01-27T01:34:15.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新手村-循环！循环！循环！">
+<meta name="twitter:description" content="计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……">
+<meta name="twitter:image" content="https://vel.life/新手村-循环！循环！循环！/1548149844523.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/新手村-循环！循环！循环！/">
+
+
+
+
+
+
+  <title>新手村-循环！循环！循环！ | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/新手村-循环！循环！循环！/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">新手村-循环！循环！循环！</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-21T22:44:02+08:00">
+                2019-01-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-01-27T09:34:15+08:00">
+                2019-01-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/OJ/" itemprop="url" rel="index">
+                    <span itemprop="name">OJ</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/新手村-循环！循环！循环！/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/新手村-循环！循环！循环！/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,542
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……<a id="more"></a></p>
+<h1 id="P1008-三连击-模拟-打表"><a href="#P1008-三连击-模拟-打表" class="headerlink" title="P1008 三连击 模拟+打表"></a><a href="https://www.luogu.org/problemnew/show/P1008" target="_blank" rel="noopener">P1008 三连击</a> 模拟+打表</h1><h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>本题为提交答案题，您可以写程序或手算在本机上算出答案后，直接提交答案文本，也可提交答案生成程序。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将$1,2, \cdots ,9$共9个数分成3组，分别组成3个三位数，且使这3个三位数构成1:2:3的比例，试求出所有满足条件的3个三位数。</p>
+<h2 id="Code-O-bit-3"><a href="#Code-O-bit-3" class="headerlink" title="Code $O(bit^3)$"></a>Code $O(bit^3)$</h2><p>Force。筛。。（这种类型似乎被叫做<strong>模拟</strong>题）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tri</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> n3,n2,n1;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">		n3 = i; n2 = j; n1 = k;</span><br><span class="line">	&#125;</span><br><span class="line">	tri <span class="keyword">operator</span> *(<span class="keyword">int</span> scale)&#123;</span><br><span class="line">		tri T; T.n1 = n1*scale; T.n2 = n2*scale; T.n3 = n3*scale;</span><br><span class="line">		<span class="keyword">if</span>(T.n1 &gt; <span class="number">9</span>)&#123;</span><br><span class="line">			T.n2 += T.n1 / <span class="number">10</span>;</span><br><span class="line">			T.n1 %= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(T.n2 &gt; <span class="number">9</span>)&#123;</span><br><span class="line">			T.n3 += T.n2 / <span class="number">10</span>;</span><br><span class="line">			T.n2 %= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> T;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(tri a, tri b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a.n1 != b.n1) &amp;&amp; (a.n1 != b.n2) &amp;&amp; (a.n1 != b.n3) &amp;&amp; (a.n2 != b.n1) &amp;&amp; (a.n2 != b.n2) &amp;&amp; (a.n2 != b.n3) &amp;&amp; (a.n3 != b.n1) &amp;&amp; (a.n3 != b.n2) &amp;&amp;(a.n3 != b.n3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check_single</span><span class="params">(tri a)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a.n1 != a.n2) &amp;&amp; (a.n1 != a.n3) &amp;&amp; (a.n3 != a.n2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ex</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> i&lt;<span class="number">1</span> || i&gt;<span class="number">9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(tri c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ex(c.n1) || ex(c.n2) || ex(c.n3);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">singular</span><span class="params">(tri a, tri b, tri c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(excess(c)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> check(a,b)&amp;&amp;check(a,c)&amp;&amp;check(b,c)&amp;&amp;check_single(a)&amp;&amp;check_single(b)&amp;&amp;check_single(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">generate</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	tri tr1,tr2,tr3;</span><br><span class="line">	tr1.init(i,j,k);</span><br><span class="line">	tr2 = tr1 * <span class="number">2</span>;</span><br><span class="line">	tr3 = tr1 * <span class="number">3</span>;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	printf("生成：%d%d%d %d%d%d %d%d%d\n",tr1.n3, tr1.n2, tr1.n1, tr2.n3, tr2.n2, tr2.n1, tr3.n3, tr3.n2, tr3.n1);</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(singular(tr1,tr2,tr3))&#123;</span><br><span class="line"><span class="comment">//		printf("\tSingular!--&gt; ");</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d%d%d "</span>, tr1.n3, tr1.n2, tr1.n1);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d%d%d "</span>, tr2.n3, tr2.n2, tr2.n1);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d%d%d\n"</span>, tr3.n3, tr3.n2, tr3.n1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=<span class="number">3</span>; ++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;=<span class="number">9</span>; ++j)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;=<span class="number">9</span>; ++k)</span><br><span class="line">				<span class="keyword">if</span>(i!=j &amp;&amp; j!=k &amp;&amp; i!=k)</span><br><span class="line">					generate(i,j,k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看看这个，没有构造<code>int</code>数位，利用<strong>统计法</strong>来确定singular。</p>
+<blockquote>
+<p>来自<a href="https://kelin.blog.luogu.org/solution-p1008" target="_blank" rel="noopener">题解 P1008 【三连击】</a></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> i,j,v;<span class="keyword">bool</span> a[<span class="number">10</span>];<span class="comment">//ai表示第i个数已经用过了</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">192</span>;i&lt;=<span class="number">327</span>;i++)<span class="comment">//第一个数最小192，最大327。其实不知道的情况下简单来说是从123-329的但是算出来是最值就稍微改了下下</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));v=<span class="number">0</span>;<span class="comment">//清零</span></span><br><span class="line">        a[i%<span class="number">10</span>]=a[i/<span class="number">10</span>%<span class="number">10</span>]=a[i/<span class="number">100</span>]=a[i*<span class="number">2</span>%<span class="number">10</span>]=a[i*<span class="number">2</span>/<span class="number">10</span>%<span class="number">10</span>]=a[i*<span class="number">2</span>/<span class="number">100</span>]=a[i*<span class="number">3</span>%<span class="number">10</span>]=a[i*<span class="number">3</span>/<span class="number">10</span>%<span class="number">10</span>]=a[i*<span class="number">3</span>/<span class="number">100</span>]=<span class="number">1</span>;<span class="comment">//统计数字</span></span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;j++) v+=a[j];<span class="comment">//v表示1-9这些数字是否全部齐了</span></span><br><span class="line">        <span class="keyword">if</span>(v==<span class="number">9</span>) <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,i,i*<span class="number">2</span>,i*<span class="number">3</span>);<span class="comment">//如果齐了就输出</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="P1035-级数求和-调和级数"><a href="#P1035-级数求和-调和级数" class="headerlink" title="P1035 级数求和 调和级数"></a><a href="https://www.luogu.org/problemnew/show/P1035" target="_blank" rel="noopener">P1035 级数求和</a> 调和级数</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知：$Sn=1+1/2+1/3+…+1/n$。显然对于任意一个整数K，当n足够大的时候，Sn大于K。</p>
+<p>现给出一个整数K（1≤k≤15），要求计算出一个最小的n；使得Sn&gt;K。</p>
+<blockquote>
+<p>这是<a href="https://baike.baidu.com/item/%E8%B0%83%E5%92%8C%E7%BA%A7%E6%95%B0" target="_blank" rel="noopener">调和级数</a>（发散）。</p>
+</blockquote>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><h3 id="Force-O-e-k"><a href="#Force-O-e-k" class="headerlink" title="Force $O(e^k)$"></a>Force $O(e^k)$</h3><p>写一个<code>累加器</code>和一个<code>溢出灯</code>就行。</p>
+<blockquote>
+<p>以后可能会将回归性函数称为<code>器</code>，分类性函数称为<code>灯</code>。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(<span class="keyword">double</span> sn,<span class="keyword">double</span> k)</span></span>&#123; <span class="comment">//溢出灯</span></span><br><span class="line">	<span class="keyword">return</span> sn &gt; k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">double</span> sn=<span class="number">0</span>,k;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123; <span class="comment">//累加器</span></span><br><span class="line">		sn += (<span class="keyword">double</span>)<span class="number">1</span>/(<span class="keyword">double</span>)(i++);</span><br><span class="line">		<span class="keyword">if</span>(excess(sn,k)) &#123;<span class="built_in">cout</span>&lt;&lt;i<span class="number">-1</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数论优化-O-logk"><a href="#数论优化-O-logk" class="headerlink" title="数论优化 $O(logk)$"></a>数论优化 $O(logk)$</h3><blockquote>
+<p><a href="https://www.luogu.org/problemnew/solution/P1035" target="_blank" rel="noopener">https://www.luogu.org/problemnew/solution/P1035</a></p>
+<p><code>exp(k)</code>是指数调用的复杂度，最高可以优化到<code>log(k)</code>（相当多项式幂），因此最后得到的复杂度为$O(logk)$。</p>
+<p>值得指出的$O(logk)$仅仅是理论的，<strong>因为最后cout打印的数的宽度已经是O(k)了</strong>！</p>
+<p>运算虽然可以很快，却会被输出所限制。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(<span class="keyword">double</span> sn,<span class="keyword">double</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sn &gt; k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">double</span> k;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;k)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">floor</span>(<span class="built_in">exp</span>(k<span class="number">-0.5772156649</span>) + <span class="number">0.5</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="P1423-小玉在游泳-等比级数"><a href="#P1423-小玉在游泳-等比级数" class="headerlink" title="P1423 小玉在游泳 等比级数"></a><a href="https://www.luogu.org/problemnew/show/P1423" target="_blank" rel="noopener">P1423 小玉在游泳</a> 等比级数</h1><h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>小玉开心的在游泳，可是她很快难过的发现，自己的力气不够，游泳好累哦。已知小玉第一步能游2米，可是随着越来越累，力气越来越小，她接下来的每一步都只能游出上一步距离的98%。现在小玉想知道，如果要游到距离x米的地方，她需要游多少步呢。请你编程解决这个问题。</p>
+<h2 id="Code-O-1"><a href="#Code-O-1" class="headerlink" title="Code $O(1)$"></a>Code $O(1)$</h2><p>等比级数。</p>
+<h3 id="Force-O-n"><a href="#Force-O-n" class="headerlink" title="Force $O(n)$"></a>Force $O(n)$</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(<span class="keyword">double</span> sn,<span class="keyword">double</span> x)</span></span>&#123; <span class="comment">//溢出灯</span></span><br><span class="line">	<span class="keyword">return</span> sn &gt; x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">double</span> sn=<span class="number">0</span>,k=<span class="number">2</span>,x;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123; <span class="comment">//累加器 </span></span><br><span class="line">		sn += k;</span><br><span class="line">		k *= <span class="number">0.98</span>;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">if</span>(excess(sn,x)) &#123;<span class="built_in">cout</span>&lt;&lt;i<span class="number">-1</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通项公式"><a href="#通项公式" class="headerlink" title="通项公式"></a>通项公式</h3><h4 id="Force-O-n-1"><a href="#Force-O-n-1" class="headerlink" title="Force $O(n)$"></a>Force $O(n)$</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(<span class="keyword">double</span> sn,<span class="keyword">double</span> x)</span></span>&#123; <span class="comment">//溢出灯</span></span><br><span class="line">	<span class="keyword">return</span> sn &gt; x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">double</span> sn=<span class="number">0</span>,k=<span class="number">2</span>,x;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123; <span class="comment">//累加器 </span></span><br><span class="line">		sn = <span class="number">2</span>*(<span class="number">1</span> -<span class="built_in">pow</span>(<span class="number">0.98</span>,i) ) / <span class="number">0.02</span>;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">if</span>(excess(sn,x)) &#123;<span class="built_in">cout</span>&lt;&lt;i<span class="number">-1</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="通项公式-二分-O-logn"><a href="#通项公式-二分-O-logn" class="headerlink" title="通项公式+二分 $O(logn)$"></a>通项公式+二分 $O(logn)$</h4><p>强行二分。。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">excess</span><span class="params">(<span class="keyword">double</span> sn,<span class="keyword">double</span> x)</span></span>&#123; <span class="comment">//溢出灯</span></span><br><span class="line">	<span class="keyword">return</span> sn &gt; x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> sn=<span class="number">0</span>,k=<span class="number">2</span>,x;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">int</span> left=<span class="number">1</span>, right=<span class="number">300</span>;  <span class="comment">//题目的数据不行。。右边界非常小</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123; </span><br><span class="line">		<span class="keyword">int</span> mid = (left+right)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		sn = <span class="number">2</span>*(<span class="number">1</span> -<span class="built_in">pow</span>(<span class="number">0.98</span>, mid ) ) / <span class="number">0.02</span>;</span><br><span class="line">		<span class="keyword">if</span>(excess(sn,x))</span><br><span class="line">			right = mid;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			left = mid;</span><br><span class="line">		<span class="keyword">if</span>(left == right - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;right;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解法2-O-1"><a href="#解法2-O-1" class="headerlink" title="解法2 $O(1)$"></a>解法2 $O(1)$</h4><blockquote>
+<p><a href="https://www.luogu.org/problemnew/solution/P1423" target="_blank" rel="noopener">https://www.luogu.org/problemnew/solution/P1423</a></p>
+<p>相当于<strong>代入具体参数</strong>化简通项公式，<strong><font color="red"><code>溢出灯</code>功能由上取整函数取代</font></strong>。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">double</span> x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="built_in">ceil</span>(<span class="built_in">log</span>(<span class="number">1</span>-x/<span class="number">100</span>)/<span class="built_in">log</span>(<span class="number">0.98</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="P1424-小鱼的航程-改进版-循环统计"><a href="#P1424-小鱼的航程-改进版-循环统计" class="headerlink" title="P1424 小鱼的航程(改进版) 循环统计"></a><a href="https://www.luogu.org/problemnew/show/P1424" target="_blank" rel="noopener">P1424 小鱼的航程(改进版)</a> 循环统计</h1><h2 id="题目背景-1"><a href="#题目背景-1" class="headerlink" title="题目背景"></a>题目背景</h2><p>原来的题目太简单，现改进让小鱼周末也休息，请已经做过重做该题。</p>
+<h2 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一只小鱼，它上午游泳150公里，下午游泳100公里，晚上和周末都休息（实行双休日)，假设从周x(1&lt;=x&lt;=7)开始算起，请问这样过了n天以后，小鱼一共累计游泳了多少公里呢？</p>
+<h2 id="Code-O-1-1"><a href="#Code-O-1-1" class="headerlink" title="Code $O(1)$"></a>Code $O(1)$</h2><h3 id="Force-O-n-2"><a href="#Force-O-n-2" class="headerlink" title="Force $O(n)$"></a>Force $O(n)$</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> n,x;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> sn=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;n;</span><br><span class="line">	x--;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123; <span class="comment">//累加器</span></span><br><span class="line">		sn += ( ( x % <span class="number">7</span> ) != <span class="number">5</span> ) &amp;&amp; ( ( x % <span class="number">7</span> ) != <span class="number">6</span> ); x++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; sn*<span class="number">250</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通项法-O-1"><a href="#通项法-O-1" class="headerlink" title="通项法 $O(1)$"></a>通项法 $O(1)$</h3><p>虽然表面上由for循环，但该循环次数不会超过7。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> n,x;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;n;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> times = n/<span class="number">7</span>*<span class="number">5</span>, res = n%<span class="number">7</span>+x;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">int</span> i = x - <span class="number">1</span>; i &lt; res<span class="number">-1</span>; i++) <span class="comment">//Note: res-1</span></span><br><span class="line">		<span class="keyword">if</span>(!( i%<span class="number">7</span>==<span class="number">5</span>||i%<span class="number">7</span>==<span class="number">6</span> )) times++;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; times*<span class="number">250</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="P1980-计数问题-组合数学"><a href="#P1980-计数问题-组合数学" class="headerlink" title="P1980 计数问题 组合数学"></a><a href="https://www.luogu.org/problemnew/show/P1980" target="_blank" rel="noopener">P1980 计数问题</a> 组合数学</h1><h2 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h2><p>试计算在区间 1 到 n的所有整数中，数字x(0≤x≤9)共出现了多少次？<br>例如，在 1到11中，即在 1,2,3,4,5,6,7,8,9,10,11中，数字1出现了 4 次。</p>
+<h2 id="Code-O-logn"><a href="#Code-O-logn" class="headerlink" title="Code $O(logn)$"></a>Code $O(logn)$</h2><p>Force会死人的。。直接分析一下然后求更优解了。</p>
+<blockquote>
+<p>然而写了一个多小时，思路越来越混乱了。。本来想求按照位数进行迭代。</p>
+<p>比如：取<code>x=1</code>，对区间1~111的1位数、2位数、3位数分别统计。</p>
+<ul>
+<li>1位数：1~9，<code>1</code></li>
+<li>2位数：10~99，<code>10+9=19</code></li>
+<li>3位数：100~111，<code>12+2+2=16</code></li>
+<li>总共<code>36</code>个</li>
+</ul>
+<p>这个跟优化的解法是类似的，但在分类层次是相反的。（我没有想到<code>固定某一位</code>）</p>
+</blockquote>
+<h3 id="Force-O-nlogn"><a href="#Force-O-nlogn" class="headerlink" title="Force $O(nlogn)$"></a>Force $O(nlogn)$</h3><p>最后参考了题解的force算法。对每一个数单独查询。<del>居然没有我想象中那样复杂度高到不行，看来直觉还是不可靠。。</del></p>
+<blockquote>
+<p>作者: <a href="https://www.luogu.org/space/show?uid=71378" target="_blank" rel="noopener">王超wangchao</a><br>更新时间: 2017-12-26 21:46</p>
+<p><a href="https://www.luogu.org/blog/666wang/solution-p1980" target="_blank" rel="noopener"> 在Ta的博客查看</a></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,x,ans; <span class="built_in">cin</span>&gt;&gt; n &gt;&gt; x; n++;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;  <span class="comment">//O(n)</span></span><br><span class="line">    	<span class="keyword">int</span> tem=n;</span><br><span class="line">    	<span class="keyword">while</span>(tem) <span class="comment">//O(logn)</span></span><br><span class="line">			tem%<span class="number">10</span> == x ? ans++,tem/=<span class="number">10</span> : tem/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>snprintf</strong> 传入四个参数：<code>snprintf(ch,sizeof(ch),&quot;%lld&quot;,a);</code></p>
+<ol>
+<li>要写入的字符数组 </li>
+<li>数组大小(一般用sizeof(ch)</li>
+<li>要转的数的格式（和<code>printf()</code>类似)</li>
+<li>要转的数</li>
+</ol>
+<p>该函数常用来<em>快捷的</em> <font color="red">将数转存于字符数组中</font>，方便好用</p>
+<p>再将数转为字符数组后，一位一位的判就<strong>AK</strong>了</p>
+<p>作者: <a href="https://www.luogu.org/space/show?uid=82620" target="_blank" rel="noopener">二班的蒟蒻</a><br>更新时间: 2018-08-26 21:51</p>
+<p><a href="https://www.luogu.org/blog/82620/solution-p1980" target="_blank" rel="noopener"> 在Ta的博客查看</a></p>
+</blockquote>
+<h3 id="按位组合-O-logn"><a href="#按位组合-O-logn" class="headerlink" title="按位组合 $O(logn)$"></a>按位组合 $O(logn)$</h3><blockquote>
+<p>作者: <a href="https://www.luogu.org/space/show?uid=14888" target="_blank" rel="noopener">Curry28</a><br>更新时间: 2016-02-08 20:39</p>
+<p><a href="https://www.luogu.org/blog/user14888/solution-p1980" target="_blank" rel="noopener"> 在Ta的博客查看</a></p>
+</blockquote>
+<p>优化思路：固定某一位，求剩余位的组合数。（相当于按位切分为三部分）</p>
+<p><img src="/新手村-循环！循环！循环！/1548149844523.png" alt="1548149844523"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,x,a,b,c,m=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt; n &gt;&gt; x;</span><br><span class="line">    <span class="keyword">while</span>(m&lt;=n)&#123;</span><br><span class="line">    	a=n/(m*<span class="number">10</span>); b=n/m%<span class="number">10</span>; c=n%m;</span><br><span class="line">    	<span class="keyword">if</span>(b &lt; x) </span><br><span class="line">			ans += a*m;</span><br><span class="line">    	<span class="keyword">else</span> <span class="keyword">if</span>( b == x) </span><br><span class="line">			ans += (a - (x==<span class="number">0</span>))*m + (c + <span class="number">1</span>);  <span class="comment">//x==0可以用灯合并进来</span></span><br><span class="line">    	<span class="keyword">else</span> </span><br><span class="line">			ans += (a - (x==<span class="number">0</span>))*m + m;</span><br><span class="line">		m*=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>考虑把高位数字用0补齐来统计低位整数：</p>
+<ul>
+<li>假设<code>n=12308</code>，<code>x=2</code></li>
+<li>则对于三位整数<code>###</code>，可以拓展为一类<code>00###</code><ul>
+<li>附加统计一个<code>00###</code>组合数即可<ul>
+<li>比如，统计百位数位置，这里的组合数将附加一个<code>10*10=100</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/新手村-洛谷的第一个任务/">新手村-洛谷的第一个任务</a></li><li><a href="https://vel.life/新手村-顺序与分支/">新手村-顺序与分支</a></li><li><a href="https://vel.life/普及-交叉模拟/">普及-交叉模拟*</a></li><li><a href="https://vel.life/新手村-简单字符串/">新手村-简单字符串</a></li><li><a href="https://vel.life/新手村-BOSS战/">新手村-BOSS战*</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/新手村-循环！循环！循环！/" title="新手村-循环！循环！循环！">https://vel.life/新手村-循环！循环！循环！/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/洛谷/" rel="tag"><i class="fa fa-tag"></i> 洛谷</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/新手村-顺序与分支/" rel="next" title="新手村-顺序与分支">
+                <i class="fa fa-chevron-left"></i> 新手村-顺序与分支
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/新手村-数组/" rel="prev" title="新手村-数组*">
+                新手村-数组* <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#P1008-三连击-模拟-打表"><span class="nav-number">1.</span> <span class="nav-text">P1008 三连击 模拟+打表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目背景"><span class="nav-number">1.1.</span> <span class="nav-text">题目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-O-bit-3"><span class="nav-number">1.3.</span> <span class="nav-text">Code $O(bit^3)$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P1035-级数求和-调和级数"><span class="nav-number">2.</span> <span class="nav-text">P1035 级数求和 调和级数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">2.2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Force-O-e-k"><span class="nav-number">2.2.1.</span> <span class="nav-text">Force $O(e^k)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数论优化-O-logk"><span class="nav-number">2.2.2.</span> <span class="nav-text">数论优化 $O(logk)$</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P1423-小玉在游泳-等比级数"><span class="nav-number">3.</span> <span class="nav-text">P1423 小玉在游泳 等比级数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-O-1"><span class="nav-number">3.2.</span> <span class="nav-text">Code $O(1)$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Force-O-n"><span class="nav-number">3.2.1.</span> <span class="nav-text">Force $O(n)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通项公式"><span class="nav-number">3.2.2.</span> <span class="nav-text">通项公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Force-O-n-1"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Force $O(n)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通项公式-二分-O-logn"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">通项公式+二分 $O(logn)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法2-O-1"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">解法2 $O(1)$</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P1424-小鱼的航程-改进版-循环统计"><span class="nav-number">4.</span> <span class="nav-text">P1424 小鱼的航程(改进版) 循环统计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目背景-1"><span class="nav-number">4.1.</span> <span class="nav-text">题目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述-3"><span class="nav-number">4.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-O-1-1"><span class="nav-number">4.3.</span> <span class="nav-text">Code $O(1)$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Force-O-n-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">Force $O(n)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通项法-O-1"><span class="nav-number">4.3.2.</span> <span class="nav-text">通项法 $O(1)$</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P1980-计数问题-组合数学"><span class="nav-number">5.</span> <span class="nav-text">P1980 计数问题 组合数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述-4"><span class="nav-number">5.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-O-logn"><span class="nav-number">5.2.</span> <span class="nav-text">Code $O(logn)$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Force-O-nlogn"><span class="nav-number">5.2.1.</span> <span class="nav-text">Force $O(nlogn)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按位组合-O-logn"><span class="nav-number">5.2.2.</span> <span class="nav-text">按位组合 $O(logn)$</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

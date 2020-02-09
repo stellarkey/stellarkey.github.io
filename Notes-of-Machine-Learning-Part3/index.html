@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这是基于吴恩达《机器学习》课程的笔记的第三部分，主要记录无监督学习相关内容。">
+<meta name="keywords" content="机器学习,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习初等指南(3)">
+<meta property="og:url" content="https://vel.life/Notes-of-Machine-Learning-Part3/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这是基于吴恩达《机器学习》课程的笔记的第三部分，主要记录无监督学习相关内容。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/wuHxATK.png">
+<meta property="og:image" content="https://i.imgur.com/IDdWs53.png">
+<meta property="og:image" content="https://i.imgur.com/QEHRb9a.png">
+<meta property="og:image" content="https://i.imgur.com/9Xqj5iZ.gif">
+<meta property="og:image" content="https://i.imgur.com/vNsp63e.png">
+<meta property="og:image" content="https://i.imgur.com/MXioDm6.png">
+<meta property="og:image" content="https://i.imgur.com/tC8eYse.png">
+<meta property="og:image" content="https://i.imgur.com/ST4VlUQ.png">
+<meta property="og:image" content="https://i.imgur.com/KjPPokK.png">
+<meta property="og:image" content="https://i.imgur.com/mpNTk5i.png">
+<meta property="og:image" content="https://i.imgur.com/2YtMZxO.png">
+<meta property="og:image" content="https://i.imgur.com/ECyUqpn.png">
+<meta property="og:image" content="https://i.imgur.com/kvsYFbJ.png">
+<meta property="og:image" content="https://i.imgur.com/zBYEDvl.png">
+<meta property="og:image" content="https://i.imgur.com/UFnaBjI.png">
+<meta property="og:image" content="https://i.imgur.com/9r7wnr4.png">
+<meta property="og:image" content="https://i.imgur.com/gbNbjhM.png">
+<meta property="og:image" content="https://i.imgur.com/pyBjWSW.png">
+<meta property="og:image" content="https://i.imgur.com/eo8XHyz.png">
+<meta property="og:image" content="https://i.imgur.com/Rzz5UNI.png">
+<meta property="og:image" content="https://i.imgur.com/fp8JfTS.png">
+<meta property="og:image" content="https://i.imgur.com/JUjzGBx.png">
+<meta property="og:image" content="https://i.imgur.com/zKbpVAL.png">
+<meta property="og:image" content="https://i.imgur.com/dOdpAxA.png">
+<meta property="og:image" content="https://i.imgur.com/PlAQ59l.png">
+<meta property="og:image" content="https://i.imgur.com/cdrIFj3.png">
+<meta property="og:image" content="https://i.imgur.com/ZqFHD4o.png">
+<meta property="og:image" content="https://i.imgur.com/mpfiNVx.png">
+<meta property="og:image" content="https://i.imgur.com/bXDoXWt.png">
+<meta property="og:image" content="https://i.imgur.com/bjsCjzA.png">
+<meta property="og:image" content="https://i.imgur.com/DmEHOyV.png">
+<meta property="og:image" content="https://i.imgur.com/MWLGRgS.png">
+<meta property="og:image" content="https://i.imgur.com/7aFIY2p.png">
+<meta property="og:image" content="https://i.imgur.com/gZrJ24N.png">
+<meta property="og:image" content="https://i.imgur.com/2fvUiDS.png">
+<meta property="og:image" content="https://i.imgur.com/PSgK45P.png">
+<meta property="og:image" content="https://i.imgur.com/m98IsFx.png">
+<meta property="og:image" content="https://i.imgur.com/FOznbmG.png">
+<meta property="og:image" content="https://i.imgur.com/b3PUhbn.png">
+<meta property="og:image" content="https://i.imgur.com/vZZIcPh.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part3/梯度下降.gif">
+<meta property="og:image" content="https://i.imgur.com/tnYDZP9.png">
+<meta property="og:image" content="https://i.imgur.com/n0Ht531.png">
+<meta property="og:image" content="https://i.imgur.com/1lXQJFi.png">
+<meta property="og:image" content="https://i.imgur.com/GSotb5Y.png">
+<meta property="og:image" content="https://i.imgur.com/fWVZ3Dk.png">
+<meta property="og:image" content="https://i.imgur.com/FfPX7Nd.png">
+<meta property="og:image" content="https://i.imgur.com/bCnfOu7.png">
+<meta property="og:image" content="https://i.imgur.com/sJlaz8b.png">
+<meta property="og:image" content="https://i.imgur.com/Hh2A1Hc.png">
+<meta property="og:image" content="https://i.imgur.com/x3U7mFH.gif">
+<meta property="og:image" content="https://i.imgur.com/aWkxhmT.png">
+<meta property="og:image" content="https://i.imgur.com/Ipk3Oxz.png">
+<meta property="og:image" content="https://i.imgur.com/5IHvDMx.png">
+<meta property="og:image" content="https://i.imgur.com/8djad6q.png">
+<meta property="og:image" content="https://i.imgur.com/DYwp4A4.gif">
+<meta property="og:image" content="https://i.imgur.com/93jp6jp.png">
+<meta property="og:image" content="https://i.imgur.com/gRTEdJZ.png">
+<meta property="og:image" content="https://i.imgur.com/WfIVBC7.png">
+<meta property="og:image" content="https://i.imgur.com/RFatLaG.png">
+<meta property="og:image" content="https://i.imgur.com/nwsd7km.png">
+<meta property="og:image" content="https://i.imgur.com/xsAyNTi.png">
+<meta property="og:image" content="https://i.imgur.com/WEGD9Co.png">
+<meta property="og:image" content="https://i.imgur.com/r4E9hPp.png">
+<meta property="og:image" content="https://i.imgur.com/rKl9r7v.png">
+<meta property="og:image" content="https://i.imgur.com/qfFrAI9.png">
+<meta property="og:image" content="https://i.imgur.com/OiZcokc.png">
+<meta property="og:image" content="https://i.imgur.com/mDp28Lw.png">
+<meta property="og:image" content="https://i.imgur.com/FQ5DpHI.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part3/Machine%20Learning.png">
+<meta property="og:updated_time" content="2019-01-11T00:21:08.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习初等指南(3)">
+<meta name="twitter:description" content="这是基于吴恩达《机器学习》课程的笔记的第三部分，主要记录无监督学习相关内容。">
+<meta name="twitter:image" content="https://i.imgur.com/wuHxATK.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/Notes-of-Machine-Learning-Part3/">
+
+
+
+
+
+
+  <title>机器学习初等指南(3) | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/Notes-of-Machine-Learning-Part3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习初等指南(3)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-07T18:21:08+08:00">
+                2019-01-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-01-11T08:21:08+08:00">
+                2019-01-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Notes-of-Machine-Learning-Part3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Notes-of-Machine-Learning-Part3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  10,758
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  39
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是基于<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>《<a href="https://study.163.com/course/courseMain.htm?courseId=1004570029" target="_blank" rel="noopener"><strong>机器学习</strong></a>》课程的笔记的第三部分，主要记录<strong>无监督学习</strong>相关内容。<a id="more"></a></p>
+<blockquote>
+<p>第一部分（监督学习1）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+<p>第二部分（监督学习2）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.hottaro.com/index.php?document_srl=8875&amp;mid=Books" target="_blank" rel="noopener"><strong>机器学习</strong></a>（<a href="https://baike.baidu.com/item/%E5%91%A8%E5%BF%97%E5%8D%8E/32542" target="_blank" rel="noopener">周志华</a>） “西瓜书”，<strong>教材</strong></p>
+<p><a href="http://ddl.escience.cn/f/IwnL" target="_blank" rel="noopener">机器学习实战</a> 基于Python的编程<strong>练习册</strong></p>
+<p><a href="http://ddl.escience.cn/f/Iwn0" target="_blank" rel="noopener">统计学习方法</a>（<a href="http://blog.sina.com.cn/u/2060750830" target="_blank" rel="noopener">李航</a>） 算法的<strong>数理分析</strong></p>
+<p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/" target="_blank" rel="noopener">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>） 面向工程应用的指南</p>
+<p><a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/" target="_blank" rel="noopener"><strong>机器学习笔记</strong>1</a> （<a href="https://github.com/yoyoyohamapi" target="_blank" rel="noopener">吴晓军</a>）重点参考<strong>笔记</strong></p>
+<p><a href="https://feisky.xyz/machine-learning/" target="_blank" rel="noopener">机器学习笔记2</a> 面向软件的介绍手册</p>
+<p><a href="https://github.com/learning511/Stanford-Machine-Learning-camp" target="_blank" rel="noopener">机器学习训练营</a></p>
+<p><a href="https://github.com/allmachinelearning/MachineLearning/blob/master/notes/MLMaterials.md" target="_blank" rel="noopener">机器学习的一些资料</a></p>
+<p><a href="https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/" target="_blank" rel="noopener">神经网络与深度学习</a></p>
+<p><a href="zh.d2l.ai/index">《动手学深度学习》</a> 深度学习进阶</p>
+<p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener">AiLearning</a></p>
+<p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener">林轩田</a>） 进阶教学视频</p>
+<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><p><strong>无监督学习！</strong></p>
+<p>从本节开始，将正式进入到无监督学习（Unsupervised Learning）部分。<br><strong>无监督学习</strong>，顾名思义，就是不受监督的学习，一种<strong>自由</strong>的学习方式。<br>该学习方式不需要先验知识进行指导，而是不断地自我认知，自我巩固，最后进行自我归纳。<br>在机器学习中，无监督学习可以被简单理解为<strong>不为训练集提供对应的类别标识（label）</strong>，其与有监督学习的对比如下：</p>
+<ul>
+<li>有监督学习（Supervised Learning）下的训练集：$(x^{(1)}, y^{(1)}), (x^{(2)}, y^{2})$。</li>
+<li>无监督学习（Unsupervised Learning）下的训练集：$(x^{(1)}), (x^{(2)}), (x^{(3)})$。</li>
+</ul>
+<p><strong>聚类</strong></p>
+<p>在有监督学习中，我们把对样本进行分类的过程称之为<strong>分类（Classification）</strong>.<br>在<strong>无监督学习</strong>中，我们将物体被划分到不同集合的过程称之为<strong><font color="red">聚类</font>（Clustering）</strong>。</p>
+<p>在聚类中，我们把物体所在的集合称之为<strong>簇（cluster）</strong>。</p>
+<h2 id="K-Means算法"><a href="#K-Means算法" class="headerlink" title="K-Means算法"></a>K-Means算法</h2><p>那么，K-Means 这个算法是如何完成聚类过程的呢？其实算法名称中对此已有体现：</p>
+<ul>
+<li><strong>K</strong>: 描述了<strong>簇</strong>的数量，也就是应当聚合成的类数。</li>
+<li><strong>Means</strong>：<strong>均值</strong>求解会是该算法的核心。</li>
+</ul>
+<p>下面具体看到该算法的步骤：</p>
+<p>（1）根据设定的聚类数 K，随机地选择 K 个聚类中心（Cluster Centroid），这就好比古代乱世，天下诸侯并起而逐鹿。</p>
+<p><img src="https://i.imgur.com/wuHxATK.png" width="300"></p>
+<p>（2）评估各个样本到聚类中心的距离，如果样本距离第 i 个聚类中心更近，则认为其属于第 i 簇，这可以看做四方义士纷纷投奔诸侯，形成不同的势力。</p>
+<p><img src="https://i.imgur.com/IDdWs53.png" width="300"></p>
+<p>（3）计算每个簇中样本的<strong>平均（Mean）</strong>位置，将聚类中心移动至该位置，该过程可以被认为是诸侯调整战略根据地以达到最强的控制力和凝聚力。</p>
+<p><img src="https://i.imgur.com/QEHRb9a.png" width="300"></p>
+<p>重复以上步骤直至各个聚类中心的位置不再发生改变。</p>
+<p>综上，K-Means 的算法步骤能够简单概括为：</p>
+<ol>
+<li><strong>分配</strong>：样本分配到簇。</li>
+<li><strong>移动</strong>：移动聚类中心到簇中样本的平均位置。</li>
+</ol>
+<blockquote>
+<p>Source：<a href="https://commons.wikimedia.org/wiki/File:K-means_convergence.gif" target="_blank" rel="noopener">File</a>。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/9Xqj5iZ.gif" width="300"></p>
+<blockquote>
+<p>注意：有时某些聚类中心可能没有被分配到样本，这样的聚类中心就会被淘汰（意味着<u>最终的类数可能会减少</u>）。</p>
+<p>More：<a href="https://sandipanweb.wordpress.com/2017/03/19/hard-soft-clustering-with-k-means-weighted-k-means-and-gmm-em/" target="_blank" rel="noopener">Hard &amp; Soft Clustering</a>（动态演示）。</p>
+</blockquote>
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>和其他机器学习算法一样，K-Means 也要<strong>评估</strong>并且<strong>最小化</strong>聚类代价，在引入 K-Means 的代价函数之前，先引入如下定义：</p>
+<script type="math/tex; mode=display">
+\mu_c^{(i)} = \mbox{样本 $x^{(i)}$ 被分配到的聚类中心}</script><p>引入代价函数：（所有<u>点到其对应中心的距离均方</u>之和）</p>
+<script type="math/tex; mode=display">
+J(c^{(1)},c^{(2)},...,c^{(m)};\mu_1,\mu_2,...,\mu_k)=\frac{1}{m}\sum_{i=1}^m||x^{(i)}-\mu_c(i)||^2</script><p>$J$也被称为<strong>失真代价函数（Distortion Cost Function）</strong>。</p>
+<p>实际上，K-Means 的两步<u>已经完成了最小化代价函数</u>的过程：</p>
+<ul>
+<li><p><strong>样本分配时</strong>：</p>
+<ul>
+<li>我们固定住了 (μ1,μ2,…,μk)，而关于 $(c^{(1)},c^{(2)},…,c^{(m)}) $ 最小化了 J。</li>
+</ul>
+</li>
+<li><p><strong>中心移动时</strong>：</p>
+<ul>
+<li>同理，我们再关于$(\mu_1,\mu_2,…,\mu_k)$最小化了 J代价函数。</li>
+</ul>
+</li>
+</ul>
+<p>由于 K-Means 每次迭代过程都在最小化$ J$，所以下面的代价函数变化曲线<strong>不会出现</strong>：</p>
+<p><img src="https://i.imgur.com/vNsp63e.png" width="200"></p>
+<h2 id="随机初始化"><a href="#随机初始化" class="headerlink" title="随机初始化"></a>随机初始化</h2><p>通常，我们会随机选取 K 个样本作为 K 个聚类中心（K<m）。 但是，如下图所示，不<u="">同的初始化有可能引起不同的聚类结果&lt;/u&gt;，能达到全局最优（global optimal）固然是好的，但是，往往得到的是局部最优（local optimal）。</m）。></p>
+<p><img src="https://i.imgur.com/MXioDm6.png" width="450"></p>
+<p>目前，想要提前避免不好的聚类结果仍是困难的，我们只能<u>尝试不同的初始化</u>：</p>
+<p>for i=1 to 100：</p>
+<ol>
+<li><p>随机初始化，执行 K-Means，得到每个所属的簇 c(i)，以及各聚类的中心位置 μ：</p>
+<script type="math/tex; mode=display">
+c^{(1)},c^{(2)},...,c^{(m)},\mu_1,\mu_2,...,\mu_k</script></li>
+<li><p>计算失真函数$ J$</p>
+</li>
+</ol>
+<p>选择这 100 次中，$J $最小的作为最终的聚类结果。</p>
+<blockquote>
+<p>显然，该方法计算量较大，所以只适用于 K 值较小的场景。</p>
+</blockquote>
+<h3 id="选择聚类数量"><a href="#选择聚类数量" class="headerlink" title="选择聚类数量"></a>选择聚类数量</h3><p>实际上，一开始是很难确定聚类数的，下图的两种聚类数似乎都是可行的：</p>
+<p><img src="https://i.imgur.com/tC8eYse.png" width="450"></p>
+<p>但是，也存在一种称之为<strong><font color="red">肘部法则</font>（Elbow Method）</strong>的方法来选定适当的K值：</p>
+<p><img src="https://i.imgur.com/ST4VlUQ.png" width="250"></p>
+<p>上图曲线类似于人的手肘，“肘关节”部分对应的 K 值就是最恰当的 K 值，但是并不是所有代价函数曲线都存在明显的“肘关节”，例如下面的曲线：</p>
+<p><img src="https://i.imgur.com/KjPPokK.png" width="240"></p>
+<p>一般来说，<strong>K-Means 得到的聚类结果应服务于我们的后续目的</strong>（如通过聚类进行市场分析），所以<u>不能脱离实际而单纯以数学方法来选择 K 值</u>。在下面这个例子中，假定我们的衣服想要是分为 S,M,L 三个尺码，就设定 K=3，如果我们想要 XS、S、M、L、XL 5 个衣服的尺码，就设定 K=5：</p>
+<p><img src="https://i.imgur.com/mpNTk5i.png" width="450"></p>
+<blockquote>
+<p>这实际反映了<strong>点集的相似特征是具有尺度的</strong>。之前的肘部原则就是因为给定的点集<u>缺少微观特征</u>。（相似总是对应着某种度量上的接近）<br>不同尺度下可能分成不同数量的类，甚至同一个尺度下可能有多种特征。<br>（BUT，如何通过特征尺度的需要来自动化地选取初始聚类数？<strong>加入噪声</strong>！在微观尺度上进行平滑化处理，增加一些桥梁点）</p>
+<p>K-Means虽然表面上是无监督的，却是有隐性的监督和隐特征——K平均本身就是点集将具有的一个特征（<strong>这些被分成的类中元素将在度量和尺度上接近</strong>）。这说明，即使不人为从高层输入特征信号，一个良好的学习算法仍然能够从底层自生成“自然”的特征（这时初始值就尤为重要，因为微观特征将被首先生成）。</p>
+<p>More：<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/KMeans/articles/%E4%BA%8C%E5%88%86KMeans%E7%AE%97%E6%B3%95.html" target="_blank" rel="noopener">二分K-Means算法</a>。该算法从顶层开始逐步贪心地划分，能确保最优解，但算法效率低。</p>
+</blockquote>
+<h1 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h1><h2 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h2><p>我们很希望有足够多的特征（知识）来保准学习模型的训练效果，尤其在图像处理这类的任务中，高维特征是在所难免的，但是，高维的特征也有几个如下不好的地方：</p>
+<ol>
+<li>学习性能下降，知识越多，吸收知识（输入），并且精通知识（学习）的速度就越慢。</li>
+<li>过多的特征难于分辨，你很难第一时间认识某个特征代表的意义。</li>
+<li>特征冗余，如下图所示，<u>厘米和英尺就是一对冗余特征</u>，他们本身代表的意义是一样的，并且能够相互转换。</li>
+</ol>
+<p><img src="https://i.imgur.com/2YtMZxO.png" width="200"></p>
+<p>我们使用现在使用了一条绿色直线，将各个样本投影到该直线，那么，原来二维的特征 厘米，英尺x=(厘米，英尺)就被降低为了一维 直线上的相对位置</p>
+<p><img src="https://i.imgur.com/ECyUqpn.png" width="350"></p>
+<blockquote>
+<p>是不是很像线性回归？（稍微有点区别）</p>
+<p>但是，线性回归的误差度量的是平行于y轴方向的。这个的误差度量则垂直与给定的优化直线。</p>
+<p>并且推广以后，线性回归中优化的对象只有y变量。而在PCA中<u>所有的变量被同等对待</u>。</p>
+</blockquote>
+<p>而在下面的例子中，点云在一个二维平面周围富集。<br>我们又将三维特征投影到二维平面，从而将三维特征降到了二维：</p>
+<p><img src="https://i.imgur.com/kvsYFbJ.png" width="400"></p>
+<p>综上，不难发现，特征降维的一般手段就<u>是将高维特征投影到低维空间</u>。</p>
+<h2 id="PCA-主成分分析"><a href="#PCA-主成分分析" class="headerlink" title="PCA(主成分分析)"></a>PCA(主成分分析)</h2><p><strong><font color="red">PCA</font></strong>（Principle Component Analysis），即主成分分析法，是特征降维的最常用手段。顾名思义，PCA 能从冗余特征中提取主要成分，在不太损失模型质量的情况下，<strong>提升了模型训练速度</strong>。</p>
+<blockquote>
+<p>降低特征维度不只能加速模型的训练速度，还能<strong>帮我们在低维空间分析数据</strong>，例如，一个在三维空间完成的聚类问题，我们可以通过 PCA 将特征降低到二维平面进行可视化分析。</p>
+<p>例如下表中，我们有将近几十个特征来描述国家的经济水平，但是你仔细观察发现，我们很难直观的看出各个国家的经济差异。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/zBYEDvl.png" width="400"></p>
+<blockquote>
+<p>通过降维，我们将特征降低到了二维，并在二维空间进行观察，很清楚的就能发现美国和新加坡具有很高的经济水平：（x-国家总GDP和y-人均GDP）</p>
+</blockquote>
+<p><img src="https://i.imgur.com/UFnaBjI.png" width="400"></p>
+<hr>
+<p>如下图所示，我们将样本到红色向量的距离称作是<strong>投影误差</strong>（Projection Error）。以二维投影到一维为例，PCA 就是<u>要找寻一条直线，使得各个特征的投影误差足够小</u>，这样才能<u>尽可能的保留原特征具有的信息</u>。</p>
+<blockquote>
+<p>这条直线可以用一个向量来表示。事实上，一个n维超平面总可以用n个向量表示（相当于坐标基）。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/9r7wnr4.png" width="300"></p>
+<p>假设我们要将特征从 n 维度降到 k 维：PCA 首先找寻 <u>k 个 n 维向量</u>，然后将特征投影到这些向量构成的 k维空间，并保证投影误差足够小。<br>下图中，为了将特征维度从三维降低到二维，PCA 就会先找寻两个三维向量 $u^{(1)},u^{(2)}$。二者构成了一个二维平面，然后将原来的三维特征投影到该二维平面上：</p>
+<p><img src="https://i.imgur.com/gbNbjhM.png" width="200"></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><blockquote>
+<p>对于PCA方法有效性的证明可以参考：<a href="https://zhuanlan.zhihu.com/p/26951643" target="_blank" rel="noopener">Here</a>。</p>
+</blockquote>
+<p>假定我们需要将特征维度从 n 维降到 k 维。则 PCA 的执行流程如下：</p>
+<ol>
+<li><p><strong>特征标准化</strong>，平衡各个特征尺度：</p>
+<script type="math/tex; mode=display">
+x_j^{(i)}=\frac{x_j^{(i)}-\mu_j}{s_j}, \mbox{$\mu_j$ 为特征 $j$ 的均值，$s_j$ 为特征 $j$ 的标准差。}</script></li>
+<li><p>计算<strong>协方差矩阵</strong> <strong><font color="red">Σ</font></strong>：（左边是矩阵符，右边是求和符）</p>
+<script type="math/tex; mode=display">
+{\color{red}{\Sigma} } = \frac{1}{m}\sum\limits_{i=1}^{m}(x^{(i)})(x^{(i)})^T = \frac{1}{m} \cdot X^TX</script></li>
+<li><p>通过<strong><a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html" target="_blank" rel="noopener">奇异值分解</a>（SVD）</strong>，求取 <strong><font color="red">Σ</font></strong> 的<strong>特征向量</strong>（eigenvectors）：</p>
+<script type="math/tex; mode=display">
+(U,S,V^T) = {\color{blue}{\text{svd} } }({\color{red}{\Sigma} })</script><blockquote>
+<p>在协方差矩阵中，求Eigen value是数值稳定的（正定）。（通常<code>eig()</code>则不稳定）</p>
+</blockquote>
+</li>
+<li><p>从 U 中取出前 k 个左奇异向量（即前k列），构成一个被<strong>降维矩阵</strong> $U_{reduce}$:</p>
+<script type="math/tex; mode=display">
+U_{reduce} = (u^{(1)},u^{(2)},\cdots,u^{(k)})</script></li>
+<li><p>计算新的特征向量z^{(i)}：</p>
+<script type="math/tex; mode=display">
+z^{(i)}=U_{reduce}^{\color{red}{T} } \cdot x^{(i)}</script></li>
+</ol>
+<h2 id="主成分数量选择"><a href="#主成分数量选择" class="headerlink" title="主成分数量选择"></a>主成分数量选择</h2><p>从 PCA 的执行流程中，我们知道，需要为 PCA 指定目的维度 k。如果降维不多，则性能提升不大；如果目标维度太小，则又丢失了许多信息。<br>通常，使用如下的流程的来<strong>评估 k 值选取优异</strong>：</p>
+<ol>
+<li><p>求各样本的<strong>投影均方误差</strong>:  $\min\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}-x_{approx}^{(i)}||^2$</p>
+</li>
+<li><p>求数据的<strong>总变差</strong>（variation）：$\cfrac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}||^2$</p>
+</li>
+<li><p>评估下式是否成立：</p>
+<script type="math/tex; mode=display">
+\frac{\min\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}-x_{approx}^{(i)}||^2}{\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}||^2}=\frac{投影均分误差}{总变差} {\color{red} {\leq} } \epsilon</script></li>
+</ol>
+<blockquote>
+<p>其中，ϵ 的取值可以为 0.01,0.05,0.10,⋯0.01,0.05,0.10,⋯，假设 ϵ=<strong>0.01</strong>，我们就说“特征间 99% 的差异性(variance)得到保留”。</p>
+<p>事实上，利用之前算法的奇异值分解：$(U,{\color{red}{S} },V^T) = {\color{blue}{\text{svd} } }(\Sigma)$。我们有更简单的办法计算上式：</p>
+<script type="math/tex; mode=display">
+\frac{\min\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}-x_{approx}^{(i)}||^2}{\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}||^2}=1-\cfrac{\sum\limits_{i=1}^{\color{red}{k} }{\color{red}{S} }_{ii}}{\sum\limits_{i=1}^{\color{red}{n} }{\color{red}{S} }_{ii}}</script></blockquote>
+<h2 id="释放-升维"><a href="#释放-升维" class="headerlink" title="释放/升维"></a>释放/升维</h2><p>因为PCA仅保留了特征的主成分，所以PCA是一种有损的压缩方式，假定我们获得新特征向量为：</p>
+<script type="math/tex; mode=display">
+z = U_{reduce}^Tx</script><p>那么，还原后的特征 $x_{approx}$ 为：</p>
+<script type="math/tex; mode=display">
+x_{approx}=U_{reduce}z</script><p><img src="https://i.imgur.com/pyBjWSW.png" width="450"></p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>PCA能降低数据存储消耗，加速学习算法，还可以做可视化（$k\le 3$）。</p>
+<p>由于 PCA 减小了特征维度，因而也有可能帮助解决过拟合（<strong>Bad</strong>！可能表现挺好，但还是推荐正则化）。</p>
+<p><u>PCA 不是必须的</u>，在机器学习中，一定谨记不要提前优化，只有<strong>当算法运行效率不尽如人意时</strong>，再考虑使用 PCA 或者其他特征降维手段来提升训练速度。</p>
+<h1 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h1><p><strong><font color="red">异常检测</font></strong>（Anomaly Detection）是机器学习里面的一个常见应用，机器通过训练，将知道什么样的样本是正常样本，从而具备识别异常样本的能力。</p>
+<blockquote>
+<p>尽管异常检测常被认为是无监督学习，但它跟有监督学习又有着千丝万缕的联系。</p>
+</blockquote>
+<p>飞机制造商在飞机引擎从生产线上流入市场前，会考虑进行<strong>异常检测</strong>，以防止不合格引擎造成恶劣结果。而为了进行异常检测，通常就需要采集一些引擎特征，如：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+x_1 &= \mbox{引擎运转时的热量} \\
+x_2 &= \mbox{引擎的振荡频率}
+\end{align*}</script><blockquote>
+<p>上标是样本指针，下标是特征指针。</p>
+</blockquote>
+<p>假定现在有引擎的数据集：${x^{(1)},x^{(2)},\cdots,x^{(m)} }$，这些数据都是正常样本，我们将其绘制到二维平面上：</p>
+<p><img src="https://i.imgur.com/eo8XHyz.png" width="200"></p>
+<p>现在，新来了一个引擎样本（以绿色标志），它落到了正常样本中间，亦即，它表现了和正常样本类似的特征，所以，我们希望，新来的样本也会被当做是正常样本，从而让它顺利流入市场：</p>
+<p><img src="https://i.imgur.com/Rzz5UNI.png" width="200"></p>
+<p>与此同时，又来了一个引擎，由于它偏离正常样本汇集的位置过远，其理所当然被认为是异常样本，从而被回炉重造：</p>
+<p><img src="https://i.imgur.com/fp8JfTS.png" width="250"></p>
+<p>综上我们知道，我们需要<u>根据已有数据集构建一个</u><strong>概率模型 <font color="red">p(x)</font></strong>，如果某一样本被认为是正常样本的概率足够小，它就该被当做是异常：（发生概率）</p>
+<script type="math/tex; mode=display">
+x=
+\begin{cases} 异常样本, \mbox{if $p(x)< {\color{purple}{\epsilon} }$} \newline
+正常样本, \mbox{otherwise}
+\end{cases}</script><hr>
+<p><strong>Anomaly detection example</strong>:</p>
+<ul>
+<li>Fraud detection</li>
+<li>Manufacturing</li>
+<li>Monitoring computers in a data center</li>
+</ul>
+<h2 id="高斯分布模型"><a href="#高斯分布模型" class="headerlink" title="高斯分布模型"></a>高斯分布模型</h2><p>异常检测的核心就在于找到一个概率模型——帮助我们知道一个样本落入正常样本中的概率，从而帮助我们区分正常和异常样本。<strong><font color="red">高斯分布</font>（Gaussian Distribution）</strong>模型就是异常检测算法最常使用的概率分布模型。</p>
+<p>我们称 $X∼N(μ,δ^2)$ 为： X 服从均值为 μ，方差为 δ^2 的高斯分布（也称正态分布）。高斯分布的<a href="https://zh.wikipedia.org/wiki/%E6%A9%9F%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B8" target="_blank" rel="noopener">概率密度函数</a>为：</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi}\delta}e^{-\frac{(x-\mu)^2}{2} }</script><p>同时，概率模型可以表述为</p>
+<script type="math/tex; mode=display">
+p(x; \mu, \delta^2)=\frac{1}{\sqrt{2\pi}\delta}e^{-\frac{(x-\mu)^2}{2} }</script><blockquote>
+<p><strong>均值 μ</strong> 决定了高斯分布概率密度函数的<strong>对称轴位置</strong>。<br><strong>方差 $δ^2$</strong> 衡量了各样本与平均位置的差异，决定了概率密度函数的<strong>宽窄</strong>。δ^2 越大，各个样本的差异越大（各个样本偏离均值位置很远），即样本取 μ 附近位置的概率越低，亦即，概率 P(μ−ϵ&lt;x&lt;μ+ϵ) 很小，此时，概率密度函数很<strong>宽</strong>。<br>下图展示了几组不同参数取值下的高斯分布的概率密度函数：</p>
+</blockquote>
+<p><img src="https://i.imgur.com/JUjzGBx.png" width="400"></p>
+<h3 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h3><p>高斯分布的参数估计：<strong>给定一个数据集，估算出μ和$δ^2$的值</strong>。</p>
+<p>假定第 j 个特征 $x_j$ 分布如下：</p>
+<p><img src="https://i.imgur.com/zKbpVAL.png" width="200"></p>
+<p>我们发现，该分布中间稠密，越向两边越稀疏，我们就认为数据服从高斯分布，即：$x_j \sim N(\mu_j,\delta_j^2)$。<br>但该分布的 μj 和 δj 参数未知。<br>可以根据这有限个样本进行(关于特征 j 的) μ 和 $δ^2$ 的参数估计：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+{\color{red}{\mu_j} } &= \frac{1}{m}\sum\limits_{i=1}^mx_j^{(i)} \\
+{\color{red}{\delta^2_j} } &= \frac{1}{m}\sum\limits_{i=1}^m(x_j^{(i)}-\mu_j)^2
+\end{align*}</script><blockquote>
+<p>如果学过概率论，这里对参数 μ 和参数 $δ^2$ 的估计就是二者的<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1" target="_blank" rel="noopener">极大似然估计</a>。</p>
+<p>当然，在数学上对于$δ^2$也有除以m-1的，但在实际使用中几乎没有什么区别。</p>
+</blockquote>
+<h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><p>假定我们有数据集：$\{x^{(1)},x^{(2)},\cdots,x^{(m)} \}, x \in R^n$。并且，各个特征服从于高斯分布。<br>完成了对于各个特征分布的参数估计后，可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(x) &= p(x_1;{\color{red}{\mu_1, \delta^2_1} })p(x_2;{\color{red}{\mu_2, \delta^2_2} }) \cdots p(x_n;{\color{red}{\mu_n, \delta^2_n} }) \\
+&= \prod\limits_{j=1}^np(x_j;{\color{red}{\mu_j,\delta_j^2} }) \quad ，\text{代入Guass分布}\\
+&= \prod\limits_{j=1}^n\frac{1}{\sqrt{2\pi}\delta_j}exp(-\frac{(x_j-\mu_j)^2}{2\delta_j^2})
+\end{align*}</script><p>有了前面的知识，我们可以得到，采用了<strong>高斯分布</strong>的<font color="red"><strong>异常检测算法</strong></font>流程如下：</p>
+<ol>
+<li><p><strong>选择</strong>一些能够反映异常样本的<strong>特征</strong> $x_j$。</p>
+</li>
+<li><p>对各个特征进行<strong>参数估计</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+{\color{red}{\mu_j} } &= \frac{1}{m}\sum\limits_{i=1}^mx_j^{(i)} \\
+{\color{red}{\delta^2_j} } &= \frac{1}{m}\sum\limits_{i=1}^m(x_j^{(i)}-\mu_j)^2
+\end{align*}</script></li>
+<li><p>当新的样本 x 到来时，<strong>计算 p(x)</strong>：</p>
+<script type="math/tex; mode=display">
+p(x)=\prod\limits_{j=1}^np(x_j;\mu_j,\delta_j^2)=\prod\limits_{j=1}^n\frac{1}{\sqrt{2\pi}\delta_j}exp(-\frac{(x_j-\mu_j)^2}{2\delta_j^2})</script><p>如果 $p(x)&lt;{\color{purple}{\epsilon} }$，则认为样本 x 是异常样本。</p>
+</li>
+</ol>
+<hr>
+<p><strong>例</strong>：假定我们有两个特征 $x_1、x_2$，它们都服从于高斯分布，并且通过参数估计，我们知道了分布参数：</p>
+<p><img src="https://i.imgur.com/dOdpAxA.png" width="500"></p>
+<p>则模型 $p(x)$ 能由如下的热力图反映，热力图越热的地方，是正常样本的概率越高。</p>
+<p>参数 $\color{purple}{ϵ}$ 描述了一个截断高度（截断概率），当概率落到了<font color="purple"><strong>截断高度</strong></font>以下（下图紫色区域所示），则为异常样本：</p>
+<p><img src="https://i.imgur.com/PlAQ59l.png" width="250"></p>
+<p>将 p(x) 投影到特征所在平面，下图紫色曲线就反映了 $\color{purple}{ϵ}$ 的投影，它是一条截断曲线，落在截断曲线以外的样本，都会被认为是异常样本：</p>
+<p><img src="https://i.imgur.com/cdrIFj3.png" width="240"></p>
+<h3 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a>数据集划分</h3><p>假定我们的引擎数据集被标注了是否为异常样本：（类似有监督）</p>
+<script type="math/tex; mode=display">
+y^{(i)}=
+\begin{cases}
+0, \mbox{如果 $x^{(i)}$ 为正常样本} \\
+1, \mbox{otherwise}
+\end{cases}</script><p>并且，含有正常样本 10000 个，异常样本 20 个。那么，我们可以这样划分数据集：</p>
+<ul>
+<li><strong>训练集</strong>含 6000 个正常样本。 </li>
+<li><strong>交叉验证集</strong>含 2000 个正常样本，10 个异常样本。</li>
+<li><strong>测试集</strong>含 2000 个正常样本，10 个异常样本。</li>
+</ul>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><script type="math/tex; mode=display">
+y=
+\begin{cases}
+1, \mbox{if$\,\,p(x)<\epsilon$(anomaly)} \\
+0, \mbox{if$\,\,p(x)\geq\epsilon$(nomal)}
+\end{cases}</script><p>由于异常样本通常是非常少的，所以整个数据集是非常<strong><font color="red">偏斜</font></strong>的，我们不能单纯的用预测准确率来评估算法优劣，因此，可以考虑使用我们在<strong>优化设计-偏斜类</strong>一节中提过的评价手段：</p>
+<ul>
+<li>真阳性、假阳性、真阴性、假阴性</li>
+<li><strong>查准率</strong>（Precision）与 <strong>召回率</strong>（Recall）</li>
+<li>$F_1Score$</li>
+<li>还可以利用交叉验证集来优化参数 $\color{purple}{ϵ}$（模型选择）</li>
+</ul>
+<hr>
+<p>很多人会认为异常检测非常类似于有监督学习，尤其是逻辑回归。<br>这里用一张表格来描述有监督学习与异常检测的<strong>区别</strong>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>有监督学习</th>
+<th>异常检测</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据分布均匀</td>
+<td><strong>数据非常偏斜</strong>，异常样本数目远小于正常样本数目</td>
+</tr>
+<tr>
+<td>可以根据对正样本的拟合来知道正样本的形态，从而预测新来的样本是否是正样本</td>
+<td><strong>异常的类型不一</strong>，很难根据对现有的异常样本（即正样本）的拟合来判断出异常样本的形态</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>下面的表格则展示了二者的一些<strong>应用场景</strong>对比：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>有监督学习</th>
+<th>异常检测</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>垃圾邮件检测</td>
+<td>故障检测</td>
+</tr>
+<tr>
+<td>天气预测（预测雨天、晴天、或是多云天气）</td>
+<td>某数据中心对于机器设备的监控</td>
+</tr>
+<tr>
+<td>癌症的分类</td>
+<td>制造业判断一个零部件是否异常</td>
+</tr>
+<tr>
+<td>……</td>
+<td>……</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><h3 id="转化为高斯分布"><a href="#转化为高斯分布" class="headerlink" title="转化为高斯分布"></a>转化为高斯分布</h3><p>为了构建异常检测模型，我们就希望特征能服从高斯分布：（尽管不这样做算法也可能运行良好，但这样做可能会更好）</p>
+<p><img src="https://i.imgur.com/ZqFHD4o.png" width="150"></p>
+<p>我们一开始拿到的特征的分布可能是这样的：</p>
+<p><img src="https://i.imgur.com/mpfiNVx.png" width="150"></p>
+<p>我们可以同过对数转换（$log(x+c)$）或者其他操作（低指数次方）将他<strong>转化为高斯分布</strong>。<br>例如，上面的特征经对数转换后形成的分布就非常接近于高斯分布：</p>
+<p><img src="https://i.imgur.com/bXDoXWt.png" width="150"></p>
+<blockquote>
+<p>实际上，$\text{log}x和x^\epsilon$在量级较小时是接近的。相当于将数值较低的部分拉伸。</p>
+</blockquote>
+<h3 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h3><p>我们希望p(x)能尽量有更大的区分度，对正常样本尽量高，对异常尽量低。</p>
+<p>但是有时会出现：正常、异常样本的概率都比较大。有时需要深入考察异常样本，从而看看是否能找出新的特征来帮助算法区别。</p>
+<h4 id="构建新特征"><a href="#构建新特征" class="headerlink" title="构建新特征"></a>构建新特征</h4><p>我们知道，在异常检测中，样本特征要<u>尽可能区分正常样本和异常样本</u>。<br>例如，为了监测机房中的服务器异常状况，我们选定了如下特征：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+x_1 &= 内存使用率 \\
+x_2 &= 每秒磁盘访问次数 \\
+x_3 &= CPU负载 \\
+x_4 &= 网络流量
+\end{align*}</script><p>当异常发生时，这些值都会非常大。但是，我们遇到一个新的异常：</p>
+<ul>
+<li>程序执行时进入了某个死循环，此时 CPU负载 很高，而网络流量很低（业务全部卡死在服务器，而没有和客户端通信），亦即，一个特征过大，而一个特征过小，要去识别这样一种情况，我们考虑创建新的特征：</li>
+</ul>
+<script type="math/tex; mode=display">
+x_5= \frac{CPU 负载}{网络流量}</script><p>当上述异常发生时，该特征将会变得相当大，有助于标识出异常发生。</p>
+<p>这个例子说明，我们可以通过组合现有特征，来产生<u>标识度更明显</u>的特征。</p>
+<h2 id="多元高斯"><a href="#多元高斯" class="headerlink" title="多元高斯"></a>多元高斯</h2><p>在服务器运转监控的问题中，我们获得一个服务器样本 x，并且，计算了 $p(x_1;μ_1,δ_1^2) 及 p(x_2;μ_2,δ_2^2) $，认为该服务器的 CPU 负载和内存使用都在正常范围内，也就认为该服务器运转正常：</p>
+<p><img src="https://i.imgur.com/bjsCjzA.png" width="250"></p>
+<p>但是，截断边界却将该样本截在了正常样本之外，认为服务器发生异常：（一个<strong>倾斜的数据集</strong>）</p>
+<p><img src="https://i.imgur.com/DmEHOyV.png" width="250"></p>
+<p>可以看到，出现错误截端的原因在于，我们的高斯分布模型形成的截断边界太固定（相当于多个边缘分布）。<br>试想，如果我们原有的决策边界能经放缩，旋转等操作，变换到下图的紫色边界位置，该服务器就不会被错分为异常了：</p>
+<p><img src="https://i.imgur.com/MWLGRgS.png" width="250"></p>
+<p>为此，引入了多元高斯分布模型。</p>
+<blockquote>
+<p>理论上通过坐标转换也能解决这个问题，但寻找合适的坐标是困难的。</p>
+</blockquote>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>多元高斯不再对$p(x_1),p(x_2),…,p(x_n)$分别建模，而是<strong>一次性地建立模型</strong>。</p>
+<p>多元高斯分布模型被定义为：</p>
+<script type="math/tex; mode=display">
+p(x;{\color{red}{\mu,\Sigma} })=\frac{1}{(2\pi)^{\frac{n}{2} }|\Sigma|^\frac{1}{2} }exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))</script><p>其中，μ 表示<strong>样本均值</strong>，$Σ_{n\times n}$ 表示样本<strong>协方差矩阵</strong>。</p>
+<p>多元高斯分布模型的热力图如下：</p>
+<p><img src="https://i.imgur.com/7aFIY2p.png" width="150"></p>
+<h3 id="调参"><a href="#调参" class="headerlink" title="调参"></a>调参</h3><ul>
+<li><p>改变 Σ <strong>主对角线</strong>的数值可以进行不同方向的宽度<strong>拉伸</strong>。</p>
+<p>$\longrightarrow$比例拉伸：（同时改变）</p>
+<p><img src="https://i.imgur.com/gZrJ24N.png" width="300"></p>
+<p>$\longrightarrow$非比例拉伸：（改变一些项）</p>
+<p><img src="https://i.imgur.com/2fvUiDS.png" width="300"></p>
+</li>
+<li><p>改变 Σ <strong>次对角线</strong>的数值可以斜拉伸/<strong>旋转</strong>分布图像。</p>
+<p>$\longrightarrow$斜拉伸：（同时正改变）</p>
+<p><img src="https://i.imgur.com/PSgK45P.png" width="300"></p>
+<p>$\longrightarrow$斜拉伸：（同时负改变）</p>
+<p><img src="https://i.imgur.com/m98IsFx.png" width="300"></p>
+</li>
+<li><p>改变 <strong>μ</strong> 可以对分布图像进行<strong>位移</strong>。</p>
+<p><img src="https://i.imgur.com/FOznbmG.png" width="300"></p>
+</li>
+</ul>
+<h3 id="参数估计-1"><a href="#参数估计-1" class="headerlink" title="参数估计"></a>参数估计</h3><p>多元高斯分布模型的参数估计如下：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+{\color{red}{\mu} } &= \frac{1}{m}\sum\limits_{i=1}^mx^{(i)} \\
+{\color{red}{\Sigma} } &= \frac{1}{m}\sum\limits_{i=1}^m(x^{(i)}-\mu)(x^{(i)}-\mu)^T
+\end{align*}</script><h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><p>采用了<strong>多元高斯分布</strong>的异常检测算法流程如下：</p>
+<ol>
+<li><p>选择一些足够反映异常样本的特征 $x_j$。</p>
+</li>
+<li><p>对各个<strong>样本</strong>进行参数估计：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+{\color{red}{\mu} } &= \frac{1}{m}\sum\limits_{i=1}^mx^{(i)} \\
+{\color{red}{\Sigma} } &= \frac{1}{m}\sum\limits_{i=1}^m(x^{(i)}-\mu)(x^{(i)}-\mu)^T
+\end{align*}</script></li>
+<li><p>当新的样本 x 到来时，计算 p(x)：</p>
+<script type="math/tex; mode=display">
+p(x)=\frac{1}{(2\pi)^{\frac{n}{2} }|\Sigma|^\frac{1}{2} }exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))</script><p>如果 p(x)&lt;ϵ，则认为样本 x 是异常样本。</p>
+</li>
+</ol>
+<h3 id="与一般高斯分布模型的差异"><a href="#与一般高斯分布模型的差异" class="headerlink" title="与一般高斯分布模型的差异"></a>与一般高斯分布模型的差异</h3><p>实际上，一般的高斯分布模型只是多元高斯分布模型的一个<strong>约束</strong>，它将多元高斯分布的等高线约束到了如下所示同轴分布：（协方差矩阵 Σ 是对角阵）</p>
+<p><img src="https://i.imgur.com/b3PUhbn.png" width="500"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>一般高斯模型</th>
+<th>多元高斯模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需要<strong>手动</strong>创建一些特征来描述某些特征的相关性</td>
+<td>利用协方差矩阵 Σ <strong>自动</strong>获得了各个特征相关性</td>
+</tr>
+<tr>
+<td>计算<strong>复杂度低</strong>，适用于高维特征</td>
+<td><strong>计算复杂</strong></td>
+</tr>
+<tr>
+<td><u>在样本数目 m 较小时也工作良好</u></td>
+<td><strong>需要 Σ 可逆</strong>，亦即需要 m&gt;n（实际要远大于，比如一个数量级），且各个特征不能线性相关</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由此可以看出，基于多元高斯分布模型的异常检测应用十分有限。</p>
+<blockquote>
+<p>实际上完全可以在少数几个特征上（异常预测失败的特征）使用多元高斯，然后继续使用分步高斯。</p>
+</blockquote>
+<h1 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h1><p>推荐系统是机器学习最重要的应用之一（尽管在学术上被讨论地较少），你所知道的淘宝、亚马逊、facebook、豆瓣这些网站都把推荐系统作为了核心。</p>
+<p>之前已经提到过，有一些算法可以自动地生成特征（而不需要手动去选择），推荐系统就是其中之一。</p>
+<p>在某个电影资讯的网站，有那么一份用户对于电影的打分（<strong>0 - 5</strong> 分），<font color="red"><strong>?</strong></font> 代表用户没有评价过该电影：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Movie/User</th>
+<th>Alice(1)</th>
+<th>Bob(2)</th>
+<th>Carol(3)</th>
+<th>Dave(4)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Love at last</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Romance for ever</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cute puppies of love</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>4</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Nonstop car chases</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Swords vs. karate</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>推荐系统就是自动地填满这些缺失值（<font color="red"><strong>?</strong></font>），然后预测什么是用户会感兴趣的内容。</p>
+</blockquote>
+<h2 id="基于内容的推荐算法"><a href="#基于内容的推荐算法" class="headerlink" title="基于内容的推荐算法"></a>基于内容的推荐算法</h2><p>该网站根据电影的内容，对每部电影都<u>给出了两个评价指数</u>，构成了基于电影内容的二维<strong>特征向量</strong> x：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+x_1 = 电影的\color{green}{浪漫指数} \\
+x_2 = 电影的\color{blue}{动作指数}
+\end{align*}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Movie/User</th>
+<th>Alice($\theta^{(1)}$)</th>
+<th>Bob($\theta^{(2)}$)</th>
+<th>Carol($\theta^{(3)}$)</th>
+<th>Dave($\theta^{(4)}$)</th>
+<th style="text-align:center">$x_1$</th>
+<th style="text-align:center">$x_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font color="green"><strong>Love at last</strong></font></td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td style="text-align:center"><font color="green"><strong>0.9</strong></font></td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td><font color="green"><strong>Romance for ever</strong></font></td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>0</td>
+<td style="text-align:center"><font color="green"><strong>1.0</strong></font></td>
+<td style="text-align:center">0.01</td>
+</tr>
+<tr>
+<td><font color="green"><strong>Cute puppies of love</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>4</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td style="text-align:center"><font color="green"><strong>0.99</strong></font></td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td><font color="blue"><strong>Nonstop car chases</strong></font></td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>4</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center"><font color="blue"><strong>1.0</strong></font></td>
+</tr>
+<tr>
+<td><font color="blue"><strong>Swords vs. karate</strong></font></td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center"><font color="blue"><strong>0.9</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>假设用户 i 对于每个指数的偏好程度由向量 $θ^{(i)}$ 所衡量，则我们估计该用户对电影 j 的打分为：（<strong>线性回归</strong>）</p>
+<script type="math/tex; mode=display">
+y^{(i, j)} = (\theta^{(i)})^T x^{(j)}</script><blockquote>
+<p>默认设定：$x_0^{(j)}=1$。</p>
+<p>比如，对于<strong>Alice</strong>预测她对<font color="green"><strong>Cute puppies of love</strong></font>的喜好程度：（假设我们已经得到了用户参数$\theta^{(1)}$）</p>
+<script type="math/tex; mode=display">
+x^{(3)} = \begin{bmatrix} 1 \\ 0.99 \\ 0 \end{bmatrix}，\theta^{(1)} = \begin{bmatrix} 0 \\ 5 \\ 0 \end{bmatrix}\\
+y^{(1,3)} = (\theta^{(1)})^T x^{(3)}=\begin{bmatrix} 0& 5&  0 \end{bmatrix}\begin{bmatrix} 1 \\ 0.99 \\ 0 \end{bmatrix}\approx\color{red}{4.95}</script></blockquote>
+<p>这就是<strong>基于内容的推荐系统</strong>，我们根据商品内容来判断用户可能对某个商品的偏好程度，本例中，商品内容就是电影具有的一些指数。我们也知道了，推荐系统中两个重要的维度：<strong>人</strong>和<strong>物</strong>。</p>
+<h3 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h3><blockquote>
+<p>引入 $r(i,j)$ 表示第 i 个用户是否对第 j 部电影进行了打分：</p>
+</blockquote>
+<script type="math/tex; mode=display">
+r(i,j) =
+\begin{cases}
+1, \mbox{用户 $i$ 对电影 $j$ 打过分} \\
+0, \mbox{otherwise}
+\end{cases}</script><p>为了对用户 j 打分状况作出最精确的预测，我们需要：（约去了$m^{(j)}$项，不影响极值）</p>
+<script type="math/tex; mode=display">
+\min_{\theta^{(j)} } = \frac{1}{2} \sum_{i:r(i,j)=1} \left((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\right)^2
++ \frac{\lambda}{2} \sum_{k=1}^n (\theta_k^{(j)})^2</script><p>那么对于所用用户 1,2,…,$n_u$，我们就需要：</p>
+<script type="math/tex; mode=display">
+\min_{\theta^{(1)}, \theta^{(2)}, ..., \theta^{(n_u)} } = \frac{1}{2} {\color{red}{\sum_{j=1}^{n_u} } } \sum_{i:r(i,j)=1} \left((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\right)^2
++ \frac\lambda{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2</script><p><strong>代价函数</strong>$J(\theta^{(1)}, \theta^{(2)}, …, \theta^{(n_u)})$就为：</p>
+<script type="math/tex; mode=display">
+J(\theta^{(1)}, \theta^{(2)}, ..., \theta^{(n_u)}) = \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} \left((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\right)^2
++ \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2</script><p><strong>梯度下降法</strong>更新参数：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \mbox{更新偏置（插值）：} \\
+& \quad \theta_0^{(j)} := \theta_0^{(j)} - \alpha\sum_{i:r(i,j)=1}\big((\theta^{(j)})^T x^{(i)} - y^{(i,j)}\big) x_0^{(i)} \\
+& \mbox{更新权重：} \\
+& \quad \theta_k^{(j)} := \theta_k^{(j)} - \alpha\left(\sum_{i:r(i,j)=1}\big((\theta^{(j)})^T x^{(i)} - y^{(i,j)}\big) x_k^{(i)} + \lambda\theta_k^{(j)}\right), \quad k \neq 0
+\end{align*}</script><h2 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h2><p>这一节将介绍具有<strong><font color="red">特征学习</font></strong>（Feature learning）——自行学习所要使用的特征能力的算法。</p>
+<p>回到上一节的问题，每部电影，我们都有评价其内容的特征向量 x。但是，在现实中，不会有任何网站，任何人有精力，有能力去评估每部电影所具有的一些指数。</p>
+<hr>
+<p>假定我们<u>先有了各个用户对电影的偏爱评估</u> $θ^{(j)}$：</p>
+<script type="math/tex; mode=display">
+\theta^{(1)} = \begin{pmatrix} 0 \\ 5 \\ 0 \end{pmatrix},
+\theta^{(2)} = \begin{pmatrix} 0 \\ 5 \\ 0 \end{pmatrix},
+\theta^{(3)} = \begin{pmatrix} 0 \\ 0 \\ 5 \end{pmatrix},
+\theta^{(4)} = \begin{pmatrix} 0 \\ 5 \\ 0 \end{pmatrix}</script><p>并且，<u>不知道电影内容特征的指数</u> $x^{(i)}$：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Movie/User</th>
+<th>Alice(1)</th>
+<th>Bob(2)</th>
+<th>Carol(3)</th>
+<th>Dave(4)</th>
+<th>x1</th>
+<th>x2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Love at last</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Romance for ever</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Cute puppies of love</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>4</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Nonstop car chases</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>4</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Swords vs. karate</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>现在，我们通过 $\theta^{(1)}, …, \theta^{(n_u)}$ 来学习电影指数 x(i)：（求和指数变化，正则项变化）</p>
+<script type="math/tex; mode=display">
+\min_{x^{(i)} } = \frac{1}{2} \sum_{ {\color{red}{j} }:r(i,j)=1} \left( (\theta^{(j)})^T x^{(i)} - y^{(i,j)}\right) ^2
++ \frac{\lambda}{2} \sum_{k=1}^n ({\color{red}{x_k^{(i)} } })^2</script><p>则对于所有的电影指数$x^{(1)},…,x^{(n_m)}$：</p>
+<script type="math/tex; mode=display">
+\min_{x^{(i)},...,x^{(n_m)} } = \frac{1}{2} \sum_{ {\color{red}{i} }=1}^{n_m} \sum_{ {\color{red}{j} }:r(i,j)=1}  \left( (\theta^{(j)})^T x^{(i)} - y^{(i,j)}\right) ^2
++ \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2</script><hr>
+<p>现在，我们拥有了评价用户的 θ 和评价<strong>商品</strong>的 x，并且：</p>
+<ul>
+<li>给定 θ 及用户对商品的评价，我们能估计 x。</li>
+<li>给定 x，我们又能估计 θ。</li>
+</ul>
+<blockquote>
+<p>有点像“鸡生蛋，蛋生鸡”。</p>
+</blockquote>
+<p>因此，就构成了 $θ\longrightarrow x\longrightarrow θ\longrightarrow x$… 的优化序列，这便是<strong><font color="red">协同过滤</font>算法（Collaborative Filtering）</strong>。</p>
+<p>进一步，可以<strong>同时（simultaneously）优化</strong>商品和用户具有的参数：</p>
+<ol>
+<li><p><strong>推测用户喜好</strong>：给定x，估计 θ</p>
+<script type="math/tex; mode=display">
+\min_{\theta^{(1)}, ..., \theta^{(n_u)} } = {\color{red}{\frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} \left((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\right)^2} }
++ {\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script></li>
+<li><p><strong>推测商品内容</strong>：给定θ，估计 x</p>
+<script type="math/tex; mode=display">
+\min_{x^{(i)},...,x^{(n_m)} } = {\color{red}{\frac{1}{2} \sum_{i=1}^{n_m} \sum_{j:r(i,j)=1}  \left( (\theta^{(j)})^T x^{(i)} - y^{(i,j)}\right) ^2} }
++ {\color{blue}{\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2} }</script></li>
+<li><p><strong>协同过滤</strong>：<strong>同时优化</strong>θ和x</p>
+<script type="math/tex; mode=display">
+\min J({\color{blue}{x^{(i)},...,x^{(n_m)} } } ; {\color{green}{\theta^{(1)}, ..., \theta^{(n_u)} } })</script><p>即（<font color="red">红色</font>的3个公式其实是相等的）</p>
+<script type="math/tex; mode=display">
+\min_{x^{(i)},...,x^{(n_m)} ; \theta^{(1)}, ..., \theta^{(n_u)} }
+{\color{red}{\frac{1}{2} \sum_{(i,j):r(i,j)=1}  \left( (\theta^{(j)})^T x^{(i)} - y^{(i,j)}\right) ^2} }
++ {\color{blue}{\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2} }
++ {\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><blockquote>
+<p>$\sum_{(i,j):r(i,j)=1}$反映了用户和商品所有有效配对。</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>使用了协同过滤的推荐算法流程为：</p>
+<ol>
+<li><p><strong>随机初始化</strong>$x^{(i)},…,x^{(n_m)} ; \theta^{(1)}, …, \theta^{(n_u)}$为一些较小值，与神经网络的参数初始化类似，为避免系统陷入僵死状态，不使用 0 值初始化。</p>
+</li>
+<li><p>使用<strong>梯度下降法</strong>来最小化$J(x^{(i)},…,x^{(n_m)};\theta^{(1)}, …, \theta^{(n_u)})$<br>对于 j=1,2,..,n_u，i=1,2,…,n_m，参数的更新式为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& x_k^{(i)} := x_k^{(i)} - \alpha \left( \sum_{j:r(i,j)=1}\big((\theta^{(j)})^T x^{(i)} - y^{(i,j)}\big) \theta_k^{(j)} + \lambda x_k^{(i)}\right) \\
+
+& \theta_k^{(j)} := \theta_k^{(j)} - \alpha\left(\sum_{i:r(i,j)=1}\big((\theta^{(j)})^T x^{(i)} - y^{(i,j)}\big) x_k^{(i)} + \lambda\theta_k^{(j)} \right)
+\end{align*}</script></li>
+<li><p>如果用户的偏好向量为 θ，而商品的特征向量为 x，则可以预测用户评价为 $θ^Tx$。</p>
+</li>
+</ol>
+<blockquote>
+<p>因为协同过滤算法 θ 和 x 相互影响，二者都<strong>没必要使用偏置</strong>θ_0和x_0，即，$x∈R^n、θ∈R^n$。</p>
+</blockquote>
+<h2 id="矢量化-低秩矩阵分解"><a href="#矢量化-低秩矩阵分解" class="headerlink" title="矢量化: 低秩矩阵分解"></a>矢量化: 低秩矩阵分解</h2><p>我们将用户对电影的评分表格：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Movie/User</th>
+<th>Alice(1)</th>
+<th>Bob(2)</th>
+<th>Carol(3)</th>
+<th>Dave(4)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Love at last</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Romance for ever</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cute puppies of love</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>4</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Nonstop car chases</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Swords vs. karate</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>用矩阵表示：</p>
+<script type="math/tex; mode=display">
+Y =
+\begin{bmatrix}
+5 & 5 & 0 & 0 \\
+5 & {\color{red}{?} } & {\color{red}{?} } & 0 \\
+{\color{red}{?} } & 4 & 0 & {\color{red}{?} } \\
+0 & 0 & 5 & 4 \\
+0 & 0 & 5 & {\color{red}{?} }
+\end{bmatrix}</script><p>我们发现，由于用户不会对所有电影都进行打分，所以该矩阵通常是十分<strong><font color="red">稀疏</font></strong>的。<br>如果我们用预测来描述这个矩阵：</p>
+<script type="math/tex; mode=display">
+Predicated =
+\begin{bmatrix}
+(\theta^{(1)})^T x^{(1)} & (\theta^{(2)})^T x^{(1)} & \cdots & (\theta^{(n_u)})^T x^{(1)} \\
+(\theta^{(1)})^T x^{(2)} & (\theta^{(2)})^T x^{(2)} & \cdots & (\theta^{(n_u)})^T x^{(2)} \\
+\vdots & \vdots & \vdots & \vdots \\
+(\theta^{(1)})^T x^{(n_m)} & (\theta^{(2)})^T x^{(n_m)} & \cdots & (\theta^{(n_u)})^T x^{(n_m)}
+\end{bmatrix}</script><p>令：</p>
+<script type="math/tex; mode=display">
+X =
+\begin{bmatrix}
+(x^{(1)})^T \\
+(x^{(2)})^T \\
+\vdots \\
+(x^{(n_m)})^T
+\end{bmatrix},
+
+\Theta =
+\begin{bmatrix}
+(\theta^{(1)})^T \\
+(\theta^{(2)})^T \\
+\vdots \\
+(\theta^{(n_u)})^T
+\end{bmatrix}</script><p>即矩阵 X 的每一行描述了一部电影的内容，矩阵$Θ^T$ 的每一列描述了一位用户对于电影内容偏好程度。<br>亦即，我们将原来稀疏的矩阵分解为了 X 和 Θ。现在预测可以写为：</p>
+<script type="math/tex; mode=display">
+Predicated = X \Theta^T</script><p>用这个方法求取 X 和 Θ，获得推荐系统需要的参数，称之为<strong>低秩矩阵分解（Low Rank Matrix Factorization）</strong>，该方法不仅能在编程时直接通过向量化的手法获得参数，还通过矩阵分解节省了内存空间。</p>
+<blockquote>
+<p>当我们获得了电影 i 的特征向量后，我们就可以通过计算 $||x^{(j)}-x^{(i)}||$ 来比较电影 j 与电影 i 的<strong>相似度</strong>。那么，给予了电影 j 足够好评的用户，也会被推荐到<strong>类似的电影</strong>。（<del>又可以聚类了</del>）</p>
+</blockquote>
+<h2 id="均值标准化"><a href="#均值标准化" class="headerlink" title="均值标准化"></a>均值标准化</h2><p>假定我们现在新注册了一个用户 <code>Eve(5)</code>，他还没有对任何电影作出评价：1</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Movie/User</th>
+<th>Alice(1)</th>
+<th>Bob(2)</th>
+<th>Carol(3)</th>
+<th>Dave(4)</th>
+<th>Eve(5)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Love at last</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Romance for ever</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Cute puppies of love</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td>4</td>
+<td>0</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Nonstop car chases</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>4</td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+<tr>
+<td>Swords vs. karate</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td><font color="red"><strong>?</strong></font></td>
+<td><font color="red"><strong>?</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="math/tex; mode=display">
+Y =
+\begin{bmatrix}
+5 & 5 & 0 & 0 & ?\\
+5 & ? & ? & 0 & ?\\
+? & 4 & 0 & ? & ?\\
+0 & 0 & 5 & 4 & ?\\
+0 & 0 & 5 & 0 & ?
+\end{bmatrix}</script><p>则 <code>Eve(5)</code> 对于电影内容的偏好应当被参数 $θ^{(5)}$ 所评估，注意到我们的最小化代价函数过程：</p>
+<script type="math/tex; mode=display">
+\min_{x^{(i)},...,x^{(n_m)} ; \theta^{(1)}, ..., \theta^{(n_u)} }
+\frac{1}{2} \sum_{(i,j):r(i,j)=1}  \left( (\theta^{(j)})^T x^{(i)} - y^{(i,j)}\right) ^2
++ \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2
++ {\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><p>由于该用户没有对任何电影作出评价，$θ^{(5)}$能影响上式的项只有：</p>
+<script type="math/tex; mode=display">
+{\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><p>为了最小化该式，则显然会得到 $\theta^{(5)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$，从而，<code>Eve(5)</code> 对任何电影的评价将会被预测为：</p>
+<script type="math/tex; mode=display">
+y(i, 5) = (\theta^{(5)})^T x^{(i)}= 0</script><p>显然，这就是一种“<strong>not useful</strong>”的预测了，系统会因此认为 <code>Eve</code> 对任何电影都不感冒，那么，<code>Eve</code> 就是<del>吃饱了撑的</del>来注册这个网站。</p>
+<p>为了这个解决这个问题，我们会先求取各个电影的平均得分 μ：</p>
+<script type="math/tex; mode=display">
+\mu =
+\begin{pmatrix}
+2.5 \\
+2.5 \\
+2 \\
+2.25 \\
+1.25
+\end{pmatrix}</script><p>并求取 Y−μ，对 Y 进行<strong>均值标准化</strong>(<strong>Mean normalization</strong>)：（即，使得<u>每一行元素和=0</u>）</p>
+<script type="math/tex; mode=display">
+Y - \mu =
+\begin{bmatrix}
+2.5 & 2.5 & -2.5 & -2.5 & ? \\
+2.5 & ? & ? & -2.5 & ? \\
+? & -2 & -2 & ? & ? \\
+-2.25 & -2.25 & 2.75 & 1.75 & ? \\
+-1.25 & -1.25 & 3.75 & -1.25 & ?
+\end{bmatrix}</script><p>对于用户 j，他对电影 i 的评分就为：$y(i, j) = (\theta^{(i)})^T x^{(j)} + {\color{red}{\mu_i} }$。</p>
+<p>那么 Eve 对电影的评分就为：$y(i, 5) = (\theta^{(5)})^T x^{(i)} + \mu_i ={\color{red}{\mu_i} }$。</p>
+<blockquote>
+<p>即，系统在用户未给出评价时，默认该用户对电影的评价与其他用户的平均评价一致。貌似利用均值标准化让用户的初始评价预测客观了些，但这也是盲目的，不准确的。实际环境中，如果一个电影确实没人被评价过，那么他没有任何理由被推荐给用户。</p>
+</blockquote>
+<h1 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h1><p>之前已经提到——在机器学习界流传着这样一句话：</p>
+<blockquote>
+<p><strong>It’s not who has the best algorithm that wins. It’s who has the most data.</strong></p>
+</blockquote>
+<p>在识别易混淆词汇一例中，我们分别使用了四种算法：（1）Perceptron；（2）Naive Bayes；（3）Winnow；（4）Memory-Based。通过下图可以看到，这四种算法都<strong>随着数据规模的增长获得了更高的精度</strong>：</p>
+<p><img src="https://i.imgur.com/vZZIcPh.png" width="200"></p>
+<p>所以，在机器学习中，除了构建算法模型（<strong>低偏差</strong>），为模型提供<strong><font color="red">足够大，足够多的数据也成为了关键</font></strong>。同时，我们也需要做好准备，<u>以更快速的方式处理、消化大数据</u>。拥有了大数据，也就意味着在算法模型中，我们面临着一个很大的 m 值。</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h3 id="BGD-批量梯度下降法"><a href="#BGD-批量梯度下降法" class="headerlink" title="BGD(批量梯度下降法)"></a>BGD(批量梯度下降法)</h3><p>拥有了大数据，就意味着，我们的算法模型中得面临一个很大的 m 值。回顾到我们的批量梯度下降法：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&\mbox{Repeat}\{ \\
+& \quad \theta_j := \theta_j - {\color{blue}{\alpha} }{\color{red}{\frac{1}{m}\sum_{i=1}^m } }(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)},
+\quad \mbox{for $j=0,...,n$}\\
+&\}
+\end{align*}</script><p>可以看到，每更新一个参数 $θ_j$，我们都不得不遍历一遍样本集，在 m 很大时，该算法就显得比较低效（尤其是计算机内存不够，需要反复读取数据）。</p>
+<blockquote>
+<p>但是，批量梯度下降法能找到全局最优解：</p>
+</blockquote>
+<p><img src="/Notes-of-Machine-Learning-Part3/梯度下降.gif" alt="梯度下降"></p>
+<h3 id="SGD-随机梯度下降法"><a href="#SGD-随机梯度下降法" class="headerlink" title="SGD(随机梯度下降法)"></a>SGD(随机梯度下降法)</h3><p>针对大数据集，又引入了<strong><font color="red">随机梯度下降法</font>（Stochastic gradient descent）</strong>，该算法的执行过程为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&\mbox{Repeat\{} \\
+& \quad \mbox{for $i=1,...,m$\{} \\
+& \quad \quad \theta_j := \theta_j - {\color{blue}{\alpha} }(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)},
+\quad \mbox{for $j=0,...,n$}\\
+&\quad\}\\
+&\}
+\end{align*}</script><blockquote>
+<p>在执行前通常要<u>将数据集/样本做<strong>乱序随机</strong>处理</u>。使得遍历样本的过程更加分散。</p>
+</blockquote>
+<p>相较于批量梯度下降法，随机梯度下降法每次更新 $θ_j$ 只会用当前遍历的样本。虽然外层循环仍需要遍历所有样本，但是，<u>往往我们能在样本尚未遍历完时就已经收敛</u>（一般最多遍历1-10遍数据集），因此，<strong>面临大数据集时，随机梯度下降法性能卓越</strong>。</p>
+<p><img src="https://i.imgur.com/tnYDZP9.png" width="200"></p>
+<p>上图反映了随机梯度下降法找寻最优解的过程，相较于批量梯度下降法，随机梯度下降法的曲线就显得不是那么平滑，而是很曲折了，其也倾向于找到局部最优解而不是全局最优解。</p>
+<p>因此，我们通常需要<u>绘制学习曲线</u>来监控随机梯度的工作过程是否正确。</p>
+<p><img src="https://i.imgur.com/n0Ht531.png" width="600"></p>
+<blockquote>
+<p>例如，假定误差定义为$cost(\theta, (x^{(i)}, y^{(i)})) = \frac{1}{2}(h_\theta(x^{(i)})-y^{(i)})^2$，则每完成 1000 次迭代，即遍历了 1000 个样本，我们求取平均误差并进行绘制，得到误差随迭代次数的变化曲线：</p>
+<p><img src="https://i.imgur.com/1lXQJFi.png" width="200"></p>
+<p>另外，遇到下面的曲线也不用担心，其并不意味着我们的学习率出了问题，有可能是我们的平均间隔取的太小：（导致你看不出来代价函数实际是在慢慢减少）</p>
+<p><img src="https://i.imgur.com/GSotb5Y.png" width="200"></p>
+<p>如果，我们每进行 5000 次迭代才进行绘制，那么曲线将更加平滑：</p>
+<p><img src="https://i.imgur.com/fWVZ3Dk.png" width="200"></p>
+<p>如果我们面临明显上升态势的曲线，就要考虑降低学习率 α 了：</p>
+<p><img src="https://i.imgur.com/FfPX7Nd.png" width="200"></p>
+<p>另外，学习率 α 还可以随着迭代次数进行优化：$\alpha = \cfrac{const.1} {\text{iterationNumber} + const.2}$。</p>
+<p>这样，随着迭代次数的增多，步长就会放缓，避免出现抖动：</p>
+<p><img src="https://i.imgur.com/bCnfOu7.png" width="200"></p>
+</blockquote>
+<h3 id="MBGD-Mini批量梯度下降法"><a href="#MBGD-Mini批量梯度下降法" class="headerlink" title="MBGD(Mini批量梯度下降法)"></a>MBGD(Mini批量梯度下降法)</h3><p><strong><font color="red">Mini Batch梯度下降法</font></strong>是批量梯度下降法和随机梯度下降法的<strong>折中</strong>，通过参数 b 指明了每次迭代时，用于更新 θ 的样本数。<br>假定 b=10,m=1000，Mini 批量梯度下降法的工作过程如下：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&\mbox{Repeat}\{ \\
+& \quad \mbox{for $i=1,11,21,...,991$}\{ \\
+& \quad \quad \theta_j := \theta_j - {\color{blue}{\alpha} }\frac{1}{\color{red}{10} }\sum_{k=i}^{\color{red}{i+9} }(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)},
+\quad \mbox{for $j=0,...,n$}\\
+&\quad\}\\
+&\}
+\end{align*}</script><blockquote>
+<p>一般只有<strong>向量化</strong>做得好，才能让MBGD的优势体现出来（使用<strong>并行</strong>机制）。</p>
+</blockquote>
+<h2 id="在线学习"><a href="#在线学习" class="headerlink" title="在线学习"></a>在线学习</h2><p><strong>例</strong>：（快递报价）</p>
+<blockquote>
+<p>用户登录了某提供货运服务的网站，输入了货运的发件地址和收件地址，该网站给出了货运报价，用户决定是购买该服务（y=1）或者是放弃购买该服务（y=0）。</p>
+</blockquote>
+<p>特征向量 x 包括了收发地址，报价信息，我们想要学习 $p(y=1|x;θ) $来优化报价：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \mbox{Repeat forever\{} \\
+& \quad \mbox{Get用户样本 $(x,y)$，使用该样本更新 $\theta$：} \\
+& \quad \quad \theta_j:= \theta_j - \alpha(h_\theta(x)-y) x_j, \quad \mbox{for $j=0,..,n$}\\
+&\}
+\end{align*}</script><p>这就是<strong>在线学习（<font color="red">Online learning</font>）</strong>，与前面章节提到的机器学习过程不同，在线学习并不需要一个固定的样本集进行学习，而是不断接收样本，不断通过接收到的样本进行学习。</p>
+<blockquote>
+<p>因此，在线学习的前提是：我们面临着流动的数据。（<strong><font color="red">数据流</font></strong>）</p>
+<p>在线学习还可以适应变化的用户偏好。</p>
+</blockquote>
+<h2 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map-Reduce"></a>Map-Reduce</h2><p>前面，我们提到了 <strong>Mini 批量梯度下降法</strong>，假定 b=400,m=400,000,000，我们对 θ 的优化就为：</p>
+<script type="math/tex; mode=display">
+\theta_j = \theta_j - \alpha\frac{1}{400}\sum{i=1}^{400}(h_\theta(x^{i})-y^{(i)})x_j^{(i)}</script><p>假定我们有 4 个机器（Machine），我们首先通过 <strong>Map （映射）</strong>过程来并行计算式中的求和项，每个机器被分配到 100 个样本进行计算：（<u>矩阵相乘的本质是求和，而求和可以分开求</u>）</p>
+<script type="math/tex; mode=display">
+temp_j^{(1)} =  \sum_{i=1}^{100}(h_\theta(x^{(i)} - y^{(i)})x_j^{(i)} \\
+temp_j^{(2)} =  \sum_{i=101}^{200}(h_\theta(x^{(i)} - y^{(i)})x_j^{(i)} \\
+temp_j^{(3)} =  \sum_{i=201}^{300}(h_\theta(x^{(i)} - y^{(i)})x_j^{(i)} \\
+temp_j^{(4)} =  \sum_{i=301}^{400}(h_\theta(x^{(i)} - y^{(i)})x_j^{(i)}</script><p>最后，通过 <strong>Reduce（规约）</strong>操作进行求和：</p>
+<script type="math/tex; mode=display">
+\theta_j = \theta_j - \alpha\frac{1}{400}(temp_j^{(1)}+temp_j^{(2)}+temp_j^{(3)}+temp_j^{(4)})</script><p>我们可以使用<strong>多台机器</strong>进行 MapReduce，此时，Map 任务被分配到多个机器完成：</p>
+<p><img src="https://i.imgur.com/sJlaz8b.png" width="400"></p>
+<p>也可以使用<strong>单机多核心</strong>进行 MapReduce，此时，Map 任务被分配到多个 CPU 核心完成：</p>
+<p><img src="https://i.imgur.com/Hh2A1Hc.png" width="400"></p>
+<blockquote>
+<p>能实现MapReduce的软件：<a href="https://hadoop.apache.org/" target="_blank" rel="noopener">Hadoop</a>等。</p>
+</blockquote>
+<h1 id="案例-光学字符识别"><a href="#案例-光学字符识别" class="headerlink" title="案例-光学字符识别"></a>案例-光学字符识别</h1><blockquote>
+<p>先放一张非字符识别的动态识别图。Source：<a href="https://shaoanlu.wordpress.com/2017/05/07/vihicle-detection-using-ssd-on-floybhub-udacity-self-driving-car-nano-degree/" target="_blank" rel="noopener">here</a></p>
+</blockquote>
+<p><img src="https://i.imgur.com/x3U7mFH.gif"></p>
+<hr>
+<p>假定我们有下面一张图片，光学字符识别要解决的问题就是识别图片中的所有字符：</p>
+<p><img src="https://i.imgur.com/aWkxhmT.png" width="300"></p>
+<p>光学字符识别的工作流程为：</p>
+<ul>
+<li><p><strong>文本检测</strong>：获得包含了文本的文本框。</p>
+<p><img src="https://i.imgur.com/Ipk3Oxz.png" width="300"></p>
+</li>
+<li><p><strong>字符分割</strong>：从文本框中分割出各个字符。</p>
+<p><img src="https://i.imgur.com/5IHvDMx.png" width="300"></p>
+</li>
+<li><p><strong>字符分类</strong>（识别）：字符分割中得到的只是一个个字符图形，在字符分类阶段，才能真正知道该字符类别。</p>
+<p><img src="https://i.imgur.com/8djad6q.png" width="300"></p>
+</li>
+</ul>
+<blockquote>
+<p>之前曾有一个手写识别的教学视频，原理是相似的。</p>
+<p>有些监测系统可能更复杂，比如拥有进一步的修正识别结果的功能。</p>
+</blockquote>
+<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><blockquote>
+<p>Source：<a href="https://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" target="_blank" rel="noopener">here</a></p>
+</blockquote>
+<p><img src="https://i.imgur.com/DYwp4A4.gif"></p>
+<hr>
+<p><strong>例</strong>：（行人识别）</p>
+<p><img src="https://i.imgur.com/93jp6jp.png" width="400"></p>
+<blockquote>
+<p>由于行人的识别矩形框的长宽比是近似固定的，可能<del>稍微比文字识别简单一点</del>。</p>
+<p>选用一个82X36像素的矩形框，并确定一些正、负例：</p>
+<p><img src="https://i.imgur.com/gRTEdJZ.png" width="400"></p>
+<p>然后就可以Sliding window了。把每一个window分别喂给分类器进行检测就可以了。</p>
+</blockquote>
+<h3 id="文本检测"><a href="#文本检测" class="headerlink" title="文本检测"></a>文本检测</h3><p>滑动窗口（Sliding window）是检测图像中目标对象的最常用手段，在<strong>文本检测</strong>阶段，我们首先定义正、负样本，正样本图像描述了含有文本的图像，负样本描述了不含文本的图像：</p>
+<p><img src="https://i.imgur.com/WfIVBC7.png" width="400"></p>
+<p>通过在原图像沿行、列滑动我们定义好的窗口，并让窗口内图像与正负样本进行比较：</p>
+<p><img src="https://i.imgur.com/RFatLaG.png" width="300"></p>
+<p>当窗口遍历过整幅图像后，获得原图像对应的掩膜，<u>高亮度的区域都为疑似文本框的区域</u>：（亮度反映了分类器的判断）</p>
+<p><img src="https://i.imgur.com/nwsd7km.png" width="300"></p>
+<p>掩膜中的文本框可能是断断续续的，因此还考虑使用<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%BD%A2%E6%80%81%E5%AD%A6#.E8.86.A8.E8.83.80" target="_blank" rel="noopener">形态学膨胀</a>操作（放大算子，expansion operator）来让文本框更加完整：（瘦高的文本框可以丢弃）</p>
+<p><img src="https://i.imgur.com/xsAyNTi.png" width="300"></p>
+<h3 id="字符分割"><a href="#字符分割" class="headerlink" title="字符分割"></a>字符分割</h3><p>在文本检测阶段，我们的滑动窗口是分别沿着行、列进行扫描的，因此是 2 维的扫描过程。而在<strong>字符分割</strong>过程中，同样将使用到滑动窗口技术，只是这次我们将窗口的高度设置为与文本框等高，<u>只进行 1 维的行扫描</u>：</p>
+<p><img src="https://i.imgur.com/WEGD9Co.png" width="300"></p>
+<blockquote>
+<p>我们同样需要定义正负样本，来让窗口知道哪些是字符，哪些包含了字符的分界：</p>
+</blockquote>
+<p><img src="https://i.imgur.com/r4E9hPp.png" width="400"></p>
+<h2 id="人工数据合成"><a href="#人工数据合成" class="headerlink" title="人工数据合成"></a>人工数据合成</h2><p><strong>人工数据合成（Artifical data synthesis）</strong>，应用于特定问题时经常需要深入了解和创新改进。</p>
+<ul>
+<li>创造数据集</li>
+<li>以某种方式扩充数据集</li>
+</ul>
+<p>在<strong>字符识别</strong>阶段，为了更好的完成分类识别任务，我们就需要给系统提供尽可能多的训练图像，如果我们手头上拥有的图像不多，就需要人工合成更多的数据。例如，我们可以收集不同的字体，并为每种字体的每个字符加上<strong>随机背景</strong>，这样就可以人工扩展大量的字符图像：</p>
+<p><img src="https://i.imgur.com/rKl9r7v.png" width="300"></p>
+<p>另外，也可以通过<strong>扭曲字符形状</strong>来合成新数据，这也会帮助机器更好地处理发生过形态变化的图像：</p>
+<p><img src="https://i.imgur.com/qfFrAI9.png" width="300"></p>
+<p>加上合理的失真（distortion）可以帮助扩充数据集。<br>但是，<u>为数据加上<strong>完全随机、无意义的噪声</strong>一般不会提升模型训练质量</u>：（效果不明显）</p>
+<p><img src="https://i.imgur.com/OiZcokc.png" width="300"></p>
+<blockquote>
+<p>在getting more data之前，你最好确保：</p>
+<ul>
+<li>有一个低偏差、高方差的分类器</li>
+<li><strong>Brainstorm!</strong>：为了得到10倍的数据量需要付出多少成本？<ul>
+<li>一般10倍的数据量，算法的性能就能通过某种方式提高</li>
+<li>人工合成数据</li>
+<li>自行收集数据（需要多少时间？）</li>
+<li>众包（Crowd source），获得标记数据集</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="流水线-上限分析"><a href="#流水线-上限分析" class="headerlink" title="流水线/上限分析"></a>流水线/上限分析</h2><blockquote>
+<p><strong>Warning:</strong> <font color="red"><strong>时间宝贵！</strong></font></p>
+</blockquote>
+<p>光学字符识别并不是一个单一的过程，而是由若干过程构成的流水线（pipeline）。我们知道，字符识别作为该流水线的出口，    其将是衡量光学字符识别准确率的依据。工程浩瀚，我们不可能在流水线的每一步都花费巨额的精力来作出改善，因此，我们需要一种手段来知道去改善<strong>哪一步</strong>是最值得的，<br><strong>上限分析（Ceiling analysis）</strong>就是手段之一。</p>
+<p><img src="https://i.imgur.com/mDp28Lw.png" width="500"></p>
+<p>所谓上限分析，就是我们<u>假定某个组件及其前面组件的精度都达到了 100%</u>，即该组件完美地完成了任务，达到了上限，那么<u>此时整个系统的精度能提升多少</u> 。<br>例如，假定整个系统的精度是 72%，我们令文本检测的精度是 100%（比如人工利用 PS 来定位图片中的文本框），此时，整个系统的精度能提升到 89%。</p>
+<blockquote>
+<p>即，如果我们付出足够多的精力来优化文本检测，那么理想情况下，能将系统的精度提升 17%。</p>
+<p>重复该步骤：</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">组件</th>
+<th>流水线精度</th>
+<th>精度提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">整个系统</td>
+<td>72%</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><font color="red">文本检测</font></strong></td>
+<td>89%</td>
+<td><strong><font color="red">17%</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center">字符分割</td>
+<td>90%</td>
+<td>1%</td>
+</tr>
+<tr>
+<td style="text-align:center">字符识别</td>
+<td>100%</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>完成上限分析后，我们得到上面的表格，可以看出，最值得花费精力的步骤是文本检测，最不值得花费精力的是字符分割，<u>即便我们完成了 100% 的分割，最多也就对系统提升 1%</u>。</p>
+<p><strong>例</strong>：（Face recognition）</p>
+<p><img src="https://i.imgur.com/FQ5DpHI.png" width="500"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">组件</th>
+<th>流水线精度</th>
+<th>精度提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">整个系统</td>
+<td>85%</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><font color="blue">Prepocess(remove background)</font></strong></td>
+<td>85.1%</td>
+<td><strong><font color="blue">0.1%</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><font color="red">Face recognition</font></strong></td>
+<td>91%</td>
+<td><strong><font color="red">5.9%</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center">Eyes segmentation</td>
+<td>95%</td>
+<td>4%</td>
+</tr>
+<tr>
+<td style="text-align:center">Nose segmentation</td>
+<td>96%</td>
+<td>1%</td>
+</tr>
+<tr>
+<td style="text-align:center">Mouthse gmentation</td>
+<td>97%</td>
+<td>1%</td>
+</tr>
+<tr>
+<td style="text-align:center">Logistic regression</td>
+<td>100%</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>事实上曾经有一个研究团队花了18个月在<strong><font color="blue">Prepocess(remove background)</font></strong>方面做性能提升。</p>
+<p>Anyway, 不要过于trust自己的直觉。</p>
+</blockquote>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p><img src="/Notes-of-Machine-Learning-Part3/Machine Learning.png" alt="Machine Learning"></p>
+<hr>
+<p><center><font size="5" face="fantasy">"Thank you, too!"</font></center></p><p align="right"><font size="5" face="fantasy">——Vel</font></p><p></p>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Byte-Tech-AI-Symposium/">2019机器智能前沿论坛</a></li><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li><li><a href="https://vel.life/关于对抗样本的思考/">关于对抗样本的思考</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/Notes-of-Machine-Learning-Part3/" title="机器学习初等指南(3)">https://vel.life/Notes-of-Machine-Learning-Part3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Data-Science-Contests/" rel="next" title="大数据竞赛-练习篇">
+                <i class="fa fa-chevron-left"></i> 大数据竞赛-练习篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/A-Few-Thoughts-on-Collision/" rel="prev" title="理想碰撞问题">
+                理想碰撞问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">2.</span> <span class="nav-text">K-Means</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Means算法"><span class="nav-number">2.1.</span> <span class="nav-text">K-Means算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-number">2.2.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机初始化"><span class="nav-number">2.3.</span> <span class="nav-text">随机初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择聚类数量"><span class="nav-number">2.3.1.</span> <span class="nav-text">选择聚类数量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#降维"><span class="nav-number">3.</span> <span class="nav-text">降维</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#投影"><span class="nav-number">3.1.</span> <span class="nav-text">投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA-主成分分析"><span class="nav-number">3.2.</span> <span class="nav-text">PCA(主成分分析)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法"><span class="nav-number">3.2.1.</span> <span class="nav-text">算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主成分数量选择"><span class="nav-number">3.3.</span> <span class="nav-text">主成分数量选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#释放-升维"><span class="nav-number">3.4.</span> <span class="nav-text">释放/升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.5.</span> <span class="nav-text">Tips</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常检测"><span class="nav-number">4.</span> <span class="nav-text">异常检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯分布模型"><span class="nav-number">4.1.</span> <span class="nav-text">高斯分布模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数估计"><span class="nav-number">4.1.1.</span> <span class="nav-text">参数估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-1"><span class="nav-number">4.2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集划分"><span class="nav-number">4.2.1.</span> <span class="nav-text">数据集划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evaluation"><span class="nav-number">4.2.2.</span> <span class="nav-text">Evaluation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征选择"><span class="nav-number">4.3.</span> <span class="nav-text">特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转化为高斯分布"><span class="nav-number">4.3.1.</span> <span class="nav-text">转化为高斯分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差分析"><span class="nav-number">4.3.2.</span> <span class="nav-text">误差分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构建新特征"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">构建新特征</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元高斯"><span class="nav-number">4.4.</span> <span class="nav-text">多元高斯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">4.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调参"><span class="nav-number">4.4.2.</span> <span class="nav-text">调参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数估计-1"><span class="nav-number">4.4.3.</span> <span class="nav-text">参数估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法流程"><span class="nav-number">4.4.4.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与一般高斯分布模型的差异"><span class="nav-number">4.4.5.</span> <span class="nav-text">与一般高斯分布模型的差异</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统"><span class="nav-number">5.</span> <span class="nav-text">推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的推荐算法"><span class="nav-number">5.1.</span> <span class="nav-text">基于内容的推荐算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数-1"><span class="nav-number">5.1.1.</span> <span class="nav-text">代价函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协同过滤"><span class="nav-number">5.2.</span> <span class="nav-text">协同过滤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矢量化-低秩矩阵分解"><span class="nav-number">5.3.</span> <span class="nav-text">矢量化: 低秩矩阵分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#均值标准化"><span class="nav-number">5.4.</span> <span class="nav-text">均值标准化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据"><span class="nav-number">6.</span> <span class="nav-text">大数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">6.1.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BGD-批量梯度下降法"><span class="nav-number">6.1.1.</span> <span class="nav-text">BGD(批量梯度下降法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SGD-随机梯度下降法"><span class="nav-number">6.1.2.</span> <span class="nav-text">SGD(随机梯度下降法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MBGD-Mini批量梯度下降法"><span class="nav-number">6.1.3.</span> <span class="nav-text">MBGD(Mini批量梯度下降法)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线学习"><span class="nav-number">6.2.</span> <span class="nav-text">在线学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Reduce"><span class="nav-number">6.3.</span> <span class="nav-text">Map-Reduce</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-光学字符识别"><span class="nav-number">7.</span> <span class="nav-text">案例-光学字符识别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口"><span class="nav-number">7.1.</span> <span class="nav-text">滑动窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本检测"><span class="nav-number">7.1.1.</span> <span class="nav-text">文本检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符分割"><span class="nav-number">7.1.2.</span> <span class="nav-text">字符分割</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人工数据合成"><span class="nav-number">7.2.</span> <span class="nav-text">人工数据合成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线-上限分析"><span class="nav-number">7.3.</span> <span class="nav-text">流水线/上限分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary"><span class="nav-number">8.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

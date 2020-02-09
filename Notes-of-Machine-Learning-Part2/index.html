@@ -1,0 +1,2406 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这是基于吴恩达《机器学习》课程的笔记第二部分（监督学习：神经网络、优化设计、支持向量机），也包括其它一些可能的学习资源。">
+<meta name="keywords" content="机器学习,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习初等指南(2)">
+<meta property="og:url" content="https://vel.life/Notes-of-Machine-Learning-Part2/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这是基于吴恩达《机器学习》课程的笔记第二部分（监督学习：神经网络、优化设计、支持向量机），也包括其它一些可能的学习资源。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/aQHYFaz.png">
+<meta property="og:image" content="https://i.imgur.com/AOw6Bz1.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/EnviousNiftyCorydorascatfish-size_restricted.gif">
+<meta property="og:image" content="https://i.imgur.com/JGhgWlE.png">
+<meta property="og:image" content="https://i.imgur.com/ZWCPU11.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/1547233129090.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/1547234017119.png">
+<meta property="og:image" content="https://i.imgur.com/9qCFyGW.gif">
+<meta property="og:image" content="https://i.imgur.com/UugnNCN.jpg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png">
+<meta property="og:image" content="https://i.imgur.com/jTmzeHo.png">
+<meta property="og:image" content="https://i.imgur.com/FBXK8mP.png">
+<meta property="og:image" content="https://i.imgur.com/lMn0aAi.jpg">
+<meta property="og:image" content="https://i.imgur.com/lNIufu1.png">
+<meta property="og:image" content="https://i.imgur.com/WGrxUiH.png">
+<meta property="og:image" content="https://i.imgur.com/sM4KWcq.png">
+<meta property="og:image" content="https://i.imgur.com/aAGtJ3a.png">
+<meta property="og:image" content="https://i.imgur.com/L9qiZeE.png">
+<meta property="og:image" content="https://i.imgur.com/hcN1O8v.png">
+<meta property="og:image" content="https://i.imgur.com/e9mtqso.png">
+<meta property="og:image" content="https://i.imgur.com/P0doG1F.png">
+<meta property="og:image" content="https://i.imgur.com/WB7lfyi.png">
+<meta property="og:image" content="https://i.imgur.com/JiIFgcs.jpg">
+<meta property="og:image" content="https://i.imgur.com/1ccn4QT.png">
+<meta property="og:image" content="https://i.imgur.com/23WNlXH.png">
+<meta property="og:image" content="https://i.imgur.com/nWniKbH.jpg">
+<meta property="og:image" content="https://i.imgur.com/3tRCOTF.png">
+<meta property="og:image" content="https://i.imgur.com/3727tzk.jpg">
+<meta property="og:image" content="https://i.imgur.com/WR6sr8x.jpg">
+<meta property="og:image" content="https://i.imgur.com/F2jjMDn.png">
+<meta property="og:image" content="https://i.imgur.com/JpF6xtQ.png">
+<meta property="og:image" content="https://i.imgur.com/rYGNjTo.png">
+<meta property="og:image" content="https://i.imgur.com/gYXFVXE.png">
+<meta property="og:image" content="https://i.imgur.com/o4ZRFC9.png">
+<meta property="og:image" content="https://i.imgur.com/Z1FFdxc.png">
+<meta property="og:image" content="https://i.imgur.com/67G6ABA.png">
+<meta property="og:image" content="https://i.imgur.com/Xn6FFIN.png">
+<meta property="og:image" content="https://i.imgur.com/loRNlQb.png">
+<meta property="og:image" content="https://i.imgur.com/Uap9wHO.jpg">
+<meta property="og:image" content="https://i.imgur.com/uNOKtUv.png">
+<meta property="og:image" content="https://i.imgur.com/nokkpHt.jpg">
+<meta property="og:image" content="https://i.imgur.com/5Dz8k6T.png">
+<meta property="og:image" content="https://i.imgur.com/5YaJ80w.jpg">
+<meta property="og:image" content="https://i.imgur.com/WeNkq93.png">
+<meta property="og:image" content="https://i.imgur.com/7WtfRjn.png">
+<meta property="og:image" content="https://i.imgur.com/JiiU22d.jpg">
+<meta property="og:image" content="https://i.imgur.com/xcvi133.jpg">
+<meta property="og:image" content="https://i.imgur.com/zrK0OWs.png">
+<meta property="og:image" content="https://i.imgur.com/C5eTSao.png">
+<meta property="og:image" content="https://i.imgur.com/29aA2tr.png">
+<meta property="og:image" content="https://i.imgur.com/lFfRD6M.png">
+<meta property="og:updated_time" content="2019-03-16T03:37:40.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习初等指南(2)">
+<meta name="twitter:description" content="这是基于吴恩达《机器学习》课程的笔记第二部分（监督学习：神经网络、优化设计、支持向量机），也包括其它一些可能的学习资源。">
+<meta name="twitter:image" content="https://i.imgur.com/aQHYFaz.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/Notes-of-Machine-Learning-Part2/">
+
+
+
+
+
+
+  <title>机器学习初等指南(2) | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/Notes-of-Machine-Learning-Part2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习初等指南(2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2018-12-30T23:42:23+08:00">
+                2018-12-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-03-16T11:37:40+08:00">
+                2019-03-16
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Notes-of-Machine-Learning-Part2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Notes-of-Machine-Learning-Part2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  10,566
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  39
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是基于<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>《<a href="https://study.163.com/course/courseMain.htm?courseId=1004570029" target="_blank" rel="noopener">机器学习</a>》课程的笔记第二部分（监督学习：神经网络、优化设计、支持向量机），也包括其它一些可能的学习资源。<a id="more"></a></p>
+<blockquote>
+<p>第一部分（监督学习1）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+<p>第三部分（无监督学习）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part3" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.hottaro.com/index.php?document_srl=8875&amp;mid=Books" target="_blank" rel="noopener"><strong>机器学习</strong></a>（<a href="https://baike.baidu.com/item/%E5%91%A8%E5%BF%97%E5%8D%8E/32542" target="_blank" rel="noopener">周志华</a>） “西瓜书”，<strong>教材</strong></p>
+<p><a href="http://ddl.escience.cn/f/IwnL" target="_blank" rel="noopener">机器学习实战</a> 基于Python的编程<strong>练习册</strong></p>
+<p><a href="http://ddl.escience.cn/f/Iwn0" target="_blank" rel="noopener">统计学习方法</a>（<a href="http://blog.sina.com.cn/u/2060750830" target="_blank" rel="noopener">李航</a>） 算法的<strong>数理分析</strong></p>
+<p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/" target="_blank" rel="noopener">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>） 面向工程应用的指南</p>
+<p><a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/" target="_blank" rel="noopener"><strong>机器学习笔记</strong>1</a> （<a href="https://github.com/yoyoyohamapi" target="_blank" rel="noopener">吴晓军</a>）重点参考<strong>笔记</strong></p>
+<p><a href="https://feisky.xyz/machine-learning/" target="_blank" rel="noopener">机器学习笔记2</a> 面向软件的介绍手册</p>
+<p><a href="https://github.com/learning511/Stanford-Machine-Learning-camp" target="_blank" rel="noopener">机器学习训练营</a></p>
+<p><a href="https://github.com/allmachinelearning/MachineLearning/blob/master/notes/MLMaterials.md" target="_blank" rel="noopener">机器学习的一些资料</a></p>
+<p><a href="https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/" target="_blank" rel="noopener">神经网络与深度学习</a></p>
+<p><a href="zh.d2l.ai/index">《动手学深度学习》</a> 深度学习进阶</p>
+<p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener">AiLearning</a></p>
+<p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener">林轩田</a>） 进阶教学视频</p>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><h2 id="非线性假设"><a href="#非线性假设" class="headerlink" title="非线性假设"></a>非线性假设</h2><p>通过多项式特征，我们可以令逻辑回归支持非线性的分类问题。</p>
+<p><img src="https://i.imgur.com/aQHYFaz.png" width="70%"></p>
+<blockquote>
+<p>上图中，房屋的特征由原来的 2 维增加到 <strong>100 维</strong>，进行二次多项式扩展后，特征个数达到了约 <strong>5000 维</strong>，对计算机的性能提出了很大的挑战。一个方法是只考虑$x_i^2$平方项，但是这样会损失决策边界的刻画能力，无法适应复杂的边界。<br>假定我们现在有 n 维特征，需要进行非线性分类，仅扩展特征为二次多项式，特征个数就为 $n+C_n^2≈\frac{n^2}{2}$ 个，空间复杂度就为 O(n^2)。如果扩展到三次多项式，则空间复杂度能达到 O(n^3)。</p>
+</blockquote>
+<p>在<strong>计算机视觉</strong>（CV）领域，很多人不理解为什么困难。事实上<u>图像的特征往往都是高维的</u>。下图中，我们想要区分一幅图像是否是汽车图像，假定图像分辨率为 50×50，且每个像素的灰度都为一个特征，那么一副图像的特征维度就高达 <strong>2500 维</strong>（考虑<strong><font color="red">R</font><font color="green">G</font><font color="blue">B</font></strong>时7500维），进行二次多项式扩展后，特征维度更是达到了约 <strong>3百万维</strong>：</p>
+<p><img src="https://i.imgur.com/AOw6Bz1.png" width="70%"></p>
+<p>为了处理高维特征的非线性分类问题，引入了一个新的机器学习模型——神经网络。</p>
+<h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><p><strong>推荐教学视频</strong>：<a href="https://www.bilibili.com/video/av15532370" target="_blank" rel="noopener"><strong>Part</strong> 1</a>, <a href="https://www.bilibili.com/video/av16144388/?spm_id_from=333.788.videocard.0" target="_blank" rel="noopener"><strong>Part</strong> 2</a>, <a href="https://www.bilibili.com/video/av16577449/?spm_id_from=333.788.videocard.0" target="_blank" rel="noopener"><strong>Part</strong> 3</a>。（<a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" target="_blank" rel="noopener">3Blue1Brown</a> or <a href="https://www.youtube.com/watch?v=bxe2T-V8XRs&amp;list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU" target="_blank" rel="noopener">WelchLab</a>）</p>
+<blockquote>
+<p>下图来自<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener"><strong>Here</strong></a>，展示了一个典型的二分类四层人工神经网络（多层感知机）的运作方式：</p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif" width="70%"></p>
+<p>以及多元分类的神经网络：</p>
+<p><img src="/Notes-of-Machine-Learning-Part2/EnviousNiftyCorydorascatfish-size_restricted.gif" alt="EnviousNiftyCorydorascatfish-size_restricted"></p>
+<p>神经网络是模拟人脑功能的算法。人工神经网络（ANN：Artificial Neural Network），简称神经网络（NN：Neural Network）。迄今为止，人工神经网络尚无统一定义，它是一种模拟了人体神经元构成的数学模型，依靠系统的复杂程度，通过调整内部大量节点之间相互连接的关系，从而达到处理信息的目的。</p>
+<blockquote>
+<p>The “<strong>one learning algorithm</strong>” hypothesis，一个算法解决一切。<br>如下图，你甚至可以将任何传感器接入神经系统，大脑将自动学会如何分辨事物。</p>
+<p><img src="https://i.imgur.com/JGhgWlE.png" alt="大脑将自动学会如何分辨事物"></p>
+</blockquote>
+<p>神经网络曾经在上世纪80、90年代被广泛应用，但在90年代后期遭受冷落。</p>
+<blockquote>
+<p>感知机是最简单的神经网络。当时，Minsky<a href="https://en.wikipedia.org/wiki/Perceptrons_%28book%29" target="_blank" rel="noopener">指出</a>：<strong>感知机无法解决异或问题</strong>。（<a href="https://skymind.ai/wiki/multilayer-perceptron" target="_blank" rel="noopener">More</a>）</p>
+<p>可以认为<a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank" rel="noopener">神经网络</a>是一种特殊的有向图（90度左旋后的<a href="https://img-blog.csdn.net/20170220112902463" target="_blank" rel="noopener">篱笆网络</a>（Lattice））。（<a href="https://stellarkey.github.io/Beauty-of-Mathmatics/#more" target="_blank" rel="noopener">More</a>）</p>
+<ul>
+<li>所有节点分层，每一层通过有向弧指向上一层节点</li>
+<li>但同一层无弧连接（<strong>并行</strong>），不跨层连接（<strong>局部性</strong>）【特征存在视界】</li>
+<li>每条弧有一个权重</li>
+</ul>
+</blockquote>
+<h3 id="神经元"><a href="#神经元" class="headerlink" title="神经元"></a>神经元</h3><p><img src="https://i.imgur.com/ZWCPU11.png" alt="神经元"></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E7%A5%9E%E7%B6%93%E5%85%83" target="_blank" rel="noopener">神经元</a>可以分为四个区域：</p>
+<ul>
+<li><strong>接收区（receptive zone）</strong>：<strong>树突</strong>（输入）接收到输入信息。</li>
+<li><strong>触发区（trigger zone）</strong>：位于轴突和细胞体交接的地方，决定是否产生神经冲动。</li>
+<li><strong>传导区（conducting zone）</strong>：由<strong>轴突</strong>（输出 ）进行神经冲动的传递。</li>
+<li><strong>输出区（output zone）</strong>：神经冲动的目的就是要让<u>神经末梢/突触的神经递质/电力</u>释出，才能影响下一个接受的细胞（神经元、肌肉细胞或是腺体细胞），此称为突触传递。</li>
+</ul>
+<blockquote>
+<p>More：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E6%B0%8F%E7%B6%B2%E8%B7%AF" target="_blank" rel="noopener">贝叶斯网络</a>。（<a href="https://blog.csdn.net/v_JULY_v/article/details/40984699" target="_blank" rel="noopener">从贝叶斯方法谈到贝叶斯网络</a>）</p>
+</blockquote>
+<p>神经元按照传输方向及功能为三种：</p>
+<ul>
+<li><p><a href="https://zh.wikipedia.org/wiki/%E6%84%9F%E8%A6%BA%E7%A5%9E%E7%B6%93%E5%85%83" target="_blank" rel="noopener">感觉神经元</a>（sensory neuron，或称传入神经）</p>
+</li>
+<li><p><a href="https://zh.wikipedia.org/w/index.php?title=%E9%81%8B%E5%8B%95%E7%A5%9E%E7%B6%93%E5%85%83&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">运动神经元</a>（motor neuron，或称传出神经）</p>
+</li>
+<li><p><a href="https://zh.wikipedia.org/wiki/%E8%81%AF%E7%B5%A1%E7%A5%9E%E7%B6%93%E5%85%83" target="_blank" rel="noopener">联络神经元</a>（interneuron）</p>
+</li>
+</ul>
+<h3 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h3><p><strong>Ex</strong>: (Perceptron in 2D, 此处为线性分类器)</p>
+<p><img src="/Notes-of-Machine-Learning-Part2/1547233129090.png" alt="1547233129090"></p>
+<blockquote>
+<p>感知机算是最早期的Hypothesis模型了。（参考林轩田老师的<a href="https://www.bilibili.com/video/av1624332/?p=6" target="_blank" rel="noopener">视频</a>）<br>一个感知机的简洁算法称为<strong>Perceptron Learning Algorithm</strong>（<strong>PLA</strong>，感知机学习算法）。如下图：<br><img src="/Notes-of-Machine-Learning-Part2/1547234017119.png" alt="1547234017119"></p>
+<p>注意<strong><font color="red">W</font></strong>是决策边界的法向量。该原理是矢量叉乘判断方向(左/右)。（<a href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+70240183x_1+sp/about" target="_blank" rel="noopener">计算几何</a>）</p>
+<p>证明：我们有<strong>评价分数</strong>为$y_nW_{t}^{T}x_n$（同向正值），并且</p>
+<script type="math/tex; mode=display">
+W_{t+1}:=W_t+y_nx_n</script><p>则等价为下式，其中红色部分$\geq0​$</p>
+<script type="math/tex; mode=display">
+y_nW_{t}^Tx_n:=y_nW_{t+1}^{T}x_n+\color{red}{ {(y_nx_n)}^2 }</script><p>故每次评价都不会变差。（详细的证明可以参考：<a href="https://rhadow.github.io/2016/02/24/ml-lecture-2/" target="_blank" rel="noopener">Here</a>,，或参看《统计学习方法》P31）</p>
+<p><img src="https://i.imgur.com/9qCFyGW.gif" width="400"></p>
+<p>对于一个线性不可分的点集（比如，有噪声），可以退而求其次，求分错误差最小的情况。<br>（这个解法将是一个<strong>NP-Hard</strong>问题。利用Pocket算法贪心地更新算法【每次更新时要比较】可以迭代一个还不错的结果）</p>
+</blockquote>
+<hr>
+<p>一个神经元可以（在计算机上）被实现为一个简单的<strong>逻辑单元</strong>——</p>
+<p><strong><a href="https://zh.wikipedia.org/wiki/%E6%84%9F%E7%9F%A5%E5%99%A8" target="_blank" rel="noopener">感知机</a></strong>：最简单的神经网络。一个<strong>输出层</strong>，一个<strong>输入层</strong>。一个计算夹层（图中的有向边）。</p>
+<p><img src="https://i.imgur.com/UugnNCN.jpg" width="32%"></p>
+<p>向量形式为：（$x_0$是<a href="https://www.cnblogs.com/shuaishuaidefeizhu/p/6832541.html" target="_blank" rel="noopener">偏置单元</a>(bias unit)，其值常设为1，相当于函数中的常数项）</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+x_0
+\newline x_1 \newline x_2 \newline x_3
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+a_1^{(2)}
+\end{bmatrix}
+\rightarrow
+h_\theta(x)</script><h4 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h4><p>其中，$h_\theta(x)=g(\theta x)$中的g称为神经元的<strong><a href="https://zh.wikipedia.org/wiki/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">激活函数</a></strong>（Activation function）：（如，<a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">线性整流函数</a>）</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/dcrmg/article/details/73743742" target="_blank" rel="noopener">激活函数</a>：$g(z)$，为线性模型增加一次<strong>非线性变换</strong>，从而增强神经网络的分类能力。（<a href="https://feisky.xyz/machine-learning/neural-networks/active.html" target="_blank" rel="noopener">More</a>）</p>
+</blockquote>
+<script type="math/tex; mode=display">
+g(z) =\begin{cases} 
+max(0,z)\,\,\,\, , 线性整流函数ReLU\\
+\cfrac{1}{1+e^{-z} }\quad,逻辑回归中的Sigmoid函数\\
+\quad\,\,\,z\quad \,\,\,  \quad ,退化为\color{red}{回归问题}\\
+\,\,\,\,\, ……
+\end{cases}</script><p>更具体的形式为：</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png" width="60%"></p>
+<blockquote>
+<p>详细内容直接参考<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener">Here</a>吧。</p>
+</blockquote>
+<h3 id="神经网络-1"><a href="#神经网络-1" class="headerlink" title="神经网络"></a>神经网络</h3><p>对于更复杂的多层神经网络，逻辑上一般可以分为三层：（忽略计算夹层）</p>
+<ul>
+<li><strong>输入层</strong>：输入层接收特征向量 x。</li>
+<li><strong>输出层</strong>：输出层产出最终的预测 h。</li>
+<li><strong>隐含层</strong>：隐含层介于输入层与输出层之间，之所以称之为隐含层，是因为当中产生的值并不像输入层使用的样本矩阵 X 或者输出层用到的标签矩阵 y 那样直接可见。</li>
+</ul>
+<p><img src="https://i.imgur.com/jTmzeHo.png" width="60%"></p>
+<blockquote>
+<p>图中神经元之间的边如何连接，称为神经网络的<strong>架构</strong>（architecture）。<br>不过架构一般是指神经网络有多少层、每层多少个神经元。</p>
+</blockquote>
+<p>典型的传播(计算)过程如下：</p>
+<p><img src="https://i.imgur.com/FBXK8mP.png" alt="传播算法"></p>
+<p>神经网络的计算过程写为向量形式：（偏置$a_0^{(i)}=x_0=1$）</p>
+<script type="math/tex; mode=display">
+a^{(n+1)}=g(\Theta^{(n)}a^{(n)})\quad,其中a^{(1)}=x</script><blockquote>
+<p>这个计算过程称为前向传播算法（Forward Propagation）。</p>
+<p>神经网络每层都包含有若干神经元，层间的神经元通过<strong>权值矩阵 $\Theta^{l}$</strong> 连接。一次信息传递过程可以如下描述：</p>
+<ol>
+<li><p>第j层神经元接收上层传入的刺激（神经冲动）：</p>
+<script type="math/tex; mode=display">
+z^{(j)} = \Theta^{(j-1)}a^{(j-1)}</script></li>
+<li><p>该刺激经<strong>激活函数（activation function）g</strong> 作用后，会产生一个激活向量 $a^{(j)}$。其表示的就是 j层第 i 个神经元获得的<strong>激活值（activation）</strong>：</p>
+<script type="math/tex; mode=display">
+a^{(j)} = g(z^{(j)})</script></li>
+</ol>
+<p>这个过程的发生顺序是不断地将刺激由前一层传向下一层——前向传播。</p>
+<p>为了基于线性分类实现复杂的非线性分类，多层的神经网络采用复杂函数拟合，利用隐藏层完成非线性空间到线性的变换。</p>
+</blockquote>
+<p>一般来说，层数越多，神经网络的效果越好。（如<a href="https://www.cnblogs.com/subconscious/p/5058741.html#sixth" target="_blank" rel="noopener">下图</a>）</p>
+<p><img src="https://i.imgur.com/lMn0aAi.jpg" alt="多层神经网络"></p>
+<blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2017/07/neural-network.html" target="_blank" rel="noopener">神经网络入门</a></p>
+<p><a href="https://www.cnblogs.com/subconscious/p/5058741.html" target="_blank" rel="noopener">神经网络浅讲：从神经元到深度学习</a></p>
+</blockquote>
+<h3 id="逻辑运算拟合"><a href="#逻辑运算拟合" class="headerlink" title="逻辑运算拟合"></a>逻辑运算拟合</h3><p><strong>例</strong>：（非线性分类问题，<strong>XOR</strong>/<strong>XNOR</strong>）</p>
+<p><img src="https://i.imgur.com/lNIufu1.png" alt="1546655609880"></p>
+<p>为了实现上述的能拟合<strong>XNOR</strong>运算的神经网络。</p>
+<p>$\longrightarrow$我们可以先看一个简化的例子：实现<strong>AND</strong>运算。</p>
+<script type="math/tex; mode=display">
+y=\mbox{$x_1$ AND $x_2$} =  
+\begin{cases}
+1 & \mbox{if $x_1=1$ and $x_2=1$}\\
+0 & \mbox{otherwise}
+\end{cases}</script><p>不如令权重$\Theta^{(1)} = \begin{bmatrix} -30 &amp; 20 &amp; 20 \end{bmatrix}$，得到一个构建好的神经网络如下：</p>
+<p><img src="https://i.imgur.com/WGrxUiH.png" alt="AND"></p>
+<p>向量形式为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\begin{bmatrix}
+x_0 \newline x_1 \newline x_2
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+g(z^{(2)})
+\end{bmatrix}
+\rightarrow
+h_\Theta(x)
+\end{align*}</script><p>采用<strong>Sigmoid</strong>激活函数：（g(4)≈1, g(-4)≈0）</p>
+<p><img src="https://i.imgur.com/sM4KWcq.png"></p>
+<p>最后前向传播运算的结果为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& h_\Theta(x) = g(-30 + 20x_1 + 20x_2) \newline \newline
+& x_1 = 0 \ \ and \ \ x_2 = 0 \ \ then \ \ g(-30) \approx 0 \newline
+& x_1 = 0 \ \ and \ \ x_2 = 1 \ \ then \ \ g(-10) \approx 0 \newline
+& x_1 = 1 \ \ and \ \ x_2 = 0 \ \ then \ \ g(-10) \approx 0 \newline
+& x_1 = 1 \ \ and \ \ x_2 = 1 \ \ then \ \ g(10) \approx 1
+\end{align*}</script><p>可以基于这些简单的网络来生成更复杂的逻辑运算：</p>
+<p><img src="https://i.imgur.com/aAGtJ3a.png" width="55%"></p>
+<blockquote>
+<p>我们目前掌握了三种逻辑神经网络：<font color="red"><strong>AND</strong></font>，<font color="greeen"><strong>(NOT)AND(NOT)</strong></font>，和<font color="green"><strong>OR</strong></font>。</p>
+</blockquote>
+<p>现在可以着手解决<strong>XNOR</strong>运算的拟合了！过程如下图：</p>
+<p><img src="https://i.imgur.com/L9qiZeE.png" width="90%"></p>
+<blockquote>
+<p><strong>XOR</strong>异或运算也能被拟合，只须将图中对应换为<font color="red"><strong>OR</strong></font>，<font color="greeen"><strong>(NOT)OR(NOT)</strong></font>，和<font color="green"><strong>AND</strong></font>。</p>
+</blockquote>
+<h3 id="多元分类"><a href="#多元分类" class="headerlink" title="多元分类"></a>多元分类</h3><p><strong>Handwritten Digit Classification</strong> - <a href="http://yann.lecun.com/" target="_blank" rel="noopener">Yann Lecun</a>：（更复杂的例子——手写识别）</p>
+<iframe width="90%" height="350" src="//player.bilibili.com/player.html?aid=6824555&cid=11116901&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<hr>
+<p><strong>例</strong>：（假定我们需要将图像分为四类——<strong>行人</strong>，<strong>车辆</strong>，<strong>摩托车</strong>，<strong>卡车</strong>。）</p>
+<p><img src="https://i.imgur.com/hcN1O8v.png" width="80%"></p>
+<blockquote>
+<p>这是一个多分类问题，由于图像特征较多，因此我们可以考虑设计含有多个隐含层的神经网络来完成特征优化（扩展）：</p>
+<p><img src="https://i.imgur.com/e9mtqso.png" width="50%"></p>
+<p>注意，我们设计了一个含有多个输出的神经网络，亦即，我们会用不同的激活状态来定义分类：</p>
+<script type="math/tex; mode=display">
+y^{(i)} =
+\begin{bmatrix}
+1 \\ 0 \\ 0 \\0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\ 1 \\ 0 \\0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\1
+\end{bmatrix}</script><p>这样容易利用上简单的 sigmoid 函数来进行预测：</p>
+<script type="math/tex; mode=display">
+y^{(i)} = 1,2,3,4</script><p>整个网络的数学表达则描述为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\begin{bmatrix}
+x_0 \\ x_1 \\ x_2 \\ \cdots x_n
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+a_0^{(2)} \\ a_1^{(2)} \\ a_2^{(2)} \\ \cdots
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+a_0^{(3)} \\ a_1^{(3)} \\ a_2^{(3)} \\ \cdots
+\end{bmatrix}
+\cdots
+\begin{bmatrix}
+h_\Theta(x)_1 \\ h_\Theta(x)_2 \\ h_\Theta(x)_3 \\ h_\Theta(x)_4
+\end{bmatrix}
+\end{align*}</script></blockquote>
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>符号标记：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+L &= \mbox{神经网络总共包含的层数} \\
+s_l &= \mbox{第$l$层的神经元数目} \\
+K &= \mbox{输出层的神经元数，亦即分类的数目}
+\end{align*}</script><p>神经网络的层与层之间都可以看做构成了一个<strong>多个逻辑回归问题</strong>（根据神经元的数量），因此，其代价函数与逻辑回归的代价函数类似，其中 K 代表类别，l 表示层级，并且考虑了<strong>正则化</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{gather*}
+J(\Theta) = - \frac{1}{m} \sum_{i=1}^m {\color{red}{\sum_{k=1}^K} } \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{ {\color{red}{\lambda} } }{\color{blue}{2m} }\sum_{ {\color{red}{l} }=1}^{L-1} \sum_{ {\color{red}{i} }=1}^{s_l} \sum_{ {\color{red}{j} }=1}^{s_{l}+1} ( \Theta_{ \color{red}{j,i} }^{({\color{red}{l} })})^2
+\end{gather*}</script><p>矩阵形式为：</p>
+<script type="math/tex; mode=display">
+\begin{gather*}
+J(\Theta) = - \frac{1}{m}\sum(Y^{T} .* log(\Theta A)) + log(1-\Theta A).*(1-Y^{T}))+\frac{ {\color{red}{\lambda} } }{\color{blue}{2m} }\sum\sum\sum ( \Theta_{ \color{red}{j,i} }^{({\color{red}{l} })})^2
+\end{gather*}</script><p>其中<strong>.∗</strong> 代表<strong>点乘</strong>操作，$A∈R^{(K×m)}$ 为所有样本对应的输出矩阵，其每一列对应一个样本的输出。</p>
+<p>$Y∈R^{(m×K)}$ 为标签矩阵，其每行对应一个样本的类型。</p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><blockquote>
+<p>相当于链式梯度下降。（从一个空间过渡到下一个临近空间，每一个空间都梯度下降即可）</p>
+</blockquote>
+<p>与回归问题一样，我们也需要通过最小化代价函数 J(Θ) 来优化预测精度的，但是，由于神经网络允许多个隐含层，即，各层的神经元都会产出预测，因此，就不能直接利用传统回归问题的梯度下降法来最小化 J(Θ)，而需要逐层考虑预测误差，并且逐层优化。为此，在多层神经网络中，使用<strong>反向传播算法（Backpropagation Algorithm）</strong>来优化预测，首先定义各层的预测误差为向量 $δ^{(l)}​$：</p>
+<script type="math/tex; mode=display">
+\delta^{(l)} =
+\begin{cases}
+a^{(l)} - y & \mbox{$l=L$}\\
+(\Theta^{(l)}\delta^{(l+1)})^T .*{ \color{red}{g'(z^{(l)})} } & \mbox{$l=2,3,...,L-1$}
+\end{cases}</script><p>其中激活函数g的导数为</p>
+<script type="math/tex; mode=display">
+g'(z^{(l)}) =a^{(l)} .* (1-a^{(l)})</script><blockquote>
+<p>推导：</p>
+<script type="math/tex; mode=display">
+\begin{split}
+g'(z^{(l)})&=\left. \left(\cfrac{1}{1+e^{-z} }\right)^{\color{red}{'} } \right|_{z=z^{(l)} }\\
+&=\left. \cfrac{e^{-z} }{(1+e^{-z})^2}\right|_{z=z^{(l)} }\\
+&=\left. \cfrac{1}{1+e^{-z} }\cfrac{1+e^{-z}-1}{1+e^{-z} }\right|_{z=z^{(l)} }\\
+&=\left. g(z)[1-g(z)]\right|_{z=z^{(l)} }\\
+&=g(z^{(l)})[1-g(z^{(l)})]=a^{(l)} .* (1-a^{(l)})
+\end{split}</script></blockquote>
+<p>反向传播中的反向二字也正是从该公式中得来，本层的误差 δ(l) 需要由下一层的误差 δ(l+1) <strong>反向</strong>推导。在<strong>忽略正则因子</strong>$\lambda​$的情况下， 我们将能够推导出偏导项</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\theta_j^{(l)} }J(\theta)=a_j^{(l)}\delta_i^{(l+1)}</script><p>不过对于误差向量，在数学上也有，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+&\delta_j^{(l)}=\cfrac{\partial}{\partial z_j^{(l)} }Cost(i)\\
+其中，Cost(i)=&y^{(i)}logh_\Theta(x^{(i)})+(1-y^{(i)})logh_\Theta(x^{(i)})
+\end{split}</script><hr>
+<h3 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h3><p>假定有训练集 ${(x^{(1)}, y^{(1)}),…,(x^{(m)},y^{(m)})}$，使用了反向传播的<strong>神经网络训练过程</strong>如下：</p>
+<ul>
+<li>for all l,i,j，初始化<strong>权值梯度</strong>:（用来计算$\frac{\partial}{\partial\theta_j^{(l)} }J(\theta)$）</li>
+</ul>
+<script type="math/tex; mode=display">
+\Delta_{ij}^{(l)} = 0</script><ul>
+<li>for i=1 to m:（<strong>前向传播</strong>激活，<strong>反向传播</strong>误差）</li>
+</ul>
+<script type="math/tex; mode=display">
+\require{enclose}\begin{align*}
+& \mbox{令 $a^{(1)} = x^{(i)}$} \\
+& 前向传播{\color{red}{激活} }：a^{(2)},a^{(3)},...,a^{(l)} \\
+& \mbox{通过 $y^{(i)}$计算输出层误差：$\delta^{(L)} = a^{(L)} - y^{(i)}$} \\
+& 反向传播{\color{red}{误差} }：\delta^{(L-1)},\delta^{(L-2)},...,\delta^{(2)},\enclose{updiagonalstrike}{\delta}^{(1)}(输入层不计) \\
+& \mbox{更新：$\Delta^{(l)} :=\Delta^{(l)}+ \delta^{(l+1)}(a^{(l)})^T$} \\
+\end{align*}</script><ul>
+<li>求各层权值的<strong>更新增量</strong> $D^{(l)}$（连接偏置的权值不进行<strong>正则化</strong>）：</li>
+</ul>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\theta_j^{(l)} }J(\theta)=D^{(l)}_{i,j} =
+\begin{cases}
+\dfrac{1}{m}(\Delta^{(l)}_{i,j} + \lambda\Theta^{(l)}_{i,j}), \mbox{if $j \neq 0$} \\
+\dfrac{1}{m}\Delta_{ij}^{(l)}, \mbox{if $j=0$}
+\end{cases}</script><ul>
+<li><strong>更新各层的权值矩阵</strong> $\Theta^{(l)}$（其中 α 为学习率）：</li>
+</ul>
+<script type="math/tex; mode=display">
+\Theta^{(l)} = \Theta^{(l)} + \alpha D^{(l)}</script><h3 id="参数展开"><a href="#参数展开" class="headerlink" title="参数展开"></a>参数展开</h3><p>我们之前在Logistic回归部分介绍过高级优化算法，比如</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[jVal, gradient]</span> = <span class="title">costFunction</span><span class="params">(theta)</span></span></span><br><span class="line">  ……………………</span><br><span class="line">endfunction</span><br><span class="line">[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options)</span><br></pre></td></tr></table></figure>
+<p>不同于Logistic回归的向量，在神经网络中，这里面临的工作对象是一些<strong>矩阵</strong>。<br>这对于编程里面一些的 <a href="https://en.wikipedia.org/wiki/Application_programming_interface" target="_blank" rel="noopener">API</a> （接口）是不友善的，例如 matlab 或者 octave 的 <code>fminunc()</code> 方法，<a href="https://www.scipy.org/" target="_blank" rel="noopener">scipy</a> 中的 <code>minimize</code> 方法等，这些方法都支持传递代价函数<code>costFunction()</code>。但代价函数只支持传递<strong>向量</strong>作为参数。<br>因此，我们需要先将矩阵元素展开（Unroll）为一个长向量。具体操作如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]</span><br><span class="line">deltaVector = [ D1(:); D2(:); D3(:) ]</span><br><span class="line">#假定：Θ(1)∈R10×11,Θ(2)∈R10×11,Θ(3)∈R1×11</span><br><span class="line">Theta1 = <span class="built_in">reshape</span>(thetaVec(<span class="number">1</span>:<span class="number">110</span>),<span class="number">10</span>,<span class="number">11</span>)</span><br><span class="line">Theta2 = <span class="built_in">reshape</span>(thetaVec(<span class="number">111</span>:<span class="number">220</span>),<span class="number">10</span>,<span class="number">11</span>)</span><br><span class="line">Theta3 = <span class="built_in">reshape</span>(thetaVec(<span class="number">221</span>:<span class="number">231</span>),<span class="number">1</span>,<span class="number">11</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="梯度检测"><a href="#梯度检测" class="headerlink" title="梯度检测"></a>梯度检测</h3><p>在实现神经网络时可能产生许多微小的<strong>BUG</strong>，可能看起来好像是正常运行，尽管代价函数在不断减小，但最后得到的神经网络的误差可能比无<strong>BUG</strong>情况下高1个数量级。</p>
+<p>因此，需要使用称为<strong>梯度校验（Gradient Checking）</strong>的手段。</p>
+<p>我们可以在点<font color="blue"><strong>Θ</strong></font>附近的小区间 [ <font color="blue"><strong>Θ</strong></font>−<font color="red"><strong>ϵ</strong></font>, <font color="blue"><strong>Θ</strong></font>+<font color="red"><strong>ϵ</strong></font>]，构造下图所示直角三角形来近似$J(Θ)$在<font color="blue"><strong>Θ</strong></font>处的导数：</p>
+<p><img src="https://i.imgur.com/P0doG1F.png" width="80%"></p>
+<script type="math/tex; mode=display">
+\frac{d}{d\Theta}J(\Theta) \approx \frac{J(\Theta+\epsilon)-J(\Theta-\epsilon)}{2\epsilon}</script><blockquote>
+<p>通常，ϵ 取较小值，如 $10^{-4}$。</p>
+</blockquote>
+<p>对于更多参数，</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial}{\partial\theta_j}J(\theta) \approx \dfrac{J(\theta_1, \dots, \theta_j + \epsilon, \dots, \theta_n) - J(\theta_1, \dots, \theta_j - \epsilon, \dots, \theta_n)}{2\epsilon},\mbox{for $j=1$ to $n$}</script><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>  = <span class="number">1</span>:n,</span><br><span class="line">  thetaPlus = theta;</span><br><span class="line">  thetaPlus(<span class="built_in">i</span>) = thetaPlus(<span class="built_in">i</span>) + EPSILON;</span><br><span class="line">  thetaMinus = theta;</span><br><span class="line">  thetaMinus = thetaMinus(<span class="built_in">i</span>) - EPSILON;</span><br><span class="line">  gradApprox(<span class="built_in">i</span>) = (J(thetaPlus) - J(thetaMinus)) / (<span class="number">2</span>*EPSILON);</span><br><span class="line">endfor</span><br></pre></td></tr></table></figure>
+<p>则$J(Θ)$梯度近似为：</p>
+<script type="math/tex; mode=display">
+{\color{red}{\text{gradApprox} } }= [\dfrac{\partial}{\partial\theta_1}J(\theta), \dfrac{\partial}{\partial\theta_2}J(\theta), ..., \dfrac{\partial}{\partial\theta_n}J(\theta)]</script><p>利用反向传播也可获得一个梯度：</p>
+<script type="math/tex; mode=display">
+{\color{red}{\text{DVec} } } = [D^{(1)},D^{(2)},D^{(3)},...D^{(n)}]</script><p>比较<font color="red">gradApprox</font>与<font color="red">DVec</font>的<strong>相似度</strong>（比如可以用<a href="https://zh.wikipedia.org/zh-hans/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%B7%9D%E7%A6%BB" target="_blank" rel="noopener">欧式距离</a>，<a href="https://zh.wikipedia.org/zh-hans/%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E6%80%A7" target="_blank" rel="noopener">余弦相似性</a>）：</p>
+<script type="math/tex; mode=display">
+gradApprox \approx DVec\,\,\color{red}{?}</script><p>如果上式成立，则证明网络中BP算法有效。</p>
+<ul>
+<li><u>在正式训练之前，请关闭梯度校验算法</u>（因为梯度的近似计算效率<strong>很慢</strong>）</li>
+</ul>
+<h3 id="Θ随机初始化"><a href="#Θ随机初始化" class="headerlink" title="Θ随机初始化"></a>Θ随机初始化</h3><p>在逻辑回归中，我们通常会初始化所有权值为 0，假如在如下的神经网络也采用 0 值初始化：</p>
+<p><img src="https://i.imgur.com/WB7lfyi.png" width="70%"></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& a_1^{(1)} = a_2^{(2)} \\
+& \mbox{则 $\delta_1^{(1)} = \delta_2^{(1)}$} \\
+& \mbox{则 $\frac{\partial}{\partial \Theta_{01}^{(1)}J(\Theta)}$} = \frac{\partial}{\partial \Theta_{02}^{(1)} }J(\Theta) \\
+& \mbox{则更新后的权值：$\Theta_{01}^{(1)}$} = \Theta_{02}^{(1)}
+\end{align*}</script><p>你将很容易看出，每次迭代，所有权值的数值都一样，这意味着，<strong>隐含层的神经元激活值也将一样</strong>，也就是无论隐含层层数有多少，各层的神经元有多少，由于各层的神经元激活值大小一样，也就相当于<strong>各层只有一个有效神经元</strong>（特征），这就失去了神经网络进行特征扩展和优化的本意了。</p>
+<blockquote>
+<p>相当于退化为了<a href="https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE" target="_blank" rel="noopener">马尔可夫链</a>。</p>
+</blockquote>
+<p>固定值初始化将会让神经网络丧失其特性。因此，对于各层的权值矩阵，应该采用随机初始化策略。随机值产生的区间我们定义为 <strong>[−ϵ,+ϵ]</strong>。（假定$\Theta^{(1)} \in R^{10 \times 11}, \Theta^{(2)} \in R^{1 \times 11}$）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Theta1 = <span class="built_in">rand</span>(<span class="number">10</span>,<span class="number">11</span>) * (<span class="number">2</span> * INIT_EPSILON) - INIT_EPSILON;</span><br><span class="line">Theta2 = <span class="built_in">rand</span>(<span class="number">10</span>,<span class="number">11</span>) * (<span class="number">2</span> * INIT_EPSILON) - INIT_EPSILON;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>选择一个神经网络的架构<ul>
+<li>多少层<ul>
+<li>一般1个隐藏层</li>
+</ul>
+</li>
+<li>每层几个神经元<ul>
+<li>输入层的单元数等于样本特征数</li>
+<li>输出层的单元数等于分类的类型数</li>
+<li>多个隐藏层一般采用相同数量的神经元（&gt;=输入输出层）</li>
+<li>每个隐层的单元数通常是越多分类精度越高，但是也会带来计算性能的下降，因此，要平衡质量和性能间的关系</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>随机初始化权值$[−ϵ,+ϵ]$</li>
+<li>前向传播计算激活值$h_\Theta(x)$</li>
+<li>计算代价函数$J(\Theta)$</li>
+<li>反向传播计算误差，获得$\frac{\partial}{\partial\theta_j^{(l)} }J(\theta)$<ul>
+<li>梯度检验，比较反向传播和梯度的数值解，Disabled</li>
+</ul>
+</li>
+<li>利用梯度下降（或高级优化算法）优化$J(\Theta)$</li>
+</ul>
+<p>最后，一个神经网络在无人驾驶中的应用视频：</p>
+<iframe width="90%" height="315" src="https://www.youtube.com/embed/ilP4aPDTBPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1 id="优化设计"><a href="#优化设计" class="headerlink" title="优化设计"></a>优化设计</h1><h2 id="玄学调参？"><a href="#玄学调参？" class="headerlink" title="玄学调参？"></a>玄学调参？</h2><p><strong>例</strong>：（House Price Prediction）</p>
+<script type="math/tex; mode=display">
+J(\theta) = \frac{1}{2m} [\sum\limits_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2+\lambda\sum\limits_{i=1}^m\theta_j^2]</script><p>我们在房屋价格预测中使用上述的代价函数。但实际中可能预测并不准确，有很大的误差。</p>
+<p>想要降低预测误差，即提高预测精度，我们往往会采用这些手段：（Debugging）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">手段</th>
+<th style="text-align:center">评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>获得更多的样本</strong></td>
+<td style="text-align:center">见多识广会让人变得聪明，也会让人变得优柔寡断，聪明反被聪明误？</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>减少特征数量</strong></td>
+<td style="text-align:center">也许被降掉的维度会是非常有用的知识。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>采集更多的特征</strong></td>
+<td style="text-align:center">增加了计算负担，可能导致过拟合。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>高次多项式回归</strong></td>
+<td style="text-align:center">很可能造成过拟合。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>调试正则因子 λ</strong></td>
+<td style="text-align:center">这个调节策略缺乏指导，只能是猜测性调节。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以看到，这些手段不总是那么美好，而且每个手段的尝试都会花费我们大量时间去调代码，跑测试，也许还<strong>出力不讨好</strong>。</p>
+<h2 id="泛化能力评测"><a href="#泛化能力评测" class="headerlink" title="泛化能力评测"></a>泛化能力评测</h2><p>在线性回归的章节中，我们已经知道，仅仅具备一个很小的训练误差并不能保证我们的预测函数就是优秀的，因为这种“优秀”仅仅体现在了对于已知的训练样本的假设上，而无法保证见到新的样本时候还能做出足够好的预测，<strong>过拟合</strong>就是当中的典型例子。</p>
+<p><img src="https://i.imgur.com/JiIFgcs.jpg" width="30%"></p>
+<p>因此，预测准不准应当反映在对于新样本的<strong>泛化</strong>（generalization）能力。我们考虑将数据集划分为：</p>
+<ul>
+<li><strong>训练集</strong>（Training set）：70%</li>
+<li><strong><font color="red">测试集</font></strong>（Test set）：30%</li>
+</ul>
+<blockquote>
+<p>在对数据集进行训练集和测试集的划分前，最好先对数据集进行<strong>乱序</strong>，防止类似样本聚到一起</p>
+</blockquote>
+<p>引入如下符号：</p>
+<ul>
+<li>$(x^{(1)},y^{(1)})$：训练样本</li>
+<li>$(x_{test}^{(1)},y_{test}^{(1)})$：测试样本</li>
+<li>$m$：训练集样本容量</li>
+<li>$m_{test}$：测试集样本容量</li>
+</ul>
+<p><strong>线性回归的测试误差</strong></p>
+<p>在线性回归中，我们就通过计算测试集的代价函数（<strong>误差</strong>）来评估参数 θ 的泛化能力：</p>
+<script type="math/tex; mode=display">
+Test_{error} = J_{test} = \frac{1}{2m_{test} }\sum_{i=1}^{m_{test} }(h_{\theta}(x_{test}^{(i)})-y_{test}^{(i)})^2</script><p><strong>逻辑回归的测试误差</strong></p>
+<p>在逻辑回归中，测试集的代价函数为：</p>
+<script type="math/tex; mode=display">
+J_{test}(\theta)=-\frac{1}{m_{test} }\sum\limits_{i=1}^{m_{test} }(y_{test}^{(i)}logh_\theta(x_{test}^{(i)})+(1-y_{test}^{(i)})logh_\theta(x_{test}^{(i)}))</script><p>由于逻辑回归处理的是 0/1 分类问题，其预测结果只有正确与错误之分，所以引入<strong>误分率（Misclassification Error）</strong>：（形式更简单）</p>
+<script type="math/tex; mode=display">
+err(h_\theta(x),y)=
+\begin{cases} 1,&\mbox{if $h_\theta(x) \geq 0.5,y=0 $ or $h_\theta(x) \lt 0.5,y=1$} \\
+0, & \mbox{otherwise}
+\end{cases}</script><p>则逻辑回归中的测试误差也可以表示为：</p>
+<script type="math/tex; mode=display">
+Test_{error} = \frac{1}{m_{test} }\sum\limits_{1}^{m_{test} }err(h_\theta(x_{test}^{(i)}),y_{test}^{(i)})</script><h3 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h3><p>在多项式回归中，我们引入多项式次数（degree）作为一个<strong>新的参数</strong>，形成了不同的预测模型：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+
+& d=1. \quad h_\theta(x) = \theta_0+\theta_1x \\
+& d=2. \quad h_\theta(x) = \theta_0+\theta_1x+\theta_2x^2 \\
+& d=3. \quad h_\theta(x) = \theta_0+\theta_1x+...+\theta_3x^3 \\
+& d=4. \quad h_\theta(x) = \theta_0+\theta_1x+...+\theta_4x^4 \\
+&…………\\    
+& d=10. \quad h_\theta(x) = \theta_0+\theta_1x+...+\theta_5x^5
+
+\end{align*}</script><p>对每一个模型，我们都可以计算各个模型对应的<strong>训练集误差</strong>，并优化出参数向量$\theta$。</p>
+<p>接着，我们可以基于获得的参数向量，计算<strong>测试集误差</strong>从而选出最优模型。</p>
+<p><u>假设 degree=5 时，测试误差最小</u>，我们就选出了以下模型来迎接新的样本：</p>
+<script type="math/tex; mode=display">
+h_\theta(x) = \theta_0+\theta_1x+...+\theta_5x^{5}</script><p>但是！实际上我们只是用训练集来拟合了一个额外的参数<strong>degree</strong>。<br>这时在测试集上获得的泛化误差很可能是<strong>过于乐观</strong>的（an overly optimistic estimate）。</p>
+<blockquote>
+<p>对于 degree 的确定，是我们对于模型的选择（Model Selection），正如我们在线性回归中确定 θ 一样。在线性回归中，我们通过训练集确定模型，测试集来评估模型的泛化能力。在多项式回归中，我们通过训练集获得了参数 θ，而通过测试集确定了模型，那么，这两个集合用完了，我们就缺少评估模型泛化能力的数据集。</p>
+</blockquote>
+<p>鉴于此，引入了<strong>交叉验证集（Cross Validation Set）</strong>，<strong>“交叉”</strong>二字体现了一种<u>承上启下</u>的关系——通过训练集获得的结果，选择了模型，并将该模型交给测试集进行评估：</p>
+<ul>
+<li><strong>训练集</strong>：60%，确定参数 θ</li>
+<li><strong><font color="red">交叉验证集</font></strong>：<strong>20%</strong>，进行模型选择。</li>
+<li><strong>测试集</strong>：20%，评价模型泛化能力。</li>
+</ul>
+<blockquote>
+<p><del>说实话，感觉这时候测试集并没有什么卵用。啥也不能做，就评价一下？</del></p>
+<p>可能需要<strong>循环验证</strong>?</p>
+<p>更多的交叉验证解释可以看这里：<a href="https://www.zhihu.com/question/39259296" target="_blank" rel="noopener">交叉验证</a>。</p>
+</blockquote>
+<p>应用最多的是<strong>S折交叉验证（S-fold cross validation）</strong>。</p>
+<ul>
+<li>首先随机地将已给数据<strong>划分</strong>为S个大小相同的子集</li>
+<li>利用S-1个子集<strong>训练</strong>模型，用1个子集<strong>测试</strong></li>
+<li>对S中可能的选择<strong>重复</strong>，选出平均测试误差最小的模型</li>
+</ul>
+<blockquote>
+<p>这样似乎可以在小样本中剔除一些异常/不合理数据带来的规律误导。</p>
+</blockquote>
+<h2 id="偏差与方差"><a href="#偏差与方差" class="headerlink" title="偏差与方差"></a>偏差与方差</h2><p>在机器学习中，</p>
+<ul>
+<li><strong><font color="brown">偏差</font>（bias）</strong>反映了模型无法描述数据规律【<strong><font color="red">欠拟合</font></strong>】</li>
+<li><strong><font color="orange">方差</font>（variance）</strong>反映了模型对训练集过度敏感，而丢失了数据规律【<strong><font color="red">过拟合</font></strong>】</li>
+</ul>
+<p>高偏差和高方差都会造成模型泛化能力弱，从而无法作出对新样本的准确预测。</p>
+<p><img src="https://i.imgur.com/1ccn4QT.png" width="60%/"></p>
+<p>通过<strong>诊断（Diagnose）</strong>模型是出现了<font color="brown"><strong>高偏差</strong></font>问题还是<font color="orange"><strong>高方差</strong></font>问题，我们就能对症下药，采取不同的解决策略。</p>
+<hr>
+<h3 id="多项式次数"><a href="#多项式次数" class="headerlink" title="多项式次数"></a>多项式次数</h3><p>下图反映了训练集、交叉验证集误差随<strong>多项式次数 d</strong> 的变化规律：</p>
+<p><img src="https://i.imgur.com/23WNlXH.png" width="350"></p>
+<blockquote>
+<p>在前面的章节中，我们知道，多项式回归中，如果多项式次数较高，则容易造成<strong>过拟合</strong>，此时训练误差很低，但是对于新数据的泛化能力较差，导致交叉验证集和测试集的误差都很高，此时模型出现了<strong><font color="orange">高方差</font></strong>：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \mbox{$J_{train}(\theta)$ is small} \\
+& J_{cv}(\theta) >> j_{test}(\theta)
+\end{align*}</script><p>而当次数较低时，又易出现<strong>欠拟合</strong>的状况，此时无论是训练集，交叉验证集，还是测试集，都会有很高的误差，此时模型出现了<strong><font color="brown">高偏差</font></strong>：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \mbox{$J_{train}(\theta)$ is large} \\
+& J_{cv}(\theta) \approx j_{test}(\theta)
+\end{align*}</script></blockquote>
+<hr>
+<h3 id="正则因子"><a href="#正则因子" class="headerlink" title="正则因子"></a>正则因子</h3><p><strong>正则化（Regularization）</strong>能帮我们解决过拟合问题，λ 取值越大，对参数 θ 的惩罚力度就越大，能够帮助解决过拟合问题，但是，如果惩罚过重，也会造成<strong>欠拟合</strong>问题，即会出现<strong><font color="brown">高偏差</font></strong>。如果 λ 取值较小，则意味着没有惩罚 θ，也就不能解决<strong>过拟合</strong>问题，会出现<strong><font color="orange">高方差</font></strong>。</p>
+<p><img src="https://i.imgur.com/nWniKbH.jpg" width="500"></p>
+<p>下图反映了正规化过程中，训练集、交叉验证集误差随 λ 变化的曲线：</p>
+<p><img src="https://i.imgur.com/3tRCOTF.png" width="350"></p>
+<hr>
+<h3 id="训练集大小"><a href="#训练集大小" class="headerlink" title="训练集大小"></a>训练集大小</h3><p>当<strong>训练样本的数目</strong>m较小时，意味着可供学习的知识较少，则模型在训练阶段不容易犯错误（训练集误差极低），但也发现不了数据的规律（交叉验证集误差极高）；而当样本数目增多时，意味着需要学习的知识增多，则模型虽然在训练阶段容易犯一些错（<font color="blue"><strong>训练集</strong></font>误差开始增高），但也更容易探测出数据规律（<font color="F1141FF"><strong>交叉验证集</strong></font>误差降低）：</p>
+<p><img src="https://i.imgur.com/3727tzk.jpg" width="480"></p>
+<p>如果模型出现了<strong><font color="brown">高偏差</font></strong>，即出现了<strong>欠拟合</strong>，学习曲线随样本数目的变化曲线如下图所示，即增加样本数目，仍无法显著降低交叉验证集误差，即无法提高模型的泛化能力：（<font color="blue"><strong>训练集</strong></font>，<font color="F1141FF"><strong>交叉验证集</strong></font>）</p>
+<p><img src="https://i.imgur.com/WR6sr8x.jpg" width="480"></p>
+<p>如果模型出现了<strong><font color="orange">高方差</font></strong>，即出现了<strong>过拟合</strong>，学习曲线随着样本数目变化的曲线如下图所示，即增加样本数目，可以显著降低交叉验证集的误差，提高模型的泛化能力：（<font color="blue"><strong>训练集</strong></font>，<font color="F1141FF"><strong>交叉验证集</strong></font>）</p>
+<p><img src="https://i.imgur.com/F2jjMDn.png" width="480"></p>
+<hr>
+<h3 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h3><p>当神经网络的结构<strong>简单</strong>时，则易出现<font color="brown"><strong>高偏差</strong></font>：</p>
+<p><img src="https://i.imgur.com/JpF6xtQ.png" width="150"></p>
+<p>当神经网络的结构过于<strong>复杂</strong>时，则易出现<font color="orange"><strong>高方差</strong></font>，此时可以通过增大 λ 来解决：</p>
+<p><img src="https://i.imgur.com/rYGNjTo.png" width="240"></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">场景</th>
+<th style="text-align:center">解决手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
+<td style="text-align:center">样本<font color="red"><strong>++</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
+<td style="text-align:center">特征数<font color="blue"><strong>- -</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
+<td style="text-align:center">正则因子 λ<font color="red"><strong>++</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
+<td style="text-align:center">特征数<font color="red"><strong>++</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
+<td style="text-align:center">正则因子 λ<font color="blue"><strong>- -</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
+<td style="text-align:center">多项式次数<font color="red"><strong>++</strong></font></td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
+<td style="text-align:center">模型复杂度<font color="red"><strong>++</strong></font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h2><h3 id="垃圾邮件分类器"><a href="#垃圾邮件分类器" class="headerlink" title="垃圾邮件分类器"></a>垃圾邮件分类器</h3><p>假定我们现有一封邮件，其内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">From: cheapsales@buystufffromme.com</span><br><span class="line">To: ang@cs.stanford.edu</span><br><span class="line">Subject: Buy now!</span><br><span class="line"></span><br><span class="line">Deal of the week!Buy now!</span><br><span class="line">Rolex w4ches - $100</span><br><span class="line">Med1cine (any kind) - $50</span><br><span class="line">Also low cost M0rgages</span><br><span class="line">available.</span><br></pre></td></tr></table></figure>
+<p>充斥着各种诱人的促销信息，很有可能是一封<strong>垃圾邮件</strong>（Spam）。<br>假定我们有一个垃圾邮件的数据集，想通过机器学习的方式来学会鉴定邮件是否是垃圾邮件。</p>
+<p>我们令向量 x 表示垃圾邮件的<strong>特征向量</strong>，该向量包含了 100 个按字母序排序的单词特征，这些单词通常为垃圾邮件常出现的词汇：discount，deal，now 等等：（通常可以根据<u>词汇频率表</u>来自动选择特征）</p>
+<script type="math/tex; mode=display">
+x_j =
+\begin{cases}
+1 & \mbox{第 $j$ 个单词出现} \\
+0 & \mbox{未出现}
+\end{cases}</script><p>令 y <strong>标签</strong>表示该邮件是否是垃圾邮件：</p>
+<script type="math/tex; mode=display">
+y = \begin{cases} 1 & \mbox{$x$是垃圾邮件} \\ 0 & \mbox{$x$不是垃圾邮件} \end{cases}</script><p>那么垃圾邮件分类就是一个 <strong>0/1 分类</strong>问题，可以用<strong>逻辑回归</strong>完成。</p>
+<p>我们考虑如何降低分类错误率：</p>
+<ul>
+<li>尽可能的<strong>扩大数据样本</strong>：<a href="http://www.honeynet.org/" target="_blank" rel="noopener">Honypot</a> 做了这样一件事，把自己包装成一个对黑客极具吸引力的机器，来诱使黑客进行攻击，就像蜜罐（honey pot）吸引密封那样，从而记录攻击行为和手段。</li>
+<li>添加<strong>更多特征</strong>：例如我们可以增加邮件的发送者邮箱作为特征，可以增加标点符号作为特征（垃圾邮件总会充斥了？，！等吸引眼球的标点）。</li>
+<li><strong>预处理</strong>样本：正如我们在垃圾邮件看到的，道高一尺，魔高一丈，垃圾邮件的制造者也会升级自己的攻击手段，如在单词拼写上做手脚来防止邮件内容被看出问题，例如把 medicine 拼写为 med1cinie 等。因此，我们就要有手段来识别这些错误拼写，从而优化我们输入到逻辑回归中的样本。（<a href="https://blog.csdn.net/Androidlushangderen/article/details/47134393" target="_blank" rel="noopener">相似哈希</a>）</li>
+</ul>
+<blockquote>
+<p>但很多情况下，大家都是随机地选择一个方向进行探索。下一将使用误差分析的工具优化这个决策过程。</p>
+</blockquote>
+<h3 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h3><p><strong>Recommended approach</strong>：</p>
+<ul>
+<li>一开始<u>先快速实现一个简单算法</u>，尽量不要将问题复杂化（不要提前优化），然后通过<strong>交叉验证集</strong>评估模型。</li>
+<li>通过<u>绘制学习曲线</u>（learning curve），确定面临的问题是<strong>高偏差</strong>还是<strong>高方差</strong>，来决定是添加更多训练样本，还是添加更多特征。</li>
+<li><u>误差分析</u>：甚至可以手工检查交叉验证集中误差较大的样本，观察错误的来源、规律以形成解决策略。</li>
+</ul>
+<p><strong>例</strong>：（垃圾邮件分类）假定交叉验证集有 500 个样本，即 mcv=500，我们的模型错分了其中 100 个样本，那么我们会通过下述手段进行错误分析。（有点像<strong>DEBUG</strong>）</p>
+<ol>
+<li><strong>哪些邮件被错分了</strong>，是假冒伪劣的推销邮件？医药邮件？还是钓鱼邮件？<ul>
+<li>在这 100 个错分样本中，我们发现有 53 个样本是钓鱼邮件，因此，我们就需要考虑为模型注入识别的钓鱼邮件的能力</li>
+</ul>
+</li>
+<li>提供什么线索（特征）能<strong>帮助模型区分</strong>出这些邮件？<ul>
+<li>继续观察，我们发现，在这 53 封钓鱼邮件中，故意使用错误拼写的邮件有 5 封，来源可疑（发送人可疑）的邮件有 16 封，使用了大量煽动性标点符号的邮件有 32 封。因此，对于识别钓鱼邮件来说，我们更适合将煽动性标点符号添加为特征，而不用再考虑去识别错误拼写。</li>
+</ul>
+</li>
+</ol>
+<p><strong>The importance of <font color="red">numerical evaluation</font></strong>：</p>
+<ul>
+<li>应该将discount/discounts/discounted/discounting视为同一个词吗？</li>
+<li>比如，利用<a href="https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html" target="_blank" rel="noopener">stemming</a>词干提取软件进行分析（尽管误差分析不确保性能提高，但不妨一试）</li>
+<li>这样，一个<strong>对算法性能数值化的评估</strong>就显得尤为重要【Automatically判断性能是否提高】</li>
+</ul>
+<h2 id="偏斜类（Skewed-Classes）"><a href="#偏斜类（Skewed-Classes）" class="headerlink" title="偏斜类（Skewed Classes）"></a>偏斜类（Skewed Classes）</h2><p>假定我们通过逻辑回归来预测病人是否患有癌症：</p>
+<script type="math/tex; mode=display">
+y =
+\begin{cases}
+0, & \mbox{病人未患癌症} \\
+1, & \mbox{病人患有癌症}
+\end{cases}</script><p>并且，令人欣喜的是，测试集的错误率只有 <strong>1%</strong>。别着急高兴，假如我们的测试样本中只有 <strong>0.5%</strong> 患有癌症，那么我们何不直接让预测函数为$h_{\theta}(x) = 0​$？即，我们永远预测病人不患病，那么准确率会高达 <strong>99.5%</strong>。但这可不是一件好事儿，我们追求高准确率牺牲的是病人的利益。引起这个问题的原因是样本中出现了<strong><font color="red">偏斜类</font>（Skewed Classes）</strong>，偏斜即倾斜，<u>大量样本倾斜向了某一类型</u>【<strong>悬殊</strong>】。</p>
+<p>从上面的例子我们知道，单纯地使用误差（Error）并不能完善地评价模型好坏，我们可能要采用新的方式来度量误差。（精准、平衡）</p>
+<p>现在引入两个重要的评价指标：（1）查准率（Precision）；（2）召回率（Recall），并定义：</p>
+<ul>
+<li>阳性（Positive）：表示正样本。当预测和实际都为正样本时，表示<strong>真阳性</strong>（True Positive）；如果预测为正样本，而实际为负样本，则表示<strong>假阳性</strong>（False Positive）。</li>
+<li>阴性（Negative）：表示负样本。当预测和实际都为负样本时，表示<strong>真阴性</strong>（True Negative）；如果预测为负样本，而实际为正样本，则表示<strong>假阴性</strong>（False Negative）。</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>真值1</th>
+<th>真值0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>预测1</strong></td>
+<td><strong><font color="red">True Positive</font></strong></td>
+<td><strong><font color="fuchsia">False Positive</font></strong></td>
+</tr>
+<tr>
+<td><strong>预测0</strong></td>
+<td><strong><font color="green">False Negative</font></strong></td>
+<td><strong><font color="lime">True Negative</font></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>查准率（Precision）</strong>：<script type="math/tex; mode=display">
+Precision = \frac{\color{red}{TruePos} }{PredicatedPos} = \frac{\color{red}{TruePos} }{ {\color{red}{TruePos} }+\color{fuchsia}{FalsePos} }</script></li>
+</ul>
+<p>在上例中，查准率就描述了：<strong>在我们预测患癌的病人中，确实患了癌症的病人的比例</strong>。从公式中我们也可以得出，要想得到提高查准率，我们就要降低假阳性的出现的频次，即，我们只有在拥有十足的把握是，才预测一个样本为正样本。</p>
+<ul>
+<li><strong>召回率（Recall）</strong>：<script type="math/tex; mode=display">
+Recall = \frac{\color{red}{TruePos} }{ActualPos} = \frac{\color{red}{TruePos} }{ {\color{red}{TruePos} }+{\color{green}{FalseNeg} } }</script></li>
+</ul>
+<p>在上例中，召回率就描述了：<strong>在患癌的病人中，有多少病人被我们预测到了</strong>。从公式中我们也可以得出，要想提高召回率，我们就要降低假阴性出现的频次，即，尽可能不放过任何可能为正样本的样本。</p>
+<h3 id="权衡"><a href="#权衡" class="headerlink" title="权衡"></a>权衡</h3><p>理想状况下，<u>我们希望假设函数能够同时具备<strong>高准确率</strong>（High Precision）及<strong>高召回率</strong>（High Recall）</u>。但是往往鱼和熊掌不可兼得。回到预测病人患癌的例子中，假定我们的预测函数为：</p>
+<script type="math/tex; mode=display">
+y =
+\begin{cases}
+1, & h_{\theta}(x) \ge 0.5 \\
+0, & \mbox{otherwise}
+\end{cases}</script><p>即，我们设定的预测阈值为 <strong>0.5</strong>。这么做似乎风险不小，很多没有患癌的病人被我们认为患有癌症而接受了不必要的治疗（Even get a shock），因此，我们<u>调高我们的阈值为 <strong>0.7</strong></u>：（甚至0.9）</p>
+<script type="math/tex; mode=display">
+y =
+\begin{cases}
+1, & h_\theta(x) \ge 0.7 \\
+0, & \mbox{otherwise}
+\end{cases}</script><p>此时，<u>必须有较高的把握，我们才会预测一个病人患有癌症</u>，避免非癌症患者接受到了不必要的治疗，假阳性样本少，此时我们也获得了<strong>高查准率</strong>。然而，这么预测的代价是，有些癌症病患体征不明显，就被我们认为没有患癌，从而得不到治疗，假阴性样本多，即我们的<strong>召回率</strong>偏低。如下图所示：</p>
+<p><img src="https://i.imgur.com/gYXFVXE.png"></p>
+<p>能不能把权衡的过程自动化呢？<br>当我们尝试构建了不同的算法模型（不同阀值），并且获得了不同的查准率和召回率：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法 1</td>
+<td>0.5</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>算法 2</td>
+<td>0.7</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>算法 3</td>
+<td>0.02</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么选择哪个算法是最好的呢，假定我们使用<strong>平均值</strong>来权衡查准率和召回率：</p>
+<script type="math/tex; mode=display">
+Average = \frac{P+R}{2}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Precision</th>
+<th>Recall</th>
+<th>Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法 1</td>
+<td>0.5</td>
+<td>0.4</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>算法 2</td>
+<td>0.7</td>
+<td>0.1</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>算法 3</td>
+<td>0.02</td>
+<td>1.0</td>
+<td><font color="red">0.51</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>按照平均值，我们会选择算法 3，但是这并不是一个好的算法，因为其查准率太低了，我们希望有一个指标能选出查准率和召回率都高的算法，为此，引入了$ F_1Score$：</p>
+<script type="math/tex; mode=display">
+F_1 Score = 2\frac{PR}{P+R}</script><p>从公式中也可以看到，分子是查准率和召回率的乘积，<strong>只有二者都较高时，$ F_1Score$ 才会较高</strong>，特别地：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+F_1 Score &= 0, \quad \mbox{if $P=0$ or $R=0$} \\
+F_1 Score &= 1, \quad \mbox{if $P=1$ and $R=1$}
+\end{align*}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法 1</td>
+<td>0.5</td>
+<td>0.4</td>
+<td><font color="red">0.444</font></td>
+</tr>
+<tr>
+<td>算法 2</td>
+<td>0.7</td>
+<td>0.1</td>
+<td>0.175</td>
+</tr>
+<tr>
+<td>算法 3</td>
+<td>0.02</td>
+<td>1.0</td>
+<td>0.0392</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$ F_1Score$ 帮我们选出了算法1，事实也确实如此，算法1的查准率和召回率都较高。</p>
+<h2 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h2><p><strong>例</strong>：（Designing a high accuracy learning system）</p>
+<ul>
+<li>自动完形填空：（Classify between confusable words）<ul>
+<li>For breakfast I ate ___ eggs.（to/<strong>two</strong>/too）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Algorithms：（可选算法）</p>
+<ul>
+<li>Perceptron（Logistic Regression）</li>
+<li>Winnow</li>
+<li>Memory-based</li>
+<li>Naive-Bayes</li>
+</ul>
+<p>这些算法在<strong>训练数据量提升</strong>以后都表现得越来越优异，<strong>性能都提升了</strong>：</p>
+</blockquote>
+<p><img src="https://i.imgur.com/o4ZRFC9.png" title="source: imgur.com"></p>
+<p>在机器学习领域，流传着这样一句话：</p>
+<blockquote>
+<p><strong>It’s not who has the best algorithm that wins.</strong><br><strong>It’s who has the most data.</strong></p>
+</blockquote>
+<p>所以商业社会中，互联网公司都不遗余力地先收集一波大数据再说，没有数据，再多的手段也是空谈。</p>
+<p><strong>什么时候采用大规模的数据集呢</strong>？</p>
+<ul>
+<li>一定要保证模型拥有足够的参数（线索），对于线性回归/逻辑回归来说，就是具备足够多的特征，而对于神经网络来说，就是更多的隐层单元。这样，<u>足够多的特征</u>避免了<strong>高偏差</strong>（欠拟合）问题，而<u>足够大数据集</u>避免了多特征容易引起的<strong>高方差</strong>（过拟合）问题。</li>
+</ul>
+<h1 id="SVM-支持向量机"><a href="#SVM-支持向量机" class="headerlink" title="SVM(支持向量机)"></a>SVM(支持向量机)</h1><h2 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h2><p>在正式讲述SVM之前，我们将<strong>回顾逻辑回归</strong>。</p>
+<p>在Logistic回归中，我们的预测函数为：$h_{\theta}(x) = \frac{1}{1+e^{-\theta^T x} }$。</p>
+<p>代价函数为：$cost = -ylogh_{\theta}(x)+(1-y)log(1-h_{\theta}(x))$。</p>
+<p>同时，当预测值 y=1 时，代价函数就为：（其实之前本来就是下面这个表达式推出来上面的）</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+cost &= -logh_{\theta}(x) \\
+&= -log\frac{1}{1+e^{-z} }, \quad z=\theta^T x
+\end{align*}</script><p>此时，代价函数随 z 的变化曲线如下图：</p>
+<p><img src="https://i.imgur.com/Z1FFdxc.png" width="300"></p>
+<p>不难看出，当 y=1 时，<strong>随着 z 取值变大，预测代价变小</strong>，因此，逻辑回归想要在面对正样本 y=1 时，获得足够高的预测精度，就希望 $z=θ^Tx≫0$。</p>
+<p>而 SVM 则将上图的曲线拉直为下图中的折线，构成了 y=1 时的代价函数曲线 <strong>cost1(z)</strong>：（<u>近似化，并获得更简单的数值</u>）</p>
+<p><img src="https://i.imgur.com/67G6ABA.png" width="200"></p>
+<blockquote>
+<p>当 y=1 时，为了预测精度足够高，SVM 希望 $θ^Tx≥1$。</p>
+<p>当 y=0 时，SVM 定义了代价函数 <strong>cost0(z)</strong>，为了预测精度足够高，SVM 希望 $θ^Tx≤−1$：</p>
+</blockquote>
+<p><img src="https://i.imgur.com/Xn6FFIN.png" width="220"></p>
+<hr>
+<p>在Logistic回归中，最小化预测代价的过程为：</p>
+<script type="math/tex; mode=display">
+\min\limits_{\theta}{\color{blue}{\frac{1}{m}[\sum\limits_{i=1}^{m}y^{(i)}({\color{red}{-} }logh_\theta(x^{(i)}))+(1-y^{(i)})({\color{red}{-} }log(1-h_\theta(x^{(i)})))]} } + {\color{green}{\frac{\color{red}{\lambda} }{2m}\sum\limits_{j=1}^{n}\theta_j^2} }</script><p>SVM定义其最小化预测代价的过程为：</p>
+<script type="math/tex; mode=display">
+\min\limits_{\theta}{\color{blue}{ {\color{red}{C} }[\sum\limits_{i=1}^{m}y^{(i)}cost_1(\theta^Tx^{(i)})+(1-y^{(i)})cost_0(\theta^Tx^{(i)})]} }+{\color{green}{\frac{1}{2}\sum\limits_{j=1}^{n}\theta_j^2} }</script><p>事实上，我们可以将逻辑回归的代价函数简要描述为：</p>
+<script type="math/tex; mode=display">
+cost = {\color{blue}{A} }+{\color{red}{\lambda} } {\color{green}{B} }</script><p>而 SVM 的代价函数描述为：</p>
+<script type="math/tex; mode=display">
+cost = {\color{red}{C} }{\color{blue}{A} }+{\color{green}{B} }</script><p>即，在逻辑回归中，我们通过正规化参数 λ 调节 A、B 所占的权重，且 A 的权重与 λ 取值成<strong>反比</strong>。而在 SVM 中，则通过参数 C 调节 A、B 所占的权重，且 A 的权重与 C 的取值成反比。亦即，参数 C 可以被认为是扮演了 $\frac{1}{λ}$ 的角色。（C通常取值较大）</p>
+<p>当我们根据上述的SVM代价函数训练得到 θ 之后，可以代入下面的 <strong>SVM 预测函数</strong>进行预测：</p>
+<script type="math/tex; mode=display">
+h_\theta(x) =
+\begin{cases}
+1,\quad \mbox{if $\theta^T x \geq 0$} \\
+0,\quad \mbox{otherwise}
+\end{cases}</script><h2 id="大间距分类器"><a href="#大间距分类器" class="headerlink" title="大间距分类器"></a>大间距分类器</h2><p>由上节，SVM的代价函数优化式为</p>
+<script type="math/tex; mode=display">
+\min\limits_{\theta}C[\sum\limits_{i=1}^{m}y^{(i)}cost_1(\theta^Tx^{(i)})+(1-y^{(i)})cost_0(\theta^Tx^{(i)})]+\frac{1}{2}\sum\limits_{j=1}^{n}\theta_j^2</script><p>并且，当 y=1 时，SVM 希望 θx≥1；而当 y=0 时，SVM 希望 θx≤−1。</p>
+<p><img src="https://i.imgur.com/loRNlQb.png" title="source: imgur.com"></p>
+<p>容易推出SVM代价函数的<strong>优化目标</strong>为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \min\frac{1}{2}\sum\limits_{j=1}^{n}\theta_j^2 \\
+\mbox{s.t}. \quad &\theta^T x^{(i)} \geq 1 &\mbox{if $y^{(i)}=1$} \\
+& \theta^T x^{(i)} \leq -1 &\mbox{if $y^{(i)}=0$}
+\end{align*}</script><p>SVM 最终找出的决策边界会是下图中黑色直线所示的决策边界，而不是绿色或者紫色的决策边界。该决策边界保持了与正、负样本都足够大的距离，因此，SVM 是典型的<strong>大间距分类器（Large margin classifier）</strong>。</p>
+<p><img src="https://i.imgur.com/Uap9wHO.jpg" width="300"></p>
+<blockquote>
+<p>这个时候，与Logistic回归不同的是，SVM的决策边界将<u>张成一个与原空间同维的空间</u>，相当于给出了一个<strong>补空间</strong>。<br>补空间记录了既不属于正类也不属于负类的额外可能。（有点像无监督学习了）</p>
+</blockquote>
+<h3 id="数学原理"><a href="#数学原理" class="headerlink" title="数学原理"></a>数学原理</h3><p>假定两个2维向量：$u=\left(\begin{matrix}u_1 \\ u_2\end{matrix}\right),v=\left(\begin{matrix}v_1 \\ v_2\end{matrix}\right)$。<br>令 p 为 v 投影到 u 的线段长（该值可正可负），如下图所示：</p>
+<p><img src="https://i.imgur.com/uNOKtUv.png" width="230"></p>
+<p>则 u、v 的内积为：$ u^Tv = p \cdot ||u|| = u_1v_1+u_2v_2 $。（||u|| 为 u 的范数，这里是 u 的长度。）</p>
+<p>假定我们的 $\theta=\left(\begin{matrix}\theta_1 \\ \theta_2\end{matrix}\right)$，且令 θ_0=0，以使得向量 θ 过原点，则优化约束可写为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\min\limits_\theta\frac{1}{2}\sum\limits_{j=1}^{2}\theta_j^2 &=\min\limits_\theta\frac{1}{2}(\theta_1+\theta_2)^2 \\
+&=\min\limits_\theta\frac{1}{2}(\sqrt{\theta_1^2+\theta_2^2})^2 \\
+&=\min\limits_\theta\frac{1}{2}||\theta||^2
+\end{align*}</script><p>由向量内积公式可得：</p>
+<script type="math/tex; mode=display">
+\theta^T x^{(i)} = p^{(i)}\cdot||\theta||</script><p>其中，p(i) 为特征向量 x(i) 在 θ 上的投影：（x和θ被向量化）</p>
+<p><img src="https://i.imgur.com/nokkpHt.jpg" width="200"></p>
+<p>当 y(i)=1 时，我们希望 $θ^Tx^{(i)}≥1$，亦即希望 <strong>p(i)⋅||θ||≥1</strong>，此时考虑两种情况：</p>
+<ol>
+<li>p(i)很小（一些X点接近绿色线，其投影狭窄），则需要 ||θ|| 很大，与 $min_θ\frac{1}{2}||θ||^2$ 矛盾。</li>
+</ol>
+<p><img src="https://i.imgur.com/5Dz8k6T.png" width="300/"></p>
+<ol>
+<li>p(i)很大，如下图所示，即<strong>样本与决策边界的距离足够大</strong>，此时我们才能在既要 <strong>||θ|| 足够小</strong>的情况下，又能有 $θ^Tx^{(i)}≥1$，保证预测精度够高。</li>
+</ol>
+<p><img src="https://i.imgur.com/5YaJ80w.jpg" width="280"></p>
+<blockquote>
+<p>这就解释了为什么 SVM 的模型会具有大间距分类器的性质了。<br>（<u>左右两边的边界都会相互尽量远离</u>）</p>
+</blockquote>
+<p><img src="https://i.imgur.com/WeNkq93.png" width="280"></p>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><p><img src="https://i.imgur.com/7WtfRjn.png" width="300/"></p>
+<p>在逻辑回归中，我们会通过多项式扩展来处理<strong>非线性</strong>分类问题：</p>
+<script type="math/tex; mode=display">
+h_\theta(x) = \theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+\theta_5x_2^2+\cdots</script><script type="math/tex; mode=display">
+令：f_1=x_1,f_2=x_2,f_3=x_1x_2,f_4=x_1^2,f_5=x_2^2</script><p>则预测函数为：</p>
+<script type="math/tex; mode=display">
+h_\theta(x) = \theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\cdots</script><p>但<u>多项式回归所带来的高阶项不一定作用明显</u>。<br>针对这一问题，SVM 不会引入高阶项来作为新的特征，而是会选择一些<strong>地标（<font color="red">landmark</font>）</strong>，并将样本 x 与标记点 $l^{(i)}$ 的<strong>相似程度</strong>作为新的训练特征 f_i：（<strong>Similarity Function</strong>）</p>
+<script type="math/tex; mode=display">
+f_i = \text{similarity}(x, l^{(i)})</script><p><img src="https://i.imgur.com/JiiU22d.jpg" width="230"></p>
+<p><strong>距离度量的方式就称之为<font color="red">核函数</font>（<font color="red">Kernel</font>）</strong>，最常见的核函数是<strong>高斯核函数（Gaussian Kernel）</strong>：</p>
+<script type="math/tex; mode=display">
+f_i = exp(-\frac{||x-l^{(i)}||^2}{2\delta^2})=K(x,l^{(i)})</script><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">kernel</span><span class="params">(x1,x2)</span></span></span><br><span class="line">  Delta = <span class="number">5</span>;</span><br><span class="line">  f = <span class="built_in">exp</span>(-(x1-x2)'*(x1-x2)/(<span class="number">2</span>*Delta^<span class="number">2</span>));</span><br><span class="line">endfunction</span><br><span class="line">x1 = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>; <span class="number">4</span>];</span><br><span class="line">x2 = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>; <span class="number">4</span>];</span><br><span class="line">kernel(x1,x2)</span><br></pre></td></tr></table></figure>
+<p>在高斯核中，注意到：</p>
+<ul>
+<li><p>如果样本与标记点足够接近，即 $x \approx l^{(i)}$，则：</p>
+<script type="math/tex; mode=display">
+f \approx exp(-\frac{0^2}{2\delta^2}) \approx 1</script></li>
+<li><p>如果样本远离标记点，则：</p>
+<script type="math/tex; mode=display">
+f \approx exp(-\frac{(\mbox{large number})^2}{2\delta^2}) \approx 0</script></li>
+</ul>
+<p>这一关系可以被如下的热力图所反映：（<a href="https://zh.wikipedia.org/zh/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener">正态分布</a>）</p>
+<p><img src="https://i.imgur.com/xcvi133.jpg" width="250"></p>
+<blockquote>
+<p>注：在使用高斯核函数前，需要做<strong>特征缩放</strong>（feature scaling），以使 SVM 同等程度地关注到不同的特征。</p>
+</blockquote>
+<p><strong>例</strong>：假设选取了3个点作为地标，并且当$\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3\geq0$时预测为1。</p>
+<p><img src="https://i.imgur.com/zrK0OWs.png" width="250"></p>
+<blockquote>
+<p>给定$\theta_0=-0.5,\theta_1=1,\theta_2=1,\theta_3=0$。</p>
+<p><font color="purple"><strong>预测点1</strong></font>：$\theta_0+\theta_1\times1+\theta_2\times0+\theta_3\times0\approx0.5&gt;0$，预测为<strong>1</strong>。</p>
+<p><font color="#0C9"><strong>预测点2</strong></font>：$\theta_0+\theta_1\times0+\theta_2\times0+\theta_3\times0\approx-0.5&lt;0$，预测为<strong>0</strong>。</p>
+<p>可以看出这三个新引入的$l^{(1)},l^{ {(2)} },l^{(3)}$的作用与新加入了特征无异。</p>
+</blockquote>
+<h3 id="地标选取"><a href="#地标选取" class="headerlink" title="地标选取"></a>地标选取</h3><p>假定我们有如下的数据集：$(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)})，(x^{(3)},y^{(3)}) \cdots (x^{(m)},y^{(m)})$。</p>
+<p>我们就<u>将每个样本作为一个标记点</u>：$l^{(1)}=x^{(1)}，l^{(2)}=x^{(2)}，l^{(3)}=x^{(3)} \cdots l^{(m)}=x^{(m)}$。</p>
+<p>则对于样本 $(x^{(i)}, y^{(i)})$，我们计算其与各个标记点的距离：</p>
+<script type="math/tex; mode=display">
+f_1^{(i)}=sim(x^{(i)},l^{(1)}) \\
+f_2^{(i)}=sim(x^{(i)},l^{(2)}) \\
+\vdots \\
+f_m^{(i)}=sim(x^{(i)},l^{(3)}) \\</script><p>得到<strong>新的特征向量</strong>：$f∈R^{m+1}$</p>
+<script type="math/tex; mode=display">
+f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \quad \mbox{其中 $f_0=1$}</script><p>则具备核函数的 SVM 的优化式如下：（相当于用特征 <strong>f</strong> 替换了原特征 <strong>x</strong>）</p>
+<script type="math/tex; mode=display">
+\min\limits_{\theta}C\big[\sum\limits_{i=1}^{m}y^{(i)}cost_1(\theta^T{\color{red}{f^{(i)} } }+(1-y^{(i)})cost_0(\theta^T{\color{red}{f^{(i)} } })\big]+\frac{1}{2}\sum\limits_{j=1}^{n}\theta_j^2</script><blockquote>
+<p>这时特征数m=样本数n。</p>
+<p>在实际SVM使用时，$\sum\limits_{j=1}^{n}\theta_j^2=\theta^T\theta\rightarrow \theta^TM\theta$，其中M取决于Kernel，相当于一个缩放。可以让SVM运行更有效率。（能够适应更大的训练集，有效控制大矩阵乘法的消耗）</p>
+</blockquote>
+<h2 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h2><blockquote>
+<p>SVM的更多补充：<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/SVM/articles/SVM%E8%A1%A5%E5%85%85.html" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+</blockquote>
+<h3 id="使用流行库"><a href="#使用流行库" class="headerlink" title="使用流行库"></a>使用流行库</h3><p>作为当今最为流行的分类算法之一，SVM 已经拥有了不少优秀的实现库，如 <a href="https://www.csie.ntu.edu.tw/~cjlin/libsvm/%E2%80%A0" target="_blank" rel="noopener">libsvm</a> 等，因此，我们不再需要自己手动实现 SVM（要知道，一个能用于生产环境的 SVM 模型并非课程中介绍的那么简单）。</p>
+<p>在使用这些库时，我们通常需要声明 SVM 需要的两个关键部分：</p>
+<ol>
+<li>参数 C</li>
+<li>核函数（Kernel）</li>
+</ol>
+<p>由于 <u>C 可以看做与正规化参数 λ 作用相反</u>，则对于 C 的调节：</p>
+<ul>
+<li><strong>低偏差</strong>，<strong>高方差</strong>，即遇到了<strong>过拟合</strong>时：<strong>减小</strong> C 值。</li>
+<li><strong>高偏差</strong>，<strong>低方差</strong>，即遇到了<strong>欠拟合</strong>时：<strong>增大</strong> C 值。</li>
+</ul>
+<p>而对于核函数的选择有这么一些 tips：</p>
+<ul>
+<li><p>当特征维度 n 较高，而样本规模 m 较小时，<strong>不宜使用核函数</strong>（即linear kernel），否则容易引起过拟合。</p>
+</li>
+<li><p>当特征维度 n 较低，而样本规模 m 足够大时，考虑使用<strong>高斯核函数</strong>。不过在使用高斯核函数前，需要进行特征缩放（feature scaling）。另外，当核函数的参数 δ <strong>较大</strong>时，特征 fi 较为平缓，即各个样本的特征差异变小，此时会造成<strong>欠拟合（高偏差，低方差）</strong>：</p>
+<p><img src="https://i.imgur.com/C5eTSao.png" width="200"></p>
+</li>
+<li><p>当 δ <strong>较小</strong>时，特征 fi 曲线变化剧烈，即各个样本的特征差异变大，此时会造成<strong>过拟合（低偏差，高方差）</strong>：</p>
+<p><img src="https://i.imgur.com/29aA2tr.png" width="200"></p>
+</li>
+</ul>
+<blockquote>
+<p>不是所有的相似度评估手段都能被用作SVM核函数，他们需要满足<a href="https://en.wikipedia.org/wiki/Mercer%27s_theorem" target="_blank" rel="noopener"> Mercer 理论</a>。</p>
+<p>Ploynominal kernel, string kernel, chi-square kernel, histogram intersection kernel,……</p>
+</blockquote>
+<h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><p>通常，流行的SVM库已经内置了多分类相关的 api，如果其不支持多分类，则与逻辑回归一样，使用 <strong>One-vs-All</strong> 策略来进行多分类：</p>
+<ol>
+<li>轮流选中某一类型 i ，将其视为正样本，即 “1” 分类，剩下样本都看做是负样本，即 “0” 分类。</li>
+<li>训练 SVM 得到参数 $θ^{(1)},θ^{(2)},…,θ^{(K)}$ ，即总共获得了 K−1 个决策边界。</li>
+</ol>
+<p><img src="https://i.imgur.com/lFfRD6M.png" width="300"></p>
+<h3 id="分类模型的选择"><a href="#分类模型的选择" class="headerlink" title="分类模型的选择"></a>分类模型的选择</h3><p>目前，我们学到的分类模型有：（1）逻辑回归；（2）神经网络；（3）SVM。怎么选择在这三者中做出选择呢？我们考虑<strong>特征维度 n</strong> 及<strong>样本规模 m</strong>：</p>
+<ul>
+<li>若 $n \gg m$ ，例如 n=10000，而 m∈(10,1000)：此时选用<strong>逻辑回归</strong>或者<strong>无核</strong>的 SVM。</li>
+<li>如果 $n \ll m \ll \infty$ ，如 n∈(1,1000)，而 m∈(10,10000)：此时选用核函数为<strong>高斯核函数</strong>的 SVM。</li>
+<li>若 $n \ll m$ ，如 n∈(1,1000)，而 m&gt;50000：此时，需要创建更多的特征（比如通过多项式扩展），再使用<strong>逻辑回归</strong>或者<strong>无核</strong>的 SVM。</li>
+</ul>
+<blockquote>
+<p>神经网络对于上述情形都有不错的适应性，但是计算性能上较慢。</p>
+<p>SVM面临的是凸函数优化，不必担心收敛到局部极值。</p>
+</blockquote>
+<hr>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Byte-Tech-AI-Symposium/">2019机器智能前沿论坛</a></li><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/关于对抗样本的思考/">关于对抗样本的思考</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/Notes-of-Machine-Learning-Part2/" title="机器学习初等指南(2)">https://vel.life/Notes-of-Machine-Learning-Part2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HTML-CSS学习手册/" rel="next" title="HTML/CSS学习手册">
+                <i class="fa fa-chevron-left"></i> HTML/CSS学习手册
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Data-Science-Contests/" rel="prev" title="大数据竞赛-练习篇">
+                大数据竞赛-练习篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">2.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#非线性假设"><span class="nav-number">2.1.</span> <span class="nav-text">非线性假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络基础"><span class="nav-number">2.2.</span> <span class="nav-text">神经网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经元"><span class="nav-number">2.2.1.</span> <span class="nav-text">神经元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感知机"><span class="nav-number">2.2.2.</span> <span class="nav-text">感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#激活函数"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">激活函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算拟合"><span class="nav-number">2.2.4.</span> <span class="nav-text">逻辑运算拟合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多元分类"><span class="nav-number">2.2.5.</span> <span class="nav-text">多元分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-number">2.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播"><span class="nav-number">2.4.</span> <span class="nav-text">反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#训练过程"><span class="nav-number">2.4.1.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数展开"><span class="nav-number">2.4.2.</span> <span class="nav-text">参数展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度检测"><span class="nav-number">2.4.3.</span> <span class="nav-text">梯度检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Θ随机初始化"><span class="nav-number">2.4.4.</span> <span class="nav-text">Θ随机初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化设计"><span class="nav-number">3.</span> <span class="nav-text">优化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#玄学调参？"><span class="nav-number">3.1.</span> <span class="nav-text">玄学调参？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛化能力评测"><span class="nav-number">3.2.</span> <span class="nav-text">泛化能力评测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉验证"><span class="nav-number">3.2.1.</span> <span class="nav-text">交叉验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差与方差"><span class="nav-number">3.3.</span> <span class="nav-text">偏差与方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式次数"><span class="nav-number">3.3.1.</span> <span class="nav-text">多项式次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则因子"><span class="nav-number">3.3.2.</span> <span class="nav-text">正则因子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练集大小"><span class="nav-number">3.3.3.</span> <span class="nav-text">训练集大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络的架构"><span class="nav-number">3.3.4.</span> <span class="nav-text">神经网络的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">3.3.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统设计"><span class="nav-number">3.4.</span> <span class="nav-text">系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#垃圾邮件分类器"><span class="nav-number">3.4.1.</span> <span class="nav-text">垃圾邮件分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差分析"><span class="nav-number">3.4.2.</span> <span class="nav-text">误差分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏斜类（Skewed-Classes）"><span class="nav-number">3.5.</span> <span class="nav-text">偏斜类（Skewed Classes）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#权衡"><span class="nav-number">3.5.1.</span> <span class="nav-text">权衡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大数据"><span class="nav-number">3.6.</span> <span class="nav-text">大数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM-支持向量机"><span class="nav-number">4.</span> <span class="nav-text">SVM(支持向量机)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数-1"><span class="nav-number">4.1.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大间距分类器"><span class="nav-number">4.2.</span> <span class="nav-text">大间距分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数学原理"><span class="nav-number">4.2.1.</span> <span class="nav-text">数学原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核函数"><span class="nav-number">4.3.</span> <span class="nav-text">核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地标选取"><span class="nav-number">4.3.1.</span> <span class="nav-text">地标选取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">4.4.</span> <span class="nav-text">使用建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用流行库"><span class="nav-number">4.4.1.</span> <span class="nav-text">使用流行库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多分类问题"><span class="nav-number">4.4.2.</span> <span class="nav-text">多分类问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类模型的选择"><span class="nav-number">4.4.3.</span> <span class="nav-text">分类模型的选择</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

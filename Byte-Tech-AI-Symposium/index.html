@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="2019 Byte Tech AI Symposium机器智能前沿论坛记录。本文多图，约200M，谨慎阅读。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019机器智能前沿论坛">
+<meta property="og:url" content="https://vel.life/Byte-Tech-AI-Symposium/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="2019 Byte Tech AI Symposium机器智能前沿论坛记录。本文多图，约200M，谨慎阅读。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547898072596.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547898987050.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547897522092.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547897994048.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547898072596.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910472703.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547899231619.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547899395535.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547899415915.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908651488.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908680243.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908761493.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908832052.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547917533904.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908872938.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908887626.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547908941409.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909016413.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909099575.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909164994.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909602392.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909875432.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909902008.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547909986308.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910001052.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910059031.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910070683.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910080974.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910091088.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910127200.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910167531.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910185035.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910472703.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910511033.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910566593.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910590416.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910783233.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910799583.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910865006.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910911823.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547910952574.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911003387.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911014827.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911147478.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911224748.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911259141.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911272319.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911285763.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911298245.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911317326.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911325968.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911336697.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911345638.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911354983.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911364945.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911377399.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911393439.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911403121.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911814356.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911825948.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911862094.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911928314.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547911937899.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912036096.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912101775.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912111189.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912145530.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912155121.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912196798.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912229893.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912241854.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912364641.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912389316.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912398208.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912409970.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912417989.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912427051.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912445739.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912454125.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912586910.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912681779.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912790560.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912801729.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912812269.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912825848.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912833506.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912840615.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912848649.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912870540.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912883343.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912902817.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912961107.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912968331.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547912977617.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913049406.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913058549.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913068121.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913077619.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913085358.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913097024.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913113288.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913869429.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913878008.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913885339.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913892997.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913929249.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913938219.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913970591.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547913992116.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914002513.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914009538.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914016702.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914057236.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914068355.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914076480.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914084524.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914092456.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914099951.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914124249.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914179280.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914192234.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914203409.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914212701.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914233972.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914245655.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914280709.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914289609.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914298099.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914306463.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914316244.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914328211.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914340297.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914370113.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914420221.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914429620.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914458715.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914496057.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914512699.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914522188.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914548844.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914561711.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914576202.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914590525.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914610034.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914618642.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914628801.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914637092.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914645433.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914657537.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914667411.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914680598.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914692915.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914705823.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914719214.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914731847.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914745705.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914757787.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914777387.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914787523.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914809266.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914820010.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914833424.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914844320.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914858770.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914870609.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914879016.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914887648.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914897631.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914906772.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914917789.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914930398.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914939916.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547914951781.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915367252.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915378667.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915457088.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915469100.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915477964.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915485483.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915505687.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915512832.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915519790.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915548597.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915565764.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915588118.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915603035.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915615979.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915625756.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915635017.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915651685.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915660760.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915677222.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915711336.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915724273.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915763486.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915774459.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915869467.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915878050.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915886432.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915909305.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915947597.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915956259.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915971674.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547915990329.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916000865.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916014358.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916032481.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916261083.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916272702.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916315941.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916324340.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916356913.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916380228.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916427163.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916456511.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916466597.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916505375.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916517065.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916525636.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916533954.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916551185.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547916669280.png">
+<meta property="og:image" content="https://vel.life/Byte-Tech-AI-Symposium/30873302924033539.jpg">
+<meta property="og:updated_time" content="2019-03-08T10:28:48.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019机器智能前沿论坛">
+<meta name="twitter:description" content="2019 Byte Tech AI Symposium机器智能前沿论坛记录。本文多图，约200M，谨慎阅读。">
+<meta name="twitter:image" content="https://vel.life/Byte-Tech-AI-Symposium/1547898072596.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/Byte-Tech-AI-Symposium/">
+
+
+
+
+
+
+  <title>2019机器智能前沿论坛 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/Byte-Tech-AI-Symposium/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2019机器智能前沿论坛</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-19T23:43:02+08:00">
+                2019-01-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-03-08T18:28:48+08:00">
+                2019-03-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Byte-Tech-AI-Symposium/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Byte-Tech-AI-Symposium/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,616
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/Byte-Tech-AI-Symposium/1547898072596.png" alt="1547898072596"></p>
+<p>2019 Byte Tech AI Symposium机器智能前沿论坛记录。<br>本文多图，约200M，谨慎阅读。<br><a id="more"></a>如有需要，建议另存为HTML或者其它格式。</p>
+<h1 id="Info"><a href="#Info" class="headerlink" title="Info"></a>Info</h1><p><a href="http://www.sigai.cn/index.php?r=front/knowledgelist&amp;cata=%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0" target="_blank" rel="noopener">SIGAI人工智能平台</a> （除技术栏目外需要<strong>付费</strong>），<a href="http://www.sigai.cn/paper_18.html" target="_blank" rel="noopener">机器学习算法地图</a></p>
+<blockquote>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546926457940115.jpg" target="_blank" rel="noopener">算法地图背面.jpg</a></p>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546940703391949.jpeg" target="_blank" rel="noopener">算法地图正面.jpeg</a></p>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546943320610818.jpg" target="_blank" rel="noopener">电脑桌面版.jpg</a></p>
+<p>以下为预览：（桌面版）</p>
+</blockquote>
+<p><img src="/Byte-Tech-AI-Symposium/1547898987050.png" alt="1547898987050"></p>
+<p><a href="https://biendata.com/competition/icmechallenge2019/" target="_blank" rel="noopener">短视频内容理解与推荐竞赛</a> （ICME 2019 Grand Chanllenge）</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>天气稍冷。会议在8点半开始入场。门口已经排起了长队，想必对数据科学的向往已经深入人心。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547897522092.png" alt="1547897522092"></p>
+<p>时间悠然溜走。然而阳光乍起，暖色调迎面袭来，令人顿生期许。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547897994048.png" alt="1547897994048"></p>
+<h1 id="致辞"><a href="#致辞" class="headerlink" title="致辞"></a>致辞</h1><p><img src="/Byte-Tech-AI-Symposium/1547898072596.png" alt="1547898072596"></p>
+<p>孙茂松：介绍嘉宾。<br>致辞，致辞，致辞……</p>
+<ul>
+<li><strong>脑科学记忆机制研究进展缓慢</strong>。</li>
+<li>创造算法，算法产生知识，则知识产权如何定义？（legal issues）</li>
+<li><strong>网络安全大有所为</strong>。</li>
+<li>CSranking(CMU,Tsinghua,…:smile:)</li>
+<li>清华人工智能发展历史悠久。</li>
+</ul>
+<p>李航致辞：</p>
+<ul>
+<li>今日头条，抖音</li>
+<li><strong>AIlab与产品线路相结合</strong>（落地型研究所）。ByteCUP</li>
+</ul>
+<h1 id="Dawn-Song-人工智能与安全：经验、挑战与未来方向"><a href="#Dawn-Song-人工智能与安全：经验、挑战与未来方向" class="headerlink" title="Dawn Song-人工智能与安全：经验、挑战与未来方向"></a>Dawn Song-人工智能与安全：经验、挑战与未来方向</h1><p>Dawn Song，加州大学伯克利分校，计算机系教授。清华物理系校友。</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>AI,Security 相互影响。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910472703.png" alt="1547910472703"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547899231619.png" alt="1547899231619"></p>
+<p>DDOS attack等网络攻击逐渐严重化。</p>
+<p> 弱点检测，自动检查系统等。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547899395535.png" alt="1547899395535"></p>
+<p>人类常常造成基础性弱点 黑客可能利用社会工程学——Chatbot。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547899415915.png" alt="1547899415915"></p>
+<p>软件安全验证。例：verify programs 开源项目。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908651488.png" alt="1547908651488"></p>
+<h2 id="Attacker"><a href="#Attacker" class="headerlink" title="Attacker"></a>Attacker</h2><p>讲述网络攻击者对机器学习的影响。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908680243.png" alt="1547908680243"></p>
+<p>总览。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908761493.png" alt="1547908761493"></p>
+<p>下面是一些对抗样本的展示。adversarial examples</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908832052.png" alt="1547908832052"></p>
+<p>left  can lead to wrong classification label！<br>（下面视频中左边的复合成图像可以干扰AI，但人类却容易正确识别，<del>录的效果不好+HTML不支持orz，视频删掉了</del>）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547917533904.png" alt="1547917533904"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908872938.png" alt="1547908872938"></p>
+<p>视觉问答系统中的对抗样本。VQA。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908887626.png" alt="1547908887626"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547908941409.png" alt="1547908941409"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909016413.png" alt="1547909016413"></p>
+<blockquote>
+<p>我的猜测：容易被fool的根本解释可能是因为计算机识别的特征尺度与人类的直觉是不同的。<br>（也许它们认知到了一些底层特征）</p>
+</blockquote>
+<p>利用对抗样本诱骗强化学习器。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909099575.png" alt="1547909099575"></p>
+<h2 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h2><p>利用神经网络生成对抗样本。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909164994.png" alt="1547909164994"></p>
+<p>黑盒攻击模式总览。（不知道学习器的内部结构）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909602392.png" alt="1547909602392"></p>
+<p>对抗式机器学习总结。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909875432.png" alt="1547909875432"></p>
+<p>一个案例。（手段：spacial consistency）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909902008.png" alt="1547909902008"></p>
+<p>学习系统的安全级别分为三类：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547909986308.png" alt="1547909986308"></p>
+<p>一个对比。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910001052.png" alt="1547910001052"></p>
+<p>再来一个对比。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910059031.png" alt="1547910059031"></p>
+<p>使用递归（recursion）来生成神经算法，<del>这里指的是减治/分治</del>。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910070683.png" alt="1547910070683"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910080974.png" alt="1547910080974"></p>
+<p>再回security level：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910091088.png" alt="1547910091088"></p>
+<p>神经网络是否只是强行记住了数据呢？</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910127200.png" alt="1547910127200"></p>
+<p>Looks like it。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910167531.png" alt="1547910167531"></p>
+<p>防护方法：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910185035.png" alt="1547910185035"></p>
+<p>好啦，回到主题上，今天主要讲了两个方面，AI和security互相的enabler。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910472703.png" alt="1547910472703"></p>
+<h2 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h2><p>最后，展望未来：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910511033.png" alt="1547910511033"></p>
+<h1 id="ByteCUP比赛颁奖仪式"><a href="#ByteCUP比赛颁奖仪式" class="headerlink" title="ByteCUP比赛颁奖仪式"></a>ByteCUP比赛颁奖仪式</h1><h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547910566593.png" alt="1547910566593"></p>
+<h2 id="颁奖"><a href="#颁奖" class="headerlink" title="颁奖~"></a>颁奖~</h2><p><img src="/Byte-Tech-AI-Symposium/1547910590416.png" alt="1547910590416"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910783233.png" alt="1547910783233"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910799583.png" alt="1547910799583"></p>
+<blockquote>
+<p><del>第一名一个人领666。</del></p>
+</blockquote>
+<h2 id="分享"><a href="#分享" class="headerlink" title="分享~"></a>分享~</h2><h3 id="Team-3th"><a href="#Team-3th" class="headerlink" title="Team 3th"></a>Team 3th</h3><p><img src="/Byte-Tech-AI-Symposium/1547910865006.png" alt="1547910865006"></p>
+<h3 id="Team-2nd"><a href="#Team-2nd" class="headerlink" title="Team 2nd"></a>Team 2nd</h3><p>模型融合。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910911823.png" alt="1547910911823"></p>
+<h3 id="Team-1st"><a href="#Team-1st" class="headerlink" title="Team 1st"></a>Team 1st</h3><p>有点像debug。。真简洁。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547910952574.png" alt="1547910952574"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911003387.png" alt="1547911003387"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911014827.png" alt="1547911014827"></p>
+<h1 id="李航-深度学习与NLP"><a href="#李航-深度学习与NLP" class="headerlink" title="李航-深度学习与NLP"></a>李航-深度学习与NLP</h1><h2 id="Overview-2"><a href="#Overview-2" class="headerlink" title="Overview"></a>Overview</h2><p><strong>为什么深度学习的效果如此之好？下一个方法是什么？</strong></p>
+<p>人的语言处理——<strong>认知现象</strong>。神经网络，产生表象(image)<br>但大脑实质在做神经计算（下意识进行），符号在大脑中被编码储存(类似计算机)</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911147478.png" alt="1547911147478"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911224748.png" alt="1547911224748"></p>
+<p>体验模拟假说——大猩猩是否有鼻子？鼻子是否被大猩猩所有？</p>
+<blockquote>
+<p>(鼻子似乎很难有一个image)，会不会造成过于的端到端——机制仍然是一个谜。</p>
+</blockquote>
+<p><img src="/Byte-Tech-AI-Symposium/1547911259141.png" alt="1547911259141"></p>
+<h2 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h2><p>一个二层神经网络就被证明为是万能函数近似器。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911272319.png" alt="1547911272319"></p>
+<p>样本效率：（深度网络可以充分利用样本？）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911285763.png" alt="1547911285763"></p>
+<p>泛化能力考量新进展。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911298245.png" alt="1547911298245"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911317326.png" alt="1547911317326"></p>
+<p>鲁棒性。（<strong>最坏</strong>意义误差控制On）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911325968.png" alt="1547911325968"></p>
+<p>合理性。（如何避免bias？）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911336697.png" alt="1547911336697"></p>
+<p>可解释性。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911345638.png" alt="1547911345638"></p>
+<h2 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h2><p><img src="/Byte-Tech-AI-Symposium/1547911354983.png" alt="1547911354983"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911364945.png" alt="1547911364945"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911377399.png" alt="1547911377399"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911393439.png" alt="1547911393439"></p>
+<h3 id="Soft"><a href="#Soft" class="headerlink" title="Soft"></a>Soft</h3><p><img src="/Byte-Tech-AI-Symposium/1547911403121.png" alt="1547911403121"></p>
+<h3 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h3><p><img src="/Byte-Tech-AI-Symposium/1547911814356.png" alt="1547911814356"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911825948.png" alt="1547911825948"></p>
+<p>符号和统计这两种类型的结合仍然是一个非常新颖的课题。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911862094.png" alt="1547911862094"></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><img src="/Byte-Tech-AI-Symposium/1547911928314.png" alt="1547911928314"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547911937899.png" alt="1547911937899"></p>
+<h1 id="朱军-不确定和对抗环境下的机器学习探讨"><a href="#朱军-不确定和对抗环境下的机器学习探讨" class="headerlink" title="朱军-不确定和对抗环境下的机器学习探讨"></a>朱军-不确定和对抗环境下的机器学习探讨</h1><p>清华计算机系教授。</p>
+<h2 id="Overview-3"><a href="#Overview-3" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547912036096.png" alt="1547912036096"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912101775.png" alt="1547912101775"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912111189.png" alt="1547912111189"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912145530.png" alt="1547912145530"></p>
+<h2 id="珠算-zhusuan"><a href="#珠算-zhusuan" class="headerlink" title="珠算-zhusuan"></a>珠算-zhusuan</h2><p>珠算系统——概率学习</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912155121.png" alt="1547912155121"></p>
+<p>调包示例：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912196798.png" alt="1547912196798"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912229893.png" alt="1547912229893"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912241854.png" alt="1547912241854"></p>
+<p><a href="https://www.zhihu.com/question/59606929" target="_blank" rel="noopener">如何评价生成模型框架 ZhuSuan?</a></p>
+<p><a href="https://arxiv.org/abs/1709.05870" target="_blank" rel="noopener">ZhuSuan: A Library for Bayesian Deep Learning</a></p>
+<p><a href="https://zhusuan.readthedocs.io/en/latest/" target="_blank" rel="noopener">Welcome to ZhuSuan</a></p>
+<h2 id="Triple-GAN"><a href="#Triple-GAN" class="headerlink" title="Triple GAN"></a>Triple GAN</h2><p><img src="/Byte-Tech-AI-Symposium/1547912364641.png" alt="1547912364641"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912389316.png" alt="1547912389316"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912398208.png" alt="1547912398208"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912409970.png" alt="1547912409970"></p>
+<h2 id="Attack"><a href="#Attack" class="headerlink" title="Attack"></a>Attack</h2><p><img src="/Byte-Tech-AI-Symposium/1547912417989.png" alt="1547912417989"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912427051.png" alt="1547912427051"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912445739.png" alt="1547912445739"></p>
+<h2 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h2><blockquote>
+<p>神经网络不怕白噪声，但怕对抗噪声<br>    正则化虽然削弱了收缩能力，却可能导致样本的正确率所对应的成功样本集具有随机性(尽管最后的正确率往往接近)<br>鲁棒性，增加样本距离</p>
+</blockquote>
+<p><img src="/Byte-Tech-AI-Symposium/1547912454125.png" alt="1547912454125"></p>
+<hr>
+<p>茶歇（招聘通道）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912586910.png" alt="1547912586910"></p>
+<h1 id="文林福-计算机视觉在移动端相机上的应用"><a href="#文林福-计算机视觉在移动端相机上的应用" class="headerlink" title="文林福-计算机视觉在移动端相机上的应用"></a>文林福-计算机视觉在移动端相机上的应用</h1><p><img src="/Byte-Tech-AI-Symposium/1547912681779.png" alt="1547912681779"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><img src="/Byte-Tech-AI-Symposium/1547912790560.png" alt="1547912790560"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912801729.png" alt="1547912801729"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912812269.png" alt="1547912812269"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912825848.png" alt="1547912825848"></p>
+<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><p><img src="/Byte-Tech-AI-Symposium/1547912833506.png" alt="1547912833506"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912840615.png" alt="1547912840615"></p>
+<p>稀疏化处理：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912848649.png" alt="1547912848649"></p>
+<p>自动化：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912870540.png" alt="1547912870540"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912883343.png" alt="1547912883343"></p>
+<h2 id="Machine-Level"><a href="#Machine-Level" class="headerlink" title="Machine Level"></a>Machine Level</h2><p><img src="/Byte-Tech-AI-Symposium/1547912902817.png" alt="1547912902817"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912961107.png" alt="1547912961107"></p>
+<blockquote>
+<p>然后放了一堆抖音视频。。</p>
+</blockquote>
+<h1 id="王长虎-CV在内容审核、理解、推荐与搜索中的应用"><a href="#王长虎-CV在内容审核、理解、推荐与搜索中的应用" class="headerlink" title="王长虎-CV在内容审核、理解、推荐与搜索中的应用"></a>王长虎-CV在内容审核、理解、推荐与搜索中的应用</h1><p><img src="/Byte-Tech-AI-Symposium/1547912968331.png" alt="1547912968331"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547912977617.png" alt="1547912977617"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913049406.png" alt="1547913049406"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913058549.png" alt="1547913058549"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913068121.png" alt="1547913068121"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913077619.png" alt="1547913077619"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913085358.png" alt="1547913085358"></p>
+<blockquote>
+<p>后面没记。。</p>
+</blockquote>
+<h1 id="王井东-基于交错组卷积的高效神经网络"><a href="#王井东-基于交错组卷积的高效神经网络" class="headerlink" title="王井东-基于交错组卷积的高效神经网络"></a>王井东-基于交错组卷积的高效神经网络</h1><p>微软亚研院高级研究员。</p>
+<p>看他的PPT吧。（<a href="./ANN.pdf">演讲PPT</a>）</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913097024.png" alt="1547913097024"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913113288.png" alt="1547913113288"></p>
+<h1 id="马泽君-音频理解与语音交互技术的应用"><a href="#马泽君-音频理解与语音交互技术的应用" class="headerlink" title="马泽君-音频理解与语音交互技术的应用"></a>马泽君-音频理解与语音交互技术的应用</h1><p><img src="/Byte-Tech-AI-Symposium/1547913869429.png" alt="1547913869429"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913878008.png" alt="1547913878008"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913885339.png" alt="1547913885339"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913892997.png" alt="1547913892997"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913929249.png" alt="1547913929249"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913938219.png" alt="1547913938219"></p>
+<h1 id="王雨轩-语音合成的新进展及其应用"><a href="#王雨轩-语音合成的新进展及其应用" class="headerlink" title="王雨轩-语音合成的新进展及其应用"></a>王雨轩-语音合成的新进展及其应用</h1><h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p><img src="/Byte-Tech-AI-Symposium/1547913970591.png" alt="1547913970591"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547913992116.png" alt="1547913992116"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914002513.png" alt="1547914002513"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914009538.png" alt="1547914009538"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914016702.png" alt="1547914016702"></p>
+<h2 id="Tacotron"><a href="#Tacotron" class="headerlink" title="Tacotron"></a>Tacotron</h2><p>Tacotron真厉害。效果拔群。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914057236.png" alt="1547914057236"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914068355.png" alt="1547914068355"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914076480.png" alt="1547914076480"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914084524.png" alt="1547914084524"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914092456.png" alt="1547914092456"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914099951.png" alt="1547914099951"></p>
+<h2 id="Final-1"><a href="#Final-1" class="headerlink" title="Final"></a>Final</h2><p><img src="/Byte-Tech-AI-Symposium/1547914124249.png" alt="1547914124249"></p>
+<h1 id="谢磊-深度对抗学习在语音处理中的应用"><a href="#谢磊-深度对抗学习在语音处理中的应用" class="headerlink" title="谢磊-深度对抗学习在语音处理中的应用"></a>谢磊-深度对抗学习在语音处理中的应用</h1><p>西北工业大学计算机系教授。</p>
+<p>深度学习+信号处理<br>深度对抗学习<br>对抗样本——数据扩充（数据增强，<em><a href="https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced" target="_blank" rel="noopener"><strong><font color="red">Data Augmentation</font></strong></a></em>）！</p>
+<blockquote>
+<p>对抗样本的原理很可能跟高维空间的变形有关。添加一个小的全维平衡扰动，将极大地影响距离度量。</p>
+</blockquote>
+<h2 id="Overview-4"><a href="#Overview-4" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547914179280.png" alt="1547914179280"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914192234.png" alt="1547914192234"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914203409.png" alt="1547914203409"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914212701.png" alt="1547914212701"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914233972.png" alt="1547914233972"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914245655.png" alt="1547914245655"></p>
+<h2 id="Deep-Adversarial-Learning"><a href="#Deep-Adversarial-Learning" class="headerlink" title="Deep Adversarial Learning"></a>Deep Adversarial Learning</h2><p><img src="/Byte-Tech-AI-Symposium/1547914280709.png" alt="1547914280709"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914289609.png" alt="1547914289609"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914298099.png" alt="1547914298099"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914306463.png" alt="1547914306463"></p>
+<p>例子。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914316244.png" alt="1547914316244"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914328211.png" alt="1547914328211"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914340297.png" alt="1547914340297"></p>
+<p>正则化。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914370113.png" alt="1547914370113"></p>
+<h2 id="Summary-2"><a href="#Summary-2" class="headerlink" title="Summary"></a>Summary</h2><p><img src="/Byte-Tech-AI-Symposium/1547914420221.png" alt="1547914420221"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914429620.png" alt="1547914429620"></p>
+<h1 id="Dan-Roth-附带监督的NLP"><a href="#Dan-Roth-附带监督的NLP" class="headerlink" title="Dan Roth-附带监督的NLP"></a>Dan Roth-附带监督的NLP</h1><p>宾夕法尼亚大学计算与信息科学杰出教授。</p>
+<blockquote>
+<p>跟不上节奏。。老老实实地当摄影师。</p>
+</blockquote>
+<p><img src="/Byte-Tech-AI-Symposium/1547914458715.png" alt="1547914458715"></p>
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><p><img src="/Byte-Tech-AI-Symposium/1547914496057.png" alt="1547914496057"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914512699.png" alt="1547914512699"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914522188.png" alt="1547914522188"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914548844.png" alt="1547914548844"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914561711.png" alt="1547914561711"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914576202.png" alt="1547914576202"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914590525.png" alt="1547914590525"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914610034.png" alt="1547914610034"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914618642.png" alt="1547914618642"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914628801.png" alt="1547914628801"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914637092.png" alt="1547914637092"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914645433.png" alt="1547914645433"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914657537.png" alt="1547914657537"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914667411.png" alt="1547914667411"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914680598.png" alt="1547914680598"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914692915.png" alt="1547914692915"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914705823.png" alt="1547914705823"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914719214.png" alt="1547914719214"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914731847.png" alt="1547914731847"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914745705.png" alt="1547914745705"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914757787.png" alt="1547914757787"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914777387.png" alt="1547914777387"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914787523.png" alt="1547914787523"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914809266.png" alt="1547914809266"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914820010.png" alt="1547914820010"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914833424.png" alt="1547914833424"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914844320.png" alt="1547914844320"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914858770.png" alt="1547914858770"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914870609.png" alt="1547914870609"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914879016.png" alt="1547914879016"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914887648.png" alt="1547914887648"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914897631.png" alt="1547914897631"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914906772.png" alt="1547914906772"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914917789.png" alt="1547914917789"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914930398.png" alt="1547914930398"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547914939916.png" alt="1547914939916"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><img src="/Byte-Tech-AI-Symposium/1547914951781.png" alt="1547914951781"></p>
+<h1 id="李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement"><a href="#李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement" class="headerlink" title="李磊-Learning to Generate Better News, Translation, and Advertisement"></a>李磊-Learning to Generate Better News, Translation, and Advertisement</h1><p><img src="/Byte-Tech-AI-Symposium/1547915367252.png" alt="1547915367252"></p>
+<h2 id="Overview-5"><a href="#Overview-5" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547915378667.png" alt="1547915378667"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915457088.png" alt="1547915457088"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915469100.png" alt="1547915469100"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915477964.png" alt="1547915477964"></p>
+<h2 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h2><p><img src="/Byte-Tech-AI-Symposium/1547915485483.png" alt="1547915485483"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915505687.png" alt="1547915505687"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915512832.png" alt="1547915512832"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915519790.png" alt="1547915519790"></p>
+<h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p><img src="/Byte-Tech-AI-Symposium/1547915548597.png" alt="1547915548597"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915565764.png" alt="1547915565764"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915588118.png" alt="1547915588118"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915603035.png" alt="1547915603035"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915615979.png" alt="1547915615979"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915625756.png" alt="1547915625756"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915635017.png" alt="1547915635017"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915651685.png" alt="1547915651685"></p>
+<h2 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><img src="/Byte-Tech-AI-Symposium/1547915660760.png" alt="1547915660760"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915677222.png" alt="1547915677222"></p>
+<h1 id="张敏-个性化推荐研究新进展"><a href="#张敏-个性化推荐研究新进展" class="headerlink" title="张敏-个性化推荐研究新进展"></a>张敏-个性化推荐研究新进展</h1><p>清华计算机系教授。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915711336.png" alt="1547915711336"></p>
+<h2 id="Overview-6"><a href="#Overview-6" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547915724273.png" alt="1547915724273"></p>
+<p>可解释性，鲁棒性，公平性（无偏性）。</p>
+<hr>
+<p><img src="/Byte-Tech-AI-Symposium/1547915763486.png" alt="1547915763486"></p>
+<h2 id="Explainability"><a href="#Explainability" class="headerlink" title="Explainability"></a>Explainability</h2><p><img src="/Byte-Tech-AI-Symposium/1547915774459.png" alt="1547915774459"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915869467.png" alt="1547915869467"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915878050.png" alt="1547915878050"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915886432.png" alt="1547915886432"></p>
+<h2 id="Robustness"><a href="#Robustness" class="headerlink" title="Robustness"></a>Robustness</h2><p><img src="/Byte-Tech-AI-Symposium/1547915909305.png" alt="1547915909305"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915947597.png" alt="1547915947597"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915956259.png" alt="1547915956259"></p>
+<h2 id="Fairness"><a href="#Fairness" class="headerlink" title="Fairness"></a>Fairness</h2><p><img src="/Byte-Tech-AI-Symposium/1547915971674.png" alt="1547915971674"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547915990329.png" alt="1547915990329"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916000865.png" alt="1547916000865"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916014358.png" alt="1547916014358"></p>
+<h2 id="Conclusion-2"><a href="#Conclusion-2" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><img src="/Byte-Tech-AI-Symposium/1547916032481.png" alt="1547916032481"></p>
+<h1 id="万小军-自然语言生成-NLG-技术研究进展"><a href="#万小军-自然语言生成-NLG-技术研究进展" class="headerlink" title="万小军-自然语言生成(NLG)技术研究进展"></a>万小军-自然语言生成(NLG)技术研究进展</h1><p>北大计算机系教授。</p>
+<p><strong>NLG的评价指标研究是一个核心的挑战问题</strong>。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916261083.png" alt="1547916261083"></p>
+<h2 id="Overview-7"><a href="#Overview-7" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/Byte-Tech-AI-Symposium/1547916272702.png" alt="1547916272702"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916315941.png" alt="1547916315941"></p>
+<h2 id="Apply"><a href="#Apply" class="headerlink" title="Apply"></a>Apply</h2><p>交互，写诗集？</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916324340.png" alt="1547916324340"></p>
+<p>未来可能的应用方向：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916356913.png" alt="1547916356913"><br>NLG方法：</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916380228.png" alt="1547916380228"></p>
+<p>目前来说，NLG领域还没有拿得出手的绝活。</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916427163.png" alt="1547916427163"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916456511.png" alt="1547916456511"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916466597.png" alt="1547916466597"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916505375.png" alt="1547916505375"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916517065.png" alt="1547916517065"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916525636.png" alt="1547916525636"></p>
+<h2 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h2><p><img src="/Byte-Tech-AI-Symposium/1547916533954.png" alt="1547916533954"></p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916551185.png" alt="1547916551185"></p>
+<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>不知不觉一整天就过去了。获得了多少？消化了多少？</p>
+<p>Ask myself that, and wall into the good night.</p>
+<p><img src="/Byte-Tech-AI-Symposium/1547916669280.png" alt="1547916669280"></p>
+<h1 id="Arrangement"><a href="#Arrangement" class="headerlink" title="Arrangement"></a>Arrangement</h1><p><img src="/Byte-Tech-AI-Symposium/30873302924033539.jpg" width="650"></p>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li><li><a href="https://vel.life/关于对抗样本的思考/">关于对抗样本的思考</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/Byte-Tech-AI-Symposium/" title="2019机器智能前沿论坛">https://vel.life/Byte-Tech-AI-Symposium/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/吃草/" rel="next" title="吃草">
+                <i class="fa fa-chevron-left"></i> 吃草
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/第十八期人工智能前沿学生论坛——语音识别前沿技术/" rel="prev" title="第十八期人工智能前沿学生论坛——语音识别前沿技术">
+                第十八期人工智能前沿学生论坛——语音识别前沿技术 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#致辞"><span class="nav-number">3.</span> <span class="nav-text">致辞</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dawn-Song-人工智能与安全：经验、挑战与未来方向"><span class="nav-number">4.</span> <span class="nav-text">Dawn Song-人工智能与安全：经验、挑战与未来方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview"><span class="nav-number">4.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attacker"><span class="nav-number">4.2.</span> <span class="nav-text">Attacker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure"><span class="nav-number">4.3.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final"><span class="nav-number">4.4.</span> <span class="nav-text">Final</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ByteCUP比赛颁奖仪式"><span class="nav-number">5.</span> <span class="nav-text">ByteCUP比赛颁奖仪式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">5.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颁奖"><span class="nav-number">5.2.</span> <span class="nav-text">颁奖~</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分享"><span class="nav-number">5.3.</span> <span class="nav-text">分享~</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-3th"><span class="nav-number">5.3.1.</span> <span class="nav-text">Team 3th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-2nd"><span class="nav-number">5.3.2.</span> <span class="nav-text">Team 2nd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-1st"><span class="nav-number">5.3.3.</span> <span class="nav-text">Team 1st</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#李航-深度学习与NLP"><span class="nav-number">6.</span> <span class="nav-text">李航-深度学习与NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-2"><span class="nav-number">6.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Findings"><span class="nav-number">6.2.</span> <span class="nav-text">Findings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP"><span class="nav-number">6.3.</span> <span class="nav-text">NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Soft"><span class="nav-number">6.3.1.</span> <span class="nav-text">Soft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Future"><span class="nav-number">6.3.2.</span> <span class="nav-text">Future</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">6.4.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#朱军-不确定和对抗环境下的机器学习探讨"><span class="nav-number">7.</span> <span class="nav-text">朱军-不确定和对抗环境下的机器学习探讨</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-3"><span class="nav-number">7.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#珠算-zhusuan"><span class="nav-number">7.2.</span> <span class="nav-text">珠算-zhusuan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triple-GAN"><span class="nav-number">7.3.</span> <span class="nav-text">Triple GAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attack"><span class="nav-number">7.4.</span> <span class="nav-text">Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-1"><span class="nav-number">7.5.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文林福-计算机视觉在移动端相机上的应用"><span class="nav-number">8.</span> <span class="nav-text">文林福-计算机视觉在移动端相机上的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">8.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithms"><span class="nav-number">8.2.</span> <span class="nav-text">Algorithms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Machine-Level"><span class="nav-number">8.3.</span> <span class="nav-text">Machine Level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王长虎-CV在内容审核、理解、推荐与搜索中的应用"><span class="nav-number">9.</span> <span class="nav-text">王长虎-CV在内容审核、理解、推荐与搜索中的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王井东-基于交错组卷积的高效神经网络"><span class="nav-number">10.</span> <span class="nav-text">王井东-基于交错组卷积的高效神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#马泽君-音频理解与语音交互技术的应用"><span class="nav-number">11.</span> <span class="nav-text">马泽君-音频理解与语音交互技术的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王雨轩-语音合成的新进展及其应用"><span class="nav-number">12.</span> <span class="nav-text">王雨轩-语音合成的新进展及其应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General"><span class="nav-number">12.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tacotron"><span class="nav-number">12.2.</span> <span class="nav-text">Tacotron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-1"><span class="nav-number">12.3.</span> <span class="nav-text">Final</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谢磊-深度对抗学习在语音处理中的应用"><span class="nav-number">13.</span> <span class="nav-text">谢磊-深度对抗学习在语音处理中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-4"><span class="nav-number">13.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Adversarial-Learning"><span class="nav-number">13.2.</span> <span class="nav-text">Deep Adversarial Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-2"><span class="nav-number">13.3.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dan-Roth-附带监督的NLP"><span class="nav-number">14.</span> <span class="nav-text">Dan Roth-附带监督的NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Start"><span class="nav-number">14.1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">14.2.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement"><span class="nav-number">15.</span> <span class="nav-text">李磊-Learning to Generate Better News, Translation, and Advertisement</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-5"><span class="nav-number">15.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications"><span class="nav-number">15.2.</span> <span class="nav-text">Applications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Technologies"><span class="nav-number">15.3.</span> <span class="nav-text">Technologies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">15.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#张敏-个性化推荐研究新进展"><span class="nav-number">16.</span> <span class="nav-text">张敏-个性化推荐研究新进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-6"><span class="nav-number">16.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Explainability"><span class="nav-number">16.2.</span> <span class="nav-text">Explainability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness"><span class="nav-number">16.3.</span> <span class="nav-text">Robustness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fairness"><span class="nav-number">16.4.</span> <span class="nav-text">Fairness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-2"><span class="nav-number">16.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万小军-自然语言生成-NLG-技术研究进展"><span class="nav-number">17.</span> <span class="nav-text">万小军-自然语言生成(NLG)技术研究进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-7"><span class="nav-number">17.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apply"><span class="nav-number">17.2.</span> <span class="nav-text">Apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenges"><span class="nav-number">17.3.</span> <span class="nav-text">Challenges</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尾声"><span class="nav-number">18.</span> <span class="nav-text">尾声</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arrangement"><span class="nav-number">19.</span> <span class="nav-text">Arrangement</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

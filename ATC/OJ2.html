@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content=",,,,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="仅供算法训练营内部学员学习交流之用。">
+<meta name="keywords" content="TsOJ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Algorithm-Training-Camp-week2">
+<meta property="og:url" content="https://vel.life/ATC/OJ2.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="仅供算法训练营内部学员学习交流之用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/ATC/1550219299351.png">
+<meta property="og:image" content="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2dc2/2dc2002caca14c4439c08808cc5967bdd43e4203.png">
+<meta property="og:updated_time" content="2019-05-13T15:45:01.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm-Training-Camp-week2">
+<meta name="twitter:description" content="仅供算法训练营内部学员学习交流之用。">
+<meta name="twitter:image" content="https://vel.life/ATC/1550219299351.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/ATC/OJ2.html">
+
+
+
+
+
+
+  <title>Algorithm-Training-Camp-week2 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">Algorithm-Training-Camp-week2</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <blockquote>
+<p>仅供算法训练营<strong>内部学员</strong>学习交流之用。<a id="more"></a></p>
+</blockquote>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+<p>OJ网址：<a href="https://dsa.cs.tsinghua.edu.cn/oj/index.shtml" target="_blank" rel="noopener">https://dsa.cs.tsinghua.edu.cn/oj/index.shtml</a></p>
+<p>C/C++默认使用C++，Python默认使用py3。（向下兼容）<br>由于OJ服务器的限制（多版本py），你可能需要指定解释器：<code>#!/usr/bin/env python3</code><br><a href="https://www.jianshu.com/p/400c612381dd" target="_blank" rel="noopener">#!/usr/bin/python3 和 #!/usr/bin/env python3 的作用</a></p>
+<p><a href="https://www.zhihu.com/question/20548678" target="_blank" rel="noopener">C++的main函数不必显示返回零。</a></p>
+</blockquote>
+<h1 id="第2周-2A-减而治之"><a href="#第2周-2A-减而治之" class="headerlink" title="第2周-2A-减而治之"></a>第2周-2A-减而治之</h1>
+
+	<div class="row">
+    <embed src="第2周-2A-减而治之.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h1 id="第2周-2B-分而治之"><a href="#第2周-2B-分而治之" class="headerlink" title="第2周-2B-分而治之"></a>第2周-2B-分而治之</h1>
+
+	<div class="row">
+    <embed src="第2周-2B-分而治之.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h1 id="第二周题目"><a href="#第二周题目" class="headerlink" title="第二周题目"></a>第二周题目</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><hr>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>给出n个整数，将它们从小到大排序后输出。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行为一个正整数n，第二行为n个整数。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出一行n个整数，表示排序后的n个整数。</p>
+<h3 id="样例1输入"><a href="#样例1输入" class="headerlink" title="样例1输入"></a><strong>样例1输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">5 4 2 3 -1</span><br></pre></td></tr></table></figure>
+<h3 id="样例1输出"><a href="#样例1输出" class="headerlink" title="样例1输出"></a><strong>样例1输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1 2 3 4 5</span><br></pre></td></tr></table></figure>
+<h3 id="样例2"><a href="#样例2" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p>请查看<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/ca72/ca72592293f6fe6287d0c81859597323ab739710.zip" target="_blank" rel="noopener">下发文件</a>内的sample2_input.txt和sample2_output.txt。</p>
+<p><strong>限制</strong></p>
+<p>对于前30%的数据，n ≤ 100，给出的n个整数的绝对值不超过10；</p>
+<p>对于前60%的数据，n ≤ <strong>5000</strong>，给出的n个整数的绝对值不超过10^9；（<strong>O(n^2)</strong>）</p>
+<p>对于另20%的数据，n ≤ 500000，给出的n个整数的绝对值不超过10^5；（照顾桶排序、希尔排序的同学）</p>
+<p>对于100%的数据，n ≤ <strong>500000</strong>，给出的n个整数的绝对值不超过10^9。（<strong>O(nlogn)</strong>）</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<p><strong>提示</strong></p>
+<p>若大家使用cin、cout进行输入输出，则需在main函数里的第一行加入ios::sync_with_stdio(false)，否则可能会超时。（<strong>输入输出规模较大</strong>）</p>
+<p>推荐大家使用<strong>scanf</strong>和<strong>printf</strong>进行输入输出。</p>
+<p>大家<strong><em>不妨使用各种排序算法进行测试</em></strong>。</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/313e/313eeb1b4c9367fa56778cce0b59513687baf99d.zip" target="_blank" rel="noopener">这里</a>】下载。【<strong>题目和模板可能不会同时发布</strong>】</p>
+<h3 id="Code-O-nlogn"><a href="#Code-O-nlogn" class="headerlink" title="Code $O(nlogn)$"></a>Code $O(nlogn)$</h3><p><img src="/ATC/1550219299351.png" alt="1550219299351"></p>
+<h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h3><h2 id="分组-二分法"><a href="#分组-二分法" class="headerlink" title="分组 二分法"></a>分组 二分法</h2><hr>
+<h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>有n个正整数排成一排，你要将这些数分成m份（<u>同一份中的数字都是<strong>连续</strong>的，不能隔开</u>），同时数字之和最大的那一份的数字之和尽量小。</p>
+<h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>输入的第一行包含两个正整数n，m。</p>
+<p>接下来一行包含n个正整数。</p>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出一个数，表示最优方案中，数字之和最大的那一份的数字之和。</p>
+<h3 id="样例1输入-1"><a href="#样例1输入-1" class="headerlink" title="样例1输入"></a><strong>样例1输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5 2</span><br><span class="line">2 1 2 2 3</span><br></pre></td></tr></table></figure>
+<h3 id="样例1输出-1"><a href="#样例1输出-1" class="headerlink" title="样例1输出"></a><strong>样例1输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure>
+<h3 id="样例1解释"><a href="#样例1解释" class="headerlink" title="样例1解释"></a><strong>样例1解释</strong></h3><p>若分成2和1、2、2、3，则最大的那一份是1+2+2+3=8；</p>
+<p>若分成2、1和2、2、3，则最大的那一份是2+2+3=7；</p>
+<p>若分成2、1、2和2、3，则最大的那一份是2+1+2或者是2+3，都是5；</p>
+<p>若分成2、1、2、2和3，则最大的那一份是2+1+2+2=7。</p>
+<p>所以最优方案是第三种，答案为5。</p>
+<h3 id="样例2-1"><a href="#样例2-1" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p>请查看<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/04aa/04aabace4f50257938798afa1192fd723ec546ba.zip" target="_blank" rel="noopener">下发文件</a>内的sample2_input.txt和sample2_output.txt。</p>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于50%的数据，n ≤ 100，给出的n个正整数不超过10；</p>
+<p>对于100%的数据，m ≤ n ≤ 300000，给出的n个正整数不超过1000000。</p>
+<p>时间：4 sec</p>
+<p>空间：512 MB</p>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[大家记得看到“最大的最小”这一类语言，一定要想二分能不能做。]</p>
+<p>[我们二分最大的那一份的和d，然后从左向右分组，在一组中，在和不超过d的情况下尽量往右分。若最终分出来的组数小于等于m，则这显然是合法的（我们在分出来的组里随便找个地方切开，总能变到m组，且每组的和不超过d）]</p>
+<p>[这个d显然是单调的，即，若和不超过d能分成m组，则和不超过d+1也是能分成m组的，故二分正确。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/5d29/5d292025d376fc5b1ba96dd6739728e7b097fdd4.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-1"><a href="#Python-1" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-1"><a href="#BUG-1" class="headerlink" title="BUG"></a>BUG</h3><h2 id="大转盘-欧拉回路"><a href="#大转盘-欧拉回路" class="headerlink" title="大转盘 欧拉回路"></a>大转盘 欧拉回路</h2><hr>
+<p><strong>时间限制：</strong>1 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>邓老师有一个大转盘，被平分成了 2^n 份。</p>
+<p>邓老师还有一个长度为 2^n 的数组 a（下标从 0 开始），其中的每个元素都是 0 或 1。于是邓老师就可以选择大转盘上的一个位置，将 a[0] 填入其中，然后按顺时针顺序依次将 a[1],a[2],…,a[2^n-1] 填入。</p>
+<p>对于大转盘上的一个指定位置，邓老师可以从它开始，取出顺时针方向的 n 个位置，并将它们按原顺序拼接起来，得到一个长度为 n 的 01 串，也就是一个 n 位二进制数。我们把这个二进制数称作从这个位置开始的<strong>幸运数</strong>。</p>
+<p>显然地，大转盘上共有 2^n 个位置可以获得幸运数，而巧合的是 n 位二进制数恰好也有 2^n 个，所以邓老师希望这些所有的幸运数包含了所有的 n 位二进制数。</p>
+<p>请输出一个数组 a，使其满足邓老师的要求。（如果有多解，输出任一即可）</p>
+<p>下面是一个 n=3 的例子（即样例）。</p>
+<p><img src="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2dc2/2dc2002caca14c4439c08808cc5967bdd43e4203.png" alt="img"></p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>一行一个整数 n。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行 2^n 个字符，第 i 个字符（1&lt;=i&lt;=2^n）表示 a[i-1]。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01011100</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>本题包含 16 个测试点。对于第 i 个测试点（1&lt;=i&lt;=16），满足 n=i。</p>
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[如果把所有 n-1 位二进制数建立节点，将所有的 n 位二进制数视为单向边。对于边 x，设其前 n-1 位为 u，后 n-1 位为 v，则其连接 u,v。]</p>
+<p>[在这张图上求出欧拉回路，想一想，答案与欧拉回路有何关联呢？]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/b626/b62631f8fb3722232fb454a532e0740f6eb6d9b0.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><h4 id="C-2"><a href="#C-2" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-2"><a href="#Python-2" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-2"><a href="#Java-2" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-2"><a href="#BUG-2" class="headerlink" title="BUG"></a>BUG</h3><h2 id="象棋-二分图，增广路，匈牙利算法"><a href="#象棋-二分图，增广路，匈牙利算法" class="headerlink" title="象棋 二分图，增广路，匈牙利算法"></a>象棋 二分图，增广路，匈牙利算法</h2><h3 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>你有足够多的象棋“车”，在一个n×n的棋盘上你能放多少个“车”呢？注意，所给棋盘上有些位置不能放任何东西。同时，某一行（列）最多只能存在一个“车”。</p>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行为一个正整数n。</p>
+<p>接下来n行，每行包含n个整数，若为0表示这个位置不能放“车”；若为1表示这个位置可以放“车”。</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出一个整数，表示最多能放多少个“车”。</p>
+<h3 id="样例1输入-2"><a href="#样例1输入-2" class="headerlink" title="样例1输入"></a><strong>样例1输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">1 0 0 0 0</span><br><span class="line">0 0 0 0 0</span><br><span class="line">0 0 0 1 0</span><br><span class="line">1 1 0 1 0</span><br><span class="line">0 0 0 1 0</span><br></pre></td></tr></table></figure>
+<h3 id="样例1输出-2"><a href="#样例1输出-2" class="headerlink" title="样例1输出"></a><strong>样例1输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="样例1解释-1"><a href="#样例1解释-1" class="headerlink" title="样例1解释"></a><strong>样例1解释</strong></h3><p>我们这样放就只能放2个“车”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">车 0 0 0 0</span><br><span class="line">0 0 0 0 0</span><br><span class="line">0 0 0 1 0</span><br><span class="line">1 1 0 车 0</span><br><span class="line">0 0 0 1 0</span><br></pre></td></tr></table></figure>
+<p>若我们这样放就能放下3个了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">车 0 0 0 0</span><br><span class="line">0 0 0 0 0</span><br><span class="line">0 0 0 1 0</span><br><span class="line">1 车 0 1 0</span><br><span class="line">0 0 0 车 0</span><br></pre></td></tr></table></figure>
+<h3 id="样例2-2"><a href="#样例2-2" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p>请查看<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2976/297656de591a9fe6b8a22f1451315e6ec07fc5ca.zip" target="_blank" rel="noopener">下发文件</a>内的sample2_input.txt和sample2_output.txt。</p>
+<h3 id="限制-1"><a href="#限制-1" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于30%的数据，n ≤ 5；</p>
+<p>对于60%的数据，n ≤ 20；</p>
+<p>对于100%的数据，n ≤ 500。</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<h3 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[将横坐标和纵坐标看做是二分图的X集和Y集，会了吗？]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/e3bb/e3bbf4bf09667d0af99f7ee82fa6fb53d517a4af.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-O-n-3-longrightarrow-O-nm"><a href="#Code-O-n-3-longrightarrow-O-nm" class="headerlink" title="Code $O(n^3)\longrightarrow O(nm)$"></a>Code $O(n^3)\longrightarrow O(nm)$</h3><p><strong><em>总结</em></strong>：</p>
+<p>匈牙利算法：找到一条增广路——&gt;匹配+1；一直<strong>寻找增广路</strong>，直到找不到。</p>
+<ul>
+<li><p>O(n*m)，最坏O(n^3).</p>
+</li>
+<li><p>邻接矩阵：O(n^3)。邻接表：O(n*m)。</p>
+</li>
+</ul>
+<p><em>求矩阵的秩：O(n^3).【<em>*不适合本题</em></em>，如全1方阵】</p>
+<p><strong>技巧</strong>：找不到最优解，使用搜索算法在时间限制达到（不超时）之前输出当前最优解。【<strong>卡时</strong>】</p>
+<p><a href="https://blog.csdn.net/c20180630/article/details/70175814" target="_blank" rel="noopener">二分图匹配——匈牙利算法和KM算法</a></p>
+<p><a href="https://blog.csdn.net/thundermrbird/article/details/52231639" target="_blank" rel="noopener">算法讲解：二分图匹配</a>，<a href="https://blog.csdn.net/dark_scope/article/details/8880547" target="_blank" rel="noopener"><strong>趣写算法系列之—匈牙利算法</strong></a></p>
+<p><a href="https://blog.csdn.net/acmman/article/details/38421239" target="_blank" rel="noopener">HDU2063-过山车</a><a href="https://blog.csdn.net/u012294939/article/details/43763005" target="_blank" rel="noopener">二分图最大匹配例题</a></p>
+<p><a href="https://blog.csdn.net/qq_34564984/article/details/52778763" target="_blank" rel="noopener">二分图相关定理及其证明</a>（<strong>最小点覆盖</strong>+最小路径覆盖+最大独立集+最小覆盖集）</p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwipjeqOkr3gAhVRUt4KHUNEAr8QFjAAegQIDBAB&amp;url=https%3A%2F%2Fzh.wikipedia.org%2Fzh-hans%2F%25E5%258C%2588%25E7%2589%2599%25E5%2588%25A9%25E7%25AE%2597%25E6%25B3%2595&amp;usg=AOvVaw0-CIKWsQHsuRwT9GUkitvY" target="_blank" rel="noopener">匈牙利算法- 维基百科，自由的百科全书</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwipjeqOkr3gAhVRUt4KHUNEAr8QFjABegQIBxAB&amp;url=https%3A%2F%2Fwww.renfei.org%2Fblog%2Fbipartite-matching.html&amp;usg=AOvVaw2Z5HZRtXR96U2B4pHGLjLN" target="_blank" rel="noopener"><strong>二分图的最大匹配、完美匹配和匈牙利算法- Blog - Renfei Song</strong></a></p>
+<h4 id="C-3"><a href="#C-3" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;string.h&gt;</span></span><br><span class="line"><span class="comment">//#include &lt;vector&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 代码实现开始 =================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">505</span> * <span class="number">2</span>, M = N * N;</span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接表的结构</span></span><br><span class="line"><span class="comment">//next:下一条邻接边 </span></span><br><span class="line"><span class="comment">//to: 本条边所指向的终点</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> next, to;  <span class="comment">//next=0表示空Null </span></span><br><span class="line">&#125; e[M];</span><br><span class="line"></span><br><span class="line"><span class="comment">//ihead:邻接表的头【表头】 </span></span><br><span class="line"><span class="comment">//cnt:邻接表大小 </span></span><br><span class="line"><span class="comment">//mc:表示每个点所匹配到的另一个点 </span></span><br><span class="line"><span class="comment">//vis: Y集是否被访问过</span></span><br><span class="line"><span class="keyword">int</span> cnt, ihead[N], mc[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接表连边，表示连一条x到y的有向边 </span></span><br><span class="line"><span class="comment">//x:起点 </span></span><br><span class="line"><span class="comment">//y:终点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span>    <span class="comment">//相当于链表的前向插入 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ++cnt;</span><br><span class="line">    e[cnt].next = ihead[x];</span><br><span class="line">    e[cnt].to = y;</span><br><span class="line">    ihead[x] = cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//匈牙利算法 dfs实现 </span></span><br><span class="line"><span class="comment">//x：X集上的点，从当前点出发找增广路 </span></span><br><span class="line"><span class="comment">//返回值：若找到增广路则返回true；否则返回false </span></span><br><span class="line"><span class="comment">//mc：match匹配 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span>  <span class="comment">//深度优先搜索 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = ihead[x]; i; i = e[i].next )&#123;</span><br><span class="line">        <span class="keyword">int</span> y = e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(!vis[y])&#123;   <span class="comment">//如果找到一个Y集上的点没有标记 </span></span><br><span class="line">            vis[y] = <span class="literal">true</span>; <span class="comment">//标记该点 </span></span><br><span class="line">            <span class="keyword">if</span>(mc[y] == <span class="number">0</span> || dfs(mc[y]))&#123; <span class="comment">//如果y是没有匹配点的，说明找到了一个增广路；或者说递归查找y的匹配点，得到了一条增广路 </span></span><br><span class="line">                mc[x] = y;  <span class="comment">//找到了增广路，更新mc数组 </span></span><br><span class="line">                mc[y] = x;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求解棋盘上最多能放多少个“车”</span></span><br><span class="line"><span class="comment">// n：棋盘的大小为n×n的</span></span><br><span class="line"><span class="comment">// board：所给棋盘，对于某个位置上的数：若值为1表示可以放“车”；若值为0表示不能放“车”</span></span><br><span class="line"><span class="comment">// 返回值：能放“车”的最大个数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; board)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//我们将行看作n个点，将列看作另外n个点。标号分别是 1到n 和 n+1到2n</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n * <span class="number">2</span>; i++)&#123;</span><br><span class="line">        ihead[i] = <span class="number">0</span>;</span><br><span class="line">        mc[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//连边 </span></span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(board[i<span class="number">-1</span>][j<span class="number">-1</span>] == <span class="number">1</span>)</span><br><span class="line">                add(i,j+n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;  <span class="comment">//遍历X集 </span></span><br><span class="line">        <span class="keyword">if</span>(!mc[i])&#123;	<span class="comment">//如果X集中的第i个点没有匹配到Y集上的点，则从这个点出发寻找增广路 </span></span><br><span class="line">            <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="keyword">bool</span>) * (n * <span class="number">2</span> + <span class="number">1</span>));  <span class="comment">//清空vis数组，fill 0 </span></span><br><span class="line">            <span class="keyword">if</span>(dfs(i))&#123;  <span class="comment">//如果找到，答案直接+1【增广路定理所保证】 </span></span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 代码实现结束 =================</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; e;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; t;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">            t.push_back(x);</span><br><span class="line">        &#125;</span><br><span class="line">        e.push_back(t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, getAnswer(n, e));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Python-3"><a href="#Python-3" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-3"><a href="#Java-3" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-3"><a href="#BUG-3" class="headerlink" title="BUG"></a>BUG</h3><h2 id="序列计数-分治法，单调栈"><a href="#序列计数-分治法，单调栈" class="headerlink" title="序列计数 分治法，单调栈"></a>序列计数 分治法，单调栈</h2><hr>
+<h3 id="描述-3"><a href="#描述-3" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>给定一个n个整数的序列以及一个<strong>非负整数</strong>d，请你输出这个序列中有多少个连续子序列（长度大于1），满足该子序列的最大值最小值之差不大于d。</p>
+<p>连续子序列：序列1 2 3中长度大于1的连续子序列有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br><span class="line">2 3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+<h3 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行包含两个整数n,d。</p>
+<p>接下来一行包含n个整数。</p>
+<h3 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出一个整数，表示满足条件的连续子序列个数。</p>
+<h3 id="样例1输入-3"><a href="#样例1输入-3" class="headerlink" title="样例1输入"></a><strong>样例1输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 5</span><br><span class="line">5 5 4 8 -10 10 0 1</span><br></pre></td></tr></table></figure>
+<h3 id="样例1输出-3"><a href="#样例1输出-3" class="headerlink" title="样例1输出"></a><strong>样例1输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+<h3 id="样例1解释-2"><a href="#样例1解释-2" class="headerlink" title="样例1解释"></a><strong>样例1解释</strong></h3><p>满足条件的连续子序列有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">5 5</span><br><span class="line">5 5 4</span><br><span class="line">5 5 4 8</span><br><span class="line">5 4</span><br><span class="line">5 4 8</span><br><span class="line">4 8</span><br><span class="line">0 1</span><br></pre></td></tr></table></figure>
+<h3 id="样例2-3"><a href="#样例2-3" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p>请查看<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/0c86/0c864fe88e9e6594dd688d0ed73cad3be9b4759e.zip" target="_blank" rel="noopener">下发文件</a>内的sample2_input.txt和sample2_output.txt。</p>
+<h3 id="限制-2"><a href="#限制-2" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于60%的数据，n ≤ 5000；</p>
+<p>对于100%的数据，n ≤ 300000。</p>
+<p>保证所有整数的绝对值不超过10^9，d不超过2×10^9。</p>
+<p>时间：10 sec</p>
+<p>空间：512 MB</p>
+<h3 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[考虑分治。]</p>
+<p>[令函数solve(l, r)表示统计[l, r]中合法的连续子序列个数，mid为(l+r)/2（下取整），那么]</p>
+<p>[solve(l, r) = 0, 当l = r]</p>
+<p>[solve(l, r) = solve(l, mid) + solve(mid + 1, r) + cal(l, r, mid)，当l≠r]</p>
+<p>[其中cal(l, r, mid)表示在左端点在区间[l, mid]中、右端点在区间[mid + 1, r]中的符合要求的连续子序列数目]</p>
+<p>[那么答案就是solve(1, n)。]</p>
+<p>[至于cal(l, r, mid)怎么算，大家可以仔细思考思考。（右端点是有单调性的）]</p>
+<p>[<strong>注意答案要用long long</strong>]</p>
+<p>[（另外这题也可以用线性的方法做哦~有兴趣去搜一搜单调栈）]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/3cf9/3cf92ac70450198903b0aba364159cbf47f9a5ca.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><h4 id="C-4"><a href="#C-4" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-4"><a href="#Python-4" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-4"><a href="#Java-4" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-4"><a href="#BUG-4" class="headerlink" title="BUG"></a>BUG</h3><h2 id="最小交换"><a href="#最小交换" class="headerlink" title="最小交换"></a>最小交换</h2><hr>
+<p><strong>时间限制：</strong>4 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>给定一个 1 到 n 的排列（即一个序列，其中 [1,n] 之间的正整数每个都出现了恰好 1 次）。</p>
+<p>你可以花 1 元钱交换两个<strong>相邻</strong>的数。</p>
+<p>现在，你希望把它们升序排序。求你完成这个目标最少需要花费多少元钱。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个整数 n，表示排列长度。</p>
+<p>接下来一行 n 个用空格隔开的正整数，描述这个排列。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行一个非负整数，表示完成目标最少需要花多少元钱。</p>
+<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a><strong>样例解释</strong></h3><p>你可以：</p>
+<p>花 1 元交换 1,2，序列变成 3 1 2。</p>
+<p>花 1 元交换 1,3，序列变成 1 3 2。</p>
+<p>花 1 元交换 2,3，序列变成 1 2 3。</p>
+<p>总共需要花 3 元。</p>
+<p>可以证明不存在更优的解。</p>
+<h3 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 20% 的数据，保证 n&lt;=7。</p>
+<p>对于 60% 的数据，保证 n&lt;=1,000。</p>
+<p>对于 100% 的数据，保证 n&lt;=200,000。</p>
+<h3 id="提示-4"><a href="#提示-4" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[每次交换相邻的两个数都会使逆序对 +1 或 -1。]</p>
+<p>[逆序对数目不为零时，一定存在相邻的逆序对。]</p>
+<p>[因此最优策略显然是每次都让逆序对数目 -1。]</p>
+<p>[所以答案即为逆序对数目。]</p>
+<p>[朴素的算法时间复杂度是 O(n^2) 的。]</p>
+<p>[用归并排序求逆序对数可以通过本题。需要提醒的是，答案可能超过 32 位整数的范围哦。]</p>
+<p>[逆序对数目同样可以用树状数组优化朴素的 O(n^2) 算法，并获得和归并排序相同的时间复杂度。有兴趣的同学可以自行学习。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/d9c6/d9c6d757f1d0ff1ecdb8be35c9c8cc517db745b2.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><h4 id="C-5"><a href="#C-5" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-5"><a href="#Python-5" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-5"><a href="#Java-5" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-5"><a href="#BUG-5" class="headerlink" title="BUG"></a>BUG</h3><h2 id="楼尔邦德-二分查找"><a href="#楼尔邦德-二分查找" class="headerlink" title="楼尔邦德 二分查找"></a>楼尔邦德 二分查找</h2><hr>
+<p><strong>时间限制：</strong>2 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>给定包含 n 个数的序列 A。</p>
+<p>再给出 Q 个询问，每个询问包含一个数 x，询问的是序列 A 中不小于 x 的最小整数是多少（无解输出-1）。</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个数 n，表示序列长度。</p>
+<p>第二行 n 个用空格隔开的正整数，描述序列中的每一个元素。保证这些元素都不会超过 10^9。</p>
+<p>第三行一个正整数 Q，表示询问个数。</p>
+<p>接下来 Q 行，每行一个正整数 x，描述一个询问。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出 Q 行依次回答 Q 个询问，每行一个正整数，表示对应询问的答案。</p>
+<h3 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3 2 5</span><br><span class="line">6</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">5</span><br><span class="line">5</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 50% 的数据，保证 n&lt;=2000。</p>
+<p>对于 100% 的数据，保证 n&lt;=300,000。</p>
+<h3 id="提示-5"><a href="#提示-5" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[如果我们先将原序列排序，那么我们就可以在它上面进行二分查找啦！]</p>
+<p>[STL库中有二分查找的函数<strong>std::lower_bound</strong>，你可以学习一下它的使用。当然啦，作为初学者，还是建议自己实现二分查找哦！]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2be7/2be78f87426cde14caa29a7ff0f86de551735514.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><h4 id="C-6"><a href="#C-6" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-6"><a href="#Python-6" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-6"><a href="#Java-6" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-6"><a href="#BUG-6" class="headerlink" title="BUG"></a>BUG</h3><h2 id="最短路-Dijkstra算法-堆优化"><a href="#最短路-Dijkstra算法-堆优化" class="headerlink" title="最短路 Dijkstra算法+堆优化"></a>最短路 Dijkstra算法+堆优化</h2><hr>
+<p><strong>时间限制：</strong>4 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>给定一张 n 个点的无向带权图，节点的编号从 1 至 n，求从 S 到 T 的最短路径长度。</p>
+<h3 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行 4 个数 n,m,S, T，分别表示点数、边数、起点、终点。</p>
+<p>接下来 m 行，每行 3 个正整数 u,v,w，描述一条 u 到 v 的双向边，边权为 w。</p>
+<p>保证 1&lt;=u,v&lt;=n。</p>
+<h3 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行一个整数，表示 S 到 T 的最短路。</p>
+<h3 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">7 11 5 4</span><br><span class="line">2 4 2</span><br><span class="line">1 4 3</span><br><span class="line">7 2 2</span><br><span class="line">3 4 3</span><br><span class="line">5 7 5</span><br><span class="line">7 3 3</span><br><span class="line">6 1 1</span><br><span class="line">6 3 4</span><br><span class="line">2 4 3</span><br><span class="line">5 6 3</span><br><span class="line">7 2 1</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+<p><a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2144/21447a0a2374eeb572839e7062dc0e0a21faa642.zip" target="_blank" rel="noopener">样例文件下载（包含第二个样例）</a></p>
+<h3 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>本题共设置 12 个测试点。</p>
+<p>对于前 10 个测试点，保证 n&lt;=2500，m&lt;=6200，对于每条边有 w&lt;=1000。这部分数据有梯度。</p>
+<p>对于所有的 12 个测试点，保证 n&lt;=100,000，m&lt;=250,000。</p>
+<h3 id="提示-6"><a href="#提示-6" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[本题是 Dijkstra 算法的模板练习题。]</p>
+<p>[使用朴素的 Dijkstra 算法可以通过前 10 个测试点。]</p>
+<p>[使用堆或<strong>std::priority_queue</strong>优化的 Dijkstra 算法可以通过所有测试点。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/2fdd/2fdd07ffaa6093f2d751b01a877d24442d578538.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><h4 id="C-7"><a href="#C-7" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-7"><a href="#Python-7" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-7"><a href="#Java-7" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-7"><a href="#BUG-7" class="headerlink" title="BUG"></a>BUG</h3><h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><h4 id="Force-O-n"><a href="#Force-O-n" class="headerlink" title="Force $O(n)$"></a>Force $O(n)$</h4><h5 id="C-8"><a href="#C-8" class="headerlink" title="C++"></a>C++</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="Python-8"><a href="#Python-8" class="headerlink" title="Python"></a>Python</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="Java-8"><a href="#Java-8" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="周测"><a href="#周测" class="headerlink" title="周测"></a>周测</h1><h2 id="K小数"><a href="#K小数" class="headerlink" title="K小数"></a>K小数</h2><hr>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h3><p>这是一道很简单的问题。</p>
+<p>给你一个长度为 n 的序列 a1,a2,…,an，求这个序列的第 k 小的数。</p>
+<p>k 小数的定义为：将 a 从小到大排序后第 k 个位置的值。 </p>
+<p>由于输入数据量过大，输入只给出a1的值，并采用如下递推式生成剩余数据： </p>
+<p>ai=(pai−1+q)modM(1&lt;i≤n)</p>
+<p> 其中，mod 运算的含义是：amodb 的值为 a 除以 b 得到的余数。</p>
+<h3 id="输入格式-4"><a href="#输入格式-4" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>输入第一行为两个正整数 n,k，含义见描述。</p>
+<p>第二行为四个非负整数 a1,p,q,M，你需要根据题目中给出式子计算完整序列。</p>
+<h3 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行一个正整数，表示第原序列第 k 小的数。</p>
+<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a><strong>输入样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5 4</span><br><span class="line">6 7 5 10</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a><strong>输出样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+<h3 id="样例2-4"><a href="#样例2-4" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p><a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/efb7/efb7ba9521b9141541ca5564a4007b68b3fb47ad.zip" target="_blank" rel="noopener"> 点此</a>下载</p>
+<h3 id="数据范围-4"><a href="#数据范围-4" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 20% 的数据，n≤102；</p>
+<p>对于40% 的数据，n≤104；</p>
+<p>对于 60% 的数据，n≤106；</p>
+<p>对于100% 的数据，1≤k≤n≤3×107，输入中其它数都在 int 范围内。</p>
+<h3 id="提示-7"><a href="#提示-7" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>本题没有开启 STL，也就是说你不能使用 std::sort。</p>
+<p>[ 但是可以采用类似快排的思想，线性解决本题 ]</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/d3b4/d3b47ed68cd48ca3e48b8677cec6c97bf86c9c1a.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<p>特别提醒：对于 Java 语言，在提交时请删除程序中的所有中文字符，否则可能无法通过编译。</p>
+<h3 id="Code-7"><a href="#Code-7" class="headerlink" title="Code"></a>Code</h3><h4 id="C-9"><a href="#C-9" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-9"><a href="#Python-9" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-9"><a href="#Java-9" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-8"><a href="#BUG-8" class="headerlink" title="BUG"></a>BUG</h3>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2周-2A-减而治之"><span class="nav-number">2.</span> <span class="nav-text">第2周-2A-减而治之</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2周-2B-分而治之"><span class="nav-number">3.</span> <span class="nav-text">第2周-2B-分而治之</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二周题目"><span class="nav-number">4.</span> <span class="nav-text">第二周题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">4.1.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">4.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">4.1.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">4.1.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输入"><span class="nav-number">4.1.4.</span> <span class="nav-text">样例1输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输出"><span class="nav-number">4.1.5.</span> <span class="nav-text">样例1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2"><span class="nav-number">4.1.6.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-O-nlogn"><span class="nav-number">4.1.7.</span> <span class="nav-text">Code $O(nlogn)$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">4.1.7.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python"><span class="nav-number">4.1.7.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">4.1.7.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG"><span class="nav-number">4.1.8.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组-二分法"><span class="nav-number">4.2.</span> <span class="nav-text">分组 二分法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输入-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">样例1输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输出-1"><span class="nav-number">4.2.5.</span> <span class="nav-text">样例1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1解释"><span class="nav-number">4.2.6.</span> <span class="nav-text">样例1解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2-1"><span class="nav-number">4.2.7.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制"><span class="nav-number">4.2.8.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示"><span class="nav-number">4.2.9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">4.2.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-1"><span class="nav-number">4.2.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-1"><span class="nav-number">4.2.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-1"><span class="nav-number">4.2.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-1"><span class="nav-number">4.2.11.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大转盘-欧拉回路"><span class="nav-number">4.3.</span> <span class="nav-text">大转盘 欧拉回路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">4.3.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">4.3.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">4.3.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">4.3.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">4.3.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围"><span class="nav-number">4.3.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-1"><span class="nav-number">4.3.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">4.3.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-2"><span class="nav-number">4.3.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-2"><span class="nav-number">4.3.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-2"><span class="nav-number">4.3.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-2"><span class="nav-number">4.3.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#象棋-二分图，增广路，匈牙利算法"><span class="nav-number">4.4.</span> <span class="nav-text">象棋 二分图，增广路，匈牙利算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-2"><span class="nav-number">4.4.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-2"><span class="nav-number">4.4.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输入-2"><span class="nav-number">4.4.4.</span> <span class="nav-text">样例1输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输出-2"><span class="nav-number">4.4.5.</span> <span class="nav-text">样例1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1解释-1"><span class="nav-number">4.4.6.</span> <span class="nav-text">样例1解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2-2"><span class="nav-number">4.4.7.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-1"><span class="nav-number">4.4.8.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-2"><span class="nav-number">4.4.9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-O-n-3-longrightarrow-O-nm"><span class="nav-number">4.4.10.</span> <span class="nav-text">Code $O(n^3)\longrightarrow O(nm)$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-3"><span class="nav-number">4.4.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-3"><span class="nav-number">4.4.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-3"><span class="nav-number">4.4.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-3"><span class="nav-number">4.4.11.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列计数-分治法，单调栈"><span class="nav-number">4.5.</span> <span class="nav-text">序列计数 分治法，单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-3"><span class="nav-number">4.5.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-3"><span class="nav-number">4.5.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-3"><span class="nav-number">4.5.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输入-3"><span class="nav-number">4.5.4.</span> <span class="nav-text">样例1输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1输出-3"><span class="nav-number">4.5.5.</span> <span class="nav-text">样例1输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1解释-2"><span class="nav-number">4.5.6.</span> <span class="nav-text">样例1解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2-3"><span class="nav-number">4.5.7.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-2"><span class="nav-number">4.5.8.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-3"><span class="nav-number">4.5.9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">4.5.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-4"><span class="nav-number">4.5.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-4"><span class="nav-number">4.5.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-4"><span class="nav-number">4.5.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-4"><span class="nav-number">4.5.11.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小交换"><span class="nav-number">4.6.</span> <span class="nav-text">最小交换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-1"><span class="nav-number">4.6.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-1"><span class="nav-number">4.6.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-1"><span class="nav-number">4.6.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-1"><span class="nav-number">4.6.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-1"><span class="nav-number">4.6.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">4.6.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-1"><span class="nav-number">4.6.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-4"><span class="nav-number">4.6.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">4.6.9.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-5"><span class="nav-number">4.6.9.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-5"><span class="nav-number">4.6.9.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-5"><span class="nav-number">4.6.9.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-5"><span class="nav-number">4.6.10.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#楼尔邦德-二分查找"><span class="nav-number">4.7.</span> <span class="nav-text">楼尔邦德 二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-2"><span class="nav-number">4.7.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-2"><span class="nav-number">4.7.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-2"><span class="nav-number">4.7.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-2"><span class="nav-number">4.7.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-2"><span class="nav-number">4.7.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-2"><span class="nav-number">4.7.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-5"><span class="nav-number">4.7.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-4"><span class="nav-number">4.7.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-6"><span class="nav-number">4.7.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-6"><span class="nav-number">4.7.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-6"><span class="nav-number">4.7.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-6"><span class="nav-number">4.7.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最短路-Dijkstra算法-堆优化"><span class="nav-number">4.8.</span> <span class="nav-text">最短路 Dijkstra算法+堆优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-3"><span class="nav-number">4.8.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-3"><span class="nav-number">4.8.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-3"><span class="nav-number">4.8.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-3"><span class="nav-number">4.8.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-3"><span class="nav-number">4.8.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-3"><span class="nav-number">4.8.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-6"><span class="nav-number">4.8.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-5"><span class="nav-number">4.8.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-7"><span class="nav-number">4.8.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-7"><span class="nav-number">4.8.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-7"><span class="nav-number">4.8.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-7"><span class="nav-number">4.8.9.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-6"><span class="nav-number">4.8.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Force-O-n"><span class="nav-number">4.8.10.1.</span> <span class="nav-text">Force $O(n)$</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-8"><span class="nav-number">4.8.10.1.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python-8"><span class="nav-number">4.8.10.1.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java-8"><span class="nav-number">4.8.10.1.3.</span> <span class="nav-text">Java</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周测"><span class="nav-number">5.</span> <span class="nav-text">周测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K小数"><span class="nav-number">5.1.</span> <span class="nav-text">K小数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">5.1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-4"><span class="nav-number">5.1.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-4"><span class="nav-number">5.1.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1"><span class="nav-number">5.1.4.</span> <span class="nav-text">输入样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1"><span class="nav-number">5.1.5.</span> <span class="nav-text">输出样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2-4"><span class="nav-number">5.1.6.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-4"><span class="nav-number">5.1.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-7"><span class="nav-number">5.1.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-7"><span class="nav-number">5.1.9.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-9"><span class="nav-number">5.1.9.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-9"><span class="nav-number">5.1.9.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-9"><span class="nav-number">5.1.9.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-8"><span class="nav-number">5.1.10.</span> <span class="nav-text">BUG</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

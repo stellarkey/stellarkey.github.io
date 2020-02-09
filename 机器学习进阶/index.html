@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="本文主要围绕机器学习/统计学习方法进行深层次展开。《统计学习方法》是李航博士所著的关于系统、详细的统计学习相关方法的介绍书籍。主要内容覆盖统计学习方法概论、感知机、k-means，朴素贝叶斯，决策树，逻辑回归，SVM，梯度提升，EM算法，隐马尔可夫，条件随机场等。本文尽可能将所有算法加以实现，注重数理基础与实践相结合，以期更好的效果。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习进阶">
+<meta property="og:url" content="https://vel.life/机器学习进阶/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="本文主要围绕机器学习/统计学习方法进行深层次展开。《统计学习方法》是李航博士所著的关于系统、详细的统计学习相关方法的介绍书籍。主要内容覆盖统计学习方法概论、感知机、k-means，朴素贝叶斯，决策树，逻辑回归，SVM，梯度提升，EM算法，隐马尔可夫，条件随机场等。本文尽可能将所有算法加以实现，注重数理基础与实践相结合，以期更好的效果。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/机器学习进阶/1551531753490.png">
+<meta property="og:image" content="https://vel.life/机器学习进阶/1547752453147.png">
+<meta property="og:image" content="https://vel.life/机器学习进阶/1558719286890.png">
+<meta property="og:updated_time" content="2019-05-24T17:35:32.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习进阶">
+<meta name="twitter:description" content="本文主要围绕机器学习/统计学习方法进行深层次展开。《统计学习方法》是李航博士所著的关于系统、详细的统计学习相关方法的介绍书籍。主要内容覆盖统计学习方法概论、感知机、k-means，朴素贝叶斯，决策树，逻辑回归，SVM，梯度提升，EM算法，隐马尔可夫，条件随机场等。本文尽可能将所有算法加以实现，注重数理基础与实践相结合，以期更好的效果。">
+<meta name="twitter:image" content="https://vel.life/机器学习进阶/1551531753490.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/机器学习进阶/">
+
+
+
+
+
+
+  <title>机器学习进阶 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/机器学习进阶/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习进阶</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-17T15:07:37+08:00">
+                2019-01-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-05-25T01:35:32+08:00">
+                2019-05-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/机器学习进阶/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/机器学习进阶/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,010
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要围绕机器学习/统计学习方法进行深层次展开。《统计学习方法》是李航博士所著的关于系统、详细的统计学习相关方法的介绍书籍。主要内容覆盖统计学习方法概论、感知机、k-means，朴素贝叶斯，决策树，逻辑回归，SVM，梯度提升，EM算法，隐马尔可夫，条件随机场等。本文尽可能将所有算法加以实现，<strong>注重数理基础与实践相结合</strong>，以期更好的效果。<a id="more"></a>建议先修吴恩达《机器学习》课程。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.hottaro.com/index.php?document_srl=8875&amp;mid=Books" target="_blank" rel="noopener"><strong>机器学习</strong></a>（<a href="https://baike.baidu.com/item/%E5%91%A8%E5%BF%97%E5%8D%8E/32542" target="_blank" rel="noopener">周志华</a>） “西瓜书”，<strong>教材</strong></p>
+<p><a href="http://ddl.escience.cn/f/IwnL" target="_blank" rel="noopener">机器学习实战</a> 基于Python的编程<strong>练习册</strong></p>
+<p><a href="http://ddl.escience.cn/f/Iwn0" target="_blank" rel="noopener"><strong>统计学习方法</strong></a>（<a href="http://blog.sina.com.cn/u/2060750830" target="_blank" rel="noopener">李航</a>） 算法的<strong>数理分析</strong>，<a href="./lihang-code.rar">代码实现</a></p>
+<p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/" target="_blank" rel="noopener">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>） 面向工程应用的指南</p>
+<p><a href="https://github.com/learning511/Stanford-Machine-Learning-camp" target="_blank" rel="noopener">机器学习训练营</a></p>
+<p><a href="https://github.com/allmachinelearning/MachineLearning/blob/master/notes/MLMaterials.md" target="_blank" rel="noopener">机器学习的一些资料</a></p>
+<p><a href="https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/" target="_blank" rel="noopener">神经网络与深度学习</a></p>
+<p><a href="https://zh.gluon.ai/" target="_blank" rel="noopener">《动手学深度学习》</a> 深度学习进阶</p>
+<p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener">AiLearning</a></p>
+<p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener">林轩田</a>） 进阶教学视频，<a href="https://github.com/AIGroup-Z/lxtml" target="_blank" rel="noopener">Notes</a></p>
+<p><a href="https://www.bilibili.com/video/av12802062/" target="_blank" rel="noopener">徐亦达机器学习课程</a></p>
+<p><a href="https://github.com/MLEveryday/100-Days-Of-ML-Code" target="_blank" rel="noopener">机器学习100天</a></p>
+<p><a href="./百面机器学习.pdf">百面机器学习</a></p>
+<p><img src="/机器学习进阶/1551531753490.png" alt="百面机器学习"></p>
+<p><a href="https://github.com/fchollet/deep-learning-with-python-notebooks" target="_blank" rel="noopener">Python深度学习</a></p>
+<h1 id="统计学习原理"><a href="#统计学习原理" class="headerlink" title="统计学习原理"></a>统计学习原理</h1><h2 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h2><blockquote>
+<p><a href="./浅谈人工智能.pdf">浅谈人工智能</a></p>
+</blockquote>
+<h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><p><strong><font color="red">机器学习</font></strong>：为了寻找更好数据<strong>表示</strong>的自动<strong>搜索</strong>。</p>
+<h2 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a>模式识别</h2><p><strong><font color="red">模式识别</font></strong>：从数据中获得<code>规律</code>/<code>模式</code>/<code>特征</code>。</p>
+<center><font size="5">数据 = 模式 + 噪声</font></center>
+
+<h2 id="统计学习要素"><a href="#统计学习要素" class="headerlink" title="统计学习要素"></a>统计学习要素</h2><p><strong><font color="red">模型</font></strong>：构建从输入到输出的一类映射，从而产生假设空间。</p>
+<p><strong><font color="red">策略</font></strong>：按什么样的准则在假设空间中学习最优的模型。</p>
+<p><strong><font color="red">算法</font></strong>：学习模型的具体计算方法。</p>
+<h2 id="短见定理"><a href="#短见定理" class="headerlink" title="短见定理"></a>短见定理</h2><p><strong><font color="red">短见定理</font></strong>：过拟合无法彻底避免。</p>
+<blockquote>
+<p><strong>反证</strong>：（基本假设：P$\neq$NP）</p>
+<ul>
+<li>机器学习通常面临着NP-Hard问题（甚至更难），而有效的学习算法必然在多项式时间内运行完毕。</li>
+<li>若可以彻底避免过拟合，则通过经验误差最小化就能获得最优解，意味着我们构造性地证明了“P=NP”。<strong>矛盾</strong>。</li>
+</ul>
+<p>机器学习是短视、贪心的。</p>
+</blockquote>
+<h2 id="午餐定理"><a href="#午餐定理" class="headerlink" title="午餐定理"></a>午餐定理</h2><p><strong><font color="red">午餐定理</font></strong>：对完全随机问题，任意学习算法的期望性能一致。（<a href="https://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization" target="_blank" rel="noopener">no free lunch</a>）</p>
+<blockquote>
+<p>证明：（考虑二分类问题）</p>
+</blockquote>
+<script type="math/tex; mode=display">
+（记学习算法为a，f为真实函数(问题)，X为训练集，\chi为样本空间，\mathbb{I}是布尔函数）</script><script type="math/tex; mode=display">
+\begin{split}
+对特定问题f的误差：E_{ote}(a|X,f)&=\sum _{h}\sum _{x\in \chi -X}P(x)\mathbb{I}(h(x)\neq f(x))P(h|X,a)
+\end{split}</script><script type="math/tex; mode=display">
+\begin{split}
+总误差：\sum _{f}E_{ote}(a|X,f) 
+&=\sum _{f}\sum_{h}\sum_{x\in \chi -X}P(x)\mathbb{I}(h(x)\neq f(x)){\color{red}{P(h|X,a)} } \\
+&=\sum _{x\in \chi -X}P(x)\sum _{h}P(h|X,a)\sum _{f}\mathbb{I}(h(x)\neq f(x)) \quad,{\color{red}{积分解耦} }\\
+&=\sum _{x\in \chi -X}P(x)\sum _{h}P(h|X,a){\color{red}{\frac{1}{2}2^{|\chi|} } } \quad,设f均匀分布\\
+&=2^{|\chi|-1}\sum _{x\in \chi -X}P(x)\sum _{h}P(h|X,a)\quad,条件概率求和 \\
+&=2^{|\chi|-1}\sum _{x\in \chi -X}P(x)\cdot {\color{red}{1} }\quad,结果与算法a无关
+\end{split}</script><blockquote>
+<p>积分<strong>解耦</strong>（分部积分）的原理：</p>
+<p>$P(x)表示从非训练集中选取样本x的概率，$（古典概型）</p>
+<ul>
+<li>$显然与f和h无关$</li>
+</ul>
+<p>$P(h|X,a)表示基于训练集X和学习算法a时，产生假设h的概率，$</p>
+<ul>
+<li>$显然与真实问题f无关$</li>
+</ul>
+<p>$\mathbb{I}(h(x)\neq f(x))表示基于样本x时假设h与真实f不吻合的布尔判断$，</p>
+<ul>
+<li>这是一个纯判断，不含概率，因此可以首先积分</li>
+<li>当我们引入了对$f$的积分之后，对特定问题的积分被解耦</li>
+</ul>
+<p>$\sum _{f}\mathbb{I}(h(x)\neq f(x))相当于求{0,1}^{|\chi|}$（幂集）</p>
+<ul>
+<li>若$f$均匀分布，则一半的f对x的预测与h(x)不一致，因此要乘上1/2</li>
+</ul>
+<p>NFL定理实际上构想了一个纯粹幻想空间。<br><strong>完全随机的问题等价于一个没有任何模式（Pattern）的问题</strong>，机器学习不可能从真随机之中获得规律。</p>
+</blockquote>
+<p>通过幻想学的蛋形图来直观感受一下短见定理和午餐定理的约束：（<a href="https://vel.life/Introduction_to_Fantasy_Theory">More</a>）</p>
+<p><img src="/机器学习进阶/1547752453147.png" alt="1547752453147"></p>
+<blockquote>
+<p>由直观的图像我们可以看出：</p>
+<ul>
+<li>极端的欠拟合导致午餐现象</li>
+<li>若<u>不考虑误差</u>，过拟合和欠拟合的泛化能力与它们的名义是相反的（过拟合的泛化能力小，欠拟合的泛化能力大）<br>若考虑误差，过拟合和欠拟合产生的误差类型是不同的（过拟合对变错，欠拟合错变对）</li>
+<li>显然，增大数据集能有效解决短视（过拟合）现象</li>
+<li>机器学习的过程是从想界到数据边界的<strong>收缩</strong>过程，其目标是尽可能与实界重合</li>
+<li>如果增加收缩能力（即学习能力，比如根据多个复杂原理进行收缩），则能有效解决欠拟合现象</li>
+</ul>
+<p>注：一般认为想界和实界是固定的。</p>
+</blockquote>
+<h2 id="聚类分布律"><a href="#聚类分布律" class="headerlink" title="聚类分布律"></a>聚类分布律</h2><p><strong><font color="red">聚类分布律</font></strong>：自然界中同一类别的高维数据，往往集中在某个低维流形附近。</p>
+<h2 id="流形分布律"><a href="#流形分布律" class="headerlink" title="流形分布律"></a>流形分布律</h2><p><strong><font color="red">流形分布律</font></strong>：不同的类对应着流形上的不同概率分布，这些分布之间的距离大到足够将这些类区分。 </p>
+<h2 id="极大似然律"><a href="#极大似然律" class="headerlink" title="极大似然律"></a>极大似然律</h2><p><strong><font color="red">极大似然律</font></strong>：给定概率模型，调参，使得样本空间的概率最大化。</p>
+<h2 id="最大熵原理"><a href="#最大熵原理" class="headerlink" title="最大熵原理"></a>最大熵原理</h2><p><strong><font color="red">最大熵原理</font></strong>：给定概率模型，调参，使得模型的熵最大化。</p>
+<blockquote>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=9&amp;ved=2ahUKEwjXhfrBzoHhAhWMAYgKHa0wCdQQFjAIegQIABAB&amp;url=https%3A%2F%2Fplmsmile.github.io%2F2017%2F09%2F20%2Fmaxentmodel%2F&amp;usg=AOvVaw0Qab4Kr6MkeGW2jaaCEiyd" target="_blank" rel="noopener">最大熵模型| PLM’s Notes | 好好学习，天天笔记</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=10&amp;ved=2ahUKEwjXhfrBzoHhAhWMAYgKHa0wCdQQFjAJegQIARAB&amp;url=http%3A%2F%2Fkubicode.me%2F2016%2F12%2F12%2FMachine%2520Learning%2FMaximum-Entropy-Model%2F&amp;usg=AOvVaw1yPfYwsynqtLSlUK-WXIXI" target="_blank" rel="noopener">最大熵模型| Kubi Code’Blog</a></p>
+</blockquote>
+<h1 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h1><blockquote>
+<p><em>Garbage in, garbage out.</em></p>
+</blockquote>
+<p><strong><font color="red">特征工程</font></strong>：对原始数据进行一系列工程处理，提炼出特征。</p>
+<blockquote>
+<p>特征工程旨在去除原始数据中的杂志和沉淀，设计更高效的特征以刻画联想规则。</p>
+</blockquote>
+<p><strong>结构化数据</strong>（张量）：结构化数据可以看成关系型数据库的一张表，每列都有清洗的定义，包含连续、离散两种类型；每行代表一个样本。</p>
+<p><strong>非结构化数据</strong>（流形）：非结构化数据包括文本、图像、音频、视频等，其包含的信息丰富、复杂、抽象、多变。</p>
+<h2 id="特征归一化"><a href="#特征归一化" class="headerlink" title="特征归一化"></a>特征归一化</h2><p>区间缩放和正态缩放比较常用。</p>
+<blockquote>
+<p>归一化对于决策树模型不适用，因为节点分裂只与信息增益<strong>比例</strong>有关。（归一化不改变比例）</p>
+</blockquote>
+<h3 id="区间缩放"><a href="#区间缩放" class="headerlink" title="区间缩放"></a>区间缩放</h3><p><strong>Min-Max Scaling</strong> 又称为 <strong>Rescaling</strong>，区间缩放的公式为：</p>
+<script type="math/tex; mode=display">
+x' = \frac{x-min(x)}{max(x)-min(x)}</script><p>缩放后的特征将分布在 <strong>[0,1]</strong> 区间。</p>
+<h3 id="正态缩放"><a href="#正态缩放" class="headerlink" title="正态缩放"></a>正态缩放</h3><p><strong>(Z-Score) Standardization</strong>，缩放后的特征将服从<a href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener">标准正态分布</a>：</p>
+<script type="math/tex; mode=display">
+x' = \frac{x-\mu}{\delta}</script><p>μ,δ分别为对应特征$x$向量的均值和标准差。缩放后的特征将分布在 <strong>(−Inf,Inf)</strong> 区间。</p>
+<h3 id="其它归一化手段"><a href="#其它归一化手段" class="headerlink" title="其它归一化手段"></a>其它归一化手段</h3><h4 id="均态缩放"><a href="#均态缩放" class="headerlink" title="均态缩放"></a>均态缩放</h4><p><strong><font color="red">Mean normalization</font></strong>是区间缩放和正态缩放相结合的变种，其公式为：</p>
+<script type="math/tex; mode=display">
+x' = \frac{x-{\color{red}{\mu} } }{max(x)-min(x)}</script><p>μ为$x$向量的均值，缩放后的特征将分布在 <strong>(-1,1)</strong> 区间。</p>
+<h4 id="度量缩放"><a href="#度量缩放" class="headerlink" title="度量缩放"></a>度量缩放</h4><p><strong>Scaling to unit length</strong>相对均态缩放，保留了更多原向量的面貌。其公式为：</p>
+<script type="math/tex; mode=display">
+x' = \frac{x}{ {\color{red}{||} }x{\color{red}{||} } }</script><p>缩放后的特征将分布在某个不定小区间。$||x||$是范数（<a href="https://en.wikipedia.org/wiki/Norm_%28mathematics%29" target="_blank" rel="noopener">Norm</a>）。（<a href="http://idatamining.net/blog/?p=618" target="_blank" rel="noopener">More</a>）</p>
+<blockquote>
+<p>若取$||x||=|x|$绝对值，则缩放后的特征将分布在 <strong>[-1,1]</strong> 区间。</p>
+</blockquote>
+<h2 id="离散编码"><a href="#离散编码" class="headerlink" title="离散编码"></a>离散编码</h2><p><strong>类别型特征</strong>（Categorical Feature）：指性别（男、女）、血型（A、B、AB、O）等<strong>有限取值</strong>的离散特征。</p>
+<h3 id="热编码"><a href="#热编码" class="headerlink" title="热编码"></a>热编码</h3><p>独<strong><font color="red">热编码</font></strong>（One-hot Encoding）：将实体映射为命中向量。（向量维数=类别数）</p>
+<script type="math/tex; mode=display">
+{\color{red}{A} },{\color{green}{B} },{\color{blue}{C} }\longrightarrow ({\color{red}{1} },0,0),(0,{\color{green}{1} },0),(0,0,{\color{blue}{1} })</script><blockquote>
+<p>使用稀疏向量来节省空间。配合特征选择来降维。</p>
+</blockquote>
+<h3 id="序编码"><a href="#序编码" class="headerlink" title="序编码"></a>序编码</h3><p>保<strong><font color="red">序编码</font></strong>（Ordinal Encoding）：按类别关系映射数值关系。</p>
+<script type="math/tex; mode=display">
+低<中<高\longrightarrow 1<2<3</script><h3 id="二进制编码"><a href="#二进制编码" class="headerlink" title="二进制编码"></a>二进制编码</h3><p><strong><font color="red">二进制编码</font></strong>（Binary Encoding）：先编码为数字ID，然后映射为二进制数。</p>
+<script type="math/tex; mode=display">
+{\color{red}{A} },{\color{green}{B} },{\color{blue}{C} }\longrightarrow {\color{red}{1} },{\color{green}{2} },{\color{blue}{3} }\longrightarrow (0,0,{\color{red}{1} }),(0,{\color{green}{1} },0),(0,{\color{blue}{1} },{\color{blue}{1} })</script><blockquote>
+<p>More：<a href="http://www.clayford.net/statistics/tag/helmert-contrasts/" target="_blank" rel="noopener">Helmert Contrast</a>，Sum Contrast，Ploynomial Contrast，Backward Difference Contrast.</p>
+</blockquote>
+<h2 id="特征组合"><a href="#特征组合" class="headerlink" title="特征组合"></a>特征组合</h2><blockquote>
+<p>为了提高复杂关系的拟合能力，在特征工程经常会把一阶离散特征两两组合，构成高阶组合特征。</p>
+</blockquote>
+<h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><p><img src="/机器学习进阶/1558719286890.png" alt="1558719286890"></p>
+<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>高维空间易过拟合。</p>
+<h1 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h1><p>在<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2/#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">机器学习-神经网络基础-感知机</a>有基础介绍。</p>
+<h1 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h1><p><a href="https://www.zhihu.com/question/49972233" target="_blank" rel="noopener">请问如何用数学方法证明K-means是EM算法的特例？</a></p>
+<p>高维空间欧式距离度量失效。</p>
+<h1 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h1><p><a href="https://zhuanlan.zhihu.com/p/31580379" target="_blank" rel="noopener">KNN和K-mean有什么不同？ - 知乎</a>（但感觉k-means完还是要kNN一下才能输出预测结果 anyway。。）</p>
+<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><h1 id="概率图"><a href="#概率图" class="headerlink" title="概率图"></a>概率图</h1><div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Byte-Tech-AI-Symposium/">2019机器智能前沿论坛</a></li><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/机器学习进阶/" title="机器学习进阶">https://vel.life/机器学习进阶/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/数学的思维方式与创新/" rel="next" title="数学的思维方式与创新">
+                <i class="fa fa-chevron-left"></i> 数学的思维方式与创新
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/吃草/" rel="prev" title="吃草">
+                吃草 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计学习原理"><span class="nav-number">2.</span> <span class="nav-text">统计学习原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能"><span class="nav-number">2.1.</span> <span class="nav-text">人工智能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习"><span class="nav-number">2.2.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式识别"><span class="nav-number">2.3.</span> <span class="nav-text">模式识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计学习要素"><span class="nav-number">2.4.</span> <span class="nav-text">统计学习要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短见定理"><span class="nav-number">2.5.</span> <span class="nav-text">短见定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#午餐定理"><span class="nav-number">2.6.</span> <span class="nav-text">午餐定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类分布律"><span class="nav-number">2.7.</span> <span class="nav-text">聚类分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形分布律"><span class="nav-number">2.8.</span> <span class="nav-text">流形分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极大似然律"><span class="nav-number">2.9.</span> <span class="nav-text">极大似然律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大熵原理"><span class="nav-number">2.10.</span> <span class="nav-text">最大熵原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征工程"><span class="nav-number">3.</span> <span class="nav-text">特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征归一化"><span class="nav-number">3.1.</span> <span class="nav-text">特征归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区间缩放"><span class="nav-number">3.1.1.</span> <span class="nav-text">区间缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正态缩放"><span class="nav-number">3.1.2.</span> <span class="nav-text">正态缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它归一化手段"><span class="nav-number">3.1.3.</span> <span class="nav-text">其它归一化手段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#均态缩放"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">均态缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度量缩放"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">度量缩放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散编码"><span class="nav-number">3.2.</span> <span class="nav-text">离散编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#热编码"><span class="nav-number">3.2.1.</span> <span class="nav-text">热编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序编码"><span class="nav-number">3.2.2.</span> <span class="nav-text">序编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制编码"><span class="nav-number">3.2.3.</span> <span class="nav-text">二进制编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征组合"><span class="nav-number">3.3.</span> <span class="nav-text">特征组合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型评估"><span class="nav-number">4.</span> <span class="nav-text">模型评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归"><span class="nav-number">5.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感知机"><span class="nav-number">6.</span> <span class="nav-text">感知机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-means"><span class="nav-number">7.</span> <span class="nav-text">K-means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KNN"><span class="nav-number">8.</span> <span class="nav-text">KNN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">9.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">10.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率图"><span class="nav-number">11.</span> <span class="nav-text">概率图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

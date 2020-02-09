@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法,摊还分析,经济学,悖论,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影/应用。">
+<meta name="keywords" content="算法,摊还分析,经济学,悖论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="摊还分析：价格悖论">
+<meta property="og:url" content="https://vel.life/算法-摊还分析：价格悖论/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影/应用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/价格悖论与摊还分析.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/0.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/摊还分析示例.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/可扩充向量.png">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/1.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/摊还分析实例.png">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/正态分布摊还.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/齐次化原理示意.jpg">
+<meta property="og:image" content="https://vel.life/算法-摊还分析：价格悖论/傅里叶变换.jpg">
+<meta property="og:updated_time" content="2019-02-09T12:30:44.214Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="摊还分析：价格悖论">
+<meta name="twitter:description" content="通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影/应用。">
+<meta name="twitter:image" content="https://vel.life/算法-摊还分析：价格悖论/价格悖论与摊还分析.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/算法-摊还分析：价格悖论/">
+
+
+
+
+
+
+  <title>摊还分析：价格悖论 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/算法-摊还分析：价格悖论/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">摊还分析：价格悖论</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2018-07-08T01:02:22+08:00">
+                2018-07-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-02-09T20:30:44+08:00">
+                2019-02-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thoughts/" itemprop="url" rel="index">
+                    <span itemprop="name">Thoughts</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/算法-摊还分析：价格悖论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/算法-摊还分析：价格悖论/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,963
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影/应用。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/算法-摊还分析：价格悖论/价格悖论与摊还分析.jpg" alt="价格悖论与摊还分析"></p>
+<p>经济学里可能见到过类似这样的案例：</p>
+<blockquote>
+<p><em>买一本40元的书，为了得到20元的优惠，可能愿意辛辛苦苦跑半个城市去特价书店买；可买一部4000元的手机，同样的20元优惠，往往连下楼的冲动也没有。</em></p>
+</blockquote>
+<p><img src="/算法-摊还分析：价格悖论/0.jpg" alt="0"></p>
+<p><strong>《经济学原理（第6版）》原书</strong></p>
+<p>基于人们评估相对价格的趋势，或者心理账户理论（行为经济学），再忽略掉互联网的因素……这大概成立的。</p>
+<p>但，究竟是为什么呢？</p>
+<p>这是否就是“短视”的表现呢？</p>
+<p>换句话，贪小便宜究竟理不理性？</p>
+<p>……</p>
+<p>回答是：<strong>这反而是适当的做法</strong>。</p>
+<p>我们从<strong>摊还分析</strong>（又称，<strong>分摊分析</strong>）的角度来看。</p>
+<p>首先，在<strong>算法</strong>中，摊还分析是用来评价程序中的一个操作序列的平均代价，有时可能某个操作的代价特别高，但总体上来看也并非那么糟糕；可以形象的理解为把高代价的操作“分摊”到其他操作上去了，要求的就是均匀分摊后的平均代价。</p>
+<p>当这个操作序列趋向于无穷时，摊还的平均代价往往渐进于一个函数，由此还可以引出摊还复杂度的概念。</p>
+<p>下图为一个摊还分析的简单示例：</p>
+<p><img src="/算法-摊还分析：价格悖论/摊还分析示例.jpg" alt="摊还分析示例"></p>
+<p><strong>某连续操作f(t)在某区间上的摊还</strong></p>
+<p>面向对象的程序设计中，比较典型的例子是：对于向量（即，数组）溢出时的扩容操作，采用加倍扩容策略而不是追加常量的空间。加倍扩容的平均分摊复杂度远小于常量扩容。下图取自邓神的《数据结构（C++语言版）》。</p>
+<p><img src="/算法-摊还分析：价格悖论/可扩充向量.png" alt="可扩充向量"></p>
+<p><strong>向量扩充图解</strong></p>
+<p>加倍扩容法的实现及细节可参考书中的P34~36。</p>
+<p><img src="/算法-摊还分析：价格悖论/1.jpg" alt="1"></p>
+<p><strong>《数据结构（C++语言版）》原书</strong></p>
+<p>好了，我们来分析最开始的问题。</p>
+<p>比如，将“消费40元”当做一个操作，它的代价是“20元优惠”，显然，这可以被视为一种“正”的代价。相对的，对于4000元的手机，对应“消费40元”的100次操作，它的代价仍然是“20元优惠”。</p>
+<p>也就是说，对于长时间的平均分摊代价，同样的20元优惠，买书比买手机高了100倍！而由于优惠是“正”的代价，这导致优惠买书的预期收益非常高。</p>
+<p>可以看出，人们对收益的权衡，会潜意识地使用摊还分析，考虑<strong>长期效应</strong>。即，摊还分析是一种自然的策略。</p>
+<p><strong>进一步，哪些商品适合于摊还分析呢</strong>？</p>
+<p>自然是长期使用品，即“必需品”。</p>
+<p>但怎么区分“必需品”和“非必需品（奢侈品）”呢？</p>
+<p>传统的经济学通常以市场上该商品的需求价格弹性（可视为，价格对需求的偏导数）作为区分的指标。</p>
+<p>但是，仅仅以市场定义的范围来作区分，如冰淇淋市场和香草冰淇淋市场，而不区分面向张三的冰淇淋市场和面向李四的冰淇淋市场，对<strong>个人偏好</strong>的体现是远远不足的。现代由于数据挖掘的深入，这种面向对象的趋势就更为明显。</p>
+<p>比如，假设有一个修过手机屏6次的频繁吃土青年，外屏4次、内屏1次、屏幕总成1次。而且由于对手机不爱护的生活习惯，今后也可能继续修手机233。</p>
+<p>那么，修手机的消费，对该青年来说就更倾向于长期使用品，于是需要摊还分析；而对于粉底、女装一类的商品，则更倾向于奢侈品（需求量小趋于0，加上价格不敏感），可能就用不上摊还分析。</p>
+<p>那么，问题是：在不考虑时间成本的情况下，是否应该购置一台新手机？</p>
+<p>对于普通安卓手机，更换外屏的花费在90元左右，更换内屏/总成的花费在200元左右。假设该青年半年摔一次手机（？），则平均分摊花费可估计为（X<em>1000/3/360 + 90</em>80%/360/2 + 200*20%/360/2=）X+0.15元/天。</p>
+<p>假设此时更换新手机，选择价位Y千元档，生命周期T假设为3年，且前1年不摔（？）。则分摊花费为（Y<em>1000/3/360 + 0.31</em>2/3=）Y+0.20元/天。</p>
+<p>于是结论是：（仅考虑当前摊还分析）若Y比X便宜500元，那么购置新手机就是明（ji）智的选择。</p>
+<p>当然，深入研究分摊费用随时间的变化趋势，综合考虑个人偏好，可以得出更精准的策略。但重点是，要敢于量化指标，而不仅仅停留于对客观事物的定性状态。如下图示例的一个粗略的模拟演算：</p>
+<p><img src="/算法-摊还分析：价格悖论/摊还分析实例.png" alt="摊还分析实例"></p>
+<p><strong>摊还分析实例：手机问题</strong></p>
+<p>其中，蓝色粗线为标准曲线（X=2，T=3），其它为对照组（Y任取，T=0）。横轴单位为半年，纵轴为摊还费用的对数值。</p>
+<p>可以看出。</p>
+<p><strong>定量，往往能更好地定性</strong>。考虑长期，可能做出不同选择。</p>
+<p>但，不仅仅可以在时间上进行摊还，还可以在空间上进行摊还。</p>
+<p>比如，下面考虑一个<strong>标准正态分布</strong>。</p>
+<p>简单提一下正态分布的历史。正态分布的实质认识源于最小二乘法的发现，最小二乘法源于对自然规律的猜测——最大概然估计。因此，正态分布实际是反映最可能的现实。</p>
+<p>考虑标准正态分布在整个实数轴上的分摊，容易得到分摊值为0。这是一个退化的情况，我们主要考虑非退化（即，具有一般性）的情况。</p>
+<p>比如，取定区间[-δ，δ]，δ为方差，此处显然为1，即[-1,1]。只考虑标准正态分布在[-1,1]内的分摊。</p>
+<p><img src="/算法-摊还分析：价格悖论/正态分布摊还.jpg" alt="正态分布摊还"></p>
+<p><strong>正态分布在[-1,1]上的摊还</strong></p>
+<p>如上图。此时，将极限定义为：<strong>固定</strong>[-1,1]区间不变，标准差δ不断趋于0，则分摊极限值趋于1/2=0.5。</p>
+<p>注意到，当δ不断趋于0，该正态分布趋于一个“<strong>单位脉冲</strong>”（又称，Dirac函数，当然，这里还需要一个适当的比例放缩变换，放缩系数为2:1），波峰形状变得集中而陡峭。这说明，对于特定点趋于极限的脉冲式效应，有时可以通过区间分摊来获得有限值。</p>
+<p>现在尝试考虑数学物理中著名的<strong>齐次化原理</strong>（Duhamel原理）。它是物理学上的一种简化手段，其作用如下图所示：</p>
+<p><img src="/算法-摊还分析：价格悖论/齐次化原理示意.jpg" alt="齐次化原理示意"></p>
+<p><strong>齐次化原理图解</strong></p>
+<p>可以看出，齐次化原理的主要目的将原本连续的函数，当成间断的脉冲的无穷叠加（这种无穷叠加表现为脉冲的连续化，最后成为一个积分）。它是将无穷小区间上的一个分摊的量，收束成集中点上的脉冲，类似于<strong>摊还分析的逆过程</strong>。</p>
+<p>再考虑<strong>傅里叶变换</strong>。Fourier变换是将时域信号转换为频域信号，Fourier解析是将频域信号转换为时域信号。对于任意的一个正/余弦周期时域信号基，都对应唯一的频域值。如下图所示（摘自知乎，稍修）：</p>
+<p><img src="/算法-摊还分析：价格悖论/傅里叶变换.jpg" alt="傅里叶变换"></p>
+<p><strong>从Fourier（离散）级数到（连续）变换</strong></p>
+<p>从频域到时域，正像是摊还分析，将每个脉冲对应分摊到整个时间维度上；从时域到频域，也像是摊还分析的逆过程，将时域上连续的信号收束为频域上的一组脉冲。当时域上的周期性越差（周期越长），频域上的脉冲更加密集，最终得到一般的连续函数。</p>
+<p><strong>它与齐次化原理的本质相异之处，仅仅在于选择的收束基不同而已</strong>。而且，这组基选的非常巧妙，导致部分揭示了周期现象的本质。（相对而言，齐次化原理的基就比较平凡；另外，如果选择有限多个平凡基，再推广，很容易联想到数值积分中经典的手法“插值”；甚至，结合矩阵理论，这些都可看做是一种空间到空间的变换，只不过在某些空间中看同一个问题的形式更加简洁罢了。这里就不展开叙述。）</p>
+<p>下面我们再分析一个湍流的例子。并从时空摊还的角度进一步理解摊还分析。</p>
+<p>考虑（均匀各向同性）<strong>湍流</strong>的长期效应。</p>
+<p>不妨先简单提一下，各向同性湍流的历史。1935年，G.I. Taylor在风洞实验的均匀气流中设置一排或者几排规则的格栅，均匀气流垂直流过格栅时产生不规则扰动。这种不规则扰动向下游运动过程中，由于没有外界干扰，逐渐演化为各项同性湍流。发展了各项同性理论。</p>
+<p>先说湍流，湍流的流动一般分解为时均运动（稳态分量）和脉动运动（随机分量）。其中，任一时刻的时均运动都是该时刻湍流的无规则运动在空间上的摊还。</p>
+<p>由于湍流的耗散作用（含内部和边界），尽管可能存在间歇的波动，一个不受干扰后的湍流最终将趋于稳态（如考虑管道流动，其脉动将衰弱至0，接着时均也将随后衰弱至0）。</p>
+<p>即，一个长期的湍流运动，可以描述为在空间上、时间上的摊还。</p>
+<p>……</p>
+<p>从以上几个简单的实例中，读者应该能够渐渐体会到摊还更深层的意义：<strong>摊还，就是将任意维上短暂的（脉冲）效应尽可能分散到维的全域上，</strong>对任何维度都是成立的；无论时、空，或者更抽象的维度。（进一步，如何考虑非整数的维度，即“分形”对象呢？）</p>
+<p>价格在时间上的摊还分析，指导着消费者的购买行为；成本在空间上的摊还分析，指导着生产者的产业发展（规模效应）；甚至，思考发达国家的污染排放在历史和全球上的摊还（温室效应）；冲量在作用面上的摊还；脉冲星在宇宙空间视差上的摊还……</p>
+<p>当然，重点不是应用，而是，在面对一个问题或处境时，能自然而然地想到摊还的思路。（在面对不同的问题的时候，多数的思路往往是一致的。如何构建新思路，也是一个非常值得探讨的问题。）</p>
+<p>甚至，动态规划，数值逼近……所做的无非就是某种合理的简化。简化到什么程度才叫合适呢？我们究竟需要多少知识才能做出好的决定？那么，<strong>信息论</strong>的雏形就跃然纸上了……所谓触类旁通。</p>
+<p>那，极好了。</p>
+<p>……</p>
+<hr>
+<p>借季羡林先生《留德十年》的一段话做结尾:</p>
+<blockquote>
+<p><em>我只是一个人在夜深人静时，伏在枕上，让逝去的生命一幕一幕地断断续续地在我眼前重演一遍，自己仿佛也成了一个旁观者，顾而乐之。</em></p>
+</blockquote>
+<p><font color="turquoiseblue"><strong>愿生命的一分一秒都充满平和与喜悦</strong></font>、</p>
+<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原载于：</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NTU4MjQ0MA==&amp;mid=2247483676&amp;idx=1&amp;sn=8abfa225423ab371d62097bdb9bd5709&amp;chksm=ec502e9bdb27a78d6a1969dcd91bd6a164e35a2ffcc945d7500c759e3c6b854b3b494369fb38#rd" target="_blank" rel="noopener">思维之海-价格悖论与摊还分析</a>》</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/大数据科学与应用系列讲座/">《大数据科学与应用系列讲座》笔记</a></li><li><a href="https://vel.life/算法-图论-欧拉回路/">欧拉回路拓展</a></li><li><a href="https://vel.life/随机数算法/">随机数算法</a></li><li><a href="https://vel.life/算法手册/">算法手册（C++）</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/算法-摊还分析：价格悖论/" title="摊还分析：价格悖论">https://vel.life/算法-摊还分析：价格悖论/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/摊还分析/" rel="tag"><i class="fa fa-tag"></i> 摊还分析</a>
+          
+            <a href="/tags/经济学/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
+          
+            <a href="/tags/悖论/" rel="tag"><i class="fa fa-tag"></i> 悖论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/阅-Asimov-机器人短篇/" rel="next" title="阅《机器人短篇》">
+                <i class="fa fa-chevron-left"></i> 阅《机器人短篇》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/测试/" rel="prev" title="测试专用">
+                测试专用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

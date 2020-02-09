@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大数据,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这是关于《微软亚洲研究院大数据系列讲座》的笔记。">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《微软亚洲研究院大数据系列讲座》笔记">
+<meta property="og:url" content="https://vel.life/《微软亚洲研究院大数据系列讲座》笔记/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这是关于《微软亚洲研究院大数据系列讲座》的笔记。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/bLXZWCY.jpg">
+<meta property="og:updated_time" content="2019-01-11T00:15:24.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《微软亚洲研究院大数据系列讲座》笔记">
+<meta name="twitter:description" content="这是关于《微软亚洲研究院大数据系列讲座》的笔记。">
+<meta name="twitter:image" content="https://i.imgur.com/bLXZWCY.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/《微软亚洲研究院大数据系列讲座》笔记/">
+
+
+
+
+
+
+  <title>《微软亚洲研究院大数据系列讲座》笔记 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/《微软亚洲研究院大数据系列讲座》笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《微软亚洲研究院大数据系列讲座》笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-09T20:17:40+08:00">
+                2019-01-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-01-11T08:15:24+08:00">
+                2019-01-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/《微软亚洲研究院大数据系列讲座》笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/《微软亚洲研究院大数据系列讲座》笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3,233
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://i.imgur.com/bLXZWCY.jpg" rel="gallery_ck6etgkj1001fy4sxrja6gvlj" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://i.imgur.com/bLXZWCY.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>这是关于《<a href="https://www.msra.cn/zh-cn/connections/academic-programs/big-data-lecture" target="_blank" rel="noopener">微软亚洲研究院大数据系列讲座</a>》的笔记。<a id="more"></a>（<a href="./微软亚洲研究院大数据系列讲座.pdf">PDF</a>）</p>
+<blockquote>
+<p>不是很详细，仅供参考。</p>
+</blockquote>
+<h1 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h1><p>一、大数据研究现状、趋势（An Introdution of Big Data）</p>
+<p>1.What is Big Data?</p>
+<p>Hot topic.</p>
+<p>大量、高速、多元化的信息。High-volume, high-velocity, high-variety information assets.</p>
+<p>关注发现、分析、洞见和决策制定。</p>
+<p><img src="/《微软亚洲研究院大数据系列讲座》笔记/clip_image001.png" alt="计算机生成了可选文字: &quot;A new generation Of technologies and a rch itectu res designed to  economically ext ra ct value from ve ry large volumes Of a Wide  variety Of data by enabling high-velocity ca ptu re, discovery, and/or  IDC  analysis&#39;  &quot;Big data is high-volume, high-velocity and high-variety information  assets that demand cost-effective, innovative forms Of information  processing for enhanced insight and decision making. "></p>
+<p>What is 创新 innovation？超前，ahead of shedule。这是一个充满竞争的世界。</p>
+<p> 大数据可以创造Value。Wide interests。China’s GDP.</p>
+<p>Big Data is a growth OPPORTUNITY.</p>
+<p>Airline Industry.</p>
+<p>航空燃油价格的波动影响航空业。</p>
+<p>人人希望买到更便宜的机票。</p>
+<p>————动态定价【航空公司策略】</p>
+<p>其关键在于收益管理。</p>
+<p>大数据分析。（例如天气条件：风暴、台风、下雪，做更好的天气预报，预测天气并调整航班；燃油价格对冲，利用分析预测提前储备石油【期货、期权】，各种因素的考虑（以色列、中东小规模战争，ISIS极端组织）。）航空公司维持生存的重要保证。</p>
+<p><img src="/《微软亚洲研究院大数据系列讲座》笔记/clip_image002.png" alt="IVA "></p>
+<p> Data as a Platform。(组合 + 精炼)</p>
+<p>2.Why Big Data is a Nature Phenomenon?</p>
+<p>我们正在计算机与互联网的时代。</p>
+<p><em>*</em>数据采集成本——&gt;$0</p>
+<p>大数据再自然不过</p>
+<p>——万物数据化。英语语法1700页。考虑语言实际就是考虑数据，语言领域是最早使用大数据的。</p>
+<p><em>*</em>数据存储成本——&gt;$0</p>
+<p>一个人一生所见 &lt; 1TB。</p>
+<p><em>*</em>组合数据</p>
+<p>Main: Volume _ Variety _ Velocity _ Value _ Veracity[真实性]</p>
+<p>​                     （非结构化）                          （可信度）</p>
+<p>Other V’s: Variability _ Volatility _ Visibility</p>
+<p>​                                （及时更新）</p>
+<p>数据安全？</p>
+<p>————伽利略、牛顿+++++实证观察</p>
+<p>The Scientific Method：『Data-Intensive Scientific Discovery』</p>
+<p>·empirricalscience</p>
+<p>·theoretical science（using models &amp; generalization）</p>
+<p>·computational science（for simulation）</p>
+<p>·eScience</p>
+<p>互联网开放的数据：更容易产生实证科学。</p>
+<p><strong><em>典型的数据分析生命周期</em></strong></p>
+<p>Question ——&gt; Collection ——&gt; Logical Model ——&gt; Physical Model ——&gt; Load Data ——&gt; Tune ——&gt; Answer</p>
+<p>大数据允许更多的预测、决策，和以前的商业分析很不同。</p>
+<p>data——信息工厂。（自动控制的闭合反馈回路，以非常快的速度循环）</p>
+<p>————————————————————————————————————————————</p>
+<p>二、互联网搜索Web Search</p>
+<p>1.大规模互联网搜索详细设计</p>
+<p>如何利用搜索引擎和大数据来挖掘有用的知识。</p>
+<p><strong><em>Search is Everywhere</em></strong></p>
+<p>Find Something….</p>
+<p>网上有大量的信息，搜索、挖掘。</p>
+<p><em>*</em>逻辑架构</p>
+<p>建立索引，搜索。Google：使用Anchor text来描述目标文件，利用链接来PageRank。</p>
+<ol>
+<li>存储海量的数据（页面本身和其相关信息）crawling the web</li>
+<li>建立索引，排序（主要的数据结构）indexing the web，sorting</li>
+<li>收到查询请求，进行搜索 searching</li>
+<li>链接分析，计算文件重要性</li>
+</ol>
+<p>大量的查询服务器，储存大量的历史搜索，实际每秒每台服务器只需要承担20+左右的搜索请求。</p>
+<p>2.微软在计算查询的维度方面的研究工作</p>
+<p>QDMiner：对于一个搜索请求，返回一个或多个搜索维度【有意义的维度】。</p>
+<p>**为什么研究多维度查询 Query Dimensions？</p>
+<p>找到最适合的匹配——&gt;计算机自动完成的任务</p>
+<p>对一个搜索结果：对不同的属性含义分别搜索，提供了更全面的信息。</p>
+<p>对列表加权——某些列表可能并不是特别有用。</p>
+<p>对条目排序ItemsRank.</p>
+<p><em>*</em>Evaluation. Experimental Results.</p>
+<p>————————————————————————————————————————————</p>
+<p>三、社会计算</p>
+<p>1.背景</p>
+<p>用户数据。</p>
+<p>马克提出，普适计算是计算的未来。</p>
+<p>·计算机的目的是帮助</p>
+<p>·最好的计算机提供安静、无形的服务</p>
+<p>·一个人能够凭直觉做的事越多，就越聪明；计算机能开发人的潜意识</p>
+<p>·计算机应该营造出平静的环境</p>
+<p>Device：cm，dm，mm。Sensor。</p>
+<p>2.用户</p>
+<p>·移动规律</p>
+<p>乘车信息——构建Framework（资金+时间+地理）——恢复缺失的信息，理解用户的移动规律。</p>
+<p>公交卡刷卡数据的特征：序列、时空、异构。</p>
+<p>**乘车信息的随机性——构造约束——算法的性能明显提升。</p>
+<p>推荐问题的算法：基于用户的协同过滤、加权矩阵分解、隐马尔可夫模型……</p>
+<p>GeoMF模型…用户的移动地点往往集中在相近的工作、休闲地点。建立一些相关性数据（矩阵形式），来标记这些地址，并且区分正偏好（故意去）、负偏好（故意不去）的属性。通过矩阵运算来求得用户的偏好矩阵。用迭代法来更新用户偏好以获得最佳表征。</p>
+<p>·用户画像与个人隐私Profiling and Privacy</p>
+<p>社交网络用户匹配信息——用户名，用户社交图，用户发布的微博，用户分享的图像、位置历史、足迹……</p>
+<p>进一步研究用户的移动规律模式，分地区，可以提高位置预测的准确性。</p>
+<p>Self-Disclosure：从多个社交网络捕获用户的公开信息。分析社交联系等。</p>
+<p>用树结构来表示一个群体的生活方式，将群生活数据信息Visible。</p>
+<p>**用户连接和图隐私</p>
+<p>身份泄露，攻击（主动、被动），简单图、丰富图（含有交互信息）。</p>
+<p>———轻量级匿名算法</p>
+<p>>&gt;矩阵的特征值越高，社交网络中越活跃，则越容易被识别（隐私泄露）。</p>
+<p>## 简单匿名算法：仅仅打乱节点编号，不改变结构</p>
+<p>## 图数据的K匿名算法：保证每个节点具有k-1个同度的节点，根据当前状态随机地增加、删除边</p>
+<p>————————————————————————————————————————————</p>
+<p>四、城市计算</p>
+<p>1.Introduction</p>
+<p><em>*</em>快速的城市化——&gt;现代化——&gt;挑战。</p>
+<p>城市传感、城市数据管理和城市数据分析。</p>
+<p>——solve 交通、能源、空气污染……</p>
+<p>Points、Lines、Graphs。</p>
+<p>*静态——&gt;动态。（空气质量站 = 时间动态but空间静态）</p>
+<p>2.概念、框架</p>
+<p>城市传感、城市数据管理和城市数据分析——服务系统——促进城市进化。</p>
+<p>从多个数据源中得到想要的改进指导？——面临的挑战。</p>
+<p>城市空气检测 【细粒度】+风流+交通+…… = 提供更准确的空气质量预测。</p>
+<p>城市传感：稀疏性（数据缺失）、有偏分布（样本不能很好地反映整体状态）以及有限的来源。</p>
+<p>数据收集策略：静态感知（如何放置监测地点），动态激励。</p>
+<p>城市数据管理：多模态数据（形式、密度、单位……），频繁的数据更新（频率、数据量）。</p>
+<p>识别不同数据集间的关联？跨领域的识别模式——可能潜藏巨大的价值。涉及到并发、多属性组合、类别交叉（数据集属性的聚合）等方面的挑战。（甚至交融不同学科之间的技术）</p>
+<p>什么是一个城市空气污染的根本原因？——当前服务状态的提供 + 历史数据的分析——&gt;未来的预测。</p>
+<p>3.基础技术</p>
+<p>传感网络、移动传感。</p>
+<p>最近——群体感知技术：被动感知（参与的人们无意识地产生数据，如地铁的进出记录），参与式感知（人们主动提供数据，如手机的GPS的信息）。</p>
+<p>·数据分析层（需要基础的数据挖掘与机器学习知识）</p>
+<p>基础：回归、频繁模式挖掘、序列模式挖掘、分类概率图模型、矩阵分解、张量分解……</p>
+<p>高级技术：跨域数据融合（基于阶段，基于特征【深度神经网络】，基于视角、概率模型、相似度、转移）……</p>
+<p>优化技术：线性规划、L-1最小化、L-2最小化……</p>
+<p>可视化技术、可视化数据分析技术……</p>
+<p>4.城市规划</p>
+<p>数据自动识别——&gt;有问题的道路数据——&gt;城市道路改建。</p>
+<p>·以主干道、支路等对城市道路网进行划分，相邻区域具有相似性。</p>
+<p>·以一天的时间区段划分车辆的行驶数据。</p>
+<p>Skyline的图模型——连接重组邻近的图——将多天的Skyline图联合——探索规律出现的problem。</p>
+<p>**对城市的道路系统可以做出评价，并找出其后的原因。</p>
+<p>5.识别特定区域（城市中的功能区域）</p>
+<p>教育区域、商业区域……</p>
+<p>数据：一部分为人的移动性数据，一部分为兴趣点的数据。</p>
+<p>6.城市空气质量与大数据研究</p>
+<p>城市的各个地区的空气质量差异很大，用监测站的方式采集数据是很难的。因此需要很多的相关数据增加细粒量。还可以利用一个自学习的模型提高效率来消除数据的稀疏性（一个城市可能只有20到30个监测站）。使用分类器，建立一个神经网络来得出想要的结果。</p>
+<p>7.能源交通与环境污染</p>
+<p>城市层次上的推断——车辆的油耗。</p>
+<p>·首先基于一个汽车样本产生的GPS轨迹估计每个路段上的行驶速度（耦合矩阵分解方法）</p>
+<p>·其次基于行驶速度、兴趣点数据、路网数据和天气条件来推断每条道路上的汽车流量（贝叶斯网络）</p>
+<p>·最后借用传统的环境理论来计算每辆车的汽油消耗和各种污染物的污染排放（需要一些统计数据）</p>
+<p>8.诊断城市中的噪声</p>
+<p>交通噪声、嘈杂的音乐噪声、建筑噪声……</p>
+<p>噪声不仅取决于物理性质，也取决于人的忍受度。只用传感器无法分析城市噪声。</p>
+<p>——群体感知。收集不同人的数据。签到、投诉……多个数据集，填补缺失值。</p>
+<p>————————————————————————————————————————————</p>
+<p>五、软件分析</p>
+<p>1.概念</p>
+<p>软件逐渐变成一项工程，如eclipse、windows（收集用户使用信息）等，更新速度很快。</p>
+<p>Data Source：Operation, User, Product.</p>
+<p>软件的生命周期中存在大量的数据分析，收集工程本身和用户的信息，帮助改善软件工程。</p>
+<p>数据的可视化。&amp; HELPING Target audience: software practitioners.</p>
+<p>2.实例</p>
+<p>·代码分析</p>
+<p>编写代码常常不是一件容易的时期，经常会遇到不熟悉的问题或API。</p>
+<p>开源项目网站存储了大量的可重用的代码。CodeHow支持从这些网站中找寻需要的代码。支持关键字查询或自然语言查询（考察文件的相似度，包括文本和API查询，使用扩展的布尔模型）。</p>
+<p>CodeHow还能智能分切复杂的原始代码，将简单、关键的代码部分返回给查询者。</p>
+<p>CodeHow集中在GitHub中，作为开发人员的辅助工具。</p>
+<p>·崩溃报告分桶</p>
+<p>尽管开发人员可能用大量的时间来提高软件质量，发布的软件中仍存在着大量的缺陷。软件崩溃是一种常见的致命的程序崩溃。</p>
+<p>WER（Windows Error Reporting）系统就是收集这些崩溃信息的程序，当用户允许时，WER会将这些报告提交到WER服务器，WER服务器检查重复的崩溃报告并把它们分成桶，计算每个桶中的崩溃报告的数量。当这个数量足够多时，就会生成一个缺陷报告并发送给开发人员以方便调试。通常，每天可以收到几百万个崩溃报告。</p>
+<p>为了提高分桶时的精确程度，提出了重新分桶的策略（using PDM）。</p>
+<p>·克隆分析器（检测重复代码）……</p>
+<p>————————————————————————————————————————————</p>
+<p>六、大数据可视化</p>
+<p>1.传统的数据可视化</p>
+<p>What is information Visualization？</p>
+<p>将数据从让人迷惑的语言形式，转变为可视化、易解读的语言形式。</p>
+<p>*Innate Human Capacity几乎没有进步，而数据的发展却十分迅猛。</p>
+<p>**数据的可视化使数据间的关联更加容易被观察到。</p>
+<p>·InfoVis1.0（Bronze Age 青铜时代）——Hand-made drawing(infographcis)</p>
+<p>·InfoVis2.0（Silver Age  白银时代）——Information display</p>
+<p>·InfoVis3.0（Golden Age 黄金时代）——Visual analytics</p>
+<p><em>*</em>Graph Visualization：Node-link diagram, Matrix, Hybrid.</p>
+<p>2.同质数据的可视化</p>
+<p>&amp;&amp;Key Challenges：</p>
+<p>·Summarize text corpora（大量的复杂信息、时间复杂度……）</p>
+<p>·Visually explain summarization results（有关联的可视化……）</p>
+<p>·Provide Feedback or articulate their needs（不完美的数据挖掘结果，或者不同的使用者需求……）</p>
+<p>——Example：TIARA</p>
+<p><img src="/《微软亚洲研究院大数据系列讲座》笔记/clip_image003.png" alt="TIARA Overview  Text Preprocessing  Text content + meta data  Text Summarization  Summarization results  Data Transformation  -1  ransformed results  Visualization "></p>
+<p>Text Summarization：ＬＤＡ[High portability, high compaction rate for scalebility, a finer grained model]</p>
+<p>——Example：Healthcare</p>
+<p>结构化、非结构化数据，重点研究非结构化数据，如受伤状况、旅行意愿……</p>
+<p>Layout Algorithm——three-level directed acyclic graph( DAG )。</p>
+<p>3.异质数据的可视化分析</p>
+<p><img src="/《微软亚洲研究院大数据系列讲座》笔记/clip_image004.png" alt="Data  Evolutionary topic trees  -ti+l-  Raw text  Tree-cut  Focused topic  -0-4  ntal tree cut  Isualization  Interaction  .ti+l+  Stable layout "></p>
+<p>Meta-node, meta-edge to meta-graph.（图式数据集之间的点、边结合）</p>
+<p>Visualization：</p>
+<p>·Graph matching as density-based graph visuazation</p>
+<p>·Topic hierarchy as stacked tree</p>
+<p>·Coupling grahp visualization with stacked tree</p>
+<p>·机遇和挑战（如何获得更好的可视化效果，如何帮助使用者剖析大数据……）</p>
+<p>Big data Visualization is very popular nowadays.</p>
+<p>Obama’s big data plans:”……using novel statistical, graphical, and visualization techniques to study complex data.”</p>
+<p><em>*</em>Challenges:</p>
+<p>·Big data availability</p>
+<p>·Data quality is not high</p>
+<p>·Collaboration with domain</p>
+<p>·Multiple skills</p>
+<p>·Different evaluation systems</p>
+<p>·Scalability is (still) a big problem</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/《微软亚洲研究院大数据系列讲座》笔记/" title="《微软亚洲研究院大数据系列讲座》笔记">https://vel.life/《微软亚洲研究院大数据系列讲座》笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/A-Few-Thoughts-on-Collision/" rel="next" title="理想碰撞问题">
+                <i class="fa fa-chevron-left"></i> 理想碰撞问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/《大学计算机——计算思维的视角》笔记/" rel="prev" title="《大学计算机——计算思维的视角》笔记">
+                《大学计算机——计算思维的视角》笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预览"><span class="nav-number">1.</span> <span class="nav-text">预览</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

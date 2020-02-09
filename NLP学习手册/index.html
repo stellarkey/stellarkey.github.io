@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="NLP,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="NLP（Natural Language Processing），自然语言处理。">
+<meta name="keywords" content="NLP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLP学习手册">
+<meta property="og:url" content="https://vel.life/NLP学习手册/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="NLP（Natural Language Processing），自然语言处理。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/NLP学习手册/1550843479675.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232228316-58060057.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232238347-1362818555.png">
+<meta property="og:updated_time" content="2019-04-03T10:43:44.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NLP学习手册">
+<meta name="twitter:description" content="NLP（Natural Language Processing），自然语言处理。">
+<meta name="twitter:image" content="https://vel.life/NLP学习手册/1550843479675.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/NLP学习手册/">
+
+
+
+
+
+
+  <title>NLP学习手册 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/NLP学习手册/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NLP学习手册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-02-13T17:59:57+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-04-03T18:43:44+08:00">
+                2019-04-03
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/NLP学习手册/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/NLP学习手册/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,365
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>NLP</code>（Natural Language Processing），自然语言处理。<a id="more"></a></p>
+<blockquote>
+<p><a href="http://ictclas.nlpir.org/nlpir/" target="_blank" rel="noopener">语义分析系统</a>（<a href="https://github.com/NLPIR-team/NLPIR" target="_blank" rel="noopener">组件</a>），<code>GUI</code>太强辣~</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>Prerequisites: <a href="http://ciml.info" target="_blank" rel="noopener"><em>A Course in Machine Learning</em></a>.</p>
+
+
+	<div class="row">
+    <embed src="A_Course_in_Machine_Learning.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p><a href="https://www.bilibili.com/video/av41393758" target="_blank" rel="noopener"><strong>CS224n</strong></a> 斯坦福深度自然语言处理课，<a href="http://web.stanford.edu/class/cs224n/" target="_blank" rel="noopener"><strong>官网</strong></a>（各种资料）</p>
+<blockquote>
+<p><strong>Reference Texts:</strong></p>
+<p>​     The following texts are useful, but not required. All of them can be read free online.   </p>
+<ul>
+<li>​           Dan Jurafsky and James H. Martin. <a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Speech and Language Processing (3rd ed. draft)</a>     </li>
+<li>​           Jacob Eisenstein. <a href="https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf" target="_blank" rel="noopener">Natural Language Processing</a>       </li>
+<li>​           Yoav Goldberg. <a href="http://u.cs.biu.ac.il/~yogo/nnlp.pdf" target="_blank" rel="noopener">A Primer on Neural Network Models for Natural Language Processing</a>       </li>
+<li>​           Ian Goodfellow, Yoshua Bengio, and Aaron Courville. <a href="http://www.deeplearningbook.org/" target="_blank" rel="noopener">Deep Learning</a>       </li>
+</ul>
+<p>​     If you have no background in neural networks but would like to take  the course anyway, you might well find one of these books helpful to  give you more background:     </p>
+<ul>
+<li>​          Michael A. Nielsen. <a href="http://neuralnetworksanddeeplearning.com" target="_blank" rel="noopener">Neural Networks and Deep Learning</a>       </li>
+<li>​       Eugene Charniak. <a href="https://mitpress.mit.edu/books/introduction-deep-learning" target="_blank" rel="noopener">Introduction to Deep Learning</a>       </li>
+</ul>
+</blockquote>
+<p><a href="https://github.com/oxford-cs-deepnlp-2017/lectures" target="_blank" rel="noopener">oxford-deepnlp</a></p>
+<p><a href="http://www.hangli-hl.com/uploads/3/1/6/8/3168008/ml_for_match-step2.pdf" target="_blank" rel="noopener">text match survey</a> 李航</p>
+<blockquote>
+<p>基础可以看看吴军的<a href="https://vel.life/Beauty-of-Mathmatics/">数学之美</a></p>
+</blockquote>
+<p><a href="https://monkeylearn.com/blog/word-embeddings-transform-text-numbers/" target="_blank" rel="noopener">Word2vec</a></p>
+<p><a href="./Neural_Network_Methods_for_Natural_Language_Processing.pdf"><strong>Neural Network Methods for Natural Language Processing</strong></a> 综述性较强</p>
+
+
+	<div class="row">
+    <embed src="Neural_Network_Methods_for_Natural_Language_Processing.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p><strong><a href="./Speech and Language Processing.pdf">Speech and Language Processing</a></strong>（<a href="http://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">Web</a>）</p>
+
+
+	<div class="row">
+    <embed src="Speech_and_Language_Processing.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p><a href="https://cloud.tencent.com/developer/article/1176390" target="_blank" rel="noopener">干货 | 陪伴我学习NLP、知识图谱的那些资源</a></p>
+<p><a href="https://www.jiqizhixin.com/articles/2019-01-15-3" target="_blank" rel="noopener">文本预处理技术详解</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwifk7vHzvLgAhXQfd4KHRPDBr4QFjAEegQIABAB&amp;url=http%3A%2F%2Fwww.52nlp.cn%2Ftag%2Fnlp%25E4%25B9%25A6%25E7%25B1%258D&amp;usg=AOvVaw2gl3dpz8rqckFvEKctaQS2" target="_blank" rel="noopener">NLP书籍| 我爱自然语言处理</a></p>
+<p><a href="https://www.jiqizhixin.com/articles/2018-06-03-2" target="_blank" rel="noopener">自然语言处理最新教材开放下载，乔治亚理工大学官方推荐| 机器之心</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwifk7vHzvLgAhXQfd4KHRPDBr4QFjABegQICRAB&amp;url=https%3A%2F%2Fwww.msra.cn%2Fzh-cn%2Fnews%2Ffeatures%2Fbook-recommendation-nlp-20171220&amp;usg=AOvVaw1BRmup2Nuqtaeebr3xYTq-" target="_blank" rel="noopener">书单| NLP秘笈，从入门到进阶 - 微软亚洲研究院</a></p>
+<h1 id="NLP的定义"><a href="#NLP的定义" class="headerlink" title="NLP的定义"></a>NLP的定义</h1><blockquote>
+<p>Introduction and Word Vectors<br>[<a href="http://web.stanford.edu/class/cs224n/slides/cs224n-2019-lecture01-wordvecs1.pdf" target="_blank" rel="noopener">slides</a>] [<a href="http://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf" target="_blank" rel="noopener">notes</a>]<br>Gensim word vectors example:<br>[<a href="http://web.stanford.edu/class/cs224n/materials/Gensim.zip" target="_blank" rel="noopener">zip</a>]<br>[<a href="http://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html" target="_blank" rel="noopener">preview</a>]</p>
+<p>Suggested Readings:       </p>
+<ol>
+<li><a href="http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/" target="_blank" rel="noopener">Word2Vec Tutorial - The Skip-Gram Model</a></li>
+<li><a href="http://arxiv.org/pdf/1301.3781.pdf" target="_blank" rel="noopener">Efficient Estimation of Word Representations in Vector Space</a> (original word2vec paper)</li>
+<li><a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf" target="_blank" rel="noopener">Distributed Representations of Words and Phrases and their Compositionality</a> (negative sampling paper)</li>
+</ol>
+</blockquote>
+<p>自然语言处理（Natural Language Processing，NLP）是计算机科学、语言学、人工智能的交叉学科。</p>
+<p>目标：让计算机处理或理解自然语言，从而完成相应任务。</p>
+<p><strong>完全理解</strong>(understand)和<strong>表示</strong>(represent)自然语言的<strong>含义</strong>(meaning)是极其困难的。</p>
+<h2 id="NLP-Levels"><a href="#NLP-Levels" class="headerlink" title="NLP Levels"></a>NLP Levels</h2><p>从语音（speech）或文本（text）源进行分析识别，然后<strong>形态分析</strong>（Morphological analysis），<strong>句法分析</strong>（Syntactic analysis），<strong>语义理解</strong>（Semantic Interpretation），<strong>语篇处理</strong>（Discourse Processing）。</p>
+<p><img src="/NLP学习手册/1550843479675.png" alt="1550843479675"></p>
+<h2 id="NLP-Applications"><a href="#NLP-Applications" class="headerlink" title="NLP Applications"></a>NLP Applications</h2><ul>
+<li>Spell checking（语法检查）, keyword search, finding <strong>synonyms</strong>（同义词）</li>
+<li><strong>Extracting information</strong> from websites</li>
+<li><strong>Classifying</strong>: reading level of school texts, positive/negative sentiment of longer document</li>
+<li><strong>Machine translation</strong></li>
+<li><strong>Spoken dialog systems</strong></li>
+<li><strong>Complex question answering</strong></li>
+<li>——————————————————————————————————————</li>
+<li>Search(written and spoken)</li>
+<li>Online advertisement matching</li>
+<li>Automated/assisted translation</li>
+<li>Sentiment analysis（情感分析） for marketing or finance/trading</li>
+<li>Speech recognition</li>
+<li><strong>Chatbots / Dialog agents</strong><ul>
+<li>Automating customer support</li>
+<li>Controlling devices</li>
+<li>Ordering goods</li>
+</ul>
+</li>
+</ul>
+<h2 id="Special-about-human-language"><a href="#Special-about-human-language" class="headerlink" title="Special about human language"></a>Special about human language</h2><p><strong><font color="red">Symbol</font></strong>（符号）。</p>
+<p>传统观点：大脑是一个符号处理器。</p>
+<p>深度学习；连续——符号——连续。</p>
+<h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><p>深度学习是一个机器学习的一个分支。</p>
+<p>机器学习的过程：问题分析——<strong><font color="blue">特征工程</font></strong>——撰写代码。</p>
+<blockquote>
+<p>机器学习只是擅长数值优化，学习过程几乎有人类完成。</p>
+</blockquote>
+<p>深度学习也属于表示学习的一种。</p>
+<ul>
+<li>自动地选择特征</li>
+<li>大多数时候就是指神经网络</li>
+<li>广义的堆栈线性模型？</li>
+</ul>
+<blockquote>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwj23uSYktzgAhWWyYsBHU-lAw4QFjAAegQIChAB&amp;url=https%3A%2F%2Farxiv.org%2Fabs%2F1404.7828&amp;usg=AOvVaw0t83-IqaVmRDGP9ws-zu4a" target="_blank" rel="noopener">Deep Learning in Neural Networks: An Overview</a></p>
+</blockquote>
+
+
+	<div class="row">
+    <embed src="https://arxiv.org/pdf/1404.7828.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<hr>
+<p>人工特征有各种各样的问题。而深度学习可以方便地表示各种信息。</p>
+<p>2010年以来，深度学习的表现远远超过其它传统方法。</p>
+<p>为什么深度学习如此成功呢？</p>
+<ul>
+<li>技术并非最新发明</li>
+<li>但硬件（算力）、数据的现代化提供了模型</li>
+</ul>
+<p>深度学习可以很好地与GPU结合进行并行的张量计算。</p>
+<blockquote>
+<p>在语音识别方面，深度学习模型大幅降低了错误率。</p>
+<p>在计算机视觉方面，图像分类的错误率也被深度学习所优化。</p>
+</blockquote>
+<hr>
+<p>例：Pope’s <strong>baby steps</strong> on gays.</p>
+<h1 id="词向量表示-Word2vec"><a href="#词向量表示-Word2vec" class="headerlink" title="词向量表示 Word2vec"></a>词向量表示 Word2vec</h1><blockquote>
+<p>Word Vectors 2 and Word Senses<br>[<a href="http://web.stanford.edu/class/cs224n/slides/cs224n-2019-lecture02-wordvecs2.pdf" target="_blank" rel="noopener">slides</a>] [<a href="http://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes02-wordvecs2.pdf" target="_blank" rel="noopener">notes</a>]</p>
+<p>Suggested Readings:</p>
+<ol>
+<li><a href="http://nlp.stanford.edu/pubs/glove.pdf" target="_blank" rel="noopener">GloVe: Global Vectors for Word Representation</a> (original GloVe paper)</li>
+<li><a href="http://www.aclweb.org/anthology/Q15-1016" target="_blank" rel="noopener">Improving Distributional Similarity with Lessons Learned from Word Embeddings</a></li>
+<li><a href="http://www.aclweb.org/anthology/D15-1036" target="_blank" rel="noopener">Evaluation methods for unsupervised word embeddings</a></li>
+</ol>
+<p>Additional Readings:</p>
+<ol>
+<li><a href="http://aclweb.org/anthology/Q16-1028" target="_blank" rel="noopener">A Latent Variable Model Approach to PMI-based Word Embeddings</a></li>
+<li><a href="https://transacl.org/ojs/index.php/tacl/article/viewFile/1346/320" target="_blank" rel="noopener">Linear Algebraic Structure of Word Senses, with Applications to Polysemy</a></li>
+<li><a href="https://papers.nips.cc/paper/7368-on-the-dimensionality-of-word-embedding.pdf" target="_blank" rel="noopener">On the Dimensionality of Word Embedding.</a></li>
+</ol>
+</blockquote>
+<p><strong><font color="red">meaning</font></strong>：<strong><font color="purple">denotation</font></strong>（<strong>指向实体</strong>的抽象表示）。</p>
+<p>介绍独热编码（one-hot）。</p>
+<ul>
+<li>通过独热编码，很难进行similarity的分析（点积总为0）</li>
+</ul>
+<p><strong><font color="red">分布相似性</font></strong>（Distributional similarity）：根据<strong>上下文</strong>来推断两个词汇的相似性。</p>
+<h2 id="Skip-grams（SG）算法"><a href="#Skip-grams（SG）算法" class="headerlink" title="Skip-grams（SG）算法"></a>Skip-grams（SG）算法</h2><h1 id="聊天机器人"><a href="#聊天机器人" class="headerlink" title="聊天机器人"></a>聊天机器人</h1><blockquote>
+<p><em>详见: <a href="https://vel.life/意图识别笔记">意图识别笔记</a> 。</em></p>
+<p><a href="https://image.hanspub.org/pdf/CSA20180600000_56614827.pdf" target="_blank" rel="noopener">智能聊天机器人的技术综述</a></p>
+<p><a href="https://item.jd.com/12539314.html" target="_blank" rel="noopener">自然语言处理实践：聊天机器人技术原理与应用</a></p>
+</blockquote>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><p><strong><font color="red">检索式</font></strong>：提前定义回答，通过规则引擎、模式匹配、分类器从<strong>知识库</strong>中选择最佳回复。</p>
+<p><strong><font color="red">生成式</font></strong>：基于<strong>语料</strong>自动生成一句话作为用户输入的应答。（质量较差）</p>
+<blockquote>
+<p>目前来说，检索式是主流。但基于深度学习的<code>seq2seq</code>模型可能会使生成式有用武之地。</p>
+</blockquote>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><strong><font color="red">问答系统</font></strong>：特定领域的知识获取。</p>
+<ul>
+<li><strong>模板匹配</strong> + <strong>语义解析</strong></li>
+<li>客服——IBM<code>Watson</code></li>
+</ul>
+<p><strong><font color="red">任务</font>对话<font color="red">系统</font></strong>：特定领域，完成用户期望的任务或动作。</p>
+<ul>
+<li><strong>对话管理</strong></li>
+<li>预订机票——苹果<code>Siri</code></li>
+</ul>
+<p><strong><font color="red">闲聊系统</font></strong>：开放领域，陪用户闲聊。</p>
+<ul>
+<li><strong>对话管理</strong> + <strong>自然语言理解</strong></li>
+<li>娱乐、情感陪伴——微软小冰。</li>
+</ul>
+<blockquote>
+<p>对于任务、闲聊，通常需要主观性的评价作为依据。</p>
+</blockquote>
+<p><strong>主动<font color="red">推荐系统</font></strong>：特定领域，信息主动推荐。</p>
+<ul>
+<li>为用户个性化地推荐信息——今日头条。</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p><strong><font color="red">在线客服</font></strong>：自动回复用户提出的与产品或服务相关的问题。</p>
+<ul>
+<li><a href="http://www.xiaoi.com/" target="_blank" rel="noopener">小i机器人</a>，<a href="http://open.jimi.jd.com/" target="_blank" rel="noopener">京东JIMI客服机器人</a>，<a href="http://alixiaomi.com/" target="_blank" rel="noopener">阿里小蜜</a>(<a href="https://www.aliyun.com/product/beebot" target="_blank" rel="noopener">云小蜜</a>)</li>
+</ul>
+<p><strong><font color="red">娱乐闲聊</font></strong>：同用户进行不限定主题的对话（闲聊），从而起到陪伴、慰藉的作用。</p>
+<ul>
+<li><a href="https://www.msxiaobing.com/" target="_blank" rel="noopener">微软小冰</a>，<a href="https://xiaowei.qcloud.com/" target="_blank" rel="noopener">微信小微</a>，龙泉寺“贤二机器人”</li>
+</ul>
+<p><strong><font color="red">知识教育</font></strong>：具备人机交互功能的辅助学习机器人。</p>
+<ul>
+<li>UC聊天机器人</li>
+</ul>
+<p><strong><font color="red">个人助理</font></strong>：通过语音、文字与用户进行交互，实现用户个人事务的查询、代办。</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Google_Now" target="_blank" rel="noopener"><code>Google Now</code></a>，<a href="https://aws.amazon.com/cn/lex/" target="_blank" rel="noopener"><code>Amazon Lex</code></a>,<a href="https://wit.ai/" target="_blank" rel="noopener"> <code>Facebook Wit.ai</code></a>，以及各种智能设备</li>
+</ul>
+<p><strong><font color="red">智能问答</font></strong>：回答用户以自然语言形式提出的事实型、推理型、计算型的复杂问题，帮助用户获得信息和决策。</p>
+<ul>
+<li><a href="https://www.ibm.com/watson" target="_blank" rel="noopener">IBM<code>Watson</code></a></li>
+<li><a href="https://www.wolframalpha.com/" target="_blank" rel="noopener"><code>WolframAlpha</code></a>，<a href="https://www.peak-labs.com/" target="_blank" rel="noopener"><code>Magi</code></a>（两者都是基于结构化知识库构建的问答系统）</li>
+</ul>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p><strong><font color="blue">自动语音识别</font></strong>（Automatic Speech Recognition, <strong><font color="blue">ASR</font></strong>）：语音信号$\longrightarrow$文本信息</p>
+<p><strong><font color="red">自然语言理解</font></strong>（Natural Language Understanding, <strong><font color="red">NLU</font></strong>）：文本信息$\longrightarrow$语义表示</p>
+<p><strong><font color="red">对话管理</font></strong>（Dialogue Management, <strong><font color="red">DM</font></strong>）：对话状态决策</p>
+<p><strong><font color="red">自然语言生成</font></strong>（Natural Language Generation, <strong><font color="red">NLG</font></strong>）：语义表示$\longrightarrow$文本信息</p>
+<p><strong><font color="blue">语音合成</font></strong>（Text-to-Speech, <strong><font color="blue">TTS</font></strong>）：文本信息$\longrightarrow​$语音信号</p>
+<h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><h3 id="自然语言理解-NLU"><a href="#自然语言理解-NLU" class="headerlink" title="自然语言理解 NLU"></a><font color="red">自然语言理解 NLU</font></h3><p>自然语言的特征：</p>
+<ul>
+<li><strong>语音</strong>：与发音有关的学问。</li>
+<li><strong>音韵</strong>：语音组合成读音。</li>
+<li><strong>词态</strong>：词的状态（时态等）。中文较少。</li>
+<li><strong>句法</strong>：主要研究句子如何合乎语法。</li>
+<li><strong>语义</strong>、<strong>语用</strong>：自然语言包含和表达的意思。</li>
+</ul>
+<p>自然语言的难度主要在<strong>灵活性</strong>，<strong>创新性</strong>和<strong>多义性</strong>。</p>
+<h4 id="模块-1"><a href="#模块-1" class="headerlink" title="模块"></a>模块</h4><p><strong>命名<font color="red">实体识别</font></strong>（Named Entity Recognition）：识别自然语言中具有特定意义的实体。</p>
+<ul>
+<li>人名、地名、时间和专有名词。</li>
+</ul>
+<p><strong><font color="red">意图识别</font></strong>：显式意图 + 隐式意图。</p>
+<p><strong><font color="red">情感识别</font></strong>：显式情感 + 隐式情感。</p>
+<p><strong><font color="red">指代消解</font></strong>：指向上下文的代词。</p>
+<p><strong><font color="red">省略恢复</font></strong>：上下文的幻想填充。</p>
+<p><strong><font color="red">回复确认</font></strong>：输入意图模糊，需要主动询问确认意图。</p>
+<p><strong><font color="blue">拒识判断</font></strong>：主动拒绝识别超出范围的意图。</p>
+<h4 id="策略分类"><a href="#策略分类" class="headerlink" title="策略分类"></a>策略分类</h4><p><strong><font color="red">基于规则</font></strong>：利用规则定义解析文本。</p>
+<ul>
+<li>只适用于相对简单的场景，可快速实现一个简单可用的语义理解模块。</li>
+</ul>
+<p><strong><font color="red">基于统计</font></strong>：利用数据训练模型解析文本。</p>
+<ul>
+<li>数据驱动、健壮性好，训练数据难以获取且模型难以解释和调参。</li>
+<li>意图识别被视为分类问题，可采用多元LR，SVM，AdaBoost等算法。</li>
+<li>实体抽取被视为序列标注，输入文本特征，输出文字属于实体的分布概率，可采用HMM，CRF等算法。</li>
+<li>当数据量足够大时，使用神经网络的深度学习方法可取得更好效果。</li>
+<li>必须针对处理<a href="https://baike.baidu.com/item/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94" target="_blank" rel="noopener">长尾数据</a>。</li>
+</ul>
+<p>在具体实践中，经常将两者结合起来：</p>
+<ul>
+<li>数据较少，优先采用规则；数据积累足够后逐渐转为统计方法</li>
+<li>基于统计能覆盖绝大多数场景，但基于规则的方法可以在一些边界上进行兜底，以此提升性能</li>
+</ul>
+<h4 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h4><h4 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h4><h4 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h4><h4 id="词袋模型"><a href="#词袋模型" class="headerlink" title="词袋模型"></a>词袋模型</h4><h4 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h4><h4 id="词嵌入-Word-Embedding"><a href="#词嵌入-Word-Embedding" class="headerlink" title="词嵌入 Word Embedding"></a>词嵌入 Word Embedding</h4><h4 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h4><h3 id="对话管理-DM"><a href="#对话管理-DM" class="headerlink" title="对话管理 DM"></a>对话管理 DM</h3><p>对话行为识别</p>
+<p>对话状态识别</p>
+<p>对话策略学习</p>
+<p>对话奖励</p>
+<h4 id="有限状态自动机"><a href="#有限状态自动机" class="headerlink" title="有限状态自动机"></a>有限状态自动机</h4><h4 id="统计法"><a href="#统计法" class="headerlink" title="统计法"></a>统计法</h4><h4 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h4><h4 id="框架法"><a href="#框架法" class="headerlink" title="框架法"></a>框架法</h4><h3 id="自然语言生成-NLG"><a href="#自然语言生成-NLG" class="headerlink" title="自然语言生成 NLG"></a>自然语言生成 NLG</h3><h4 id="检索式"><a href="#检索式" class="headerlink" title="检索式"></a>检索式</h4><h4 id="模板式"><a href="#模板式" class="headerlink" title="模板式"></a>模板式</h4><h4 id="深度学习-1"><a href="#深度学习-1" class="headerlink" title="深度学习"></a>深度学习</h4><h2 id="问答系统"><a href="#问答系统" class="headerlink" title="问答系统"></a>问答系统</h2><h3 id="KBQA"><a href="#KBQA" class="headerlink" title="KBQA"></a>KBQA</h3><h3 id="WebQA"><a href="#WebQA" class="headerlink" title="WebQA"></a>WebQA</h3><h3 id="CQA"><a href="#CQA" class="headerlink" title="CQA"></a>CQA</h3><h3 id="DBQA（基于文档）"><a href="#DBQA（基于文档）" class="headerlink" title="DBQA（基于文档）"></a>DBQA（基于文档）</h3><h2 id="对话系统"><a href="#对话系统" class="headerlink" title="对话系统"></a>对话系统</h2><h3 id="模块化对话系统"><a href="#模块化对话系统" class="headerlink" title="模块化对话系统"></a>模块化对话系统</h3><h3 id="端到端对话系统"><a href="#端到端对话系统" class="headerlink" title="端到端对话系统"></a>端到端对话系统</h3><p>意图识别：</p>
+<p>仅了解语料标注方面，brat、doccano、prodigy一类</p>
+<h2 id="闲聊系统"><a href="#闲聊系统" class="headerlink" title="闲聊系统"></a>闲聊系统</h2><h2 id="测评"><a href="#测评" class="headerlink" title="测评"></a>测评</h2><h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="词性表"><a href="#词性表" class="headerlink" title="词性表"></a>词性表</h2><blockquote>
+<p><a href="https://www.cnblogs.com/tonglin0325/p/6850901.html" target="_blank" rel="noopener">Stanford Corenlp学习笔记——词性标注</a></p>
+</blockquote>
+<p><strong>代词（<font color="red">PN</font>）</strong>：</p>
+<p><strong>形容词（<font color="red">ADJ</font>）</strong>：</p>
+<p><strong>谓词性形容词（<font color="red">VA</font>）</strong>：</p>
+<p><strong>其他名词（<font color="red">NN</font>）</strong>：</p>
+<p><strong>副词（<font color="red">AD</font>）</strong>：</p>
+<p><strong>动词（<font color="red">ADV</font>）</strong>：</p>
+<p><strong>连词（<font color="red">CNJ</font>）</strong>：</p>
+<p><strong>限定词（<font color="red">ADV</font>）</strong>：</p>
+<p><strong>系动词（<font color="red">VC</font>）</strong>：</p>
+<p><strong>“有”作为主要动词（<font color="red">VE</font>）</strong>：</p>
+<p><strong>其他动词（<font color="red">VV</font>）</strong>：</p>
+<p><strong>专有名词（<font color="red">NR</font>）</strong>：</p>
+<p><strong>时间名词（<font color="red">NT</font>）</strong>：</p>
+<p><strong>方位词（<font color="red">LC</font>）</strong>：</p>
+<p><strong>限定词（<font color="red">DT</font>）</strong>：</p>
+<p><strong>基数词（<font color="red">CD</font>）</strong>：</p>
+<p><strong>序列词（<font color="red">OD</font>）</strong>：</p>
+<p><strong>度量词（<font color="red">M</font>）</strong>：</p>
+<p><strong>介词（<font color="red">P</font>）</strong>：</p>
+<p><strong>并列连词（<font color="red">CC</font>）</strong>：</p>
+<p><strong>从属连词（<font color="red">CS</font>）</strong>：</p>
+<p><strong>感叹词（<font color="red">IJ</font>）</strong>：</p>
+<p><strong>拟声词（<font color="red">ON</font>）</strong>：</p>
+<p><strong>长“被”结构（<font color="red">LB</font>）</strong>：</p>
+<p><strong>短“被”结构（<font color="red">SB</font>）</strong>：</p>
+<p><strong>把字结构（<font color="red">BA</font>）</strong>：</p>
+<p><strong>其他名词修饰语（<font color="red">JJ</font>）</strong>：</p>
+<p><strong>外来词（<font color="red">FW</font>）</strong>：</p>
+<p><strong>标点（<font color="red">PU</font>）</strong>：</p>
+<p><img src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232228316-58060057.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232238347-1362818555.png" alt="img"> </p>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/AI未来说-青年学术论坛-自然语言专场/">AI未来说-青年学术论坛（自然语言专场）</a></li><li><a href="https://vel.life/阅《深度文本匹配综述》/">阅《深度文本匹配综述》</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/NLP学习手册/" title="NLP学习手册">https://vel.life/NLP学习手册/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hadoop-Spark学习手册/" rel="next" title="Hadoop/Spark学习手册">
+                <i class="fa fa-chevron-left"></i> Hadoop/Spark学习手册
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Echarts学习手册/" rel="prev" title="Echarts学习手册">
+                Echarts学习手册 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NLP的定义"><span class="nav-number">2.</span> <span class="nav-text">NLP的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP-Levels"><span class="nav-number">2.1.</span> <span class="nav-text">NLP Levels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP-Applications"><span class="nav-number">2.2.</span> <span class="nav-text">NLP Applications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Special-about-human-language"><span class="nav-number">2.3.</span> <span class="nav-text">Special about human language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习"><span class="nav-number">2.4.</span> <span class="nav-text">深度学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#词向量表示-Word2vec"><span class="nav-number">3.</span> <span class="nav-text">词向量表示 Word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skip-grams（SG）算法"><span class="nav-number">3.1.</span> <span class="nav-text">Skip-grams（SG）算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#聊天机器人"><span class="nav-number">4.</span> <span class="nav-text">聊天机器人</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方式"><span class="nav-number">4.1.1.</span> <span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">4.1.2.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">4.1.3.</span> <span class="nav-text">应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">4.2.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术原理"><span class="nav-number">4.3.</span> <span class="nav-text">技术原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自然语言理解-NLU"><span class="nav-number">4.3.1.</span> <span class="nav-text">自然语言理解 NLU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块-1"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#策略分类"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">策略分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词法分析"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">词法分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#句法分析"><span class="nav-number">4.3.1.4.</span> <span class="nav-text">句法分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语义分析"><span class="nav-number">4.3.1.5.</span> <span class="nav-text">语义分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词袋模型"><span class="nav-number">4.3.1.6.</span> <span class="nav-text">词袋模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TF-IDF"><span class="nav-number">4.3.1.7.</span> <span class="nav-text">TF-IDF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词嵌入-Word-Embedding"><span class="nav-number">4.3.1.8.</span> <span class="nav-text">词嵌入 Word Embedding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识图谱"><span class="nav-number">4.3.1.9.</span> <span class="nav-text">知识图谱</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对话管理-DM"><span class="nav-number">4.3.2.</span> <span class="nav-text">对话管理 DM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有限状态自动机"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">有限状态自动机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统计法"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">统计法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#神经网络"><span class="nav-number">4.3.2.3.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#框架法"><span class="nav-number">4.3.2.4.</span> <span class="nav-text">框架法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自然语言生成-NLG"><span class="nav-number">4.3.3.</span> <span class="nav-text">自然语言生成 NLG</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检索式"><span class="nav-number">4.3.3.1.</span> <span class="nav-text">检索式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板式"><span class="nav-number">4.3.3.2.</span> <span class="nav-text">模板式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度学习-1"><span class="nav-number">4.3.3.3.</span> <span class="nav-text">深度学习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问答系统"><span class="nav-number">4.4.</span> <span class="nav-text">问答系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KBQA"><span class="nav-number">4.4.1.</span> <span class="nav-text">KBQA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebQA"><span class="nav-number">4.4.2.</span> <span class="nav-text">WebQA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CQA"><span class="nav-number">4.4.3.</span> <span class="nav-text">CQA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DBQA（基于文档）"><span class="nav-number">4.4.4.</span> <span class="nav-text">DBQA（基于文档）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对话系统"><span class="nav-number">4.5.</span> <span class="nav-text">对话系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化对话系统"><span class="nav-number">4.5.1.</span> <span class="nav-text">模块化对话系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端到端对话系统"><span class="nav-number">4.5.2.</span> <span class="nav-text">端到端对话系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闲聊系统"><span class="nav-number">4.6.</span> <span class="nav-text">闲聊系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测评"><span class="nav-number">4.7.</span> <span class="nav-text">测评</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来"><span class="nav-number">4.8.</span> <span class="nav-text">未来</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">5.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词性表"><span class="nav-number">5.1.</span> <span class="nav-text">词性表</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

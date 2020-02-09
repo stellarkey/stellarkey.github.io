@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 人工智能前沿学生论坛  主办。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十八期人工智能前沿学生论坛——语音识别前沿技术">
+<meta property="og:url" content="https://vel.life/第十八期人工智能前沿学生论坛——语音识别前沿技术/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 人工智能前沿学生论坛  主办。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-28T10:55:14.811Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第十八期人工智能前沿学生论坛——语音识别前沿技术">
+<meta name="twitter:description" content="近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 人工智能前沿学生论坛  主办。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/第十八期人工智能前沿学生论坛——语音识别前沿技术/">
+
+
+
+
+
+
+  <title>第十八期人工智能前沿学生论坛——语音识别前沿技术 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/第十八期人工智能前沿学生论坛——语音识别前沿技术/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第十八期人工智能前沿学生论坛——语音识别前沿技术</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Created" itemprop="dateCreated datePublished" datetime="2019-01-20T15:17:26+08:00">
+                2019-01-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Modified&#58;</span>
+              
+              <time title="Modified" itemprop="dateModified" datetime="2019-01-28T18:55:14+08:00">
+                2019-01-28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/第十八期人工智能前沿学生论坛——语音识别前沿技术/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/第十八期人工智能前沿学生论坛——语音识别前沿技术/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2,877
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 <a href="https://mustedu.cn/Hd/" target="_blank" rel="noopener">人工智能前沿学生论坛 </a> 主办。<a id="more"></a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><strong><a href="./Exploring Neural Transducers for End-to-End Speech Recognition.pdf">Exploring Neural Transducers for End-to-End Speech Recognition</a></strong></p>
+<p><strong><a href="./Query-by-example keyword spotting using long short-term memory networks.pdf">Query-by-example keyword spotting using long short-term memory networks</a></strong></p>
+<p><strong><a href="./Lattice Indexing for Spoken Term Detection.pdf">Lattice Indexing for Spoken Term Detection</a></strong></p>
+<p><strong><a href="./Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer.pdf">Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer</a></strong></p>
+<h1 id="语音关键词检测方法综述"><a href="#语音关键词检测方法综述" class="headerlink" title="语音关键词检测方法综述"></a>语音关键词检测方法综述</h1><blockquote>
+<p><a href="./A Survey on KWS.pdf">PPT</a>。</p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>随着智能音箱、语音助手等应用的出现，普通人也可以像科幻场景一样使用语音与机器进行交流。语音关键词检测是实现人机语音交互的重要技术，被广泛地应用于各类智能设备、语音检索系统当中。语音关键词检测可以分成两种，一种是用于设备唤醒、设备控制keyword spotting；一种是应用于语音文档检索的spoken term detection，二者虽然名字类似，但从功能侧重和技术路线上都有所区别。本次分享介绍语音关键词检测的主要方法与最新进展。</p>
+<h2 id="语音关键词检测介绍"><a href="#语音关键词检测介绍" class="headerlink" title="语音关键词检测介绍"></a>语音关键词检测介绍</h2><p>一个语音的小方向。A survey on keyword spotting.（keyword search, spoken term detection）</p>
+<p>主流：语音识别、增强。关键词检测技术正在变得重要。</p>
+<p>从一段连续语音中检测关键词。（异常检测？）</p>
+<p><strong>Ex</strong>.</p>
+<blockquote>
+<p>语音智能设备：<strong>唤醒词</strong>识别。</p>
+<ul>
+<li>关键词，厂家指定</li>
+<li>低内存</li>
+<li>低计算</li>
+<li>低功耗</li>
+</ul>
+<p><strong>语音检索</strong>keuword search（在长篇audio中检测，利用keyword截取关键信息片段）。</p>
+<ul>
+<li>可变化</li>
+<li>长文本定位</li>
+<li>超出词汇？（OOV，out of vocabulary），新知识往往指向新词汇，棘手</li>
+</ul>
+</blockquote>
+<h2 id="基于HMM的语音关键词检测"><a href="#基于HMM的语音关键词检测" class="headerlink" title="基于HMM的语音关键词检测"></a>基于HMM的语音关键词检测</h2><p><strong><a href="./Exploring Neural Transducers for End-to-End Speech Recognition.pdf">Exploring Neural Transducers for End-to-End Speech Recognition</a></strong></p>
+<blockquote>
+<p>In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We show that, without any language model, Seq2Seq and RNN-Transducer models both outperform the best reported CTC models with a language model, on the popular Hub5’00 benchmark. On our internal diverse dataset, these trends continue - RNN Transducer models rescored with a language model after beam search outperform our best CTC models. These results simplify the speech recognition pipeline so that decoding can now be expressed purely as neural network operations. We also study how the choice of encoder architecture affects the performance of the three models - when all encoder layers are forward only, and when encoders downsample the input representation aggressively.</p>
+</blockquote>
+<p><strong>Filler Models</strong>：逐帧的<strong>序列标注</strong>问题。非关键词称为garbage段，对非关键词和关键词段进行分别建模。</p>
+<p>1989年，对每一个关键词建立一个HMM。（基于Filler model）</p>
+<p>其概率模型可以利用GMMs or DNNs建模。</p>
+<p>HMM based：</p>
+<blockquote>
+<p>2017，HMM示意图。对于每一个音素进行声学建模。（解码，手工设计）</p>
+<p>类似于KMM算法。图灵自动机？</p>
+</blockquote>
+<p>DNN based：</p>
+<blockquote>
+<p>连续语音分为窗口，利用神经网络进行分类。（预测片段是关键词的概率）</p>
+<p>可能还需要平滑处理。</p>
+<p>无须HMM的解码（动态规划）。</p>
+<p>难度：<strong>很难找到现存的语料</strong>。</p>
+<p>2014</p>
+</blockquote>
+<h2 id="基于Sample查询的语音关键词检测（QBE）"><a href="#基于Sample查询的语音关键词检测（QBE）" class="headerlink" title="基于Sample查询的语音关键词检测（QBE）"></a>基于Sample查询的语音关键词检测（QBE）</h2><p><strong><a href="./Query-by-example keyword spotting using long short-term memory networks.pdf">Query-by-example keyword spotting using long short-term memory networks</a></strong></p>
+<blockquote>
+<p>We present a novel approach to <strong>query-by-example keyword spotting</strong> (KWS) using a <strong>long short-term memory</strong> (LSTM) recurrent neural network-based feature extractor. In our approach, we represent each keyword using a fixed-length feature vector obtained by running the keyword audio through a word-based LSTM acoustic model. We use the activations prior to the softmax layer of the LSTM as our keyword-vector. At runtime, we detect the keyword by extracting the same feature vector from a sliding window and computing a simple similarity score between this test vector and the keyword vector. With clean speech, we achieve 86% relative false rejection rate reduction<br>at 0:5% false alarm rate when compared to a competitive phoneme posteriorgram with dynamic time warping KWS system, while the reduction in the presence of babble noise is 67%. Our system has a small memory footprint, low computational cost, and high precision, making it suitable for on-device applications.</p>
+</blockquote>
+<p>匹配（match）。</p>
+<p>关键词作为一个<strong>模式</strong>（pattern）被存储起来。</p>
+<p>可以个性化定义关键词。</p>
+<p>DTW based：（动态时间弯折，DP算法）</p>
+<blockquote>
+<p>基于语音识别。</p>
+<p>计算两个时间序列的相似度。</p>
+<ul>
+<li>转化为同态序列</li>
+<li>动态规划计算（最长子序列？）<ul>
+<li>每步做归一化处理</li>
+<li>单调、连续</li>
+</ul>
+</li>
+</ul>
+<p>1975、1978</p>
+<p>用在KWS里需要稍作修改。</p>
+<ul>
+<li>分段（2），类似CV的滑动窗口</li>
+<li>不分段（2），先贪心到一个最优窗口，再在窗口内匹配（会不会收敛到local？）</li>
+</ul>
+</blockquote>
+<p>feature representation：</p>
+<ul>
+<li>MFCC，FBANK</li>
+<li>Posteriorgram（GMM，DNN）后验概率图</li>
+<li>DNN，Autoencoder</li>
+</ul>
+<p>DTW的缺点：</p>
+<ul>
+<li>需要多项式时间</li>
+<li>可能影响精度</li>
+</ul>
+<p>Enbedding（嵌入）：（神经网络）</p>
+<p>向量编码，计算相似度。</p>
+<p>2015，陈——预处理词分类器（Softmax），作为特征提取器。（产品：Snowboy）</p>
+<p>Siamese network，孪生网络，卷积network。弱监督。2016</p>
+<h2 id="基于大词汇量语音识别系统的语音关键词检测（ASR）"><a href="#基于大词汇量语音识别系统的语音关键词检测（ASR）" class="headerlink" title="基于大词汇量语音识别系统的语音关键词检测（ASR）"></a>基于大词汇量语音识别系统的语音关键词检测（ASR）</h2><p><strong><a href="./Lattice Indexing for Spoken Term Detection.pdf">Lattice Indexing for Spoken Term Detection</a></strong></p>
+<blockquote>
+<p>This paper considers the problem of constructing an efficient inverted index for the <strong>spoken term detection</strong> (STD) task. More specifically, we construct a deterministic weighted finite-state transducer storing soft-hits in the form of (utterance ID, start time, end time, posterior score) quadruplets.We propose a generalized factor transducer structure which retains the time information necessary for performing STD. The required information is embedded into the path weights of the factor transducer without disrupting the inherent optimality. We also describe how to index all substrings seen in a collection of raw automatic speech recognition lattices using the proposed structure. Our STD indexing/search implementation is built upon the OpenFst Library and is designed to scale well to large problems. Experiments on Turkish and English data sets corroborate our claims.</p>
+</blockquote>
+<p>LVSCR based methods。</p>
+<p>核心：语音识别+文本索引。</p>
+<p>问题：</p>
+<ul>
+<li>语音识别的精度问题，如何解决error<ul>
+<li>次优结果的索引（关键词出现error）</li>
+</ul>
+</li>
+<li>关键词的定位技术<ul>
+<li>Lattice。保存语音识别的最优和次优结果</li>
+</ul>
+</li>
+</ul>
+<p><strong>WFST</strong>：加权有限状态转换器。WFST是一个有向图：</p>
+<ul>
+<li>节点：三个状态起始、普通、终止。</li>
+<li>边：输入、输出、权重。</li>
+</ul>
+<blockquote>
+<p>效果：将一个字符串映射到一个序列。（有点像贝叶斯网络）也可以用来表示一个单个字符串。</p>
+<p>Composition（复合原理）：T1:A to B; T2 B to C; T1* T2: A to C.</p>
+<p>Union（联合）：合并起始节点。</p>
+<p>实现发音-词串转换。</p>
+</blockquote>
+<p><strong>Lattice</strong>：一个复杂WFST网络，作为识别器的representation。（索引）</p>
+<p><strong>Factor Automata</strong>（因子自动机）：v is factor of u if u = xvy.</p>
+<ul>
+<li>获得子串</li>
+</ul>
+<p>Timed Factor Transducer，TFT，时间因子自动机。2011</p>
+<ul>
+<li>查询关键词的匹配自动机</li>
+<li>时间间隔</li>
+<li>概率模型</li>
+</ul>
+<p>构建Lattice Indexing：convert lattice into TFT，union，optimize。从而优化体积，查询概率、时序信息。</p>
+<p>OOV（词汇溢出）问题：KWS中更严重。</p>
+<ul>
+<li>转换为音素，字（细小单元）<ul>
+<li>或许可以利用知识图谱？</li>
+</ul>
+</li>
+<li>Proxy word（代理词），2013，陈<ul>
+<li>用发音相似的集内词代替关键词</li>
+<li>OOV转化为WFST<ul>
+<li>应用最短路算法</li>
+<li>FST加速？（并行计算），相似度评估优势</li>
+</ul>
+</li>
+<li>转化为K”集内词</li>
+</ul>
+</li>
+</ul>
+<h2 id="Advances"><a href="#Advances" class="headerlink" title="Advances"></a>Advances</h2><p>Model Compression：（2017，亚马逊）</p>
+<blockquote>
+<p><strong>TDNN</strong>结构——分层共享，大幅减少计算量。</p>
+<p>矩阵分解：SVD。（压缩）</p>
+</blockquote>
+<p>Computing similarity heterogeneous pattern：（2017，Audhkhasi）</p>
+<blockquote>
+<p>文本和声学分别分类，然后将分类结果相互比较（模型融合）</p>
+</blockquote>
+<p>Similarity Image Classification Query-by-Example KWS：</p>
+<p>不再搞窗口，直接对整个语音图进行分类（模式识别）。CNN分类。</p>
+<ul>
+<li>思路类似音频指纹，长宽特别不一样（某个维度相对有限）</li>
+<li>但语音可能获得弯斜线</li>
+</ul>
+<p>Streaming Seq2Seq Models for KWS：（He Y，2017）</p>
+<ul>
+<li>Blank符号解决长度不匹配问题</li>
+<li>不确定音素映射到blank</li>
+<li>CTC以前没有建立出label之间的关系<ul>
+<li>利用<strong>RNN-Transducer</strong>进行联合网络预测</li>
+</ul>
+</li>
+<li>加入Keyword encoder，Attention（类似一个附加记忆模块）<ul>
+<li>放射变换+内积+Softmax+求和</li>
+<li>现在工业上没有预存的语料，因此HMM还是主流</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> keyword spotting：主要在于下限制条件、复杂度。</p>
+<p>spoken term detection：OOV问题。</p>
+<blockquote>
+<p>哈希？不便于compose，并行化。（相似哈希？）</p>
+</blockquote>
+<h1 id="使用RNN-Transducer进行声学建模"><a href="#使用RNN-Transducer进行声学建模" class="headerlink" title="使用RNN-Transducer进行声学建模"></a>使用RNN-Transducer进行声学建模</h1><blockquote>
+<p><a href="./Neural Transducer for Speech Recognition.pdf">PPT</a>。</p>
+</blockquote>
+<p><strong><a href="./Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer.pdf">Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer</a></strong></p>
+<blockquote>
+<p>We investigate training end-to-end speech recognition models with the recurrent neural network transducer (RNNT):<br>a streaming, all-neural, sequence-to-sequence architecture which jointly learns acoustic and language model components from transcribed acoustic data. We explore various model architectures and demonstrate how the model can be improved further if additional text or pronunciation data are available. The model consists of an ‘encoder’, which is initialized from a connectionist temporal <strong>classification-based</strong> (CTC) acoustic model, and a ‘decoder’ which is partially initialized from a recurrent neural network language model trained on text data alone. The entire neural network is trained with the RNN-T loss and directly outputs the recognized transcript as a sequence of graphemes, thus performing end-to-end speech recognition. We find that performance can be improved further<br>through the use of sub-word units (‘wordpieces’) which capture longer context and significantly reduce substitution<br>errors. The best RNN-T system, a twelve-layer LSTM encoder with a two-layer LSTM decoder trained with 30,000<br>word pieces as output targets achieves a word error rate of 8.5% on voice-search and 5.2% on voice-dictation tasks and is comparable to a state-of-the-art baseline at 8.3% on voice search and 5.4% voice-dictation.</p>
+<p>难复现？</p>
+</blockquote>
+<h2 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h2><p>基于联结时序分类(CTC)的声学模型不再需要对训练的音频序列和文本序列进行强制对齐，实际上已经初步具备了端到端的声学模型建模能力。但是CTC模型进行声学建模存在着两个严重的瓶颈，一是缺乏语言模型建模能力，不能整合语言模型进行联合优化，二是不能建模模型输出之间的依赖关系。RNN-Transducer针对CTC的不足，进行了改进，使得模型具有了端到端联合优化、具有语言建模能力、便于实现Online语音识别等突出的优点,更加适合语音任务，值得引起大家的重视。 </p>
+<h2 id="CTC模型与不足"><a href="#CTC模型与不足" class="headerlink" title="CTC模型与不足"></a>CTC模型与不足</h2><p>Connectionist Temporal Classification，CTC。</p>
+<p>以前都是HMM+Deeplearining混合训练，需要帧级别的标注信息。极其繁琐。</p>
+<p>HMM本身具有序列建模能力，RNN可以胜任。</p>
+<p><strong>帧预测</strong>可以是blank或对应音素。</p>
+<p>综合后，进行梯度反传。（DP，前向+<strong>后向传播</strong>）</p>
+<blockquote>
+<p>设定预测状态转移方程。</p>
+</blockquote>
+<p>Loss Function：倾向于概率更大的路径选择。（对数概率损失函数）</p>
+<p>帧级别预测是准确的“高原”，CTC预测尖峰。</p>
+<ul>
+<li>引入blank（损失较小），使得对于预测进行<strong>信息累计输出</strong></li>
+</ul>
+<p>CTC优点：</p>
+<ul>
+<li>不需要强制对齐</li>
+<li>解码加速</li>
+</ul>
+<h2 id="RNN-Transducer模型"><a href="#RNN-Transducer模型" class="headerlink" title="RNN-Transducer模型"></a>RNN-Transducer模型</h2><p>CTC没有对label之间的关系没有刻画，不能完全做到端到端，要求输入序列大于输出（不是语音识别的问题）。</p>
+<p>联合训练模型。（Pred. Network语言模型，Encoder声学模型）结合后输出标记。</p>
+<p>Joint Net：将两个模型融合。</p>
+<p>曼哈顿模型（可行路径是曼哈顿距离）。</p>
+<p>前向+后向算法。Loss Function。</p>
+<p>比较几个模型结构。（4类，CTC，RNN-Transducer，Attention-based，PNN-Transducer with Attention）</p>
+<ul>
+<li>CTC</li>
+<li>RNN-Transducer（三阶张量，计算复杂，内存容易爆）</li>
+<li>Attention-based</li>
+<li>PNN-Transducer with Attention</li>
+</ul>
+<blockquote>
+<p>CTC在实际应用中，对于start-end time还是差强人意，应用前景仍然有限</p>
+</blockquote>
+<p>RNN-Transducer：</p>
+<ul>
+<li>解决CTC条件独立问题</li>
+<li>整合了两个模型</li>
+<li>流式结构</li>
+</ul>
+<h2 id="RNN-Transducer模型的改进"><a href="#RNN-Transducer模型的改进" class="headerlink" title="RNN-Transducer模型的改进"></a>RNN-Transducer模型的改进</h2><p>高计算代价，存在一些不合理的路径。</p>
+<p>Recurrent Neural Aligner：</p>
+<ul>
+<li>斜化</li>
+<li>期望损失……</li>
+<li>没有什么性能提升</li>
+</ul>
+<p>Multi-stages of Training a Wordpiece RNN-T，多级预训练</p>
+<ul>
+<li>训练模型的结果较好</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>RNNT总体性能较好（Without大规模语言模型）</li>
+<li>训练十分困难，预处理十分重要</li>
+<li>适用于在线的结构（解码）</li>
+</ul>
+<blockquote>
+<p>高性能框架Bert？</p>
+</blockquote>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Byte-Tech-AI-Symposium/">2019机器智能前沿论坛</a></li><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li></ul></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Author:</strong>
+    工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Link:</strong>
+    <a href="https://vel.life/第十八期人工智能前沿学生论坛——语音识别前沿技术/" title="第十八期人工智能前沿学生论坛——语音识别前沿技术">https://vel.life/第十八期人工智能前沿学生论坛——语音识别前沿技术/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Byte-Tech-AI-Symposium/" rel="next" title="2019机器智能前沿论坛">
+                <i class="fa fa-chevron-left"></i> 2019机器智能前沿论坛
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/知识智能讲座/" rel="prev" title="知识智能讲座">
+                知识智能讲座 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语音关键词检测方法综述"><span class="nav-number">2.</span> <span class="nav-text">语音关键词检测方法综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">2.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语音关键词检测介绍"><span class="nav-number">2.2.</span> <span class="nav-text">语音关键词检测介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于HMM的语音关键词检测"><span class="nav-number">2.3.</span> <span class="nav-text">基于HMM的语音关键词检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Sample查询的语音关键词检测（QBE）"><span class="nav-number">2.4.</span> <span class="nav-text">基于Sample查询的语音关键词检测（QBE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于大词汇量语音识别系统的语音关键词检测（ASR）"><span class="nav-number">2.5.</span> <span class="nav-text">基于大词汇量语音识别系统的语音关键词检测（ASR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advances"><span class="nav-number">2.6.</span> <span class="nav-text">Advances</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用RNN-Transducer进行声学建模"><span class="nav-number">3.</span> <span class="nav-text">使用RNN-Transducer进行声学建模</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要-1"><span class="nav-number">3.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTC模型与不足"><span class="nav-number">3.2.</span> <span class="nav-text">CTC模型与不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Transducer模型"><span class="nav-number">3.3.</span> <span class="nav-text">RNN-Transducer模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Transducer模型的改进"><span class="nav-number">3.4.</span> <span class="nav-text">RNN-Transducer模型的改进</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

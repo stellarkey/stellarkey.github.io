@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content=",,,,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="仅供算法训练营内部学员学习交流之用。">
+<meta name="keywords" content="TsOJ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Algorithm-Training-Camp-week0">
+<meta property="og:url" content="https://vel.life/ATC/OJ0.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="仅供算法训练营内部学员学习交流之用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vel.life/ATC/1548595433819.png">
+<meta property="og:image" content="https://vel.life/ATC/1548216432219.png">
+<meta property="og:image" content="https://vel.life/ATC/1548225817063.png">
+<meta property="og:image" content="https://vel.life/ATC/1548259642218.png">
+<meta property="og:updated_time" content="2019-05-13T15:44:40.226Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm-Training-Camp-week0">
+<meta name="twitter:description" content="仅供算法训练营内部学员学习交流之用。">
+<meta name="twitter:image" content="https://vel.life/ATC/1548595433819.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/ATC/OJ0.html">
+
+
+
+
+
+
+  <title>Algorithm-Training-Camp-week0 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">Algorithm-Training-Camp-week0</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <blockquote>
+<p>仅供算法训练营<strong>内部学员</strong>学习交流之用。<a id="more"></a></p>
+</blockquote>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+<p>OJ网址：<a href="https://dsa.cs.tsinghua.edu.cn/oj/index.shtml" target="_blank" rel="noopener">https://dsa.cs.tsinghua.edu.cn/oj/index.shtml</a></p>
+<p>C/C++默认使用C++，Python默认使用py3。（向下兼容）<br>由于OJ服务器的限制（多版本py），你可能需要指定解释器：<code>#!/usr/bin/env python3</code><br><a href="https://www.jianshu.com/p/400c612381dd" target="_blank" rel="noopener">#!/usr/bin/python3 和 #!/usr/bin/env python3 的作用</a></p>
+<p><a href="https://www.zhihu.com/question/20548678" target="_blank" rel="noopener">C++的main函数不必显示返回零。</a></p>
+<p><a href="https://www.cnblogs.com/lepeCoder/p/VisualStudio2017_1.html" target="_blank" rel="noopener">为VisualStudio2017添加bits/stdc++.h</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjW-OHb9L_gAhWEbN4KHWfkApwQFjAAegQICRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Flihangll%2Farticle%2Fdetails%2F80516085&amp;usg=AOvVaw2kPBhc5ghdKD1Ur0CXVzax" target="_blank" rel="noopener">GitHub中Hexo next主题下搭建的博客中增加PDF插件- 1/0=∞ - CSDN …</a></p>
+</blockquote>
+<h1 id="数据结构的新百年"><a href="#数据结构的新百年" class="headerlink" title="数据结构的新百年"></a>数据结构的新百年</h1>
+
+	<div class="row">
+    <embed src="Pre-算法训练营-新百年.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h1 id="第〇周题目"><a href="#第〇周题目" class="headerlink" title="第〇周题目"></a>第〇周题目</h1><h2 id="A-B问题"><a href="#A-B问题" class="headerlink" title="A+B问题"></a>A+B问题</h2><hr>
+<p><strong>时间限制：</strong>1 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>这是一道测试环境的题目。 给定两个正整数，请将它们相加。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>一行两个用空格隔开的正整数 a,b。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>一行一个正整数 a+b。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a><strong>样例解释</strong></h3><p>1+2=3</p>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>0 &lt; a,b &lt; 32768</p>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>请通过这道题目来熟悉 OJ 的使用。</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/e057/e05741d6a94d173253373e192f245a2a3e9c6496.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<p>同时还我们还提供4种语言的标程（C++、C、Java、Python 2、Python 3），这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/3dd8/3dd81f276d0962205f4fcfcb1340d3a6b17f4bc4.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a, b; <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b; <span class="built_in">cout</span>&lt;&lt;a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">s = input().split()</span><br><span class="line">print(int(s[<span class="number">0</span>]) + int(s[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">a, b = map(int, input().split(<span class="string">' '</span>))</span><br><span class="line">print(a + b)</span><br></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Scanner cin=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> a = cin.nextInt(), b = cin.nextInt();</span><br><span class="line">        System.out.println(a+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="栈排序"><a href="#栈排序" class="headerlink" title="栈排序"></a>栈排序</h2><hr>
+<p><strong>时间限制：</strong>1 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>给定一个序列 A，请你将它<strong>升序</strong>排序。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个正整数 n，表示序列长度。</p>
+<p>第二行 n 个用空格隔开的非负整数，描述这个序列。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>n 行，每行一个非负整数，表示排序后的序列。</p>
+<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 3 2 10</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>保证 n&lt;=1000，保证序列中的数不超过 32767</p>
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>请使用课堂中讲解的栈排序来完成此题。</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/83ee/83ee0c61d1c3c20bbde5a3b98186804507c58ed8.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><p>PS：栈排序有点像汉诺塔问题（须稍加斧正），甚至汉诺塔是栈排序的最坏情况。（联想汉诺塔的二进制解法）</p>
+<p>@<a href="https://www.cnblogs.com/liangke/archive/2011/11/21/2257405.html" target="_blank" rel="noopener"><strong>汉诺塔与二进制</strong></a></p>
+<p>来自 <a href="&lt;https://www.cnblogs.com/liangke/archive/2011/11/21/2257405.html">&lt;https://www.cnblogs.com/liangke/archive/2011/11/21/2257405.html</a>&gt; </p>
+<p>@用二进制来解汉诺塔问题【3b1b】</p>
+<p>来自 <a href="&lt;https://www.bilibili.com/video/av7398130/">&lt;https://www.bilibili.com/video/av7398130/</a>&gt; </p>
+<h4 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h4><h5 id="标程-12ms"><a href="#标程-12ms" class="headerlink" title="标程 12ms"></a>标程 12ms</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保序 </span></span><br><span class="line"><span class="comment">//稳定 </span></span><br><span class="line"><span class="comment">//功能化 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; sorting(<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">        myStack.push(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; result = sorting(myStack);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; answer;</span><br><span class="line">    <span class="keyword">while</span> (!result.empty()) &#123;</span><br><span class="line">        answer.push_back(result.top());</span><br><span class="line">        result.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i = answer.rbegin(); i != answer.rend(); ++i)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; sorting(<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack) &#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">	<span class="keyword">if</span> (myStack.empty()) <span class="keyword">return</span> result;</span><br><span class="line">	<span class="keyword">int</span> tmp = myStack.top();</span><br><span class="line">	myStack.pop();</span><br><span class="line">	<span class="keyword">while</span>(!myStack.empty() || result.top() &gt; tmp)&#123;</span><br><span class="line">		<span class="keyword">if</span>(result.empty() || result.top() &lt;= tmp)&#123;<span class="comment">//注意此处栈排序的方向，为了result按栈升序（由底至顶）【必须保证顶元素保序】</span></span><br><span class="line">			result.push(tmp);</span><br><span class="line">			tmp = myStack.top();</span><br><span class="line">			myStack.pop();</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			myStack.push(result.top());</span><br><span class="line">			result.pop();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result.push(tmp);</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="自主实现-4ms"><a href="#自主实现-4ms" class="headerlink" title="自主实现 4ms"></a>自主实现 4ms</h5><p>自主实现当然是自己写一个栈啦。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 100005</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stack</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> element[MAX];</span><br><span class="line">    <span class="keyword">int</span> top_index=<span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !(<span class="keyword">bool</span>)top_index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> element[top_index<span class="number">-1</span>]; <span class="comment">//the top_index is actually 1 item above the real top</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        top_index--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        element[top_index++] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(top_index==<span class="number">0</span>) &#123;<span class="built_in">printf</span>(<span class="string">"\n"</span>);<span class="keyword">return</span>;&#125;  <span class="comment">//for debugging</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; top_index;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, element[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Stack a,b,c;</span><br><span class="line"><span class="keyword">int</span> n, tem;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">transfer</span><span class="params">(Stack &amp;a, Stack &amp;b)</span></span>&#123;  <span class="comment">//transfer 1 element from a to b through tem, return 1 if succeed</span></span><br><span class="line">	<span class="keyword">if</span>(b.empty() || (!b.empty() &amp;&amp; tem &gt;= b.top() &amp;&amp; b.top_index&lt;n ))&#123;</span><br><span class="line">		b.push(tem);</span><br><span class="line">		<span class="keyword">if</span>(!a.empty())&#123;</span><br><span class="line">            tem = a.top(); a.pop();</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//		cout&lt;&lt;"a["&lt;&lt;a.top_index&lt;&lt;"]:";a.print();cout&lt;&lt;"tem:"&lt;&lt;tem&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">//		cout&lt;&lt;"b["&lt;&lt;b.top_index&lt;&lt;"]:";b.print();cout&lt;&lt;"----------"&lt;&lt;endl;</span></span><br><span class="line">		 <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">back_transfer</span><span class="params">(Stack &amp;b, Stack &amp;a)</span></span>&#123; <span class="comment">//back transfer 1 element from b to a</span></span><br><span class="line">    a.push(b.top());</span><br><span class="line">    b.pop();</span><br><span class="line"><span class="comment">//	cout&lt;&lt;"a["&lt;&lt;a.top_index&lt;&lt;"]:";a.print();cout&lt;&lt;"tem:"&lt;&lt;tem&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">//	cout&lt;&lt;"b["&lt;&lt;b.top_index&lt;&lt;"]:";b.print();cout&lt;&lt;"----------"&lt;&lt;endl;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stack_sort</span><span class="params">(Stack &amp;a)</span></span>&#123;</span><br><span class="line">	tem = a.top(); a.pop(); <span class="comment">//initialize tem</span></span><br><span class="line">	<span class="comment">//Stack sort</span></span><br><span class="line">    <span class="keyword">while</span>(!a.empty())&#123;  </span><br><span class="line">        <span class="keyword">while</span>(!transfer(a,b)) back_transfer(b,a);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// transfer the last element in the tem into b</span></span><br><span class="line">	<span class="keyword">while</span>(!transfer(a,b)) back_transfer(b,a);</span><br><span class="line">	<span class="keyword">while</span>(transfer(a,b));</span><br><span class="line">	</span><br><span class="line">    b.print();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tem);</span><br><span class="line">        a.push(tem);</span><br><span class="line">    &#125;</span><br><span class="line">    stack_sort(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="STL-sort-0ms"><a href="#STL-sort-0ms" class="headerlink" title="STL: sort() 0ms"></a>STL: sort() 0ms</h5><p>使用sort()。<strong>利用C输入输出流优化</strong>：（12ms—&gt;0ms）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 1005</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a[MAX];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>; <span class="keyword">while</span>(i&lt;n) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i++]);</span><br><span class="line">	</span><br><span class="line">	sort(a,a+n,greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">	i = n; <span class="keyword">while</span>(i--)<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Python-1"><a href="#Python-1" class="headerlink" title="Python"></a>Python</h4><p><a href="https://blog.csdn.net/SeeTheWorld518/article/details/48413043" target="_blank" rel="noopener">用list模拟栈</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">n = int(input())</span><br><span class="line">myStack = input().split()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> len(Stack) == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	t = Stack.pop()</span><br><span class="line">	Stack.append(t)</span><br><span class="line">	<span class="keyword">return</span> int(t)</span><br><span class="line"></span><br><span class="line">result = []</span><br><span class="line">tmp = int(myStack.pop())</span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">not</span> empty(myStack)) <span class="keyword">or</span> (top(result) &gt; tmp):</span><br><span class="line">	<span class="keyword">if</span> empty(result) <span class="keyword">or</span> (top(result) &lt;= tmp):</span><br><span class="line">		result.append(tmp)</span><br><span class="line">		tmp = int(myStack.pop())</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		myStack.append(result.pop())</span><br><span class="line"></span><br><span class="line">result.append(tmp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line"> 	print(result[i])</span><br></pre></td></tr></table></figure>
+<h4 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputStream inputStream = System.in;</span><br><span class="line">        OutputStream outputStream = System.out;</span><br><span class="line">        InputReader in = <span class="keyword">new</span> InputReader(inputStream);</span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(outputStream);</span><br><span class="line">        Task solver = <span class="keyword">new</span> Task();</span><br><span class="line">        solver.solve(in, out);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// myStack：input stack</span></span><br><span class="line">        <span class="comment">// result：output stack, top &gt; button</span></span><br><span class="line">        <span class="function">Stack&lt;Integer&gt; <span class="title">sorting</span><span class="params">(Stack&lt;Integer&gt; myStack)</span> </span>&#123;</span><br><span class="line">            Stack&lt;Integer&gt; result = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">            <span class="keyword">if</span> (myStack.empty()) <span class="comment">//bound case</span></span><br><span class="line">            	<span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> tmp = myStack.pop();</span><br><span class="line">            <span class="keyword">while</span>(!myStack.empty() || tmp &lt; result.peek())&#123; <span class="comment">//the 2nd term is to make sure nothing left unsorted</span></span><br><span class="line">            	<span class="keyword">if</span>(result.empty() || tmp &gt;= result.peek())&#123;</span><br><span class="line">            		result.push(tmp);</span><br><span class="line">            		tmp = myStack.pop();</span><br><span class="line">            	&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            		myStack.push(result.pop());</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;</span><br><span class="line">            result.push(tmp);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(InputReader in, PrintWriter out)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            Stack&lt;Integer&gt; myStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">            <span class="keyword">while</span> (!myStack.empty())</span><br><span class="line">                myStack.pop();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = in.nextInt();</span><br><span class="line">                myStack.push(tmp);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Stack&lt;Integer&gt; result = sorting(myStack);</span><br><span class="line">            <span class="keyword">for</span> (Integer x : result)</span><br><span class="line">                out.println(x);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span> </span>&#123;</span><br><span class="line">        BufferedReader reader;</span><br><span class="line">        StringTokenizer tokenizer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span> </span>&#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(stream), <span class="number">32768</span>);</span><br><span class="line">            tokenizer = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> String <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (tokenizer == <span class="keyword">null</span> || !tokenizer.hasMoreTokens()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer = <span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">short</span> <span class="title">nextShort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Short.parseShort(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">nextFloat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Float.parseFloat(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">nextDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Double.parseDouble(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h3><ul>
+<li><p>栈排序的时候，<strong>两个数相等</strong>如何处理？（可能会陷入死循环，而样例中未给出）</p>
+<ul>
+<li>修改控制语句：<code>tem &gt; b.top()</code>变为<code>tem &gt;= b.top() &amp;&amp; b.top_index &lt; n</code></li>
+</ul>
+</li>
+<li><p>Devcpp会自动链接一些奇怪的东西进去？。。</p>
+<ul>
+<li>如果要在linux环境下，<code>prinf</code>必须<code>#include&lt;stdio.h&gt;</code></li>
+</ul>
+</li>
+<li><p>史上最坑！格式错误！</p>
+<ul>
+<li>标准输出是1个数1行，我输出成了<code>a b c d e\n</code>。。。花了我好久dubug，还rand+sort对比测试。。</li>
+</ul>
+</li>
+<li>Python直接读入的是str，必须在做大小判断之前，转换为int！</li>
+</ul>
+<h2 id="直方图最大面积"><a href="#直方图最大面积" class="headerlink" title="直方图最大面积"></a>直方图最大面积</h2><hr>
+<p><strong>时间限制：</strong>1 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>有一个直方图，横轴长度为 n，第 i 列的高度为 h[i]。</p>
+<p>请你求出在这个直方图中面积最大的子矩阵。</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个正整数 n。</p>
+<p>第二行 n 个用空格隔开的非负整数，依次描述 h[1],h[2],…,h[n]。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行一个数，表示最大面积。</p>
+<h3 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">2 3 3 3 2</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 30% 的测试点，保证 n&lt;=4。（送分。）</p>
+<p>对于 70% 的测试点，保证 n&lt;=1000。（$O(n^2),O(n^2logn)$）</p>
+<p>对于所有测试点，保证 n&lt;=50000。（$O(nlogn),O(nlog^2n),O(n)$）</p>
+<p>保证所有 h[i] 不超过 32767。</p>
+<h3 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>不同的算法可以通过的测试点不一定相同哦。</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/177d/177dc7dfa385ded3a0ab8b6af7255ec166687ef0.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<p>特别提醒：对于 Java 语言，在提交时请删除程序中的所有中文字符，否则可能无法通过编译。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><blockquote>
+<p>PC通常在$10^8到10^9$运算数量级。</p>
+</blockquote>
+<p>最复杂的可以是$O(n^3)$。</p>
+<ul>
+<li>枚举底边：（$O(n^2)$）<code>[a,b]</code></li>
+<li>求高：（$O(n)$）在<code>[a,b]</code>中搜索<code>min(高)</code></li>
+</ul>
+<blockquote>
+<p>降至$O(n^2)$：求<code>min(高)</code>的过程中可以枚举底边。</p>
+</blockquote>
+<h4 id="Force-O-n-2-rightarrow-O-n"><a href="#Force-O-n-2-rightarrow-O-n" class="headerlink" title="Force $O(n^2)\rightarrow O(n)$"></a>Force $O(n^2)\rightarrow O(n)$</h4><p><strong><font color="red">平摊复杂度只有$O(n)$</font></strong>。</p>
+<blockquote>
+<p>平摊：<strong>每一步</strong>，左右更大元出现概率在平均意义上是1/2，因此期望迭代数=$\cfrac{1}{2}+\cfrac{1}{4}+…=1$（几何级数）。【剪枝】</p>
+</blockquote>
+<p>遍历查询。依次从每个元素<strong>向左右出发</strong>，直到第一个更小元。</p>
+<blockquote>
+<p>迷之。。这好像是单调队列的做法？。。 </p>
+<p><a href="https://www.cnblogs.com/neverforget/archive/2011/10/13/ll.html" target="_blank" rel="noopener">单调队列及其应用</a></p>
+<p><a href="https://www.cnblogs.com/saywhy/p/6726016.html" target="_blank" rel="noopener">浅谈单调队列：死海不是海，单调队列不是队列</a></p>
+<p><a href="https://oi.men.ci/monotone-queue-notes/" target="_blank" rel="noopener">单调队列学习笔记</a> 滑动窗口最值问题。</p>
+</blockquote>
+<h5 id="C-2"><a href="#C-2" class="headerlink" title="C++"></a>C++</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> *height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    height[<span class="number">0</span>] = height[n + <span class="number">1</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> le = i - <span class="number">1</span>, ri = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(height[le] &gt;= height[i]) le--;</span><br><span class="line">        <span class="keyword">while</span>(height[ri] &gt;= height[i]) ri++;</span><br><span class="line">        ans = max(ans, height[i]*(ri - le - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>* height = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">2</span>]();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; height[i];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getAnswer(n, height) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] height;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数组越界：<code>signal 11</code></p>
+<p>暴力算法竟然和普通算法time几乎一致。（逃</p>
+</blockquote>
+<h6 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h6><p>做了一番优化以后甚至比标程（单调栈）还快：（20-&gt;12ms）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span>* height = <span class="keyword">new</span> <span class="keyword">unsigned</span> <span class="keyword">short</span>[n + <span class="number">2</span>]();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;height[i]);</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> le = i - <span class="number">1</span>, ri = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(le&gt;=<span class="number">0</span> &amp;&amp; height[le] &gt;= height[i]) le--;</span><br><span class="line">        <span class="keyword">while</span>(ri&lt;=n+<span class="number">1</span> &amp;&amp; height[ri] &gt;= height[i]) ri++;</span><br><span class="line">        ans =( (ans &gt; height[i]*(ri - le - <span class="number">1</span>) ) ? ans : height[i]*(ri - le - <span class="number">1</span>) );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] height;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Python-2"><a href="#Python-2" class="headerlink" title="Python"></a>Python</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">n = int(input())</span><br><span class="line">Input = input().split()</span><br><span class="line">height = []</span><br><span class="line">height.append(<span class="number">-1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> Input:</span><br><span class="line">	height.append(int(i))</span><br><span class="line">height.append(<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">	left  = i - <span class="number">1</span></span><br><span class="line">	right = i + <span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> height[left] &gt;= height[i]:</span><br><span class="line">		left  -= <span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> height[right] &gt;= height[i]:</span><br><span class="line">		right += <span class="number">1</span></span><br><span class="line">	ans = max(ans, height[i]*(right - left - <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数组越界：<code>Exit 1</code>.</p>
+</blockquote>
+<h5 id="Java-2"><a href="#Java-2" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.max;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputStream inputStream = System.in;</span><br><span class="line">        OutputStream outputStream = System.out;</span><br><span class="line">        InputReader in = <span class="keyword">new</span> InputReader(inputStream);</span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(outputStream);</span><br><span class="line">        Task solver = <span class="keyword">new</span> Task();</span><br><span class="line">        solver.solve(in, out);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">		    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		    height[<span class="number">0</span>] = height[n + <span class="number">1</span>] = -<span class="number">1</span>;</span><br><span class="line">		    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		        <span class="keyword">int</span> le = i - <span class="number">1</span>, ri = i + <span class="number">1</span>;</span><br><span class="line">		        <span class="keyword">while</span>(height[le] &gt;= height[i]) le--;</span><br><span class="line">		        <span class="keyword">while</span>(height[ri] &gt;= height[i]) ri++;</span><br><span class="line">		        ans = max(ans, height[i]*(ri - le - <span class="number">1</span>));</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(InputReader in, PrintWriter out)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span>[] height = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">2</span>]; </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">                height[i] = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            out.println(getAnswer(n, height));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span> </span>&#123;</span><br><span class="line">        BufferedReader reader;</span><br><span class="line">        StringTokenizer tokenizer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span> </span>&#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(stream), <span class="number">32768</span>);</span><br><span class="line">            tokenizer = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> String <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (tokenizer == <span class="keyword">null</span> || !tokenizer.hasMoreTokens()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer = <span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">short</span> <span class="title">nextShort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Short.parseShort(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">nextFloat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Float.parseFloat(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">nextDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Double.parseDouble(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><del>大部分c代码搬过来就能用</del>。。</p>
+</blockquote>
+<h4 id="分治-O-nlogn-rightarrow-O-n"><a href="#分治-O-nlogn-rightarrow-O-n" class="headerlink" title="分治 $O(nlogn)\rightarrow O(n)$"></a>分治 $O(nlogn)\rightarrow O(n)$</h4><p>在区间枚举的过程中，注意到，跨越<code>min(height)</code>的矩形最大面积一定是图中的阴影矩阵。</p>
+<p><img src="/ATC/1548595433819.png" alt="1548595433819"></p>
+<p>那么对于<code>k</code>的左右两侧就可以分治辣。</p>
+<p>分治方程：</p>
+<script type="math/tex; mode=display">
+f(n)=2f(n/2)+O(n)</script><p>根据主定理，总复杂度就是$O(nlogn)$~~</p>
+<blockquote>
+<p>当然类似地，按概率分摊的话，第二项会退化到O(1)，那么复杂度又是线性的辣。</p>
+</blockquote>
+<p>初始化区间<code>[0,n)</code>，如果考虑最坏情况，每次最低点都在某一端附近（比如有序），那么可以得到新的分治方程：</p>
+<script type="math/tex; mode=display">
+f(n)=f(n-1)+O(n)\\
+\text{或:}\,\,\,\,f(n)=f(1)+O(n)</script><p>则复杂度将震荡，$O(n^2)\rightarrow O(n)$！</p>
+<p>优化：</p>
+<ul>
+<li><p>构造<code>min</code>的区间查询表$O(n^2)$</p>
+</li>
+<li><p>利用预处理<u><strong>线段树记忆</strong></u>最低点$O(nlogn)+O(n)$。【<strong><font color="red">半群</font></strong>】</p>
+<p>并且，查询时间$O(logn)$。</p>
+<p>这样，复杂度就能保证为$O(nlogn)\rightarrow O(n)$。</p>
+</li>
+</ul>
+<h4 id="单调栈-O-n"><a href="#单调栈-O-n" class="headerlink" title="单调栈 $O(n)$"></a>单调栈 $O(n)$</h4><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/26465701" target="_blank" rel="noopener">刷题笔记6（浅谈单调栈）</a></p>
+<p><a href="https://blog.csdn.net/zuzhiang/article/details/78134247" target="_blank" rel="noopener">单调栈原理及应用  详解  附各种类型的题目练习</a></p>
+<p><a href="https://endlesslethe.com/monotone-queue-and-stack-tutorial.html" target="_blank" rel="noopener">单调队列和单调栈详解</a></p>
+<p><a href="https://blog.csdn.net/Two_Water/article/details/53004027" target="_blank" rel="noopener">LeetCode_直方图最大面积(Largest Rectangle in Histogram)</a>，<a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">Largest Rectangle in Histogram</a></p>
+<p><a href="https://www.geeksforgeeks.org/largest-rectangle-under-histogram/" target="_blank" rel="noopener">Largest Rectangular Area in a Histogram | Set 2</a></p>
+<p>（可能需要先理解force算法，才能容易地推导单调栈）</p>
+</blockquote>
+<p>注意到本问题的实质是这样的：</p>
+<ul>
+<li>定义<strong>满矩阵</strong>为直方图中不能继续扩展的一类矩阵</li>
+<li>对每一个元素a而言，一定唯一对应某个满矩形的左侧边/右侧边，反之亦成立（<strong><font color="red">双射</font></strong>）</li>
+<li>矩形的右侧边到第一个比该元素a小的元素b为止（<strong><font color="red">单调</font></strong>）<ul>
+<li>反向理解，每一个元素的<strong>左侧更大元</strong>属于该元素对应的子类（<strong><font color="red">栈记忆</font></strong>）</li>
+</ul>
+</li>
+<li>要输出的面积=<code>height[a]*（b-a）</code></li>
+</ul>
+<p><img src="/ATC/1548216432219.png" alt="1548216432219"></p>
+<blockquote>
+<p>这样的算法我称为<strong><font color="red">回退算法</font></strong>。</p>
+<p>单调栈是一种<code>灯</code>。（可以实现<strong><font color="red">栈记忆分类</font></strong>）</p>
+<p>为了让答案每次取max，你可能需要一个<code>0</code><strong>偏置</strong>作为ans的初始化值（想象两端附加了2个零高度元素）。</p>
+<p>联想<strong>马尔可夫链</strong>。单调栈的灯可以广泛应用。比如，<a href="https://www.luogu.org/problemnew/show/P1439" target="_blank" rel="noopener">最长公共子序列LCS</a>中的上升标记序列，其实这个上升标记序列（也就是下标），就是隐马尔可夫模型中的隐序列。</p>
+</blockquote>
+<h5 id="C-3"><a href="#C-3" class="headerlink" title="C++"></a>C++</h5><blockquote>
+<p>以上所述的平凡算法思路每次只能求出左侧或右侧的最大矩阵，我们可以进一步优化。（遍历两次）</p>
+</blockquote>
+<p>注意到，在我们找到<code>top</code>右侧的第一个更小元<code>height[i]</code>的时候，<code>top</code>的左侧的第一更小元<code>top-1</code>也是已知的（栈记忆）！因此可以对每一个元素进行一次性的确定。</p>
+<p><img src="/ATC/1548225817063.png" alt="1548225817063"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> *height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//initialize. trick: assume height[0]=height[n+1]=0</span></span><br><span class="line">    myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        <span class="keyword">while</span>(height[myStack.top()] &gt; height[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> nowHeight = height[myStack.top()]; myStack.pop();</span><br><span class="line">            ans = max(ans, nowHeight*( i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        myStack.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>* height = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">2</span>]();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; height[i];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getAnswer(n, height) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] height;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h6><p>约8~12ms。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">short</span> height[<span class="number">50005</span>];</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">short</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;height[i]);</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//initialize. trick: assume height[0]=height[n+1]=0</span></span><br><span class="line">    myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        <span class="keyword">while</span>(height[myStack.top()] &gt; height[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> nowHeight = height[myStack.top()]; myStack.pop();</span><br><span class="line">            ans = max(ans, nowHeight*( i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        myStack.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Python-3"><a href="#Python-3" class="headerlink" title="Python"></a>Python</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">n = int(input())</span><br><span class="line">Input = input().split()</span><br><span class="line">height = []</span><br><span class="line">height.append(int(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> Input:</span><br><span class="line">	height.append(int(i))</span><br><span class="line">height.append(int(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	t = Stack.pop()</span><br><span class="line">	Stack.append(t)</span><br><span class="line">	<span class="keyword">return</span> int(t)</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">myStack = []</span><br><span class="line">myStack.append(int(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">2</span>):</span><br><span class="line">	<span class="keyword">while</span> height[top(myStack)] &gt; height[i]:</span><br><span class="line">		nowHeight = height[top(myStack)]</span><br><span class="line">		myStack.pop()</span><br><span class="line">		ans = max(ans, nowHeight*(i - top(myStack) - <span class="number">1</span>))</span><br><span class="line">	myStack.append(i)</span><br><span class="line"></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure>
+<h5 id="Java-3"><a href="#Java-3" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.max;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputStream inputStream = System.in;</span><br><span class="line">        OutputStream outputStream = System.out;</span><br><span class="line">        InputReader in = <span class="keyword">new</span> InputReader(inputStream);</span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(outputStream);</span><br><span class="line">        Task solver = <span class="keyword">new</span> Task();</span><br><span class="line">        solver.solve(in, out);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		    Stack&lt;Integer&gt; myStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">		    <span class="comment">//initialize. trick: assume height[0]=height[n+1]=0</span></span><br><span class="line">		    myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">		        <span class="keyword">while</span>(height[myStack.peek()] &gt; height[i])&#123;</span><br><span class="line">		            <span class="keyword">int</span> nowHeight = height[myStack.peek()]; myStack.pop();</span><br><span class="line">		            ans = max(ans, nowHeight*( i - myStack.peek() - <span class="number">1</span>));</span><br><span class="line">		        &#125;</span><br><span class="line">		        myStack.push(i);</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(InputReader in, PrintWriter out)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span>[] height = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">2</span>]; </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">                height[i] = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            out.println(getAnswer(n, height));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span> </span>&#123;</span><br><span class="line">        BufferedReader reader;</span><br><span class="line">        StringTokenizer tokenizer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span> </span>&#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(stream), <span class="number">32768</span>);</span><br><span class="line">            tokenizer = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> String <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (tokenizer == <span class="keyword">null</span> || !tokenizer.hasMoreTokens()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer = <span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">short</span> <span class="title">nextShort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Short.parseShort(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">nextFloat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Float.parseFloat(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">nextDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Double.parseDouble(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="优化-2"><a href="#优化-2" class="headerlink" title="优化"></a>优化</h4><p>对于一段相同的元素只需要保留<code>最后一个</code>。（相当于保留<code>区间长度信息</code>和<code>区间高度信息</code>，视为一个矩形）</p>
+<blockquote>
+<p>只保留第一个不行，反例<code>1 1 2</code>，会得到<code>4</code>。</p>
+</blockquote>
+<h3 id="BUG-1"><a href="#BUG-1" class="headerlink" title="BUG"></a>BUG</h3><ul>
+<li>用平凡法只能过20%（你可以尝试直接倒序，那么会得到80%的成绩）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">    <span class="keyword">while</span>(height[myStack.top()] &gt; height[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> nowHeight = height[myStack.top()]; <span class="comment">//myStack.pop();</span></span><br><span class="line">        ans = max(ans, nowHeight*( i - myStack.top())); myStack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    myStack.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个思路的重要问题在于它只能求得以该元素为<strong>左侧边</strong>的矩形（没有考虑到右侧边）。（<code>myStack.pop();</code>被延后了）</p>
+<p><strong>反向遍历一次</strong>就可以求得正解。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">反例：</span><br><span class="line">5</span><br><span class="line">1 50 100 41 40</span><br><span class="line">100</span><br><span class="line">-----------</span><br><span class="line">正解：</span><br><span class="line">5</span><br><span class="line">1 50 100 41 40</span><br><span class="line">top = 2; ans = 0---&gt;100</span><br><span class="line">top = 1; ans = 100---&gt;100</span><br><span class="line">top = 1; ans = 100---&gt;123</span><br><span class="line">top = 1; ans = 123---&gt;160</span><br><span class="line">top = 0; ans = 160---&gt;160</span><br><span class="line">160</span><br></pre></td></tr></table></figure>
+<p>Debug程序：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(height[myStack.top()] &gt; height[i])&#123;</span><br><span class="line">    <span class="keyword">int</span> nowHeight = height[myStack.top()]; myStack.pop();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"top = "</span>&lt;&lt;myStack.top()&lt;&lt;<span class="string">"; ans = "</span>&lt;&lt;ans;</span><br><span class="line">    ans = max(ans, nowHeight*( i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"---&gt;"</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>反向遍历：（重新初始化，反转向量，然后for一遍即可）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(!myStack.empty())</span><br><span class="line">		myStack.pop();</span><br><span class="line">	myStack.push(<span class="number">0</span>);</span><br><span class="line">	reverse(height + <span class="number">1</span>, height + n + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="最大红矩形"><a href="#最大红矩形" class="headerlink" title="最大红矩形"></a>最大红矩形</h2><hr>
+<p><strong>时间限制：</strong>4 sec</p>
+<p><strong>空间限制：</strong>256 MB</p>
+<h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>有一个 n<em>m 的棋盘，棋盘上的每个点都是红的<em>*或</em></em>绿的。</p>
+<p>你需要找出一个面积最大的矩形区域，使得其中<strong>没有</strong>绿的格子。</p>
+<h3 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行 2 个正整数 n,m，描述棋盘尺寸。</p>
+<p>接下来 n 行描述这个棋盘，每行 m 个字符，每个字符为 . 或 X，其中 . 表示这个位置是红色的，X 表示这个位置是绿色的。</p>
+<h3 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>一行一个整数，表示最大面积。</p>
+<h3 id="样例输入-3"><a href="#样例输入-3" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">.....</span><br><span class="line">XXXXX</span><br><span class="line">.X...</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-3"><a href="#样例输出-3" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+<h3 id="样例解释-1"><a href="#样例解释-1" class="headerlink" title="样例解释"></a><strong>样例解释</strong></h3><p>以第 3 行第 3 列的方格为左上角，第 4 行第 5 列的方格为右下角的矩形区域是全红的矩形中面积最大的。</p>
+<h3 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 30% 的数据，n,m&lt;=100；</p>
+<p>对于 60% 的数据，n,m&lt;=400；</p>
+<p>对于 85% 的数据，n,m&lt;=1,000；</p>
+<p>对于 100% 的数据，n,m&lt;=1,500。</p>
+<h3 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[这道题与“直方图最大面积”一题有什么关系呢？]</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/0502/0502eb9dcf54bb40e6f22a36dc15897ea98b705d.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<p>特别提醒：对于 Java 语言，在提交时请删除程序中的所有中文字符，否则可能无法通过编译。</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><blockquote>
+<p><a href="https://blog.csdn.net/jiyanfeng1/article/details/8068676" target="_blank" rel="noopener">[LeetCode] 01矩阵中最大矩形 Maximal Rectangle</a>，<a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">Maximal Rectangle</a></p>
+<p><a href="https://segmentfault.com/a/1190000003709497" target="_blank" rel="noopener">[Leetcode] Maximal Square 最大正方形</a></p>
+</blockquote>
+<h4 id="Force-O-nm-2-rightarrow-O-mn"><a href="#Force-O-nm-2-rightarrow-O-mn" class="headerlink" title="Force $O(nm^2)\rightarrow O(mn)$"></a>Force $O(nm^2)\rightarrow O(mn)$</h4><p>Force法可以对每一个元素按行遍历、按列一点一点扩展直到不能扩展为止。同样的，均摊复杂度$O(mn)$。【<strong>逐层扫描</strong>】</p>
+<h5 id="C-4"><a href="#C-4" class="headerlink" title="C++"></a>C++</h5><p><code>ios::sync_with_stdio(false);  // 读入优化</code></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_33248299/article/details/52144485" target="_blank" rel="noopener">ios::sync_with_stdio(false)详解</a></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//n rows, m columes. n x m</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="built_in">string</span> *matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *height = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>]();</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//for every colume do the cycle</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)&#123;</span><br><span class="line">        <span class="comment">//for every row caculate the height</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">if</span> (matrix[k][i - <span class="number">1</span>] == <span class="string">'.'</span>) <span class="comment">//[i - 1] index stands for matrix columes</span></span><br><span class="line">                height[i] ++;  <span class="comment">// height[i] index stands for imaginary columes</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                height[i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        height[<span class="number">0</span>] = height[m + <span class="number">1</span>] = <span class="number">-1</span>;  <span class="comment">//bias</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)&#123;</span><br><span class="line">            <span class="keyword">int</span> le = i - <span class="number">1</span>, ri = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(height[le] &gt;= height[i]) le--;</span><br><span class="line">            <span class="keyword">while</span>(height[ri] &gt;= height[i]) ri++;</span><br><span class="line">            ans = max(ans, height[i]*(ri - le - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span>[] height;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);  <span class="comment">// ??????</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">string</span> *matrix = <span class="keyword">new</span> <span class="built_in">string</span>[n]();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; matrix[i];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getAnswer(n, m, matrix) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] matrix;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Python-4"><a href="#Python-4" class="headerlink" title="Python"></a>Python</h5><p>55%AC+45%TLE。。。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">n, m = map(int, input().split(<span class="string">' '</span>))</span><br><span class="line">matrix = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">	matrix.append(input())</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> len(Stack) == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	t = Stack.pop()</span><br><span class="line">	Stack.append(t)</span><br><span class="line">	<span class="keyword">return</span> int(t)</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">height = [<span class="number">0</span>]*(m + <span class="number">2</span>)</span><br><span class="line">height[<span class="number">0</span>] = <span class="number">-1</span></span><br><span class="line">height[m + <span class="number">1</span>] = <span class="number">-1</span></span><br><span class="line">myStack = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">	<span class="keyword">for</span>  i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">		<span class="keyword">if</span> matrix[k][i - <span class="number">1</span>] == <span class="string">'.'</span>:</span><br><span class="line">			height[i] += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			height[i] = <span class="number">0</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">		left  = i - <span class="number">1</span></span><br><span class="line">		right = i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">while</span> height[left] &gt;= height[i]:</span><br><span class="line">			left  -= <span class="number">1</span></span><br><span class="line">		<span class="keyword">while</span> height[right] &gt;= height[i]:</span><br><span class="line">			right += <span class="number">1</span></span><br><span class="line">		ans = max(ans, height[i]*(right - left - <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure>
+<h5 id="Java-4"><a href="#Java-4" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.max;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputStream inputStream = System.in;</span><br><span class="line">        OutputStream outputStream = System.out;</span><br><span class="line">        InputReader in = <span class="keyword">new</span> InputReader(inputStream);</span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(outputStream);</span><br><span class="line">        Task solver = <span class="keyword">new</span> Task();</span><br><span class="line">        solver.solve(in, out);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, String[] matrix)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">int</span>[] height = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">		    Stack&lt;Integer&gt; myStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">		    <span class="comment">//for every colume do the cycle</span></span><br><span class="line">		    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)&#123;</span><br><span class="line">		        <span class="comment">//for every row caculate the height</span></span><br><span class="line">		        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">		            <span class="keyword">if</span> (matrix[k].charAt(i - <span class="number">1</span>) == <span class="string">'.'</span>) <span class="comment">//[i - 1] index stands for matrix columes</span></span><br><span class="line">		                height[i] ++;  <span class="comment">// height[i] index stands for imaginary columes</span></span><br><span class="line">		            <span class="keyword">else</span></span><br><span class="line">		                height[i] = <span class="number">0</span>;</span><br><span class="line">				</span><br><span class="line">				height[<span class="number">0</span>] = height[m + <span class="number">1</span>] = -<span class="number">1</span>;  <span class="comment">//bias</span></span><br><span class="line">		        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)&#123;</span><br><span class="line">		            <span class="keyword">int</span> le = i - <span class="number">1</span>, ri = i + <span class="number">1</span>;</span><br><span class="line">		            <span class="keyword">while</span>(height[le] &gt;= height[i]) le--;</span><br><span class="line">		            <span class="keyword">while</span>(height[ri] &gt;= height[i]) ri++;</span><br><span class="line">		            ans = max(ans, height[i]*(ri - le - <span class="number">1</span>));</span><br><span class="line">		        &#125;</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(InputReader in, PrintWriter out)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n, m;</span><br><span class="line">            n = in.nextInt();</span><br><span class="line">            m = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            String[] matrix = <span class="keyword">new</span> String[n];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">                matrix[i] = in.next();</span><br><span class="line">            </span><br><span class="line">            out.println(getAnswer(n, m, matrix));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span> </span>&#123;</span><br><span class="line">        BufferedReader reader;</span><br><span class="line">        StringTokenizer tokenizer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span> </span>&#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(stream), <span class="number">32768</span>);</span><br><span class="line">            tokenizer = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> String <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (tokenizer == <span class="keyword">null</span> || !tokenizer.hasMoreTokens()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer = <span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">short</span> <span class="title">nextShort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Short.parseShort(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">nextFloat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Float.parseFloat(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">nextDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Double.parseDouble(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="单调栈-O-mn"><a href="#单调栈-O-mn" class="headerlink" title="单调栈 $O(mn)$"></a>单调栈 $O(mn)$</h4><blockquote>
+<p>如果是不完全的单调栈，存在$O(m^2n)或O(mn^2)$的中间解法。</p>
+</blockquote>
+<p>该问题相当于从每一行分别开始的<strong><font color="red">离散直方图</font></strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.............x.....xxx...x...</span><br><span class="line">xxxxxxx..x...x...x...x..x..x.</span><br><span class="line">.X..xxx....xxx....xx....x....</span><br><span class="line">................xxx........xx</span><br><span class="line">.............x...x......xx.xx</span><br><span class="line">//以第5行为例</span><br></pre></td></tr></table></figure>
+<p><img src="/ATC/1548259642218.png" alt="1548259642218"></p>
+<ul>
+<li>分别计算每一列的元素列<strong>上侧</strong>连续满足要求的最大值（可以按列算，用一个单调栈就行）</li>
+<li>对每一行，构成了直方图，再用一个单调栈解决。</li>
+</ul>
+<h5 id="C-5"><a href="#C-5" class="headerlink" title="C++"></a>C++</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//n rows, m columes. n x m</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="built_in">string</span> *matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *height = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>]();</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//for every colume do the cycle</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)&#123;</span><br><span class="line">        <span class="comment">//for every row caculate the height</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">if</span> (matrix[k][i - <span class="number">1</span>] == <span class="string">'.'</span>) <span class="comment">//[i - 1] index stands for matrix columes</span></span><br><span class="line">                height[i] ++;  <span class="comment">// height[i] index stands for imaginary columes</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                height[i] = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">//monotone stack as before</span></span><br><span class="line">        <span class="keyword">while</span>(!myStack.empty())</span><br><span class="line">            myStack.pop();</span><br><span class="line">        myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">            <span class="keyword">while</span>(height[myStack.top()] &gt; height[i])&#123;</span><br><span class="line">                <span class="keyword">int</span> nowHeight = height[myStack.top()]; myStack.pop();</span><br><span class="line">                ans = max(ans, nowHeight*(i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            myStack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span>[] height;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);  <span class="comment">// 读入优化</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">string</span> *matrix = <span class="keyword">new</span> <span class="built_in">string</span>[n]();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; matrix[i];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getAnswer(n, m, matrix) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] matrix;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Python-5"><a href="#Python-5" class="headerlink" title="Python"></a>Python</h5><p>效率最慢，如果不好好优化，连通过都很困难。（平凡状态，<strong>TLE for 3 cases</strong>，修改上限时间到<code>10s</code>后过了，最大消耗<code>5500ms</code>）</p>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/33556376" target="_blank" rel="noopener">为什么Python比C++慢很多？</a></p>
+<p><a href="https://www.zybuluo.com/diyer22/note/310572" target="_blank" rel="noopener">如何优雅地使用Python做OJ题</a></p>
+<p><a href="https://blog.csdn.net/bat67/article/details/79685970" target="_blank" rel="noopener">OJ中提交Python3程序的一些套路</a>，<a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c14/p14_make_your_program_run_faster.html" target="_blank" rel="noopener">加速程序运行</a></p>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-python-optim/index.html" target="_blank" rel="noopener">Python 代码性能优化技巧</a></p>
+<p><a href="http://developer.51cto.com/art/201809/583695.htm" target="_blank" rel="noopener">一行代码让你的Python运行速度提高100倍！Python真强！</a> （然而OJ并没有这个包。。）</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">n, m = map(int, input().split(<span class="string">' '</span>))</span><br><span class="line">matrix = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">	matrix.append(input())</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> len(Stack) == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(Stack)</span>:</span></span><br><span class="line">	t = Stack.pop()</span><br><span class="line">	Stack.append(t)</span><br><span class="line">	<span class="keyword">return</span> int(t)</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">height = [<span class="number">0</span>]*(m + <span class="number">2</span>)</span><br><span class="line">myStack = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">	<span class="keyword">for</span>  i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">		<span class="keyword">if</span> matrix[k][i - <span class="number">1</span>] == <span class="string">'.'</span>:</span><br><span class="line">			height[i] += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			height[i] = <span class="number">0</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> <span class="keyword">not</span> empty(myStack):</span><br><span class="line">		myStack.pop()</span><br><span class="line">	myStack.append(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">2</span>):</span><br><span class="line">		<span class="keyword">while</span> height[top(myStack)] &gt; height[i]:</span><br><span class="line">			nowHeight = height[myStack.pop()]</span><br><span class="line">			ans = max(ans, nowHeight*(i - top(myStack) - <span class="number">1</span>))</span><br><span class="line">		myStack.append(i)</span><br><span class="line"></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure>
+<h5 id="Java-5"><a href="#Java-5" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"><span class="keyword">import</span> java.util.StringTokenizer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.max;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputStream inputStream = System.in;</span><br><span class="line">        OutputStream outputStream = System.out;</span><br><span class="line">        InputReader in = <span class="keyword">new</span> InputReader(inputStream);</span><br><span class="line">        PrintWriter out = <span class="keyword">new</span> PrintWriter(outputStream);</span><br><span class="line">        Task solver = <span class="keyword">new</span> Task();</span><br><span class="line">        solver.solve(in, out);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, String[] matrix)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">int</span>[] height = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">		    Stack&lt;Integer&gt; myStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">		    <span class="comment">//for every colume do the cycle</span></span><br><span class="line">		    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)&#123;</span><br><span class="line">		        <span class="comment">//for every row caculate the height</span></span><br><span class="line">		        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">		            <span class="keyword">if</span> (matrix[k].charAt(i - <span class="number">1</span>) == <span class="string">'.'</span>) <span class="comment">//[i - 1] index stands for matrix columes</span></span><br><span class="line">		                height[i] ++;  <span class="comment">// height[i] index stands for imaginary columes</span></span><br><span class="line">		            <span class="keyword">else</span></span><br><span class="line">		                height[i] = <span class="number">0</span>;</span><br><span class="line">				<span class="comment">//monotone stack as before</span></span><br><span class="line">		        <span class="keyword">while</span>(!myStack.empty())</span><br><span class="line">		            myStack.pop();</span><br><span class="line">		        myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">		            <span class="keyword">while</span>(height[myStack.peek()] &gt; height[i])&#123;</span><br><span class="line">		                <span class="keyword">int</span> nowHeight = height[myStack.peek()]; myStack.pop();</span><br><span class="line">		                ans = max(ans, nowHeight*(i - myStack.peek() - <span class="number">1</span>));</span><br><span class="line">		            &#125;</span><br><span class="line">		            myStack.push(i);</span><br><span class="line">		        &#125;</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(InputReader in, PrintWriter out)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n, m;</span><br><span class="line">            n = in.nextInt();</span><br><span class="line">            m = in.nextInt();</span><br><span class="line">            </span><br><span class="line">            String[] matrix = <span class="keyword">new</span> String[n];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">                matrix[i] = in.next();</span><br><span class="line">            </span><br><span class="line">            out.println(getAnswer(n, m, matrix));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span> </span>&#123;</span><br><span class="line">        BufferedReader reader;</span><br><span class="line">        StringTokenizer tokenizer;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span> </span>&#123;</span><br><span class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(stream), <span class="number">32768</span>);</span><br><span class="line">            tokenizer = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> String <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (tokenizer == <span class="keyword">null</span> || !tokenizer.hasMoreTokens()) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer = <span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">short</span> <span class="title">nextShort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Short.parseShort(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">float</span> <span class="title">nextFloat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Float.parseFloat(next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">nextDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Double.parseDouble(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构的新百年"><span class="nav-number">2.</span> <span class="nav-text">数据结构的新百年</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第〇周题目"><span class="nav-number">3.</span> <span class="nav-text">第〇周题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B问题"><span class="nav-number">3.1.</span> <span class="nav-text">A+B问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">3.1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">3.1.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">3.1.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">3.1.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">3.1.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">3.1.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围"><span class="nav-number">3.1.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示"><span class="nav-number">3.1.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">3.1.9.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">3.1.9.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python"><span class="nav-number">3.1.9.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">3.1.9.3.</span> <span class="nav-text">Java</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈排序"><span class="nav-number">3.2.</span> <span class="nav-text">栈排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-1"><span class="nav-number">3.2.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-1"><span class="nav-number">3.2.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-1"><span class="nav-number">3.2.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">3.2.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-1"><span class="nav-number">3.2.8.1.</span> <span class="nav-text">C++</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#标程-12ms"><span class="nav-number">3.2.8.1.1.</span> <span class="nav-text">标程 12ms</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自主实现-4ms"><span class="nav-number">3.2.8.1.2.</span> <span class="nav-text">自主实现 4ms</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STL-sort-0ms"><span class="nav-number">3.2.8.1.3.</span> <span class="nav-text">STL: sort() 0ms</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-1"><span class="nav-number">3.2.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-1"><span class="nav-number">3.2.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG"><span class="nav-number">3.2.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直方图最大面积"><span class="nav-number">3.3.</span> <span class="nav-text">直方图最大面积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-2"><span class="nav-number">3.3.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-2"><span class="nav-number">3.3.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-2"><span class="nav-number">3.3.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-2"><span class="nav-number">3.3.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-2"><span class="nav-number">3.3.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">3.3.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Force-O-n-2-rightarrow-O-n"><span class="nav-number">3.3.8.1.</span> <span class="nav-text">Force $O(n^2)\rightarrow O(n)$</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-2"><span class="nav-number">3.3.8.1.1.</span> <span class="nav-text">C++</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#优化"><span class="nav-number">3.3.8.1.1.1.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python-2"><span class="nav-number">3.3.8.1.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java-2"><span class="nav-number">3.3.8.1.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分治-O-nlogn-rightarrow-O-n"><span class="nav-number">3.3.8.2.</span> <span class="nav-text">分治 $O(nlogn)\rightarrow O(n)$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单调栈-O-n"><span class="nav-number">3.3.8.3.</span> <span class="nav-text">单调栈 $O(n)$</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-3"><span class="nav-number">3.3.8.3.1.</span> <span class="nav-text">C++</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#优化-1"><span class="nav-number">3.3.8.3.1.1.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python-3"><span class="nav-number">3.3.8.3.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java-3"><span class="nav-number">3.3.8.3.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化-2"><span class="nav-number">3.3.8.4.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-1"><span class="nav-number">3.3.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大红矩形"><span class="nav-number">3.4.</span> <span class="nav-text">最大红矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-3"><span class="nav-number">3.4.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-3"><span class="nav-number">3.4.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-3"><span class="nav-number">3.4.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-3"><span class="nav-number">3.4.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-3"><span class="nav-number">3.4.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释-1"><span class="nav-number">3.4.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-3"><span class="nav-number">3.4.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-3"><span class="nav-number">3.4.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">3.4.9.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Force-O-nm-2-rightarrow-O-mn"><span class="nav-number">3.4.9.1.</span> <span class="nav-text">Force $O(nm^2)\rightarrow O(mn)$</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-4"><span class="nav-number">3.4.9.1.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python-4"><span class="nav-number">3.4.9.1.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java-4"><span class="nav-number">3.4.9.1.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单调栈-O-mn"><span class="nav-number">3.4.9.2.</span> <span class="nav-text">单调栈 $O(mn)$</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-5"><span class="nav-number">3.4.9.2.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python-5"><span class="nav-number">3.4.9.2.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java-5"><span class="nav-number">3.4.9.2.3.</span> <span class="nav-text">Java</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->

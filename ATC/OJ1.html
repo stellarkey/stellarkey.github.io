@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content=",,,,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="仅供算法训练营内部学员学习交流之用。">
+<meta name="keywords" content="TsOJ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Algorithm-Training-Camp-Week1">
+<meta property="og:url" content="https://vel.life/ATC/OJ1.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="仅供算法训练营内部学员学习交流之用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-13T15:44:49.620Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm-Training-Camp-Week1">
+<meta name="twitter:description" content="仅供算法训练营内部学员学习交流之用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'P1TCRNQBR7',
+      apiKey: '501e087ded257acc9dc481944c14c248',
+      indexName: '云端',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vel.life/ATC/OJ1.html">
+
+
+
+
+
+
+  <title>Algorithm-Training-Camp-Week1 | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">思维之海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
+            
+            Key
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-contact">
+          <a href="/contact" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
+            
+            Contact
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            Link
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">Algorithm-Training-Camp-Week1</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <blockquote>
+<p>仅供算法训练营<strong>内部学员</strong>学习交流之用。<a id="more"></a></p>
+</blockquote>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+<p>OJ网址：<a href="https://dsa.cs.tsinghua.edu.cn/oj/index.shtml" target="_blank" rel="noopener">https://dsa.cs.tsinghua.edu.cn/oj/index.shtml</a></p>
+<p>C/C++默认使用C++，Python默认使用py3。（向下兼容）<br>由于OJ服务器的限制（多版本py），你可能需要指定解释器：<code>#!/usr/bin/env python3</code><br><a href="https://www.jianshu.com/p/400c612381dd" target="_blank" rel="noopener">#!/usr/bin/python3 和 #!/usr/bin/env python3 的作用</a></p>
+<p><a href="https://www.zhihu.com/question/20548678" target="_blank" rel="noopener">C++的main函数不必显示返回零。</a></p>
+<p>&amp;Tips：</p>
+<p>@<a href="http://cn.onenotegem.com/2599126723/-onenote1347541" target="_blank" rel="noopener">在 OneNote 中使用线性格式输入数学公式</a></p>
+<p>来自 <a href="&lt;http://cn.onenotegem.com/2599126723/-onenote1347541">&lt;http://cn.onenotegem.com/2599126723/-onenote1347541</a>&gt; </p>
+<p>@<a href="http://cn.onenotegem.com/" target="_blank" rel="noopener">数字笔记珍宝 OneNote Gem</a>（onenote操作高级教程）</p>
+<p>来自 <a href="&lt;http://cn.onenotegem.com/categories.html">&lt;http://cn.onenotegem.com/categories.html</a>&gt; </p>
+<p>@iPad 上有哪些实用得令人惊艳的 App？（MarginNote读书笔记专用）</p>
+<p>From <a href="&lt;https://www.zhihu.com/question/22678622?utm_campaign=official_account&amp;utm_source=weibo&amp;utm_medium=zhihu&amp;utm_content=question">&lt;https://www.zhihu.com/question/22678622?utm_campaign=official_account&amp;utm_source=weibo&amp;utm_medium=zhihu&amp;utm_content=question</a>&gt;</p>
+<p>@代码可视化运行【在线单步调试工具】</p>
+<p>来自 <a href="&lt;http://www.pythontutor.com/visualize.html#mode=edit">&lt;http://www.pythontutor.com/visualize.html#mode=edit</a>&gt; </p>
+<p>@C++ 读入优化 fread()版本</p>
+<p>来自 <a href="&lt;https://blog.csdn.net/qq_33330876/article/details/68488811">&lt;https://blog.csdn.net/qq_33330876/article/details/68488811</a>&gt; </p>
+<p>@<a href="https://www.byvoid.com/zhs/blog/fast-readfile" target="_blank" rel="noopener">探寻C++最快的读取文件的方案</a></p>
+<p>来自 <a href="&lt;https://www.byvoid.com/zhs/blog/fast-readfile">&lt;https://www.byvoid.com/zhs/blog/fast-readfile</a>&gt; </p>
+<p>@用GDB调试程序（一）【DeBUG入门】</p>
+<p>来自 <a href="&lt;https://blog.csdn.net/haoel/article/details/2879?spm=a2c4e.11153940.blogcont453808.7.41127a58MWBm7F">&lt;https://blog.csdn.net/haoel/article/details/2879?spm=a2c4e.11153940.blogcont453808.7.41127a58MWBm7F</a>&gt; </p>
+</blockquote>
+<h1 id="第1周-1A-基础知识"><a href="#第1周-1A-基础知识" class="headerlink" title="第1周-1A-基础知识"></a>第1周-1A-基础知识</h1>
+
+	<div class="row">
+    <embed src="第1周-1A-基础知识.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h1 id="第1周-1B-基础拓展"><a href="#第1周-1B-基础拓展" class="headerlink" title="第1周-1B-基础拓展"></a>第1周-1B-基础拓展</h1>
+
+	<div class="row">
+    <embed src="第1周-1B-基础拓展.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h1 id="第一周题目"><a href="#第一周题目" class="headerlink" title="第一周题目"></a>第一周题目</h1>
+
+	<div class="row">
+    <embed src="第1周-习题课1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><hr>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>实现一个栈，完成以下功能：</p>
+<ol>
+<li>入栈 </li>
+<li>出栈 </li>
+<li>询问栈中位置Y是谁</li>
+</ol>
+<p>一开始栈为空。栈中的位置从1开始（即栈底位置为1）。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行一个整数n，表示操作个数。</p>
+<p>接下来n行，每行第一个数字表示操作（见描述）：</p>
+<ul>
+<li>若为数字1，则接下来有一串字符串X，表示将X压入栈中。 </li>
+<li>若为数字2，表示弹出栈顶（保证栈非空），并输出出栈的这个人。 </li>
+<li>若为数字3，则接下来有一个整数Y，表示询问栈中位置Y是谁（保证位置Y合法），并输出名字。</li>
+</ul>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>将所有操作2和操作3输出，一行一个。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a><strong>输入样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">11</span><br><span class="line">1 a</span><br><span class="line">1 b</span><br><span class="line">1 c</span><br><span class="line">3 1</span><br><span class="line">3 2</span><br><span class="line">3 3</span><br><span class="line">2</span><br><span class="line">1 d</span><br><span class="line">3 1</span><br><span class="line">3 2</span><br><span class="line">3 3</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a><strong>输出样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">c</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于30%的数据，1 ≤ n ≤ 2000；</p>
+<p>对于另30%的数据，没有操作3；</p>
+<p>对于100%的数据，1 ≤ n ≤ 100000。</p>
+<p>数据中出现的字符串只包含26个小写字母（无空格等分隔符），且长度不超过15。</p>
+<p>字符串有可能重复。正如现实中可能有重名一样。</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[入栈和出栈都是操作着栈顶。]</p>
+<p>[开一个大小为n的数组，记录栈顶的位置，入栈出栈就是将这栈顶加一减一，栈中某个位置Y在数组相应的下标就是Y。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/f7f3/f7f3ba573aef364a70e69ce2a1da264e783aa9f2.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h3><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><hr>
+<h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>实现一个队列，完成以下功能：</p>
+<ol>
+<li>入列 </li>
+<li>出列 </li>
+<li>询问队列中位置Y是谁</li>
+</ol>
+<p>一开始队列为空。队列中的位置从1开始（即队头位置为1）。</p>
+<h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行一个整数n，表示操作个数。</p>
+<p>接下来n行，每行第一个数字表示操作（见描述）：</p>
+<ul>
+<li>若为数字1，则接下来有一串字符串X，表示将X加入队列。 </li>
+<li>若为数字2，表示出列（保证队列非空），并输出出列的这个人。 </li>
+<li>若为数字3，则接下来有一个整数Y，表示询问队列中位置Y是谁（保证位置Y合法），并输出名字。</li>
+</ul>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>将所有操作2和操作3输出，一行一个。</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a><strong>输入样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">11</span><br><span class="line">1 a</span><br><span class="line">1 b</span><br><span class="line">1 c</span><br><span class="line">3 1</span><br><span class="line">3 2</span><br><span class="line">3 3</span><br><span class="line">2</span><br><span class="line">1 d</span><br><span class="line">3 1</span><br><span class="line">3 2</span><br><span class="line">3 3</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a><strong>输出样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<h3 id="限制-1"><a href="#限制-1" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于30%的数据，1 ≤ n ≤ 2000；</p>
+<p>对于另30%的数据，没有操作3；</p>
+<p>对于100%的数据，1 ≤ n ≤ 100000。</p>
+<p>数据中出现的字符串只包含26个小写字母（无空格等分隔符），且长度不超过15。</p>
+<p>字符串有可能重复。正如现实中可能有重名一样。</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[队头出列，队尾入列。]</p>
+<p>[开一个大小为n的数组，记录队头和队尾的位置，入列出列就是将这两个位置改变一下，队列中某个位置Y在数组相应的下标为队头的位置+Y-1。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/12af/12af77cc952b721e7e54d9b2f4a6a30eaf0fa1d5.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><h4 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-1"><a href="#Python-1" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-1"><a href="#BUG-1" class="headerlink" title="BUG"></a>BUG</h3><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><hr>
+<h3 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>给定一个1到n的排列，按顺序依次插入到一棵二叉排序树中，请你将这棵二叉树前序遍历和后序遍历输出。</p>
+<p><a href="https://baike.baidu.com/item/%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86" target="_blank" rel="noopener">前序遍历的定义</a></p>
+<p><a href="https://baike.baidu.com/item/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86" target="_blank" rel="noopener">后序遍历的定义</a></p>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行一个整数n。</p>
+<p>接下来一行表示为n个整数，代表1到n的一个排列。</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出所建成的二叉树的前序遍历和后序遍历。</p>
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a><strong>输入样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">2 6 9 3 5 7 10 8 4 1</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a><strong>输出样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 1 6 3 5 4 9 7 8 10</span><br><span class="line">1 4 5 3 8 7 10 9 6 2</span><br></pre></td></tr></table></figure>
+<h3 id="限制-2"><a href="#限制-2" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于50%的数据，1 ≤ n ≤ 100；</p>
+<p>对于100%的数据，1 ≤ n ≤ 100000。</p>
+<p>保证建成的树的高度不超过50。</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<h3 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[二叉树的操作基本都是递归操作，只要想想如何在一个节点上判断是朝着左孩子走还是朝着右孩子走就行了。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/ae9a/ae9a285be256c4314c5ec07a833983660d80c619.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><h4 id="C-2"><a href="#C-2" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-2"><a href="#Python-2" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-2"><a href="#Java-2" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-2"><a href="#BUG-2" class="headerlink" title="BUG"></a>BUG</h3><h2 id="数字盒子"><a href="#数字盒子" class="headerlink" title="数字盒子"></a>数字盒子</h2><hr>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>你有一个盒子，你可以往里面放数，也可以从里面取出数。</p>
+<p>初始时，盒子是空的，你会依次做 Q 个操作，操作分为两类：</p>
+<ol>
+<li>插入操作：询问盒子中是否存在数 x，如果<strong>不存在</strong>则把数 x 丢到盒子里。 </li>
+<li>删除操作：询问盒子中是否存在数 x，如果<strong>存在</strong>则取出 x。</li>
+</ol>
+<p>对于每个操作，你需要输出是否成功插入或删除。</p>
+<h3 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行一个正整数 Q，表示操作个数。</p>
+<p>接下来 Q 行依次描述每个操作。每行 2 个用空格隔开的非负整数 op,x 描述一个操作：op 表示操作类型，op=1 则表示这是一个插入操作，op=2 则表示这是一个删除操作；x 的意义与操作类型有关，具体见题目描述。</p>
+<h3 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>按顺序对所有操作输出，对于每个操作输出一行，如果成功则输出“Succeeded”（不含引号），如果失败则输出“Failed”（不含引号）。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">1 100</span><br><span class="line">1 100</span><br><span class="line">2 100</span><br><span class="line">1 200</span><br><span class="line">2 100</span><br><span class="line">2 200</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Succeeded</span><br><span class="line">Failed</span><br><span class="line">Succeeded</span><br><span class="line">Succeeded</span><br><span class="line">Failed</span><br><span class="line">Succeeded</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 60% 的数据，保证 x&lt;10^5。</p>
+<p>对于 100% 的数据，保证 x&lt;10^18，Q≤5*10^5。</p>
+<p>对于所有数据，保证 op∈{1,2}。</p>
+<p>时间限制：10 sec</p>
+<p>空间限制：256 MB</p>
+<h3 id="提示-3"><a href="#提示-3" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[对于 x 较小的情况，我们只需要用数组记录每个数是否在盒子里即可。]</p>
+<p>[对于 x 较大的情况，我们可不可以用什么方法把它们“变小”呢？可以想想哈希表哦！]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/f143/f1438a61cb6ba166fde53a16a1b746f48f75e7ff.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<hr>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><h4 id="C-3"><a href="#C-3" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-3"><a href="#Python-3" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-3"><a href="#Java-3" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-3"><a href="#BUG-3" class="headerlink" title="BUG"></a>BUG</h3><h2 id="重编码"><a href="#重编码" class="headerlink" title="重编码"></a>重编码</h2><hr>
+<h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>有一篇文章，文章包含 n</p>
+<p> 种单词，单词的编号从 </p>
+<p>1</p>
+<p> 至 </p>
+<p>n</p>
+<p>，第 i 种单词的出现次数为 </p>
+<p>wi</p>
+<p>。</p>
+<p>现在，我们要用一个 2 进制串（即只包含 0 或 1 的串） si</p>
+<p> 来替换第 i 种单词，使其满足如下要求：对于任意的 </p>
+<p>1≤i,j≤n,i≠j</p>
+<p>，都有 </p>
+<p>si</p>
+<p> 不是 </p>
+<p>sj</p>
+<p> 的前缀。（这个要求是为了避免二义性）</p>
+<p>你的任务是对每个单词选择合适的 si</p>
+<p>，使得替换后的文章总长度（定义为所有单词<strong>出现次数</strong>与<strong>替换它的二进制串的长度</strong>乘积的总和）最小。求这个最小长度。</p>
+<p>字符串 S1</p>
+<p>（不妨假设长度为 </p>
+<p>n</p>
+<p>）被称为字符串 </p>
+<p>S2</p>
+<p> 的前缀，当且仅当：</p>
+<p>S2</p>
+<p> 的长度不小于 </p>
+<p>n</p>
+<p>，且 </p>
+<p>S1</p>
+<p> 与 </p>
+<p>S2</p>
+<p> 前 </p>
+<p>n</p>
+<p> 个字符组组成的字符串完全相同。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个整数 n</p>
+<p>，表示单词种数。</p>
+<p>第 2 行到第 n+1</p>
+<p> 行，第 </p>
+<p>i+1</p>
+<p> 行包含一个正整数 </p>
+<p>wi</p>
+<p>，表示第 </p>
+<p>i</p>
+<p> 种单词的出现次数。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出一行一个整数，表示整篇文章重编码后的最短长度。</p>
+<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12</span><br></pre></td></tr></table></figure>
+<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a><strong>样例解释</strong></h3><p>一种最优方案是令 s1</p>
+<p>=000，</p>
+<p>s2</p>
+<p>=001，</p>
+<p>s3</p>
+<p>=01，</p>
+<p>s4</p>
+<p>=1。这样文章总长即为 1<em>3+1</em>3+2<em>2+1</em>2=12。</p>
+<p>另一种最优方案是令 s1</p>
+<p>=00，</p>
+<p>s2</p>
+<p>=01，</p>
+<p>s3</p>
+<p>=10，</p>
+<p>s4</p>
+<p>=11。这样文章总长也为 12。</p>
+<h3 id="数据范围-1"><a href="#数据范围-1" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于第 1 个测试点，保证 n=3</p>
+<p>。</p>
+<p>对于第 2 个测试点，保证 n=5</p>
+<p>。</p>
+<p>对于第 3 个测试点，保证 n=16</p>
+<p>，且所有 </p>
+<p>wi</p>
+<p> 都相等。</p>
+<p>对于第 4 个测试点，保证 n=1000</p>
+<p>。</p>
+<p>对于第 5 个测试点，保证所有 wi</p>
+<p> 都相等。</p>
+<p>对于所有的 7 个测试点，保证 2≤n≤106</p>
+<p>，</p>
+<p>wi≤1011</p>
+<p>。</p>
+<p>时间限制：2 sec</p>
+<p>空间限制：256 MB</p>
+<h3 id="提示-4"><a href="#提示-4" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[我们希望越长的串出现次数越少，那么贪心地考虑，让出现次数少的串更长。]</p>
+<p>[于是我们先区分出出现次数最少的 2 个串，在它们的开头分别添加 0 和 1。]</p>
+<p>[接着，由于它们已经被区分（想一想，为什么？），所以我们可以把它们看作是<strong>一个</strong>单词，且其出现次数为它们的和，然后继续上面的“添数”和“合并”操作。]</p>
+<p>[这样，我们不停地“合并单词”，直到只剩 1 个单词，即可结束。]</p>
+<p>[可以证明这是最优的。]</p>
+<p>[朴素的实现是 O(n2)</p>
+<p> 的，可以用二叉堆或<strong>std::priority_queue</strong>将其优化至 O(nlogn)</p>
+<p>。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/f7bd/f7bd45026f05b353c848ce1a670b97747966c177.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a><strong>Source</strong></h3><p>改编自：【NOI2015】荷马史诗（<a href="http://uoj.ac/problem/130" target="_blank" rel="noopener">http://uoj.ac/problem/130</a>）</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><h4 id="C-4"><a href="#C-4" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-4"><a href="#Python-4" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-4"><a href="#Java-4" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-4"><a href="#BUG-4" class="headerlink" title="BUG"></a>BUG</h3><h2 id="成绩排序"><a href="#成绩排序" class="headerlink" title="成绩排序"></a>成绩排序</h2><hr>
+<h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>有 n 名学生，它们的学号分别是 1,2,…,n。这些学生都选修了邓老师的算法训练营、数据结构训练营这两门课程。</p>
+<p>学期结束了，所有学生的课程总评都已公布，所有总评分数都是 [0,100] 之间的整数。巧合的是，不存在两位同学，他们这两门课的成绩<strong>都完全相同</strong>。</p>
+<p>邓老师希望将这些所有的学生按这两门课程的<strong>总分</strong>进行降序排序，特别地，如果两位同学的总分相同，那邓老师希望把<strong>算法训练营</strong>得分更高的同学排在前面。由于上面提到的巧合，所以，这样排名就可以保证没有并列的同学了。</p>
+<p>邓老师将这个排序任务交给了他的助教。可是粗心的助教没有理解邓老师的要求，将所有学生按<strong>学号</strong>进行了排序。</p>
+<p>邓老师希望知道，助教的排序结果中，存在多少<strong>逆序对</strong>。</p>
+<p>如果对于两个学生 (i,j) 而言，i 被排在了 j 前面，并且i <strong>本应</strong>被排在 j 的后面，我们就称 (i,j) 是一个<strong>逆序对</strong>。</p>
+<p>请你先帮邓老师把所有学生按正确的顺序进行排名，再告诉他助教的错误排名中逆序对的数目。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行一个整数 n，表示学生的个数。</p>
+<p>第 2 行到第 n+1 行，每行 2 个用空格隔开的非负整数，第 i+1 行的两个数依次表示学号为 i 的同学的算法训练营、数据结构训练营的总评成绩。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>输出包含 n+1 行。</p>
+<p>前 n 行表示正确的排序结果，每行 4 个用空格隔开的整数，第 i 行的数依次表示排名为 i 的同学的学号、总分、算法训练营成绩、数据结构训练营成绩。</p>
+<p>第 n+1 行一个整数，表示助教的错误排名中逆序对的数目。</p>
+<h3 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a><strong>样例输入</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">95 85</span><br><span class="line">90 90</span><br><span class="line">100 99</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a><strong>样例输出</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 199 100 99</span><br><span class="line">1 180 95 85</span><br><span class="line">2 180 90 90</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h3 id="样例解释-1"><a href="#样例解释-1" class="headerlink" title="样例解释"></a><strong>样例解释</strong></h3><p>学号为 3 的同学总分为 199，是最高的，所以他应该排第一名。</p>
+<p>学号为 1 的同学虽然总分与学号为 2 的同学一致，但是他的算法训练营成绩更高，所以在排名规则下更胜一筹。</p>
+<p>原错误排名中的逆序对数目为 2 ，这些逆序对分别为 (1,3) 和 (2,3)。</p>
+<h3 id="数据范围-2"><a href="#数据范围-2" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 25% 的数据，保证 n=3。</p>
+<p>对于 50% 的数据，保证 n≤10。</p>
+<p>对于另外 25% 的数据，保证所有同学的总分两两不同。</p>
+<p>对于 100% 的数据，保证 n≤5,000 ，且保证不存在成绩<strong>完全相同</strong>的学生。</p>
+<p>时间限制：10 sec</p>
+<p>空间限制：256 MB</p>
+<h3 id="提示-5"><a href="#提示-5" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[可以使用起泡排序将所有学生进行排名。]</p>
+<p>[善良的助教提醒你，在起泡排序的过程中，每次交换都会使逆序对数目减少 1 哦！想一想，为什么？]</p>
+<p>[聪明的助教还告诉你，这道题可以设计出时间复杂度为 O(nlogn) 的算法。这会在今后的课程中涉及到。]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/d791/d791f85af58eef5f98770aaa747e0df76876d0c0.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><h4 id="C-5"><a href="#C-5" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-5"><a href="#Python-5" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-5"><a href="#Java-5" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-5"><a href="#BUG-5" class="headerlink" title="BUG"></a>BUG</h3><h2 id="等式"><a href="#等式" class="headerlink" title="等式"></a>等式</h2><hr>
+<h3 id="描述-3"><a href="#描述-3" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>有n个变量和m个“相等”或“不相等”的约束条件，请你判定是否存在一种赋值方案满足所有m个约束条件。</p>
+<h3 id="输入-4"><a href="#输入-4" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行一个整数T，表示数据组数。</p>
+<p>接下来会有T组数据，对于每组数据：</p>
+<p>第一行是两个整数n,m，表示变量个数和约束条件的个数。</p>
+<p>接下来m行，每行三个整数a,b,e，表示第a个变量和第b个变量的关系：</p>
+<ul>
+<li>若e=0则表示第a个变量<strong>不等于</strong>第b个变量； </li>
+<li>若e=1则表示第a个变量<strong>等于</strong>第b个变量</li>
+</ul>
+<h3 id="输出-4"><a href="#输出-4" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>输出T行，第i行表示第i组数据的答案。若第i组数据存在一种方案则输出”Yes”；否则输出”No”（不包括引号）。</p>
+<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a><strong>输入样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5 5</span><br><span class="line">1 2 1</span><br><span class="line">2 3 1</span><br><span class="line">3 4 1</span><br><span class="line">1 4 1</span><br><span class="line">2 5 0</span><br><span class="line">3 3</span><br><span class="line">1 2 1</span><br><span class="line">2 3 1</span><br><span class="line">1 3 0</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a><strong>输出样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yes</span><br><span class="line">No</span><br></pre></td></tr></table></figure>
+<h3 id="样例1解释"><a href="#样例1解释" class="headerlink" title="样例1解释"></a><strong>样例1解释</strong></h3><p>一共有2组数据。</p>
+<p>对于第一组数据，有5个约束：</p>
+<ul>
+<li>变量1=变量2 </li>
+<li>变量2=变量3 </li>
+<li>变量3=变量4 </li>
+<li>变量1=变量4 </li>
+<li>变量2≠变量5</li>
+</ul>
+<p>显然我们可以令：</p>
+<ul>
+<li>变量1=变量2=变量3=变量4=任意一个数值 </li>
+<li><p>变量5=任意一个和变量2不同的数值</p>
+<p>故第一组数据输出”Yes”。   对于第二组数据，有3个约束：</p>
+</li>
+<li><p>变量1=变量2 </p>
+</li>
+<li>变量2=变量3 </li>
+<li><p>变量1≠变量3</p>
+<p>由前两个约束可推出变量1=变量3，但第三个约束表明变量1≠变量3，矛盾。</p>
+</li>
+</ul>
+<p>故第二组数据输出”No”。</p>
+<h3 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a><strong>输入样例2</strong></h3><p><a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/d07e/d07ec7fd5e8cf1fc3efb30bd14da0db4c3c13b2b.zip" target="_blank" rel="noopener">点击下载</a></p>
+<h3 id="限制-3"><a href="#限制-3" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于10%的数据，n,m ≤ 5，T ≤ 5；</p>
+<p>对于50%的数据，n,m ≤ 1000，T ≤ 10；</p>
+<p>对于100%的数据，1 ≤ n ≤ 300000, m ≤ 500000，1 ≤ a,b ≤ n，T ≤ 100。</p>
+<p>保证所有数据的n总和与m总和不超过500000。</p>
+<p>时间：2 sec</p>
+<p>空间：256 MB</p>
+<h3 id="提示-6"><a href="#提示-6" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[用并查集来维护相等的集合。]</p>
+<p>[改编自 NOI 2015 day1 T1 程序自动分析]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/aeeb/aeeb13720687f85211d780fa90f8476fc2f96a2d.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><h4 id="C-6"><a href="#C-6" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-6"><a href="#Python-6" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-6"><a href="#Java-6" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-6"><a href="#BUG-6" class="headerlink" title="BUG"></a>BUG</h3><h2 id="道路升级"><a href="#道路升级" class="headerlink" title="道路升级"></a>道路升级</h2><hr>
+<h3 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h3><p>Z国有 n 个城市和 m 条双向道路，每条道路连接了两个不同的城市，保证所有城市之间都可以通过这些道路互达。每条道路都有一个载重量限制，这限制了通过这条道路的货车最大的载重量。道路的编号从 1 至 m 。巧合的是，<strong>所有道路的载重量限制恰好都与其编号相同</strong>。</p>
+<p>现在，要挑选出若干条道路，将它们升级成高速公路，并满足如下要求：</p>
+<ul>
+<li>所有城市之间都可以通过高速公路互达。 </li>
+<li>对于任意两个城市 u,v 和足够聪明的货车司机：只经过高速公路从 u 到达 v 能够装载货物的最大重量，与经过任意道路从 u 到达 v 能够装载货物的最大重量相等。（足够聪明的司机只关注载重量，并不在意绕路）</li>
+</ul>
+<p>在上面的前提下，要求选出的道路数目尽可能少。</p>
+<p>求需要挑选出哪些道路升级成高速公路（如果有多种方案请任意输出一种）。</p>
+<h3 id="输入-5"><a href="#输入-5" class="headerlink" title="输入"></a><strong>输入</strong></h3><p>第一行 2 个用空格隔开的整数 n,m ，分别表示城市数目、道路数目。</p>
+<p>第 2 行到第 m+1 行，每行 2 个用空格隔开的整数 u,v 描述一条从 u 到 v 的双向道路，第 i+1 行的道路的编号为 i 。</p>
+<p><strong>注意：数据只保证不存在连接的城市相同的道路（自环），并不保证不存在两条完全相同的边（重边）</strong></p>
+<h3 id="输出-5"><a href="#输出-5" class="headerlink" title="输出"></a><strong>输出</strong></h3><p>第一行一个整数 k ，表示升级成高速公路的道路数。</p>
+<p>接下来 k 行每行一个整数，<strong>从小到大</strong>输出所有选出的道路的编号。</p>
+<h3 id="输入样例-3"><a href="#输入样例-3" class="headerlink" title="输入样例"></a><strong>输入样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">1 2</span><br><span class="line">2 3</span><br><span class="line">1 3</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例-3"><a href="#输出样例-3" class="headerlink" title="输出样例"></a><strong>输出样例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围-3"><a href="#数据范围-3" class="headerlink" title="数据范围"></a><strong>数据范围</strong></h3><p>对于 20% 的数据，保证 n≤5，m≤10。</p>
+<p>对于 60% 的数据，保证 n≤1,000，m≤5,000。</p>
+<p>对于 100% 的数据，保证 n≤200,000，m≤400,000。</p>
+<p>时间限制：10 sec</p>
+<p>空间限制：256 MB</p>
+<h3 id="提示-7"><a href="#提示-7" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[提示1：真的可能有多种方案吗？]</p>
+<p>[提示2：k 是否一定为 n-1 呢？（也就是说，选出的道路是否恰好构成了一棵树？）]</p>
+<p>[提示3：这道题和最小生成树有什么关系呢？]</p>
+<p>另外，为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/6329/6329da09ebd4c6b33fb071975467127db2d43205.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<h3 id="Code-7"><a href="#Code-7" class="headerlink" title="Code"></a>Code</h3><h4 id="C-7"><a href="#C-7" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Python-7"><a href="#Python-7" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-7"><a href="#Java-7" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-7"><a href="#BUG-7" class="headerlink" title="BUG"></a>BUG</h3><p><strong>Trick</strong>: <code>print(&quot; &quot;.join(str(ele) for ele in tree.pre_order()))</code>可以指定输出<strong>空格分隔</strong>的单行列表。</p>
+<h1 id="周测"><a href="#周测" class="headerlink" title="周测"></a>周测</h1><h2 id="重编码-K"><a href="#重编码-K" class="headerlink" title="重编码-K"></a>重编码-K</h2><hr>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h3><p>小粽学习了哈夫曼树之后，自己设计了贪心算法，用两个队列就过掉了《重编码》这道题。</p>
+<p>小粽想：那堆的算法有什么用呢？为了解决小粽的疑惑，邓老师委托小莉命制了这道题目……</p>
+<h3 id="描述-4"><a href="#描述-4" class="headerlink" title="描述"></a><strong>描述</strong></h3><p>有一篇文章，文章包含 n 种单词，单词的编号从 1 至 n，第 i 种单词的出现次数为 wi。现在，我们要用一个 k 进制串（即只包含 0,1,…,k−1 的串） si 来替换第 i 种单词，使其满足如下要求：对于任意的 1≤i&lt;j≤n，都有 si 不是 sj 的前缀（这个要求是为了避免二义性）。</p>
+<p>你的任务是对每个单词选择合适的 sj，使得替换后的文章总长度（定义为所有单词出现次数与</p>
+<p>替换它的 k <strong>进制串的长度</strong>乘积的总和）最小。求这个最小长度。字符串 S1（不妨假设长度为 n）被称为字符串 S2 的前缀，当且仅当：S2 的长度不小于 n，且 S1 与 S2 前 n 个字符组组成的字符串完全相同。</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a><strong>输入格式</strong></h3><p>第一行两个整数 n 和 k 。</p>
+<p>第 2 行到第 n+1 行，第 i+1 行包含一个正整数 wi，表示第 i 种单词的出现次数。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a><strong>输出格式</strong></h3><p>表示整篇文章重编码后的最短长度</p>
+<h3 id="输入样例1-1"><a href="#输入样例1-1" class="headerlink" title="输入样例1"></a><strong>输入样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">5</span><br><span class="line">10</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例1-1"><a href="#输出样例1-1" class="headerlink" title="输出样例1"></a><strong>输出样例1</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">29</span><br></pre></td></tr></table></figure>
+<h3 id="样例2"><a href="#样例2" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><p><a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/f7c0/f7c0bc83907c7b9067346fa4dbb49fab4d70a5df.zip" target="_blank" rel="noopener">点此</a>下载。</p>
+<h3 id="限制-4"><a href="#限制-4" class="headerlink" title="限制"></a><strong>限制</strong></h3><p>对于 100% 的数据，满足 1≤n≤3×105,2≤k≤10,1≤wi≤109；</p>
+<p>对于 40% 的数据，满足 n≤3000；</p>
+<p>对于 35% 的数据，满足 k=2。</p>
+<h3 id="提示-8"><a href="#提示-8" class="headerlink" title="提示"></a><strong>提示</strong></h3><p>[贪心思路与重编码题目相同。需要思考的是：如何让最后构建的哈夫曼树为满 k</p>
+<p> 叉树呢？]</p>
+<p>为了帮助大家完成题目，我们提供了只包含了输入输出功能的程序模板，也提供了含有算法的大部分实现细节的程序。</p>
+<p>你可以根据自己的实际情况，在这些程序的基础上进行作答，或不参考这些程序，这将与你的得分无关。</p>
+<p>这些程序可以从【<a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/3c66/3c6683417111ac72c8620dd15376edd5cfdbb5d1.zip" target="_blank" rel="noopener">这里</a>】下载。</p>
+<p>特别提醒：对于 Java 语言，在提交时请删除程序中的所有中文字符，否则可能无法通过编译。</p>
+<h3 id="Code-8"><a href="#Code-8" class="headerlink" title="Code"></a>Code</h3><h4 id="C-8"><a href="#C-8" class="headerlink" title="C++"></a>C++</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">priority_queue&lt;LL, <span class="built_in">vector</span>&lt;LL&gt;, greater&lt;LL&gt; &gt; pq;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">	</span><br><span class="line">	LL sum = <span class="number">0</span>, re = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(k!=<span class="number">2</span>) re = n%(k<span class="number">-1</span>)==<span class="number">1</span> ? <span class="number">0</span> : k-n%(k<span class="number">-1</span>); <span class="comment">//模1特判</span></span><br><span class="line">	<span class="keyword">while</span>(re--) pq.push(<span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		LL a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a);</span><br><span class="line">		pq.push(a);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(pq.size() &gt; <span class="number">1</span>)&#123;</span><br><span class="line">		LL newEle = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; ++j)&#123;</span><br><span class="line">			newEle += pq.top();</span><br><span class="line">			pq.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		sum += newEle;</span><br><span class="line">		pq.push(newEle);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Python-8"><a href="#Python-8" class="headerlink" title="Python"></a>Python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Java-8"><a href="#Java-8" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="BUG-8"><a href="#BUG-8" class="headerlink" title="BUG"></a>BUG</h3>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <a href="/about/">
+                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">工云</p>
+              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-name">Archives</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                云海之上
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第1周-1A-基础知识"><span class="nav-number">2.</span> <span class="nav-text">第1周-1A-基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第1周-1B-基础拓展"><span class="nav-number">3.</span> <span class="nav-text">第1周-1B-基础拓展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一周题目"><span class="nav-number">4.</span> <span class="nav-text">第一周题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">4.1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">4.1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">4.1.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">4.1.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例"><span class="nav-number">4.1.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例"><span class="nav-number">4.1.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制"><span class="nav-number">4.1.6.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示"><span class="nav-number">4.1.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">4.1.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">4.1.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python"><span class="nav-number">4.1.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">4.1.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG"><span class="nav-number">4.1.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">4.2.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例-1"><span class="nav-number">4.2.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-1"><span class="nav-number">4.2.6.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-1"><span class="nav-number">4.2.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">4.2.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-1"><span class="nav-number">4.2.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-1"><span class="nav-number">4.2.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-1"><span class="nav-number">4.2.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-1"><span class="nav-number">4.2.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">4.3.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-2"><span class="nav-number">4.3.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例-2"><span class="nav-number">4.3.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例-2"><span class="nav-number">4.3.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-2"><span class="nav-number">4.3.6.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-2"><span class="nav-number">4.3.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">4.3.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-2"><span class="nav-number">4.3.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-2"><span class="nav-number">4.3.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-2"><span class="nav-number">4.3.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-2"><span class="nav-number">4.3.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字盒子"><span class="nav-number">4.4.</span> <span class="nav-text">数字盒子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">4.4.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-3"><span class="nav-number">4.4.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-3"><span class="nav-number">4.4.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">4.4.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">4.4.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围"><span class="nav-number">4.4.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-3"><span class="nav-number">4.4.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">4.4.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-3"><span class="nav-number">4.4.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-3"><span class="nav-number">4.4.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-3"><span class="nav-number">4.4.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-3"><span class="nav-number">4.4.9.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重编码"><span class="nav-number">4.5.</span> <span class="nav-text">重编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-1"><span class="nav-number">4.5.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">4.5.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">4.5.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-1"><span class="nav-number">4.5.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-1"><span class="nav-number">4.5.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">4.5.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-1"><span class="nav-number">4.5.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-4"><span class="nav-number">4.5.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source"><span class="nav-number">4.5.9.</span> <span class="nav-text">Source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-4"><span class="nav-number">4.5.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-4"><span class="nav-number">4.5.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-4"><span class="nav-number">4.5.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-4"><span class="nav-number">4.5.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-4"><span class="nav-number">4.5.11.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩排序"><span class="nav-number">4.6.</span> <span class="nav-text">成绩排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-2"><span class="nav-number">4.6.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-1"><span class="nav-number">4.6.2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-1"><span class="nav-number">4.6.3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-2"><span class="nav-number">4.6.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-2"><span class="nav-number">4.6.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释-1"><span class="nav-number">4.6.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-2"><span class="nav-number">4.6.7.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-5"><span class="nav-number">4.6.8.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-5"><span class="nav-number">4.6.9.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-5"><span class="nav-number">4.6.9.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-5"><span class="nav-number">4.6.9.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-5"><span class="nav-number">4.6.9.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-5"><span class="nav-number">4.6.10.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等式"><span class="nav-number">4.7.</span> <span class="nav-text">等式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-3"><span class="nav-number">4.7.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-4"><span class="nav-number">4.7.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-4"><span class="nav-number">4.7.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1"><span class="nav-number">4.7.4.</span> <span class="nav-text">输入样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1"><span class="nav-number">4.7.5.</span> <span class="nav-text">输出样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例1解释"><span class="nav-number">4.7.6.</span> <span class="nav-text">样例1解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例2"><span class="nav-number">4.7.7.</span> <span class="nav-text">输入样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-3"><span class="nav-number">4.7.8.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-6"><span class="nav-number">4.7.9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-6"><span class="nav-number">4.7.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-6"><span class="nav-number">4.7.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-6"><span class="nav-number">4.7.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-6"><span class="nav-number">4.7.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-6"><span class="nav-number">4.7.11.</span> <span class="nav-text">BUG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#道路升级"><span class="nav-number">4.8.</span> <span class="nav-text">道路升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述-3"><span class="nav-number">4.8.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入-5"><span class="nav-number">4.8.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-5"><span class="nav-number">4.8.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例-3"><span class="nav-number">4.8.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例-3"><span class="nav-number">4.8.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围-3"><span class="nav-number">4.8.6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-7"><span class="nav-number">4.8.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-7"><span class="nav-number">4.8.8.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-7"><span class="nav-number">4.8.8.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-7"><span class="nav-number">4.8.8.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-7"><span class="nav-number">4.8.8.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-7"><span class="nav-number">4.8.9.</span> <span class="nav-text">BUG</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周测"><span class="nav-number">5.</span> <span class="nav-text">周测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重编码-K"><span class="nav-number">5.1.</span> <span class="nav-text">重编码-K</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">5.1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-4"><span class="nav-number">5.1.2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式-2"><span class="nav-number">5.1.3.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式-2"><span class="nav-number">5.1.4.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1-1"><span class="nav-number">5.1.5.</span> <span class="nav-text">输入样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1-1"><span class="nav-number">5.1.6.</span> <span class="nav-text">输出样例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例2"><span class="nav-number">5.1.7.</span> <span class="nav-text">样例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-4"><span class="nav-number">5.1.8.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示-8"><span class="nav-number">5.1.9.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-8"><span class="nav-number">5.1.10.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-8"><span class="nav-number">5.1.10.1.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-8"><span class="nav-number">5.1.10.2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-8"><span class="nav-number">5.1.10.3.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG-8"><span class="nav-number">5.1.11.</span> <span class="nav-text">BUG</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-line-chart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">438.2k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
+        placeholder: 'Never stop thinking.',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->
