@@ -150,7 +150,7 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="本手册主要选取C++中实用性最大的部分，浅尝辄止。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-29T09:48:59.733Z">
+<meta property="og:updated_time" content="2020-05-18T14:16:07.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习手册">
 <meta name="twitter:description" content="本手册主要选取C++中实用性最大的部分，浅尝辄止。">
@@ -424,8 +424,8 @@
               
                 <span class="post-meta-item-text">Modified&#58;</span>
               
-              <time title="Modified" itemprop="dateModified" datetime="2019-12-29T17:48:59+08:00">
-                2019-12-29
+              <time title="Modified" itemprop="dateModified" datetime="2020-05-18T22:16:07+08:00">
+                2020-05-18
               </time>
             
           </span>
@@ -489,7 +489,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  244
+                  4,082
                 </span>
               
 
@@ -505,7 +505,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  19
                 </span>
               
             </div>
@@ -563,7 +563,361 @@
 <li>老版编译器<code>auto</code>不识别</li>
 </ul>
 <h3 id="声明错误-declaration-error"><a href="#声明错误-declaration-error" class="headerlink" title="声明错误 declaration error"></a>声明错误 <code>declaration error</code></h3><p>emmm</p>
-<h1 id="类-class"><a href="#类-class" class="headerlink" title="类 class"></a>类 class</h1><h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/JavaScript学习手册/">JavaScript学习指南</a></li><li><a href="https://vel.life/Java学习手册/">Java学习指南</a></li></ul></div>
+<h1 id="模板-STL4C"><a href="#模板-STL4C" class="headerlink" title="模板 STL4C++"></a>模板 STL4C++</h1><h2 id="顺序容器"><a href="#顺序容器" class="headerlink" title="顺序容器"></a>顺序容器</h2><h3 id="vector-向量"><a href="#vector-向量" class="headerlink" title="vector 向量"></a><code>vector</code> 向量</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; V;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; V(<span class="number">7</span>); <span class="comment">// 默认值初始化；int默认值为0</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; V(<span class="number">7</span>, <span class="number">1</span>); <span class="comment">// 自定义初始化，7个1</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; V&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;; <span class="comment">// C++11全自定义初始化，[1, 2, 3]</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it; <span class="comment">// 新建迭代器</span></span><br><span class="line"></span><br><span class="line">V.push_back(t); <span class="comment">// 在尾部插入元素</span></span><br><span class="line">V[i]; <span class="comment">// 索引元素，类似数组</span></span><br><span class="line">V.pop_back(); <span class="comment">// 弹出尾部元素</span></span><br><span class="line">V.erase(pos); <span class="comment">// 删去指定位置元素</span></span><br><span class="line">	V.erase(pos1, pos2); <span class="comment">// 删去指定范围[pos1, pos2)元素</span></span><br><span class="line">V.clear(); <span class="comment">// 清空</span></span><br><span class="line">V.insert(it, x) <span class="comment">// 插入</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下为顺序容器通用操作</span></span><br><span class="line">V.empty(); <span class="comment">// 判断是否为空</span></span><br><span class="line">V.size(); <span class="comment">// 返回数组大小</span></span><br><span class="line">V.resize(); <span class="comment">// 设置容器大小</span></span><br><span class="line">V.begin(); V.end(); <span class="comment">// 迭代器，分别指向首尾，类似指针</span></span><br><span class="line">	V.cbegin(); V.cend(); <span class="comment">// 常量迭代器，const.属性</span></span><br><span class="line">	V.rbegin(); V.rend(); <span class="comment">// reversed，反向迭代器，指向尾首</span></span><br><span class="line">		V.crbegin(); V.crend(); <span class="comment">// 常量反向迭代器</span></span><br><span class="line">V.assign(A.cbegin(), A.cend()); <span class="comment">// 赋值操作，类似延后构造</span></span><br><span class="line">	V.assign(n, t);</span><br><span class="line">swap(A, B); <span class="comment">// 交换</span></span><br><span class="line">reverse(A.begin(), A.end()); <span class="comment">// 反转</span></span><br></pre></td></tr></table></figure>
+<p>自定义比较函数<code>cmp</code>：（以优先队列为例）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span> <span class="params">()</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x &gt; y; <span class="comment">// x 小的优先级高</span></span><br><span class="line">        <span class="comment">//也可以写成其他方式，如：return p[x] &gt; p[y]; 表示 p[i] 小的优先级高</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, cmp&gt;q;<span class="comment">//定义方法</span></span><br><span class="line"><span class="comment">//其中，第二个参数为容器类型。第三个参数为比较函数。</span></span><br></pre></td></tr></table></figure>
+<h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a><code>string</code> 字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> S;</span><br><span class="line"></span><br><span class="line">S[i]; <span class="comment">// 索引元素，类似数组</span></span><br><span class="line">	S[i] = <span class="built_in">tolower</span>(S[i]); <span class="comment">// 转为小写；需要循环</span></span><br><span class="line">	S[i] = <span class="built_in">toupper</span>(S[i]); <span class="comment">// 转为大写</span></span><br><span class="line">S.append(<span class="string">"123"</span>); <span class="comment">// 追加字符串</span></span><br><span class="line">S.erase(pos, len);<span class="comment">// 删除子串，位置[pos, pos+len)</span></span><br><span class="line">S.size(); S.length(); <span class="comment">// 长度，O(1)</span></span><br><span class="line">S.replace(<span class="number">11</span>, <span class="number">3</span>, <span class="string">"5th"</span>); <span class="comment">// 从位置11开始删除3个字符并插入"5th"</span></span><br><span class="line">	S.replace(it1, it2, str2); <span class="comment">// 把S的迭代器[it1, it2)范围的子串替换为str2</span></span><br><span class="line">s1 = S.substr(<span class="number">0</span>, <span class="number">3</span>), <span class="comment">// [0,3)子串</span></span><br><span class="line">S.find(<span class="string">"b"</span>,<span class="number">5</span>); <span class="comment">// 下标5开始,查找字符串b,返回b在s中的下标</span></span><br><span class="line">S.rfind(<span class="string">"b"</span>); <span class="comment">// 反向查找</span></span><br><span class="line">S.find_first_of(ele); <span class="comment">// 返回ele字符串中任意字符在s中第一次出现的下标位置，该函数的返回值是被搜索字符串的第 1 个字符第 1 次出现的下标（位置）</span></span><br><span class="line">S.find_last_of(ele); <span class="comment">// 返回值是被搜索字符串的最后 1 个字符的下标（位置）</span></span><br><span class="line">S.find_first_not_of(ele); <span class="comment">//查找S中与ele第一个不匹配的位置</span></span><br><span class="line">S.find_last_not_of(ele);</span><br><span class="line">to_string(A); <span class="comment">// 将任何基本型转换为string</span></span><br><span class="line">stoi(s, p, b); <span class="comment">// 将string 转换为 int, p默认为0(保存指针), b默认为10(进制)</span></span><br><span class="line">	stod(s); <span class="comment">// 将string 转换为 double</span></span><br><span class="line">	stoll(s); <span class="comment">// 将string 转换为 long long</span></span><br></pre></td></tr></table></figure>
+<h3 id="deque-双端队列"><a href="#deque-双端队列" class="headerlink" title="deque 双端队列"></a><code>deque</code> 双端队列</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; DQ;</span><br><span class="line"></span><br><span class="line">DQ.push_front(ele); <span class="comment">// 头部插入</span></span><br><span class="line">DQ.push_back(ele);  <span class="comment">// 尾部插入</span></span><br><span class="line">DQ.insert(it, ele); <span class="comment">// 在it迭代器位置之前插入元素</span></span><br><span class="line">	DQ.insert(it, num, ele); <span class="comment">// 插入num个ele</span></span><br><span class="line">	DQ.insert(it, first, last); <span class="comment">// 插入迭代器[first, last)所指内元素</span></span><br><span class="line">DQ.erase(it); <span class="comment">// 删除某个元素</span></span><br><span class="line">	DQ.erase(first, last); <span class="comment">// 删除迭代器[first, last)所指内元素</span></span><br><span class="line">DQ.pop_front(); <span class="comment">// 头部删除</span></span><br><span class="line">DQ.pop_back();  <span class="comment">// 尾部删除</span></span><br><span class="line">DQ.at(pos); <span class="comment">// 索引</span></span><br><span class="line">DQ.front(); <span class="comment">// 首元素的引用</span></span><br><span class="line">DQ.back();  <span class="comment">// 尾元素的引用</span></span><br></pre></td></tr></table></figure>
+<h3 id="list-双向链表"><a href="#list-双向链表" class="headerlink" title="list 双向链表"></a><code>list</code> 双向链表</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; L;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 支持deque的以上同名操作 </span></span><br><span class="line">L.clear(); <span class="comment">// 清空</span></span><br><span class="line">L1.merge(L2, greater&lt;<span class="keyword">int</span>&gt;());<span class="comment">//合并后升序排列，实际上默认就是升序</span></span><br></pre></td></tr></table></figure>
+<h4 id="forward-list-单向链表"><a href="#forward-list-单向链表" class="headerlink" title="forward_list 单向链表"></a><code>forward_list</code> 单向链表</h4><blockquote>
+<p>只支持单向顺序访问。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">forward_list&lt;<span class="keyword">int</span>&gt; FL;</span><br><span class="line"></span><br><span class="line"><span class="comment">// forward_list不支持pop_back()， vector和string不支持pop_front()</span></span><br><span class="line">FL.max_size(); <span class="comment">// 返回最大支持容量，forward_list不支持size操作</span></span><br><span class="line">FL.empty();</span><br></pre></td></tr></table></figure>
+<h3 id="array-固定数组"><a href="#array-固定数组" class="headerlink" title="array 固定数组"></a><code>array</code> 固定数组</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>， 100&gt; A;</span><br><span class="line">	<span class="built_in">array</span>&lt;<span class="keyword">double</span>，100&gt; A &#123;&#125;; <span class="comment">// 初始化为100个0.0</span></span><br><span class="line">	<span class="built_in">array</span>&lt;<span class="keyword">double</span>，5&gt; A &#123;<span class="number">0.5</span>, <span class="number">1.0</span>&#125;; <span class="comment">// 部分初始化: &#123;0.5, 1.0, 0.0, 0.0, 0.0&#125;</span></span><br><span class="line">A.fill(<span class="number">3.1415926</span>); <span class="comment">// 设定所有元素为某值</span></span><br></pre></td></tr></table></figure>
+<h3 id="stack-栈"><a href="#stack-栈" class="headerlink" title="stack 栈"></a><code>stack</code> 栈</h3><blockquote>
+<p>stack/queue/priority_queue 均是顺序容器适配器。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; S; <span class="comment">// 以deque为底层容器</span></span><br><span class="line"></span><br><span class="line">S.push(i); <span class="comment">// 压入元素，O(1)</span></span><br><span class="line">S.emplace(inits); <span class="comment">//构造并压入元素，inits必须是可供构造元素的数据</span></span><br><span class="line">S.top(); <span class="comment">// 读取栈顶，O(1)</span></span><br><span class="line">S.pop();  <span class="comment">// 弹出元素，无返回值，O(1)</span></span><br><span class="line">S.empty(); S.size();  <span class="comment">// O(1)</span></span><br></pre></td></tr></table></figure>
+<h3 id="queue-队列"><a href="#queue-队列" class="headerlink" title="queue 队列"></a><code>queue</code> 队列</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q; <span class="comment">// 以deque为底层容器</span></span><br><span class="line"></span><br><span class="line">Q.push(i); <span class="comment">// 压入元素，O(1)</span></span><br><span class="line">Q.emplace(inits); <span class="comment">//构造并压入元素，inits必须是可供构造元素的数据</span></span><br><span class="line">Q.front(); Q.back(); <span class="comment">// 读取队首/尾，O(1)</span></span><br><span class="line">Q.pop();  <span class="comment">// 弹出元素，无返回值，O(1)</span></span><br><span class="line">Q.empty(); Q.size();  <span class="comment">//O(1)</span></span><br></pre></td></tr></table></figure>
+<h3 id="priority-queue-优先队列"><a href="#priority-queue-优先队列" class="headerlink" title="priority_queue 优先队列"></a><code>priority_queue</code> 优先队列</h3><blockquote>
+<p>即完全二叉堆。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; PQ;  <span class="comment">// 以vector为底层容器，默认大根堆less&lt;int&gt;</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; PQ;  <span class="comment">// 小根堆</span></span><br><span class="line"></span><br><span class="line">PQ.push(i); <span class="comment">// 压入元素，O(logN)</span></span><br><span class="line">PQ.emplace(inits); <span class="comment">//构造并压入元素，inits必须是可供构造元素的数据</span></span><br><span class="line">PQ.top(); <span class="comment">// 读取最高优先级元素，O(1)</span></span><br><span class="line">PQ.pop();  <span class="comment">// 弹出元素，无返回值，O(logN)</span></span><br><span class="line">PQ.empty(); PQ.size();  <span class="comment">// O(1)</span></span><br></pre></td></tr></table></figure>
+<h2 id="关联容器"><a href="#关联容器" class="headerlink" title="关联容器"></a>关联容器</h2><h3 id="map-映射"><a href="#map-映射" class="headerlink" title="map 映射"></a><code>map</code> 映射</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; M;</span><br><span class="line"></span><br><span class="line">M[<span class="string">"top"</span>] = <span class="number">1</span>; <span class="comment">// 赋值添加元素</span></span><br><span class="line">	M.at(key); <span class="comment">// 另一种访问方式</span></span><br><span class="line">M.find(key);  <span class="comment">// O(logN)，返回迭代器</span></span><br><span class="line">	<span class="keyword">if</span>(M.find(key) != M.end());  <span class="comment">// 判断是否存在</span></span><br><span class="line">M.insert( make_pair(key, value) ); <span class="comment">// 新建对并插入</span></span><br><span class="line">	M.insert( pair&lt;Tk, Tv&gt;(key, value) );</span><br><span class="line">	M.insert( &#123;key, value&#125; );</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;::iterator it = M.find(key); <span class="comment">// 查找失败返回end()</span></span><br><span class="line">	<span class="keyword">if</span>(M.find(a) == M.end()) <span class="comment">// 若没找到</span></span><br><span class="line">M.erase(key); <span class="comment">// 删去键所指定的对，O(logN)</span></span><br><span class="line">M.erase(it);  <span class="comment">// 删去迭代器指定的对，O(1)</span></span><br><span class="line">M.size();   <span class="comment">// O(1)</span></span><br><span class="line">M.clear();  <span class="comment">// O(N)</span></span><br></pre></td></tr></table></figure>
+<h4 id="multimap-映射（可重复）"><a href="#multimap-映射（可重复）" class="headerlink" title="multimap 映射（可重复）"></a><code>multimap</code> 映射（可重复）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">multimap</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; M;</span><br></pre></td></tr></table></figure>
+<h4 id="pair-对"><a href="#pair-对" class="headerlink" title="pair 对"></a><code>pair</code> 对</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"></span><br><span class="line">pair&lt;T1, T2&gt; p;</span><br><span class="line">pair&lt;T1, T2&gt; p(v1, v2);</span><br><span class="line">make_pair(v1, v2);</span><br><span class="line"></span><br><span class="line">it-&gt;first; it-&gt;second; <span class="comment">// 通过first和secnod来引用值，it迭代器指向一个pair</span></span><br><span class="line">p1 &lt; p2; <span class="comment">//如果p1.first&lt;p2.first或者!(p2.first &lt; p1.first)&amp;&amp; p1.second&lt;p2.second，则返回true</span></span><br><span class="line">p1 == p2 <span class="comment">//p1.first == p2.first &amp;&amp; p1.second == p2.second</span></span><br></pre></td></tr></table></figure>
+<p>pair可以看作如下结构体：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pair</span>&#123;</span></span><br><span class="line">    typeName1 first;</span><br><span class="line">    typeName2 second;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="无序容器"><a href="#无序容器" class="headerlink" title="无序容器"></a>无序容器</h2><h3 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a><code>set</code> 集合</h3><blockquote>
+<p>尽管是“无序容器”，仍然可以$O(logn)$查找。（<code>set</code>中的元素自动递增排序）</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; S: <span class="comment">// map 和 set 底层都基于红黑树</span></span><br><span class="line"><span class="built_in">set</span> &lt;T, greater &lt;T&gt; &gt; st; <span class="comment">// 降序排列</span></span><br><span class="line"></span><br><span class="line">S.insert(ele);  <span class="comment">// O(logN)</span></span><br><span class="line">S.find(ele);    <span class="comment">// O(logN)，返回迭代器</span></span><br><span class="line">S.erase(ele);   <span class="comment">// O(logN)</span></span><br><span class="line">	S.erase(it);   <span class="comment">// O(1)，迭代器删除</span></span><br><span class="line">S.size();   <span class="comment">// O(1)</span></span><br><span class="line">S.clear();  <span class="comment">// O(N)</span></span><br><span class="line">S.begin(); S.end(); <span class="comment">// 迭代器</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it = S.begin(); it != S.end(); ++it)&#123; &#125; <span class="comment">// 遍历</span></span><br><span class="line">pair&lt;itr, itr&gt; s.equal_range(T e); <span class="comment">//返回键值等于e的元素区间;</span></span><br><span class="line"><span class="keyword">int</span> s.count(T e); <span class="comment">//返回键值为e的元素的个数;</span></span><br><span class="line">itr s.upper_bound(T e); <span class="comment">//返回大于e的第一个元素位置;</span></span><br><span class="line">itr s.lower_bound(T e); <span class="comment">//返回大于等于e的第一个元素位置;</span></span><br></pre></td></tr></table></figure>
+<h4 id="multiset-集合（可重复）"><a href="#multiset-集合（可重复）" class="headerlink" title="multiset 集合（可重复）"></a><code>multiset</code> 集合（可重复）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; S: <span class="comment">// map 和 set 底层都基于红黑树</span></span><br><span class="line"></span><br><span class="line">S.insert(ele);</span><br><span class="line">S.erase(ele);</span><br><span class="line">S.size();</span><br><span class="line">S.begin(); S.end(); <span class="comment">// 迭代器</span></span><br></pre></td></tr></table></figure>
+<h3 id="bitset-位图"><a href="#bitset-位图" class="headerlink" title="bitset 位图"></a><code>bitset</code> 位图</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bitset</span> &lt;<span class="keyword">int</span> n&gt; b; <span class="comment">//n为二进制位数（位图的大小）</span></span><br><span class="line"><span class="built_in">bitset</span> &lt;<span class="keyword">int</span> n&gt; b(<span class="keyword">unsigned</span> num);</span><br><span class="line"><span class="built_in">bitset</span> &lt;<span class="keyword">int</span> n&gt; b(<span class="built_in">string</span> s); <span class="comment">//s为字符串形式的二进制位</span></span><br><span class="line"></span><br><span class="line">b[<span class="number">3</span>] = <span class="number">1</span>; b[<span class="number">0</span>] = <span class="literal">true</span>; <span class="comment">// 赋值 / 读取</span></span><br><span class="line"><span class="keyword">int</span> b.size(); <span class="comment">//返回位数</span></span><br><span class="line"><span class="keyword">int</span> b.count(); <span class="comment">//返回为1的位数个数</span></span><br><span class="line"><span class="keyword">bool</span> b.any(); <span class="comment">//返回是否有为1的位</span></span><br><span class="line"><span class="keyword">bool</span> b.none(); <span class="comment">//范围是否没有为1的位</span></span><br><span class="line"><span class="built_in">bitset</span> b.<span class="built_in">set</span>(); <span class="comment">//全部位赋值为1</span></span><br><span class="line"><span class="built_in">bitset</span> b.<span class="built_in">set</span>(<span class="keyword">int</span> p); <span class="comment">//将p位赋值为1</span></span><br><span class="line"><span class="built_in">bitset</span> b.<span class="built_in">set</span>(<span class="keyword">int</span> p, <span class="keyword">bool</span> num); <span class="comment">//将p位设置为num</span></span><br><span class="line"><span class="built_in">bitset</span> b.reset(); <span class="comment">//全部位赋值为0</span></span><br><span class="line"><span class="built_in">bitset</span> b.reset(<span class="keyword">int</span> p);</span><br><span class="line"><span class="built_in">bitset</span> b.flip(); <span class="comment">//全部取反</span></span><br><span class="line"><span class="built_in">bitset</span> b.flip(<span class="keyword">int</span> p);</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> b.to_ulong(); <span class="comment">//返回为ulong，超出报错</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> b.to_ullong(); <span class="comment">//返回为ull，超出报错</span></span><br><span class="line"><span class="built_in">string</span> b.to_string(); <span class="comment">//返回为string</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不定长的<code>bitset</code>，请使用（奇葩的）<code>vector&lt;bool&gt;</code>。</p>
+</blockquote>
+<h2 id="哈希容器"><a href="#哈希容器" class="headerlink" title="哈希容器"></a>哈希容器</h2><p>当不需要元素排序时，尽量使用基于Hash算法的哈希容器获得更好的查找性能。C++11引入了哈希容器。</p>
+<h3 id="unordered-map-unordered-set"><a href="#unordered-map-unordered-set" class="headerlink" title="unordered_map / unordered_set"></a><code>unordered_map</code> / <code>unordered_set</code></h3><p>仅仅是底层实现不同，通用外部方法封装与<code>map</code> / <code>set</code>一致。例子如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; um &#123;</span><br><span class="line">	&#123;<span class="string">"Dijkstra"</span>, <span class="number">1972</span>&#125;, &#123;<span class="string">"Scott"</span>, <span class="number">1976</span>&#125;,</span><br><span class="line">	&#123;<span class="string">"Wilkes"</span>, <span class="number">1967</span>&#125;  , &#123;<span class="string">"Hamming"</span>, <span class="number">1968</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line">um[<span class="string">"Ritchie"</span>] = <span class="number">1983</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> x : um) <span class="built_in">cout</span> &lt;&lt; <span class="string">"i"</span> &lt;&lt; x.first &lt;&lt; <span class="string">","</span> &lt;&lt; x.second &lt;&lt; <span class="string">"&#125;"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>哈希容器还包括：<code>unordered_multimap</code> / <code>unordered_multiset</code>。</p>
+</blockquote>
+<h4 id="自定义哈希函数"><a href="#自定义哈希函数" class="headerlink" title="自定义哈希函数"></a>自定义哈希函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> HASH = hash&lt;<span class="keyword">int</span>&gt;() x; <span class="comment">// 内置hash类只能对内置类型如int/string/vector等进行哈希值计算</span></span><br><span class="line"></span><br><span class="line">hash&lt;<span class="keyword">int</span>&gt; H; <span class="comment">// hash数据结构重载了()运算符</span></span><br><span class="line"><span class="keyword">int</span> HASH = H(x);</span><br></pre></td></tr></table></figure>
+<p>对于自定义类型，需要提供自定义的Hash函数。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Type</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x; <span class="built_in">string</span> y;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> == (<span class="keyword">const</span> Type&amp; a) <span class="keyword">const</span>&#123; <span class="comment">// 重载==，提供判断碰撞的方法</span></span><br><span class="line">        <span class="keyword">return</span> x == a.x &amp;&amp; y = a.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashFunc</span>&#123;</span> <span class="comment">// 函数类，通过"()"重载来当函数使用</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="keyword">size_t</span> <span class="keyword">operator</span>()&#123;<span class="keyword">const</span> Type &amp;o&#125; <span class="keyword">const</span>&#123; <span class="comment">// size_t约等于unsigned</span></span><br><span class="line">        <span class="keyword">return</span> ((hash&lt;<span class="keyword">int</span>&gt;() (o.x) ^ (hash&lt;<span class="built_in">string</span>&gt;() (o.y) &lt;&lt; <span class="number">1</span>)) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 通过移位+异或(XOR)获得哈希值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;Tpye, <span class="built_in">string</span>, HashFunc&gt; testHash =&#123;</span><br><span class="line">        &#123; &#123;<span class="number">1</span>, <span class="string">"1"</span>&#125;, <span class="string">"one"</span>&#125;,</span><br><span class="line">        &#123; &#123;<span class="number">2</span>, <span class="string">"2"</span>&#125;, <span class="string">"two"</span>&#125;,</span><br><span class="line">        &#123; &#123;<span class="number">3</span>, <span class="string">"3"</span>&#125;, <span class="string">"three"</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : testHash)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; kv.first.x &lt;&lt; <span class="string">","</span> &lt;&lt; kv.first.y &lt;&lt; <span class="string">" - "</span> &lt;&lt; kv.second &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="STL容器-输出封装（vector-set）"><a href="#STL容器-输出封装（vector-set）" class="headerlink" title="STL容器-输出封装（vector/set）"></a>STL容器-输出封装（<code>vector</code>/<code>set</code>）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="keyword">const</span> <span class="built_in">vector</span>&lt;T&gt;&amp; v)&#123; <span class="comment">// vector输出流</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.size(); i++)</span><br><span class="line">        os&lt;&lt;v[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="keyword">const</span> <span class="built_in">set</span>&lt;T&gt;&amp; v)&#123; <span class="comment">// set输出流</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">typename</span> <span class="built_in">set</span>&lt;T&gt;::iterator it = v.begin(); it != v.end(); i++)</span><br><span class="line">        os&lt;&lt;*it&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a; a.push_back(<span class="number">1</span>); a.push_back(<span class="number">2</span>); a.push_back(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; a; <span class="comment">// 输出：1 2 3</span></span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; b; b.insert(<span class="string">"1"</span>); b.inset(<span class="string">"2"</span>); b.insert(<span class="string">"3"</span>);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; b; <span class="comment">// 输出：1 2 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="C-算法库"><a href="#C-算法库" class="headerlink" title="C++算法库"></a>C++算法库</h2><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>swap(a, b)</code></strong></td>
+<td>交换</td>
+</tr>
+<tr>
+<td><strong><code>for_each(beg, end, func)</code></strong></td>
+<td>对 <code>[beg, end)</code>中的每个元素均调用<code>func</code>函数</td>
+</tr>
+<tr>
+<td><strong><code>next_permutation(beg, end, cmp)</code></strong></td>
+<td>下一个排列；就地；参数为迭代器<code>[beg, end)</code></td>
+</tr>
+<tr>
+<td><code>prev_permutation(beg, end, cmp)</code></td>
+<td>上一个排列</td>
+</tr>
+<tr>
+<td><code>fill(a, a + n, x)</code> / <code>fill_n(a, n, x)</code></td>
+<td>更新；将a数组中前n项设为数字x</td>
+</tr>
+<tr>
+<td><code>memset(a，b，n)</code></td>
+<td>设置；b可为<code>0</code> / <code>-1</code> / <code>0x3f</code>(Inf.)；<br>前n项设为数字b（char型初始化函数）</td>
+</tr>
+<tr>
+<td><code>unique(beg, end, cmp)</code></td>
+<td>唯一化</td>
+</tr>
+<tr>
+<td><strong><code>reverse(beg, end)</code></strong></td>
+<td>反转；参数为迭代器<code>[beg, end)</code></td>
+</tr>
+<tr>
+<td><code>rotate(beg, mid, end)</code></td>
+<td>旋转；操作后变为<code>[mid, end)+[beg, mid)</code>；<br>返回旋转前beg元素的新位置</td>
+</tr>
+<tr>
+<td><code>equal(beg1, end1, beg2)</code></td>
+<td>判断两个序列是否全等</td>
+</tr>
+<tr>
+<td><code>copy(beg, end, dest)</code> / <code>copy_n(beg, n, dest)</code></td>
+<td>复制</td>
+</tr>
+<tr>
+<td><code>copy_if(beg, end, dest, func)</code></td>
+<td>选择性复制；满足<code>func</code>返回<code>true</code></td>
+</tr>
+<tr>
+<td><strong><code>merge(beg1, end1, beg2, end2, dest, cmp)</code></strong></td>
+<td>有序归并</td>
+</tr>
+<tr>
+<td><code>inplace_merge(beg, mid, end, cmp)</code></td>
+<td>就地有序归并</td>
+</tr>
+<tr>
+<td><code>replace(beg, end, old_e, new_e)</code></td>
+<td>选择性替换</td>
+</tr>
+<tr>
+<td><code>replace_if(beg, end, func, new_e)</code></td>
+<td>根据<code>func</code>选择性替换</td>
+</tr>
+<tr>
+<td><code>set_union(beg, end, beg2, end2, dest, cmp)</code></td>
+<td>求并</td>
+</tr>
+<tr>
+<td><code>set_intersection(beg, end, beg2, end2, dest, cmp)</code></td>
+<td>求交</td>
+</tr>
+<tr>
+<td><code>set_difference(beg, end, beg2, end2, dest, cmp)</code></td>
+<td>求差；减去第二个序列中的元素</td>
+</tr>
+<tr>
+<td><code>set_symmetric_difference(beg, end, beg2, end2, dest, cmp)</code></td>
+<td>求对称差；所有只出现在一个序列中的元素</td>
+</tr>
+<tr>
+<td><code>substr(beg, end)</code></td>
+<td>返回<code>[beg, end)</code>子串</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>find(beg, end, e)</code></strong></td>
+<td>查找元素<code>e</code></td>
+</tr>
+<tr>
+<td><code>find_if(beg, end, func)</code></td>
+<td>按条件查找；使得<code>func</code>返回<code>true</code></td>
+</tr>
+<tr>
+<td><code>find_if_not(beg, end, func)</code></td>
+<td>按条件查找不满足的项；使得<code>func</code>返回<code>false</code></td>
+</tr>
+<tr>
+<td><code>count(beg, end, e)</code></td>
+<td>统计；在<code>[beg, end)</code> 内等于<code>e</code>的元素个数</td>
+</tr>
+<tr>
+<td><code>count_if(beg, end, func)</code></td>
+<td>统计；在<code>[beg, end)</code> 内使<code>func</code>返回<code>true</code>的元素</td>
+</tr>
+<tr>
+<td><code>__builtin_popcount(x)</code></td>
+<td><code>1</code>计数；计算<code>x</code>的二进制中<code>1</code>的个数</td>
+</tr>
+<tr>
+<td><code>all_of(beg, end, func)</code></td>
+<td>是否<code>[beg, end)</code>全部命中；返回<code>bool</code>型</td>
+</tr>
+<tr>
+<td><code>any_of(beg, end, func)</code></td>
+<td>任意命中</td>
+</tr>
+<tr>
+<td><code>none_of(beg, end, func)</code></td>
+<td>无一命中</td>
+</tr>
+<tr>
+<td><code>binary_search(beg, end, e, cmp)</code></td>
+<td>二分查找；返回<code>bool</code></td>
+</tr>
+<tr>
+<td><strong><code>lower_bound(a, a+a.size(), x, cmp)</code></strong></td>
+<td>下界；查找 $\leq x$ 的第一个位置；<code>cmp</code>可选；返回一个迭代器</td>
+</tr>
+<tr>
+<td><code>upper_bound(a, a+a.size(), x, cmp)</code></td>
+<td>上界；查找 $&gt;x$ 的第一个位置</td>
+</tr>
+<tr>
+<td><code>equal_range(beg, end, e, cmp)</code></td>
+<td>返回<code>pair</code>对<code>(A, B)</code>;<br>分别是<code>lower_bound</code>和<code>upper_bound</code>的返回值</td>
+</tr>
+<tr>
+<td><code>min_element(beg, end, func)</code></td>
+<td>最小值；区间<code>[beg, end)</code>；<code>func</code>比较器是可选参数</td>
+</tr>
+<tr>
+<td><code>max_element(beg, end, func)</code></td>
+<td>最大值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>sort(beg, end, cmp)</code></strong></td>
+<td>排序；默认升序<code>less</code>($&lt;$)；<br>内置<code>greater</code> / <code>less_equal</code> / <code>greater_equal</code></td>
+</tr>
+<tr>
+<td><code>stable_sort(beg, end, cmp)</code></td>
+<td>稳定排序</td>
+</tr>
+<tr>
+<td><code>is_sorted(beg, end, cmp)</code></td>
+<td>判断有序性</td>
+</tr>
+<tr>
+<td><strong><code>partial_sort(beg, beg+k, end, cmp)</code></strong></td>
+<td>部分排序；比如求<strong>前 k 大元素</strong><br>将序列中前k小元素按顺序置于前k个位置<br>其他元素不保证顺序。O(nlogk)</td>
+</tr>
+<tr>
+<td><strong><code>nth_element(beg, nth, end, cmp)</code></strong></td>
+<td><code>nth</code>必须为迭代器，初始指向首位，最后返回所求位置；<br>比如求<strong>第<code>n</code>大元素</strong>；并且会按照该元素划分</td>
+</tr>
+<tr>
+<td><strong><code>partition(beg, end, func)</code></strong></td>
+<td>快速划分；返回分割点</td>
+</tr>
+<tr>
+<td><code>stable_partition(beg, end, func)</code></td>
+<td>稳定划分</td>
+</tr>
+<tr>
+<td><code>is_partitioned(beg, end, func)</code></td>
+<td>如果序列已被划分为<code>[满足 / 不满足]</code>；则返回<code>true</code></td>
+</tr>
+<tr>
+<td><code>partition_copy(beg, end, dest1, dest2, func)</code></td>
+<td>将满足<code>func</code>的元素拷贝到<code>dest1</code>；其他拷贝到<code>dest2</code></td>
+</tr>
+<tr>
+<td><code>partition_point(beg, end, func)</code></td>
+<td>求分割点；返回前段的<code>end()处</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min(a, b, cmp)</code> / <code>min(seq, cmp)</code></td>
+<td>最小值；<code>seq</code>是一个序列</td>
+</tr>
+<tr>
+<td><code>max(a, b, cmp)</code> / <code>max(seq, cmp)</code></td>
+<td>最大值</td>
+</tr>
+<tr>
+<td><code>min_element(beg, end, cmp)</code> / <code>max_element(beg, end, cmp)</code></td>
+<td>序列最大/最大元素（返回迭代器）</td>
+</tr>
+<tr>
+<td><code>__gcd(a,b)</code></td>
+<td>最大公约数</td>
+</tr>
+<tr>
+<td><code>lexicographical_compare(beg1, end1, beg2, end2, cmp)</code></td>
+<td>字典序比较</td>
+</tr>
+<tr>
+<td><code>accumulate(beg, end, init, op)</code></td>
+<td>序列求和；<code>init</code>为初值<br><code>op</code>可自定义二元运算<br>返回<code>init</code>的类型</td>
+</tr>
+<tr>
+<td><code>inner_product(beg1, end1, beg2, init, op1, op2)</code></td>
+<td>内积；<code>init</code>为初始值；<br><code>op1</code>和<code>op2</code>为可选的广义加法/乘法</td>
+</tr>
+<tr>
+<td><code>partial_sum(beg, end, dest, op)</code></td>
+<td>计算后缀数组；<br>每一个新元素等于其前缀的累计和</td>
+</tr>
+<tr>
+<td><code>iota(beg, end, e)</code></td>
+<td>将每一项分别设为<code>[e, e+1, ...]</code></td>
+</tr>
+<tr>
+<td><code>sqrt(x)</code> / <code>cbrt(x)</code></td>
+<td>开方 / 立方根</td>
+</tr>
+<tr>
+<td><code>exp(x)</code></td>
+<td>e指数</td>
+</tr>
+<tr>
+<td><code>pow(x, y)</code></td>
+<td>x^y幂</td>
+</tr>
+<tr>
+<td><code>log(x)</code></td>
+<td>ln对数</td>
+</tr>
+<tr>
+<td><code>log10(x)</code></td>
+<td>lg对数</td>
+</tr>
+<tr>
+<td><code>abs(x)</code> / <code>fabs(d)</code></td>
+<td>绝对值 / 浮点绝对值</td>
+</tr>
+<tr>
+<td><code>sin(x)</code> / <code>cos(x)</code> / <code>tan(x)</code> / <code>atan(x)</code></td>
+<td>三角函数</td>
+</tr>
+<tr>
+<td><code>ceil(x)</code> / <code>floor(x)</code></td>
+<td>向上/下取整</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="C-特殊语法"><a href="#C-特殊语法" class="headerlink" title="C++特殊语法"></a>C++特殊语法</h2><h3 id="模板-template"><a href="#模板-template" class="headerlink" title="模板 template"></a>模板 <code>template</code></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">func</span><span class="params">(T a)</span></span>&#123;</span><br><span class="line">    T b;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Map</span>&#123;</span></span><br><span class="line">    T1 key; T2 value;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类型推导-auto"><a href="#类型推导-auto" class="headerlink" title="类型推导 auto"></a>类型推导 <code>auto</code></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i: S) <span class="comment">// 简约遍历法</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i: S) <span class="comment">// 需要修改时，引用</span></span><br><span class="line">  vis(i);</span><br></pre></td></tr></table></figure>
+<p>这种写法中，<code>for</code>循环会从头到尾遍历一遍<code>S</code>容器，将其中的值取出。需要注意的是，如果要修改元素的值的话，应该声明成引用<code>auto&amp; i</code>。</p>
+<p>需要注意的是，<code>auto</code>关键字是类型推断而不是动态类型，用<code>auto</code>声明的变量<strong>必须初始化</strong>，并且确定类型后就不能更改。</p>
+<h3 id="匿名函数-lambda"><a href="#匿名函数-lambda" class="headerlink" title="匿名函数 lambda"></a>匿名函数 <code>lambda</code></h3><p>函数式编程在需要的地方定义函数，而不是提前定义好才能用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指明返回类型</span></span><br><span class="line"><span class="keyword">auto</span> add = [](<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; <span class="keyword">int</span> &#123; <span class="keyword">return</span> a + b; &#125;;</span><br><span class="line"><span class="comment">// 自动推断返回类型</span></span><br><span class="line"><span class="keyword">auto</span> multiply = [](<span class="keyword">int</span> a, <span class="keyword">int</span> b) &#123; <span class="keyword">return</span> a * b; &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> sum = add(<span class="number">2</span>, <span class="number">5</span>);   <span class="comment">// 输出：7</span></span><br><span class="line"><span class="keyword">int</span> product = multiply(<span class="number">2</span>, <span class="number">5</span>);  <span class="comment">// 输出：10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数变量</span></span><br><span class="line"><span class="built_in">std</span>::function&lt;<span class="keyword">void</span>(<span class="keyword">int</span>)&gt; add = [&amp;total](<span class="keyword">int</span> x) &#123;total += x;&#125;;</span><br><span class="line">for_each(begin(<span class="built_in">list</span>), end(<span class="built_in">list</span>), add);</span><br><span class="line"><span class="comment">// auto自动推导</span></span><br><span class="line"><span class="keyword">auto</span> add2 = [&amp;total](<span class="keyword">int</span> x) &#123;total += x;&#125;;</span><br><span class="line">for_each(begin(<span class="built_in">list</span>), end(<span class="built_in">list</span>), add2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为参数的匿名函数</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TS</span>&#123;</span><span class="keyword">int</span> a, b;&#125; tss[<span class="number">105</span>];</span><br><span class="line">sort(tss, tss+<span class="number">100</span>, [](<span class="keyword">const</span> TS&amp; t1, <span class="keyword">const</span> TS&amp; t2)&#123;</span><br><span class="line">    <span class="keyword">return</span> t1.a != t2.a ? t1.a &lt; t2.a : t1.b &lt; t2.b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> total;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">list</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">for_each(<span class="built_in">list</span>.begin(), <span class="built_in">list</span>.end(), [&amp;total](<span class="keyword">int</span> x) &#123; <span class="comment">// 匿名函数，捕捉total</span></span><br><span class="line">    total += x;  <span class="comment">// 计算累积和</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="空指针-nullptr"><a href="#空指针-nullptr" class="headerlink" title="空指针 nullptr"></a>空指针 <code>nullptr</code></h3><p><code>NULL</code>宏 = 常整数<code>0</code>。<code>nullptr</code>关键字代表值类型<code>std::nullptr_t</code>，语义上可理解为空指针。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *p = <span class="literal">nullptr</span>;</span><br><span class="line"><span class="keyword">if</span>(p)  <span class="comment">// 可以转换为bool的false</span></span><br></pre></td></tr></table></figure>
+<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/JavaScript学习手册/">JavaScript学习指南</a></li><li><a href="https://vel.life/Java学习手册/">Java学习指南</a></li></ul></div>
       
     </div>
     
@@ -709,7 +1063,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">Archives</span>
                 </a>
               </div>
@@ -720,7 +1074,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">Categories</span>
                 </a>
               </div>
@@ -731,7 +1085,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
@@ -794,6 +1148,14 @@
                     <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hanherbert.github.io/" title="知青" target="_blank" rel="external nofollow">知青</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/louieowrth/" title="louieworth" target="_blank" rel="external nofollow">louieworth</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -813,7 +1175,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流-stream"><span class="nav-number">2.</span> <span class="nav-text">流 stream</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不定流"><span class="nav-number">2.1.</span> <span class="nav-text">不定流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">2.3.</span> <span class="nav-text">编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法错误-syntax-error"><span class="nav-number">2.3.1.</span> <span class="nav-text">语法错误 syntax error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型错误-type-error"><span class="nav-number">2.3.2.</span> <span class="nav-text">类型错误 type error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明错误-declaration-error"><span class="nav-number">2.3.3.</span> <span class="nav-text">声明错误 declaration error</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类-class"><span class="nav-number">3.</span> <span class="nav-text">类 class</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">3.1.</span> <span class="nav-text">重载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器"><span class="nav-number">4.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板"><span class="nav-number">5.</span> <span class="nav-text">模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流-stream"><span class="nav-number">2.</span> <span class="nav-text">流 stream</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不定流"><span class="nav-number">2.1.</span> <span class="nav-text">不定流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">2.3.</span> <span class="nav-text">编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法错误-syntax-error"><span class="nav-number">2.3.1.</span> <span class="nav-text">语法错误 syntax error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型错误-type-error"><span class="nav-number">2.3.2.</span> <span class="nav-text">类型错误 type error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明错误-declaration-error"><span class="nav-number">2.3.3.</span> <span class="nav-text">声明错误 declaration error</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板-STL4C"><span class="nav-number">3.</span> <span class="nav-text">模板 STL4C++</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序容器"><span class="nav-number">3.1.</span> <span class="nav-text">顺序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-向量"><span class="nav-number">3.1.1.</span> <span class="nav-text">vector 向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-字符串"><span class="nav-number">3.1.2.</span> <span class="nav-text">string 字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deque-双端队列"><span class="nav-number">3.1.3.</span> <span class="nav-text">deque 双端队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-双向链表"><span class="nav-number">3.1.4.</span> <span class="nav-text">list 双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#forward-list-单向链表"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">forward_list 单向链表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-固定数组"><span class="nav-number">3.1.5.</span> <span class="nav-text">array 固定数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stack-栈"><span class="nav-number">3.1.6.</span> <span class="nav-text">stack 栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#queue-队列"><span class="nav-number">3.1.7.</span> <span class="nav-text">queue 队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priority-queue-优先队列"><span class="nav-number">3.1.8.</span> <span class="nav-text">priority_queue 优先队列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联容器"><span class="nav-number">3.2.</span> <span class="nav-text">关联容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map-映射"><span class="nav-number">3.2.1.</span> <span class="nav-text">map 映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#multimap-映射（可重复）"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">multimap 映射（可重复）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pair-对"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">pair 对</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无序容器"><span class="nav-number">3.3.</span> <span class="nav-text">无序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#set-集合"><span class="nav-number">3.3.1.</span> <span class="nav-text">set 集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#multiset-集合（可重复）"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">multiset 集合（可重复）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitset-位图"><span class="nav-number">3.3.2.</span> <span class="nav-text">bitset 位图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希容器"><span class="nav-number">3.4.</span> <span class="nav-text">哈希容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#unordered-map-unordered-set"><span class="nav-number">3.4.1.</span> <span class="nav-text">unordered_map / unordered_set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义哈希函数"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">自定义哈希函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL容器-输出封装（vector-set）"><span class="nav-number">3.4.2.</span> <span class="nav-text">STL容器-输出封装（vector/set）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-算法库"><span class="nav-number">3.5.</span> <span class="nav-text">C++算法库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作"><span class="nav-number">3.5.1.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">3.5.2.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">3.5.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学"><span class="nav-number">3.5.4.</span> <span class="nav-text">数学</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-特殊语法"><span class="nav-number">3.6.</span> <span class="nav-text">C++特殊语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板-template"><span class="nav-number">3.6.1.</span> <span class="nav-text">模板 template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型推导-auto"><span class="nav-number">3.6.2.</span> <span class="nav-text">类型推导 auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数-lambda"><span class="nav-number">3.6.3.</span> <span class="nav-text">匿名函数 lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空指针-nullptr"><span class="nav-number">3.6.4.</span> <span class="nav-text">空指针 nullptr</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -847,7 +1209,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">438.2k</span>
+    <span title="Site words total count">529.3k</span>
   
 </div>
 

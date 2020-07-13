@@ -142,18 +142,18 @@
 
 
 
-<meta name="description" content="本指南主要选取Python中实用性最大的部分，浅尝辄止。">
+<meta name="description" content="主要选取Python中实用性最大的部分，浅尝辄止。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习手册">
 <meta property="og:url" content="https://vel.life/Python学习手册/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="本指南主要选取Python中实用性最大的部分，浅尝辄止。">
+<meta property="og:description" content="主要选取Python中实用性最大的部分，浅尝辄止。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-29T18:59:13.750Z">
+<meta property="og:updated_time" content="2020-05-18T14:17:12.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习手册">
-<meta name="twitter:description" content="本指南主要选取Python中实用性最大的部分，浅尝辄止。">
+<meta name="twitter:description" content="主要选取Python中实用性最大的部分，浅尝辄止。">
 
 
 
@@ -424,8 +424,8 @@
               
                 <span class="post-meta-item-text">Modified&#58;</span>
               
-              <time title="Modified" itemprop="dateModified" datetime="2019-12-30T02:59:13+08:00">
-                2019-12-30
+              <time title="Modified" itemprop="dateModified" datetime="2020-05-18T22:17:12+08:00">
+                2020-05-18
               </time>
             
           </span>
@@ -489,7 +489,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  94
+                  1,461
                 </span>
               
 
@@ -505,7 +505,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  6
                 </span>
               
             </div>
@@ -526,11 +526,372 @@
       
 
       
-        <p>本指南主要选取Python中实用性最大的部分，浅尝辄止。<a id="more"></a></p>
+        <p>主要选取Python中实用性最大的部分，浅尝辄止。<a id="more"></a></p>
 <p>网络工具综合学习网站：<a href="http://www.runoob.com/" target="_blank" rel="noopener"><strong>Runoob</strong></a>。</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.pythondoc.com/#" target="_blank" rel="noopener">Python 中文学习大本营</a></p>
 <p><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">Python Cookbook</a></p>
 <p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/index.html" target="_blank" rel="noopener">Python yield 使用浅析</a></p>
+<h1 id="STL4Python3"><a href="#STL4Python3" class="headerlink" title="STL4Python3"></a>STL4Python3</h1><p>算法比赛时，计算量小的模拟题，可以尝试利用Python。</p>
+<h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int(a, base)</code></td>
+<td>从base进制(可选)转为整型/10进制（可以处理<strong>2~36进制</strong>的字符串）</td>
+</tr>
+<tr>
+<td><code>bin(a)</code> / <code>oct(a)</code> / <code>hex(a)</code></td>
+<td>转为2/8/16进制的字符串（去前缀<code>print(a[2:])</code>）</td>
+</tr>
+<tr>
+<td><code>float(a)</code></td>
+<td>转为浮点型；失败抛出<code>ValueError</code></td>
+</tr>
+<tr>
+<td><code>str(a)</code></td>
+<td>转为字符串</td>
+</tr>
+<tr>
+<td><code>set(L)</code></td>
+<td>转为集合</td>
+</tr>
+<tr>
+<td><code>type(a)</code></td>
+<td>查看元素类型</td>
+</tr>
+<tr>
+<td><code>&#39;ABC&#39;.join(s_list)</code></td>
+<td>列表转为字符串，分隔符为<code>ABC</code></td>
+</tr>
+<tr>
+<td><code>list(STR)</code></td>
+<td>将字符串转为列表；分字</td>
+</tr>
+<tr>
+<td><code>STR.split(&quot;ABC&quot;)</code></td>
+<td>将字符串转为列表；分隔符为<code>ABC</code></td>
+</tr>
+<tr>
+<td><code>ord(c)</code> / <code>chr(i)</code></td>
+<td>字符转ASCII 数值  /  ASCII 数值转字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>常用类型：<code>int</code>，<code>float</code>，<code>str</code>；<code>list</code>，<code>set</code>。</p>
+</blockquote>
+<h3 id="数据格式化输出"><a href="#数据格式化输出" class="headerlink" title="数据格式化输出"></a>数据格式化输出</h3><p><strong>整数格式化</strong>：</p>
+<blockquote>
+<p>%o —— oct 八进制<br>%d —— dec 十进制<br>%x —— hex 十六进制</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%o'</span> % <span class="number">20</span>)</span><br><span class="line"><span class="number">24</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%d'</span> % <span class="number">20</span>)</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%x'</span> % <span class="number">20</span>)</span><br><span class="line"><span class="number">14</span></span><br></pre></td></tr></table></figure>
+<p><strong>浮点格式化</strong>：</p>
+<blockquote>
+<p>%f ——保留小数点后面六位有效数字<br>　　%.3f，保留3位小数位<br>%e ——保留小数点后面六位有效数字，指数形式输出<br>　　%.3e，保留3位小数位，使用科学计数法<br>%g ——在保证六位有效数字的前提下，使用小数方式，否则使用科学计数法<br>　　%.3g，保留3位有效数字，使用小数或科学计数法</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%f'</span> % <span class="number">1.11</span>)  <span class="comment"># 默认保留6位小数</span></span><br><span class="line"><span class="number">1.110000</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%.1f'</span> % <span class="number">1.11</span>)  <span class="comment"># 取1位小数</span></span><br><span class="line"><span class="number">1.1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%e'</span> % <span class="number">1.11</span>)  <span class="comment"># 默认6位小数，用科学计数法</span></span><br><span class="line"><span class="number">1.110000e+00</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%.3e'</span> % <span class="number">1.11</span>)  <span class="comment"># 取3位小数，用科学计数法</span></span><br><span class="line"><span class="number">1.110e+00</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%g'</span> % <span class="number">1111.1111</span>)  <span class="comment"># 默认6位有效数字</span></span><br><span class="line"><span class="number">1111.11</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%.7g'</span> % <span class="number">1111.1111</span>)  <span class="comment"># 取7位有效数字</span></span><br><span class="line"><span class="number">1111.111</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'%.2g'</span> % <span class="number">1111.1111</span>)  <span class="comment"># 取2位有效数字，自动转换为科学计数法</span></span><br><span class="line"><span class="number">1.1e+03</span></span><br></pre></td></tr></table></figure>
+<h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h2><p>以下为通用的序列操作：（<code>list</code>，<code>str</code>，<code>tuple</code>，<code>range</code>）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>x in s</code></strong></td>
+<td>如果 <em>s</em> 中的某项等于 <em>x</em> 则结果为 <code>True</code>，否则为 <code>False</code></td>
+</tr>
+<tr>
+<td><code>x not in s</code></td>
+<td>如果 <em>s</em> 中的某项等于 <em>x</em> 则结果为 <code>False</code>，否则为 <code>True</code></td>
+</tr>
+<tr>
+<td><code>s + t</code></td>
+<td><em>s</em> 与 <em>t</em> 相拼接</td>
+</tr>
+<tr>
+<td><code>s * n</code> 或 <code>n * s</code></td>
+<td>相当于 <em>s</em> 与自身进行 <em>n</em> 次拼接</td>
+</tr>
+<tr>
+<td><strong><code>s[i]</code></strong></td>
+<td><em>s</em> 的第 <em>i</em> 项，起始为 0</td>
+</tr>
+<tr>
+<td><code>s[i:j]</code></td>
+<td><em>s</em> 从 <em>i</em> 到 <em>j</em> 的切片</td>
+</tr>
+<tr>
+<td><code>s[i:j:k]</code></td>
+<td><em>s</em> 从 <em>i</em> 到 <em>j</em> 步长为 <em>k</em> 的切片</td>
+</tr>
+<tr>
+<td><strong><code>len(s)</code></strong></td>
+<td><em>s</em> 的长度</td>
+</tr>
+<tr>
+<td><strong><code>min(s)</code></strong></td>
+<td><em>s</em> 的最小项</td>
+</tr>
+<tr>
+<td><strong><code>max(s)</code></strong></td>
+<td><em>s</em> 的最大项</td>
+</tr>
+<tr>
+<td><code>s.index(x[, i[, j]])</code></td>
+<td><em>x</em> 在 <em>s</em> 中首次出现项的索引号（索引号在 <em>i</em> 或其后且在 <em>j</em> 之前）</td>
+</tr>
+<tr>
+<td><strong><code>s.count(x)</code></strong></td>
+<td><em>x</em> 在 <em>s</em> 中出现的总次数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 <code>list</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">L = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 矩阵(深拷贝)</span></span><br><span class="line">Matrix = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)] <span class="keyword">for</span> i <span class="keyword">in</span> range(m)]  <span class="comment"># m*n阶矩阵: M[m][n]</span></span><br></pre></td></tr></table></figure>
+<p>除了通用的序列操作，对于可变序列<code>list</code>还支持：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s[i] = x</code></td>
+<td>将 <em>s</em> 的第 <em>i</em> 项替换为 <em>x</em></td>
+</tr>
+<tr>
+<td><code>s[i:j] = t</code></td>
+<td>将 <em>s</em> 从 <em>i</em> 到 <em>j</em> 的切片替换为可迭代对象 <em>t</em> 的内容</td>
+</tr>
+<tr>
+<td><code>del s[i:j]</code></td>
+<td>等同于 <code>s[i:j] = []</code></td>
+</tr>
+<tr>
+<td><code>s[i:j:k] = t</code></td>
+<td>将 <code>s[i:j:k]</code> 的元素替换为 <em>t</em> 的元素</td>
+</tr>
+<tr>
+<td><code>del s[i:j:k]</code></td>
+<td>从列表中移除 <code>s[i:j:k]</code> 的元素</td>
+</tr>
+<tr>
+<td><strong><code>s.append(x)</code></strong></td>
+<td>将 <em>x</em> 添加到序列的末尾 (等同于 <code>s[len(s):len(s)] = [x]</code>)</td>
+</tr>
+<tr>
+<td><strong><code>s.clear()</code></strong></td>
+<td>从 <em>s</em> 中移除所有项 (等同于 <code>del s[:]</code>)</td>
+</tr>
+<tr>
+<td><code>s.copy()</code></td>
+<td>创建 <em>s</em> 的浅拷贝 (等同于 <code>s[:]</code>)</td>
+</tr>
+<tr>
+<td><code>s.extend(t)</code> 或 <code>s += t</code></td>
+<td>用 <em>t</em> 的内容扩展 <em>s</em> (基本上等同于 <code>s[len(s):len(s)] = t</code>)</td>
+</tr>
+<tr>
+<td><code>s *= n</code></td>
+<td>使用 <em>s</em> 的内容重复 <em>n</em> 次来对其进行更新</td>
+</tr>
+<tr>
+<td><strong><code>s.insert(i, x)</code></strong></td>
+<td>在由 <em>i</em> 给出的索引位置将 <em>x</em> 插入 <em>s</em> (等同于 <code>s[i:i] = [x]</code>)</td>
+</tr>
+<tr>
+<td><code>s.pop([i])</code></td>
+<td>提取在 <em>i</em> 位置上的项，并将其从 <em>s</em> 中移除</td>
+</tr>
+<tr>
+<td><strong><code>s.remove(x)</code></strong></td>
+<td>删除 <em>s</em> 中第一个 <code>s[i]</code> 等于 <em>x</em> 的项目。</td>
+</tr>
+<tr>
+<td><strong><code>s.reverse()</code></strong></td>
+<td>就地将列表中的元素逆序。<code>a[: :-1]</code>可以达到同样的输出效果。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="字符串-str"><a href="#字符串-str" class="headerlink" title="字符串 str"></a>字符串 <code>str</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S = <span class="string">"123"</span></span><br></pre></td></tr></table></figure>
+<p>除了通用的序列操作，对于字符串<code>str</code>还支持：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#39;Py&#39; in &#39;Python&#39;</code></td>
+<td>如果 字符串 中的某子串等于 前者 则结果为 <code>True</code>，否则为 <code>False</code></td>
+</tr>
+<tr>
+<td><code>S.lower()</code></td>
+<td>转换为小写串</td>
+</tr>
+<tr>
+<td><code>S.upper()</code></td>
+<td>转换为大写串</td>
+</tr>
+<tr>
+<td><code>S.split(seq)</code></td>
+<td>以<code>seq</code>为分隔符，转为分割后的列表</td>
+</tr>
+<tr>
+<td><code>S.replace(s1, s2)</code></td>
+<td>将<code>S</code>中的<code>s1</code>串替换为<code>s2</code>（<code>s2 == &#39;&#39;</code>时相当于删除）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="字典-dict（哈希表）"><a href="#字典-dict（哈希表）" class="headerlink" title="字典 dict（哈希表）"></a>字典 <code>dict</code>（哈希表）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>字典<code>dict</code>支持以下操作：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list(d)</code></td>
+<td>返回字典 <em>d</em> 中使用的所有键的列表。</td>
+</tr>
+<tr>
+<td><code>len(d)</code></td>
+<td>返回字典 <em>d</em> 中的项数。</td>
+</tr>
+<tr>
+<td><code>d[key] = value</code></td>
+<td>将 <code>d[key]</code> 设为 <em>value</em>。</td>
+</tr>
+<tr>
+<td><code>key in d</code> / <code>key not in d</code></td>
+<td>如果 <em>d</em> 中（不）存在键 <em>key</em> 则返回 <code>True</code>，否则返回 <code>False</code>。</td>
+</tr>
+<tr>
+<td><code>d.clear()</code></td>
+<td>清空</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合 set"></a>集合 <code>set</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = set([<span class="string">'Alice'</span>, `Bob`])</span><br></pre></td></tr></table></figure>
+<p>集合 <code>set</code>支持以下操作：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.add(ele)</code></td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td><code>s.remove(ele)</code></td>
+<td>删除；删除失败引发<code>KeyError</code></td>
+</tr>
+<tr>
+<td><code>s.discard(ele)</code></td>
+<td>安全删除（如果有则删除）</td>
+</tr>
+<tr>
+<td><code>d.clear()</code></td>
+<td>清空</td>
+</tr>
+<tr>
+<td><code>update(others)</code> / `set</td>
+<td>= other`</td>
+<td>求并，更新集合，添加来自 others 中的所有元素。</td>
+</tr>
+<tr>
+<td><code>intersection_update(others)</code> / <code>set &amp;= other</code></td>
+<td>求交。</td>
+</tr>
+<tr>
+<td><code>difference_update(others)</code> / <code>set -= other</code></td>
+<td>求差。</td>
+</tr>
+<tr>
+<td><code>symmetric_difference_update(others)</code> / <code>set ^= other</code></td>
+<td>对称差。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from math <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>floor(x)</code> / <code>ceil(x)</code></td>
+<td>下/上取整</td>
+</tr>
+<tr>
+<td><code>comb(n, m)</code></td>
+<td>求组合数C(n,m)</td>
+</tr>
+<tr>
+<td><code>factorial(x)</code></td>
+<td>求阶乘<code>x!</code></td>
+</tr>
+<tr>
+<td><code>gcd(a, b)</code></td>
+<td>最大公约数</td>
+</tr>
+<tr>
+<td><code>exp(x)</code> / <code>log(x, base)</code> / <code>log2(x)</code> / <code>log10(x)</code> / <code>pow(x,y)</code></td>
+<td>幂指函数</td>
+</tr>
+<tr>
+<td><code>sqrt(x)</code></td>
+<td>平方根</td>
+</tr>
+<tr>
+<td><code>sin(x)</code> / <code>cos(x)</code> / <code>tan(x)</code> / <code>asin(x)</code> / <code>acos(x)</code> / <code>atan(x)</code></td>
+<td>三角函数</td>
+</tr>
+<tr>
+<td><code>dist(a, b)</code></td>
+<td>计算两点欧氏距离</td>
+</tr>
+<tr>
+<td><code>pi</code> / <code>e</code> / <code>tau = 2*pi</code> / <code>inf</code> / <code>nan</code></td>
+<td>常量。<code>inf</code>浮点正无穷</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li><li><a href="https://vel.life/PythonLib-网络库专题/">PythonLib-网络库专题</a></li><li><a href="https://vel.life/PythonLib-机器学习库专题/">PythonLib-机器学习库专题</a></li></ul></div>
       
     </div>
@@ -677,7 +1038,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">Archives</span>
                 </a>
               </div>
@@ -688,7 +1049,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">Categories</span>
                 </a>
               </div>
@@ -699,7 +1060,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
@@ -762,6 +1123,14 @@
                     <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hanherbert.github.io/" title="知青" target="_blank" rel="external nofollow">知青</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/louieowrth/" title="louieworth" target="_blank" rel="external nofollow">louieworth</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -781,7 +1150,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#STL4Python3"><span class="nav-number">2.</span> <span class="nav-text">STL4Python3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据转换"><span class="nav-number">2.1.</span> <span class="nav-text">数据转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据格式化输出"><span class="nav-number">2.1.1.</span> <span class="nav-text">数据格式化输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列"><span class="nav-number">2.2.</span> <span class="nav-text">序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表-list"><span class="nav-number">2.2.1.</span> <span class="nav-text">列表 list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串-str"><span class="nav-number">2.2.2.</span> <span class="nav-text">字符串 str</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典-dict（哈希表）"><span class="nav-number">2.3.</span> <span class="nav-text">字典 dict（哈希表）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合-set"><span class="nav-number">2.4.</span> <span class="nav-text">集合 set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数学"><span class="nav-number">2.5.</span> <span class="nav-text">数学</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -815,7 +1184,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">438.2k</span>
+    <span title="Site words total count">529.3k</span>
   
 </div>
 

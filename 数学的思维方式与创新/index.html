@@ -150,10 +150,12 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="数学的思维方式与创新由北京大学丘维声教授主讲。本文主要根据讲课内容整理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T15:18:15.418Z">
+<meta property="og:image" content="https://vel.life/数学的思维方式与创新/image-20200529135116985.png">
+<meta property="og:updated_time" content="2020-06-08T04:35:07.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学的思维方式与创新">
 <meta name="twitter:description" content="数学的思维方式与创新由北京大学丘维声教授主讲。本文主要根据讲课内容整理。">
+<meta name="twitter:image" content="https://vel.life/数学的思维方式与创新/image-20200529135116985.png">
 
 
 
@@ -424,8 +426,8 @@
               
                 <span class="post-meta-item-text">Modified&#58;</span>
               
-              <time title="Modified" itemprop="dateModified" datetime="2019-03-21T23:18:15+08:00">
-                2019-03-21
+              <time title="Modified" itemprop="dateModified" datetime="2020-06-08T12:35:07+08:00">
+                2020-06-08
               </time>
             
           </span>
@@ -489,7 +491,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  275
+                  682
                 </span>
               
 
@@ -505,7 +507,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -527,17 +529,20 @@
 
       
         <p>数学的思维方式与创新由北京大学丘维声教授主讲。本文主要根据讲课内容整理。<a id="more"></a></p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://npupt.com/details.php?id=83625&amp;hit=1" target="_blank" rel="noopener">普林斯顿数学指南</a></p>
-<h1 id="数学发展史上若干重大创新"><a href="#数学发展史上若干重大创新" class="headerlink" title="数学发展史上若干重大创新"></a>数学发展史上若干重大创新</h1><h2 id="微积分的创立"><a href="#微积分的创立" class="headerlink" title="微积分的创立"></a>微积分的创立</h2><p>1666年，牛顿和莱布尼兹创立微积分。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://book.douban.com/subject/6002758/" target="_blank" rel="noopener">数学的思维方式与创新</a>，qiuws@pku.edu.cn</p>
+<p><a href="https://npupt.com/details.php?id=83625&amp;hit=1" target="_blank" rel="noopener">普林斯顿数学指南</a></p>
+<p><a href="https://www.bilibili.com/video/BV1St411H71C" target="_blank" rel="noopener">【数学的思维方式与创新】共88集——北京大学丘维声教授</a></p>
+<p>高等代数（<a href="./高等代数（上册）丘维声.pdf">上册</a>，<a href="./高等代数（下册）丘维声.pdf">下册</a>），学习指导（<a href="./高等代数学习指导书_上册_丘维声.pdf">上册</a>，<a href="./高等代数学习指导书_下册_丘维声.pdf">下册</a>）</p>
+<h1 id="数学发展史上若干重大创新"><a href="#数学发展史上若干重大创新" class="headerlink" title="数学发展史上若干重大创新"></a>数学发展史上若干重大创新</h1><h2 id="微积分的创立和完备化"><a href="#微积分的创立和完备化" class="headerlink" title="微积分的创立和完备化"></a>微积分的创立和完备化</h2><p>1666年，牛顿和莱布尼兹创立微积分。</p>
 <p>17世纪，开始天体运动和地球上物体运动的研究。</p>
 <ul>
-<li>如：$s=5t^2​$，求每一时刻物体的<font color="red">瞬时速度</font></li>
+<li>如：$s=5t^2$，求每一时刻物体的<font color="red">瞬时速度</font></li>
 </ul>
 <p><strong><font color="red">观察</font></strong>客观现象：</p>
 <script type="math/tex; mode=display">
 \Delta t:\quad \Delta s=5(t+\Delta t)^2-5t^2</script><p>则</p>
 <script type="math/tex; mode=display">
-平均速度:\quad\frac{\Delta s}{\Delta t}=10t+5\Delta t</script><p>忽略含有$\Delta t​$的项（牛顿假设），得到</p>
+平均速度:\quad\frac{\Delta s}{\Delta t}=10t+5\Delta t</script><p>忽略含有$\Delta t$的项（牛顿假设），得到</p>
 <script type="math/tex; mode=display">
 v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
 <p>矛盾：$\Delta t\neq0$。（除以0无意义）</p>
@@ -545,6 +550,33 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
 </blockquote>
 <p>当引入微积分体系之后，除以0也可能有意义了，比如：$\cfrac{0}{0}$。</p>
 <p>当$\Delta t \longrightarrow 0$却不等于0时，如何处理这样的无限过程呢？</p>
+<blockquote>
+<p>$\left|\frac{\Delta s}{\Delta t}-10t\right|$可以无限小。</p>
+</blockquote>
+<p><strong>柯西</strong>从中观察，并抽象出了极限的概念。</p>
+<blockquote>
+<p>设函数f(x)，在x_0附近有定义，但在x_0处可以没有定义（去心邻域）。</p>
+<p>若有一个常数c，使得当x趋近于x_0但不等于x_0的时候，有$\left|f(x)-C\right|$可以任意小。</p>
+<p>则把常数c称为当x趋近于x_0时f(x)的<strong><font color="red">极限</font></strong>。</p>
+</blockquote>
+<p>上述概念还是过于口语化，<strong>威尔斯特拉斯</strong>对上述定义进行了规范。</p>
+<script type="math/tex; mode=display">
+任给\epsilon > 0，\; 存在\delta >0，\; s.t.\;当|x-x_0|<\delta时，有|f(x)-C|<\epsilon</script><h2 id="非欧几里得几何的诞生和实现"><a href="#非欧几里得几何的诞生和实现" class="headerlink" title="非欧几里得几何的诞生和实现"></a>非欧几里得几何的诞生和实现</h2><p>欧几里得——《几何原本》。</p>
+<blockquote>
+<p>从定义和公理出发，进行逻辑推理，将几何知识系统化、严密化。</p>
+</blockquote>
+<p><strong>平行公设</strong>：一条直线与两条直线相交，该直线一侧同旁内角的和小于180度，则两条直线无限延长后一定相交。</p>
+<p><img src="/数学的思维方式与创新/image-20200529135116985.png" alt="image-20200529135116985"></p>
+<p>高斯。。</p>
+<p><strong>罗布切夫斯基几何</strong>：过直线外一点至少有两条直线与已知直线平行。【伪球面，球面的一部分】</p>
+<blockquote>
+<p>在双曲几何的模型上完整地实现。</p>
+</blockquote>
+<p><strong>黎曼几何</strong>：一条平行的直线也没有。【球面】</p>
+<h2 id="伽罗瓦理论和代数学的变革"><a href="#伽罗瓦理论和代数学的变革" class="headerlink" title="伽罗瓦理论和代数学的变革"></a>伽罗瓦理论和代数学的变革</h2><p>公元前1700年，巴比伦人，一元二次方程求根公式</p>
+<p>1500年左右，三次、四次方程也可以用根式求解</p>
+<p>拉格朗日，……，阿贝尔</p>
+<p>伽罗瓦，1829——1831年</p>
 <div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Beauty-of-Mathmatics/">阅《数学之美》</a></li><li><a href="https://vel.life/同性数学/">同性数学</a></li><li><a href="https://vel.life/最优传输理论/">最优传输理论</a></li></ul></div>
       
     </div>
@@ -691,7 +723,7 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">Archives</span>
                 </a>
               </div>
@@ -702,7 +734,7 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">Categories</span>
                 </a>
               </div>
@@ -713,7 +745,7 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
@@ -776,6 +808,14 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
                     <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hanherbert.github.io/" title="知青" target="_blank" rel="external nofollow">知青</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/louieowrth/" title="louieworth" target="_blank" rel="external nofollow">louieworth</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -795,7 +835,7 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数学发展史上若干重大创新"><span class="nav-number">2.</span> <span class="nav-text">数学发展史上若干重大创新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#微积分的创立"><span class="nav-number">2.1.</span> <span class="nav-text">微积分的创立</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数学发展史上若干重大创新"><span class="nav-number">2.</span> <span class="nav-text">数学发展史上若干重大创新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#微积分的创立和完备化"><span class="nav-number">2.1.</span> <span class="nav-text">微积分的创立和完备化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非欧几里得几何的诞生和实现"><span class="nav-number">2.2.</span> <span class="nav-text">非欧几里得几何的诞生和实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伽罗瓦理论和代数学的变革"><span class="nav-number">2.3.</span> <span class="nav-text">伽罗瓦理论和代数学的变革</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -829,7 +869,7 @@ v=\frac{\Delta s}{\Delta t}=10t</script><blockquote>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">438.2k</span>
+    <span title="Site words total count">529.3k</span>
   
 </div>
 
