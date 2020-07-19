@@ -585,15 +585,15 @@
 <p><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">1.6 起步 - 初次运行 Git 前的配置</a></p>
 </blockquote>
 <p>用户配置：（<code>$</code>代表从命令行输入）</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config [--global] user.name "John Doe"</span><br><span class="line"><span class="meta">$</span> git config [--global] user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.name <span class="string">"John Doe"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.email johndoe@example.com</span></span><br></pre></td></tr></table></figure>
 <p>编辑器：（可选，默认<code>vim</code>）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
 <p>查看配置信息：<code>git config --list</code></p>
 <blockquote>
 <p>通过输入 <code>git config &lt;key&gt;</code>： 来检查 Git 的某一项配置</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> $ git config user.name</span><br><span class="line"><span class="meta">&gt;</span> John Doe</span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> $ git config user.name</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> John Doe</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="Git帮助"><a href="#Git帮助" class="headerlink" title="Git帮助"></a><code>Git</code>帮助</h2><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git help &lt;verb&gt;</span><br><span class="line"><span class="meta">$</span> git &lt;verb&gt; --help</span><br><span class="line"><span class="meta">$</span> man git-&lt;verb&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Git帮助"><a href="#Git帮助" class="headerlink" title="Git帮助"></a><code>Git</code>帮助</h2><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">help</span> &lt;verb&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git &lt;verb&gt; --<span class="built_in">help</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> man git-&lt;verb&gt;</span></span><br></pre></td></tr></table></figure>
 <p>例：（获得 config 命令的手册）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git help config</span><br></pre></td></tr></table></figure>
 <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="获取仓库"><a href="#获取仓库" class="headerlink" title="获取仓库"></a>获取仓库</h2><p>有两种取得 Git 项目仓库的方法。</p>
@@ -602,11 +602,11 @@
 <li>第二种是从一个服务器<strong>克隆</strong>一个现有的 Git 仓库。</li>
 </ul>
 <h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><strong>先进入目录</strong>，终端输入：（该命令将创建一个名为 <code>.git</code> 的子目录并初始化）</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git init</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br></pre></td></tr></table></figure>
 <p>如果目录内存在文件内容：（通过 <code>git add</code> 命令来实现对指定文件的跟踪，然后执行 <code>git commit</code> 提交）</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git add *.c</span><br><span class="line"><span class="meta">$</span> git add LICENSE</span><br><span class="line"><span class="meta">$</span> git commit -m 'initial project version'</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add *.c</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add LICENSE</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'initial project version'</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><p>克隆仓库的命令格式是 <code>git clone [url]</code> 。</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/libgit2/libgit2 [Rename]</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/libgit2/libgit2 [Rename]</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Git 支持<strong>多种数据传输协议</strong>。<br>上面的例子使用的是 <strong><code>https://</code></strong> 协议，不过你也可以使用 <code>git://</code> 协议或者使用 <strong>SSH</strong> 传输协议。<br>比如<code>user@server:path/to/repo.git</code> 。</p>
 </blockquote>
@@ -948,7 +948,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">536.6k</span>
+    <span title="Site words total count">542.4k</span>
   
 </div>
 
