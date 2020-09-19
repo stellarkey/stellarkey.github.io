@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -187,18 +187,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -207,7 +210,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -241,6 +243,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thoughts/" itemprop="url" rel="index"><span itemprop="name">Thoughts</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" class="post-meta-item leancloud_visitors" data-flag-title="欧拉回路拓展" title="Views">
@@ -291,16 +302,16 @@
 <p>每个点的入度=出度，则该图存在欧拉回路。</p>
 </blockquote>
 <p>示例：（4阶图）</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1533738094266.png" alt="1533738094266"></p>
+<p><img data-src="1533738094266.png" alt="1533738094266"></p>
 <h3 id="实际测试"><a href="#实际测试" class="headerlink" title="实际测试"></a>实际测试</h3><p>先看dfs放在前和后的实际效果。（以<code>n=3</code>为例）</p>
 <p>如下图所示：</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/TTZHPTMF4_HOZVC8LXR~VLF.png" alt="两种的实际区别"></p>
+<p><img data-src="TTZHPTMF4_HOZVC8LXR~VLF.png" alt="两种的实际区别"></p>
 <h4 id="使用的测试代码"><a href="#使用的测试代码" class="headerlink" title="使用的测试代码"></a>使用的测试代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//allOne = 2^(n-1) - 1 = 100.. - 1 = 0111.. </span></span><br><span class="line"><span class="comment">//vis:vis[i][u]表示从u出发值为i的边 (初始须置0状态，bool型)</span></span><br><span class="line"><span class="comment">//ans:答案 （初始须置0状态，string型）</span></span><br><span class="line"><span class="comment">//u：当前所在节点，2^(n-1)个 </span></span><br><span class="line"><span class="comment">//求欧拉回路，欧拉回路一定存在【入度=出度】 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> dex = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; dex; ++r) <span class="built_in">cout</span>&lt;&lt;<span class="string">"  "</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"节点"</span>&lt;&lt;<span class="built_in">bitset</span>&lt;3&gt;(u)&lt;&lt;<span class="string">":"</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; ++i) <span class="comment">//兵分两路 </span></span><br><span class="line">        <span class="keyword">if</span>(!vis[i][u]) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = ((u &lt;&lt; <span class="number">1</span>) | i) &amp; allOne;    <span class="comment">//将u左移一位，然后将最低位置为i，再将最高位去掉 </span></span><br><span class="line">            vis[i][u] = <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            dfs(v, dex + <span class="number">1</span>);    <span class="comment">//递归v，加入数字到ans中</span></span><br><span class="line">            </span><br><span class="line">            ans.push_back(<span class="string">'0'</span> + i);</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="keyword">char</span>(<span class="string">'0'</span> + i)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//dfs(v, dex + 1);    //后递归测试 </span></span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="测例分析"><a href="#测例分析" class="headerlink" title="测例分析"></a>测例分析</h3><h4 id="对本题基本的分析"><a href="#对本题基本的分析" class="headerlink" title="对本题基本的分析"></a>对本题基本的分析</h4><blockquote>
 <p>声明：以下的所有讨论，除非特殊说明，“环”均不包括一个点的自环。（即，忽略<code>000..</code>和<code>111..</code>的自环）</p>
 </blockquote>
 <p>我们建立n=3时的欧拉图。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/685751974715009958.jpg" alt="685751974715009958"></p>
+<p><img data-src="685751974715009958.jpg" alt="685751974715009958"></p>
 <p>可以看到</p>
 <ul>
 <li><p>两者<strong>点的遍历顺序一致</strong>。</p>
@@ -325,7 +336,7 @@
 </li>
 </ul>
 <h4 id="验证、推广"><a href="#验证、推广" class="headerlink" title="验证、推广"></a>验证、推广</h4><p>给出n=4时的“<strong>环扩展算法</strong>”：</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531030074386.png" alt="1530885513558"></p>
+<p><img data-src="1531030074386.png" alt="1530885513558"></p>
 <blockquote>
 <p>从图中我们可以直观地得到n=4欧拉图被分成了3个子环。</p>
 </blockquote>
@@ -340,7 +351,7 @@
 <p><strong>N欧拉状态图可以被分为N-1个子环</strong>。</p>
 </blockquote>
 <h4 id="环扩展算法有效的原理"><a href="#环扩展算法有效的原理" class="headerlink" title="环扩展算法有效的原理"></a>环扩展算法有效的原理</h4><p>回到n=3时的欧拉图。</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/685751974715009958.jpg" alt="685751974715009958"></p>
+<p><img data-src="685751974715009958.jpg" alt="685751974715009958"></p>
 <p>第一个环：<code>00-01-10-00</code>，第二个环：<code>01-11-10-01</code>。</p>
 <p>规律：</p>
 <blockquote>
@@ -397,12 +408,12 @@
 <p>每次<strong>尽可能取1</strong>。</p>
 </blockquote>
 <p>可以发现一个非常奇妙的现象，如下图：（n=3）</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531016147457.png" alt="1531016147457"></p>
+<p><img data-src="1531016147457.png" alt="1531016147457"></p>
 <p>我们可以继续测试：</p>
 <blockquote>
 <p>n=4</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531016307970.png" alt="1531016307970"></p>
+<p><img data-src="1531016307970.png" alt="1531016307970"></p>
 <p>以及更高阶。（此处省略）</p>
 <p>首先抛出结论：</p>
 <blockquote>
@@ -423,22 +434,22 @@
 <p>此时，可能会更加体会到两种方法（前/后）的根本区别。</p>
 <p>这样的结果意味着什么呢？</p>
 <h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>回到n=3，如下图：</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531018432265.png" alt="685751974715009958"></p>
+<p><img data-src="1531018432265.png" alt="685751974715009958"></p>
 <p>我们来分析<strong>到底发生了什么</strong>。（也可以尝试自己先分析一下）</p>
 <blockquote>
 <p>先给出每次<strong>尽可能取0</strong>的环扩展的线路图。红圈处为展开节点。绿圈为第1个环，粉圈为第2个环。</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531018156419.png" alt="1531018156419"></p>
+<p><img data-src="1531018156419.png" alt="1531018156419"></p>
 <blockquote>
 <p>再给出每次<strong>尽可能取1</strong>的DFS的线路图。（两种方法的线路一致）</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531018570690.png" alt="1531018570690"></p>
+<p><img data-src="1531018570690.png" alt="1531018570690"></p>
 <p>事实上，此时，<strong>DFS将一次就找到欧拉回路</strong>！因此前、后是等效的！</p>
 <p>这两种策略的DFS<strong>对子环的划分是不同的</strong>。</p>
 <blockquote>
 <p>对于每次<strong>尽可能取1</strong>的策略，其线路图可以等效地看作下图的一个划分【紫圈+蓝圈】。</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531018948529.png" alt="1531018948529"></p>
+<p><img data-src="1531018948529.png" alt="1531018948529"></p>
 <h4 id="解的不唯一性-子环划分"><a href="#解的不唯一性-子环划分" class="headerlink" title="解的不唯一性-子环划分"></a>解的不唯一性-子环划分</h4><p>事实上，对于n=3，在之前已经找到了两种路线：</p>
 <blockquote>
 <ol>
@@ -464,15 +475,15 @@
 <blockquote>
 <p>dfs(1);</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531023939934.png" alt="1531023939934"></p>
+<p><img data-src="1531023939934.png" alt="1531023939934"></p>
 <blockquote>
 <p>dfs(2);</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531023748305.png" alt="1531023748305"></p>
+<p><img data-src="1531023748305.png" alt="1531023748305"></p>
 <blockquote>
 <p>dfs(3); （结合环扩展算法的<code>0</code>优先策略，可以发现极强的对称性）</p>
 </blockquote>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531023787510.png" alt="1531023787510"></p>
+<p><img data-src="1531023787510.png" alt="1531023787510"></p>
 <p><strong>无论从哪个节点出发，均可以得到解</strong>！（更高阶不再赘述）</p>
 <p>Plus. 不修改策略，也可以得到相同的结论。（但方法必须是环扩展，不是平凡~）</p>
 <p>因此，</p>
@@ -485,7 +496,7 @@
 <p>dfs($2^{n-1}-1$);</p>
 </blockquote>
 <p>例如，n=3：</p>
-<p><img src="/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/1531025354567.png" alt="1531025354567"></p>
+<p><img data-src="1531025354567.png" alt="1531025354567"></p>
 <p>此时，<strong>平凡的DFS算法</strong>，又将得到正确解！</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>采用<strong>前DFS</strong>的根本原因是：</p>
 <blockquote>
@@ -534,10 +545,11 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
-              <a href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" rel="tag"># 欧拉回路</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
+              <a href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" rel="tag"><i class="fa fa-tag"></i> 欧拉回路</a>
           </div>
 
         
@@ -633,7 +645,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -646,7 +658,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -718,6 +730,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -770,6 +787,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -811,8 +831,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -844,9 +862,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -856,7 +872,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -919,6 +954,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/',]
+      });
+      });
+  </script>
 
 
 <script>

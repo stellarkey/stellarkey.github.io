@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -171,18 +171,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -191,7 +194,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -225,6 +227,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="《微软亚洲研究院大数据系列讲座》笔记" title="Views">
@@ -270,7 +281,7 @@
 <p>Hot topic.</p>
 <p>大量、高速、多元化的信息。High-volume, high-velocity, high-variety information assets.</p>
 <p>关注发现、分析、洞见和决策制定。</p>
-<p><img src="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/clip_image001.png" alt="计算机生成了可选文字: &quot;A new generation Of technologies and a rch itectu res designed to  economically ext ra ct value from ve ry large volumes Of a Wide  variety Of data by enabling high-velocity ca ptu re, discovery, and/or  IDC  analysis&#39;  &quot;Big data is high-volume, high-velocity and high-variety information  assets that demand cost-effective, innovative forms Of information  processing for enhanced insight and decision making. "></p>
+<p><img data-src="《微软亚洲研究院大数据系列讲座》笔记/clip_image001.png" alt="计算机生成了可选文字: &quot;A new generation Of technologies and a rch itectu res designed to  economically ext ra ct value from ve ry large volumes Of a Wide  variety Of data by enabling high-velocity ca ptu re, discovery, and/or  IDC  analysis&#39;  &quot;Big data is high-volume, high-velocity and high-variety information  assets that demand cost-effective, innovative forms Of information  processing for enhanced insight and decision making. "></p>
 <p>What is 创新 innovation？超前，ahead of shedule。这是一个充满竞争的世界。</p>
 <p> 大数据可以创造Value。Wide interests。China’s GDP.</p>
 <p>Big Data is a growth OPPORTUNITY.</p>
@@ -280,7 +291,7 @@
 <p>————动态定价【航空公司策略】</p>
 <p>其关键在于收益管理。</p>
 <p>大数据分析。（例如天气条件：风暴、台风、下雪，做更好的天气预报，预测天气并调整航班；燃油价格对冲，利用分析预测提前储备石油【期货、期权】，各种因素的考虑（以色列、中东小规模战争，ISIS极端组织）。）航空公司维持生存的重要保证。</p>
-<p><img src="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/clip_image002.png" alt="IVA "></p>
+<p><img data-src="《微软亚洲研究院大数据系列讲座》笔记/clip_image002.png" alt="IVA "></p>
 <p> Data as a Platform。(组合 + 精炼)</p>
 <p>2.Why Big Data is a Nature Phenomenon?</p>
 <p>我们正在计算机与互联网的时代。</p>
@@ -438,13 +449,13 @@
 <p>·Visually explain summarization results（有关联的可视化……）</p>
 <p>·Provide Feedback or articulate their needs（不完美的数据挖掘结果，或者不同的使用者需求……）</p>
 <p>——Example：TIARA</p>
-<p><img src="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/clip_image003.png" alt="TIARA Overview  Text Preprocessing  Text content + meta data  Text Summarization  Summarization results  Data Transformation  -1  ransformed results  Visualization "></p>
+<p><img data-src="《微软亚洲研究院大数据系列讲座》笔记/clip_image003.png" alt="TIARA Overview  Text Preprocessing  Text content + meta data  Text Summarization  Summarization results  Data Transformation  -1  ransformed results  Visualization "></p>
 <p>Text Summarization：ＬＤＡ[High portability, high compaction rate for scalebility, a finer grained model]</p>
 <p>——Example：Healthcare</p>
 <p>结构化、非结构化数据，重点研究非结构化数据，如受伤状况、旅行意愿……</p>
 <p>Layout Algorithm——three-level directed acyclic graph( DAG )。</p>
 <p>3.异质数据的可视化分析</p>
-<p><img src="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/clip_image004.png" alt="Data  Evolutionary topic trees  -ti+l-  Raw text  Tree-cut  Focused topic  -0-4  ntal tree cut  Isualization  Interaction  .ti+l+  Stable layout "></p>
+<p><img data-src="《微软亚洲研究院大数据系列讲座》笔记/clip_image004.png" alt="Data  Evolutionary topic trees  -ti+l-  Raw text  Tree-cut  Focused topic  -0-4  ntal tree cut  Isualization  Interaction  .ti+l+  Stable layout "></p>
 <p>Meta-node, meta-edge to meta-graph.（图式数据集之间的点、边结合）</p>
 <p>Visualization：</p>
 <p>·Graph matching as density-based graph visuazation</p>
@@ -486,8 +497,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
           </div>
 
         
@@ -583,7 +595,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -596,7 +608,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -668,6 +680,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -720,6 +737,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -761,8 +781,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -794,9 +812,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -806,7 +822,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -816,6 +851,16 @@ darkmode.showWidget();
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/',]
+      });
+      });
+  </script>
 
 
 <script>

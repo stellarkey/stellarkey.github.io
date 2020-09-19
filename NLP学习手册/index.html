@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,8 +30,8 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="NLP（Natural Language Processing），自然语言处理。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png">
-<meta property="og:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/1550843479675.png">
+<meta property="og:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png">
+<meta property="og:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/1550843479675.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232228316-58060057.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232238347-1362818555.png">
 <meta property="article:published_time" content="2019-02-13T09:59:57.000Z">
@@ -39,7 +39,7 @@
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png">
+<meta name="twitter:image" content="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png">
 
 <link rel="canonical" href="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">
 
@@ -174,18 +174,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -194,7 +197,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -228,6 +230,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+            </span>
 
           
             <span id="/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-meta-item leancloud_visitors" data-flag-title="NLP学习手册" title="Views">
@@ -300,7 +311,7 @@
 <p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwifk7vHzvLgAhXQfd4KHRPDBr4QFjABegQICRAB&amp;url=https%3A%2F%2Fwww.msra.cn%2Fzh-cn%2Fnews%2Ffeatures%2Fbook-recommendation-nlp-20171220&amp;usg=AOvVaw1BRmup2Nuqtaeebr3xYTq-" target="_blank" rel="noopener external nofollow noreferrer">书单| NLP秘笈，从入门到进阶 - 微软亚洲研究院</a></p>
 <p><a href="https://next.xuetangx.com/live/live20200218010/live20200218010/3335703/2313814" target="_blank" rel="noopener external nofollow noreferrer">闲话AI：自然语言理解难在那儿？(战“疫”有“计”清华名师公益直播课系列)</a>，<a href="https://zhuanlan.zhihu.com/p/96801863" target="_blank" rel="noopener external nofollow noreferrer">对应的知乎专栏</a></p>
 <blockquote>
-<p><img src="/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png" alt="image-20200502035118459"></p>
+<p><img data-src="NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20200502035118459.png" alt="image-20200502035118459"></p>
 </blockquote>
 <h1 id="NLP的定义"><a href="#NLP的定义" class="headerlink" title="NLP的定义"></a>NLP的定义</h1><blockquote>
 <p>Introduction and Word Vectors<br>[<a href="http://web.stanford.edu/class/cs224n/slides/cs224n-2019-lecture01-wordvecs1.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>] [<a href="http://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf" target="_blank" rel="noopener external nofollow noreferrer">notes</a>]<br>Gensim word vectors example:<br>[<a href="http://web.stanford.edu/class/cs224n/materials/Gensim.zip" target="_blank" rel="noopener external nofollow noreferrer">zip</a>]<br>[<a href="http://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html" target="_blank" rel="noopener external nofollow noreferrer">preview</a>]</p>
@@ -315,7 +326,7 @@
 <p>目标：让计算机处理或理解自然语言，从而完成相应任务。</p>
 <p><strong>完全理解</strong>(understand)和<strong>表示</strong>(represent)自然语言的<strong>含义</strong>(meaning)是极其困难的。</p>
 <h2 id="NLP-Levels"><a href="#NLP-Levels" class="headerlink" title="NLP Levels"></a>NLP Levels</h2><p>从语音（speech）或文本（text）源进行分析识别，然后<strong>形态分析</strong>（Morphological analysis），<strong>句法分析</strong>（Syntactic analysis），<strong>语义理解</strong>（Semantic Interpretation），<strong>语篇处理</strong>（Discourse Processing）。</p>
-<p><img src="/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/1550843479675.png" alt="1550843479675"></p>
+<p><img data-src="NLP学习手册/1550843479675.png" alt="1550843479675"></p>
 <h2 id="NLP-Applications"><a href="#NLP-Applications" class="headerlink" title="NLP Applications"></a>NLP Applications</h2><ul>
 <li>Spell checking（语法检查）, keyword search, finding <strong>synonyms</strong>（同义词）</li>
 <li><strong>Extracting information</strong> from websites</li>
@@ -522,8 +533,8 @@
 <p><strong>其他名词修饰语（<font color="red">JJ</font>）</strong>：</p>
 <p><strong>外来词（<font color="red">FW</font>）</strong>：</p>
 <p><strong>标点（<font color="red">PU</font>）</strong>：</p>
-<p><img src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232228316-58060057.png" alt="img"></p>
-<p><img src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232238347-1362818555.png" alt="img"> </p>
+<p><img data-src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232228316-58060057.png" alt="img"></p>
+<p><img data-src="https://images2015.cnblogs.com/blog/517519/201705/517519-20170513232238347-1362818555.png" alt="img"> </p>
 <div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/">阅《深度文本匹配综述》</a></li><li><a href="https://vel.life/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/">AI未来说-青年学术论坛（自然语言专场）</a></li></ul></div>
     </div>
 
@@ -549,8 +560,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/NLP/" rel="tag"># NLP</a>
+              <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
           </div>
 
         
@@ -646,7 +658,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -659,7 +671,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -731,6 +743,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -783,6 +800,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -824,8 +844,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -857,9 +875,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -869,7 +885,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -932,6 +967,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/',]
+      });
+      });
+  </script>
 
 
 <script>

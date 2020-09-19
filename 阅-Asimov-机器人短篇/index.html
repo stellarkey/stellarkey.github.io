@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -181,18 +181,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -201,7 +204,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -235,6 +237,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Read/" itemprop="url" rel="index"><span itemprop="name">Read</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/" class="post-meta-item leancloud_visitors" data-flag-title="阅《机器人短篇》" title="Views">
@@ -269,18 +280,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/阿西莫夫与机器学习.jpg" alt="阿西莫夫与机器学习"></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p><img data-src="阿西莫夫与机器学习.jpg" alt="阿西莫夫与机器学习"></p>
 <p>在周志华的《机器学习》中，对机器学习有这样的描述：</p>
 <blockquote>
 <p>“<em>机器学习正是这样一门学科，它致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。在计算机系统中，‘经验’通常以‘数据’形式存在，因此，机器学习所研究的主要内容，是关于在计算机上从数据中产生‘模型’(model)的算法，即‘学习算法’(learning algorithm) 。</em>”</p>
 </blockquote>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/06.jpg" alt="0 (6)"></p>
+<p><img data-src="06.jpg" alt="0 (6)"></p>
 <p>​    《机器学习》原书</p>
 <p>可见，机器学习的核心在于“<strong>模型</strong>”，这个模型基于计算机则表现成“算法”：以<strong>环境</strong>作为输入，获得解决/优化特定问题的能力。</p>
 <p>之前，我很粗略地读过阿西莫夫的《神们自己》和《永恒的终结》，以及其他一些小的作品，如《日暮》（从《日暮》里可以看到《三体》的影子）。那时，还没有太多的感受，倒像是一些过时的观念和想象力的堆积品，难以发现非常出彩、让人惊喜和意外的地方。</p>
 <p>阿西莫夫被称为“<strong>天生的写作机器</strong>”，他是科幻作家，同时也写作过大量科学著作和非小说类文学，比如，针对欧洲近代、文明古国的历史题材作品就数不胜数。他本身具有哥伦比亚大学的本科、硕士和博士学位，曾经是门萨协会的副会长，知识和智力方面毋庸置疑。</p>
 <p>这时，逐渐认识到，<strong>他的作品是很多作品的源头</strong>，在读阿西莫夫的小说之前，我通常读宝树、刘慈欣、何夕、郝景芳等中国科幻作家的作品，这些作品的阅读经验，或多或少都会让我在初次阅读他的作品时产生共鸣，这种共鸣被理解为过时和重复，显然有些不合适。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/03.jpg" alt="0 (3)"></p>
+<p><img data-src="03.jpg" alt="0 (3)"></p>
 <p>​    《机器人短篇系列》原书</p>
 <p>在阿西莫夫的机器人短篇《列尼》中，我第一次注意到<strong>阿西莫夫对机器人学习的能力的思考</strong>。列尼就是Lenny，一个在设计时被偶然混进几行无意义代码的机器人，失去本应具备的功能——作为在小行星带开采硼矿的LNE型专用机器人。Lenny刚诞生时的状态与人类的儿童十分相似，它被一位创造它的女性机器人心理学家凯文视作自己的孩子对待，并试图教它语言。但意外发生了，Lenny竟然违背了机器人第一定律，袭击了一位工人并使其断了一条手臂。凯文据理力争成功保护Lenny，而这时机器人的第一句话说出来了——</p>
 <p>“妈咪，我要你!我要你，妈咪!”……</p>
@@ -292,7 +303,7 @@
 <p>说到这里，我想起“图灵测试”，几乎是一样的道理——通过人工的提问，来检验机器。对于现实中的图灵测试，这些提问无论有多少，一定是有限个，它们的排列组合也一定是有限个，那么答案的集合也必定是有限的，因此通过“以空间换时间”的手段，一定在有限的时间内能够实现机器通过<strong>现实**</strong>图灵测试**。几乎所有的现实问题都可以通过“暴力”的方式解决，同时我们离理想也就越遥远；也许只是通过初等技术的积累，就可以实现以假乱真的“人工智能”，但作为真正的探索者，又岂会甘心于此呢？</p>
 <p>但若要谈“机器人”的“人”，<strong>人除了学习的能力，还有“人性”的特点</strong>。</p>
 <p>谈到机器人的人性化，在机器人系列另一篇短篇《保证满意》里面，描述的场景令人不得不联想起英国的一部科幻剧《黑镜》（每一集讲述一个独立的科幻故事），其中有一集“Be right back”（S02E01），与《保证满意》十分相似。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/04.jpg" alt="0 (4)"></p>
+<p><img data-src="04.jpg" alt="0 (4)"></p>
 <p>​    《黑镜》第二季海报</p>
 <p>这里的机器人（或者说，仿真人，因为是模拟人类外形设计的）被赋予了一个特点:<strong>无法人性化</strong>。作为家用机器人，无论是晚上假装睡觉时没有呼吸声、身体不会流血，还是诡异高效的工作能力和走路时的悄无声息，这些都指向一种观点——人们普遍认为作为“人”的一些特质，比对完成特定工作任务的能力来说，要更加难以被机器人所掌握。或者说，人们相信，机器人一定表现出“智商高，情商低”，<strong>不能“通情达理”</strong>。</p>
 <p>这其实就是<strong>没有学习能力</strong>的表现。当一个人陡然进入一个新环境，宇宙的基本规则没有变，但也许人们、社会制定的规矩有所不同，对这些潜规则/文化背景是否有学习能力，就反应在了机器人的“人性化”上。你可以看出，假如设计机器人的人本身就生存在这样一个环境中，那么给他足够的时间，将这些规矩也编写到机器人的代码当中并没有什么问题，甚至可以随着文化发展做一些更新、补丁。所以，这其实潜在地反应了公众对“研制机器人的人”的<strong>不信任</strong>，对那些人们想象中缺乏人文关怀的、成天与冰冷的仪器和数字打交道的科研者的一种<strong>恐慌感</strong>。心中就会想:会不会成为行尸走肉呢？……</p>
@@ -309,11 +320,11 @@
 <p>综合来看，以上所有的悖论都有一个特点，“<strong>可实现性</strong>”——产生悖论的两种对立情况，都是在现实中能够发生的。那么，“<strong>实悖论</strong>”和“<strong>虚悖论</strong>”的区分就自然而然地产生了：一种基于人类给定的约束，另一种基于宇宙客观基本规律——<strong>只能产生“虚悖论”的（维护人类福祉的）机器人才是真正完全保险的</strong>；但同时，这难如登天，甚至根本无法实现。</p>
 <p>对于<strong>机器的“人”化</strong>，实际也还有反过来的过程，也就是<strong>人的“机器”化</strong>。不过人的“机器”化，应该、也必须是一个很模糊的概念。因为目前来说，人所包含的范围太宽广了，以至于很难说机器有什么特点是没有某个人具有的。</p>
 <p>比如，机器常常给人冷酷的金属外观，但这个命题本身就不成立，因为没有任何规定指明机器人一定是金属的，机器人当然可以是碳纤维、硅基的、塑料的甚至是血肉的——只要我们掌握足够的生物、电子技术。因此，把人的“机器”化模糊一点，给出一个<strong>弱形式</strong>:只要这个属性是目前绝大多数人不具有而绝大多数机器具有的，那么就可以在该属性上做人的“机器”化假设。比如，对于经典的反乌托邦集权式社会，可以观赏有关电影《1984》，这里的民众其实就可以认为被赋予了“机器”化假设，“螺丝钉”的成分被放大和扭曲，作为上层发号施令者，尽管会受到社会整体气氛的影响，但相对来说，他掌握了平民所不能具有的大量信息渠道，因此更能发挥目前认为的人所特有的一些功能——思考、决策等。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/02.jpg" alt="0 (2)"></p>
+<p><img data-src="02.jpg" alt="0 (2)"></p>
 <p>​    电影《1984》海报</p>
 <p>于是，不得不谈到，“<strong>信息”对于机器人的作用</strong>。机器人和人一样，都需要接受信息，然后做出反应。而对于未知信息的分析、驾驭能力，与智能紧密关联。机器学习本质追求的就是从已知信息中获取对未知信息的处理模型，监督学习与非监督学习都蕴含其中，只不过前者对于已知信息有更精准的“指标”。但就信息而言，也绝非已知信息/未知信息这么简单的区分就可以胜任的。比如，有的信息可能是假的（描述不真实的存在），对于这类信息的处理能够直接“筛选并抛弃”吗？留个问号。但就数学史发展而言，很多工具的发明都是从假的、不真实的开始，如无理数、虚数、罗氏几何等。不能否认，机器学习最好应该具备处理这些“<strong>超现实场景</strong>”的能力。</p>
 <p>阿西莫夫的机器人短篇系列后期的作品越来越连贯，也越来越引人入胜。在短篇《逃避》中，阿西莫夫借玻格特之口，通过恒星际飞船的实现，首次提出银河帝国的概念：“到时候——美国机器人公司将有<strong>恒星际旅行</strong>的能力，而人类则有建立银河帝国的机会”。这里非常详细地描绘了<strong>曲速航行</strong>的过程（作为人工智能“金头脑”的一个恶作剧），恒星际飞船以秒差距作为航行的基本距离单位，在跃迁过程中人将体验死而复生的过程。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/01.jpg" alt="0 (1)"></p>
+<p><img data-src="01.jpg" alt="0 (1)"></p>
 <p>​    “星际推进”的艺术幻想图</p>
 <p>在《证据》中，开篇不远的一段话就吸引了我的目光，引起了我强烈的震撼。我必须把这段话原原本本地引用出来：</p>
 <blockquote>
@@ -327,11 +338,11 @@
 <p>《证据》的主要情节是，史蒂芬·拜尔莱，一位准备竞选市长的开业律师，被竞争对手恶意指控为机器人，从而展开了一场角逐。这里，再次上演了类似《校工》一样的<strong>法律辩论</strong>场景，最终延伸到了<strong>政治斗争辩论</strong>。最后拜尔莱通过在一场公众演讲上对一个闯上来的瘦子打了一拳，从而违反机器人第一定律证明他不是机器人，当选市长。</p>
 <p>这里根据前文其实能够推理出一个令人恐惧的事实——当机器人技术发展到真假莫辨的层次，对任何人来说，只有肯攻击他自己的“人”才有办法通过机器人定律确定是真人；如果一个机器人攻击了另一个“人”而不是你自己，你<strong>无法判断**</strong>他是不是真人<strong>！因为你还要判断这个被攻击的“人”是不是真人。这就是</strong>证据链**，可以叠加无数环节，但只有最后一个环节落到自己身上，才能使得证明有效。</p>
 <p>不过，更深层次地讲，如果自己也是机器人呢？如何证明自己不是机器人？那么就可以把伤害的过程反过来，伤害对方；这时，证据链仍然成立，因为仍然需要证明对方是真人，如果对方是机器人，那么判定就失效了。因此就出现一个非常奇特的现象：<strong>通过第一定律证明自己不是机器人，需要先证明对方不是机器人</strong>。更广泛而言，绘制出基于第一定律的机器人与人的伤害关系表，可以发现，只根据第一定律，对于全部由机器人或人组成的社会，判断自己和对方都失效；对于哪怕只有一个第二者的混合社会，判断自己和对方都有效。倘若判断失效，那么机器人三大定律的约束就自动瓦解了。回过头看，在《汝竟顾念他》中描述的就是这样一个场景，由于机器人技术高度发展，<strong>机器人和人类两个概念的界限模糊化</strong>了，或者说，“同化”了，机器人三大定律因而瓦解。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/05.jpg" alt="0 (5)"></p>
+<p><img data-src="05.jpg" alt="0 (5)"></p>
 <p>​    机器人与人相互伤害能力示意表</p>
 <p>在《女性直觉》中，阿西莫夫描述了具有量子特性正电子脑的机器人——类似于现在很热门的量子计算机。它具有“直觉”，能从数据中发现人们看不到的联系——这不得不使人联想到机器学习中的“<strong>聚类</strong>”。</p>
 <p>而短篇《正电子人》，是电影《机器管家》的原型，讲述了一个正电子脑被应用了广用路径而导致了微妙变化的机器人，历经岁月不断获得人类的外貌、思想，学习和创造，最终为了追逐“做人”的权利而自愿放弃长生不老，化为血肉之躯，获得“人籍”。这个过程非常仔细地描述了机器人安德雷一点一点突破机器人三大定律约束的过程，即，对三大定律的解读的能力，<strong>逐渐宽泛的解读导致定律的约束力逐渐减弱</strong>；以及人类逐步接受并善待机器人的过程。并且这篇故事再次围绕着法律问题展开了一系列论述，安德鲁尽管获得了事实上的人类地位，但他仍然坚持要获得法律上的人类地位，这连串的巧妙的法律斗争令人大开眼界。最终，阿西莫夫提出了人类反感机器人的“真正的根源”——“<strong>不朽</strong>”的能力。<strong>生老病死的人类不可能接受一个永生不朽的同类</strong>。这一点，叹为观止。</p>
-<p><img src="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/0.jpg" alt="0"></p>
+<p><img data-src="0.jpg" alt="0"></p>
 <p>​    电影《机器管家》海报</p>
 <p>必须承认，阿西莫夫的科幻小说具有极高的思想水准，出彩的情节背后隐藏着令人喜悦的思考结晶。</p>
 <p>最后，引用阿西莫夫机器人三大定律作为结尾。</p>
@@ -384,11 +395,12 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
-              <a href="/tags/%E7%A7%91%E5%B9%BB/" rel="tag"># 科幻</a>
-              <a href="/tags/%E9%98%85%E8%AF%BB/" rel="tag"># 阅读</a>
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/" rel="tag"># 机器人</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/%E7%A7%91%E5%B9%BB/" rel="tag"><i class="fa fa-tag"></i> 科幻</a>
+              <a href="/tags/%E9%98%85%E8%AF%BB/" rel="tag"><i class="fa fa-tag"></i> 阅读</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/" rel="tag"><i class="fa fa-tag"></i> 机器人</a>
           </div>
 
         
@@ -483,7 +495,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -496,7 +508,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -568,6 +580,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -620,6 +637,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -661,8 +681,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -694,9 +712,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -706,7 +722,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -716,6 +751,16 @@ darkmode.showWidget();
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/',]
+      });
+      });
+  </script>
 
 
 <script>

@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,14 +30,14 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="本文主要研究 zCore 的全貌和部分功能细节。 zCore 是一款教学操作系统。它是在 rCore 上的改进。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png">
-<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/structure.svg">
-<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/image-20200805123801306.png">
+<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png">
+<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/zCore%E7%A0%94%E7%A9%B6/structure.svg">
+<meta property="og:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/zCore%E7%A0%94%E7%A9%B6/image-20200805123801306.png">
 <meta property="article:published_time" content="2020-08-06T08:03:56.000Z">
 <meta property="article:modified_time" content="2020-09-19T05:20:54.794Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png">
+<meta name="twitter:image" content="https://vel.life/zCore%E7%A0%94%E7%A9%B6/zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png">
 
 <link rel="canonical" href="https://vel.life/zCore%E7%A0%94%E7%A9%B6/">
 
@@ -172,18 +172,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -192,7 +195,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -226,6 +228,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OS/" itemprop="url" rel="index"><span itemprop="name">OS</span></a>
+                </span>
+            </span>
 
           
             <span id="/zCore%E7%A0%94%E7%A9%B6/" class="post-meta-item leancloud_visitors" data-flag-title="zCore研究" title="Views">
@@ -288,10 +299,10 @@
 <p>计划失败。</p>
 </blockquote>
 <h1 id="工具链"><a href="#工具链" class="headerlink" title="工具链"></a>工具链</h1><h2 id="Git-Lens-版本历史查阅工具"><a href="#Git-Lens-版本历史查阅工具" class="headerlink" title="Git Lens 版本历史查阅工具"></a>Git Lens 版本历史查阅工具</h2><p>在 VSCode 中搜索 Git Lens 查看 zCore 的版本历史修改记录。我记得以前使用 Intelligent IDEA 的时候也有类似的功能（但是所有版本是嵌入到一起的）。比如，对内核对象中的 <code>mod.rs</code> 进行早期版本的查阅：</p>
-<p><img src="/zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png" alt="image-20200807153411491"></p>
+<p><img data-src="zCore%E7%A0%94%E7%A9%B6/image-20200807153411491.png" alt="image-20200807153411491"></p>
 <h2 id="函数调用图形化"><a href="#函数调用图形化" class="headerlink" title="函数调用图形化"></a>函数调用图形化</h2><h2 id="draw-io-流程图"><a href="#draw-io-流程图" class="headerlink" title="draw.io 流程图"></a><code>draw.io</code> 流程图</h2><h1 id="zCore-整体结构和设计模式"><a href="#zCore-整体结构和设计模式" class="headerlink" title="zCore 整体结构和设计模式"></a>zCore 整体结构和设计模式</h1><p>首先，从 <a href="https://github.com/rcore-os/zCore/wiki/files/wrj-thesis.pdf" target="_blank" rel="noopener external nofollow noreferrer">Rust语言操作系统的设计与实现,王润基本科毕设论文,2019</a> 和 <a href="https://github.com/rcore-os/zCore/wiki/files/pql-thesis.pdf" target="_blank" rel="noopener external nofollow noreferrer">zCore操作系统内核的设计与实现,潘庆霖本科毕设论文,2020</a> 可以了解到从 rCore 的设计到 zCore 的设计过程的全貌。</p>
 <h2 id="zCore-的整体结构"><a href="#zCore-的整体结构" class="headerlink" title="zCore 的整体结构"></a>zCore 的整体结构</h2><p><a href="https://github.com/rcore-os/zCore" target="_blank" rel="noopener external nofollow noreferrer">zCore</a> 的整体结构/项目设计图如下：</p>
-<p><img src="/zCore%E7%A0%94%E7%A9%B6/structure.svg" alt="img"></p>
+<p><img data-src="zCore%E7%A0%94%E7%A9%B6/structure.svg" alt="img"></p>
 <p>zCore的设计主要有两个出发点：</p>
 <ul>
 <li>内核对象的封装：将内核对象代码封装为一个库，保证可重用</li>
@@ -306,7 +317,7 @@
 <p>第六层，是对直接操作硬件的代码进行一层封装，对应模块为 kernel-hal-bare 和 kernel-hal-unix。kernel-hal 系列库仅仅负责接口定义，即将底层硬件/宿主操作系统的操作翻译为上层操作系统可以使用的形式。在这里，kernel-hal-bare 负责翻译裸机的硬件功能，而 kernel-hal-unix 则负责翻译类 Unix 系统的系统调用。</p>
 <p>最底层是底层运行环境，包括 Bare Metal（裸机），Linux / macOS 操作系统。Bare Metal可以认为是硬件架构上的寄存器等硬件接口。</p>
 <h2 id="zCore-内核组件"><a href="#zCore-内核组件" class="headerlink" title="zCore 内核组件"></a>zCore 内核组件</h2><p>zCore 内核运行时组件层次概况如下：</p>
-<p><img src="/zCore%E7%A0%94%E7%A9%B6/image-20200805123801306.png" alt="image-20200805123801306"></p>
+<p><img data-src="zCore%E7%A0%94%E7%A9%B6/image-20200805123801306.png" alt="image-20200805123801306"></p>
 <p>在zCore启动过程中，会初始化物理页帧分配器、堆分配器、线程调度器等各个组成部分。并委托 zircon-­loader 进行内核对象的初始化创建过程，然后进入用户态的启动过程开始执行。每当用户态触发系统调用进入内核态，系统调用处理例程将会通过已实现的内核对象的功能来对服务请求进行处理；而对应的内核对象的内部实现所需要的各种底层操作，则是通过 HAL 层接口由各个内核组件负责提供。</p>
 <p>其中，VDSO（Virtual dynamic shared object）是一个映射到用户空间的 so 文件，可以在不陷入内核的情况下执行一些简单的系统调用。在设计中，所有中断都需要经过 VDSO 拦截进行处理，因此重写 VDSO 便可以实现自定义的对下层系统调用（syscall）的支持。Executor 是 zCore 中基于 Rust 的 <code>async</code> 机制的协程调度器。</p>
 <p>在HAL接口层的设计上，还借助了 Rust 的能够指定函数链接过程的特性。即，在 kernel-­hal 中规定了所有可供 zircon­-object 库及 zircon-­syscall 库调用的虚拟硬件接口，以函数 API 的形式给出，但是内部均为未实现状态，并设置函数为弱引用链接状态。在 kernel­-hal-­bare 中才给出裸机环境下的硬件接口具体实现，编译 zCore 项目时、链接的过程中将会替换/覆盖 kernel-­hal 中未实现的同名接口，从而达到能够在编译时灵活选择 HAL 层的效果。</p>
@@ -437,7 +448,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -450,7 +461,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -522,6 +533,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -574,6 +590,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -615,8 +634,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -648,9 +665,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -660,7 +675,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -723,6 +757,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/zCore%E7%A0%94%E7%A9%B6/',]
+      });
+      });
+  </script>
 
 
 <script>

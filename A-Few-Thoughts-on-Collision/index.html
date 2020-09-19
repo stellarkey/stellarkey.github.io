@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -172,18 +172,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -192,7 +195,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -226,6 +228,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thoughts/" itemprop="url" rel="index"><span itemprop="name">Thoughts</span></a>
+                </span>
+            </span>
 
           
             <span id="/A-Few-Thoughts-on-Collision/" class="post-meta-item leancloud_visitors" data-flag-title="理想碰撞问题" title="Views">
@@ -259,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p><img src="/A-Few-Thoughts-on-Collision/Newtons_cradle_animation_book_2.gif" alt="Newtons_cradle_animation_book_2"><a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p><img data-src="Newtons_cradle_animation_book_2.gif" alt="Newtons_cradle_animation_book_2"><a id="more"></a></p>
 <h1 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h1><p>关于<a href="https://zh.wikipedia.org/wiki/%E7%A2%B0%E6%92%9E" target="_blank" rel="noopener external nofollow noreferrer"><strong>碰撞</strong></a>问题，可以说是一个经典物理学中已经被解释得通透的情景。</p>
 <p>我将不注重讨论问题的细节，只记录一个很久之前就在脑海中成型的想法。</p>
 <p>（以下考虑理想弹性碰撞）</p>
@@ -315,7 +326,7 @@ I的新速度=I的原速度+(J的相对质量系数*J的相对速度)</script><h
 <p>$\lambda_i\overline{v_i}$表征了物体相互之间的速度影响项。</p>
 </blockquote>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p><strong>例</strong>：</p>
-<p><img src="https://i.imgur.com/ApbDZnu.png" alt="Imgur"></p>
+<p><img data-src="https://i.imgur.com/ApbDZnu.png" alt="Imgur"></p>
 <ul>
 <li><p>求A的相对速度为+3，相对质量系数为2*2/3=4/3。</p>
 <ul>
@@ -331,7 +342,7 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
 </ul>
 <hr>
 <h1 id="猜想-虚体运动"><a href="#猜想-虚体运动" class="headerlink" title="猜想:虚体运动"></a>猜想:虚体运动</h1><p>文章最前面的配图是<a href="https://zh.wikipedia.org/zh-hans/%E7%89%9B%E9%A1%BF%E6%91%86" target="_blank" rel="noopener external nofollow noreferrer">牛顿球</a>。</p>
-<p><img src="/A-Few-Thoughts-on-Collision/Newtons_cradle_animation_book_2.gif" alt="Newtons_cradle_animation_book_2"></p>
+<p><img data-src="Newtons_cradle_animation_book_2.gif" alt="Newtons_cradle_animation_book_2"></p>
 <p>这实际上是一个能量的传递过程。</p>
 <blockquote>
 <p>那么问题来了。</p>
@@ -340,7 +351,7 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
 <ul>
 <li><strong>是否可以认为有一个虚拟的球(能量)在这些表面现象的背后作用呢</strong>？</li>
 </ul>
-<p><img src="/A-Few-Thoughts-on-Collision/Newton.gif" alt="Newton"></p>
+<p><img data-src="Newton.gif" alt="Newton"></p>
 <blockquote>
 <p>Source: <a href="https://www.jqhtml.com/19348.html" target="_blank" rel="noopener external nofollow noreferrer">CSS牛顿摆</a><br>（<del>绘图技术太渣，意会一下就好</del>，大概是一个虚拟的球先附着在左边的球上，碰撞发生以后，它脱离实体潜运行最右侧的球上，然后继续附着，周而复始）</p>
 </blockquote>
@@ -370,8 +381,9 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E7%89%A9%E7%90%86/" rel="tag"># 物理</a>
+              <a href="/tags/%E7%89%A9%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 物理</a>
           </div>
 
         
@@ -467,7 +479,7 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -480,7 +492,7 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -552,6 +564,11 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -604,6 +621,9 @@ v_B'=v_B+\lambda_A\overline{v_A}=(-2)+\frac{4}{3}(+3)=+2</script></li>
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -645,8 +665,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -678,9 +696,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -690,7 +706,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -753,6 +788,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/A-Few-Thoughts-on-Collision/',]
+      });
+      });
+  </script>
 
 
 <script>

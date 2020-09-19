@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -166,18 +166,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -186,7 +189,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -198,6 +200,442 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">Git学习手册</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-meta-item leancloud_visitors" data-flag-title="Git学习手册" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><code>Git</code>学习手册。（基于<code>Linux</code>环境）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/" class="post-title-link" itemprop="url">PythonLib-机器学习库专题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="PythonLib-机器学习库专题" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img data-src="https://vel.life/Intro-to-Python-Libs/PythonLib.png" alt="pythonlib"></p>
+<p>Python库简介-机器学习库专题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/Notes-of-Machine-Learning-Part2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Notes-of-Machine-Learning-Part2/" class="post-title-link" itemprop="url">机器学习初等指南(2)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/Notes-of-Machine-Learning-Part2/" class="post-meta-item leancloud_visitors" data-flag-title="机器学习初等指南(2)" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/Notes-of-Machine-Learning-Part2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Notes-of-Machine-Learning-Part2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这是基于<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener external nofollow noreferrer">吴恩达</a>《<a href="https://study.163.com/course/courseMain.htm?courseId=1004570029" target="_blank" rel="noopener external nofollow noreferrer">机器学习</a>》课程的笔记第二部分（监督学习：神经网络、优化设计、支持向量机），也包括其它一些可能的学习资源。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Notes-of-Machine-Learning-Part2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于对抗样本的思考</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thoughts/" itemprop="url" rel="index"><span itemprop="name">Thoughts</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/" class="post-meta-item leancloud_visitors" data-flag-title="关于对抗样本的思考" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>关于对抗样本的思考。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">意图识别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="意图识别" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>意图识别。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -220,6 +658,15 @@
         </h2>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E7%AC%AC20%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E5%B8%88%E5%A7%90%E4%BA%A4%E6%B5%81%E4%BC%9A/" class="post-meta-item leancloud_visitors" data-flag-title="第20期人工智能前沿学生论坛—师姐交流会" title="Views">
@@ -298,6 +745,15 @@
         </h2>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/Byte-Tech-AI-Symposium/" class="post-meta-item leancloud_visitors" data-flag-title="2019机器智能前沿论坛" title="Views">
@@ -331,7 +787,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/Byte-Tech-AI-Symposium/1547898072596.png" alt="1547898072596"></p>
+          <p><img data-src="Byte-Tech-AI-Symposium/1547898072596.png" alt="1547898072596"></p>
 <p>2019 Byte Tech AI Symposium机器智能前沿论坛记录。<br>本文多图，约200M，谨慎阅读。<br></p>
           <!--noindex-->
             <div class="post-button">
@@ -377,6 +833,15 @@
         </h2>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/Hadoop-Spark%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-meta-item leancloud_visitors" data-flag-title="Hadoop/Spark学习手册" title="Views">
@@ -455,6 +920,15 @@
         </h2>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/Data-Science-Contests/" class="post-meta-item leancloud_visitors" data-flag-title="大数据竞赛-练习篇" title="Views">
@@ -533,6 +1007,15 @@
         </h2>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/" class="post-meta-item leancloud_visitors" data-flag-title="AI未来说-青年学术论坛（自然语言专场）" title="Views">
@@ -566,7 +1049,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/入场券.jpg" alt="入场券"></p>
+          <p><img data-src="AI未来说-青年学术论坛-自然语言专场/入场券.jpg" alt="入场券"></p>
 <p>AI未来说-青年学术论坛（自然语言专场）。</p>
           <!--noindex-->
             <div class="post-button">
@@ -590,395 +1073,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://vel.life/%E6%BC%AB%E8%B0%88%E6%96%B0%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%9C%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/stellarkey.gif">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="Never stop thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思维之海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%BC%AB%E8%B0%88%E6%96%B0%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-title-link" itemprop="url">漫谈新式计算机</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span id="/%E6%BC%AB%E8%B0%88%E6%96%B0%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-meta-item leancloud_visitors" data-flag-title="漫谈新式计算机" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/%E6%BC%AB%E8%B0%88%E6%96%B0%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%9C%BA/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E6%BC%AB%E8%B0%88%E6%96%B0%E5%BC%8F%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <script src="/assets/js/APlayer.min.js"> </script><p>新式计算机。是指那些具有革命性的计算机。</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.ibm.com/developerworks/cn/linux/other/quant/index.html" target="_blank" rel="noopener external nofollow noreferrer">量子计算入门</a></p>
-<h1 id="尺规计算机"><a href="#尺规计算机" class="headerlink" title="尺规计算机"></a>尺规计算机</h1><h1 id="人阵计算机"><a href="#人阵计算机" class="headerlink" title="人阵计算机"></a>人阵计算机</h1><h1 id="绳索计算机"><a href="#绳索计算机" class="headerlink" title="绳索计算机"></a>绳索计算机</h1><h1 id="量子计算机"><a href="#量子计算机" class="headerlink" title="量子计算机"></a>量子计算机</h1><h1 id="光子计算机"><a href="#光子计算机" class="headerlink" title="光子计算机"></a>光子计算机</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/">《大学计算机——计算思维的视角》笔记</a></li></ul></div>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://vel.life/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/stellarkey.gif">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="Never stop thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思维之海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">随机数算法</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span id="/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="随机数算法" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>随机数算法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/stellarkey.gif">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="Never stop thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思维之海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">新手村-简单字符串</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span id="/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-meta-item leancloud_visitors" data-flag-title="新手村-简单字符串" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%96%B0%E6%89%8B%E6%9D%91-%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://vel.life/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/stellarkey.gif">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="Never stop thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思维之海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-title-link" itemprop="url">Echarts学习手册</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span id="/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" class="post-meta-item leancloud_visitors" data-flag-title="Echarts学习手册" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://echarts.baidu.com/" target="_blank" rel="noopener external nofollow noreferrer">Echarts</a></p>
-<p><a href="https://www.cnblogs.com/xcsn/p/4528045.html" target="_blank" rel="noopener external nofollow noreferrer">8款图表插件推荐</a></p>
-<p><a href="https://www.jianshu.com/p/d0951f3423d2" target="_blank" rel="noopener external nofollow noreferrer">学习笔记《ECharts》</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://vel.life/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/stellarkey.gif">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="Never stop thinking.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="思维之海">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">最优传输理论</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span id="/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/" class="post-meta-item leancloud_visitors" data-flag-title="最优传输理论" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <script src="/assets/js/APlayer.min.js"> </script><a id="more"></a>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><blockquote>
-<p>orgin: <a href="https://blog.csdn.net/u013468614/article/details/83004882" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/u013468614/article/details/83004882</a></p>
-</blockquote>
-<p><strong>机器之心译最优传输理论</strong>：</p>
-<blockquote>
-<p><a href="https://www.jiqizhixin.com/articles/2018-10-04-3?from=synced&amp;keyword=%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA" target="_blank" rel="noopener external nofollow noreferrer">传说中的推土机距离基础，最优传输理论了解一下</a><br><a href="https://www.jiqizhixin.com/articles/2018-10-10-7?from=synced&amp;keyword=%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA" target="_blank" rel="noopener external nofollow noreferrer">最优传输理论你理解了，传说中的推土机距离重新了解一下</a></p>
-<p><a href="https://www.mindcodec.com/an-intuitive-guide-to-optimal-transport-for-machine-learning/" target="_blank" rel="noopener external nofollow noreferrer">An Intuitive Guide to Optimal Transport, Part I: Formulating the Problem</a><br><a href="https://www.mindcodec.com/an-intuitive-guide-to-optimal-transport-part-ii-the-wasserstein-gan-made-easy/" target="_blank" rel="noopener external nofollow noreferrer">An Intuitive Guide to Optimal Transport, Part II: The Wasserstein GAN made easy</a><br><a href="https://www.mindcodec.com/an-intuitive-guide-to-optimal-transport-part-iii-entropic-regularization-and-sinkhorn-divergences/" target="_blank" rel="noopener external nofollow noreferrer">An Intuitive Guide to Optimal Transport, Part III: Entropic Regularization and the Sinkhorn Iterations</a></p>
-</blockquote>
-<p>顾险峰《<a href="https://mp.weixin.qq.com/s/vCGNFNvV-PhpTM8Mn9Rx2g" target="_blank" rel="noopener external nofollow noreferrer">老顾谈几何</a>》的<strong>海天讲座</strong>系列，分为四个部分，列表如下：</p>
-<blockquote>
-<p><a href="https://mp.weixin.qq.com/s/dFf0EfgYQiyyyx6xdSJtYw" target="_blank" rel="noopener external nofollow noreferrer">海天讲座（一）最优传输理论</a><br><a href="https://mp.weixin.qq.com/s/od5m1zYdIXriucOjKDQQ6g" target="_blank" rel="noopener external nofollow noreferrer">海天讲座（二）最优传输理论</a><br><a href="https://mp.weixin.qq.com/s/sr88A58KOvU3Yp1ft0ALMA" target="_blank" rel="noopener external nofollow noreferrer">海天讲座（三）最优传输理论</a><br><a href="https://mp.weixin.qq.com/s/B3i16sL1j9XeC4Wl5loQDA" target="_blank" rel="noopener external nofollow noreferrer">海天讲座（四）最优传输理论</a></p>
-</blockquote>
-<h1 id="最优传输理论的数学含义"><a href="#最优传输理论的数学含义" class="headerlink" title="最优传输理论的数学含义"></a>最优传输理论的数学含义</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%90%8C%E6%80%A7%E6%95%B0%E5%AD%A6/">同性数学</a></li><li><a href="https://vel.life/%E6%95%B0%E5%AD%A6%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%88%9B%E6%96%B0/">数学的思维方式与创新</a></li><li><a href="https://vel.life/Beauty-of-Mathmatics/">阅《数学之美》</a></li></ul></div>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1046,7 +1144,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1059,7 +1157,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1131,6 +1229,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -1183,6 +1286,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -1224,8 +1330,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -1257,9 +1361,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -1269,7 +1371,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -1332,6 +1453,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/page/11/',]
+      });
+      });
+  </script>
 
 
 <script>

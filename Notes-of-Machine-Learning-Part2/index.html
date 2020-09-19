@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -36,8 +36,8 @@
 <meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/EnviousNiftyCorydorascatfish-size_restricted.gif">
 <meta property="og:image" content="https://i.imgur.com/JGhgWlE.png">
 <meta property="og:image" content="https://i.imgur.com/ZWCPU11.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/1547233129090.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/1547234017119.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/Notes-of-Machine-Learning-Part2/1547233129090.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part2/Notes-of-Machine-Learning-Part2/1547234017119.png">
 <meta property="og:image" content="https://i.imgur.com/9qCFyGW.gif">
 <meta property="og:image" content="https://i.imgur.com/UugnNCN.jpg">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png">
@@ -223,18 +223,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -243,7 +246,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -277,6 +279,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/Notes-of-Machine-Learning-Part2/" class="post-meta-item leancloud_visitors" data-flag-title="机器学习初等指南(2)" title="Views">
@@ -328,24 +339,24 @@
 <p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener external nofollow noreferrer">AiLearning</a></p>
 <p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener external nofollow noreferrer">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener external nofollow noreferrer">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener external nofollow noreferrer">林轩田</a>） 进阶教学视频</p>
 <h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><h2 id="非线性假设"><a href="#非线性假设" class="headerlink" title="非线性假设"></a>非线性假设</h2><p>通过多项式特征，我们可以令逻辑回归支持非线性的分类问题。</p>
-<p><img src="https://i.imgur.com/aQHYFaz.png" width="70%"></p>
+<p><img data-src="https://i.imgur.com/aQHYFaz.png" width="70%"></p>
 <blockquote>
 <p>上图中，房屋的特征由原来的 2 维增加到 <strong>100 维</strong>，进行二次多项式扩展后，特征个数达到了约 <strong>5000 维</strong>，对计算机的性能提出了很大的挑战。一个方法是只考虑$x_i^2$平方项，但是这样会损失决策边界的刻画能力，无法适应复杂的边界。<br>假定我们现在有 n 维特征，需要进行非线性分类，仅扩展特征为二次多项式，特征个数就为 $n+C_n^2≈\frac{n^2}{2}$ 个，空间复杂度就为 O(n^2)。如果扩展到三次多项式，则空间复杂度能达到 O(n^3)。</p>
 </blockquote>
 <p>在<strong>计算机视觉</strong>（CV）领域，很多人不理解为什么困难。事实上<u>图像的特征往往都是高维的</u>。下图中，我们想要区分一幅图像是否是汽车图像，假定图像分辨率为 50×50，且每个像素的灰度都为一个特征，那么一副图像的特征维度就高达 <strong>2500 维</strong>（考虑<strong><font color="red">R</font><font color="green">G</font><font color="blue">B</font></strong>时7500维），进行二次多项式扩展后，特征维度更是达到了约 <strong>3百万维</strong>：</p>
-<p><img src="https://i.imgur.com/AOw6Bz1.png" width="70%"></p>
+<p><img data-src="https://i.imgur.com/AOw6Bz1.png" width="70%"></p>
 <p>为了处理高维特征的非线性分类问题，引入了一个新的机器学习模型——神经网络。</p>
 <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><p><strong>推荐教学视频</strong>：<a href="https://www.bilibili.com/video/av15532370" target="_blank" rel="noopener external nofollow noreferrer"><strong>Part</strong> 1</a>, <a href="https://www.bilibili.com/video/av16144388/?spm_id_from=333.788.videocard.0" target="_blank" rel="noopener external nofollow noreferrer"><strong>Part</strong> 2</a>, <a href="https://www.bilibili.com/video/av16577449/?spm_id_from=333.788.videocard.0" target="_blank" rel="noopener external nofollow noreferrer"><strong>Part</strong> 3</a>。（<a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" target="_blank" rel="noopener external nofollow noreferrer">3Blue1Brown</a> or <a href="https://www.youtube.com/watch?v=bxe2T-V8XRs&amp;list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU" target="_blank" rel="noopener external nofollow noreferrer">WelchLab</a>）</p>
 <blockquote>
 <p>下图来自<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>，展示了一个典型的二分类四层人工神经网络（多层感知机）的运作方式：</p>
 </blockquote>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif" width="70%"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif" width="70%"></p>
 <p>以及多元分类的神经网络：</p>
-<p><img src="/Notes-of-Machine-Learning-Part2/EnviousNiftyCorydorascatfish-size_restricted.gif" alt="EnviousNiftyCorydorascatfish-size_restricted"></p>
+<p><img data-src="EnviousNiftyCorydorascatfish-size_restricted.gif" alt="EnviousNiftyCorydorascatfish-size_restricted"></p>
 <p>神经网络是模拟人脑功能的算法。人工神经网络（ANN：Artificial Neural Network），简称神经网络（NN：Neural Network）。迄今为止，人工神经网络尚无统一定义，它是一种模拟了人体神经元构成的数学模型，依靠系统的复杂程度，通过调整内部大量节点之间相互连接的关系，从而达到处理信息的目的。</p>
 <blockquote>
 <p>The “<strong>one learning algorithm</strong>” hypothesis，一个算法解决一切。<br>如下图，你甚至可以将任何传感器接入神经系统，大脑将自动学会如何分辨事物。</p>
-<p><img src="https://i.imgur.com/JGhgWlE.png" alt="大脑将自动学会如何分辨事物"></p>
+<p><img data-src="https://i.imgur.com/JGhgWlE.png" alt="大脑将自动学会如何分辨事物"></p>
 </blockquote>
 <p>神经网络曾经在上世纪80、90年代被广泛应用，但在90年代后期遭受冷落。</p>
 <blockquote>
@@ -357,7 +368,7 @@
 <li>每条弧有一个权重</li>
 </ul>
 </blockquote>
-<h3 id="神经元"><a href="#神经元" class="headerlink" title="神经元"></a>神经元</h3><p><img src="https://i.imgur.com/ZWCPU11.png" alt="神经元"></p>
+<h3 id="神经元"><a href="#神经元" class="headerlink" title="神经元"></a>神经元</h3><p><img data-src="https://i.imgur.com/ZWCPU11.png" alt="神经元"></p>
 <p><a href="https://zh.wikipedia.org/wiki/%E7%A5%9E%E7%B6%93%E5%85%83" target="_blank" rel="noopener external nofollow noreferrer">神经元</a>可以分为四个区域：</p>
 <ul>
 <li><strong>接收区（receptive zone）</strong>：<strong>树突</strong>（输入）接收到输入信息。</li>
@@ -378,22 +389,22 @@
 </li>
 </ul>
 <h3 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h3><p><strong>Ex</strong>: (Perceptron in 2D, 此处为线性分类器)</p>
-<p><img src="/Notes-of-Machine-Learning-Part2/1547233129090.png" alt="1547233129090"></p>
+<p><img data-src="Notes-of-Machine-Learning-Part2/1547233129090.png" alt="1547233129090"></p>
 <blockquote>
-<p>感知机算是最早期的Hypothesis模型了。（参考林轩田老师的<a href="https://www.bilibili.com/video/av1624332/?p=6" target="_blank" rel="noopener external nofollow noreferrer">视频</a>）<br>一个感知机的简洁算法称为<strong>Perceptron Learning Algorithm</strong>（<strong>PLA</strong>，感知机学习算法）。如下图：<br><img src="/Notes-of-Machine-Learning-Part2/1547234017119.png" alt="1547234017119"></p>
+<p>感知机算是最早期的Hypothesis模型了。（参考林轩田老师的<a href="https://www.bilibili.com/video/av1624332/?p=6" target="_blank" rel="noopener external nofollow noreferrer">视频</a>）<br>一个感知机的简洁算法称为<strong>Perceptron Learning Algorithm</strong>（<strong>PLA</strong>，感知机学习算法）。如下图：<br><img data-src="Notes-of-Machine-Learning-Part2/1547234017119.png" alt="1547234017119"></p>
 <p>注意<strong><font color="red">W</font></strong>是决策边界的法向量。该原理是矢量叉乘判断方向(左/右)。（<a href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+70240183x_1+sp/about" target="_blank" rel="noopener external nofollow noreferrer">计算几何</a>）</p>
 <p>证明：我们有<strong>评价分数</strong>为$y<em>nW</em>{t}^{T}x_n$（同向正值），并且</p>
 <script type="math/tex; mode=display">
 W_{t+1}:=W_t+y_nx_n</script><p>则等价为下式，其中红色部分$\geq0​$</p>
 <script type="math/tex; mode=display">
 y_nW_{t}^Tx_n:=y_nW_{t+1}^{T}x_n+\color{red}{ {(y_nx_n)}^2 }</script><p>故每次评价都不会变差。（详细的证明可以参考：<a href="https://rhadow.github.io/2016/02/24/ml-lecture-2/" target="_blank" rel="noopener external nofollow noreferrer">Here</a>,，或参看《统计学习方法》P31）</p>
-<p><img src="https://i.imgur.com/9qCFyGW.gif" width="400"></p>
+<p><img data-src="https://i.imgur.com/9qCFyGW.gif" width="400"></p>
 <p>对于一个线性不可分的点集（比如，有噪声），可以退而求其次，求分错误差最小的情况。<br>（这个解法将是一个<strong>NP-Hard</strong>问题。利用Pocket算法贪心地更新算法【每次更新时要比较】可以迭代一个还不错的结果）</p>
 </blockquote>
 <hr>
 <p>一个神经元可以（在计算机上）被实现为一个简单的<strong>逻辑单元</strong>——</p>
 <p><strong><a href="https://zh.wikipedia.org/wiki/%E6%84%9F%E7%9F%A5%E5%99%A8" target="_blank" rel="noopener external nofollow noreferrer">感知机</a></strong>：最简单的神经网络。一个<strong>输出层</strong>，一个<strong>输入层</strong>。一个计算夹层（图中的有向边）。</p>
-<p><img src="https://i.imgur.com/UugnNCN.jpg" width="32%"></p>
+<p><img data-src="https://i.imgur.com/UugnNCN.jpg" width="32%"></p>
 <p>向量形式为：（$x_0$是<a href="https://www.cnblogs.com/shuaishuaidefeizhu/p/6832541.html" target="_blank" rel="noopener external nofollow noreferrer">偏置单元</a>(bias unit)，其值常设为1，相当于函数中的常数项）</p>
 <script type="math/tex; mode=display">
 \begin{bmatrix}
@@ -416,7 +427,7 @@ max(0,z)\,\,\,\, , 线性整流函数ReLU\\
 \quad\,\,\,z\quad \,\,\,  \quad ,退化为\color{red}{回归问题}\\
 \,\,\,\,\, ……
 \end{cases}</script><p>更具体的形式为：</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png" width="60%"></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png" width="60%"></p>
 <blockquote>
 <p>详细内容直接参考<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener external nofollow noreferrer">Here</a>吧。</p>
 </blockquote>
@@ -426,12 +437,12 @@ max(0,z)\,\,\,\, , 线性整流函数ReLU\\
 <li><strong>输出层</strong>：输出层产出最终的预测 h。</li>
 <li><strong>隐含层</strong>：隐含层介于输入层与输出层之间，之所以称之为隐含层，是因为当中产生的值并不像输入层使用的样本矩阵 X 或者输出层用到的标签矩阵 y 那样直接可见。</li>
 </ul>
-<p><img src="https://i.imgur.com/jTmzeHo.png" width="60%"></p>
+<p><img data-src="https://i.imgur.com/jTmzeHo.png" width="60%"></p>
 <blockquote>
 <p>图中神经元之间的边如何连接，称为神经网络的<strong>架构</strong>（architecture）。<br>不过架构一般是指神经网络有多少层、每层多少个神经元。</p>
 </blockquote>
 <p>典型的传播(计算)过程如下：</p>
-<p><img src="https://i.imgur.com/FBXK8mP.png" alt="传播算法"></p>
+<p><img data-src="https://i.imgur.com/FBXK8mP.png" alt="传播算法"></p>
 <p>神经网络的计算过程写为向量形式：（偏置$a_0^{(i)}=x_0=1$）</p>
 <script type="math/tex; mode=display">
 a^{(n+1)}=g(\Theta^{(n)}a^{(n)})\quad,其中a^{(1)}=x</script><blockquote>
@@ -449,13 +460,13 @@ a^{(j)} = g(z^{(j)})</script></li>
 <p>为了基于线性分类实现复杂的非线性分类，多层的神经网络采用复杂函数拟合，利用隐藏层完成非线性空间到线性的变换。</p>
 </blockquote>
 <p>一般来说，层数越多，神经网络的效果越好。（如<a href="https://www.cnblogs.com/subconscious/p/5058741.html#sixth" target="_blank" rel="noopener external nofollow noreferrer">下图</a>）</p>
-<p><img src="https://i.imgur.com/lMn0aAi.jpg" alt="多层神经网络"></p>
+<p><img data-src="https://i.imgur.com/lMn0aAi.jpg" alt="多层神经网络"></p>
 <blockquote>
 <p><a href="http://www.ruanyifeng.com/blog/2017/07/neural-network.html" target="_blank" rel="noopener external nofollow noreferrer">神经网络入门</a></p>
 <p><a href="https://www.cnblogs.com/subconscious/p/5058741.html" target="_blank" rel="noopener external nofollow noreferrer">神经网络浅讲：从神经元到深度学习</a></p>
 </blockquote>
 <h3 id="逻辑运算拟合"><a href="#逻辑运算拟合" class="headerlink" title="逻辑运算拟合"></a>逻辑运算拟合</h3><p><strong>例</strong>：（非线性分类问题，<strong>XOR</strong>/<strong>XNOR</strong>）</p>
-<p><img src="https://i.imgur.com/lNIufu1.png" alt="1546655609880"></p>
+<p><img data-src="https://i.imgur.com/lNIufu1.png" alt="1546655609880"></p>
 <p>为了实现上述的能拟合<strong>XNOR</strong>运算的神经网络。</p>
 <p>$\longrightarrow$我们可以先看一个简化的例子：实现<strong>AND</strong>运算。</p>
 <script type="math/tex; mode=display">
@@ -464,7 +475,7 @@ y=\mbox{$x_1$ AND $x_2$} =
 1 & \mbox{if $x_1=1$ and $x_2=1$}\\
 0 & \mbox{otherwise}
 \end{cases}</script><p>不如令权重$\Theta^{(1)} = \begin{bmatrix} -30 &amp; 20 &amp; 20 \end{bmatrix}$，得到一个构建好的神经网络如下：</p>
-<p><img src="https://i.imgur.com/WGrxUiH.png" alt="AND"></p>
+<p><img data-src="https://i.imgur.com/WGrxUiH.png" alt="AND"></p>
 <p>向量形式为：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -478,7 +489,7 @@ g(z^{(2)})
 \rightarrow
 h_\Theta(x)
 \end{align*}</script><p>采用<strong>Sigmoid</strong>激活函数：（g(4)≈1, g(-4)≈0）</p>
-<p><img src="https://i.imgur.com/sM4KWcq.png"></p>
+<p><img data-src="https://i.imgur.com/sM4KWcq.png"></p>
 <p>最后前向传播运算的结果为：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -488,12 +499,12 @@ h_\Theta(x)
 & x_1 = 1 \ \ and \ \ x_2 = 0 \ \ then \ \ g(-10) \approx 0 \newline
 & x_1 = 1 \ \ and \ \ x_2 = 1 \ \ then \ \ g(10) \approx 1
 \end{align*}</script><p>可以基于这些简单的网络来生成更复杂的逻辑运算：</p>
-<p><img src="https://i.imgur.com/aAGtJ3a.png" width="55%"></p>
+<p><img data-src="https://i.imgur.com/aAGtJ3a.png" width="55%"></p>
 <blockquote>
 <p>我们目前掌握了三种逻辑神经网络：<font color="red"><strong>AND</strong></font>，<font color="greeen"><strong>(NOT)AND(NOT)</strong></font>，和<font color="green"><strong>OR</strong></font>。</p>
 </blockquote>
 <p>现在可以着手解决<strong>XNOR</strong>运算的拟合了！过程如下图：</p>
-<p><img src="https://i.imgur.com/L9qiZeE.png" width="90%"></p>
+<p><img data-src="https://i.imgur.com/L9qiZeE.png" width="90%"></p>
 <blockquote>
 <p><strong>XOR</strong>异或运算也能被拟合，只须将图中对应换为<font color="red"><strong>OR</strong></font>，<font color="greeen"><strong>(NOT)OR(NOT)</strong></font>，和<font color="green"><strong>AND</strong></font>。</p>
 </blockquote>
@@ -502,10 +513,10 @@ h_\Theta(x)
 
 <hr>
 <p><strong>例</strong>：（假定我们需要将图像分为四类——<strong>行人</strong>，<strong>车辆</strong>，<strong>摩托车</strong>，<strong>卡车</strong>。）</p>
-<p><img src="https://i.imgur.com/hcN1O8v.png" width="80%"></p>
+<p><img data-src="https://i.imgur.com/hcN1O8v.png" width="80%"></p>
 <blockquote>
 <p>这是一个多分类问题，由于图像特征较多，因此我们可以考虑设计含有多个隐含层的神经网络来完成特征优化（扩展）：</p>
-<p><img src="https://i.imgur.com/e9mtqso.png" width="50%"></p>
+<p><img data-src="https://i.imgur.com/e9mtqso.png" width="50%"></p>
 <p>注意，我们设计了一个含有多个输出的神经网络，亦即，我们会用不同的激活状态来定义分类：</p>
 <script type="math/tex; mode=display">
 y^{(i)} =
@@ -620,7 +631,7 @@ g'(z^{(l)})&=\left. \left(\cfrac{1}{1+e^{-z} }\right)^{\color{red}{'} } \right|_
 <h3 id="梯度检测"><a href="#梯度检测" class="headerlink" title="梯度检测"></a>梯度检测</h3><p>在实现神经网络时可能产生许多微小的<strong>BUG</strong>，可能看起来好像是正常运行，尽管代价函数在不断减小，但最后得到的神经网络的误差可能比无<strong>BUG</strong>情况下高1个数量级。</p>
 <p>因此，需要使用称为<strong>梯度校验（Gradient Checking）</strong>的手段。</p>
 <p>我们可以在点<font color="blue"><strong>Θ</strong></font>附近的小区间 [ <font color="blue"><strong>Θ</strong></font>−<font color="red"><strong>ϵ</strong></font>, <font color="blue"><strong>Θ</strong></font>+<font color="red"><strong>ϵ</strong></font>]，构造下图所示直角三角形来近似$J(Θ)$在<font color="blue"><strong>Θ</strong></font>处的导数：</p>
-<p><img src="https://i.imgur.com/P0doG1F.png" width="80%"></p>
+<p><img data-src="https://i.imgur.com/P0doG1F.png" width="80%"></p>
 <script type="math/tex; mode=display">
 \frac{d}{d\Theta}J(\Theta) \approx \frac{J(\Theta+\epsilon)-J(\Theta-\epsilon)}{2\epsilon}</script><blockquote>
 <p>通常，ϵ 取较小值，如 $10^{-4}$。</p>
@@ -639,7 +650,7 @@ gradApprox \approx DVec\,\,\color{red}{?}</script><p>如果上式成立，则证
 <li><u>在正式训练之前，请关闭梯度校验算法</u>（因为梯度的近似计算效率<strong>很慢</strong>）</li>
 </ul>
 <h3 id="Θ随机初始化"><a href="#Θ随机初始化" class="headerlink" title="Θ随机初始化"></a>Θ随机初始化</h3><p>在逻辑回归中，我们通常会初始化所有权值为 0，假如在如下的神经网络也采用 0 值初始化：</p>
-<p><img src="https://i.imgur.com/WB7lfyi.png" width="70%"></p>
+<p><img data-src="https://i.imgur.com/WB7lfyi.png" width="70%"></p>
 <script type="math/tex; mode=display">
 \begin{align*}
 & a_1^{(1)} = a_2^{(2)} \\
@@ -717,7 +728,7 @@ J(\theta) = \frac{1}{2m} [\sum\limits_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2+\lamb
 </div>
 <p>可以看到，这些手段不总是那么美好，而且每个手段的尝试都会花费我们大量时间去调代码，跑测试，也许还<strong>出力不讨好</strong>。</p>
 <h2 id="泛化能力评测"><a href="#泛化能力评测" class="headerlink" title="泛化能力评测"></a>泛化能力评测</h2><p>在线性回归的章节中，我们已经知道，仅仅具备一个很小的训练误差并不能保证我们的预测函数就是优秀的，因为这种“优秀”仅仅体现在了对于已知的训练样本的假设上，而无法保证见到新的样本时候还能做出足够好的预测，<strong>过拟合</strong>就是当中的典型例子。</p>
-<p><img src="https://i.imgur.com/JiIFgcs.jpg" width="30%"></p>
+<p><img data-src="https://i.imgur.com/JiIFgcs.jpg" width="30%"></p>
 <p>因此，预测准不准应当反映在对于新样本的<strong>泛化</strong>（generalization）能力。我们考虑将数据集划分为：</p>
 <ul>
 <li><strong>训练集</strong>（Training set）：70%</li>
@@ -791,11 +802,11 @@ h_\theta(x) = \theta_0+\theta_1x+...+\theta_5x^{5}</script><p>但是！实际上
 <li><strong><font color="orange">方差</font>（variance）</strong>反映了模型对训练集过度敏感，而丢失了数据规律【<strong><font color="red">过拟合</font></strong>】</li>
 </ul>
 <p>高偏差和高方差都会造成模型泛化能力弱，从而无法作出对新样本的准确预测。</p>
-<p><img src="https://i.imgur.com/1ccn4QT.png" width="60%/"></p>
+<p><img data-src="https://i.imgur.com/1ccn4QT.png" width="60%/"></p>
 <p>通过<strong>诊断（Diagnose）</strong>模型是出现了<font color="brown"><strong>高偏差</strong></font>问题还是<font color="orange"><strong>高方差</strong></font>问题，我们就能对症下药，采取不同的解决策略。</p>
 <hr>
 <h3 id="多项式次数"><a href="#多项式次数" class="headerlink" title="多项式次数"></a>多项式次数</h3><p>下图反映了训练集、交叉验证集误差随<strong>多项式次数 d</strong> 的变化规律：</p>
-<p><img src="https://i.imgur.com/23WNlXH.png" width="350"></p>
+<p><img data-src="https://i.imgur.com/23WNlXH.png" width="350"></p>
 <blockquote>
 <p>在前面的章节中，我们知道，多项式回归中，如果多项式次数较高，则容易造成<strong>过拟合</strong>，此时训练误差很低，但是对于新数据的泛化能力较差，导致交叉验证集和测试集的误差都很高，此时模型出现了<strong><font color="orange">高方差</font></strong>：</p>
 <script type="math/tex; mode=display">
@@ -810,21 +821,21 @@ h_\theta(x) = \theta_0+\theta_1x+...+\theta_5x^{5}</script><p>但是！实际上
 \end{align*}</script></blockquote>
 <hr>
 <h3 id="正则因子"><a href="#正则因子" class="headerlink" title="正则因子"></a>正则因子</h3><p><strong>正则化（Regularization）</strong>能帮我们解决过拟合问题，λ 取值越大，对参数 θ 的惩罚力度就越大，能够帮助解决过拟合问题，但是，如果惩罚过重，也会造成<strong>欠拟合</strong>问题，即会出现<strong><font color="brown">高偏差</font></strong>。如果 λ 取值较小，则意味着没有惩罚 θ，也就不能解决<strong>过拟合</strong>问题，会出现<strong><font color="orange">高方差</font></strong>。</p>
-<p><img src="https://i.imgur.com/nWniKbH.jpg" width="500"></p>
+<p><img data-src="https://i.imgur.com/nWniKbH.jpg" width="500"></p>
 <p>下图反映了正规化过程中，训练集、交叉验证集误差随 λ 变化的曲线：</p>
-<p><img src="https://i.imgur.com/3tRCOTF.png" width="350"></p>
+<p><img data-src="https://i.imgur.com/3tRCOTF.png" width="350"></p>
 <hr>
 <h3 id="训练集大小"><a href="#训练集大小" class="headerlink" title="训练集大小"></a>训练集大小</h3><p>当<strong>训练样本的数目</strong>m较小时，意味着可供学习的知识较少，则模型在训练阶段不容易犯错误（训练集误差极低），但也发现不了数据的规律（交叉验证集误差极高）；而当样本数目增多时，意味着需要学习的知识增多，则模型虽然在训练阶段容易犯一些错（<font color="blue"><strong>训练集</strong></font>误差开始增高），但也更容易探测出数据规律（<font color="F1141FF"><strong>交叉验证集</strong></font>误差降低）：</p>
-<p><img src="https://i.imgur.com/3727tzk.jpg" width="480"></p>
+<p><img data-src="https://i.imgur.com/3727tzk.jpg" width="480"></p>
 <p>如果模型出现了<strong><font color="brown">高偏差</font></strong>，即出现了<strong>欠拟合</strong>，学习曲线随样本数目的变化曲线如下图所示，即增加样本数目，仍无法显著降低交叉验证集误差，即无法提高模型的泛化能力：（<font color="blue"><strong>训练集</strong></font>，<font color="F1141FF"><strong>交叉验证集</strong></font>）</p>
-<p><img src="https://i.imgur.com/WR6sr8x.jpg" width="480"></p>
+<p><img data-src="https://i.imgur.com/WR6sr8x.jpg" width="480"></p>
 <p>如果模型出现了<strong><font color="orange">高方差</font></strong>，即出现了<strong>过拟合</strong>，学习曲线随着样本数目变化的曲线如下图所示，即增加样本数目，可以显著降低交叉验证集的误差，提高模型的泛化能力：（<font color="blue"><strong>训练集</strong></font>，<font color="F1141FF"><strong>交叉验证集</strong></font>）</p>
-<p><img src="https://i.imgur.com/F2jjMDn.png" width="480"></p>
+<p><img data-src="https://i.imgur.com/F2jjMDn.png" width="480"></p>
 <hr>
 <h3 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h3><p>当神经网络的结构<strong>简单</strong>时，则易出现<font color="brown"><strong>高偏差</strong></font>：</p>
-<p><img src="https://i.imgur.com/JpF6xtQ.png" width="150"></p>
+<p><img data-src="https://i.imgur.com/JpF6xtQ.png" width="150"></p>
 <p>当神经网络的结构过于<strong>复杂</strong>时，则易出现<font color="orange"><strong>高方差</strong></font>，此时可以通过增大 λ 来解决：</p>
-<p><img src="https://i.imgur.com/rYGNjTo.png" width="240"></p>
+<p><img data-src="https://i.imgur.com/rYGNjTo.png" width="240"></p>
 <h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><div class="table-container">
 <table>
 <thead>
@@ -968,7 +979,7 @@ y =
 1, & h_\theta(x) \ge 0.7 \\
 0, & \mbox{otherwise}
 \end{cases}</script><p>此时，<u>必须有较高的把握，我们才会预测一个病人患有癌症</u>，避免非癌症患者接受到了不必要的治疗，假阳性样本少，此时我们也获得了<strong>高查准率</strong>。然而，这么预测的代价是，有些癌症病患体征不明显，就被我们认为没有患癌，从而得不到治疗，假阴性样本多，即我们的<strong>召回率</strong>偏低。如下图所示：</p>
-<p><img src="https://i.imgur.com/gYXFVXE.png"></p>
+<p><img data-src="https://i.imgur.com/gYXFVXE.png"></p>
 <p>能不能把权衡的过程自动化呢？<br>当我们尝试构建了不同的算法模型（不同阀值），并且获得了不同的查准率和召回率：</p>
 <div class="table-container">
 <table>
@@ -1089,7 +1100,7 @@ F_1 Score &= 1, \quad \mbox{if $P=1$ and $R=1$}
 </ul>
 <p>这些算法在<strong>训练数据量提升</strong>以后都表现得越来越优异，<strong>性能都提升了</strong>：</p>
 </blockquote>
-<p><img src="https://i.imgur.com/o4ZRFC9.png" title="source: imgur.com"></p>
+<p><img data-src="https://i.imgur.com/o4ZRFC9.png" title="source: imgur.com"></p>
 <p>在机器学习领域，流传着这样一句话：</p>
 <blockquote>
 <p><strong>It’s not who has the best algorithm that wins.</strong><br><strong>It’s who has the most data.</strong></p>
@@ -1108,15 +1119,15 @@ F_1 Score &= 1, \quad \mbox{if $P=1$ and $R=1$}
 cost &= -logh_{\theta}(x) \\
 &= -log\frac{1}{1+e^{-z} }, \quad z=\theta^T x
 \end{align*}</script><p>此时，代价函数随 z 的变化曲线如下图：</p>
-<p><img src="https://i.imgur.com/Z1FFdxc.png" width="300"></p>
+<p><img data-src="https://i.imgur.com/Z1FFdxc.png" width="300"></p>
 <p>不难看出，当 y=1 时，<strong>随着 z 取值变大，预测代价变小</strong>，因此，逻辑回归想要在面对正样本 y=1 时，获得足够高的预测精度，就希望 $z=θ^Tx≫0$。</p>
 <p>而 SVM 则将上图的曲线拉直为下图中的折线，构成了 y=1 时的代价函数曲线 <strong>cost1(z)</strong>：（<u>近似化，并获得更简单的数值</u>）</p>
-<p><img src="https://i.imgur.com/67G6ABA.png" width="200"></p>
+<p><img data-src="https://i.imgur.com/67G6ABA.png" width="200"></p>
 <blockquote>
 <p>当 y=1 时，为了预测精度足够高，SVM 希望 $θ^Tx≥1$。</p>
 <p>当 y=0 时，SVM 定义了代价函数 <strong>cost0(z)</strong>，为了预测精度足够高，SVM 希望 $θ^Tx≤−1$：</p>
 </blockquote>
-<p><img src="https://i.imgur.com/Xn6FFIN.png" width="220"></p>
+<p><img data-src="https://i.imgur.com/Xn6FFIN.png" width="220"></p>
 <hr>
 <p>在Logistic回归中，最小化预测代价的过程为：</p>
 <script type="math/tex; mode=display">
@@ -1136,7 +1147,7 @@ h_\theta(x) =
 \end{cases}</script><h2 id="大间距分类器"><a href="#大间距分类器" class="headerlink" title="大间距分类器"></a>大间距分类器</h2><p>由上节，SVM的代价函数优化式为</p>
 <script type="math/tex; mode=display">
 \min\limits_{\theta}C[\sum\limits_{i=1}^{m}y^{(i)}cost_1(\theta^Tx^{(i)})+(1-y^{(i)})cost_0(\theta^Tx^{(i)})]+\frac{1}{2}\sum\limits_{j=1}^{n}\theta_j^2</script><p>并且，当 y=1 时，SVM 希望 θx≥1；而当 y=0 时，SVM 希望 θx≤−1。</p>
-<p><img src="https://i.imgur.com/loRNlQb.png" title="source: imgur.com"></p>
+<p><img data-src="https://i.imgur.com/loRNlQb.png" title="source: imgur.com"></p>
 <p>容易推出SVM代价函数的<strong>优化目标</strong>为：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -1144,12 +1155,12 @@ h_\theta(x) =
 \mbox{s.t}. \quad &\theta^T x^{(i)} \geq 1 &\mbox{if $y^{(i)}=1$} \\
 & \theta^T x^{(i)} \leq -1 &\mbox{if $y^{(i)}=0$}
 \end{align*}</script><p>SVM 最终找出的决策边界会是下图中黑色直线所示的决策边界，而不是绿色或者紫色的决策边界。该决策边界保持了与正、负样本都足够大的距离，因此，SVM 是典型的<strong>大间距分类器（Large margin classifier）</strong>。</p>
-<p><img src="https://i.imgur.com/Uap9wHO.jpg" width="300"></p>
+<p><img data-src="https://i.imgur.com/Uap9wHO.jpg" width="300"></p>
 <blockquote>
 <p>这个时候，与Logistic回归不同的是，SVM的决策边界将<u>张成一个与原空间同维的空间</u>，相当于给出了一个<strong>补空间</strong>。<br>补空间记录了既不属于正类也不属于负类的额外可能。（有点像无监督学习了）</p>
 </blockquote>
 <h3 id="数学原理"><a href="#数学原理" class="headerlink" title="数学原理"></a>数学原理</h3><p>假定两个2维向量：$u=\left(\begin{matrix}u_1 \ u_2\end{matrix}\right),v=\left(\begin{matrix}v_1 \ v_2\end{matrix}\right)$。<br>令 p 为 v 投影到 u 的线段长（该值可正可负），如下图所示：</p>
-<p><img src="https://i.imgur.com/uNOKtUv.png" width="230"></p>
+<p><img data-src="https://i.imgur.com/uNOKtUv.png" width="230"></p>
 <p>则 u、v 的内积为：$ u^Tv = p \cdot ||u|| = u_1v_1+u_2v_2 $。（||u|| 为 u 的范数，这里是 u 的长度。）</p>
 <p>假定我们的 $\theta=\left(\begin{matrix}\theta_1 \ \theta_2\end{matrix}\right)$，且令 θ_0=0，以使得向量 θ 过原点，则优化约束可写为：</p>
 <script type="math/tex; mode=display">
@@ -1160,21 +1171,21 @@ h_\theta(x) =
 \end{align*}</script><p>由向量内积公式可得：</p>
 <script type="math/tex; mode=display">
 \theta^T x^{(i)} = p^{(i)}\cdot||\theta||</script><p>其中，p(i) 为特征向量 x(i) 在 θ 上的投影：（x和θ被向量化）</p>
-<p><img src="https://i.imgur.com/nokkpHt.jpg" width="200"></p>
+<p><img data-src="https://i.imgur.com/nokkpHt.jpg" width="200"></p>
 <p>当 y(i)=1 时，我们希望 $θ^Tx^{(i)}≥1$，亦即希望 <strong>p(i)⋅||θ||≥1</strong>，此时考虑两种情况：</p>
 <ol>
 <li>p(i)很小（一些X点接近绿色线，其投影狭窄），则需要 ||θ|| 很大，与 $min_θ\frac{1}{2}||θ||^2$ 矛盾。</li>
 </ol>
-<p><img src="https://i.imgur.com/5Dz8k6T.png" width="300/"></p>
+<p><img data-src="https://i.imgur.com/5Dz8k6T.png" width="300/"></p>
 <ol>
 <li>p(i)很大，如下图所示，即<strong>样本与决策边界的距离足够大</strong>，此时我们才能在既要 <strong>||θ|| 足够小</strong>的情况下，又能有 $θ^Tx^{(i)}≥1$，保证预测精度够高。</li>
 </ol>
-<p><img src="https://i.imgur.com/5YaJ80w.jpg" width="280"></p>
+<p><img data-src="https://i.imgur.com/5YaJ80w.jpg" width="280"></p>
 <blockquote>
 <p>这就解释了为什么 SVM 的模型会具有大间距分类器的性质了。<br>（<u>左右两边的边界都会相互尽量远离</u>）</p>
 </blockquote>
-<p><img src="https://i.imgur.com/WeNkq93.png" width="280"></p>
-<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><p><img src="https://i.imgur.com/7WtfRjn.png" width="300/"></p>
+<p><img data-src="https://i.imgur.com/WeNkq93.png" width="280"></p>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><p><img data-src="https://i.imgur.com/7WtfRjn.png" width="300/"></p>
 <p>在逻辑回归中，我们会通过多项式扩展来处理<strong>非线性</strong>分类问题：</p>
 <script type="math/tex; mode=display">
 h_\theta(x) = \theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+\theta_5x_2^2+\cdots</script><script type="math/tex; mode=display">
@@ -1182,7 +1193,7 @@ h_\theta(x) = \theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+\the
 <script type="math/tex; mode=display">
 h_\theta(x) = \theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\cdots</script><p>但<u>多项式回归所带来的高阶项不一定作用明显</u>。<br>针对这一问题，SVM 不会引入高阶项来作为新的特征，而是会选择一些<strong>地标（<font color="red">landmark</font>）</strong>，并将样本 x 与标记点 $l^{(i)}$ 的<strong>相似程度</strong>作为新的训练特征 f_i：（<strong>Similarity Function</strong>）</p>
 <script type="math/tex; mode=display">
-f_i = \text{similarity}(x, l^{(i)})</script><p><img src="https://i.imgur.com/JiiU22d.jpg" width="230"></p>
+f_i = \text{similarity}(x, l^{(i)})</script><p><img data-src="https://i.imgur.com/JiiU22d.jpg" width="230"></p>
 <p><strong>距离度量的方式就称之为<font color="red">核函数</font>（<font color="red">Kernel</font>）</strong>，最常见的核函数是<strong>高斯核函数（Gaussian Kernel）</strong>：</p>
 <script type="math/tex; mode=display">
 f_i = exp(-\frac{||x-l^{(i)}||^2}{2\delta^2})=K(x,l^{(i)})</script><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">kernel</span><span class="params">(x1,x2)</span></span></span><br><span class="line">  Delta = <span class="number">5</span>;</span><br><span class="line">  f = <span class="built_in">exp</span>(-(x1-x2)'*(x1-x2)/(<span class="number">2</span>*Delta^<span class="number">2</span>));</span><br><span class="line">endfunction</span><br><span class="line">x1 = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>; <span class="number">4</span>];</span><br><span class="line">x2 = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>; <span class="number">4</span>];</span><br><span class="line">kernel(x1,x2)</span><br></pre></td></tr></table></figure>
@@ -1196,12 +1207,12 @@ f \approx exp(-\frac{0^2}{2\delta^2}) \approx 1</script></li>
 f \approx exp(-\frac{(\mbox{large number})^2}{2\delta^2}) \approx 0</script></li>
 </ul>
 <p>这一关系可以被如下的热力图所反映：（<a href="https://zh.wikipedia.org/zh/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener external nofollow noreferrer">正态分布</a>）</p>
-<p><img src="https://i.imgur.com/xcvi133.jpg" width="250"></p>
+<p><img data-src="https://i.imgur.com/xcvi133.jpg" width="250"></p>
 <blockquote>
 <p>注：在使用高斯核函数前，需要做<strong>特征缩放</strong>（feature scaling），以使 SVM 同等程度地关注到不同的特征。</p>
 </blockquote>
 <p><strong>例</strong>：假设选取了3个点作为地标，并且当$\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3\geq0$时预测为1。</p>
-<p><img src="https://i.imgur.com/zrK0OWs.png" width="250"></p>
+<p><img data-src="https://i.imgur.com/zrK0OWs.png" width="250"></p>
 <blockquote>
 <p>给定$\theta_0=-0.5,\theta_1=1,\theta_2=1,\theta_3=0$。</p>
 <p><font color="purple"><strong>预测点1</strong></font>：$\theta_0+\theta_1\times1+\theta_2\times0+\theta_3\times0\approx0.5&gt;0$，预测为<strong>1</strong>。</p>
@@ -1242,10 +1253,10 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
 <li><p>当特征维度 n 较高，而样本规模 m 较小时，<strong>不宜使用核函数</strong>（即linear kernel），否则容易引起过拟合。</p>
 </li>
 <li><p>当特征维度 n 较低，而样本规模 m 足够大时，考虑使用<strong>高斯核函数</strong>。不过在使用高斯核函数前，需要进行特征缩放（feature scaling）。另外，当核函数的参数 δ <strong>较大</strong>时，特征 fi 较为平缓，即各个样本的特征差异变小，此时会造成<strong>欠拟合（高偏差，低方差）</strong>：</p>
-<p><img src="https://i.imgur.com/C5eTSao.png" width="200"></p>
+<p><img data-src="https://i.imgur.com/C5eTSao.png" width="200"></p>
 </li>
 <li><p>当 δ <strong>较小</strong>时，特征 fi 曲线变化剧烈，即各个样本的特征差异变大，此时会造成<strong>过拟合（低偏差，高方差）</strong>：</p>
-<p><img src="https://i.imgur.com/29aA2tr.png" width="200"></p>
+<p><img data-src="https://i.imgur.com/29aA2tr.png" width="200"></p>
 </li>
 </ul>
 <blockquote>
@@ -1257,7 +1268,7 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
 <li>轮流选中某一类型 i ，将其视为正样本，即 “1” 分类，剩下样本都看做是负样本，即 “0” 分类。</li>
 <li>训练 SVM 得到参数 $θ^{(1)},θ^{(2)},…,θ^{(K)}$ ，即总共获得了 K−1 个决策边界。</li>
 </ol>
-<p><img src="https://i.imgur.com/lFfRD6M.png" width="300"></p>
+<p><img data-src="https://i.imgur.com/lFfRD6M.png" width="300"></p>
 <h3 id="分类模型的选择"><a href="#分类模型的选择" class="headerlink" title="分类模型的选择"></a>分类模型的选择</h3><p>目前，我们学到的分类模型有：（1）逻辑回归；（2）神经网络；（3）SVM。怎么选择在这三者中做出选择呢？我们考虑<strong>特征维度 n</strong> 及<strong>样本规模 m</strong>：</p>
 <ul>
 <li>若 $n \gg m$ ，例如 n=10000，而 m∈(10,1000)：此时选用<strong>逻辑回归</strong>或者<strong>无核</strong>的 SVM。</li>
@@ -1294,9 +1305,10 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
-              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           </div>
 
         
@@ -1392,7 +1404,7 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1405,7 +1417,7 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1477,6 +1489,11 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -1529,6 +1546,9 @@ f=\left(\begin{matrix}f_0 \\ f_1 \\ f_2 \\ \vdots \\ f_m  \end{matrix}\right) \q
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -1570,8 +1590,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -1603,9 +1621,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -1615,7 +1631,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -1678,6 +1713,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/Notes-of-Machine-Learning-Part2/',]
+      });
+      });
+  </script>
 
 
 <script>

@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -176,18 +176,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -196,7 +199,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -230,6 +232,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OJ/" itemprop="url" rel="index"><span itemprop="name">OJ</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E6%99%AE%E5%8F%8A-%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E6%8B%9F/" class="post-meta-item leancloud_visitors" data-flag-title="普及-简单的模拟" title="Views">
@@ -268,7 +279,7 @@
 <p>地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。</p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>【样例解释1】</p>
 <p>如下图，111 号地毯用实线表示，222 号地毯用虚线表示，333 号用双实线表示，覆盖点(2,2)(2,2)(2,2)的最上面一张地毯是 333 号地毯。</p>
-<p><img src="https://cdn.luogu.org/upload/pic/100.png" alt="img"> </p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/100.png" alt="img"> </p>
 <p>【数据范围】</p>
 <p>对于30% 的数据，有 n≤2 ；<br> 对于50% 的数据，0≤a,b,g,k≤100；<br> 对于100%的数据，有 0≤n≤10,000，0≤a,b,g,k≤100,000。 </p>
 <p>noip2011提高组day1第1题</p>
@@ -276,7 +287,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Carpet</span> //地毯</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x; <span class="keyword">int</span> x_len;</span><br><span class="line">    <span class="keyword">int</span> y; <span class="keyword">int</span> y_len;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">coverd</span><span class="params">(Carpet now, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;  <span class="comment">//是否被覆盖？</span></span><br><span class="line">    <span class="keyword">if</span>(x - now.x &gt;= <span class="number">0</span> &amp;&amp; (x - now.x) &lt;= now.x_len  &amp;&amp;  (y - now.y) &gt;= <span class="number">0</span> &amp;&amp; (y - now.y) &lt;= now.y_len)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, x, y;</span><br><span class="line">    <span class="built_in">vector</span>&lt;Carpet&gt; ca;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        Carpet tmp;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;tmp.x&gt;&gt;tmp.y&gt;&gt;tmp.x_len&gt;&gt;tmp.y_len;</span><br><span class="line">        ca.push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(coverd(ca[i], x, y)) ans = <span class="built_in">max</span>(ans, i+<span class="number">1</span>); <span class="comment">//保留最上面的地毯</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans==<span class="number">0</span>?<span class="number">-1</span>:ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果逆序查找可以提前退出，优化最好情况的复杂度。</p>
 <h1 id="P1067-多项式输出"><a href="#P1067-多项式输出" class="headerlink" title="P1067 多项式输出"></a><a href="https://www.luogu.org/problemnew/show/P1067" target="_blank" rel="noopener external nofollow noreferrer">P1067 多项式输出</a></h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>一元nnn次多项式可用如下的表达式表示：</p>
-<p><img src="https://cdn.luogu.org/upload/pic/26.png" alt="img"> </p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/26.png" alt="img"> </p>
 <p>其中，$a_ix^i​$称为<code>i</code>次项，<code>a_i</code> 称为<code>i</code>次项的系数。给出一个一元多项式各项的次数和系数，请按照如下规定的格式要求输出该多项式：</p>
 <ol>
 <li>多项式中自变量为<code>x</code>，从左到右按照次数递减顺序给出多项式。</li>
@@ -313,7 +324,7 @@
 <p>同学们在教室中坐成了M行N列，坐在第i行第j列的同学的位置是(i,j)，为了方便同学们进出，在教室中设置了K条横向的通道，L条纵向的通道。</p>
 <p>于是，聪明的小雪想到了一个办法，或许可以减少上课时学生交头接耳的问题：她打算重新摆放桌椅，改变同学们桌椅间通道的位置，因为如果一条通道隔开了2个会交头接耳的同学，那么他们就不会交头接耳了。</p>
 <p>请你帮忙给小雪编写一个程序，给出最好的通道划分方案。在该方案下，上课时交头接耳的学生的对数最少。</p>
-<h2 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h2><p><img src="https://cdn.luogu.org/upload/pic/20.png" alt="img"> </p>
+<h2 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h2><p><img data-src="https://cdn.luogu.org/upload/pic/20.png" alt="img"> </p>
 <p>上图中用符号*、※、+标出了3对会交头接耳的学生的位置，图中3条粗线的位置表示通道，图示的通道划分方案是唯一的最佳方案。</p>
 <p>2008年普及组第二题</p>
 <h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h2><p>重点就是统计、筛选+排序（可以直接排两次）。</p>
@@ -323,7 +334,7 @@
 <p>斯波克:《星际迷航》主角之一。</p>
 <p>蜥蜴人:《星际迷航》中的反面角色。</p>
 <p>这五种手势的胜负关系如表一所示,表中列出的是甲对乙的游戏结果。</p>
-<p><img src="https://cdn.luogu.org/upload/pic/1346.png" alt="img"></p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/1346.png" alt="img"></p>
 <p>现在,<code>小 A</code>和<code>小 B</code>尝试玩这种升级版的猜拳游戏。已知他们的出拳都是有周期性规律的，但周期长度不一定相等。例如：如果<code>小A</code>以“石头-布-石头-剪刀-蜥蜴人-斯波克”长度为 6 的周期出拳,那么他的出拳序列就是“石头-布-石头-剪刀-蜥蜴人-斯波克-石头-布-石头-剪刀-蜥蜴人-斯波克-……”,而如果<code>小B</code>以“剪刀-石头-布-斯波克-蜥蜴人”长度为 5 的周期出拳,那么他出拳的序列就是“剪刀-石头-布-斯波克-蜥蜴人-剪刀-石头-布-斯波克-蜥蜴人-……”</p>
 <p>已知<code>小 A</code>和<code>小 B</code> 一共进行 NNN 次猜拳。每一次赢的人得 1 分，输的得 0 分；平局两人都得 0 分。现请你统计 N 次猜拳结束之后两人的得分。</p>
 <h2 id="说明-4"><a href="#说明-4" class="headerlink" title="说明"></a>说明</h2><p>对于100%的数据，0&lt;N≤200,0&lt;NA≤200,0&lt;NB≤200。</p>
@@ -331,7 +342,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> table[<span class="number">5</span>][<span class="number">5</span>];</span><br><span class="line">    table[<span class="number">0</span>][<span class="number">0</span>] = table[<span class="number">1</span>][<span class="number">1</span>] = table[<span class="number">2</span>][<span class="number">2</span>] = table[<span class="number">3</span>][<span class="number">3</span>] = table[<span class="number">4</span>][<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">    table[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">-1</span>; table[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    table[<span class="number">0</span>][<span class="number">2</span>] = <span class="number">1</span>; table[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    table[<span class="number">0</span>][<span class="number">3</span>] = <span class="number">1</span>; table[<span class="number">3</span>][<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    table[<span class="number">0</span>][<span class="number">4</span>] = <span class="number">-1</span>; table[<span class="number">4</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    table[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">-1</span>; table[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    table[<span class="number">1</span>][<span class="number">3</span>] = <span class="number">1</span>; table[<span class="number">3</span>][<span class="number">1</span>] = <span class="number">-1</span>;</span><br><span class="line">    table[<span class="number">1</span>][<span class="number">4</span>] = <span class="number">-1</span>; table[<span class="number">4</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    table[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">-1</span>; table[<span class="number">3</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    table[<span class="number">2</span>][<span class="number">4</span>] = <span class="number">1</span>; table[<span class="number">4</span>][<span class="number">2</span>] = <span class="number">-1</span>;</span><br><span class="line">    table[<span class="number">3</span>][<span class="number">4</span>] = <span class="number">1</span>; table[<span class="number">4</span>][<span class="number">3</span>] = <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> N,A,B;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;N&gt;&gt;A&gt;&gt;B;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">205</span>],b[<span class="number">205</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A; ++i)</span><br><span class="line">    	<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B; ++i)</span><br><span class="line">	    <span class="built_in">cin</span>&gt;&gt;b[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> AnsA=<span class="number">0</span>, AnsB=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)&#123;  <span class="comment">//循环队列猜拳</span></span><br><span class="line">    	<span class="keyword">if</span>(table[a[i%A]][b[i%B]] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">    	<span class="keyword">else</span> <span class="keyword">if</span>(table[a[i%A]][b[i%B]] == <span class="number">1</span>) AnsA++;</span><br><span class="line">		<span class="keyword">else</span> AnsB++; </span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;AnsA&lt;&lt;<span class="string">" "</span>&lt;&lt;AnsB;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="P1563-玩具谜题-异或"><a href="#P1563-玩具谜题-异或" class="headerlink" title="P1563 玩具谜题 异或"></a><a href="https://www.luogu.org/problemnew/show/P1563" target="_blank" rel="noopener external nofollow noreferrer">P1563 玩具谜题</a> 异或</h1><h2 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h2><p>小南有一套可爱的玩具小人, 它们各有不同的职业。</p>
 <p>有一天, 这些玩具小人把小南的眼镜藏了起来。 小南发现玩具小人们围成了一个圈,它们有的面朝圈内,有的面朝圈外。如下图:</p>
-<p><img src="https://cdn.luogu.org/upload/pic/3438.png" alt="img"> </p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/3438.png" alt="img"> </p>
 <p>这时singer告诉小南一个谜題: “眼镜藏在我左数第3个玩具小人的右数第1个玩具小人的左数第2个玩具小人那里。 ”</p>
 <p>小南发现, 这个谜题中玩具小人的朝向非常关键, 因为朝内和朝外的玩具小人的左右方向是相反的: 面朝圈内的玩具小人, 它的左边是顺时针方向, 右边是逆时针方向; 而面向圈外的玩具小人, 它的左边是逆时针方向, 右边是顺时针方向。</p>
 <p>小南一边艰难地辨认着玩具小人, 一边数着:</p>
@@ -348,7 +359,7 @@
 <p>【子任务】</p>
 <p>子任务会给出部分测试数据的特点。 如果你在解决题目中遇到了困难, 可以尝试只解决一部分测试数据。</p>
 <p>每个测试点的数据规模及特点如下表:</p>
-<p><img src="https://cdn.luogu.org/upload/pic/3439.png" alt="img"> </p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/3439.png" alt="img"> </p>
 <p>其中一些简写的列意义如下:</p>
 <p>全朝内: 若为“√”, 表示该测试点保证所有的玩具小人都朝向圈内;</p>
 <p>全左数:若为“√”,表示该测试点保证所有的指令都向左数,即对任意的1≤z≤m,ai=0;</p>
@@ -381,8 +392,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"># 洛谷</a>
+              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"><i class="fa fa-tag"></i> 洛谷</a>
           </div>
 
         
@@ -478,7 +490,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -491,7 +503,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -563,6 +575,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -615,6 +632,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -656,8 +676,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -689,9 +707,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -701,7 +717,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -764,6 +799,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E6%99%AE%E5%8F%8A-%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E6%8B%9F/',]
+      });
+      });
+  </script>
 
 
 <script>

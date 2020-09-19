@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,16 +30,16 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/clip_image001.png">
-<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549876922319.png">
-<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549925105494.png">
+<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/clip_image001.png">
+<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549876922319.png">
+<meta property="og:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549925105494.png">
 <meta property="og:image" content="https://cdn.luogu.org/upload/pic/1182.png">
 <meta property="article:published_time" content="2019-02-05T11:32:02.000Z">
 <meta property="article:modified_time" content="2019-02-12T03:22:14.718Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/clip_image001.png">
+<meta name="twitter:image" content="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/clip_image001.png">
 
 <link rel="canonical" href="https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/">
 
@@ -174,18 +174,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -194,7 +197,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -228,6 +230,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OJ/" itemprop="url" rel="index"><span itemprop="name">OJ</span></a>
+                </span>
+            </span>
 
           
             <span id="/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/" class="post-meta-item leancloud_visitors" data-flag-title="普及-交叉模拟*" title="Views">
@@ -273,14 +284,14 @@
 <blockquote>
 <p>例：一个香烟垄断市场，生产者可以通过调节产量来获得最大的利润。</p>
 </blockquote>
-<p><img src="/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/clip_image001.png" alt></p>
+<p><img data-src="普及-交叉模拟/clip_image001.png" alt></p>
 <p>注意，本来矩形面积代表着最大营业额，取得最大利润还需要减去成本（<strong>往下平移曲线</strong>即可）。</p>
 <p>而本题中政府能做的，同样是<strong>上下平移</strong>这条曲线（税收下移，补贴上移），使得矩形面积取最大值时，刚好顶边就是政府想要的价格。</p>
 <blockquote>
 <p>实在不想做这个题。。orz太烦了。以后再做吧。想哭。。。</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> expect; <span class="built_in">cin</span>&gt;&gt;expect;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; price, consume;</span><br><span class="line">	<span class="keyword">int</span> Price, Consume; <span class="built_in">cin</span>&gt;&gt;Price&gt;&gt;Consume;</span><br><span class="line">	<span class="keyword">int</span> BIAS=Price; expect -=BIAS;</span><br><span class="line">    price.push_back(<span class="number">0</span>); consume.push_back(Consume); <span class="comment">//Price减去成本，只记录利润 </span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;Price&gt;&gt;Consume;</span><br><span class="line">		<span class="keyword">if</span>(Price == <span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">		price.push_back(Price - BIAS); <span class="comment">//Price减去成本，只记录利润 </span></span><br><span class="line">		consume.push_back(Consume);  <span class="comment">//消费量 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> lost_per_dollar; <span class="built_in">cin</span> &gt;&gt; lost_per_dollar;</span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line">	<span class="keyword">int</span> n = price.<span class="built_in">size</span>(), dex, current_best_profit_price=<span class="number">0</span>, dex_c_best=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"--------------------------"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt;price[i]&lt;&lt;<span class="string">" "</span>&lt;&lt;consume[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"--------------------------"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;  <span class="comment">//找到预期价格在哪段区间[dex, dex+1)</span></span><br><span class="line">	    dex = i;</span><br><span class="line">		<span class="keyword">if</span>(expect &lt; price[i])<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"expect:"</span>&lt;&lt;expect&lt;&lt;<span class="string">"---&gt;Expected price["</span>&lt;&lt;dex&lt;&lt;<span class="string">"]="</span>&lt;&lt; price[dex]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;  <span class="comment">//找到现在的最大利润的价格区间[dex_c_best, dex_c_best+1)</span></span><br><span class="line">		<span class="keyword">if</span>(current_best_profit_price &lt; price[i]*consume[i])&#123; </span><br><span class="line">			current_best_profit_price = price[i]*consume[i];</span><br><span class="line">			dex_c_best = i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Max Profit &gt; price["</span>&lt;&lt;dex_c_best&lt;&lt;<span class="string">"]---&gt;"</span>&lt;&lt; price[dex_c_best]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> tax=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> expect_consume = (<span class="keyword">double</span>)consume[dex] + (<span class="keyword">double</span>)( dex==n<span class="number">-1</span> ? (<span class="keyword">double</span>)lost_per_dollar*(expect-price[dex]) : (<span class="keyword">double</span>)(consume[dex+<span class="number">1</span>] - consume[dex])/(<span class="keyword">double</span>)(price[dex+<span class="number">1</span>] - price[dex])*(<span class="keyword">double</span>)(expect-price[dex]) );</span><br><span class="line">	<span class="keyword">double</span> expect_consume_pre, expect_consume_suc;</span><br><span class="line">	<span class="keyword">if</span>(expect == price[dex])&#123;</span><br><span class="line">		expect--;</span><br><span class="line">		dex--; expect_consume_pre = (<span class="keyword">double</span>)consume[dex] + (<span class="keyword">double</span>)( dex==n<span class="number">-1</span> ? (<span class="keyword">double</span>)lost_per_dollar*(expect-price[dex]) : (<span class="keyword">double</span>)(consume[dex+<span class="number">1</span>] - consume[dex])/(<span class="keyword">double</span>)(price[dex+<span class="number">1</span>] - price[dex])*(<span class="keyword">double</span>)(expect-price[dex]) );</span><br><span class="line">		dex++; expect_consume_suc = (<span class="keyword">double</span>)consume[dex] + (<span class="keyword">double</span>)( dex==n<span class="number">-1</span> ? (<span class="keyword">double</span>)lost_per_dollar*(expect-price[dex]) : (<span class="keyword">double</span>)(consume[dex+<span class="number">1</span>] - consume[dex])/(<span class="keyword">double</span>)(price[dex+<span class="number">1</span>] - price[dex])*(<span class="keyword">double</span>)(expect-price[dex]) );</span><br><span class="line">		expect++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		expect_consume_pre = (<span class="keyword">double</span>)consume[dex] + (<span class="keyword">double</span>)( dex==n<span class="number">-1</span> ? (<span class="keyword">double</span>)lost_per_dollar*(expect-price[dex]) : (<span class="keyword">double</span>)(consume[dex+<span class="number">1</span>] - consume[dex])/(<span class="keyword">double</span>)(price[dex+<span class="number">1</span>] - price[dex])*(<span class="keyword">double</span>)(expect-price[dex]) );</span><br><span class="line">		expect_consume_suc = (<span class="keyword">double</span>)consume[dex] + (<span class="keyword">double</span>)( dex==n<span class="number">-1</span> ? (<span class="keyword">double</span>)lost_per_dollar*(expect-price[dex]) : (<span class="keyword">double</span>)(consume[dex+<span class="number">1</span>] - consume[dex])/(<span class="keyword">double</span>)(price[dex+<span class="number">1</span>] - price[dex])*(<span class="keyword">double</span>)(expect-price[dex]) );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Expect Comsume:Pre["</span>&lt;&lt; expect - <span class="number">1</span> &lt;&lt;<span class="string">"]="</span>&lt;&lt; expect_consume_pre &lt;&lt;<span class="string">", E["</span> &lt;&lt;expect &lt;&lt;<span class="string">"]="</span>&lt;&lt; expect_consume &lt;&lt;<span class="string">", Suc["</span>&lt;&lt; expect + <span class="number">1</span> &lt;&lt;<span class="string">"]="</span>&lt;&lt; expect_consume_suc &lt;&lt;<span class="string">""</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	if(dex &lt; dex_c_best)&#123; //曲线往下平移 </span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		while(expect + tax &gt;= 0)&#123;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">			if()</span></span><br><span class="line"><span class="comment">				break;</span></span><br><span class="line"><span class="comment">			tax--;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	else&#123; //曲线往上平移 </span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">	&#125; */</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="P1031-均分纸牌"><a href="#P1031-均分纸牌" class="headerlink" title="P1031 均分纸牌"></a><a href="https://www.luogu.org/problemnew/show/P1031" target="_blank" rel="noopener external nofollow noreferrer">P1031 均分纸牌</a></h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549876922319.png" alt="1549876922319"></p>
+<h1 id="P1031-均分纸牌"><a href="#P1031-均分纸牌" class="headerlink" title="P1031 均分纸牌"></a><a href="https://www.luogu.org/problemnew/show/P1031" target="_blank" rel="noopener external nofollow noreferrer">P1031 均分纸牌</a></h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p><img data-src="普及-交叉模拟/1549876922319.png" alt="1549876922319"></p>
 <h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h2><p>为什么这道题就这么水啊。。</p>
 <p>思路就是，任意分成两个区间，如果两个区间的值需要交换一次才可能平均，那就记为交换一次。</p>
 <blockquote>
@@ -304,7 +315,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a[<span class="number">1000</span>], b[<span class="number">1000</span>];</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	freopen(<span class="string">"OJ.out"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	<span class="keyword">while</span>(i &lt; <span class="number">186</span> &amp;&amp; <span class="built_in">cin</span>&gt;&gt;a[i]) i++;</span><br><span class="line"></span><br><span class="line">	i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; <span class="number">186</span> &amp;&amp; <span class="built_in">cin</span>&gt;&gt;b[i]) i++;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">186</span>; ++i)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"a:"</span>&lt;&lt;a[i]&lt;&lt;<span class="string">" b:"</span>&lt;&lt;b[i]&lt;&lt;<span class="string">" \t---&gt; "</span>&lt;&lt;(a[i]==b[i])&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>我对模拟题产生了心理阴影</strong>！</p>
 <p>找了半天之后。。。</p>
-<p><img src="/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/1549925105494.png" alt="1549925105494"></p>
+<p><img data-src="普及-交叉模拟/1549925105494.png" alt="1549925105494"></p>
 <p>不对，不是这个问题。。</p>
 <p>我真的佛了。orz</p>
 <p>我特么<code>else</code>后面加上<code>else if(str[i] == &#39;L&#39;)</code>突然就过辣：</p>
@@ -317,7 +328,7 @@
 </blockquote>
 <h1 id="P1086-花生采摘-排序-贪心"><a href="#P1086-花生采摘-排序-贪心" class="headerlink" title="P1086 花生采摘 排序+贪心"></a><a href="https://www.luogu.org/problemnew/show/P1086" target="_blank" rel="noopener external nofollow noreferrer">P1086 花生采摘</a> 排序+贪心</h1><h2 id="目描述"><a href="#目描述" class="headerlink" title="目描述"></a>目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
 <p>鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图1）。有经验的多多一眼就能看出，每棵花生植株下的花生有多少。为了训练多多的算术，鲁宾逊先生说：“你先找出花生最多的植株，去采摘它的花生；然后再找出剩下的植株里花生最多的，去采摘它的花生；依此类推，不过你一定要在我限定的时间内回到路边。”</p>
-<p><img src="https://cdn.luogu.org/upload/pic/1182.png" alt="img"> </p>
+<p><img data-src="https://cdn.luogu.org/upload/pic/1182.png" alt="img"> </p>
 <p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
 <p>1) 从路边跳到最靠近路边（即第一行）的某棵花生植株；</p>
 <p>2) 从一棵植株跳到前后左右与之相邻的另一棵植株；</p>
@@ -391,8 +402,9 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"># 洛谷</a>
+              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"><i class="fa fa-tag"></i> 洛谷</a>
           </div>
 
         
@@ -488,7 +500,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -501,7 +513,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -573,6 +585,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -625,6 +642,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -666,8 +686,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -699,9 +717,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -711,7 +727,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -774,6 +809,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E6%99%AE%E5%8F%8A-%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F/',]
+      });
+      });
+  </script>
 
 
 <script>

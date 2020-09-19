@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,16 +30,16 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="仅供算法训练营内部学员学习交流之用。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/ATC/OJ0.htm/1548595433819.png">
-<meta property="og:image" content="https://vel.life/ATC/OJ0.htm/1548216432219.png">
-<meta property="og:image" content="https://vel.life/ATC/OJ0.htm/1548225817063.png">
-<meta property="og:image" content="https://vel.life/ATC/OJ0.htm/1548259642218.png">
+<meta property="og:image" content="https://vel.life/ATC/1548595433819.png">
+<meta property="og:image" content="https://vel.life/ATC/1548216432219.png">
+<meta property="og:image" content="https://vel.life/ATC/index/1548225817063.png">
+<meta property="og:image" content="https://vel.life/ATC/1548259642218.png">
 <meta property="article:published_time" content="2019-01-22T11:21:05.000Z">
 <meta property="article:modified_time" content="2019-05-13T15:44:40.226Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="TsOJ">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/ATC/OJ0.htm/1548595433819.png">
+<meta name="twitter:image" content="https://vel.life/ATC/1548595433819.png">
 
 <link rel="canonical" href="https://vel.life/ATC/OJ0">
 
@@ -175,18 +175,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -195,7 +198,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -362,7 +364,7 @@
 <p><del>大部分c代码搬过来就能用</del>。。</p>
 </blockquote>
 <h4 id="分治-O-nlogn-rightarrow-O-n"><a href="#分治-O-nlogn-rightarrow-O-n" class="headerlink" title="分治 $O(nlogn)\rightarrow O(n)$"></a>分治 $O(nlogn)\rightarrow O(n)$</h4><p>在区间枚举的过程中，注意到，跨越<code>min(height)</code>的矩形最大面积一定是图中的阴影矩阵。</p>
-<p><img src="/ATC/OJ0.htm/1548595433819.png" alt="1548595433819"></p>
+<p><img data-src="./1548595433819.png" alt="1548595433819"></p>
 <p>那么对于<code>k</code>的左右两侧就可以分治辣。</p>
 <p>分治方程：</p>
 <script type="math/tex; mode=display">
@@ -401,7 +403,7 @@ f(n)=f(n-1)+O(n)\\
 </li>
 <li>要输出的面积=<code>height[a]*（b-a）</code></li>
 </ul>
-<p><img src="/ATC/OJ0.htm/1548216432219.png" alt="1548216432219"></p>
+<p><img data-src="./1548216432219.png" alt="1548216432219"></p>
 <blockquote>
 <p>这样的算法我称为<strong><font color="red">回退算法</font></strong>。</p>
 <p>单调栈是一种<code>灯</code>。（可以实现<strong><font color="red">栈记忆分类</font></strong>）</p>
@@ -412,7 +414,7 @@ f(n)=f(n-1)+O(n)\\
 <p>以上所述的平凡算法思路每次只能求出左侧或右侧的最大矩阵，我们可以进一步优化。（遍历两次）</p>
 </blockquote>
 <p>注意到，在我们找到<code>top</code>右侧的第一个更小元<code>height[i]</code>的时候，<code>top</code>的左侧的第一更小元<code>top-1</code>也是已知的（栈记忆）！因此可以对每一个元素进行一次性的确定。</p>
-<p><img src="/ATC/OJ0.htm/1548225817063.png" alt="1548225817063"></p>
+<p><img data-src="./index/1548225817063.png" alt="1548225817063"></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAnswer</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> *<span class="built_in">height</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//initialize. trick: assume height[0]=height[n+1]=0</span></span><br><span class="line">    myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">height</span>[myStack.top()] &gt; <span class="built_in">height</span>[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> nowHeight = <span class="built_in">height</span>[myStack.top()]; myStack.pop();</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, nowHeight*( i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        myStack.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>* <span class="built_in">height</span> = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">2</span>]();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; <span class="built_in">height</span>[i];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getAnswer(n, <span class="built_in">height</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span>[] <span class="built_in">height</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h6><p>约8~12ms。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> short <span class="built_in">height</span>[<span class="number">50005</span>];</span><br><span class="line"><span class="keyword">unsigned</span> short n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%hu"</span>, &amp;<span class="built_in">height</span>[i]);</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; myStack;</span><br><span class="line">    <span class="comment">//initialize. trick: assume height[0]=height[n+1]=0</span></span><br><span class="line">    myStack.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n + <span class="number">1</span>; ++i)&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">height</span>[myStack.top()] &gt; <span class="built_in">height</span>[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> nowHeight = <span class="built_in">height</span>[myStack.top()]; myStack.pop();</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, nowHeight*( i - myStack.top() - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        myStack.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -472,7 +474,7 @@ f(n)=f(n-1)+O(n)\\
 </blockquote>
 <p>该问题相当于从每一行分别开始的<strong><font color="red">离散直方图</font></strong>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.............x.....xxx...x...</span><br><span class="line">xxxxxxx..x...x...x...x..x..x.</span><br><span class="line">.X..xxx....xxx....xx....x....</span><br><span class="line">................xxx........xx</span><br><span class="line">.............x...x......xx.xx</span><br><span class="line">&#x2F;&#x2F;以第5行为例</span><br></pre></td></tr></table></figure>
-<p><img src="/ATC/OJ0.htm/1548259642218.png" alt="1548259642218"></p>
+<p><img data-src="./1548259642218.png" alt="1548259642218"></p>
 <ul>
 <li>分别计算每一列的元素列<strong>上侧</strong>连续满足要求的最大值（可以按列算，用一个单调栈就行）</li>
 <li>对每一行，构成了直方图，再用一个单调栈解决。</li>
@@ -566,7 +568,7 @@ f(n)=f(n-1)+O(n)\\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -579,7 +581,7 @@ f(n)=f(n-1)+O(n)\\
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -651,6 +653,11 @@ f(n)=f(n-1)+O(n)\\
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -703,6 +710,9 @@ f(n)=f(n-1)+O(n)\\
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -744,8 +754,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -777,9 +785,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -789,7 +795,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -852,6 +877,16 @@ darkmode.showWidget();
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/ATC/OJ0.html',]
+      });
+      });
+  </script>
 
 
 <script>

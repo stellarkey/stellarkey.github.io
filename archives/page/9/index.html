@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -166,18 +166,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -186,7 +189,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -206,7 +208,7 @@
     <div class="posts-collapse">
       <div class="collection-title">
         
-        <span class="collection-header">Great! 150 posts in total. Keep on posting.</span>
+        <span class="collection-header">Great! 151 posts in total. Keep on posting.</span>
       </div>
 
       
@@ -219,15 +221,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2019-01-07T18:21:08+08:00"
-              content="2019-01-07">
-          01-07
+              datetime="2019-02-15T17:03:46+08:00"
+              content="2019-02-15">
+          02-15
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/Notes-of-Machine-Learning-Part3/" itemprop="url">
-            <span itemprop="name">机器学习初等指南(3)</span>
+          <a class="post-title-link" href="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/" itemprop="url">
+            <span itemprop="name">关于对抗样本的思考</span>
           </a>
       </div>
 
@@ -239,38 +241,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2019-01-04T21:49:10+08:00"
-              content="2019-01-04">
-          01-04
+              datetime="2019-02-14T19:26:45+08:00"
+              content="2019-02-14">
+          02-14
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/Data-Science-Contests/" itemprop="url">
-            <span itemprop="name">大数据竞赛-练习篇</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-12-30T23:42:23+08:00"
-              content="2018-12-30">
-          12-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Notes-of-Machine-Learning-Part2/" itemprop="url">
-            <span itemprop="name">机器学习初等指南(2)</span>
+          <a class="post-title-link" href="/Intro-to-Python-Libs/" itemprop="url">
+            <span itemprop="name">Python库使用简介</span>
           </a>
       </div>
 
@@ -282,15 +261,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T18:34:01+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-14T02:55:20+08:00"
+              content="2019-02-14">
+          02-14
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/HTML-CSS%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
-            <span itemprop="name">HTML/CSS学习手册</span>
+          <a class="post-title-link" href="/%E6%99%AE%E5%8F%8A-%E6%8E%92%E5%BA%8F/" itemprop="url">
+            <span itemprop="name">普及-排序</span>
           </a>
       </div>
 
@@ -302,15 +281,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T16:34:01+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-13T18:57:15+08:00"
+              content="2019-02-13">
+          02-13
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/C++%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
-            <span itemprop="name">C++学习手册</span>
+          <a class="post-title-link" href="/%E5%89%91%E6%8C%87Offer-%E7%AE%97%E4%BE%8B%E6%89%8B%E5%86%8C/" itemprop="url">
+            <span itemprop="name">剑指Offer-算例手册</span>
           </a>
       </div>
 
@@ -322,15 +301,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T16:34:01+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-13T18:38:25+08:00"
+              content="2019-02-13">
+          02-13
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/JavaScript%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
-            <span itemprop="name">JavaScript学习指南</span>
+          <a class="post-title-link" href="/Echarts%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
+            <span itemprop="name">Echarts学习手册</span>
           </a>
       </div>
 
@@ -342,15 +321,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T16:34:01+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-13T17:59:57+08:00"
+              content="2019-02-13">
+          02-13
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/Python%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
-            <span itemprop="name">Python学习手册</span>
+          <a class="post-title-link" href="/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
+            <span itemprop="name">CV学习手册</span>
           </a>
       </div>
 
@@ -362,15 +341,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T15:42:24+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-13T17:59:57+08:00"
+              content="2019-02-13">
+          02-13
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/%E9%A2%9C%E8%89%B2%E5%AD%A6%E7%95%85%E6%83%B3/" itemprop="url">
-            <span itemprop="name">颜色学畅想</span>
+          <a class="post-title-link" href="/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
+            <span itemprop="name">NLP学习手册</span>
           </a>
       </div>
 
@@ -382,15 +361,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T12:55:29+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-13T15:11:33+08:00"
+              content="2019-02-13">
+          02-13
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/%E5%BF%A7%E4%BC%A4%E8%BF%98%E6%98%AF%E5%BF%AB%E4%B9%90/" itemprop="url">
-            <span itemprop="name">忧伤还是快乐</span>
+          <a class="post-title-link" href="/Hadoop-Spark%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" itemprop="url">
+            <span itemprop="name">Hadoop/Spark学习手册</span>
           </a>
       </div>
 
@@ -402,15 +381,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T10:27:19+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-12T11:51:20+08:00"
+              content="2019-02-12">
+          02-12
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/" itemprop="url">
-            <span itemprop="name">深度学习 by Andrew Ng.</span>
+          <a class="post-title-link" href="/%E5%90%8C%E6%80%A7%E6%95%B0%E5%AD%A6/" itemprop="url">
+            <span itemprop="name">同性数学</span>
           </a>
       </div>
 
@@ -422,95 +401,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2018-12-30T09:54:06+08:00"
-              content="2018-12-30">
-          12-30
+              datetime="2019-02-12T11:51:20+08:00"
+              content="2019-02-12">
+          02-12
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/Notes-of-Machine-Learning-Part1/" itemprop="url">
-            <span itemprop="name">机器学习初等指南(1)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-12-29T09:07:41+08:00"
-              content="2018-12-29">
-          12-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Intro-to-AI-Lecture/" itemprop="url">
-            <span itemprop="name">人工智能小讲座简述</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-12-24T07:03:08+08:00"
-              content="2018-12-24">
-          12-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/Beauty-of-Mathmatics/" itemprop="url">
-            <span itemprop="name">阅《数学之美》</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-12-10T04:18:23+08:00"
-              content="2018-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%BA%AF%E7%88%B1/" itemprop="url">
-            <span itemprop="name">《纯爱》</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-08-16T05:22:25+08:00"
-              content="2018-08-16">
-          08-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/thoughts-general-determinant/" itemprop="url">
-            <span itemprop="name">m×n矩阵的行列式</span>
+          <a class="post-title-link" href="/%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E7%90%86%E8%AE%BA/" itemprop="url">
+            <span itemprop="name">最优传输理论</span>
           </a>
       </div>
 
@@ -526,7 +425,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/archives/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -594,7 +493,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -607,7 +506,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -679,6 +578,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -731,6 +635,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -772,8 +679,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -805,9 +710,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -817,7 +720,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -827,6 +749,16 @@ darkmode.showWidget();
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/archives/page/9/',]
+      });
+      });
+  </script>
 
 
 <script>

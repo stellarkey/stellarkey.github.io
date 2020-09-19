@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -232,18 +232,21 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container"></div>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-      
     </div>
   </div>
 
@@ -252,7 +255,6 @@
 
     
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
     
     
@@ -286,6 +288,15 @@
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
 
           
             <span id="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="post-meta-item leancloud_visitors" data-flag-title="Pyspider操作指南" title="Views">
@@ -359,110 +370,110 @@
 <li>查看<strong>结果</strong></li>
 </ul>
 <h3 id="搭建框架"><a href="#搭建框架" class="headerlink" title="搭建框架"></a>搭建框架</h3><p>首先创建一个项目：“demo_for_douban”，Start URL(s)这一栏可填可不填，因为它的本质是用来提供信息，好为我们自动创建一个模板。</p>
-<p>点击<code>Create</code>。<img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517151058.png" alt="1532517151058">                          </p>
+<p>点击<code>Create</code>。<img data-src="1532517151058.png" alt="1532517151058">                          </p>
 <p>接着，打开豆瓣网，进入豆瓣读书，搜索“科幻”。</p>
 <p>这便是我们要爬取的索引页。</p>
 <p>网址如下：</p>
 <p><a href="https://book.douban.com/subject_search?search_text=%E7%A7%91%E5%B9%BB&amp;cat=1001" target="_blank" rel="noopener external nofollow noreferrer">https://book.douban.com/subject_search?search_text=%E7%A7%91%E5%B9%BB&amp;cat=1001</a></p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517181501.png" alt="1532517181501"></p>
+<p><img data-src="1532517181501.png" alt="1532517181501"></p>
 <p>​    将<strong>START_URL</strong>改成咱们对应要爬取的网页。（如果Start URL(s)这一栏之前在create的时候已经填了，那么这里会初始化为你填的那个网址哦。） </p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517202609.png" alt="1532517202609"></p>
+<p><img data-src="1532517202609.png" alt="1532517202609"></p>
 <p>​         单击<code>save</code>。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517262931.png" alt="1532517262931"></p>
+<p><img data-src="1532517262931.png" alt="1532517262931"></p>
 <p>​         从on_start这个初始化的函数，通过：</p>
 <p><code>self.crawl(&#39;https://book.douban.com/subject_search?search_text=%E7%A7%91%E5%B9%BB&amp;cat=1001&#39;, callback=self.index_page)</code>这个方法，咱们crawl了咱刚刚填进去的网址，然后把这个网址的内容送（回调）到<strong>index_page</strong>这个函数里面进行进一步解析。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517307921.png" alt="1532517307921"></p>
+<p><img data-src="1532517307921.png" alt="1532517307921"></p>
 <p>​         看到没有！index_page的结构跟on_start函数的结构几乎一毛一样嘛！就是多了一行：</p>
 <blockquote>
 <p>​         for each in <strong>response.doc(‘a[href^=”http”]’).items()</strong>:</p>
 </blockquote>
 <p>​         看上去好像是明明白白的英文，不就是对每一个（for each）在……中（in）我去执行下一行的操作——而这个“……”里面的内容不就是<strong>response.doc(‘a[href^=”http”]’).items()</strong>那一串吗？也是<strong>response.doc(‘a[href^=”http”]’)</strong>这个东西的<strong>items()</strong>（项）嘛。</p>
 <p>​         回顾一下咱们的任务：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517347156.png" alt="1532517347156"></p>
+<p><img data-src="1532517347156.png" alt="1532517347156"></p>
 <p>​         根据之前crawl的写法，这里可以猜测，each.attr.href应该代表一个网址，这个“.attr.href”后缀肯定就是每一个item()的网址了。它又callback了detail_page，这不是内容页面的意思吗？那就是说，item()的网址肯定是一个内容页面的形式了。</p>
 <p>​         这里<strong>重点</strong>讲一下<strong>response.doc(‘a[href^=”http”]’)</strong>的功能，即获取网页上的某个元素。不懂没关系，你只需要知道它是<strong>从网页上获取某些东西</strong>就可以了。</p>
 <p>​         咱们要获取的内容页面detail_page是什么呢？如下图中所示。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517384491.png" alt="1532517384491"></p>
+<p><img data-src="1532517384491.png" alt="1532517384491"></p>
 <p>​         我们把每个电影的页面记作内容页面，现在我们尝试获取内容页面的网址。</p>
 <p>​         点击Run。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517412724.png" alt="1532517412724"></p>
+<p><img data-src="1532517412724.png" alt="1532517412724"></p>
 <p>​         点击follows。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517430585.png" alt="1532517430585"></p>
+<p><img data-src="1532517430585.png" alt="1532517430585"></p>
 <p>​         点击三角形，执行下一步，</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517440890.png" alt="1532517440890"></p>
+<p><img data-src="1532517440890.png" alt="1532517440890"></p>
 <p>​         你会惊喜的发现——</p>
 <p>​         hhh</p>
 <p>​         报错了。。。。</p>
 <p>​         是的。</p>
 <p>​         这个错误是由于咱们爬取的网址是https开头而不是http，这时，crawl函数里面必须加入一个参数，<strong>validate_cert=False</strong>。</p>
 <p>​         于是正确的姿势应该是下面这样~</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517514212.png" alt="1532517514212"></p>
+<p><img data-src="1532517514212.png" alt="1532517514212"></p>
 <p>​         Index_page里面的crawl也要记得添加<strong>validate_cert=False</strong>哦。</p>
 <p>​         好了，我们再跑一遍。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517523076.png" alt="1532517523076"></p>
+<p><img data-src="1532517523076.png" alt="1532517523076"></p>
 <p>​         仍然会出现问题哦！！！</p>
 <p>​         这里面的原因，其实跟豆瓣这个网址设置了反爬虫机制有关，如果想要爬取豆瓣的信息，就需要更高级的手段，咱目前还达不到，因此只好换个网站~</p>
 <p>​         （<strong>讲这里是让大家提前意识到反爬虫以及反反爬虫的技术的重要性</strong>，今后有很多的网站可能有反爬虫的机制，越有名越难爬，大家要有心理准备~）</p>
 <p>PS:我会告诉你我懒得改？2333333（逃~</p>
 <h3 id="爬取内容"><a href="#爬取内容" class="headerlink" title="爬取内容"></a>爬取内容</h3><p>​             我们换成老记录网，这是一个很好的纪录片的网站哦！安利一下。。。</p>
 <p>​         把网址改成：<a href="https://www.laojilu.com/" target="_blank" rel="noopener external nofollow noreferrer">https://www.laojilu.com/</a></p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517543155.png" alt="1532517543155"></p>
+<p><img data-src="1532517543155.png" alt="1532517543155"></p>
 <p>​         再次运行，出现detail_page了，出现了125个网址，这些网址有些可能跟我们的需求无关，你看第一个，就是老记录的主页，这个没什么用嘛。我们要爬取的是下面这样的内容网页。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517554577.png" alt="1532517554577"></p>
+<p><img data-src="1532517554577.png" alt="1532517554577"></p>
 <p>​         我们点击Web。如下图。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517571404.png" alt="1532517571404"></p>
+<p><img data-src="1532517571404.png" alt="1532517571404"></p>
 <p>​         可以看到老记录的主页哦。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517580505.png" alt="1532517580505"></p>
+<p><img data-src="1532517580505.png" alt="1532517580505"></p>
 <p>​         是不是有点窄？没关系，咱们调节一下，Chrome中按F12，启动查看元素，点击红圈中的按钮。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517603416.png" alt="1532517603416"></p>
+<p><img data-src="1532517603416.png" alt="1532517603416"></p>
 <p>​         选中视窗。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517620179.png" alt="1532517620179"></p>
+<p><img data-src="1532517620179.png" alt="1532517620179"></p>
 <p>​         更改Style。双击修改宽度150-&gt;450。F11关闭元素查看。好看多了！</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517633446.png" alt="1532517633446"></p>
+<p><img data-src="1532517633446.png" alt="1532517633446"></p>
 <p>​         点击enable css选择器按钮。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517647527.png" alt="1532517647527"></p>
+<p><img data-src="1532517647527.png" alt="1532517647527"></p>
 <p>​         选中图中所示的链接，进行CSS选择。可以看到右上角出现了初具雏形的表达式。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517661900.png" alt="1532517661900"></p>
+<p><img data-src="1532517661900.png" alt="1532517661900"></p>
 <p>​         我们点击右上角第一个按钮，复制这个表达式。第二个按钮用来将其插入代码当中。选中index_page里面的a[href^=”http”]表达式，用我们新选择的表达式替换。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517674126.png" alt="1532517674126"></p>
+<p><img data-src="1532517674126.png" alt="1532517674126"></p>
 <p>​         点击save。重新run。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517684065.png" alt="1532517684065"></p>
+<p><img data-src="1532517684065.png" alt="1532517684065"></p>
 <p>​         只剩下一个网页了！！！这可不妙，咱们筛选得好像太过分了。我们重新选择一遍。</p>
 <p>​         我们按F11查看一下老记录网主页的Html，并用红圈中的按钮来选择刚刚的元素查看一下它的结构。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517695176.png" alt="1532517695176"></p>
+<p><img data-src="1532517695176.png" alt="1532517695176"></p>
 <p>我们看到结构是这样的，thumbnail类下面，这里面有很多的内容页面，每个保存在h2 &gt; a这样的结构里面。</p>
 <p>我们尝试重新做一下CSS表达式。把thumbnail添加进去，点击.tag-79删去这个不必要的说明。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517708754.png" alt="1532517708754"></p>
+<p><img data-src="1532517708754.png" alt="1532517708754"></p>
 <p>​         可以看到，这次页面都被选中了。我们把新的表达式覆盖到代码里面。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517721104.png" alt="1532517721104"></p>
+<p><img data-src="1532517721104.png" alt="1532517721104"></p>
 <p>​         Save，run，看下效果。效果不错哟~~</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517730898.png" alt="1532517730898"></p>
+<p><img data-src="1532517730898.png" alt="1532517730898"></p>
 <p>​         随便点一个绿色三角。这里我们点第一个做个示范。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517740901.png" alt="1532517740901"></p>
+<p><img data-src="1532517740901.png" alt="1532517740901"></p>
 <p>​         看！有结果了！分别是title，url的信息。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517748859.png" alt="1532517748859"></p>
+<p><img data-src="1532517748859.png" alt="1532517748859"></p>
 <p>​         这不就是detail_page里面的返回值吗？（这里的返回值是以“键值对”的形式给出的）</p>
 <p>​         这就给了为我们一个提示：如果，想要获取更多的信息，可能需要把获得的信息写到return里面。</p>
 <p>​         如果想要更多的信息要怎么做呢？</p>
 <p>​         照样，重复类似的步骤就行了。我就不详细写了。下面贴出代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Created on 2018-03-22 01:22:33</span></span><br><span class="line"><span class="comment"># Project: demo_for_douban</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">    @every(minutes=24 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.crawl(<span class="string">'https://www.laojilu.com/'</span>,validate_cert=<span class="literal">False</span>, callback=self.index_page)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'#thumbnail * &gt; h2 &gt; a'</span>).items():</span><br><span class="line">            self.crawl(each.attr.href,validate_cert=<span class="literal">False</span>, callback=self.detail_page)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        </span><br><span class="line">        movie_name = response.doc(<span class="string">'h1'</span>).text()</span><br><span class="line">        movie_info = response.doc(<span class="string">'.post &gt; p'</span>).text()</span><br><span class="line">        <span class="comment">#如果要对info进一步分离，可采用items()分别获取，再存入对应的元素</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">"url"</span>: response.url,</span><br><span class="line">            <span class="string">"title"</span>: response.doc(<span class="string">'title'</span>).text(),</span><br><span class="line">            <span class="string">"movie_name"</span>: movie_name,</span><br><span class="line">            <span class="string">"movie_info"</span>: movie_info,</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <p>​         以及运行的抓取结果：（抓取图片的技术比较复杂，可以看demo中的实现方法）</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517832777.png" alt="1532517832777"></p>
+<p><img data-src="1532517832777.png" alt="1532517832777"></p>
 <h3 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h3><p>再回顾一下咱们最开始的目的~~</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517869728.png" alt="1532517869728"></p>
+<p><img data-src="1532517869728.png" alt="1532517869728"></p>
 <p>​         咱们已经实现了前后的内容和结果，可是翻页操作还没实现呢！这可要命，没有翻页操作的话，爬完这一页，下一页不就不能爬了？</p>
 <p>​         这里要设计一个index_page的循环。我获取这一页索引的内容页之后，能够转到下一页索引，继续获取新的内容页。</p>
 <p>​         添加两行代码，获取下一页的链接。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517914395.png" alt="1532517914395"></p>
+<p><img data-src="1532517914395.png" alt="1532517914395"></p>
 <p>​         再run一遍，发现follows从18个分支，变成了19个，多了个index_page。这便实现了翻页操作。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532517964162.png" alt="1532517964162"></p>
+<p><img data-src="1532517964162.png" alt="1532517964162"></p>
 <p>给出一个总的代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Created on 2018-03-22 01:22:33</span></span><br><span class="line"><span class="comment"># Project: demo_for_douban</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">    @every(minutes=24 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.crawl(<span class="string">'https://www.laojilu.com/'</span>,validate_cert=<span class="literal">False</span>, callback=self.index_page)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'#thumbnail * &gt; h2 &gt; a'</span>).items():</span><br><span class="line">            self.crawl(each.attr.href,validate_cert=<span class="literal">False</span>, callback=self.detail_page)</span><br><span class="line">        next = response.doc(<span class="string">'.next'</span>)</span><br><span class="line">        self.crawl(next.attr.href,validate_cert=<span class="literal">False</span>,callback=self.index_page)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        </span><br><span class="line">        movie_name = response.doc(<span class="string">'h1'</span>).text()</span><br><span class="line">        movie_info = response.doc(<span class="string">'.post &gt; p'</span>).text()</span><br><span class="line">        <span class="comment">#如果要对info进一步分离，可采用items()分别获取，再存入对应的元素</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">"url"</span>: response.url,</span><br><span class="line">            <span class="string">"title"</span>: response.doc(<span class="string">'title'</span>).text(),</span><br><span class="line">            <span class="string">"movie_name"</span>: movie_name,</span><br><span class="line">            <span class="string">"movie_info"</span>: movie_info,</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <p>当然，我们最终的目的是要将爬取的结果保存到本地嘛。</p>
 <p>我们借助demo里面改写的on_result方法，Tool工具类，以及一系列的库和附加的初始化定义（比如定义图片存储路径的DIR_PATH），就能很方便地实现了！这里就不再作更具体的描述了，留给你练练手吧~</p>
 <h2 id="CSS选择器的简单回顾"><a href="#CSS选择器的简单回顾" class="headerlink" title="CSS选择器的简单回顾"></a>CSS选择器的简单回顾</h2><p>​    <strong>注意：以下内容是基于你“至少已经看过《Python3網絡爬蟲實戰》Youtube视频的第20集”。</strong></p>
 <h3 id="什么是CSS选择器"><a href="#什么是CSS选择器" class="headerlink" title="什么是CSS选择器"></a>什么是CSS选择器</h3><p>在pyspider的WebUI上，可以看到五大功能：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518056366.png" alt="1532518056366"></p>
+<p><img data-src="1532518056366.png" alt="1532518056366"></p>
 <p>按重要程度分别是：</p>
 <ul>
 <li><code>Follows</code>，用于单步调试【可在本指南的如何DEBUG的常用方法中找到更详细的描述】</li>
@@ -481,72 +492,72 @@
 <h3 id="最简单的正则表达式"><a href="#最简单的正则表达式" class="headerlink" title="最简单的正则表达式"></a>最简单的正则表达式</h3><p>咱们一般会用的正则表达式（我目前遇到的）有且仅有一种。</p>
 <p>就是  .xxx &gt; xxx &gt; xxx<strong>[“XYZ=ABC”]</strong> 的形式。</p>
 <p>在我之前给大家的“4. for<em>compositesworld(复合材料世界)</em>基于JEC通用化代码模板_改进版”里，有下面一行代码：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518188970.png" alt="1532518188970"></p>
+<p><img data-src="1532518188970.png" alt="1532518188970"></p>
 <p>这就是典型的应用。大家可以按照之前的方法查看一下对应的网页元素，弄清楚为什么这么做。【提示：使<strong>表达式的含义唯一</strong>】</p>
 <h2 id="结构化、伪宏控制"><a href="#结构化、伪宏控制" class="headerlink" title="结构化、伪宏控制"></a>结构化、伪宏控制</h2><h3 id="伪宏控制"><a href="#伪宏控制" class="headerlink" title="伪宏控制"></a>伪宏控制</h3><p>学过C语言的你，可能还记得C语言中有一种功能：宏定义。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518206891.png" alt="1532518206891"></p>
+<p><img data-src="1532518206891.png" alt="1532518206891"></p>
 <p>C++中宏定义能够实现类似下面这个示例代码的功能：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518220976.png" alt="1532518220976"></p>
+<p><img data-src="1532518220976.png" alt="1532518220976"></p>
 <p>可以看到，预先定义的宏可以在接下来的整个程序的任何地方，只要写它的名字就行了。该也非常方便，因为你只用改宏pi，整个程序的pi就能随之而变。</p>
 <p>尽管python中没有严格的宏的功能，但我们通过预先把需要调节的参数统一命名赋值，放置到程序的头部，还是可以实现的。这样，咱们的代码就能实现结构化了！</p>
 <p>对于同样一种结构的网页，我们使用同一套代码的输入模板就能很方便地修改对应参数，快速编程了。</p>
 <h3 id="范式编程"><a href="#范式编程" class="headerlink" title="范式编程"></a>范式编程</h3><p>范式就是典型的意思。咱们可以通过一个比较具有代表性的网站的爬取框架，进行范式化。但这个框架的使用一定具有一些条件，这些要在代码中写明。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518235977.png" alt="1532518235977"></p>
+<p><img data-src="1532518235977.png" alt="1532518235977"></p>
 <p>接下来咱们就能动手实现范式化的编程了。</p>
 <p>效果如图。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518252299.png" alt="1532518252299"></p>
+<p><img data-src="1532518252299.png" alt="1532518252299"></p>
 <p>​         具体过程我就不详细解释了，如果前面的理解没有问题，这里应该不难。你也可以尝试动手实现自己的一个范式哦~</p>
 <h2 id="封装与自动化"><a href="#封装与自动化" class="headerlink" title="封装与自动化"></a>封装与自动化</h2><h3 id="自动化创建子目录"><a href="#自动化创建子目录" class="headerlink" title="自动化创建子目录"></a>自动化创建子目录</h3><p>细心的你可能已经发现：咱们理论上虽然可以在WebUI/dashboard上一次建立很多个爬虫程序，但是——所有的图片好像都保存在了同一个路径之下？？？What？还有这种操作？那我保存的图片管理起来岂不是非常混乱……</p>
 <p>于是可能会有这样的想法……</p>
 <p>如果能够在子目录里面，按照我建的project的名字创建一个专属于这个project的子文件夹，那么张三的文件放到张三的文件夹里，李四的文件放到李四的文件夹里，管理起来岂不是方便多了，而且还很直观。这就是核心的想法。</p>
 <p>基于这样的想法，我们对DIR_PATH这个图片保存目录做以下的修改：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518267613.png" alt="1532518267613"></p>
+<p><img data-src="1532518267613.png" alt="1532518267613"></p>
 <p>​    （也许你在疑惑我是用了什么主题的IDLE才有这么酷炫的编程界面？？？那么注意啦，这是Sublime Text 3，非常适合小项目的编程IDE。你可以百度搜索下载哦，只要进行一定的快捷设置，就可以实现在Sublime Text 3进行python程序的运行~具体问度娘~）</p>
 <p>整个思路就是：创建一个项目子目录，如果目录不存在。</p>
 <p>下面我们尝试创建两个项目。在cmd命令行粘贴以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd desktop</span><br><span class="line">md CraData</span><br><span class="line">cd CraData</span><br><span class="line">pyspider all</span><br></pre></td></tr></table></figure>
 <p>如果成功运行，桌面上将出现一个CraData文件，用于保存爬取的数据。</p>
 <p>效果如图：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518341396.png" alt="1532518341396"></p>
+<p><img data-src="1532518341396.png" alt="1532518341396"></p>
 <p>在WebUI创建两个项目JEC和Comp，分别把</p>
 <p><strong>3.</strong> <strong>封装<em>for_jeccomposites(JEC)</em>**</strong>伪宏控制__<strong>**范式编程.py</strong></p>
 <p>和</p>
 <p><strong>4. for<em>compositesworld(复合材料世界)</em>基于JEC通用化代码模板_改进版.py</strong></p>
 <p>中的代码覆盖到项目的代码中。如下图所示：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518359216.png" alt="1532518359216"></p>
+<p><img data-src="1532518359216.png" alt="1532518359216"></p>
 <p>回到dashboard，将两个项目的状态都调到running，点击run。</p>
 <p>打开图片存放的目录，发现有两个基于project_name生成的子文件夹：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518408683.png" alt="1532518408683"></p>
+<p><img data-src="1532518408683.png" alt="1532518408683"></p>
 <p>说明运行成功。</p>
 <h3 id="封装——create-table方法的实现"><a href="#封装——create-table方法的实现" class="headerlink" title="封装——create_table方法的实现"></a>封装——create_table方法的实现</h3><p>打开mysqldb_new.py文件。</p>
 <p>看第三行：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518424917.png" alt="1532518424917"></p>
+<p><img data-src="1532518424917.png" alt="1532518424917"></p>
 <p>使用该改进方法可能需要安装的库：sqlalchemy，mysql-connector。均可用pip install快速安装。这说明你必须首先安装这两个库，才能使用这个基于mysqldb的改进库。</p>
 <p>让我们看看它与mysqldb有什么不同。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518436372.png" alt="1532518436372"></p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518452136.png" alt="1532518452136"></p>
+<p><img data-src="1532518436372.png" alt="1532518436372"></p>
+<p><img data-src="1532518452136.png" alt="1532518452136"></p>
 <p>可以看到，它的区别主要在于前面引入了三个新库，尾部增加了一个create_table方法。</p>
 <p>具体的实现方法就不细讲了，网上可以百度。要使用这个库，把它拷贝到与mysqldb相同的目录下即可。注意需要在</p>
 <p>engine = create_engine(‘mysql+mysqlconnector://root:fdzxks@localhost:3307/pyspider’)</p>
 <p>​    这一行进行数据库的连接设置才能正常使用。</p>
 <p>下面讲一下怎么调用它。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518478980.png" alt="1532518478980"></p>
+<p><img data-src="1532518478980.png" alt="1532518478980"></p>
 <p>可以看到，方法里面有两个参数，self，project_name，self是class（类）对象自带的一个默认参数，必须要填，你可以不用管它。project_name参数则比较重要，顾名思义，就是你的项目的名字。如果你已经实现过前面的范式编程，你应该对这个变量名很熟悉。以下是一个调用的实例：</p>
 <p>打开之前发过的文件：</p>
 <p>\6. test<em>pro</em>通过调用MySQLnew实现自动创建列表_demo.py</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518500235.png" alt="1532518500235"></p>
+<p><img data-src="1532518500235.png" alt="1532518500235"></p>
 <p>Run一下。打开Navicat，发现有新的表格自动建立了。【必须先保证前面数据库连接参数已设定好】</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518510194.png" alt="1532518510194"></p>
+<p><img data-src="1532518510194.png" alt="1532518510194"></p>
 <p>右键选择“设计表”查看表结构。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518520750.png" alt="1532518520750"></p>
+<p><img data-src="1532518520750.png" alt="1532518520750"></p>
 <p>与咱们需要的表结构一致。运行成功。</p>
 <p>PS：test_for_auto_table_maker是一个名字，你可以任意指定/修改。</p>
-<h3 id="自动化创建表"><a href="#自动化创建表" class="headerlink" title="自动化创建表"></a>自动化创建表</h3><p>首先咱们需要在代码中加入两个部分：<img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518539831.png" alt="1532518539831"></p>
+<h3 id="自动化创建表"><a href="#自动化创建表" class="headerlink" title="自动化创建表"></a>自动化创建表</h3><p>首先咱们需要在代码中加入两个部分：<img data-src="1532518539831.png" alt="1532518539831"></p>
 <p>然后就能够自动创建表了。【但你首先要完成之前的步骤哦】</p>
 <h3 id="代码重用"><a href="#代码重用" class="headerlink" title="代码重用"></a>代码重用</h3><p>聪明的你也许已经发现了，到现在为止，咱们的demo代码里面，还有两大块我没有提到过。它们是：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518581682.png" alt="1532518581682"></p>
+<p><img data-src="1532518581682.png" alt="1532518581682"></p>
 <p>​    和</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518619250.png" alt="1532518619250"></p>
+<p><img data-src="1532518619250.png" alt="1532518619250"></p>
 <p>​    这两个部分，一个用来初始化，一个用来定义工具类，都是咱们可以直接调用的方法，它们的存在，更类似于库，只不过没有封装成一个库用import引进来而已。因此，咱们不用太关注里面具体是如何实现的，你只需要知道它的功能，需要输入什么，能够输出什么，就足够了。而这些，代码中的注释应该能给你一定的启发。如果还有问题，随时百度哦。</p>
 <h2 id="如何DEBUG？"><a href="#如何DEBUG？" class="headerlink" title="如何DEBUG？"></a>如何DEBUG？</h2><h3 id="DEBUG是什么"><a href="#DEBUG是什么" class="headerlink" title="DEBUG是什么"></a>DEBUG是什么</h3><p>DEBUG是什么，首先要知道BUG是什么，即“虫子”（虫族？？），计算机学中用来指代程序、代码的漏洞。例如，在长达上亿行代码的window操作系统中，漏洞的数量也是非常多的，成千上万。BUG是非常难以彻底避免，对于大型的项目，甚至有相关的指标规定：如，千行代码缺陷率（bug率）。</p>
 <p>只要代码是人写的，出错的原因一定在自身。【这里已经默认你已经完成了环境的部署哦，如果环境设置没弄好而出现的问题不属于这里的讨论范围~】那么，就要找找自己的原因了，是否对程序的框架不够清楚就匆忙开始写？是否了解自己代码的功能？是否考虑过可能出现的代码BUG，并作一定的预防措施（“可以理解”的报错）？</p>
@@ -556,11 +567,11 @@
 <p>之前我们用的点击绿色小三角来单步执行，就是单步调试。不细讲了。</p>
 <p>如果你已经实现了往数据库传输结果，在这个阶段请你先屏蔽掉on_result方法，让结果能直接显示在WebUI网页里面，便于分析结果抓取是否合理。</p>
 <p>屏蔽掉on_result方法即在对应代码行最前加注释号（或者直接先删掉该方法，之后再粘贴进来）：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518648084.png" alt="1532518648084"></p>
+<p><img data-src="1532518648084.png" alt="1532518648084"></p>
 <h4 id="l-使用命令行调试"><a href="#l-使用命令行调试" class="headerlink" title="l  使用命令行调试"></a>l  使用命令行调试</h4><p>修改项目status到running，点击run。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518656810.png" alt="1532518656810"></p>
+<p><img data-src="1532518656810.png" alt="1532518656810"></p>
 <p>在命令行会发现下面这样的效果：</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518664943.png" alt="1532518664943"></p>
+<p><img data-src="1532518664943.png" alt="1532518664943"></p>
 <p>你会发现最左边的字母，一般只会出现两种状态：“I”和“E”。</p>
 <p>“I”我不知道是什么意思，但“E”经我推测应该代表Error的意思。如果你的命令行在运行过程中出现了“E”，请按照给出的错误信息进行调试。</p>
 <p>比如我现在就出现了这样的错误：</p>
@@ -599,7 +610,7 @@
 </ol>
 </li>
 </ol>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532514125237.png" alt="1532514125237"></p>
+<p><img data-src="1532514125237.png" alt="1532514125237"></p>
 <ol>
 <li>Cmd切换到开发目录下输入pyspider启动，这个目录可以随意见一个，之后在页面写的脚本都会保存在这个目录下。</li>
 </ol>
@@ -609,7 +620,7 @@
 <blockquote>
 <p>先在mysql建好数据库表：</p>
 </blockquote>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532514150502.png" alt="1532514150502"></p>
+<p><img data-src="1532514150502.png" alt="1532514150502"></p>
 <blockquote>
 <p>打开浏览器输入<a href="http://localhost:5000/" target="_blank" rel="noopener external nofollow noreferrer">http://localhost:5000/</a>，单击create创建爬虫脚本(以爬取美国波音公司媒体网站<a href="http://boeing.mediaroom.com/为例" target="_blank" rel="noopener external nofollow noreferrer">http://boeing.mediaroom.com/为例</a>)</p>
 </blockquote>
@@ -625,7 +636,7 @@
 <li>回到pyspider dashboard页面</li>
 <li>修改状态到running，单击run。查询数据库是否有数据写入。</li>
 </ul>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532514183650.png" alt="1532514183650"></p>
+<p><img data-src="1532514183650.png" alt="1532514183650"></p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><h2 id="python学习资料"><a href="#python学习资料" class="headerlink" title="python学习资料"></a>python学习资料</h2><p>初学者不建议直接安装python！请安装Anaconda！<br>Anaconda能省去很多装各种库的麻烦，而且还能非常方便地配置多环境（如Python2.7+Python3.6，2.7用来爬虫，3.6用来接轨新技术）。</p>
 <ol>
 <li><a href="http://blog.csdn.net/qiushi_1990/article/details/78041375" target="_blank" rel="noopener external nofollow noreferrer">http://blog.csdn.net/qiushi_1990/article/details/78041375</a><br> Python人工智能之图片识别，Python3一行代码实现图片文字识别</li>
@@ -640,7 +651,7 @@
 <h2 id="pyspider快捷启动命令"><a href="#pyspider快捷启动命令" class="headerlink" title="pyspider快捷启动命令"></a>pyspider快捷启动命令</h2><p>！pyspider快捷启动命令_为了提高cmd运行速度，直接在txt中修改，然后Ctrl+A粘贴到cmd中执行_cd到目录_md创建目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">F:</span><br><span class="line">md Crawl_data\demo</span><br><span class="line">cd Crawl_data\demo</span><br><span class="line">activate python2</span><br><span class="line">pyspider all</span><br></pre></td></tr></table></figure>
 <h2 id="可能会用到的安装包"><a href="#可能会用到的安装包" class="headerlink" title="可能会用到的安装包"></a>可能会用到的安装包</h2><p>只提供明细，不提供下载。</p>
-<p><img src="/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/1532518853415.png" alt="1532518853415"></p>
+<p><img data-src="1532518853415.png" alt="1532518853415"></p>
 <h2 id="迷之·附录-代码"><a href="#迷之·附录-代码" class="headerlink" title="迷之·附录(代码)"></a>迷之·附录(代码)</h2><p>代码集中车间233。</p>
 <h3 id="代码：结构-model-for-crawl-demo加注释版-py"><a href="#代码：结构-model-for-crawl-demo加注释版-py" class="headerlink" title="代码：结构_model_for_crawl_demo加注释版.py"></a>代码：结构_model_for_crawl_demo加注释版.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#爬取模板:加注释版</span></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Created on 2017-12-05 20:59:56</span></span><br><span class="line"><span class="comment"># Project: boeing</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> pyspider.database.mysql.mysqldb <span class="keyword">import</span> SQL</span><br><span class="line"><span class="keyword">import</span> sys  </span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> ti</span><br><span class="line"><span class="keyword">from</span> dateutil <span class="keyword">import</span> parser</span><br><span class="line">  </span><br><span class="line">reload(sys)  </span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#图片存放目录</span></span><br><span class="line">DIR_PATH = <span class="string">"./"</span>  <span class="comment"># pyspider默认目录？</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    </span><br><span class="line">    headers= &#123;</span><br><span class="line">    <span class="string">"Accept"</span>:<span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="string">"Accept-Encoding"</span>:<span class="string">"gzip, deflate, sdch"</span>,</span><br><span class="line">    <span class="string">"Accept-Language"</span>:<span class="string">"zh-CN,zh;q=0.8"</span>,</span><br><span class="line">    <span class="string">"Cache-Control"</span>:<span class="string">"max-age=0"</span>,</span><br><span class="line">    <span class="string">"Connection"</span>:<span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">        <span class="string">'itag'</span>: <span class="string">'v1.1'</span>,</span><br><span class="line">        <span class="string">"headers"</span> : headers,</span><br><span class="line">        <span class="string">"timeout"</span> : <span class="number">100000</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.dir_path = DIR_PATH</span><br><span class="line">        self.tool = Tool()</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @every(minutes=24 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span>				<span class="comment">#这里设置你要爬取的网页，先登录看看是否对应，否则容易出错</span></span><br><span class="line">        self.crawl(<span class="string">'http://boeing.mediaroom.com/news-releases-statements'</span>, callback=self.index_page)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span>				<span class="comment">#设置索引页</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'.archive_nav &gt; a'</span>).items():</span><br><span class="line">            year=each.text()</span><br><span class="line">            <span class="keyword">if</span>(year != <span class="string">"Search"</span>):</span><br><span class="line">                <span class="keyword">if</span>(year==<span class="string">"2016"</span> <span class="keyword">or</span> year==<span class="string">"2015"</span>):			<span class="comment">#这里设置爬取网页新闻的年份（按年份分类），最好把最新的年份都爬取下来【注意，不是所有的网站都有这个分类！】</span></span><br><span class="line">                    self.crawl(each.attr.href, callback=self.news_page)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#进入某一年份的index页面            </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">news_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'.item'</span>).items():</span><br><span class="line">            time=each.find(<span class="string">'div'</span>).eq(<span class="number">0</span>).text()          <span class="comment"># find'div'是找到.item下的所有元素，然后eq(0)获取第0个（首个）元素的text()，即内容</span></span><br><span class="line">            datetime_struct = parser.parse(time)</span><br><span class="line">            time=datetime_struct.strftime(<span class="string">'%Y-%m-%d'</span>)   <span class="comment"># 这里的功能是，将网页代表时间的字符串格式化为%Y-%m-%d（原网页是英文格式）</span></span><br><span class="line">            self.crawl(each.find(<span class="string">'div'</span>).find(<span class="string">'a'</span>).attr.href, save=&#123;<span class="string">'time'</span>: time&#125;,callback=self.news,connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)    <span class="comment">#调取新闻页。注意，所有的time都是提前在index页获取的，因此需要传递给最后的处理函数</span></span><br><span class="line">        <span class="keyword">for</span> each_page <span class="keyword">in</span> response.doc(<span class="string">'.table_footer &gt; b &gt; a'</span>).items():</span><br><span class="line">            self.crawl(each_page.attr.href, callback=self.news_page2)   <span class="comment">#调取其它新闻页</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#基于该年份，调取其它index页（一个年份可能对应多个index页面，一个index页面又对应多个新闻页）       </span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">news_page2</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'.item'</span>).items():</span><br><span class="line">            time=each.find(<span class="string">'div'</span>).eq(<span class="number">0</span>).text()  <span class="comment">#同理，以下</span></span><br><span class="line">            datetime_struct = parser.parse(time)</span><br><span class="line">            time=datetime_struct.strftime(<span class="string">'%Y-%m-%d'</span>)</span><br><span class="line">            self.crawl(each.find(<span class="string">'div'</span>).find(<span class="string">'a'</span>).attr.href, save=&#123;<span class="string">'time'</span>: time&#125;,callback=self.news,connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)    <span class="comment"># each.find('div').find('a').attr.href是获得新闻页的url</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#主方法，进入新闻页</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">news</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        time=response.save[<span class="string">'time'</span>]  <span class="comment">#记录已经格式化的时间，继续往下传递</span></span><br><span class="line">        <span class="keyword">if</span> response.doc(<span class="string">'#assets_20295_130083-117_tab_link'</span>):   <span class="comment"># 这里的if else是用来判断新闻有无图片</span></span><br><span class="line">            self.crawl(response.doc(<span class="string">'#assets_20295_130083-117_tab_link'</span>).attr.href,save=&#123;<span class="string">'time'</span>: time&#125;, callback=self.detail_page,validate_cert=<span class="literal">False</span>,connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.crawl(response.url, save=&#123;<span class="string">'time'</span>: time&#125;,callback=self.detail_page,validate_cert=<span class="literal">False</span>,connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)</span><br><span class="line">        </span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        title=response.doc(<span class="string">'.wd_news_releases-detail &gt; h1'</span>).text()  <span class="comment">#通过正则表达式获取新闻题目</span></span><br><span class="line">        time=response.save[<span class="string">'time'</span>]  <span class="comment">#最终获取到时间</span></span><br><span class="line">        content = <span class="string">''</span>    <span class="comment">#初始化新闻内容为空，字符串</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'.news_body &gt; p'</span>).items():  <span class="comment"># 对于每一个在.news_body &gt; p中的内容都添加到content中</span></span><br><span class="line">            content += each.text()</span><br><span class="line">        url = response.url      <span class="comment"># 保存网址为当前网址</span></span><br><span class="line">        picture_url = <span class="string">''</span>    <span class="comment">#与content同理</span></span><br><span class="line">        picture_local_path = <span class="string">''</span></span><br><span class="line">        file_title = re.sub(<span class="string">'[\/:*?"&lt;&gt;|]'</span>,<span class="string">'-'</span>,title)    <span class="comment"># ？？？某个正则表达式？</span></span><br><span class="line">        imgDir = self.dir_path</span><br><span class="line"> <span class="comment">#处理图片的方法1：</span></span><br><span class="line">        <span class="keyword">for</span> imgElem <span class="keyword">in</span> response.doc(<span class="string">'.detail_image &gt; img'</span>).items():</span><br><span class="line">            imgUrl = imgElem.attr.src</span><br><span class="line">            picture_url += imgUrl + <span class="string">';'</span></span><br><span class="line">            <span class="keyword">if</span> imgUrl:</span><br><span class="line">                <span class="comment">#获取图片文件后缀</span></span><br><span class="line">                extension = self.tool.get_extension(imgUrl)</span><br><span class="line">                name = self.tool.get_name(imgUrl)</span><br><span class="line">                <span class="comment">#拼接图片名</span></span><br><span class="line">                file_name = name + <span class="string">"."</span> + extension</span><br><span class="line">                picture_local_path += <span class="string">';'</span> + file_name</span><br><span class="line">                self.crawl(imgUrl,callback=self.save_img,save=&#123;<span class="string">"file_name"</span>:file_name, <span class="string">"imgDir"</span>:imgDir&#125;,validate_cert=<span class="literal">False</span>, connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)</span><br><span class="line">  <span class="comment">#处理图片的方法2：               </span></span><br><span class="line">        <span class="keyword">for</span> imgElem <span class="keyword">in</span> response.doc(<span class="string">'.PRN_ImbeddedAssetReference &gt; p &gt; img'</span>).items():</span><br><span class="line">            imgUrl = imgElem.attr.src</span><br><span class="line">            picture_url += imgUrl + <span class="string">';'</span></span><br><span class="line">            <span class="keyword">if</span> imgUrl:</span><br><span class="line">                <span class="comment">#获取图片文件后缀</span></span><br><span class="line">                extension = self.tool.get_extension(imgUrl)</span><br><span class="line">                name = self.tool.get_name(imgUrl)</span><br><span class="line">                <span class="comment">#拼接图片名</span></span><br><span class="line">                file_name = name + <span class="string">"."</span> + extension</span><br><span class="line">                picture_local_path += <span class="string">';'</span> + file_name</span><br><span class="line">                self.crawl(imgUrl,callback=self.save_img,save=&#123;<span class="string">"file_name"</span>:file_name, <span class="string">"imgDir"</span>:imgDir&#125;,validate_cert=<span class="literal">False</span>, connect_timeout = <span class="number">5000</span>, timeout = <span class="number">30000</span>)   </span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">"title"</span>:title,</span><br><span class="line">            <span class="string">"introduction"</span>:<span class="string">"null"</span>,</span><br><span class="line">            <span class="string">"time"</span>:time,</span><br><span class="line">            <span class="string">"content"</span>:content,</span><br><span class="line">            <span class="string">"keywords"</span>:<span class="string">"null"</span>,</span><br><span class="line">            <span class="string">"name"</span>:<span class="string">"boeing"</span>,      <span class="comment">#这里根据你建的表格名修改</span></span><br><span class="line">            <span class="string">"source"</span>:<span class="string">"原创"</span>,</span><br><span class="line">            <span class="string">"url"</span>:url,</span><br><span class="line">            <span class="string">"picture_url"</span>:picture_url,</span><br><span class="line">            <span class="string">"picture_local_path"</span>:picture_local_path</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#保存图片</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_img</span><span class="params">(self,response)</span>:</span></span><br><span class="line">        content = response.content</span><br><span class="line">        file_name = response.save[<span class="string">"file_name"</span>]</span><br><span class="line">        imgDir = response.save[<span class="string">"imgDir"</span>]</span><br><span class="line">        file_path = imgDir + file_name</span><br><span class="line">        self.tool.save_img(content,imgDir,file_path)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_result</span><span class="params">(self,result)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> result <span class="keyword">or</span> <span class="keyword">not</span> result[<span class="string">'title'</span>]:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        sql = SQL()</span><br><span class="line">        sql.insert(<span class="string">'boeing'</span>,**result)       <span class="comment">#这里也要对应修改哦</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#工具类    </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tool</span>:</span></span><br><span class="line">    <span class="comment">#保存图片</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_img</span><span class="params">(self,content,imgDir,path)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(imgDir):                         </span><br><span class="line">            os.makedirs(imgDir)</span><br><span class="line">        f = open(path,<span class="string">"wb"</span> )        <span class="comment">#写入文件</span></span><br><span class="line">        f.write(content)</span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#获取url后缀名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_extension</span><span class="params">(self,url)</span>:</span>                            </span><br><span class="line">        extension = url.split(<span class="string">"."</span>)[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">return</span> extension </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#获取图片名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(self,url)</span>:</span></span><br><span class="line">        name=url.split(<span class="string">"/"</span>)[<span class="number">-1</span>].split(<span class="string">"."</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> name</span><br></pre></td></tr></table></figure>
 <h3 id="代码：功能for-compositesworld-复合材料世界-爬虫程序-详注"><a href="#代码：功能for-compositesworld-复合材料世界-爬虫程序-详注" class="headerlink" title="代码：功能for_compositesworld(复合材料世界)爬虫程序_详注"></a>代码：功能<em>for_compositesworld(复合材料世界)</em>爬虫程序_详注</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Created on 2018-03-18 18:13:33</span></span><br><span class="line"><span class="comment"># Project: compositesworld</span></span><br><span class="line"><span class="comment">#问题：</span></span><br><span class="line"><span class="comment">#1. 爬取introduction项的正则表达式不够准确，一部分项爬不下来      ---已解决（注意分析网站的html，而不是一味地依赖CSS选择器）</span></span><br><span class="line"><span class="comment">#2. 如何动态、高效地控制爬取的年份截止日期？比如，最早到2016.01.01</span></span><br><span class="line"><span class="comment">#3. 在单步调试，尝试调用保存图片函数时出现 Exception: HTTP 599:…… OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to d2n4wb9orp1vta.cloudfront.net:443  错误     ---已解决（似乎与网络连接状况有关，但正常运行时反而没什么问题。暂时忽略）</span></span><br><span class="line"><span class="comment">#4. python反反爬虫机制（代理IP。sleep延时：防止爬取过快导致封IP）      ---已解决。 使用ti.sleep(t)，t为参数，单位为秒。如:ti.time.sleep(3)，表示停顿3秒后继续执行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *        <span class="comment">#这个库中定义了爬取的各种控制函数和方法</span></span><br><span class="line"><span class="keyword">import</span> re   <span class="comment">#re就是regular expression，即正则表达式。正则表达式（通项公式）是用来简洁表达一组字符串的表达式。优势是简洁，一行胜千言。这个库主要用于字符串匹配。</span></span><br><span class="line"><span class="keyword">from</span> pyspider.database.mysql.mysqldb <span class="keyword">import</span> SQL</span><br><span class="line"><span class="keyword">import</span> sys      <span class="comment">#用于接下来修改编码格式</span></span><br><span class="line"><span class="keyword">import</span> os       <span class="comment">#OS库提供了使用各种操作系统功能的接口</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> ti       <span class="comment"># 用于延时控制</span></span><br><span class="line"><span class="keyword">from</span> dateutil <span class="keyword">import</span> parser       <span class="comment">#日期处理库，parser子库是根据字符串解析成datetime</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#编码转换</span></span><br><span class="line">reload(sys)     <span class="comment">#Python运行的时候首先加载了site.py，在site.py文件里有这么一段代码:</span></span><br><span class="line">                <span class="comment">#    if hasattr(sys, "setdefaultencoding"):</span></span><br><span class="line">                <span class="comment">#        del sys.setdefaultencoding</span></span><br><span class="line">                <span class="comment">#可以看出，在sys加载后,setdefaultencoding方法被删除了,所以我们要通过重新导入sys来设置系统编码</span></span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)	<span class="comment">#设置默认编码，UTF-8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#图片存放目录</span></span><br><span class="line">DIR_PATH = <span class="string">"./"</span>      <span class="comment"># ./ 的意思是：当前目录（登录pyspider时）</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    </span><br><span class="line">    headers= &#123;</span><br><span class="line">    <span class="string">"Accept"</span>:<span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="string">"Accept-Encoding"</span>:<span class="string">"gzip, deflate, sdch"</span>,</span><br><span class="line">    <span class="string">"Accept-Language"</span>:<span class="string">"zh-CN,zh;q=0.8"</span>,</span><br><span class="line">    <span class="string">"Cache-Control"</span>:<span class="string">"max-age=0"</span>,</span><br><span class="line">    <span class="string">"Connection"</span>:<span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">        <span class="string">'itag'</span>: <span class="string">'v1.1'</span>,		<span class="comment">#修改这个tag号，可以重新启动爬取</span></span><br><span class="line">        <span class="string">"headers"</span> : headers,</span><br><span class="line">        <span class="string">"timeout"</span> : <span class="number">100000</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.dir_path = DIR_PATH</span><br><span class="line">        self.tool = Tool()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="meta">    @every(minutes=24 * 60)			# @every修饰器，表示每24小时会执行一次</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span>				<span class="comment"># 这里设置你要爬取的网页URL（最好是列表的形式，按更新顺序排列），先登录看看是否对应，否则容易出错</span></span><br><span class="line">        self.crawl(<span class="string">'https://www.compositesworld.com/news/list'</span>,validate_cert=<span class="literal">False</span>, callback=self.index_page)	<span class="comment"># self.crawl 告诉 pyspider 抓取指定页面，然后使用 callback 函数对结果进行解析，并调用接下来的index_page</span></span><br><span class="line"><span class="comment"># 总结：</span></span><br><span class="line"><span class="comment"># 通过 on_start 回调函数，作为爬取的入口点，当点击主面板上的 run 的时候，就是调用这个函数，启动抓取。</span></span><br><span class="line"><span class="comment"># self.crawl 告诉调度器，我们需要抓取 'https://www.compositesworld.com/news/list' 这个页面，然后使用 callback=self.index_page 这个回调函数进行解析。</span></span><br><span class="line"><span class="comment"># 所有 return 的内容默认会被捕获到 resultdb 中，可以直接在 WEBUI 上看到（如果结果）。</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)	#在这表示我们认为 10 天内页面有效，不会再次进行更新抓取</span></span><br><span class="line">    <span class="comment">#由此，注意，pyspider不会抓取同一个URL两次（永久丢弃），即使修改了代码，对于第一次运行该项目并修改并第二次运行该项目的初学者来说，这是非常常见的。</span></span><br><span class="line">    <span class="comment">#以上是引述。但是，在实际操作WebUI时，通过单步调试可以很方便地抓取同一个页面。</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span>				<span class="comment">#设置索引页</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'.headline &gt; a'</span>).items(): </span><br><span class="line">            self.crawl(each.attr.href, validate_cert=<span class="literal">False</span>,callback=self.detail_page)</span><br><span class="line">        next = response.doc(<span class="string">'a[aria-label="Next"]'</span>)</span><br><span class="line">        self.crawl(next.attr.href,validate_cert=<span class="literal">False</span>, connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>,callback=self.index_page)</span><br><span class="line">        <span class="comment"># validate_cert=False 参数，用来解决SSL证书问题，对于以“https”开头的网站，必须添加</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="comment"># 使用CSS正则表达式工具修改doc()中的路径，进行页面上的元素的采集</span></span><br><span class="line">        title = response.doc(<span class="string">'.content-headline'</span>).text()</span><br><span class="line">        introduction = response.doc(<span class="string">'.col-sm-12 &gt; h1'</span>).text()</span><br><span class="line">        time = response.doc(<span class="string">'.cell-vert-center &gt; div &gt; span'</span>).text()</span><br><span class="line">        time = time[<span class="number">10</span>:] <span class="comment">#我这里采用了截取字符段的形式，获得真正的时间字符子序列（不通用！！！）</span></span><br><span class="line">        datetime_struct = parser.parse(time)</span><br><span class="line">        time=datetime_struct.strftime(<span class="string">'%Y-%m-%d'</span>)   <span class="comment"># 这里的功能是，将网页代表时间的字符串格式化为%Y-%m-%d（原网页是英文格式）</span></span><br><span class="line">        content = response.doc(<span class="string">'#short &gt; div &gt; div &gt; p'</span>).text()</span><br><span class="line">        url = response.url</span><br><span class="line">        picture_url = <span class="string">''</span>    <span class="comment">#与content同理</span></span><br><span class="line">        picture_local_path = <span class="string">''</span></span><br><span class="line">        file_title = re.sub(<span class="string">'[\/:*?"&lt;&gt;|]'</span>,<span class="string">'-'</span>,title)</span><br><span class="line">        imgDir = self.dir_path</span><br><span class="line">        <span class="keyword">for</span> imgElem <span class="keyword">in</span> response.doc(<span class="string">'picture &gt; img'</span>).items():</span><br><span class="line">            imgUrl = imgElem.attr.src</span><br><span class="line">            imgUrl = imgUrl[:<span class="number">-10</span>]  <span class="comment">#为了截掉后面多余的字段";width=560"，总共10个字符（不通用！！！）</span></span><br><span class="line">            picture_url += imgUrl + <span class="string">';'</span></span><br><span class="line">            <span class="keyword">if</span> imgUrl:</span><br><span class="line">                <span class="comment">#获取图片文件后缀</span></span><br><span class="line">                extension = self.tool.get_extension(imgUrl)</span><br><span class="line">                name = self.tool.get_name(imgUrl)</span><br><span class="line">                <span class="comment">#拼接图片名</span></span><br><span class="line">                file_name = name + <span class="string">"."</span> + extension</span><br><span class="line">                picture_local_path += <span class="string">';'</span> + file_name</span><br><span class="line">                self.crawl(imgUrl,callback=self.save_img,save=&#123;<span class="string">"file_name"</span>:file_name, <span class="string">"imgDir"</span>:imgDir&#125;,validate_cert=<span class="literal">False</span>, connect_timeout = <span class="number">5000</span>, timeout = <span class="number">20000</span>)   </span><br><span class="line">                <span class="comment"># 这里回调了save_img函数，在单步调试时可以明显看到</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># def detail_page(self, response)作为结果返回一个对象。</span></span><br><span class="line">    <span class="comment"># 结果将被resultdb默认捕获。</span></span><br><span class="line">    <span class="comment"># 可以通过覆盖on_result(self, result)自己管理结果的方法。        </span></span><br><span class="line">        <span class="keyword">return</span> &#123;	<span class="comment"># 与你建立的表结构对应。这是python中的字典结构，即“键-值对”</span></span><br><span class="line">            <span class="string">"title"</span>:title,</span><br><span class="line">            <span class="string">"introduction"</span>:introduction,</span><br><span class="line">            <span class="string">"time"</span>:time,</span><br><span class="line">            <span class="string">"content"</span>:content,</span><br><span class="line">            <span class="string">"keywords"</span>:<span class="string">"null"</span>,</span><br><span class="line">            <span class="string">"name"</span>:<span class="string">"compositesworld"</span>,      <span class="comment">#这里根据你建的表格名修改</span></span><br><span class="line">            <span class="string">"source"</span>:<span class="string">"原创"</span>,</span><br><span class="line">            <span class="string">"url"</span>:url,</span><br><span class="line">            <span class="string">"picture_url"</span>:picture_url,</span><br><span class="line">            <span class="string">"picture_local_path"</span>:picture_local_path</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#保存图片</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_img</span><span class="params">(self,response)</span>:</span>    <span class="comment"># 可以看到，上面save中保存的内容其实通过response传了过来</span></span><br><span class="line">        content = response.content  <span class="comment"># resp.content返回的是bytes型也就是二进制的数据，resp.text返回的是Unicode型的数据。</span></span><br><span class="line">                                    <span class="comment"># 简而言之，如果你想取文本，可以通过r.text。    如果想取图片，文件，则可以通过r.content。</span></span><br><span class="line">        file_name = response.save[<span class="string">"file_name"</span>]</span><br><span class="line">        imgDir = response.save[<span class="string">"imgDir"</span>]</span><br><span class="line">        file_path = imgDir + file_name</span><br><span class="line">        self.tool.save_img(content,imgDir,file_path)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#数据存储函数：on_result方法</span></span><br><span class="line">    <span class="comment"># 调试的时候建议将 on-result 整个移除，便于显示实时获取结果。最后再保存到数据库</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_result</span><span class="params">(self,result)</span>:</span> 		</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> result <span class="keyword">or</span> <span class="keyword">not</span> result[<span class="string">'title'</span>]:	<span class="comment"># 如果没到最后，继续返回数据</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        sql = SQL()		<span class="comment"># 覆盖默认方法，使用mysqldb文件中定义的方法，连接数据库</span></span><br><span class="line">        sql.insert(<span class="string">'compositesworld'</span>,**result)	<span class="comment">#将结果插入到表格。同理，这里根据你建的表格名修改    </span></span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line"><span class="comment">#工具类    </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tool</span>:</span></span><br><span class="line">    <span class="comment">#保存图片</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_img</span><span class="params">(self,content,imgDir,path)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(imgDir): 	<span class="comment"># os.path.exists(name)判断是否存在文件或目录name</span></span><br><span class="line">            os.makedirs(imgDir)  <span class="comment"># os.makedirs() 方法用于递归创建目录</span></span><br><span class="line">        f = open(path,<span class="string">"wb"</span> )     <span class="comment"># wb 以只写方式打开</span></span><br><span class="line">        f.write(content)        <span class="comment"># 写入文件</span></span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#获取url后缀名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_extension</span><span class="params">(self,url)</span>:</span>                            </span><br><span class="line">        extension = url.split(<span class="string">"."</span>)[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">return</span> extension </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#获取图片名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(self,url)</span>:</span></span><br><span class="line">        name=url.split(<span class="string">"/"</span>)[<span class="number">-1</span>].split(<span class="string">"."</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> name</span><br></pre></td></tr></table></figure>
@@ -673,10 +684,11 @@
 
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/Pyspider/" rel="tag"># Pyspider</a>
-              <a href="/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" rel="tag"># 网络爬虫</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/Pyspider/" rel="tag"><i class="fa fa-tag"></i> Pyspider</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" rel="tag"><i class="fa fa-tag"></i> 网络爬虫</a>
           </div>
 
         
@@ -772,7 +784,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-count">151</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -785,7 +797,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">64</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -857,6 +869,11 @@
     <i class="fa fa-chart-line"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">986k</span>
 </div>
 
         
@@ -909,6 +926,9 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -950,8 +970,6 @@ darkmode.showWidget();
 
 <script src="/js/next-boot.js"></script>
 
-<script src="/js/bookmark.js"></script>
-
 
   <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
@@ -983,9 +1001,7 @@ darkmode.showWidget();
   </script>
 
   
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -995,7 +1011,26 @@ darkmode.showWidget();
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
 
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
@@ -1005,6 +1040,16 @@ darkmode.showWidget();
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/Pyspider%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/',]
+      });
+      });
+  </script>
 
 
 <script>
