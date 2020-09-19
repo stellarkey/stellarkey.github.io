@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="爬虫，一种按照一定的规则、自动地抓取万维网信息的程序或者脚本。  初衷：为搜索引擎服务 现状：自动化或批量的数据获取   爬虫务必关注robots.txt，这是网站与爬虫之间的君子协议。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络爬虫基理">
+<meta property="og:url" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="爬虫，一种按照一定的规则、自动地抓取万维网信息的程序或者脚本。  初衷：为搜索引擎服务 现状：自动化或批量的数据获取   爬虫务必关注robots.txt，这是网站与爬虫之间的君子协议。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918135056452.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918153959545.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918201757945.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918201658988.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212159322.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212515374.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212735704.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918214533158.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918213437642.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918223154871.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918224658118.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918225222385.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918225920585.png">
+<meta property="og:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918233115928.png">
+<meta property="article:published_time" content="2020-09-18T05:48:06.000Z">
+<meta property="article:modified_time" content="2020-09-19T05:24:02.601Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918135056452.png">
+
+<link rel="canonical" href="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>网络爬虫基理 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络爬虫基理
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span id="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="网络爬虫基理" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>爬虫，一种按照一定的规则、自动地抓取万维网信息的程序或者脚本。</p>
+<ul>
+<li>初衷：为搜索引擎服务</li>
+<li>现状：自动化或批量的数据获取</li>
+</ul>
+<blockquote>
+<p>爬虫务必关注<strong><code>robots.txt</code></strong>，这是网站与爬虫之间的君子协议。<a id="more"></a></p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.xuetangx.com/live/live20200408IT001/live20200408it001/3988359/4285053" target="_blank" rel="noopener external nofollow noreferrer">学堂在线 - 计算未来云讲坛 - Python网络爬虫，饶淙元</a></p>
+<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><blockquote>
+<p><a href="https://www.xuetangx.com/live/live20200408IT001/live20200408it001/3988359/4285053" target="_blank" rel="noopener external nofollow noreferrer">学堂在线 - 计算未来云讲坛 - Python网络爬虫，饶淙元</a></p>
+</blockquote>
+<h2 id="浏览网站的基本过程"><a href="#浏览网站的基本过程" class="headerlink" title="浏览网站的基本过程"></a>浏览网站的基本过程</h2><p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918135056452.png" alt="image-20200918135056452"></p>
+<ul>
+<li><strong>域名解析</strong>：由DNS（Domain Name Server）完成，如果被劫持则会找到错误的结果</li>
+<li><strong>请求发送</strong>：将信息直接传到目标服务器上，由服务器决定处理与返回的结果</li>
+<li><strong>响应处理</strong>：浏览器渲染结果并呈现给你，随后用户<strong>为所欲为</strong>（例：浏览器页面修改【前端修改】）</li>
+</ul>
+<h2 id="终极哲学三连发"><a href="#终极哲学三连发" class="headerlink" title="终极哲学三连发"></a>终极哲学三连发</h2><p>（服务器器视角下的网络请求）</p>
+<ul>
+<li><strong>你是谁</strong>：User-Agent | Cookies<ul>
+<li>User-Agent：协议的头部（Header）信息中的一部分</li>
+<li>Cookie：一组字典串，用于唯一标识访问者<ul>
+<li>比如：<code>BD_HOME=1;</code>，<code>BDSVRTM=154;</code>。（以百度为例）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>你从哪里来</strong>：IP</li>
+<li><strong>你来这里干什么</strong>：Method &amp; Parameter</li>
+</ul>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918153959545.png" alt="image-20200918153959545"></p>
+<p>在这个过程中服务器可能面临一些攻击（爬虫可能无意间导致这样的问题）</p>
+<ul>
+<li><strong>DoS</strong>（Denial of Service） attack：拒绝服务攻击，让服务器无法正常服务，可以通过构造大量的请求使服务器“忙不过来”完成</li>
+<li><strong>DDoS</strong>（Distributed Denial of Service） attack：分布式拒绝服务攻击，在DoS攻击基础上改为多个客户端（用户）同时对目标网站发起大量请求</li>
+</ul>
+<h2 id="网络抓包"><a href="#网络抓包" class="headerlink" title="网络抓包"></a>网络抓包</h2><blockquote>
+<p>浏览网页的本质使基于HTTP协议的一次或多次网络请求，这些请求用户是可以直接查看的，比如按下F12再看看“网络”。</p>
+</blockquote>
+<p>网络抓包通常有如下用处：</p>
+<ul>
+<li>查看真正的数据来源（常为<a href="https://www.w3cschool.cn/ajax/ajax-xmlhttprequest-create.html" target="_blank" rel="noopener external nofollow noreferrer"><code>XHR</code></a>）</li>
+<li>查看下载视频等数据</li>
+<li>模拟请求完成登录</li>
+<li><del>测试网站安全性</del></li>
+</ul>
+<blockquote>
+<p>比如，如果你想下载直播回放的话，只需要有一款现代浏览器与<a href="https://ffmpeg.org/" target="_blank" rel="noopener external nofollow noreferrer">ffmpeg</a>（需要在linux上搞）就足以应付很多情况。比如你想下载一个装机教程的话……</p>
+</blockquote>
+<h2 id="robots-txt-君子协议"><a href="#robots-txt-君子协议" class="headerlink" title="robots.txt 君子协议"></a>robots.txt 君子协议</h2><h3 id="必应"><a href="#必应" class="headerlink" title="必应"></a>必应</h3><p>必应的爬虫协议：（<a href="https://www.baidu.com/robots.txt）" target="_blank" rel="noopener external nofollow noreferrer">https://www.baidu.com/robots.txt）</a></p>
+<blockquote>
+<p>除了钦点的几个爬虫之外，其它拒不接待。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line">User-agent: Baiduspider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Googlebot</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: MSNBot</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Baiduspider-image</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: YoudaoBot</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou web spider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou inst spider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou spider2</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou blog</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou News Spider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sogou Orion spider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: ChinasoSpider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: Sosospider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">User-agent: yisouspider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: EasouSpider</span><br><span class="line">Disallow: &#x2F;baidu</span><br><span class="line">Disallow: &#x2F;s?</span><br><span class="line">Disallow: &#x2F;shifen&#x2F;</span><br><span class="line">Disallow: &#x2F;homepage&#x2F;</span><br><span class="line">Disallow: &#x2F;cpro</span><br><span class="line">Disallow: &#x2F;ulink?</span><br><span class="line">Disallow: &#x2F;link?</span><br><span class="line">Disallow: &#x2F;home&#x2F;news&#x2F;data&#x2F;</span><br><span class="line">Disallow: &#x2F;bh</span><br><span class="line"></span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="天猫"><a href="#天猫" class="headerlink" title="天猫"></a>天猫</h3><p>天猫的协议：（<a href="https://list.tmall.com/robots.txt）" target="_blank" rel="noopener external nofollow noreferrer">https://list.tmall.com/robots.txt）</a></p>
+<blockquote>
+<p>谁也不能爬，啥也不能爬。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>天猫主页（<a href="https://tmall.com）没有robots.txt协议，所以是可以爬的。" target="_blank" rel="noopener external nofollow noreferrer">https://tmall.com）没有robots.txt协议，所以是可以爬的。</a></p>
+</blockquote>
+<h3 id="虎扑"><a href="#虎扑" class="headerlink" title="虎扑"></a>虎扑</h3><blockquote>
+<p><a href="https://www.hupu.com/robots.txt" target="_blank" rel="noopener external nofollow noreferrer">https://www.hupu.com/robots.txt</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: &#x2F;</span><br><span class="line"></span><br><span class="line">Sitemap: https:&#x2F;&#x2F;bbs.hupu.com&#x2F;sitemap_index.xml</span><br><span class="line">Sitemap: https:&#x2F;&#x2F;bbs.hupu.com&#x2F;sitemap&#x2F;sitemap_boards.xml</span><br><span class="line">Sitemap: https:&#x2F;&#x2F;voice.hupu.com&#x2F;sitemap_index.xml</span><br><span class="line">Sitemap: https:&#x2F;&#x2F;nba.hupu.com&#x2F;players&#x2F;index.xml</span><br></pre></td></tr></table></figure>
+<h4 id="虎扑BBS"><a href="#虎扑BBS" class="headerlink" title="虎扑BBS"></a>虎扑BBS</h4><blockquote>
+<p><a href="https://bbs.hupu.com/robots.txt" target="_blank" rel="noopener external nofollow noreferrer">https://bbs.hupu.com/robots.txt</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Request-rate: 50&#x2F;1</span><br><span class="line">Disallow: &#x2F;api&#x2F;</span><br><span class="line">Disallow: &#x2F;ajax&#x2F;</span><br><span class="line">Disallow: &#x2F;profile.php?*</span><br><span class="line">Disallow: &#x2F;hack&#x2F;</span><br><span class="line">Disallow: &#x2F;template&#x2F;</span><br><span class="line">Disallow: &#x2F;attachment&#x2F;</span><br><span class="line">Disallow: &#x2F;gearfeedback&#x2F;</span><br><span class="line">Disallow: &#x2F;*_*.html$</span><br><span class="line"></span><br><span class="line">Sitemap: https:&#x2F;&#x2F;bbs.hupu.com&#x2F;sitemap_index.xml</span><br><span class="line">Sitemap: https:&#x2F;&#x2F;bbs.hupu.com&#x2F;sitemap&#x2F;sitemap_boards.xml</span><br></pre></td></tr></table></figure>
+<p>注意到<code>Request-rate: 50/1</code>，一秒钟最多发送50个请求。</p>
+<blockquote>
+<p>多发请求虎扑可能请你喝茶QAQ</p>
+<p>法无禁止皆可为</p>
+</blockquote>
+<p>注意：<code>/*_*.html$</code>只限制了<code>.html</code>带<code>_</code>的，一般的 bbs 网址这部分是纯数字的，因此是可以爬取的。</p>
+<h2 id="爬虫框架"><a href="#爬虫框架" class="headerlink" title="爬虫框架"></a>爬虫框架</h2><h3 id="理想框架（企业级）"><a href="#理想框架（企业级）" class="headerlink" title="理想框架（企业级）"></a>理想框架（企业级）</h3><p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918201757945.png" alt="image-20200918201757945"></p>
+<h3 id="理想框架（入门版）"><a href="#理想框架（入门版）" class="headerlink" title="理想框架（入门版）"></a>理想框架（入门版）</h3><blockquote>
+<p>从多线程到单线程。</p>
+</blockquote>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918201658988.png" alt="image-20200918201658988"></p>
+<p><strong>Scheduler</strong>（调度器）在这里的作用比如说，每天定时爬取某些信息（新闻、天气……），当没有爬取任务的时候自动调度为休眠状态。</p>
+<h2 id="爬虫工具"><a href="#爬虫工具" class="headerlink" title="爬虫工具"></a>爬虫工具</h2><p>Python<del>经济</del>套装：</p>
+<ul>
+<li>Python 3</li>
+<li><strong>Pycharm</strong>：强大的 Python IDE。或替代品</li>
+<li><strong>requests</strong>：一个用于发起请求的 Python 库</li>
+<li><strong>BeautifulSoup4</strong>：一个用于解析 html 的 Python 库</li>
+</ul>
+<blockquote>
+<p><a href="https://www.runoob.com/w3cnote/pycharm-import-python-package.html" target="_blank" rel="noopener external nofollow noreferrer">Pycharm 导入 Python 包、模块</a>（先引入需要用到的库）</p>
+</blockquote>
+<h2 id="自学内容"><a href="#自学内容" class="headerlink" title="自学内容"></a>自学内容</h2><ul>
+<li>Python基础</li>
+<li>娴熟的搜索引擎使用技巧（学习广泛、特殊、高级的爬虫技术）</li>
+<li>文件编码处理</li>
+<li><code>js2py</code>：在 Python 中执行 JavaScript 脚本</li>
+<li><code>pypeteer</code>：通过 headless 的方法直接渲染网页</li>
+<li><code>scrapy</code>：真正的高性能爬虫框架</li>
+</ul>
+<blockquote>
+<p>注：Script = 脚本。</p>
+</blockquote>
+<h3 id="基本爬虫练习"><a href="#基本爬虫练习" class="headerlink" title="基本爬虫练习"></a>基本爬虫练习</h3><blockquote>
+<p>卫健委爬虫套装：<a href="https://github.com/rcy17/wjw_scrawler" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/rcy17/wjw_scrawler</a></p>
+</blockquote>
+<ul>
+<li>陕西省卫健委：<a href="http://sxwjw.shaanxi.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer">http://sxwjw.shaanxi.gov.cn/</a><ul>
+<li>（网站挂了，2020/9/18）</li>
+<li>直接用 BeautifulSoup 解析</li>
+</ul>
+</li>
+<li>北京市卫健委：<a href="http://wjw.beijing.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer">http://wjw.beijing.gov.cn/</a><ul>
+<li>需要设置 User-Agent</li>
+</ul>
+</li>
+<li>贵州省卫健委：<a href="http://www.gzhfpc.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer">http://www.gzhfpc.gov.cn/</a> <ul>
+<li>502 Bad Gateway，2020/9/18）</li>
+<li>正则匹配 JavaScript 内容</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="爬取北京市卫健委"><a href="#爬取北京市卫健委" class="headerlink" title="爬取北京市卫健委"></a>爬取北京市卫健委</h4><p>以北京市卫健委为例：</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212159322.png" alt="image-20200918212159322"></p>
+<h5 id="简单测试"><a href="#简单测试" class="headerlink" title="简单测试"></a>简单测试</h5><p>在构建好Python+PyCharm环境以后，使用GET方法获取网站信息，响应正常。</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212515374.png" alt="image-20200918212515374"></p>
+<blockquote>
+<p>（可选）如果编码不正常，可以预先解码：<code>print(response.content.decode(&#39;utf-8&#39;))</code>。</p>
+</blockquote>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918212735704.png" alt="image-20200918212735704"></p>
+<hr>
+<p>然而仔细看获取的text内容会发现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">....最近有可疑的攻击行为，请稍后重试.&#39; || &#39;当前访问疑似黑客攻击，已被网站管理员设置为拦截&#39;....</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>被拦截了。重新通过浏览器打开网站会发现：</p>
+</blockquote>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918214533158.png" alt="image-20200918214533158"></p>
+<blockquote>
+<p>看来通过简单的get操作已经无法通过查验。很可能创宇云安全捕获了Python在发送请求时的一些特征码或者特征字段，并加以拦截。这是一种不让爬取的手段。</p>
+</blockquote>
+<h5 id="窗口预模拟"><a href="#窗口预模拟" class="headerlink" title="窗口预模拟"></a>窗口预模拟</h5><p>一个简单的技巧是，在正式运行爬取脚本之前，新开一个python命令行窗口，预先边写边运行，便于评估爬取效果。（这是因为python是解释型语言）</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918213437642.png" alt="image-20200918213437642"></p>
+<h5 id="html解析"><a href="#html解析" class="headerlink" title="html解析"></a>html解析</h5><p>不如爬取我自己的博客试试好了。</p>
+<blockquote>
+<p>注意：BeautifulSoup只能解析response的content：<a href="https://www.cnblogs.com/fallenmoon/p/8342241.html，而不能直接解析response。" target="_blank" rel="noopener external nofollow noreferrer">https://www.cnblogs.com/fallenmoon/p/8342241.html，而不能直接解析response。</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = get(<span class="string">"https://vel.life/"</span>)</span><br><span class="line">data = response.content</span><br><span class="line">soup = BeautifulSoup(data, <span class="string">'lxml'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>lxml是一种解析器选项，即选择一个解析器。</p>
+</blockquote>
+<p>标签选择：（在html中选择特定的内容）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">soup.find(<span class="string">'p'</span>).text</span><br><span class="line"><span class="comment"># 输出：——在云端，寻找我的星匙。</span></span><br><span class="line">article = soup.find(<span class="string">'article'</span>, class_=<span class="string">"post post-type-normal"</span>).find(<span class="string">"p"</span>)</span><br><span class="line">print(article)</span><br><span class="line"><span class="comment"># 输出：&lt;p&gt;本文主要研究 zCore 的全貌和部分功能细节。&lt;/p&gt;</span></span><br><span class="line">print(article.text)</span><br><span class="line"><span class="comment"># 输出：本文主要研究 zCore 的全貌和部分功能细节。</span></span><br></pre></td></tr></table></figure>
+<h5 id="url处理"><a href="#url处理" class="headerlink" title="url处理"></a>url处理</h5><p>主要是绝对路径和相对路径的url拼接。</p>
+<blockquote>
+<p>这样可以保证拼接的url的正确性。</p>
+</blockquote>
+<p>见：<a href="https://blog.csdn.net/qq_40134903/article/details/80646230" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/qq_40134903/article/details/80646230</a></p>
+<p>使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urljoin(A, B)</span><br></pre></td></tr></table></figure>
+<h5 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file = open(<span class="string">"data/blog.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">print(article.text, file=file)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918223154871.png" alt="image-20200918223154871"></p>
+<h5 id="反爬机制的处理-User-Agent"><a href="#反爬机制的处理-User-Agent" class="headerlink" title="反爬机制的处理 User-Agent"></a>反爬机制的处理 <code>User-Agent</code></h5><p>之前提到该网站具有一定的反爬机制。我也猜测到这与某种基于规则的识别相关。果然，rcy dalao讲到，这与<code>User-Agent</code>直接相关。</p>
+<p>查看不做处理直接爬取时的<code>User-Agent</code>：（封IP）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = get(url)</span><br><span class="line">print(response.request.headers)</span><br><span class="line"><span class="comment"># &#123;'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'&#125;</span></span><br></pre></td></tr></table></figure>
+<p>绕过反爬机制的方式也很简单，直接从参数端覆盖输入真实访问时的<code>User-Agent</code>。这样便绕过了特征拦截。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">second</span><span class="params">()</span>:</span></span><br><span class="line">    url = <span class="string">"http://wjw.beijing.gov.cn/xwzx_20031/xwfb/"</span></span><br><span class="line">    UA = <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"</span></span><br><span class="line">    response = get(url, headers=&#123;<span class="string">"User-Agent"</span>: UA&#125;)</span><br><span class="line">    data = response.text</span><br><span class="line">    soup = BeautifulSoup(data, <span class="string">'lxml'</span>)</span><br><span class="line">    ctx = soup.find(<span class="string">'div'</span>, class_=<span class="string">"weinei_left_con_line_text"</span>)</span><br><span class="line">    print(ctx)</span><br><span class="line">    news = ctx.find(<span class="string">'a'</span>)</span><br><span class="line">    title = ctx[<span class="string">'title'</span>]</span><br><span class="line">    file = open(<span class="string">"data/bjwjw.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    print(news.text, file=file)</span><br><span class="line">    print(title.text, file=file)</span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918224658118.png" alt="image-20200918224658118"></p>
+<p>或者直接获取<code>title</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title = news[<span class="string">'title'</span>]</span><br><span class="line">print(title, file=file)</span><br></pre></td></tr></table></figure>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918225222385.png" alt="image-20200918225222385"></p>
+<h5 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h5><p>在加入一些对字典、集合的循环处理以后，获得了新闻的结构化数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">second</span><span class="params">()</span>:</span></span><br><span class="line">    url = <span class="string">"http://wjw.beijing.gov.cn/xwzx_20031/xwfb/"</span></span><br><span class="line">    UA = <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36"</span></span><br><span class="line">    response = get(url, headers=&#123;<span class="string">"User-Agent"</span>: UA&#125;)</span><br><span class="line">    data = response.text</span><br><span class="line">    soup = BeautifulSoup(data, <span class="string">'lxml'</span>)</span><br><span class="line">    ctx = soup.findAll(<span class="string">'div'</span>, class_=<span class="string">"weinei_left_con_line_text"</span>)</span><br><span class="line">    output = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> ele <span class="keyword">in</span> ctx:</span><br><span class="line">        news = ele.find(<span class="string">'a'</span>)</span><br><span class="line">        title, address = news[<span class="string">'title'</span>], news[<span class="string">'href'</span>]</span><br><span class="line">        file = open(<span class="string">"data/bjwjw.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        output += title + <span class="string">"\t"</span> + urljoin(url, address) + <span class="string">"\n"</span></span><br><span class="line">    print(output, file=file)</span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918225920585.png" alt="image-20200918225920585"></p>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>形式语言和自动机中会涉及到正则相关的内容。</p>
+<p>正则表达式对更加泛化的HTML查找更加有效，比如含有JS脚本的数据爬取。</p>
+<p>这部分暂时不好复现，从讲课视频中截了个图：</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/image-20200918233115928.png" alt="image-20200918233115928"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%9F%BA%E7%90%86/" title="网络爬虫基理">https://vel.life/网络爬虫基理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="prev" title="密码学">
+      <i class="fa fa-chevron-left"></i> 密码学
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="正则表达式">
+      正则表达式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intro"><span class="nav-number">2.</span> <span class="nav-text">Intro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览网站的基本过程"><span class="nav-number">2.1.</span> <span class="nav-text">浏览网站的基本过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终极哲学三连发"><span class="nav-number">2.2.</span> <span class="nav-text">终极哲学三连发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络抓包"><span class="nav-number">2.3.</span> <span class="nav-text">网络抓包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robots-txt-君子协议"><span class="nav-number">2.4.</span> <span class="nav-text">robots.txt 君子协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必应"><span class="nav-number">2.4.1.</span> <span class="nav-text">必应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天猫"><span class="nav-number">2.4.2.</span> <span class="nav-text">天猫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虎扑"><span class="nav-number">2.4.3.</span> <span class="nav-text">虎扑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虎扑BBS"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">虎扑BBS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫框架"><span class="nav-number">2.5.</span> <span class="nav-text">爬虫框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理想框架（企业级）"><span class="nav-number">2.5.1.</span> <span class="nav-text">理想框架（企业级）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理想框架（入门版）"><span class="nav-number">2.5.2.</span> <span class="nav-text">理想框架（入门版）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫工具"><span class="nav-number">2.6.</span> <span class="nav-text">爬虫工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自学内容"><span class="nav-number">2.7.</span> <span class="nav-text">自学内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本爬虫练习"><span class="nav-number">2.7.1.</span> <span class="nav-text">基本爬虫练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#爬取北京市卫健委"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">爬取北京市卫健委</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单测试"><span class="nav-number">2.7.1.1.1.</span> <span class="nav-text">简单测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#窗口预模拟"><span class="nav-number">2.7.1.1.2.</span> <span class="nav-text">窗口预模拟</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#html解析"><span class="nav-number">2.7.1.1.3.</span> <span class="nav-text">html解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url处理"><span class="nav-number">2.7.1.1.4.</span> <span class="nav-text">url处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文件读写"><span class="nav-number">2.7.1.1.5.</span> <span class="nav-text">文件读写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反爬机制的处理-User-Agent"><span class="nav-number">2.7.1.1.6.</span> <span class="nav-text">反爬机制的处理 User-Agent</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最终效果"><span class="nav-number">2.7.1.1.7.</span> <span class="nav-text">最终效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">正则表达式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

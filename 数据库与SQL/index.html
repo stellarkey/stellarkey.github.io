@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="典型的数据库包括：Oracle, Sybase, SQL Server, DB2, Access 等。SQL（Structured Query Language）即结构化查询语言，用于增删改查和管理关系型数据库系统。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库与SQL">
+<meta property="og:url" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="典型的数据库包括：Oracle, Sybase, SQL Server, DB2, Access 等。SQL（Structured Query Language）即结构化查询语言，用于增删改查和管理关系型数据库系统。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914194753909.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914211612426.png">
+<meta property="article:published_time" content="2019-02-20T16:55:37.000Z">
+<meta property="article:modified_time" content="2020-09-17T00:44:27.322Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914194753909.png">
+
+<link rel="canonical" href="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>数据库与SQL | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库与SQL
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span id="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/" class="post-meta-item leancloud_visitors" data-flag-title="数据库与SQL" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>典型的数据库包括：Oracle, Sybase, SQL Server, DB2, Access 等。SQL（Structured Query Language）即结构化查询语言，用于增删改查和管理关系型数据库系统。<a id="more"></a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>课程：《数据库技术及应用》，宋佳兴</p>
+<blockquote>
+<p>偏重于如何去应用数据库，了解一些数据库的基本原理。</p>
+</blockquote>
+<p><a href="https://www.w3school.com.cn/sql/index.asp" target="_blank" rel="noopener external nofollow noreferrer">w3school - SQL 教程</a></p>
+<p>《数据库系统概念》</p>
+<p><a href="https://sqlzoo.net/" target="_blank" rel="noopener external nofollow noreferrer">sqlzoo.net/</a>（在线练习），<a href="https://sqlbolt.com/" target="_blank" rel="noopener external nofollow noreferrer">sqlbolt.com/</a>，<a href="http://xuesql.cn/" target="_blank" rel="noopener external nofollow noreferrer">xuesql.cn/</a>（中文）</p>
+<p><a href="http://sqlfiddle.com/" target="_blank" rel="noopener external nofollow noreferrer">sqlfiddle.com/</a>（在线编程）</p>
+<p><a href="https://leetcode-cn.com/problemset/database/" target="_blank" rel="noopener external nofollow noreferrer">leetcode - sql</a>（数据库题目练习）</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>数据库技术产生于上个世纪六十年代末，是<strong>数据管理的先进技术</strong>，是计算机科学的重要分支。</p>
+<blockquote>
+<p>数据管理：对数据进行有效的分类、组织、编码、存储、检索、维护和应用。</p>
+</blockquote>
+<p>数据库技术是<strong>信息系统的核心和基础</strong>，它的出现极大地促进了计算机应用向各行各业的渗透。</p>
+<p>数据库的建设规模、数据库信息量的大小和使用频度已成为衡量一个国家<strong>信息化程度的重要标志</strong>。</p>
+<p>数据库技术<strong>始终保持蓬勃旺盛发展势头</strong>，五十年来丝毫不见衰败现象，始终保持强劲发展势头，在整个计算机技术领域中十分突出。</p>
+<p>四位数据库领域的图灵奖得主：</p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914194753909.png" alt="image-20200914194753909"></p>
+<p>一个数据库通常抽象为三个层次：</p>
+<ul>
+<li>物理层：这个层次来定义基本数据的存储和表示</li>
+<li>逻辑层：定义复杂的数据结构和数据关系</li>
+<li>视图层：为用户提供数据库的功能接口</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="结构化数据"><a href="#结构化数据" class="headerlink" title="结构化数据"></a>结构化数据</h3><ul>
+<li>表格型数据<ul>
+<li>能用二维表结构逻辑表示和实现的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="非结构化数据"><a href="#非结构化数据" class="headerlink" title="非结构化数据"></a>非结构化数据</h3><p>不方便用数据库二维表来表现的数据即称为非结构化数据，包括所有格式的办公文档、文本、图片、HTML、各类报表、图像和音频/视频信息。</p>
+<h3 id="半结构化数据"><a href="#半结构化数据" class="headerlink" title="半结构化数据"></a>半结构化数据</h3><p>自描述的，数据的结构（即语义）和内容混在一起，例如XML文档、json文件。</p>
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>在数据库中用数据模型（Data Model）这个工具来抽象、表示和处理现实世界中的数据和信息。通俗来讲数据模型就是现实世界的模拟。</p>
+<p>数据模型是一个描述数据语义、数据与数据之间联系（数据结构）、数据操作以及完整性约束的概念工具的集合。</p>
+<blockquote>
+<p>完整性约束保证了数据库的正确、有效、相容。</p>
+</blockquote>
+<p>数据模型从层次上可以分为：概念模型、逻辑模型、物理模型。</p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914211612426.png" alt="image-20200914211612426"></p>
+<p>数据库结构的基础是数据模型，常用的数据模型包括：</p>
+<ul>
+<li><strong>概念模型</strong><ul>
+<li><strong><font color="blue">实体-联系(E-R)模型</font></strong>：用称为实体的基本对象和对象之间的联系来建构数据库。</li>
+<li><strong>基于对象的数据模型</strong>：即面向对象的数据模型，主要是在E-R模型上扩展了封装、方法等概念。</li>
+</ul>
+</li>
+<li><strong>逻辑模型</strong><ul>
+<li><strong><font color="red">关系模型</font></strong>：用表的集合来表示数据和数据之间的关系。</li>
+<li>层次数据模型：从顶层到底层形成一颗树形结构。</li>
+<li>网状数据模型：层次模型的一个扩展，每层之间变成了类似深度网络一样的连接层。</li>
+<li>面向对象模型</li>
+<li>对象关系模型</li>
+<li>XML模型</li>
+</ul>
+</li>
+<li><strong>物理模型</strong>：数据的存储方式<ul>
+<li><strong>半结构化数据模型</strong>(?)：允许那些相同类型的数据项含有不同的属性集的数据顶。可扩展标记语言（XML）被广泛地用来表示半结构化数据。</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据库语言"><a href="#数据库语言" class="headerlink" title="数据库语言"></a>数据库语言</h2><p>数据库系统（DBMS）提供数据定义语言（DDL）来定义数据库中的数据对象，和数据操纵语言（DML）来表达数据库的查询和更新（增删改）。这两者只是功能的差别，在实际使用中通常合并形成一种数据库语言，如SQL语言。</p>
+<p>DBMS还提供了对数据的组织、存储和管理等功能。</p>
+<h1 id="Oracle环境"><a href="#Oracle环境" class="headerlink" title="Oracle环境"></a>Oracle环境</h1><h1 id="SQL编程"><a href="#SQL编程" class="headerlink" title="SQL编程"></a>SQL编程</h1><p>SQL（<strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage）结构化查询语言是用于访问和处理数据库的标准语言。</p>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="Create-创建表"><a href="#Create-创建表" class="headerlink" title="Create 创建表"></a>Create 创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table 表名</span><br><span class="line">(</span><br><span class="line">    列1    类型1    默认值 [列约束],</span><br><span class="line">    列2    类型2    默认值 [列约束],</span><br><span class="line">    列3    类型3    默认值 [列约束],</span><br><span class="line">    ... ,</span><br><span class="line">    [表约束]</span><br><span class="line">);</span><br><span class="line">create table 表名 as (select ...);      &#x2F;* 利用结果集创建新表 *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>其中，列约束定义一个完整性约束作为列定义的一部分，包括：</p>
+<ul>
+<li><code>NULL / NOT NULL</code>：数据是否可以为空。</li>
+<li><code>UNIQUE</code>：表示该列上所有行的数据必须是唯一的。</li>
+<li><code>PRIMARY KEY</code>：表示添加该列为主键。（一个表只能有一个主键）</li>
+<li><code>REFERENCES 表名 列名</code>：定义外键。</li>
+<li><code>CHECK 条件表达式</code>：定义CHECK约束。</li>
+</ul>
+<p>表约束包括：</p>
+<ul>
+<li><code>PRIMARY KEY (列名1, 列名2, ...)</code>：支持多个列名共同构造一个主键。</li>
+</ul>
+<h3 id="Alter-修改表"><a href="#Alter-修改表" class="headerlink" title="Alter 修改表"></a>Alter 修改表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名</span><br><span class="line">	add 列1 类型1 默认值 [列约束], ...  ;           &#x2F;* 增加新列&#x2F;约束 *&#x2F;</span><br><span class="line">	modify (列名 新约束) ;                        &#x2F;* 修改列的约束 *&#x2F;</span><br><span class="line">	drop column 列名;                            &#x2F;* 删除列&#x2F;约束 *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>其中，列/约束包括：</p>
+<ul>
+<li><code>column 列名</code>：指定的列。</li>
+<li><code>primary 列名</code>：表的主键约束。</li>
+<li><code>unique 列名</code>：列的UNIQUE约束。</li>
+<li><code>constraint 约束名</code>：完整性约束。</li>
+<li><code>CASCADE</code>：所有完整性约束。</li>
+</ul>
+<h3 id="Drop-删除表"><a href="#Drop-删除表" class="headerlink" title="Drop 删除表"></a>Drop 删除表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+<h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><h3 id="Insert-Into-插入"><a href="#Insert-Into-插入" class="headerlink" title="Insert Into 插入"></a>Insert Into 插入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名</span><br><span class="line">	values (值1, 值2,....)</span><br><span class="line">insert into 表名</span><br><span class="line">	(列1, 列2,...) values (值1, 值2,....)            &#x2F;* 指定列名 *&#x2F;</span><br><span class="line">insert into 表名</span><br><span class="line">	(select ... from ...)                          &#x2F;* 嵌套插入 *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>INSERT INTO 语句用于向表格中插入新的行。</p>
+<h3 id="Update-更新"><a href="#Update-更新" class="headerlink" title="Update 更新"></a>Update 更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update 表名</span><br><span class="line">	set 列名 &#x3D; 新值    # 支持对列进行批量表达式，比如：set col &#x3D; col + 5</span><br><span class="line">	where 列名 &#x3D; 某值</span><br></pre></td></tr></table></figure>
+<p>UPDATE 语句用于修改表中的数据。</p>
+<blockquote>
+<p>例如：<code>UPDATE Person SET FirstName = &#39;Fred&#39; WHERE LastName = &#39;Wilson&#39;</code>。</p>
+</blockquote>
+<h4 id="Merge-批量更新（Oracle-11g）"><a href="#Merge-批量更新（Oracle-11g）" class="headerlink" title="Merge 批量更新（Oracle 11g）"></a>Merge 批量更新（Oracle 11g）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">merge into 目标表名</span><br><span class="line">	using 源表名 on [条件表达式]    # 模式匹配</span><br><span class="line">	when matched then            # 找到对应项则更新</span><br><span class="line">		&#123;update set ... &#x2F; delete ...&#125;</span><br><span class="line">	when not matched then        # 找不到则直接插入</span><br><span class="line">		&#123;insert (...) values(...)&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Delete-删除"><a href="#Delete-删除" class="headerlink" title="Delete 删除"></a>Delete 删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名</span><br><span class="line">	where [条件表达式]</span><br></pre></td></tr></table></figure>
+<p>DELETE 语句表示从指定的表中删除满足条件的行，若省略WHERE子句，则表示清空表。</p>
+<h2 id="Select-选取"><a href="#Select-选取" class="headerlink" title="Select 选取"></a>Select 选取</h2><p>显然对于查询语言来说，筛选/选取是非常基本的操作。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [列名] <span class="keyword">as</span> [列名昵称] <span class="keyword">from</span> [表]</span><br><span class="line">	<span class="keyword">where</span> 条件表达式</span><br><span class="line">	<span class="keyword">group</span> <span class="keyword">by</span> 分组表达式</span><br><span class="line">	<span class="keyword">having</span> 分组表达式</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> 排序表达式 [<span class="keyword">ASC</span> / <span class="keyword">DESC</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="As-昵称"><a href="#As-昵称" class="headerlink" title="As 昵称"></a>As 昵称</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 列名表达式 <span class="keyword">as</span> [昵称] <span class="keyword">from</span> [表]</span><br></pre></td></tr></table></figure>
+<p>通过设计列名表达式，可以在查询结构中构造出想要的新列。</p>
+<blockquote>
+<p>比如，<code>select 产品名, 价格*库存 as 产品总值 from DB</code>。</p>
+<p>其中，AS关键字可以省略，即：<code>select 产品名, 价格*库存 产品总值 from DB</code>。</p>
+</blockquote>
+<h3 id="Distinct-唯一化"><a href="#Distinct-唯一化" class="headerlink" title="Distinct 唯一化"></a>Distinct 唯一化</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> [列名] <span class="keyword">from</span> [表]</span><br></pre></td></tr></table></figure>
+<p>对选取的结果进行唯一化。其中，all / distinct 为两个可选项，默认 all保留所有行。</p>
+<h3 id="Where-约束"><a href="#Where-约束" class="headerlink" title="Where 约束"></a>Where 约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [列名] <span class="keyword">from</span> [表]</span><br><span class="line">	<span class="keyword">where</span> 条件表达式</span><br></pre></td></tr></table></figure>
+<p>WHERE语句可以帮助更加精确地筛选部分行数据，所有最终选取的数据都必须满足WHERE限定的表达式。</p>
+<blockquote>
+<p>例如：<code>select 学号 num, 姓名 name, 总学分 score  from XSB  where 专业=&#39;计算机&#39;</code>。</p>
+</blockquote>
+<h3 id="Order-By-排序"><a href="#Order-By-排序" class="headerlink" title="Order By 排序"></a>Order By 排序</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [列名] <span class="keyword">from</span> [表]</span><br><span class="line">	<span class="keyword">order</span> <span class="keyword">by</span> [列名]</span><br></pre></td></tr></table></figure>
+<p>ORDER BY 语句对结果按照指定列进行排序，<strong>默认升序</strong>。可以按照多个关键字进行排序。</p>
+<blockquote>
+<p>例如：<code>SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC, OrderNumber ASC</code>。</p>
+</blockquote>
+<h2 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h2><h1 id="PowerBuilder"><a href="#PowerBuilder" class="headerlink" title="PowerBuilder"></a>PowerBuilder</h1>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/" title="数据库与SQL">https://vel.life/数据库与SQL/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="prev" title="计算机网络">
+      <i class="fa fa-chevron-left"></i> 计算机网络
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Linux-Shell%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/" rel="next" title="Linux/Shell学习手册">
+      Linux/Shell学习手册 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非结构化数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半结构化数据"><span class="nav-number">2.2.3.</span> <span class="nav-text">半结构化数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.3.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库语言"><span class="nav-number">2.4.</span> <span class="nav-text">数据库语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle环境"><span class="nav-number">3.</span> <span class="nav-text">Oracle环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL编程"><span class="nav-number">4.</span> <span class="nav-text">SQL编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">4.1.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-创建表"><span class="nav-number">4.1.1.</span> <span class="nav-text">Create 创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alter-修改表"><span class="nav-number">4.1.2.</span> <span class="nav-text">Alter 修改表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-删除表"><span class="nav-number">4.1.3.</span> <span class="nav-text">Drop 删除表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据操作"><span class="nav-number">4.2.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-Into-插入"><span class="nav-number">4.2.1.</span> <span class="nav-text">Insert Into 插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-更新"><span class="nav-number">4.2.2.</span> <span class="nav-text">Update 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-批量更新（Oracle-11g）"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">Merge 批量更新（Oracle 11g）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-删除"><span class="nav-number">4.2.3.</span> <span class="nav-text">Delete 删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Select-选取"><span class="nav-number">4.3.</span> <span class="nav-text">Select 选取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#As-昵称"><span class="nav-number">4.3.1.</span> <span class="nav-text">As 昵称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distinct-唯一化"><span class="nav-number">4.3.2.</span> <span class="nav-text">Distinct 唯一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Where-约束"><span class="nav-number">4.3.3.</span> <span class="nav-text">Where 约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-By-排序"><span class="nav-number">4.3.4.</span> <span class="nav-text">Order By 排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件表达式"><span class="nav-number">4.4.</span> <span class="nav-text">条件表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerBuilder"><span class="nav-number">5.</span> <span class="nav-text">PowerBuilder</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

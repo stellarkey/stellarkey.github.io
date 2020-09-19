@@ -1,155 +1,35 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="baidu-site-verification" content="6lYRJxItnN">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<script>
-    (function(){
-        if(''){
-            if (prompt('输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
+<link rel="stylesheet" href="/css/main.css">
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="机器学习,Python,">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml">
-
-
-
-
-
-
-<meta name="description" content="这是基于吴恩达《机器学习》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。">
-<meta name="keywords" content="机器学习,Python">
+  <meta name="description" content="这是基于吴恩达《机器学习》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习初等指南(1)">
 <meta property="og:url" content="https://vel.life/Notes-of-Machine-Learning-Part1/index.html">
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="这是基于吴恩达《机器学习》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.imgur.com/1Z7iz8t.png">
 <meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part1/1547230785724.png">
 <meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part1/1547231093212.png">
@@ -175,7 +55,7 @@
 <meta property="og:image" content="https://i.imgur.com/nQd9G9M.png">
 <meta property="og:image" content="https://i.imgur.com/vKnKckZ.png">
 <meta property="og:image" content="https://i.imgur.com/4J3qeMm.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part1/梯度下降.gif">
+<meta property="og:image" content="https://vel.life/Notes-of-Machine-Learning-Part1/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.gif">
 <meta property="og:image" content="https://i.imgur.com/MaYVFBb.png">
 <meta property="og:image" content="https://i.imgur.com/MHe3lrP.png">
 <meta property="og:image" content="https://i.imgur.com/OnDHUdc.png">
@@ -197,48 +77,28 @@
 <meta property="og:image" content="https://i.imgur.com/6rgDy1y.png">
 <meta property="og:image" content="https://i.imgur.com/jhaPb0M.png">
 <meta property="og:image" content="https://i.imgur.com/7kBU9gz.png">
-<meta property="og:updated_time" content="2020-05-21T04:06:03.186Z">
+<meta property="article:published_time" content="2018-12-30T01:54:06.000Z">
+<meta property="article:modified_time" content="2020-05-21T04:06:03.186Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习初等指南(1)">
-<meta name="twitter:description" content="这是基于吴恩达《机器学习》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。">
 <meta name="twitter:image" content="https://i.imgur.com/1Z7iz8t.png">
 
+<link rel="canonical" href="https://vel.life/Notes-of-Machine-Learning-Part1/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: 'P1TCRNQBR7',
-      apiKey: '501e087ded257acc9dc481944c14c248',
-      indexName: '云端',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"搜索……","hits_empty":"未找到匹配结果: ${query}","hits_stats":"${hits}结果 in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
-
-
-  <link rel="canonical" href="https://vel.life/Notes-of-Machine-Learning-Part1/">
-
-
-
-
-
-
-  <title>机器学习初等指南(1) | 思维之海</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>机器学习初等指南(1) | 思维之海</title>
   
 
 
@@ -246,324 +106,198 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">思维之海</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle">——在云端，寻找我的星匙。</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-anchor"></i> <br>
-            
-            Key
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
-        
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-contact">
-          <a href="/contact" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br>
-            
-            Contact
-          </a>
-        </li>
-      
-        
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-link">
-          <a href="/link/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
-            
-            Link
-          </a>
-        </li>
-      
-        
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            About
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            Search
-          </a>
-        </li>
-      
-    </ul>
-  
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
- </div>
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+    
+    
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://vel.life/Notes-of-Machine-Learning-Part1/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="工云">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="思维之海">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">机器学习初等指南(1)</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          机器学习初等指南(1)
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Created" itemprop="dateCreated datePublished" datetime="2018-12-30T09:54:06+08:00">
-                2018-12-30
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Modified&#58;</span>
-              
-              <time title="Modified" itemprop="dateModified" datetime="2020-05-21T12:06:03+08:00">
-                2020-05-21
-              </time>
-            
-          </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+            <span id="/Notes-of-Machine-Learning-Part1/" class="post-meta-item leancloud_visitors" data-flag-title="机器学习初等指南(1)" title="Views">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="fa fa-eye"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Notes-of-Machine-Learning-Part1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Notes-of-Machine-Learning-Part1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  9,509
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  37
-                </span>
-              
-            </div>
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/Notes-of-Machine-Learning-Part1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Notes-of-Machine-Learning-Part1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -571,31 +305,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p>这是基于<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>《<a href="https://study.163.com/course/courseMain.htm?courseId=1004570029" target="_blank" rel="noopener">机器学习</a>》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。<a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>这是基于<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener external nofollow noreferrer">吴恩达</a>《<a href="https://study.163.com/course/courseMain.htm?courseId=1004570029" target="_blank" rel="noopener external nofollow noreferrer">机器学习</a>》课程的笔记第一部分（监督学习：线性回归、逻辑回归和环境安装），也包括其它一些可能的学习资源。<a id="more"></a></p>
 <blockquote>
-<p>第二部分（监督学习2）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
-<p>第三部分（无监督学习）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part3" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+<p>第二部分（监督学习2）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>。</p>
+<p>第三部分（无监督学习）传送门：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part3" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>。</p>
 </blockquote>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.hottaro.com/index.php?document_srl=8875&amp;mid=Books" target="_blank" rel="noopener"><strong>机器学习</strong></a>（<a href="https://baike.baidu.com/item/%E5%91%A8%E5%BF%97%E5%8D%8E/32542" target="_blank" rel="noopener">周志华</a>） “西瓜书”，<strong>教材</strong></p>
-<p><a href="http://ddl.escience.cn/f/IwnL" target="_blank" rel="noopener">机器学习实战</a> 基于Python的编程<strong>练习册</strong></p>
-<p><a href="http://ddl.escience.cn/f/Iwn0" target="_blank" rel="noopener">统计学习方法</a>（<a href="http://blog.sina.com.cn/u/2060750830" target="_blank" rel="noopener">李航</a>） 算法的<strong>数理分析</strong></p>
-<p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/" target="_blank" rel="noopener">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener">吴恩达</a>） 面向工程应用的指南</p>
-<p><a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/" target="_blank" rel="noopener"><strong>机器学习笔记</strong>1</a> （<a href="https://github.com/yoyoyohamapi" target="_blank" rel="noopener">吴晓军</a>）重点参考<strong>笔记</strong></p>
-<p><a href="https://feisky.xyz/machine-learning/" target="_blank" rel="noopener">机器学习笔记2</a> 面向软件的介绍手册</p>
-<p><a href="https://github.com/learning511/Stanford-Machine-Learning-camp" target="_blank" rel="noopener">机器学习训练营</a></p>
-<p><a href="https://github.com/allmachinelearning/MachineLearning/blob/master/notes/MLMaterials.md" target="_blank" rel="noopener">机器学习的一些资料</a></p>
-<p><a href="https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/" target="_blank" rel="noopener">神经网络与深度学习</a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.hottaro.com/index.php?document_srl=8875&amp;mid=Books" target="_blank" rel="noopener external nofollow noreferrer"><strong>机器学习</strong></a>（<a href="https://baike.baidu.com/item/%E5%91%A8%E5%BF%97%E5%8D%8E/32542" target="_blank" rel="noopener external nofollow noreferrer">周志华</a>） “西瓜书”，<strong>教材</strong></p>
+<p><a href="http://ddl.escience.cn/f/IwnL" target="_blank" rel="noopener external nofollow noreferrer">机器学习实战</a> 基于Python的编程<strong>练习册</strong></p>
+<p><a href="http://ddl.escience.cn/f/Iwn0" target="_blank" rel="noopener external nofollow noreferrer">统计学习方法</a>（<a href="http://blog.sina.com.cn/u/2060750830" target="_blank" rel="noopener external nofollow noreferrer">李航</a>） 算法的<strong>数理分析</strong></p>
+<p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/" target="_blank" rel="noopener external nofollow noreferrer">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener external nofollow noreferrer">吴恩达</a>） 面向工程应用的指南</p>
+<p><a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/" target="_blank" rel="noopener external nofollow noreferrer"><strong>机器学习笔记</strong>1</a> （<a href="https://github.com/yoyoyohamapi" target="_blank" rel="noopener external nofollow noreferrer">吴晓军</a>）重点参考<strong>笔记</strong></p>
+<p><a href="https://feisky.xyz/machine-learning/" target="_blank" rel="noopener external nofollow noreferrer">机器学习笔记2</a> 面向软件的介绍手册</p>
+<p><a href="https://github.com/learning511/Stanford-Machine-Learning-camp" target="_blank" rel="noopener external nofollow noreferrer">机器学习训练营</a></p>
+<p><a href="https://github.com/allmachinelearning/MachineLearning/blob/master/notes/MLMaterials.md" target="_blank" rel="noopener external nofollow noreferrer">机器学习的一些资料</a></p>
+<p><a href="https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/" target="_blank" rel="noopener external nofollow noreferrer">神经网络与深度学习</a></p>
 <p><a href="zh.d2l.ai/index">《动手学深度学习》</a> 深度学习进阶</p>
-<p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener">AiLearning</a></p>
-<p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener">林轩田</a>） 进阶教学视频</p>
-<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><h2 id="机器学习的定义"><a href="#机器学习的定义" class="headerlink" title="机器学习的定义"></a><a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="noopener">机器学习</a>的定义</h2><ul>
-<li><p><a href="https://en.wikipedia.org/wiki/Arthur_Samuel" target="_blank" rel="noopener">Arthur Samuel</a>（1959）</p>
+<p><a href="https://github.com/apachecn/AiLearning" target="_blank" rel="noopener external nofollow noreferrer">AiLearning</a></p>
+<p><a href="https://www.bilibili.com/video/av1624332/?p=2" target="_blank" rel="noopener external nofollow noreferrer">機器學習基石</a>，<a href="https://www.bilibili.com/video/av12469267" target="_blank" rel="noopener external nofollow noreferrer">机器学习技法</a>（<a href="https://www.csie.ntu.edu.tw/people/bio.php?PID=77" target="_blank" rel="noopener external nofollow noreferrer">林轩田</a>） 进阶教学视频</p>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><h2 id="机器学习的定义"><a href="#机器学习的定义" class="headerlink" title="机器学习的定义"></a><a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="noopener external nofollow noreferrer">机器学习</a>的定义</h2><ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Arthur_Samuel" target="_blank" rel="noopener external nofollow noreferrer">Arthur Samuel</a>（1959）</p>
 <ul>
 <li>机器学习是：“在<u>未详细编程</u>的情况下赋予计算机<u>学习能力</u>“的研究领域<ul>
-<li>例：<a href="https://www.zhihu.com/question/19617457" target="_blank" rel="noopener">西洋棋程序</a><ul>
+<li>例：<a href="https://www.zhihu.com/question/19617457" target="_blank" rel="noopener external nofollow noreferrer">西洋棋程序</a><ul>
 <li>设计者本身并不精通西洋棋</li>
 </ul>
 </li>
@@ -603,19 +334,19 @@
 </li>
 </ul>
 </li>
-<li><p><a href="http://www.cs.cmu.edu/~tom/" target="_blank" rel="noopener">Tom Mitchell</a>（1998）</p>
+<li><p><a href="http://www.cs.cmu.edu/~tom/" target="_blank" rel="noopener external nofollow noreferrer">Tom Mitchell</a>（1998）</p>
 <ul>
 <li><p>假设用指标<strong>P</strong>来评估计算机程序在某任务类<strong>T</strong>上的性能，若一个程序通过利用经验<strong>E</strong>在<strong>T</strong>中任务上获得了性能改善（<strong>P</strong>更优），则我们就称“关于<strong>T</strong>和<strong>P</strong>，该程序对<strong>E</strong>进行了学习”。（<del>迷之押韵</del>）</p>
 <p><img src="https://i.imgur.com/1Z7iz8t.png" alt="Imgur"></p>
 <ul>
-<li>他撰写的教材：<a href="http://www.cs.ubbcluj.ro/~gabis/ml/ml-books/McGrawHill%20-%20Machine%20Learning%20-Tom%20Mitchell.pdf" target="_blank" rel="noopener">Machine Learning -Tom Mitchell</a></li>
+<li>他撰写的教材：<a href="http://www.cs.ubbcluj.ro/~gabis/ml/ml-books/McGrawHill%20-%20Machine%20Learning%20-Tom%20Mitchell.pdf" target="_blank" rel="noopener external nofollow noreferrer">Machine Learning -Tom Mitchell</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>机器学习的四大活跃应用领域：<a href="https://zh.wikipedia.org/zh-hans/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">数据挖掘</a>、<a href="https://zh.wikipedia.org/zh-hans/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89" target="_blank" rel="noopener">计算机视觉</a>、<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86" target="_blank" rel="noopener">自然语言处理</a>、<a href="https://blog.csdn.net/gengwei80/article/details/5440051" target="_blank" rel="noopener">智能决策</a>。 （<a href="https://feisky.xyz/machine-learning/appendix/reference.html" target="_blank" rel="noopener">More</a>）</p>
-<p>机器学习比赛通常的处理步骤：<a href="https://blog.csdn.net/u010089444/article/details/70053104" target="_blank" rel="noopener">数据预处理</a>、<a href="https://feisky.xyz/machine-learning/basic/feature-engineering.html" target="_blank" rel="noopener">特征工程</a>、学习算法、模型集成。（<a href="https://feisky.xyz/machine-learning/appendix/rules-of-ml.html" target="_blank" rel="noopener">More</a>）</p>
+<p>机器学习的四大活跃应用领域：<a href="https://zh.wikipedia.org/zh-hans/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener external nofollow noreferrer">数据挖掘</a>、<a href="https://zh.wikipedia.org/zh-hans/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89" target="_blank" rel="noopener external nofollow noreferrer">计算机视觉</a>、<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86" target="_blank" rel="noopener external nofollow noreferrer">自然语言处理</a>、<a href="https://blog.csdn.net/gengwei80/article/details/5440051" target="_blank" rel="noopener external nofollow noreferrer">智能决策</a>。 （<a href="https://feisky.xyz/machine-learning/appendix/reference.html" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
+<p>机器学习比赛通常的处理步骤：<a href="https://blog.csdn.net/u010089444/article/details/70053104" target="_blank" rel="noopener external nofollow noreferrer">数据预处理</a>、<a href="https://feisky.xyz/machine-learning/basic/feature-engineering.html" target="_blank" rel="noopener external nofollow noreferrer">特征工程</a>、学习算法、模型集成。（<a href="https://feisky.xyz/machine-learning/appendix/rules-of-ml.html" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <p>机器学习适合什么样的问题：</p>
 <ul>
 <li>必须存在某种<strong>模式</strong>（Pattern），一个完全随机的问题是不可能学到东西的</li>
@@ -673,26 +404,26 @@
 </ul>
 </li>
 </ul>
-<p>Others：<a href="https://zh.wikipedia.org/zh-hans/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0" target="_blank" rel="noopener">强化学习</a>、<a href="https://www.ibm.com/developerworks/cn/opensource/os-recommender1/index.html" target="_blank" rel="noopener">推荐系统</a>……（重要主题：<strong>如何应用学习算法</strong>？Or 落地）</p>
+<p>Others：<a href="https://zh.wikipedia.org/zh-hans/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0" target="_blank" rel="noopener external nofollow noreferrer">强化学习</a>、<a href="https://www.ibm.com/developerworks/cn/opensource/os-recommender1/index.html" target="_blank" rel="noopener external nofollow noreferrer">推荐系统</a>……（重要主题：<strong>如何应用学习算法</strong>？Or 落地）</p>
 <blockquote>
 <p>学习算法还可以按照输入/输出空间（特征、离散度）、数据标签（监督程度）、学习方式（主动性）等进行分类。如图：</p>
 <p><img src="/Notes-of-Machine-Learning-Part1/1547311093346.png" alt="1547311093346"></p>
 </blockquote>
 <hr>
 <blockquote>
-<p>Source: Hui Li, <a href="https://blogs.sas.com/content/subconsciousmusings/2017/04/12/machine-learning-algorithm-use/#prettyPhoto" target="_blank" rel="noopener">Which machine learning algorithm should I use?</a></p>
+<p>Source: Hui Li, <a href="https://blogs.sas.com/content/subconsciousmusings/2017/04/12/machine-learning-algorithm-use/#prettyPhoto" target="_blank" rel="noopener external nofollow noreferrer">Which machine learning algorithm should I use?</a></p>
 </blockquote>
 <p><img src="/Notes-of-Machine-Learning-Part1/CheatSheet.png" alt="CheatSheet"></p>
 <blockquote>
-<p>Source: <a href="https://scikit-learn.org/stable/tutorial/machine_learning_map/" target="_blank" rel="noopener">scikit-learn</a></p>
+<p>Source: <a href="https://scikit-learn.org/stable/tutorial/machine_learning_map/" target="_blank" rel="noopener external nofollow noreferrer">scikit-learn</a></p>
 </blockquote>
 <p><img src="/Notes-of-Machine-Learning-Part1/ml_map.png" alt="ml_map"></p>
 <blockquote>
-<p>Source: Shivon Zilis, <a href="http://www.shivonzilis.com/" target="_blank" rel="noopener">MI-Landscape</a></p>
+<p>Source: Shivon Zilis, <a href="http://www.shivonzilis.com/" target="_blank" rel="noopener external nofollow noreferrer">MI-Landscape</a></p>
 </blockquote>
 <p><img src="/Notes-of-Machine-Learning-Part1/MI-Landscape-3_7.png" alt="MI-Landscape-3_7"></p>
 <blockquote>
-<p>Source: <a href="https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY?from=timeline&amp;isappinstalled=0" target="_blank" rel="noopener">coggle</a></p>
+<p>Source: <a href="https://static.coggle.it/diagram/WHeBqDIrJRk-kDDY?from=timeline&amp;isappinstalled=0" target="_blank" rel="noopener external nofollow noreferrer">coggle</a></p>
 </blockquote>
 <p><img src="/Notes-of-Machine-Learning-Part1/Categories_of_algorithmsnon_exhaustive.png" alt="Categories_of_algorithmsnon_exhaustive"></p>
 <hr>
@@ -706,12 +437,12 @@
 </ul>
 <p><strong>版本空间</strong>（version space）：假设空间中，与训练集表现一致的子空间</p>
 <p><img src="https://i.imgur.com/gQPmxjS.png" alt="Imgur"></p>
-<p>由上图可以看出，版本空间中可能存在多个满足训练集的假设。<br>为了作出唯一的判断，必须引入<strong>归纳偏好</strong>（<a href="https://en.wikipedia.org/wiki/Inductive_bias" target="_blank" rel="noopener">inductive bias</a>）。</p>
+<p>由上图可以看出，版本空间中可能存在多个满足训练集的假设。<br>为了作出唯一的判断，必须引入<strong>归纳偏好</strong>（<a href="https://en.wikipedia.org/wiki/Inductive_bias" target="_blank" rel="noopener external nofollow noreferrer">inductive bias</a>）。</p>
 <p>常用的归纳偏好：（<u>算法的归纳偏好与问题的<strong>匹配度</strong>决定了算法的性能</u>）</p>
 <ul>
 <li>尽可能特殊</li>
 <li>尽可能一般</li>
-<li>奥卡姆剃刀（<a href="https://en.wikipedia.org/wiki/Occam%27s_razor" target="_blank" rel="noopener">Occam’s razor</a>）：若有多个假设，则选最简约的那个</li>
+<li>奥卡姆剃刀（<a href="https://en.wikipedia.org/wiki/Occam%27s_razor" target="_blank" rel="noopener external nofollow noreferrer">Occam’s razor</a>）：若有多个假设，则选最简约的那个</li>
 </ul>
 <h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p><strong>例1</strong>：（房屋价格预测）</p>
 <p><img src="https://i.imgur.com/Arwogrn.png" alt="Imgur"></p>
@@ -720,7 +451,7 @@
 <ul>
 <li>如何<strong>选用</strong>拟合函数？（线性、平方……）</li>
 </ul>
-<p>$\longrightarrow$<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/articles/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98.html" target="_blank" rel="noopener"><strong><font color="red">回归问题</font></strong></a>（Regression，<strong>连续</strong>值预测）。</p>
+<p>$\longrightarrow$<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/articles/%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98.html" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color="red">回归问题</font></strong></a>（Regression，<strong>连续</strong>值预测）。</p>
 </blockquote>
 <p><strong>例2</strong>：（癌肿瘤-恶/良分类）</p>
 <p><img src="https://i.imgur.com/hvLywAZ.png" alt="Imgur"></p>
@@ -732,16 +463,16 @@
 </ul>
 <p>多特征：（年龄+肿瘤大小）</p>
 <p><img src="https://i.imgur.com/8opyE1E.png" alt="Imgur"></p>
-<p>$\longrightarrow$<a href="https://blog.csdn.net/limiyudianzi/article/details/79616601" target="_blank" rel="noopener"><strong><font color="red">分类问题</font></strong></a>（Classification，<strong>离散</strong>值预测）</p>
+<p>$\longrightarrow$<a href="https://blog.csdn.net/limiyudianzi/article/details/79616601" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color="red">分类问题</font></strong></a>（Classification，<strong>离散</strong>值预测）</p>
 <ul>
 <li>利用分类器画一条线，将两类点分离开</li>
 </ul>
-<p>更多特征：肿块的厚度、细胞尺寸均匀度、细胞形状均匀度$…\infty…\longrightarrow$<strong>高维空间</strong>（<a href="https://blog.csdn.net/v_JULY_v/article/details/7624837" target="_blank" rel="noopener">支持向量机</a>SVM）</p>
+<p>更多特征：肿块的厚度、细胞尺寸均匀度、细胞形状均匀度$…\infty…\longrightarrow$<strong>高维空间</strong>（<a href="https://blog.csdn.net/v_JULY_v/article/details/7624837" target="_blank" rel="noopener external nofollow noreferrer">支持向量机</a>SVM）</p>
 </blockquote>
 <h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><p><strong>例3</strong>：若我们将上文中有标记的数据变为<strong>无标记数据</strong>，如下图</p>
 <p><img src="https://i.imgur.com/Wj6YVLY.png" alt="Imgur"></p>
 <blockquote>
-<p>$\longrightarrow$<a href="https://blog.csdn.net/abc200941410128/article/details/78541273" target="_blank" rel="noopener"><strong><font color="red">聚类问题</font></strong></a>（Clustering）</p>
+<p>$\longrightarrow$<a href="https://blog.csdn.net/abc200941410128/article/details/78541273" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color="red">聚类问题</font></strong></a>（Clustering）</p>
 <ul>
 <li>聚类的应用：<ul>
 <li>新闻分类</li>
@@ -758,12 +489,12 @@
 <p><img src="https://i.imgur.com/xOc6I7a.png" alt="Imgur"></p>
 <blockquote>
 <p>许多人同时说话。利用麦克风接收声音信号。<strong>如何过滤出每一个独立的声音源</strong>？</p>
-<p>$\longrightarrow$<a href="https://zh.wikipedia.org/wiki/%E9%99%8D%E7%BB%B4" target="_blank" rel="noopener"><strong><font color="red">降维问题</font></strong></a>（Dimensionality Reduction）</p>
-<p>只须一行代码：（<a href="https://www.gnu.org/software/octave/" target="_blank" rel="noopener">Octave</a>，$\approx$开源版Matlab）</p>
+<p>$\longrightarrow$<a href="https://zh.wikipedia.org/wiki/%E9%99%8D%E7%BB%B4" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color="red">降维问题</font></strong></a>（Dimensionality Reduction）</p>
+<p>只须一行代码：（<a href="https://www.gnu.org/software/octave/" target="_blank" rel="noopener external nofollow noreferrer">Octave</a>，$\approx$开源版Matlab）</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[W,s,v] = svd ((repmat(sum(x.*x,1),size(x,1),1).*x)*x&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[W,s,v] &#x3D; svd ((repmat(sum(x.*x,1),size(x,1),1).*x)*x&#39;);</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>svd：奇异值分解，<a href="https://ww2.mathworks.cn/help/matlab/ref/svd.html" target="_blank" rel="noopener">More</a><br>repmat：复制平铺，<a href="https://baike.baidu.com/item/repmat" target="_blank" rel="noopener">More</a></p>
+<p>svd：奇异值分解，<a href="https://ww2.mathworks.cn/help/matlab/ref/svd.html" target="_blank" rel="noopener external nofollow noreferrer">More</a><br>repmat：复制平铺，<a href="https://baike.baidu.com/item/repmat" target="_blank" rel="noopener external nofollow noreferrer">More</a></p>
 <p>提示：先使用Octave开发算法可能会更有效率！</p>
 </blockquote>
 <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="问题简述"><a href="#问题简述" class="headerlink" title="问题简述"></a>问题简述</h2><p>回到之前的房屋价格预测问题：（<strong>监督学习-回归</strong>-单变量）</p>
@@ -800,32 +531,32 @@ h_θ(x)=θ_0+θ_1x_1+θ_2x_2+⋯+θ_nx_n=θ^Tx</script><blockquote>
 <p>上式也称之为<strong>回归方程（regression equation）</strong>，$θ$ 为回归系数。</p>
 </blockquote>
 <h3 id="线代基础"><a href="#线代基础" class="headerlink" title="线代基础"></a>线代基础</h3><blockquote>
-<p><strong>线性代数基础</strong>。有基础则跳过这一节。主要是是矩阵理论的基础知识。<br>More：<a href="https://www.zhihu.com/question/20084968" target="_blank" rel="noopener">线性到底是什么意思？</a></p>
+<p><strong>线性代数基础</strong>。有基础则跳过这一节。主要是是矩阵理论的基础知识。<br>More：<a href="https://www.zhihu.com/question/20084968" target="_blank" rel="noopener external nofollow noreferrer">线性到底是什么意思？</a></p>
 </blockquote>
-<p><strong>推荐</strong>教学视频：<a href="https://www.bilibili.com/video/av6731067" target="_blank" rel="noopener"><strong>线性代数的本质</strong></a>。（2小时40分时长）</p>
+<p><strong>推荐</strong>教学视频：<a href="https://www.bilibili.com/video/av6731067" target="_blank" rel="noopener external nofollow noreferrer"><strong>线性代数的本质</strong></a>。（2小时40分时长）</p>
 <p>下为预览：</p>
 <iframe width="90%" height="350" src="//player.bilibili.com/player.html?aid=6731067&cid=10959711&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 <blockquote>
-<p>当然，对于<strong>微积分</strong>基础这里还有：<a href="https://www.bilibili.com/video/av24325548/?spm_id_from=333.788.b_7265636f5f6c697374.2" target="_blank" rel="noopener">微积分的本质</a>系列。（约3小时时长）</p>
+<p>当然，对于<strong>微积分</strong>基础这里还有：<a href="https://www.bilibili.com/video/av24325548/?spm_id_from=333.788.b_7265636f5f6c697374.2" target="_blank" rel="noopener external nofollow noreferrer">微积分的本质</a>系列。（约3小时时长）</p>
 </blockquote>
-<p>BTW，贴一个无关但是很有创意的交互式视频：<a href="https://eater.net/quaternions/video/intro" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
+<p>BTW，贴一个无关但是很有创意的交互式视频：<a href="https://eater.net/quaternions/video/intro" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>。</p>
 <h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>不同的参数 $\theta$ 向量，将会对应不同的假设：</p>
 <p><img src="https://i.imgur.com/L0aMwEX.png" width="70%"></p>
 <p>为了<u>度量哪种假设更优</u>，引入了<strong><font color="red">代价函数</font></strong>（Cost Function）……</p>
 <p><img src="https://i.imgur.com/nQd9G9M.png" alt="Imgur"></p>
 <p>通常我们认为<u>与训练集的误差</u>是<u>假设对应的<strong>代价</strong></u>。<br><strong>误差</strong>越大，代价也越大。我们的目标是<u>让代价尽量地小</u>。</p>
-<p>最常见的，我们通过<strong><a href="https://blog.csdn.net/qq_32611933/article/details/52008538" target="_blank" rel="noopener">最小均方</a>（<a href="http://een.iust.ac.ir/profs/Farrokhi/Neural%20Networks/NNSH/chapter%205.pdf" target="_blank" rel="noopener">Least Mean Square</a>）</strong>来描述误差：</p>
+<p>最常见的，我们通过<strong><a href="https://blog.csdn.net/qq_32611933/article/details/52008538" target="_blank" rel="noopener external nofollow noreferrer">最小均方</a>（<a href="http://een.iust.ac.ir/profs/Farrokhi/Neural%20Networks/NNSH/chapter%205.pdf" target="_blank" rel="noopener external nofollow noreferrer">Least Mean Square</a>）</strong>来描述误差：</p>
 <script type="math/tex; mode=display">
 J(\theta)=\frac{1}{2m}{\color{red}\sum_{i=1}^{m} }(h_\theta(x^{(i)})-y^{(i)})^{\color{red}{2} }</script><blockquote>
 <p>（前面的系数$m$是样本容量，<del>系数2纯粹是为了求导方便</del>）<br>矩阵形式为：（平方误差代价函数）</p>
 <script type="math/tex; mode=display">
-J(\theta)=\frac{1}{2m}(X\theta-y)^T(X\theta-y)</script><p>延伸阅读：<a href="https://www.matongxue.com/madocs/818.html" target="_blank" rel="noopener">最小二乘法</a>（<a href="https://www.zhihu.com/question/37031188" target="_blank" rel="noopener">More</a>）。</p>
+J(\theta)=\frac{1}{2m}(X\theta-y)^T(X\theta-y)</script><p>延伸阅读：<a href="https://www.matongxue.com/madocs/818.html" target="_blank" rel="noopener external nofollow noreferrer">最小二乘法</a>（<a href="https://www.zhihu.com/question/37031188" target="_blank" rel="noopener external nofollow noreferrer">More</a>）。</p>
 </blockquote>
-<h3 id="可视化的理解"><a href="#可视化的理解" class="headerlink" title="可视化的理解"></a>可视化的理解</h3><p>学习前缀：<a href="https://zh.wikipedia.org/wiki/%E7%AD%89%E9%AB%98%E7%B7%9A" target="_blank" rel="noopener">等高线图</a>（<a href="https://antv.alipay.com/zh-cn/vis/chart/contour-line.html#_%E7%AD%89%E9%AB%98%E7%BA%BF%E4%B8%8E%E5%85%B6%E4%BB%96%E5%9B%BE%E8%A1%A8%E7%9A%84%E5%AF%B9%E6%AF%94" target="_blank" rel="noopener">More</a>）。</p>
+<h3 id="可视化的理解"><a href="#可视化的理解" class="headerlink" title="可视化的理解"></a>可视化的理解</h3><p>学习前缀：<a href="https://zh.wikipedia.org/wiki/%E7%AD%89%E9%AB%98%E7%B7%9A" target="_blank" rel="noopener external nofollow noreferrer">等高线图</a>（<a href="https://antv.alipay.com/zh-cn/vis/chart/contour-line.html#_%E7%AD%89%E9%AB%98%E7%BA%BF%E4%B8%8E%E5%85%B6%E4%BB%96%E5%9B%BE%E8%A1%A8%E7%9A%84%E5%AF%B9%E6%AF%94" target="_blank" rel="noopener external nofollow noreferrer">More</a>）。</p>
 <p>我们对上文中的内容做一个总结：（考虑2个参数）</p>
 <p><img src="https://i.imgur.com/vKnKckZ.png" alt="Imgur"></p>
-<p>Cost代价函数将张成一个三维空间中的曲面：（<a href="https://zh.wikipedia.org/wiki/%E5%87%B8%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">凸函数</a>）</p>
+<p>Cost代价函数将张成一个三维空间中的曲面：（<a href="https://zh.wikipedia.org/wiki/%E5%87%B8%E5%87%BD%E6%95%B0" target="_blank" rel="noopener external nofollow noreferrer">凸函数</a>）</p>
 <p><img src="https://i.imgur.com/4J3qeMm.png" alt="Imgur"></p>
 <p>我们可以想象，当$\theta_1和\theta_2$选取适当的值，可能有</p>
 <script type="math/tex; mode=display">
@@ -851,10 +582,10 @@ J(\theta_1=a,\theta_2=b)=J'(\theta_1=c,\theta_2=d)</script><blockquote>
 <li><p>$\cfrac{\partial}{\partial\theta_j}J(\theta)$是导数项（derivative term）。</p>
 <ul>
 <li>一般$\alpha&gt;0$，对于导数项：<strong>+</strong>，为了下降应该反向走；<strong>-</strong>，同理。<br>因此，前式中采用了负号。</li>
-<li>对于平滑的极值点，在收敛的过程中，导数项一般会逐步减小，从而促进收敛。（<a href="https://blog.csdn.net/shenxiaolu1984/article/details/52577996" target="_blank" rel="noopener">证明</a>）</li>
+<li>对于平滑的极值点，在收敛的过程中，导数项一般会逐步减小，从而促进收敛。（<a href="https://blog.csdn.net/shenxiaolu1984/article/details/52577996" target="_blank" rel="noopener external nofollow noreferrer">证明</a>）</li>
 </ul>
 </li>
-<li><p><u>推荐</u>同时更新所有参数（Simultaneous update）。（<a href="https://www.zhihu.com/question/29615428" target="_blank" rel="noopener">More</a>）</p>
+<li><p><u>推荐</u>同时更新所有参数（Simultaneous update）。（<a href="https://www.zhihu.com/question/29615428" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <p><img src="https://i.imgur.com/MaYVFBb.png" alt="Imgur"></p>
 </li>
 </ul>
@@ -863,7 +594,7 @@ J(\theta_1=a,\theta_2=b)=J'(\theta_1=c,\theta_2=d)</script><blockquote>
 <p><img src="https://i.imgur.com/MHe3lrP.png" alt="Imgur"></p>
 <blockquote>
 <p>（图中显示了梯度下降收敛到极值的情况）<br>数学上，梯度方向是函数值下降最为剧烈的方向。<br>那么，任意赋一个初始起点，沿着$ J(\theta)$ 的梯度方向走，我们就能接近其最小值，或者极小值。</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95#%E4%BE%8B%E5%AD%90" target="_blank" rel="noopener">梯度下降</a>（Gradient Descent）不仅被用于线性回归，还被广泛应用于机器学习的众多领域。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95#%E4%BE%8B%E5%AD%90" target="_blank" rel="noopener external nofollow noreferrer">梯度下降</a>（Gradient Descent）不仅被用于线性回归，还被广泛应用于机器学习的众多领域。</p>
 </blockquote>
 <h3 id="应用到线性回归"><a href="#应用到线性回归" class="headerlink" title="应用到线性回归"></a>应用到线性回归</h3><p><img src="https://i.imgur.com/OnDHUdc.png" alt="Imgur"></p>
 <p>我们将上图中代价函数（导数项）的具体表达式写出：</p>
@@ -900,11 +631,11 @@ J(\theta) &= \frac{1}{\color{red}{2m} }\sum\limits_{i=1}^{m}(h_\theta(x^{(i)})-y
 <p>我们称该过程为<strong>基于最小均方（LMS）的<font color="red">批量梯度下降法</font>（Batch Gradient Descent）</strong>。</p>
 <ul>
 <li>一方面，该方法虽然可以收敛，但是每次调参都不得不遍历样本集，若样本的体积$m$很大，则开销巨大。</li>
-<li>但另一方面，因为其可化解为向量型表示，所以就能利用到<strong><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97" target="_blank" rel="noopener">并行计算</a></strong>优化性能。</li>
+<li>但另一方面，因为其可化解为向量型表示，所以就能利用到<strong><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97" target="_blank" rel="noopener external nofollow noreferrer">并行计算</a></strong>优化性能。</li>
 </ul>
 <p>下面介绍实际中应用BGD时的一些技巧（Trick）。</p>
 <h3 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h3><blockquote>
-<p><a href="https://blog.csdn.net/saltriver/article/details/76100059" target="_blank" rel="noopener">特征缩放</a>（Feature Scaling）。<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/articles/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE.html" target="_blank" rel="noopener">Here</a> for more。</p>
+<p><a href="https://blog.csdn.net/saltriver/article/details/76100059" target="_blank" rel="noopener external nofollow noreferrer">特征缩放</a>（Feature Scaling）。<a href="https://yoyoyohamapi.gitbooks.io/mit-ml/content/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/articles/%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE.html" target="_blank" rel="noopener external nofollow noreferrer">Here</a> for more。</p>
 </blockquote>
 <p><strong>$Idea$</strong>：<strong>确保不同的特征在<font color="red">同一尺度</font></strong>。</p>
 <blockquote>
@@ -927,8 +658,8 @@ J(\theta) &= \frac{1}{\color{red}{2m} }\sum\limits_{i=1}^{m}(h_\theta(x^{(i)})-y
 <p>如果直接将该样本送入训练，则代价函数的轮廓会是“扁长的”，在找到最优解前，梯度下降的过程不仅是曲折的，也是非常耗时的。</p>
 </blockquote>
 <p><img src="https://i.imgur.com/Np4BHi8.png" width="17%"></p>
-<p>下面介绍特征缩放的几种方法。（<a href="https://en.wikipedia.org/wiki/Feature_scaling#Methods" target="_blank" rel="noopener">More</a>）</p>
-<h4 id="正态缩放"><a href="#正态缩放" class="headerlink" title="正态缩放"></a>正态缩放</h4><p><strong>Standardization</strong>，缩放后的特征将服从<a href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener">标准正态分布</a>：</p>
+<p>下面介绍特征缩放的几种方法。（<a href="https://en.wikipedia.org/wiki/Feature_scaling#Methods" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
+<h4 id="正态缩放"><a href="#正态缩放" class="headerlink" title="正态缩放"></a>正态缩放</h4><p><strong>Standardization</strong>，缩放后的特征将服从<a href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener external nofollow noreferrer">标准正态分布</a>：</p>
 <script type="math/tex; mode=display">
 x' = \frac{x-\mu}{\delta}</script><p>μ,δ分别为对应特征$x$向量的均值和标准差。缩放后的特征将分布在 <strong>(−Inf,Inf)</strong> 区间。</p>
 <h4 id="区间缩放"><a href="#区间缩放" class="headerlink" title="区间缩放"></a>区间缩放</h4><p><strong>Min-Max Scaling</strong> 又称为 <strong>Rescaling</strong>，区间缩放的公式为：</p>
@@ -939,7 +670,7 @@ x' = \frac{x-min(x)}{max(x)-min(x)}</script><p>缩放后的特征将分布在 <s
 x' = \frac{x-{\color{red}{\mu} } }{max(x)-min(x)}</script><p>μ为$x$向量的均值，缩放后的特征将分布在 <strong>(-1,1)</strong> 区间。</p>
 <h4 id="度量缩放"><a href="#度量缩放" class="headerlink" title="度量缩放"></a>度量缩放</h4><p><strong>Scaling to unit length</strong>相对均态缩放，保留了更多原向量的面貌。其公式为：</p>
 <script type="math/tex; mode=display">
-x' = \frac{x}{ {\color{red}{||} }x{\color{red}{||} } }</script><p>缩放后的特征将分布在某个不定小区间。$||x||$是范数（<a href="https://en.wikipedia.org/wiki/Norm_%28mathematics%29" target="_blank" rel="noopener">Norm</a>）。（<a href="http://idatamining.net/blog/?p=618" target="_blank" rel="noopener">More</a>）</p>
+x' = \frac{x}{ {\color{red}{||} }x{\color{red}{||} } }</script><p>缩放后的特征将分布在某个不定小区间。$||x||$是范数（<a href="https://en.wikipedia.org/wiki/Norm_%28mathematics%29" target="_blank" rel="noopener external nofollow noreferrer">Norm</a>）。（<a href="http://idatamining.net/blog/?p=618" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <blockquote>
 <p>若取$||x||=|x|$绝对值，则缩放后的特征将分布在 <strong>[-1,1]</strong> 区间。</p>
 </blockquote>
@@ -1001,7 +732,7 @@ J(\theta_0,\theta_1,…,\theta_m)=\frac{1}{2m}{\sum_{i=1}^{m} }(h_\theta(x^{(i)}
 \theta=(X^TX)^{-1}X^Ty</script><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#例题的代码</span><br><span class="line">X=[<span class="number">1</span> <span class="number">2104</span> <span class="number">5</span> <span class="number">1</span> <span class="number">45</span>;<span class="number">1</span> <span class="number">1416</span> <span class="number">3</span> <span class="number">2</span> <span class="number">40</span>;<span class="number">1</span> <span class="number">1534</span> <span class="number">3</span> <span class="number">2</span> <span class="number">30</span>;<span class="number">1</span> <span class="number">852</span> <span class="number">2</span> <span class="number">1</span> <span class="number">36</span>]</span><br><span class="line">y=[<span class="number">460</span> <span class="number">232</span> <span class="number">315</span> <span class="number">178</span>]'</span><br><span class="line">zeta_p=pinv(X'*X)*X'*y #pinv是伪逆，对所有方阵适用</span><br><span class="line">zeta_norm=inv(X'*X)*X'*y #inv是逆，只对可逆方阵适用</span><br><span class="line">#这里会报错warning: matrix singular to machine precision</span><br><span class="line">#因为矩阵奇异（即不满秩，不可逆）</span><br></pre></td></tr></table></figure>
 <p><strong>推导和拓展</strong>：</p>
 <ul>
-<li><p>之前的偏导方程组写成向量形式为（<a href="https://blog.csdn.net/daaikuaichuan/article/details/80620518" target="_blank" rel="noopener">矩阵求导</a>）</p>
+<li><p>之前的偏导方程组写成向量形式为（<a href="https://blog.csdn.net/daaikuaichuan/article/details/80620518" target="_blank" rel="noopener external nofollow noreferrer">矩阵求导</a>）</p>
 <script type="math/tex; mode=display">
 \begin{split}
 \cfrac{d}{ {d\theta} } \left[ \cfrac{1}{ {2m} }(X\theta-y)^T(X\theta-y)\right]& =\cfrac{1}{ {m} }X^T(X\theta-y)=0
@@ -1010,9 +741,9 @@ J(\theta_0,\theta_1,…,\theta_m)=\frac{1}{2m}{\sum_{i=1}^{m} }(h_\theta(x^{(i)}
 \Longrightarrow \quad \theta=(X^TX)^{-1}X^Ty</script></li>
 <li><p>注意：（当X可逆能推出）$X\theta=y$。</p>
 <ul>
-<li>也就是说，我们<strong>实际上是在尝试<font color="red">求解一个广义线性方程组</font></strong>。（普通线性方程组并不一定有惟一解，<a href="https://blog.csdn.net/lynn0085/article/details/79375614" target="_blank" rel="noopener">More</a>）</li>
+<li>也就是说，我们<strong>实际上是在尝试<font color="red">求解一个广义线性方程组</font></strong>。（普通线性方程组并不一定有惟一解，<a href="https://blog.csdn.net/lynn0085/article/details/79375614" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</li>
 <li>在上述算法中<strong>求解条件弱化</strong>到只须$X^TX$可逆<ul>
-<li>若我们考虑<a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B9%89%E9%80%86%E9%98%B5" target="_blank" rel="noopener">伪逆</a>，则求解条件<strong>进一步<font color="red">弱化</font></strong>：<strong>对任意的$X$，我们均能求得惟一解</strong>！</li>
+<li>若我们考虑<a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B9%89%E9%80%86%E9%98%B5" target="_blank" rel="noopener external nofollow noreferrer">伪逆</a>，则求解条件<strong>进一步<font color="red">弱化</font></strong>：<strong>对任意的$X$，我们均能求得惟一解</strong>！</li>
 </ul>
 </li>
 </ul>
@@ -1026,7 +757,7 @@ J(\theta_0,\theta_1,…,\theta_m)=\frac{1}{2m}{\sum_{i=1}^{m} }(h_\theta(x^{(i)}
 </ul>
 </li>
 <li>过多的特征，$m\leq n$（训练样本数甚至没有特征多）<ul>
-<li>删去一些特征，或者使用<a href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">正则化方法</a>（<a href="https://en.wikipedia.org/wiki/Regularization_％28mathematics％29" target="_blank" rel="noopener">Regularization</a>）</li>
+<li>删去一些特征，或者使用<a href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95" target="_blank" rel="noopener external nofollow noreferrer">正则化方法</a>（<a href="https://en.wikipedia.org/wiki/Regularization_％28mathematics％29" target="_blank" rel="noopener external nofollow noreferrer">Regularization</a>）</li>
 </ul>
 </li>
 </ul>
@@ -1066,7 +797,7 @@ J(\theta_0,\theta_1,…,\theta_m)=\frac{1}{2m}{\sum_{i=1}^{m} }(h_\theta(x^{(i)}
 <p>注意梯度下降法的运行时间0.1s还需要乘以迭代次数，所以常系数较大，大约也在分钟量级。</p>
 </blockquote>
 <p>若我们采用矩阵相乘的优化算法解正规方程，目前最低可降到$O(n^{2.376})$。</p>
-<p>可以在<strong><a href="https://blog.csdn.net/jiacongxu/article/details/8970395" target="_blank" rel="noopener">Here</a></strong>查询更多算法的复杂度。</p>
+<p>可以在<strong><a href="https://blog.csdn.net/jiacongxu/article/details/8970395" target="_blank" rel="noopener external nofollow noreferrer">Here</a></strong>查询更多算法的复杂度。</p>
 </blockquote>
 <h1 id="Logistic回归"><a href="#Logistic回归" class="headerlink" title="Logistic回归"></a>Logistic回归</h1><h2 id="分类与逻辑"><a href="#分类与逻辑" class="headerlink" title="分类与逻辑"></a>分类与逻辑</h2><p><strong><font color="red">Classification</font></strong> problems：【分类问题】</p>
 <ul>
@@ -1090,16 +821,16 @@ y=\begin{cases} 1\quad,h_\theta (x) \gt 0.5\\0\quad, h_\theta (x) \leq 0.5\end{c
 0\leq h_\theta(x) \leq 1</script><p>为了实现这个，我们只须定义一个<em>转换器</em> $g$——<strong>Sigmoid Function</strong>（Logistic funciton）：</p>
 <script type="math/tex; mode=display">
 Sigmoid\,Function:h_\theta' (x) ={\color{red}{g} }(z)={\frac{1}{1+e^{-z} } } \quad，其中z=\theta^Tx=h_\theta (x)</script><blockquote>
-<p>这里的$h_\theta(x) =\theta^Tx$实际就是线性回归中的预测函数（<del>忘了可以复习一下</del>），我们通过转换器g，生成了一个新的预测函数。回顾特征缩放的部分，你还可以看到转换器g的作用与特征缩放函数几乎是一致的。你甚至可以认为它就是一种<strong>度量缩放</strong>（将预测距离缩放为逻辑距离）。（<a href="https://zh.wikipedia.org/zh-hans/%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91" target="_blank" rel="noopener">模糊逻辑</a>）</p>
+<p>这里的$h_\theta(x) =\theta^Tx$实际就是线性回归中的预测函数（<del>忘了可以复习一下</del>），我们通过转换器g，生成了一个新的预测函数。回顾特征缩放的部分，你还可以看到转换器g的作用与特征缩放函数几乎是一致的。你甚至可以认为它就是一种<strong>度量缩放</strong>（将预测距离缩放为逻辑距离）。（<a href="https://zh.wikipedia.org/zh-hans/%E6%A8%A1%E7%B3%8A%E9%80%BB%E8%BE%91" target="_blank" rel="noopener external nofollow noreferrer">模糊逻辑</a>）</p>
 <p>总结：<strong>线性回归预测的是(线性)距离，逻辑回归预测的是<font color="red">逻辑距离</font></strong>。【无限度量 vs. 有限度量】<br>（线性回归预测函数的理论取值范围为整个实数轴。逻辑距离显然更适合于分类问题，它表现为<strong><font color="red">概率</font></strong>）</p>
 </blockquote>
 <p>下为<strong>Sig</strong>函数的形状：</p>
 <p><img src="https://i.imgur.com/X2DnMQJ.gif" alt="sigmoid函数"></p>
 <h2 id="决策边界"><a href="#决策边界" class="headerlink" title="决策边界"></a>决策边界</h2><p>仅仅做一个<strong>Sig</strong>函数的变换，并不足以很好地诠释Logistic回归对解决分类问题的优势。</p>
 <p>我们下面将看到，<strong>Sig</strong>函数实际将预测函数延伸为一个(合理的)分类器。</p>
-<p><strong>决策边界</strong>（<a href="https://www.coursera.org/lecture/machine-learning/decision-boundary-WuL1H" target="_blank" rel="noopener">Decision Boundary</a>）：</p>
+<p><strong>决策边界</strong>（<a href="https://www.coursera.org/lecture/machine-learning/decision-boundary-WuL1H" target="_blank" rel="noopener external nofollow noreferrer">Decision Boundary</a>）：</p>
 <ul>
-<li>将一个高维空间分成两个部分的(超)曲面（为分类/决策提供依据）。（<a href="https://www.cs.cmu.edu/~epxing/Class/10701-11f/Lecture/lecture17-annotated.pdf" target="_blank" rel="noopener">More</a>）</li>
+<li>将一个高维空间分成两个部分的(超)曲面（为分类/决策提供依据）。（<a href="https://www.cs.cmu.edu/~epxing/Class/10701-11f/Lecture/lecture17-annotated.pdf" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</li>
 </ul>
 <p>根据<strong>Sig</strong>函数确定新的分段函数：（尽管形式上与之前一致，但可认为$h_\theta(x)=P(y=1|x,\theta)$代表<strong>概率</strong>）</p>
 <script type="math/tex; mode=display">
@@ -1139,7 +870,7 @@ Cost(h_\theta(x),y)=
 \begin{cases}
 -log(h_\theta(x)),&\mbox{if $y=1$}\\
 -log(1-h_\theta(x)),&\mbox{if $y=0$}
-\end{cases}</script><p>你可以看到，这样的<strong>Cost</strong>定义将会使得预测正确时代价较小，预测错误时则代价激增。（<a href="https://zh.wikipedia.org/zh/%E5%87%B8%E5%84%AA%E5%8C%96" target="_blank" rel="noopener">凸优化</a>，<a href="https://www.bilibili.com/video/av29071445?from=search&amp;seid=5253986555039683458" target="_blank" rel="noopener">More</a>）</p>
+\end{cases}</script><p>你可以看到，这样的<strong>Cost</strong>定义将会使得预测正确时代价较小，预测错误时则代价激增。（<a href="https://zh.wikipedia.org/zh/%E5%87%B8%E5%84%AA%E5%8C%96" target="_blank" rel="noopener external nofollow noreferrer">凸优化</a>，<a href="https://www.bilibili.com/video/av29071445?from=search&amp;seid=5253986555039683458" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <p><img src="https://i.imgur.com/v7DvgD7.png" width="50%"></p>
 <p>由于我们知道标记<strong>y</strong>取值是布尔值(0/1)，<strong>Cost</strong>的表达式可以整合简化为</p>
 <script type="math/tex; mode=display">
@@ -1147,9 +878,9 @@ Cost(h_\theta(x),y)=
 Cost(h_\theta(x),y) &=-{\color{red}y}log(h_\theta(x))-({\color{red}{1-y} })log(1-h_\theta(x)) \\
 &= [\,log\,(g(X\theta))]^Ty+[\,log\,(1-g(X\theta))]^T(1-y)
 \end{split}</script><blockquote>
-<p>熟悉信息论的朋友可能会注意到，<strong>Cost</strong>函数长得很像信息熵。（准确地讲，<a href="https://zh.wikipedia.org/wiki/%E4%BA%A4%E5%8F%89%E7%86%B5" target="_blank" rel="noopener">交叉熵</a>）<br>交叉熵衡量了真实值y和假设h两个分布的差异度，即“假设的不准程度”的度量。<br>More：<a href="https://wanghuaishi.wordpress.com/2017/02/21/%E5%9B%BE%E8%A7%A3%E6%9C%80%E5%A4%A7%E7%86%B5%E5%8E%9F%E7%90%86%EF%BC%88the-maximum-entropy-principle%EF%BC%89/" target="_blank" rel="noopener">最大熵原理</a>，<a href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+70230063X+2016_T2/about" target="_blank" rel="noopener">应用信息论基础</a>，<a href="https://blog.csdn.net/Leo_Xu06/article/details/78972260" target="_blank" rel="noopener">Logistic 回归的三个视角（极大似然估计/熵/形式化损失函数）</a>。</p>
+<p>熟悉信息论的朋友可能会注意到，<strong>Cost</strong>函数长得很像信息熵。（准确地讲，<a href="https://zh.wikipedia.org/wiki/%E4%BA%A4%E5%8F%89%E7%86%B5" target="_blank" rel="noopener external nofollow noreferrer">交叉熵</a>）<br>交叉熵衡量了真实值y和假设h两个分布的差异度，即“假设的不准程度”的度量。<br>More：<a href="https://wanghuaishi.wordpress.com/2017/02/21/%E5%9B%BE%E8%A7%A3%E6%9C%80%E5%A4%A7%E7%86%B5%E5%8E%9F%E7%90%86%EF%BC%88the-maximum-entropy-principle%EF%BC%89/" target="_blank" rel="noopener external nofollow noreferrer">最大熵原理</a>，<a href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+70230063X+2016_T2/about" target="_blank" rel="noopener external nofollow noreferrer">应用信息论基础</a>，<a href="https://blog.csdn.net/Leo_Xu06/article/details/78972260" target="_blank" rel="noopener external nofollow noreferrer">Logistic 回归的三个视角（极大似然估计/熵/形式化损失函数）</a>。</p>
 </blockquote>
-<p>应用梯度下降，求得偏导项为：（<a href="https://laobadao.github.io/2017/10/27/logistic-cost/index.html" target="_blank" rel="noopener">More</a>）</p>
+<p>应用梯度下降，求得偏导项为：（<a href="https://laobadao.github.io/2017/10/27/logistic-cost/index.html" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <script type="math/tex; mode=display">
 \begin{split}
 \frac{\partial}{\partial\theta_j}J(\theta)&=\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y_i)x_j^{(i)}\\&=\frac{1}{m} X^T\left(g(X\theta)-y\right)
@@ -1173,9 +904,9 @@ Cost(h_\theta(x),y) &=-{\color{red}y}log(h_\theta(x))-({\color{red}{1-y} })log(1
 <p><img src="https://i.imgur.com/jokh1ng.png" width="50%"></p>
 <h2 id="高级优化算法"><a href="#高级优化算法" class="headerlink" title="高级优化算法"></a>高级优化算法</h2><p>除了(批量)梯度下降（BGD）算法之外，实际还有一些更高级的优化算法：</p>
 <ul>
-<li>共轭梯度法（<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method" target="_blank" rel="noopener">Conjugate gradient</a>）</li>
-<li><a href="https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm" target="_blank" rel="noopener">BFGS</a></li>
-<li><a href="http://www.hankcs.com/ml/l-bfgs.html" target="_blank" rel="noopener">L-BFGS</a></li>
+<li>共轭梯度法（<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method" target="_blank" rel="noopener external nofollow noreferrer">Conjugate gradient</a>）</li>
+<li><a href="https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm" target="_blank" rel="noopener external nofollow noreferrer">BFGS</a></li>
+<li><a href="http://www.hankcs.com/ml/l-bfgs.html" target="_blank" rel="noopener external nofollow noreferrer">L-BFGS</a></li>
 </ul>
 <p>它们具有一些优点但同时在实现上更复杂（<del>不要反复造轮子</del>）：</p>
 <ul>
@@ -1219,7 +950,7 @@ J(\theta)=(\theta_1-5)^2+(\theta_2-5)^2\\
 <li><strong>过拟合（overfitting）</strong>：过度拟合，貌似拟合几乎每一个数据，但是丢失了信息规律，如下右图所示，房价随着房屋面积的增加反而降低了。</li>
 </ul>
 <blockquote>
-<p>线性回归中为了解决欠拟合和过拟合问题，可以引入<strong>局部加权线性回归（Locally Weight Linear Regression）</strong>。即对每一个要预测的输入x，赋予 x <strong>周围点</strong>不同的权值（核，一般采用高斯分布），<strong>距离 x 越近，权重越高</strong>。LWLR 属于非参数（non-parametric）学习算法，<strong>每进行一次预测，就需要重新进行训练</strong>。（LWLR 补充自<a href="https://book.douban.com/subject/24703171/" target="_blank" rel="noopener">机器学习实战</a>一书，P141-第8章-8.2）</p>
+<p>线性回归中为了解决欠拟合和过拟合问题，可以引入<strong>局部加权线性回归（Locally Weight Linear Regression）</strong>。即对每一个要预测的输入x，赋予 x <strong>周围点</strong>不同的权值（核，一般采用高斯分布），<strong>距离 x 越近，权重越高</strong>。LWLR 属于非参数（non-parametric）学习算法，<strong>每进行一次预测，就需要重新进行训练</strong>。（LWLR 补充自<a href="https://book.douban.com/subject/24703171/" target="_blank" rel="noopener external nofollow noreferrer">机器学习实战</a>一书，P141-第8章-8.2）</p>
 </blockquote>
 <p>如下图所示：（分别对应：欠拟合，适当，过拟合）</p>
 <p><img src="https://i.imgur.com/dITrs6E.png" width="70%"></p>
@@ -1239,7 +970,7 @@ J(\theta)=(\theta_1-5)^2+(\theta_2-5)^2\\
 </li>
 </ol>
 <blockquote>
-<p>思考：我们知道高次方程失真还有诸如：<a href="https://zh.wikipedia.org/wiki/%E9%BE%99%E6%A0%BC%E7%8E%B0%E8%B1%A1" target="_blank" rel="noopener">龙格现象</a>、<a href="https://zh.wikipedia.org/wiki/%E5%90%89%E5%B8%83%E6%96%AF%E7%8E%B0%E8%B1%A1" target="_blank" rel="noopener">吉布斯现象</a>等。有一种做法（<a href="https://zh.wikipedia.org/zh-hans/%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC" target="_blank" rel="noopener">样条线</a>）是使用低次多项式分段拟合（也就是<strong>局部拟合</strong>），只要在边界上满足可导条件即可。这似乎也可以用来解决过拟合问题，甚至是一种比LWLR更好的方法（不需要反复训练）。</p>
+<p>思考：我们知道高次方程失真还有诸如：<a href="https://zh.wikipedia.org/wiki/%E9%BE%99%E6%A0%BC%E7%8E%B0%E8%B1%A1" target="_blank" rel="noopener external nofollow noreferrer">龙格现象</a>、<a href="https://zh.wikipedia.org/wiki/%E5%90%89%E5%B8%83%E6%96%AF%E7%8E%B0%E8%B1%A1" target="_blank" rel="noopener external nofollow noreferrer">吉布斯现象</a>等。有一种做法（<a href="https://zh.wikipedia.org/zh-hans/%E6%A0%B7%E6%9D%A1%E6%8F%92%E5%80%BC" target="_blank" rel="noopener external nofollow noreferrer">样条线</a>）是使用低次多项式分段拟合（也就是<strong>局部拟合</strong>），只要在边界上满足可导条件即可。这似乎也可以用来解决过拟合问题，甚至是一种比LWLR更好的方法（不需要反复训练）。</p>
 </blockquote>
 <p><strong>例</strong>：</p>
 <p><img src="https://i.imgur.com/jhaPb0M.png" width="70%"></p>
@@ -1293,27 +1024,27 @@ J(\theta) &=\frac{1}{m}\sum\limits_{i=1}^{m}y^{(i)}logh_0(x^{(i)})+(1-y^{(i)})lo
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">addpath(pwd);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[jVal, gradient]</span> = <span class="title">costFunction</span><span class="params">(theta)</span></span></span><br><span class="line">  jVal = (theta(<span class="number">1</span>)<span class="number">-5</span>)^<span class="number">2</span> +(theta(<span class="number">2</span>)<span class="number">-5</span>)^<span class="number">2</span>;</span><br><span class="line">  gradient = 2.*(theta-5)+0.01*theta; #在此处添加相应修改项即可,严谨的话还需要对theta_0作额外处理</span><br><span class="line">endfunction</span><br><span class="line">options = optimset(<span class="string">'GradObj'</span>, <span class="string">'on'</span>, <span class="string">'MaxIter'</span>, <span class="string">'100'</span>); </span><br><span class="line">initialTheta = <span class="built_in">zeros</span>(<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options)</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="环境安装与使用"><a href="#环境安装与使用" class="headerlink" title="环境安装与使用"></a>环境安装与使用</h1><p>可以边学边装，不着急部署环境。</p>
-<h2 id="Octave-Matlab"><a href="#Octave-Matlab" class="headerlink" title="Octave/Matlab"></a>Octave/Matlab</h2><p>Pre：<a href="https://blog.csdn.net/songyu0120/article/details/42105397" target="_blank" rel="noopener">关于Octave和Matlab的区别</a>。（<strong>精简</strong>、<strong>开源</strong>、抽象、<strong>慢</strong>……）</p>
+<h2 id="Octave-Matlab"><a href="#Octave-Matlab" class="headerlink" title="Octave/Matlab"></a>Octave/Matlab</h2><p>Pre：<a href="https://blog.csdn.net/songyu0120/article/details/42105397" target="_blank" rel="noopener external nofollow noreferrer">关于Octave和Matlab的区别</a>。（<strong>精简</strong>、<strong>开源</strong>、抽象、<strong>慢</strong>……）</p>
 <blockquote>
-<p>（<del>已经装了<a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener">Matlab</a>可以跳过这里</del>）</p>
+<p>（<del>已经装了<a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener external nofollow noreferrer">Matlab</a>可以跳过这里</del>）</p>
 <p>《机器学习》官方说明如下：</p>
 <p><img src="https://i.imgur.com/7kBU9gz.png" alt="Imgur"></p>
 </blockquote>
 <p>安装<strong>Octave</strong>框架：</p>
 <blockquote>
-<p>进入<a href="https://www.gnu.org/software/octave/" target="_blank" rel="noopener">主页</a></p>
-<p>下载、安装即可。（<a href="https://octave.org/doc/interpreter/" target="_blank" rel="noopener">操作手册</a>）</p>
+<p>进入<a href="https://www.gnu.org/software/octave/" target="_blank" rel="noopener external nofollow noreferrer">主页</a></p>
+<p>下载、安装即可。（<a href="https://octave.org/doc/interpreter/" target="_blank" rel="noopener external nofollow noreferrer">操作手册</a>）</p>
 </blockquote>
 <p>Octave 教程：</p>
 <ul>
-<li><a href="https://www.jianshu.com/p/02d81dda33ae" target="_blank" rel="noopener">教程1</a></li>
-<li><a href="http://www.funshare.site/octave/" target="_blank" rel="noopener">教程2</a></li>
+<li><a href="https://www.jianshu.com/p/02d81dda33ae" target="_blank" rel="noopener external nofollow noreferrer">教程1</a></li>
+<li><a href="http://www.funshare.site/octave/" target="_blank" rel="noopener external nofollow noreferrer">教程2</a></li>
 </ul>
 <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#四则运算</span><br><span class="line">  a=<span class="number">1</span>+<span class="number">7</span></span><br><span class="line">  b=a<span class="number">-2</span></span><br><span class="line">  c=a*b</span><br><span class="line">  d=c/a </span><br><span class="line">alpha=1011; #分号不输出</span><br><span class="line">beta='string' #字符串</span><br><span class="line">zeta=pi #圆周率</span><br><span class="line">disp(sprintf('\t2 decimals: %0.2f',zeta)) #与c语言类似</span><br><span class="line">  <span class="built_in">disp</span>(sprintf(<span class="string">'\t6 decimals: %0.6f'</span>,zeta))</span><br><span class="line">  format long #调整显示精度</span><br><span class="line">  zeta</span><br><span class="line">  format short</span><br><span class="line">  zeta</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#逻辑运算</span><br><span class="line">e=(<span class="number">1</span>==<span class="number">2</span>)</span><br><span class="line">f=(<span class="number">1</span>~=<span class="number">2</span>)</span><br><span class="line">g=(<span class="number">1</span>&amp;&amp;<span class="number">0</span>)</span><br><span class="line">h=(<span class="number">1</span>||<span class="number">0</span>)</span><br><span class="line"><span class="built_in">i</span>=(xor(<span class="number">1</span>,<span class="number">0</span>))</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#矩阵生成</span><br><span class="line">A=[1 2; 3 4; 5 6] #3*2矩阵</span><br><span class="line">v_r=[1 2 3] #行向量</span><br><span class="line">v_c=[1; 2; 3] #列向量</span><br><span class="line">v=1:0.1:2 #按范围生成均匀向量</span><br><span class="line">  v=1:6 #默认间距为1</span><br><span class="line">eye(4) #单位矩阵</span><br><span class="line">A= 2 * ones(2,3) #全1矩阵</span><br><span class="line">B=zeros(3,2) #全0矩阵</span><br><span class="line">C=rand(3,3) #随机矩阵</span><br><span class="line">Guass=randn(1,5) #高斯分布</span><br><span class="line">w=<span class="number">-6</span> + <span class="built_in">sqrt</span>(<span class="number">10</span>)*(<span class="built_in">randn</span>(<span class="number">1</span>,<span class="number">10000</span>));</span><br><span class="line">hist(w) #直方图</span><br></pre></td></tr></table></figure>
 <h4 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line"><span class="built_in">size</span>(A)</span><br><span class="line">size(A,1) #行数</span><br><span class="line">size(A,2) #列数</span><br><span class="line">A(2,:) #:是任意、全部的意思(注意行列从1开始数)</span><br><span class="line">  A(:,<span class="number">2</span>)</span><br><span class="line">  A([1 3],:) #获取1、3行</span><br><span class="line">  A(:,<span class="number">2</span>)=[<span class="number">10</span>; <span class="number">11</span>; <span class="number">12</span>]</span><br><span class="line">  A=[A,[<span class="number">100</span>; <span class="number">101</span>; <span class="number">102</span>]]</span><br><span class="line">  B=<span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">  C=[A B] #组合</span><br><span class="line">  C=[A;B]</span><br><span class="line">  A(:) #将A变为一个列向量</span><br><span class="line">v = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>]</span><br><span class="line">length(v) #输出更长的一边</span><br><span class="line"><span class="built_in">length</span>(A)</span><br><span class="line">#————命令行cmd————不过在GUI里也能运行。。。</span><br><span class="line">#用于Octave的命令行界面</span><br><span class="line">#pwd：显示当前路径</span><br><span class="line">#cd：改变路径</span><br><span class="line">#ls：列出路径下的文件</span><br><span class="line">#load somefile.dat ：加载文件</span><br><span class="line">#who ：列出文件中的变量 （whos）</span><br><span class="line">#somefile ：显示文件数据</span><br><span class="line">#clear somefile.dat ：清除文件</span><br><span class="line">#save hello.dat result ：存储结果到文件</span><br><span class="line">#save hello.txt result -ascii ：以人类可读的方式存储</span><br><span class="line">#————命令行cmd————</span><br></pre></td></tr></table></figure>
-<h4 id="矩阵操作"><a href="#矩阵操作" class="headerlink" title="矩阵操作"></a>矩阵操作</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">#善用help命令</span><br><span class="line">A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">B = [<span class="number">11</span> <span class="number">12</span>; <span class="number">13</span> <span class="number">14</span>; <span class="number">15</span> <span class="number">16</span>]</span><br><span class="line">C = [<span class="number">1</span> <span class="number">1</span>; <span class="number">2</span> <span class="number">2</span>]</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#乘除</span><br><span class="line">A_C = A *  C #矩阵乘</span><br><span class="line">A_B = A .* B #”.“表示元素操作</span><br><span class="line">A_2 = A .^ <span class="number">2</span></span><br><span class="line">v = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>]</span><br><span class="line">v_1 = <span class="number">1</span> ./ v</span><br><span class="line">A_1 = <span class="number">1</span> ./ A</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#初等函数</span><br><span class="line">Log = <span class="built_in">log</span>(v)</span><br><span class="line">Exp = <span class="built_in">exp</span>(v)</span><br><span class="line">Abs = <span class="built_in">abs</span>([<span class="number">-1</span>; <span class="number">-2</span>; <span class="number">-3</span>])</span><br><span class="line">Sum = sum(v) #全元素和</span><br><span class="line">Pro = prod(v) #全元素积</span><br><span class="line">Flo = floor(v) #下取整</span><br><span class="line">Cel = ceil(a) #上取整</span><br><span class="line">Max_2=max(rand(3),rand(3)) #全元素逐位比较</span><br><span class="line">Max_v=max(v)</span><br><span class="line">Max_A=max(A) #得到每一列的最大值</span><br><span class="line">Max__A=max(max(A))</span><br><span class="line">Max__A=max(A(:))</span><br><span class="line">  -v</span><br><span class="line">  v+<span class="built_in">ones</span>(<span class="built_in">length</span>(v),<span class="number">1</span>)</span><br><span class="line">  v+<span class="number">1</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#矩阵操作</span><br><span class="line">A_t = A' #转置</span><br><span class="line">  A_t_t = (A')'</span><br><span class="line">B = <span class="built_in">eye</span>(<span class="number">9</span>)</span><br><span class="line">Fd = flipud(B) #上下翻转</span><br><span class="line">B = <span class="built_in">rand</span>(<span class="number">3</span>) + <span class="number">2</span></span><br><span class="line">Inv = inv(B)  #逆</span><br><span class="line">Pinv = pinv(B)#伪逆</span><br><span class="line">Det = det(B)  #行列式</span><br><span class="line">Com = compan(v) #伴随，v是多项式系数向量</span><br><span class="line">Eig = eig(B) #特征值</span><br><span class="line">a = [<span class="number">1</span> <span class="number">15</span> <span class="number">2</span> <span class="number">0.5</span>]</span><br><span class="line">a_bool = a &lt; 3 #按元素逻辑运算</span><br><span class="line">a_less = <span class="built_in">find</span>(a &lt; <span class="number">3</span>)</span><br><span class="line">A = magic(3) #幻方</span><br><span class="line">[r,c] = <span class="built_in">find</span>(A &gt;= <span class="number">7</span>)</span><br><span class="line">A = magic(9) #检验幻方的和不变</span><br><span class="line">Sum_A_1 = sum(A,1) #压缩为1行</span><br><span class="line">Sum_A_2 = sum(A,2) #压缩为1列</span><br><span class="line">A_filter = A.*eye(9) #对角过滤器</span><br><span class="line">  Sum_A_d = sum(sum(A_filter))</span><br></pre></td></tr></table></figure>
-<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">t = [<span class="number">0</span>:<span class="number">0.01</span>:<span class="number">0.98</span>];</span><br><span class="line">y1= <span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*t);</span><br><span class="line">plot(t,y1); #绘曲线，(自变量，纵轴)，并展示图像</span><br><span class="line">hold on; #暂时保留这条曲线</span><br><span class="line">y2= <span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*t);</span><br><span class="line">plot(t,y2);</span><br><span class="line">#命名</span><br><span class="line">xlabel(<span class="string">'time'</span>)</span><br><span class="line">ylabel(<span class="string">'value'</span>)</span><br><span class="line">legend('sin','cos') #命名曲线</span><br><span class="line">title('My plot') #命名图</span><br><span class="line">#保存</span><br><span class="line">cd C:\Users\Administrator\Desktop #切换保存路径</span><br><span class="line">print -dpng 'myPlot.png' #保存图为png格式</span><br><span class="line">close #关掉图像</span><br><span class="line">#多图</span><br><span class="line">figure(1): plot(t,y1) #生成多张图像</span><br><span class="line">figure(<span class="number">2</span>): plot(t,y2)</span><br><span class="line">magic(5000); #强行拖时间</span><br><span class="line">close</span><br><span class="line"><span class="built_in">magic</span>(<span class="number">5000</span>);</span><br><span class="line">close</span><br><span class="line">subplot(1,2,1) #同框多图，分成1*2网格，先使用第1格</span><br><span class="line">plot(t,y1)</span><br><span class="line">subplot(1,2,2) #切换到同框第2格图</span><br><span class="line">plot(t,y2)</span><br><span class="line">close</span><br><span class="line">plot(t,y1)</span><br><span class="line">axis([0.5 1 -1 1]) #更新坐标范围</span><br><span class="line"><span class="built_in">magic</span>(<span class="number">5000</span>);</span><br><span class="line">clf; #清空图像</span><br><span class="line">#颜色图</span><br><span class="line">A=<span class="built_in">magic</span>(<span class="number">5</span>)</span><br><span class="line">imagesc(A) #彩色填充</span><br><span class="line">colorbar; #显示颜色条</span><br><span class="line">colormap gray; #灰度图</span><br><span class="line">close</span><br><span class="line">imagesc(<span class="built_in">magic</span>(<span class="number">15</span>)),colorbar,colormap gray; </span><br><span class="line">close</span><br></pre></td></tr></table></figure>
-<h4 id="函数控制"><a href="#函数控制" class="headerlink" title="函数控制"></a>函数控制</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#for。貌似加了自动补全功能</span><br><span class="line">v = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">10</span></span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">2</span>^<span class="built_in">i</span>;</span><br><span class="line">endfor</span><br><span class="line">v</span><br><span class="line">indices=<span class="number">1</span>:<span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=indices</span><br><span class="line">  <span class="built_in">disp</span>(<span class="built_in">i</span>);</span><br><span class="line">endfor</span><br><span class="line">#while</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'_________________'</span>)</span><br><span class="line">i=1 #WTF还要初始化</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">i</span>&lt;=<span class="number">5</span></span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">100</span>;</span><br><span class="line">  <span class="built_in">i</span>++;</span><br><span class="line">endwhile</span><br><span class="line">v</span><br><span class="line"><span class="built_in">i</span>=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> true</span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">999</span>;</span><br><span class="line">  <span class="built_in">i</span>++;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">i</span> == <span class="number">6</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  endif</span><br><span class="line">endwhile</span><br><span class="line">v</span><br><span class="line">#if</span><br><span class="line"><span class="keyword">if</span> v(<span class="number">1</span>)==<span class="number">1</span></span><br><span class="line">  <span class="built_in">disp</span>(<span class="string">'The value is 1'</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">disp</span>(sprintf(<span class="string">'The value is not 1, it is %d!'</span>,v(<span class="number">1</span>)));</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">#function</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[sum]</span> = <span class="title">AddThoseNumber</span><span class="params">(a,b,c)</span></span></span><br><span class="line">  sum = a+b+c</span><br><span class="line">endfunction #写end也是可以的，类似HTML</span><br><span class="line">n = AddThoseNumber(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">#代价函数测试</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">J</span> = <span class="title">costFuctionJ</span><span class="params">(X,y,theta)</span> #代价函数</span></span><br><span class="line">  m = size(X,1); #训练集样本数</span><br><span class="line">  predictions = X*theta;</span><br><span class="line">  sqrErrors = (predictions-y).^<span class="number">2</span>;</span><br><span class="line">  J = <span class="number">1</span>/(<span class="number">2</span>*m) * sum(sqrErrors);</span><br><span class="line">endfunction</span><br><span class="line">X = [<span class="number">1</span> <span class="number">1</span>; <span class="number">1</span> <span class="number">2</span>; <span class="number">1</span> <span class="number">3</span>];</span><br><span class="line">y = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>];</span><br><span class="line">#下面是可视化处理</span><br><span class="line">theta1 = [<span class="number">0</span>;<span class="number">0.5</span>];</span><br><span class="line">j1 = costFuctionJ(X,y,theta1);</span><br><span class="line">theta2 = [<span class="number">0</span>;<span class="number">1</span>];</span><br><span class="line">j2 = costFuctionJ(X,y,theta2);</span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.1</span>:<span class="number">3</span>;</span><br><span class="line">y1 = theta1(<span class="number">1</span>)+theta1(<span class="number">2</span>)*x;</span><br><span class="line">y2 = theta2(<span class="number">1</span>)+theta2(<span class="number">2</span>)*x;</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">scatter(X(:,<span class="number">2</span>),y);</span><br><span class="line">hold;</span><br><span class="line">plot(x,y1);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line">scatter(X(:,<span class="number">2</span>),y);</span><br><span class="line">hold;</span><br><span class="line">plot(x,y2);</span><br></pre></td></tr></table></figure>
+<h4 id="矩阵操作"><a href="#矩阵操作" class="headerlink" title="矩阵操作"></a>矩阵操作</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">#善用help命令</span><br><span class="line">A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">B = [<span class="number">11</span> <span class="number">12</span>; <span class="number">13</span> <span class="number">14</span>; <span class="number">15</span> <span class="number">16</span>]</span><br><span class="line">C = [<span class="number">1</span> <span class="number">1</span>; <span class="number">2</span> <span class="number">2</span>]</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#乘除</span><br><span class="line">A_C = A *  C #矩阵乘</span><br><span class="line">A_B = A .* B #”.“表示元素操作</span><br><span class="line">A_2 = A .^ <span class="number">2</span></span><br><span class="line">v = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>]</span><br><span class="line">v_1 = <span class="number">1</span> ./ v</span><br><span class="line">A_1 = <span class="number">1</span> ./ A</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#初等函数</span><br><span class="line">Log = <span class="built_in">log</span>(v)</span><br><span class="line">Exp = <span class="built_in">exp</span>(v)</span><br><span class="line">Abs = <span class="built_in">abs</span>([<span class="number">-1</span>; <span class="number">-2</span>; <span class="number">-3</span>])</span><br><span class="line">Sum = sum(v) #全元素和</span><br><span class="line">Pro = prod(v) #全元素积</span><br><span class="line">Flo = floor(v) #下取整</span><br><span class="line">Cel = ceil(a) #上取整</span><br><span class="line">Max_2=max(rand(3),rand(3)) #全元素逐位比较</span><br><span class="line">Max_v=<span class="built_in">max</span>(v)</span><br><span class="line">Max_A=max(A) #得到每一列的最大值</span><br><span class="line">Max__A=<span class="built_in">max</span>(<span class="built_in">max</span>(A))</span><br><span class="line">Max__A=<span class="built_in">max</span>(A(:))</span><br><span class="line">  -v</span><br><span class="line">  v+<span class="built_in">ones</span>(<span class="built_in">length</span>(v),<span class="number">1</span>)</span><br><span class="line">  v+<span class="number">1</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'____________________________'</span>)</span><br><span class="line">#矩阵操作</span><br><span class="line">A_t = A' #转置</span><br><span class="line">  A_t_t = (A')'</span><br><span class="line">B = <span class="built_in">eye</span>(<span class="number">9</span>)</span><br><span class="line">Fd = flipud(B) #上下翻转</span><br><span class="line">B = <span class="built_in">rand</span>(<span class="number">3</span>) + <span class="number">2</span></span><br><span class="line">Inv = inv(B)  #逆</span><br><span class="line">Pinv = pinv(B)#伪逆</span><br><span class="line">Det = det(B)  #行列式</span><br><span class="line">Com = compan(v) #伴随，v是多项式系数向量</span><br><span class="line">Eig = eig(B) #特征值</span><br><span class="line">a = [<span class="number">1</span> <span class="number">15</span> <span class="number">2</span> <span class="number">0.5</span>]</span><br><span class="line">a_bool = a &lt; 3 #按元素逻辑运算</span><br><span class="line">a_less = <span class="built_in">find</span>(a &lt; <span class="number">3</span>)</span><br><span class="line">A = magic(3) #幻方</span><br><span class="line">[r,c] = <span class="built_in">find</span>(A &gt;= <span class="number">7</span>)</span><br><span class="line">A = magic(9) #检验幻方的和不变</span><br><span class="line">Sum_A_1 = sum(A,1) #压缩为1行</span><br><span class="line">Sum_A_2 = sum(A,2) #压缩为1列</span><br><span class="line">A_filter = A.*eye(9) #对角过滤器</span><br><span class="line">  Sum_A_d = sum(sum(A_filter))</span><br></pre></td></tr></table></figure>
+<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">t = [<span class="number">0</span>:<span class="number">0.01</span>:<span class="number">0.98</span>];</span><br><span class="line">y1= <span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*t);</span><br><span class="line">plot(t,y1); #绘曲线，(自变量，纵轴)，并展示图像</span><br><span class="line">hold on; #暂时保留这条曲线</span><br><span class="line">y2= <span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*t);</span><br><span class="line"><span class="built_in">plot</span>(t,y2);</span><br><span class="line">#命名</span><br><span class="line">xlabel(<span class="string">'time'</span>)</span><br><span class="line">ylabel(<span class="string">'value'</span>)</span><br><span class="line">legend('sin','cos') #命名曲线</span><br><span class="line">title('My plot') #命名图</span><br><span class="line">#保存</span><br><span class="line">cd C:\Users\Administrator\Desktop #切换保存路径</span><br><span class="line">print -dpng 'myPlot.png' #保存图为png格式</span><br><span class="line">close #关掉图像</span><br><span class="line">#多图</span><br><span class="line">figure(1): plot(t,y1) #生成多张图像</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>): <span class="built_in">plot</span>(t,y2)</span><br><span class="line">magic(5000); #强行拖时间</span><br><span class="line">close</span><br><span class="line"><span class="built_in">magic</span>(<span class="number">5000</span>);</span><br><span class="line">close</span><br><span class="line">subplot(1,2,1) #同框多图，分成1*2网格，先使用第1格</span><br><span class="line"><span class="built_in">plot</span>(t,y1)</span><br><span class="line">subplot(1,2,2) #切换到同框第2格图</span><br><span class="line"><span class="built_in">plot</span>(t,y2)</span><br><span class="line">close</span><br><span class="line"><span class="built_in">plot</span>(t,y1)</span><br><span class="line">axis([0.5 1 -1 1]) #更新坐标范围</span><br><span class="line"><span class="built_in">magic</span>(<span class="number">5000</span>);</span><br><span class="line">clf; #清空图像</span><br><span class="line">#颜色图</span><br><span class="line">A=<span class="built_in">magic</span>(<span class="number">5</span>)</span><br><span class="line">imagesc(A) #彩色填充</span><br><span class="line">colorbar; #显示颜色条</span><br><span class="line">colormap gray; #灰度图</span><br><span class="line">close</span><br><span class="line">imagesc(<span class="built_in">magic</span>(<span class="number">15</span>)),colorbar,colormap gray; </span><br><span class="line">close</span><br></pre></td></tr></table></figure>
+<h4 id="函数控制"><a href="#函数控制" class="headerlink" title="函数控制"></a>函数控制</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#for。貌似加了自动补全功能</span><br><span class="line">v = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">10</span></span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">2</span>^<span class="built_in">i</span>;</span><br><span class="line">endfor</span><br><span class="line">v</span><br><span class="line">indices=<span class="number">1</span>:<span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=indices</span><br><span class="line">  <span class="built_in">disp</span>(<span class="built_in">i</span>);</span><br><span class="line">endfor</span><br><span class="line">#while</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'_________________'</span>)</span><br><span class="line">i=1 #WTF还要初始化</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">i</span>&lt;=<span class="number">5</span></span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">100</span>;</span><br><span class="line">  <span class="built_in">i</span>++;</span><br><span class="line">endwhile</span><br><span class="line">v</span><br><span class="line"><span class="built_in">i</span>=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">true</span></span><br><span class="line">  v(<span class="built_in">i</span>) = <span class="number">999</span>;</span><br><span class="line">  <span class="built_in">i</span>++;</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">i</span> == <span class="number">6</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  endif</span><br><span class="line">endwhile</span><br><span class="line">v</span><br><span class="line">#if</span><br><span class="line"><span class="keyword">if</span> v(<span class="number">1</span>)==<span class="number">1</span></span><br><span class="line">  <span class="built_in">disp</span>(<span class="string">'The value is 1'</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">disp</span>(sprintf(<span class="string">'The value is not 1, it is %d!'</span>,v(<span class="number">1</span>)));</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">#function</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[sum]</span> = <span class="title">AddThoseNumber</span><span class="params">(a,b,c)</span></span></span><br><span class="line">  sum = a+b+c</span><br><span class="line">endfunction #写end也是可以的，类似HTML</span><br><span class="line">n = AddThoseNumber(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">#代价函数测试</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">J</span> = <span class="title">costFuctionJ</span><span class="params">(X,y,theta)</span> #代价函数</span></span><br><span class="line">  m = size(X,1); #训练集样本数</span><br><span class="line">  predictions = X*theta;</span><br><span class="line">  sqrErrors = (predictions-y).^<span class="number">2</span>;</span><br><span class="line">  J = <span class="number">1</span>/(<span class="number">2</span>*m) * sum(sqrErrors);</span><br><span class="line">endfunction</span><br><span class="line">X = [<span class="number">1</span> <span class="number">1</span>; <span class="number">1</span> <span class="number">2</span>; <span class="number">1</span> <span class="number">3</span>];</span><br><span class="line">y = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>];</span><br><span class="line">#下面是可视化处理</span><br><span class="line">theta1 = [<span class="number">0</span>;<span class="number">0.5</span>];</span><br><span class="line">j1 = costFuctionJ(X,y,theta1);</span><br><span class="line">theta2 = [<span class="number">0</span>;<span class="number">1</span>];</span><br><span class="line">j2 = costFuctionJ(X,y,theta2);</span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.1</span>:<span class="number">3</span>;</span><br><span class="line">y1 = theta1(<span class="number">1</span>)+theta1(<span class="number">2</span>)*x;</span><br><span class="line">y2 = theta2(<span class="number">1</span>)+theta2(<span class="number">2</span>)*x;</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line"><span class="built_in">scatter</span>(X(:,<span class="number">2</span>),y);</span><br><span class="line"><span class="built_in">hold</span>;</span><br><span class="line"><span class="built_in">plot</span>(x,y1);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">scatter</span>(X(:,<span class="number">2</span>),y);</span><br><span class="line"><span class="built_in">hold</span>;</span><br><span class="line"><span class="built_in">plot</span>(x,y2);</span><br></pre></td></tr></table></figure>
 <h3 id="向量思维"><a href="#向量思维" class="headerlink" title="向量思维"></a>向量思维</h3><p>Octave或Matlab，以及其它的软件通常由高度优化过的线性代数模块。因此应该利用这些优势，称为向量化（Vectorization）思维。</p>
 <p>例如：</p>
 <script type="math/tex; mode=display">
@@ -1328,360 +1059,265 @@ h_\theta(x)=\sum_{j=0}^n\theta_jx\color{red}=\theta^Tx</script><blockquote>
 <p>向量相加的另一种方法是，将这两个向量直接做矢量加法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">3</span>]:</span><br><span class="line">start = time()</span><br><span class="line">d = a + b</span><br><span class="line">time() - start</span><br><span class="line">Out[<span class="number">3</span>]:</span><br><span class="line"><span class="number">0.0002002716064453125</span></span><br></pre></td></tr></table></figure>
 <p>结果很明显，<strong>后者比前者更省时</strong>。因此，我们应该<strong>尽可能采用矢量计算，以提升计算效率</strong>。</p>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>Python3安装，可直接采用<a href="https://www.zhihu.com/question/58033789" target="_blank" rel="noopener">Anaconda</a>集成环境。主要基于其组件<a href="http://www.runoob.com/numpy/numpy-tutorial.html" target="_blank" rel="noopener">Numpy</a>。</p>
-<p><a href="https://blog.csdn.net/wld914674505/article/details/81431128" target="_blank" rel="noopener">大型csv文件读入</a>。</p>
-<h3 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h3><p>安装<strong>Tensorflow</strong>框架：（CPU版本，<a href="https://tensorflow.google.cn/install/" target="_blank" rel="noopener">More</a>）</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>Python3安装，可直接采用<a href="https://www.zhihu.com/question/58033789" target="_blank" rel="noopener external nofollow noreferrer">Anaconda</a>集成环境。主要基于其组件<a href="http://www.runoob.com/numpy/numpy-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">Numpy</a>。</p>
+<p><a href="https://blog.csdn.net/wld914674505/article/details/81431128" target="_blank" rel="noopener external nofollow noreferrer">大型csv文件读入</a>。</p>
+<h3 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h3><p>安装<strong>Tensorflow</strong>框架：（CPU版本，<a href="https://tensorflow.google.cn/install/" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow</span><br></pre></td></tr></table></figure>
-<p>测试代码：（运行可用python自带的idle，Anaconda自带的<a href="https://www.zhihu.com/question/46309360/answer/254638807" target="_blank" rel="noopener">Jupyter</a>，或者SublimeText等编辑器）</p>
+<p>测试代码：（运行可用python自带的idle，Anaconda自带的<a href="https://www.zhihu.com/question/46309360/answer/254638807" target="_blank" rel="noopener external nofollow noreferrer">Jupyter</a>，或者SublimeText等编辑器）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 NumPy 生成假数据(phony data), 总共 100 个点.</span></span><br><span class="line">x_data = np.float32(np.random.rand(<span class="number">2</span>, <span class="number">100</span>)) <span class="comment"># 随机输入</span></span><br><span class="line">y_data = np.dot([<span class="number">0.100</span>, <span class="number">0.200</span>], x_data) + <span class="number">0.300</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造一个线性模型</span></span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">1</span>]))</span><br><span class="line">W = tf.Variable(tf.random_uniform([<span class="number">1</span>, <span class="number">2</span>], <span class="number">-1.0</span>, <span class="number">1.0</span>))</span><br><span class="line">y = tf.matmul(W, x_data) + b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最小化方差</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y - y_data))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.5</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动图 (graph)</span></span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拟合平面</span></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">201</span>):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    <span class="keyword">if</span> step % <span class="number">20</span> == <span class="number">0</span>:</span><br><span class="line">        print(step, sess.run(W), sess.run(b))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到最佳拟合结果 W: [[0.100  0.200]], b: [0.300]</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>可能会遇到的坑：</p>
 <ul>
-<li><a href="https://blog.csdn.net/qq_41185868/article/details/80276847" target="_blank" rel="noopener">FutureWarning: Conversion of the second argument of issubdtype from <code>float</code> to <code>np.floating</code> …</a></li>
-<li><a href="https://stackoverflow.com/questions/41962131/warningtensorflow-initialize-all-variables-from-tensorflow-python-ops-variab" target="_blank" rel="noopener">WARNING:tensorflow - initialize_all_variables (from tensorflow.python.ops.variables) is deprecated</a></li>
-<li><a href="https://blog.csdn.net/qq_17105473/article/details/72823805" target="_blank" rel="noopener">NameError:name ‘xrange’ is not defined</a>（Python3）</li>
+<li><a href="https://blog.csdn.net/qq_41185868/article/details/80276847" target="_blank" rel="noopener external nofollow noreferrer">FutureWarning: Conversion of the second argument of issubdtype from <code>float</code> to <code>np.floating</code> …</a></li>
+<li><a href="https://stackoverflow.com/questions/41962131/warningtensorflow-initialize-all-variables-from-tensorflow-python-ops-variab" target="_blank" rel="noopener external nofollow noreferrer">WARNING:tensorflow - initialize_all_variables (from tensorflow.python.ops.variables) is deprecated</a></li>
+<li><a href="https://blog.csdn.net/qq_17105473/article/details/72823805" target="_blank" rel="noopener external nofollow noreferrer">NameError:name ‘xrange’ is not defined</a>（Python3）</li>
 </ul>
 </blockquote>
-<h2 id="C-Java"><a href="#C-Java" class="headerlink" title="C++/Java"></a>C++/Java</h2><p>更快更好<del>更累</del>的不二之选：<a href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank" rel="noopener">C++</a>/<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">Java</a>。（<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>）</p>
-<h2 id="大数据在线竞赛"><a href="#大数据在线竞赛" class="headerlink" title="大数据在线竞赛"></a>大数据在线竞赛</h2><p>想要查看我的比赛练习，请转<a href="https://stellarkey.github.io/Data-Science-Contests" target="_blank" rel="noopener"><strong>Here</strong></a>。</p>
-<p>一些竞赛频道：<a href="https://www.kaggle.com" target="_blank" rel="noopener">Kaggle</a>，<a href="www.dcjingsai.com/static_page/cmpList.html">DataCastle</a>，<a href="http://www.kdd.org/kdd-cup" target="_blank" rel="noopener">KDDCUP</a>，<a href="https://tianchi.aliyun.com/competition/gameList/activeList" target="_blank" rel="noopener">天池</a>，<a href="http://sofasofa.io/competitions.php" target="_blank" rel="noopener">Sofasofa</a>……</p>
-<h2 id="BUG记录"><a href="#BUG记录" class="headerlink" title="BUG记录"></a>BUG记录</h2><p><a href="https://icewing.cc/post/hexo-bug-of-quot.html" target="_blank" rel="noopener">hexo 在遇到 “{ {” 符号时出现解析报错</a></p>
+<h2 id="C-Java"><a href="#C-Java" class="headerlink" title="C++/Java"></a>C++/Java</h2><p>更快更好<del>更累</del>的不二之选：<a href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank" rel="noopener external nofollow noreferrer">C++</a>/<a href="https://www.jetbrains.com/" target="_blank" rel="noopener external nofollow noreferrer">Java</a>。（<a href="https://www.sublimetext.com/" target="_blank" rel="noopener external nofollow noreferrer">Sublime Text</a>）</p>
+<h2 id="大数据在线竞赛"><a href="#大数据在线竞赛" class="headerlink" title="大数据在线竞赛"></a>大数据在线竞赛</h2><p>想要查看我的比赛练习，请转<a href="https://stellarkey.github.io/Data-Science-Contests" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>。</p>
+<p>一些竞赛频道：<a href="https://www.kaggle.com" target="_blank" rel="noopener external nofollow noreferrer">Kaggle</a>，<a href="www.dcjingsai.com/static_page/cmpList.html">DataCastle</a>，<a href="http://www.kdd.org/kdd-cup" target="_blank" rel="noopener external nofollow noreferrer">KDDCUP</a>，<a href="https://tianchi.aliyun.com/competition/gameList/activeList" target="_blank" rel="noopener external nofollow noreferrer">天池</a>，<a href="http://sofasofa.io/competitions.php" target="_blank" rel="noopener external nofollow noreferrer">Sofasofa</a>……</p>
+<h2 id="BUG记录"><a href="#BUG记录" class="headerlink" title="BUG记录"></a>BUG记录</h2><p><a href="https://icewing.cc/post/hexo-bug-of-quot.html" target="_blank" rel="noopener external nofollow noreferrer">hexo 在遇到 “{ {” 符号时出现解析报错</a></p>
 <ul>
-<li>解决方案1：因为目前只在公式标红中偶尔出现，故可以在“} }”中加1空格，<del>意会即可orz</del>。（<a href="http://note.chenteng.me/2016/05/24/HexoBug/" target="_blank" rel="noopener">More</a>）<ul>
+<li>解决方案1：因为目前只在公式标红中偶尔出现，故可以在“} }”中加1空格，<del>意会即可orz</del>。（<a href="http://note.chenteng.me/2016/05/24/HexoBug/" target="_blank" rel="noopener external nofollow noreferrer">More</a>）<ul>
 <li>快速解决方案：用TXT格式打开，用“{ {”全部替换，用“} }”全部替换。（可能要替换多次）</li>
 </ul>
 </li>
-<li>解决方案2：<a href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">Here</a></li>
+<li>解决方案2：<a href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener external nofollow noreferrer">Here</a></li>
 </ul>
 <p>Markdown公式偶尔在网页上渲染失败</p>
 <ul>
 <li>解决方案：公式color上色时应该严格遵循语法，前后项都要加括号</li>
 </ul>
-<div><hr><font size="5">相关文章</font><ul><li><a href="https://vel.life/Byte-Tech-AI-Symposium/">2019机器智能前沿论坛</a></li><li><a href="https://vel.life/Data-Science-Contests/">大数据竞赛-练习篇</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></li><li><a href="https://vel.life/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></li><li><a href="https://vel.life/关于对抗样本的思考/">关于对抗样本的思考</a></li></ul></div>
-      
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%8D%95%E5%88%86%E7%B1%BB/">单分类（one-class classification）</a></li><li><a href="https://vel.life/PythonLib-%E7%BD%91%E7%BB%9C%E5%BA%93%E4%B8%93%E9%A2%98/">PythonLib-网络库专题</a></li><li><a href="https://vel.life/PythonLib-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%93%E4%B8%93%E9%A2%98/">PythonLib-机器学习库专题</a></li><li><a href="https://vel.life/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">时间序列异常检测</a></li><li><a href="https://vel.life/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/">关于对抗样本的思考</a></li></ul></div>
     </div>
-    
-    
-    
 
     
-
     
-
     
-      <div>
-        <ul class="post-copyright">
+        
+
+<div>
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>Author:</strong>
-    工云
+    <strong>Post author:  </strong>工云
   </li>
   <li class="post-copyright-link">
-    <strong>Link:</strong>
+    <strong>Post link: </strong>
     <a href="https://vel.life/Notes-of-Machine-Learning-Part1/" title="机器学习初等指南(1)">https://vel.life/Notes-of-Machine-Learning-Part1/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
   </li>
 </ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
-          
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Intro-to-AI-Lecture/" rel="next" title="人工智能小讲座简述">
-                <i class="fa fa-chevron-left"></i> 人工智能小讲座简述
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/深度学习-by-Andrew-Ng/" rel="prev" title="深度学习 by Andrew Ng.">
-                深度学习 by Andrew Ng. <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <a href="/about/">
-                <img class="site-author-image" itemprop="image" src="/images/stellarkey.gif" alt="工云">
-              </a>
-            
-              <p class="site-author-name" itemprop="name">工云</p>
-              <p class="site-description motion-element" itemprop="description">Never stop thinking.</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">131</span>
-                  <span class="site-state-item-name">Archives</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
-                  <span class="site-state-item-name">Categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">62</span>
-                  <span class="site-state-item-name">Tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/stellarkey" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:velocfc@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                云海之上
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.iszy.cc/" title="随遇而安" target="_blank" rel="external nofollow">随遇而安</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://asdfv1929.github.io/" title="asdfv1929" target="_blank" rel="external nofollow">asdfv1929</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blessing.studio/" title="Blessing" target="_blank" rel="external nofollow">Blessing</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.cfzhao.com/" title="ZHAOYUWEI" target="_blank" rel="external nofollow">ZHAOYUWEI</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://hanherbert.github.io/" title="知青" target="_blank" rel="external nofollow">知青</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://louieworth.github.io/" title="louieworth" target="_blank" rel="external nofollow">louieworth</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">2.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习的定义"><span class="nav-number">2.1.</span> <span class="nav-text">机器学习的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习算法分类"><span class="nav-number">2.2.</span> <span class="nav-text">学习算法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">2.3.</span> <span class="nav-text">监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督学习"><span class="nav-number">2.4.</span> <span class="nav-text">无监督学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">3.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题简述"><span class="nav-number">3.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线代基础"><span class="nav-number">3.1.1.</span> <span class="nav-text">线代基础</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-number">3.2.</span> <span class="nav-text">代价函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化的理解"><span class="nav-number">3.2.1.</span> <span class="nav-text">可视化的理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">3.3.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用到线性回归"><span class="nav-number">3.3.1.</span> <span class="nav-text">应用到线性回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征缩放"><span class="nav-number">3.3.2.</span> <span class="nav-text">特征缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正态缩放"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">正态缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区间缩放"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">区间缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#均态缩放"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">均态缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度量缩放"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">度量缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习率"><span class="nav-number">3.3.3.</span> <span class="nav-text">学习率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式回归"><span class="nav-number">3.4.</span> <span class="nav-text">多项式回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程"><span class="nav-number">3.5.</span> <span class="nav-text">正规方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic回归"><span class="nav-number">4.</span> <span class="nav-text">Logistic回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类与逻辑"><span class="nav-number">4.1.</span> <span class="nav-text">分类与逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#假设函数"><span class="nav-number">4.1.1.</span> <span class="nav-text">假设函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策边界"><span class="nav-number">4.2.</span> <span class="nav-text">决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数-1"><span class="nav-number">4.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级优化算法"><span class="nav-number">4.4.</span> <span class="nav-text">高级优化算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元分类"><span class="nav-number">4.5.</span> <span class="nav-text">多元分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">4.6.</span> <span class="nav-text">正则化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过拟合"><span class="nav-number">4.6.1.</span> <span class="nav-text">过拟合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归正则"><span class="nav-number">4.6.2.</span> <span class="nav-text">线性回归正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归正则"><span class="nav-number">4.6.3.</span> <span class="nav-text">逻辑回归正则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境安装与使用"><span class="nav-number">5.</span> <span class="nav-text">环境安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Octave-Matlab"><span class="nav-number">5.1.</span> <span class="nav-text">Octave/Matlab</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础语法"><span class="nav-number">5.1.1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本运算"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据管理"><span class="nav-number">5.1.1.2.</span> <span class="nav-text">数据管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵操作"><span class="nav-number">5.1.1.3.</span> <span class="nav-text">矩阵操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化"><span class="nav-number">5.1.1.4.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数控制"><span class="nav-number">5.1.1.5.</span> <span class="nav-text">函数控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量思维"><span class="nav-number">5.1.2.</span> <span class="nav-text">向量思维</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">5.2.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TensorFlow"><span class="nav-number">5.2.1.</span> <span class="nav-text">TensorFlow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Java"><span class="nav-number">5.3.</span> <span class="nav-text">C++/Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大数据在线竞赛"><span class="nav-number">5.4.</span> <span class="nav-text">大数据在线竞赛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BUG记录"><span class="nav-number">5.5.</span> <span class="nav-text">BUG记录</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-line-chart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vel</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">568.0k</span>
-  
 </div>
 
 
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Intro-to-AI-Lecture/" rel="prev" title="人工智能小讲座简述">
+      <i class="fa fa-chevron-left"></i> 人工智能小讲座简述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/" rel="next" title="深度学习 by Andrew Ng.">
+      深度学习 by Andrew Ng. <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
 
 
 
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">2.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习的定义"><span class="nav-number">2.1.</span> <span class="nav-text">机器学习的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习算法分类"><span class="nav-number">2.2.</span> <span class="nav-text">学习算法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">2.3.</span> <span class="nav-text">监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督学习"><span class="nav-number">2.4.</span> <span class="nav-text">无监督学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性回归"><span class="nav-number">3.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题简述"><span class="nav-number">3.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线代基础"><span class="nav-number">3.1.1.</span> <span class="nav-text">线代基础</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-number">3.2.</span> <span class="nav-text">代价函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化的理解"><span class="nav-number">3.2.1.</span> <span class="nav-text">可视化的理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">3.3.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用到线性回归"><span class="nav-number">3.3.1.</span> <span class="nav-text">应用到线性回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征缩放"><span class="nav-number">3.3.2.</span> <span class="nav-text">特征缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正态缩放"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">正态缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区间缩放"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">区间缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#均态缩放"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">均态缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#度量缩放"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">度量缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习率"><span class="nav-number">3.3.3.</span> <span class="nav-text">学习率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式回归"><span class="nav-number">3.4.</span> <span class="nav-text">多项式回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程"><span class="nav-number">3.5.</span> <span class="nav-text">正规方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic回归"><span class="nav-number">4.</span> <span class="nav-text">Logistic回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类与逻辑"><span class="nav-number">4.1.</span> <span class="nav-text">分类与逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#假设函数"><span class="nav-number">4.1.1.</span> <span class="nav-text">假设函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策边界"><span class="nav-number">4.2.</span> <span class="nav-text">决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数-1"><span class="nav-number">4.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级优化算法"><span class="nav-number">4.4.</span> <span class="nav-text">高级优化算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元分类"><span class="nav-number">4.5.</span> <span class="nav-text">多元分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">4.6.</span> <span class="nav-text">正则化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过拟合"><span class="nav-number">4.6.1.</span> <span class="nav-text">过拟合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归正则"><span class="nav-number">4.6.2.</span> <span class="nav-text">线性回归正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归正则"><span class="nav-number">4.6.3.</span> <span class="nav-text">逻辑回归正则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境安装与使用"><span class="nav-number">5.</span> <span class="nav-text">环境安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Octave-Matlab"><span class="nav-number">5.1.</span> <span class="nav-text">Octave&#x2F;Matlab</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础语法"><span class="nav-number">5.1.1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本运算"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据管理"><span class="nav-number">5.1.1.2.</span> <span class="nav-text">数据管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵操作"><span class="nav-number">5.1.1.3.</span> <span class="nav-text">矩阵操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化"><span class="nav-number">5.1.1.4.</span> <span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数控制"><span class="nav-number">5.1.1.5.</span> <span class="nav-text">函数控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量思维"><span class="nav-number">5.1.2.</span> <span class="nav-text">向量思维</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">5.2.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TensorFlow"><span class="nav-number">5.2.1.</span> <span class="nav-text">TensorFlow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Java"><span class="nav-number">5.3.</span> <span class="nav-text">C++&#x2F;Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大数据在线竞赛"><span class="nav-number">5.4.</span> <span class="nav-text">大数据在线竞赛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BUG记录"><span class="nav-number">5.5.</span> <span class="nav-text">BUG记录</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
 
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+</div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-  
 </div>
 
 
@@ -1691,543 +1327,205 @@ h_\theta(x)=\sum_{j=0}^n\theta_jx\color{red}=\theta^Tx</script><blockquote>
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
-
-
-
-
-
-
-
+    
 
   
 
 
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
     });
     new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
-        appKey: 't193IqlxzRLOLV2m3Rhar9SQ',
-        placeholder: 'Never stop thinking.',
-        avatar:'identicon',
-        guest_info:guest,
-        pageSize:'10' || 10,
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
     });
-  </script>
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-
-  
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
-
-<!-- 页面点击小红心 -->
-<!-- <script type="text/javascript" src="/js/src/love.js"></script>-->
