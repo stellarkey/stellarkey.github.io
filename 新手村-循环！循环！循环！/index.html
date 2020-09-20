@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,13 +31,13 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/1548149844523.png">
+<meta property="og:image" content="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/1548149844523.png">
 <meta property="article:published_time" content="2019-01-21T14:44:02.000Z">
 <meta property="article:modified_time" content="2019-01-27T01:34:15.073Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/1548149844523.png">
+<meta name="twitter:image" content="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/1548149844523.png">
 
 <link rel="canonical" href="https://vel.life/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/">
 
@@ -349,7 +350,7 @@
 <p><a href="https://www.luogu.org/blog/user14888/solution-p1980" target="_blank" rel="noopener external nofollow noreferrer"> 在Ta的博客查看</a></p>
 </blockquote>
 <p>优化思路：固定某一位，求剩余位的组合数。（相当于按位切分为三部分）</p>
-<p><img data-src="新手村-循环！循环！循环！/1548149844523.png" alt="1548149844523"></p>
+<img data-src="/%E6%96%B0%E6%89%8B%E6%9D%91-%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81%E5%BE%AA%E7%8E%AF%EF%BC%81/1548149844523.png" class width="1548149844523">
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,x,a,b,c,m=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt; n &gt;&gt; x;</span><br><span class="line">    <span class="keyword">while</span>(m&lt;=n)&#123;</span><br><span class="line">    	a=n/(m*<span class="number">10</span>); b=n/m%<span class="number">10</span>; c=n%m;</span><br><span class="line">    	<span class="keyword">if</span>(b &lt; x) </span><br><span class="line">			ans += a*m;</span><br><span class="line">    	<span class="keyword">else</span> <span class="keyword">if</span>( b == x) </span><br><span class="line">			ans += (a - (x==<span class="number">0</span>))*m + (c + <span class="number">1</span>);  <span class="comment">//x==0可以用灯合并进来</span></span><br><span class="line">    	<span class="keyword">else</span> </span><br><span class="line">			ans += (a - (x==<span class="number">0</span>))*m + m;</span><br><span class="line">		m*=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>考虑把高位数字用0补齐来统计低位整数：</p>
@@ -628,9 +629,10 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -746,6 +748,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -753,6 +756,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -809,7 +813,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

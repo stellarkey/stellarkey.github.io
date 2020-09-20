@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,13 +31,13 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="《Interpreting Deep Learning-Based Networking Systems》看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种黑箱技术存在，而本文引入">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
-<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png">
 <meta property="article:published_time" content="2020-09-14T06:54:13.000Z">
 <meta property="article:modified_time" content="2020-09-14T10:58:50.962Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
 
 <link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/">
 
@@ -276,12 +277,12 @@
 <p><a href="https://en.wikipedia.org/wiki/Decision_tree" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Decision_tree</a></p>
 </blockquote>
 <p>决策树非常简单。将二叉树的分支解释为决策/分类行为，即形成了决策树。</p>
-<p><img data-src="%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png" alt="Decision-Tree-Elements.png"></p>
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png" class title="Decision-Tree-Elements.png">
 <h2 id="超图"><a href="#超图" class="headerlink" title="超图"></a>超图</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Hypergraph" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Hypergraph</a></p>
 </blockquote>
 <p>超图可以理解为每条边可以包含两个以上的点所构成的图。</p>
-<p><img data-src="%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png" alt="在这里插入图片描述"></p>
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png" class title="在这里插入图片描述">
 <blockquote>
 <p>每个边所包含的顶点个数相同且都为k个的，称为k阶超图。</p>
 </blockquote>
@@ -546,9 +547,10 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -664,6 +666,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -671,6 +674,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -727,7 +731,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

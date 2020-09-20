@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,26 +31,26 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="近世&#x2F;抽象代数研究代数系统，即带有运算的集合。在普通代数中研究对象是数的四则运算，而在近世代数中，对象可以任何东西，比如向量、矩阵、线性变换。近世代数是高等物理的基础。高等代数中的群、环、域是最基本的三个代数系统。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782941751.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782245208.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548785488498.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548786619516.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782941751.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782245208.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548785488498.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548786619516.png">
 <meta property="og:image" content="https://vel.life/%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794259298.png">
 <meta property="og:image" content="https://vel.life/%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794571232.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548787148540.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049058360.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049282169.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049512585.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548787148540.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049058360.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049282169.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049512585.png">
 <meta property="og:image" content="https://vel.life/%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794571232.png">
 <meta property="og:image" content="https://vel.life/%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794571232.png">
 <meta property="og:image" content="https://vel.life/%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794571232.png">
-<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548963205682.png">
+<meta property="og:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548963205682.png">
 <meta property="article:published_time" content="2019-01-30T11:55:24.000Z">
 <meta property="article:modified_time" content="2020-09-11T14:37:03.012Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="代数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782941751.png">
+<meta name="twitter:image" content="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782941751.png">
 
 <link rel="canonical" href="https://vel.life/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/">
 
@@ -296,14 +297,14 @@
 <p>空集是非空集的真子集。</p>
 </blockquote>
 <p><strong><font color="red">积</font></strong>：从若干个集合中，按集取出的所有<strong>元素有序组</strong>的集合，称为集合的积。</p>
-<p><img data-src="抽象代数基础/1548782941751.png" alt="1548782941751"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782941751.png" class width="1548782941751">
 <blockquote>
 <p>每次每个集合取出一个。又称笛卡尔积。有序，其实就是保留集合的编号，是对取出元素的一种标记。</p>
 <p>积运算相当于<strong>抽取每个集合的特征</strong>，形成全特征元，这些元构成了一个特征空间。可以称作<strong>特征积</strong>。</p>
 <p>积运算可以快速生成高维空间。</p>
 </blockquote>
 <h2 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h2><p><strong><font color="red">映射</font></strong>：通过某种法则<code>f</code>，如果<code>A</code>空间的<strong>任意</strong>元$\longrightarrow$都对应<strong>唯一</strong><code>D</code>集的元，则<code>f</code>称为对应空间到<code>D</code>的映射。</p>
-<p><img data-src="抽象代数基础/1548782245208.png" alt="1548782245208"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548782245208.png" class width="1548782245208">
 <blockquote>
 <p>与通用联想规则的定义一致。但，映射广泛来讲既可以是单独的联想，也可以是一个联想规则。</p>
 <p>映射的等价与幻想空间的等价是一致的。不考虑具体的描述/定义，而至考虑它们的效果是否相同（即，是否对于每一个元，连接着唯一、相同的象）。</p>
@@ -327,13 +328,13 @@
 </blockquote>
 <p><strong><font color="red">代数运算</font></strong>：映射$A\times B\longrightarrow D$，称为<code>A X B</code>到<code>D</code>的代数运算。</p>
 <script type="math/tex; mode=display">
-d=○\,(a,b)=a\,○\,b</script><p><img data-src="抽象代数基础/1548785488498.png" alt="1548785488498"></p>
+d=○\,(a,b)=a\,○\,b</script><img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548785488498.png" class width="1548785488498">
 <blockquote>
 <p>上图中有一个<strong>膨胀-收缩</strong>的过程。膨胀的部分是积运算，收缩的部分是代数运算。<br>但是一般也将这个过程统一称为代数运算。</p>
 <p>可以通过规定<strong>运算表</strong>/矩阵，来规定一般化的代数运算。<br>（<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjM7daQzJPgAhUK7mEKHaSiBgkQFjACegQIBxAK&amp;url=https%3A%2F%2Fzh.wikipedia.org%2Fzh-hans%2F%25E7%25A1%25AE%25E5%25AE%259A%25E6%259C%2589%25E9%2599%2590%25E7%258A%25B6%25E6%2580%2581%25E8%2587%25AA%25E5%258A%25A8%25E6%259C%25BA&amp;usg=AOvVaw2A676_vDZco8j8iD62CiIY" target="_blank" rel="noopener external nofollow noreferrer">自动状态机</a>的原理，状态转移就是一种代数运算）</p>
 </blockquote>
 <h3 id="二元运算"><a href="#二元运算" class="headerlink" title="二元运算"></a>二元运算</h3><p><strong><font color="red">二元运算</font></strong>：若<code>○</code>是<code>AXA</code>到<code>A</code>的代数运算，则称<code>○</code>为<code>A</code>的代数/二元运算。又称<code>○</code>在<code>A</code>上<strong><font color="red">封闭</font></strong>。</p>
-<p><img data-src="抽象代数基础/1548786619516.png" alt="1548786619516"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548786619516.png" class width="1548786619516">
 <blockquote>
 <p>例：对于整数域，<code>+</code>、<code>-</code>、<code>*</code>是二元运算，<code>\</code>不是。</p>
 <p>对于向量、矩阵等也有类似结论。</p>
@@ -358,7 +359,7 @@ d=○\,(a,b)=a\,○\,b</script><p><img data-src="抽象代数基础/154878548849
 <p>注意到每一个括号都对应着一个不同的积空间，因而对应着不同的膨胀-收缩路径。<br>故，结合律就是复合联想<strong>与路径无关</strong>的假设。（有势）</p>
 </blockquote>
 <h3 id="交换律"><a href="#交换律" class="headerlink" title="交换律"></a>交换律</h3><script type="math/tex; mode=display">
-a\,○\,b=b\,○\,a</script><p><img data-src="抽象代数基础/1548787148540.png" alt="1548787148540"></p>
+a\,○\,b=b\,○\,a</script><img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548787148540.png" class width="1548787148540">
 <blockquote>
 <p>利用归纳法可证，一旦同时满足交换律和结合律，则运算就完全失去了<strong>次序</strong>。</p>
 <p>交换律成立的充要条件是运算矩阵对称。</p>
@@ -379,20 +380,20 @@ a\,○\,b=b\,○\,a</script><p><img data-src="抽象代数基础/1548787148540.p
 \phi(a\,○\,b)=\phi(a)\,\bar○\,\phi(b)\\
 a\,○\,b=\bar a\,\bar ○\,\bar b</script><hr>
 <p><strong><font color="red">同态映射</font></strong>：给定映射<code>f</code>，若<code>A</code>中代数运算的象，对应等于象<code>A</code>的<u>象代数运算</u>，则称<code>f</code>为同态映射。</p>
-<p><img data-src="抽象代数基础/1549049058360.png" alt="1549049058360"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049058360.png" class width="1549049058360">
 <blockquote>
 <p>先运算再找象，先找象再运算，两者等价。（运算也要取象）</p>
 <p>证明思路：（1）是映射（任意有象，且象唯一）；（2）同态方程：$\phi(a\,○\,b)=\phi(a)\,\bar○\,\phi(b)$。</p>
 <p>同态映射反映了两个代数系统的<strong>被映射部分</strong>的局部<font color="red">相似性</font>（即<u>同种规律在不同体系下的表示</u>）。</p>
 </blockquote>
 <p><strong>同态满射</strong>：若同态映射是满射，则称为同态满射。</p>
-<p><img data-src="抽象代数基础/1549049282169.png" alt="1549049282169"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049282169.png" class width="1549049282169">
 <blockquote>
 <p>若两个代数系统间<strong>存在</strong>同态满射，称两个代数系统<strong><font color="red">同态</font></strong>。（不引起混淆时可以不强调关于运算，<del>然而很容易引起混淆好吧orz</del>）</p>
 <p>显然，同态满射可以保证从原代数系统中<strong>完全地</strong>推出象代数系统的规律。（但可能会有所压缩）<br>比如，若<code>○</code>具有结合律(交换律)，则象<code>○&#39;</code>也一定具有结合律(交换律)。分类律也有类似定理。</p>
 </blockquote>
 <h3 id="同构"><a href="#同构" class="headerlink" title="同构"></a>同构</h3><p><strong><font color="red">同构映射</font></strong>：若同态映射是单射+满射，则称为同构映射。</p>
-<p><img data-src="抽象代数基础/1549049512585.png" alt="1549049512585"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1549049512585.png" class width="1549049512585">
 <blockquote>
 <p>若两个代数系统间<strong>存在</strong>同构映射，称两个代数系统<strong><font color="red">同构</font></strong>。（记作$A\cong\bar A$）</p>
 <p>显然，同构映射保证了原代数系统和象代数系统的规律是完全一致的（仅仅是表示不同）。</p>
@@ -555,7 +556,7 @@ x_2\longrightarrow c</script><p>验证同构：是映射，单，满。只须验
 <p>比如之前的这个：</p>
 <p><img data-src="../%E5%8D%9A%E6%96%87%E5%86%99%E4%BD%9C/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548794571232.png" alt="1548794571232"></p>
 <p>实际上我们只需要任意确定三个元素，就能唯一地确定这张运算表。如下：（根据<code>恒等变换</code>+<code>消去律</code>+<code>封闭</code>+<code>变换/置换同构</code>）</p>
-<p><img data-src="抽象代数基础/1548963205682.png" alt="1548963205682"></p>
+<img data-src="/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80/1548963205682.png" class width="1548963205682">
 <p>如果选成同一行元素，那就是一个置换了。（以上封闭、消去律都已成立）<br>那么想要保证生成有限群的运算表，只须考虑置换与结合律的充要条件了。</p>
 </blockquote>
 </blockquote>
@@ -1027,9 +1028,10 @@ m&=1+1+...+1=1^m\\
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -1145,6 +1147,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -1152,6 +1155,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -1208,7 +1212,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

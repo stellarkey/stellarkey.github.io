@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,279 +31,279 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="“Intro to Computer Systems” is a CS course held by CMU with course number CS213. Its home page says:  The ICS course provides a programmer’s view of how computer systems execute programs, store inform">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547154674891.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547155431530.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547155607657.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547159998158.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547162047772.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547162367485.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547167241637.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547168305282.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547170397354.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547170932559.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547171039590.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547173603445.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547173911825.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547174591516.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547175024211.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547175059616.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547175239609.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547175886966.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547200593806.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547201117356.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547201287683.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547201477780.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547202141338.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547216351183.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547217197184.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547217437064.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547217624711.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547217776981.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547218082911.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547218728343.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547219148576.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547219129898.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547219829755.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547220077346.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547220973797.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547221546090.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547221638010.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547223757301.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547223798589.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547224139238.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547224429434.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547224793696.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547224928978.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547224970370.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547225374772.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547225425648.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547226503605.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547227143624.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547227290214.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547227329427.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547227524003.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547227649631.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547274552015.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547274736995.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547275528661.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547275625693.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547275962727.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547276298488.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547276450387.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547276715940.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547277014211.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547277085015.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547277972355.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547279264175.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547279413442.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547279843850.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547280032115.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547280231780.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547280313959.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547280660054.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547280713807.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547283990640.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547286561100.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547286715157.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547287192695.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547287260503.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547288158389.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547319959091.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547320185281.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547322998178.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547323271495.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547323296428.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547323287363.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547323914397.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324007937.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324041845.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324174042.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324425190.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324625791.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547324933006.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547325042701.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547325479644.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547325731482.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547325930622.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547327034519.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547327354252.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547331350241.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547333849790.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547333277107.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547334354630.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547335369033.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547335909700.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547335981511.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547335994312.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547336274671.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547337293519.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547338153960.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547338419283.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547339208689.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547339979979.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547340307928.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547340272596.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547340841183.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547340897117.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547341535201.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547372123409.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547372584466.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547376541373.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547376555472.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547377173686.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547377211891.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547377607727.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547377563056.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547378100305.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547381165003.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547391612972.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547391661619.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547391679091.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547393088942.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547392851262.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547395602746.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547397352855.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547397695292.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547398071042.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547398461378.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547399758879.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547400232218.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547400371064.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547400749761.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547400731481.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547400842787.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547401434276.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547401541948.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547401630774.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547401741126.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547401893430.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547632217288.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547633458529.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547632384923.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547632763444.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547632870380.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547633702762.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547633841902.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547633866174.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547633877113.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634384794.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634341801.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634660319.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634676657.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634637283.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634921046.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635004089.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635074780.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635083354.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635094290.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635106717.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635130333.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635148682.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635163203.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635195448.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635216062.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547635226516.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634870116.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547634883889.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547636269869.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547636283880.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547636304283.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547636442697.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547636488286.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637170160.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637196057.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637230296.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637274563.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637288790.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637342089.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637499977.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547638259903.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639415439.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547638324632.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547638404001.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547638494620.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639071441.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639102970.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639217650.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639252437.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637720207.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547637828298.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639020855.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639383577.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639774401.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639820521.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547639834807.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640042340.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640030470.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640194691.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640020500.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640403914.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547640557961.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547641215724.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547641252464.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547642020101.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547642053038.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547642145169.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547642156153.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547642365345.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646573504.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646713486.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646641411.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646688116.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646755864.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547646950976.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547647075791.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547647023405.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547647298201.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547647413898.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547647627512.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547649281259.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547649302626.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547649366445.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547649399772.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650144510.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650155901.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650200705.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650418667.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650457857.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650532298.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650564204.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650619028.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547650823729.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547652937800.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547652958297.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547652991943.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547653037579.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547653614225.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547653662469.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547654854691.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547654864042.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657321523.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657606023.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657467677.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657507570.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657532124.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547657871360.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547658046864.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547665746325.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547660408168.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547666287044.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547666579930.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547667467170.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547668381602.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547668475898.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547668534807.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547668699471.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547668729420.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547669478016.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547669717022.png">
-<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547669625241.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547154674891.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547155431530.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547155607657.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547159998158.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547162047772.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547162367485.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547167241637.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547168305282.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547170397354.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547170932559.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547171039590.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547173603445.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547173911825.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547174591516.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547175024211.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547175059616.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547175239609.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547175886966.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547200593806.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547201117356.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547201287683.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547201477780.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547202141338.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547216351183.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547217197184.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547217437064.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547217624711.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547217776981.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547218082911.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547218728343.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547219148576.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547219129898.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547219829755.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547220077346.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547220973797.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547221546090.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547221638010.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547223757301.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547223798589.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547224139238.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547224429434.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547224793696.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547224928978.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547224970370.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547225374772.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547225425648.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547226503605.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547227143624.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547227290214.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547227329427.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547227524003.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547227649631.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547274552015.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547274736995.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547275528661.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547275625693.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547275962727.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547276298488.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547276450387.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547276715940.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547277014211.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547277085015.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547277972355.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547279264175.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547279413442.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547279843850.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547280032115.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547280231780.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547280313959.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547280660054.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547280713807.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547283990640.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547286561100.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547286715157.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547287192695.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547287260503.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547288158389.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547319959091.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547320185281.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547322998178.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547323271495.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547323296428.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547323287363.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547323914397.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324007937.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324041845.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324174042.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324425190.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324625791.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547324933006.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547325042701.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547325479644.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547325731482.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547325930622.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547327034519.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547327354252.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547331350241.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547333849790.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547333277107.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547334354630.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547335369033.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547335909700.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547335981511.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547335994312.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547336274671.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547337293519.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547338153960.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547338419283.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547339208689.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547339979979.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547340307928.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547340272596.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547340841183.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547340897117.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547341535201.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547372123409.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547372584466.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547376541373.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547376555472.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547377173686.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547377211891.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547377607727.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547377563056.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547378100305.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547381165003.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547391612972.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547391661619.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547391679091.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547393088942.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547392851262.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547395602746.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547397352855.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547397695292.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547398071042.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547398461378.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547399758879.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547400232218.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547400371064.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547400749761.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547400731481.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547400842787.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547401434276.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547401541948.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547401630774.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547401741126.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547401893430.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547632217288.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547633458529.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547632384923.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547632763444.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547632870380.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547633702762.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547633841902.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547633866174.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547633877113.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634384794.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634341801.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634660319.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634676657.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634637283.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634921046.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635004089.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635074780.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635083354.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635094290.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635106717.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635130333.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635148682.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635163203.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635195448.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635216062.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547635226516.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634870116.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547634883889.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547636269869.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547636283880.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547636304283.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547636442697.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547636488286.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637170160.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637196057.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637230296.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637274563.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637288790.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637342089.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637499977.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547638259903.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639415439.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547638324632.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547638404001.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547638494620.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639071441.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639102970.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639217650.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639252437.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637720207.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547637828298.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639020855.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639383577.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639774401.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639820521.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547639834807.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640042340.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640030470.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640194691.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640020500.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640403914.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547640557961.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547641215724.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547641252464.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547642020101.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547642053038.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547642145169.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547642156153.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547642365345.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646573504.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646713486.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646641411.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646688116.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646755864.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547646950976.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547647075791.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547647023405.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547647298201.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547647413898.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547647627512.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547649281259.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547649302626.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547649366445.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547649399772.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650144510.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650155901.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650200705.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650418667.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650457857.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650532298.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650564204.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650619028.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547650823729.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547652937800.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547652958297.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547652991943.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547653037579.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547653614225.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547653662469.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547654854691.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547654864042.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657321523.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657606023.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657467677.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657507570.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657532124.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547657871360.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547658046864.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547665746325.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547660408168.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547666287044.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547666579930.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547667467170.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547668381602.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547668475898.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547668534807.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547668699471.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547668729420.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547669478016.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547669717022.png">
+<meta property="og:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547669625241.png">
 <meta property="article:published_time" content="2019-01-10T20:31:19.000Z">
 <meta property="article:modified_time" content="2019-01-16T20:22:12.829Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="CS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/Notes-of-Intro-to-Computer-System/1547154674891.png">
+<meta name="twitter:image" content="https://vel.life/Notes-of-Intro-to-Computer-System/1547154674891.png">
 
 <link rel="canonical" href="https://vel.life/Notes-of-Intro-to-Computer-System/">
 
@@ -564,17 +565,17 @@
 <p>Get to know <strong>assembly</strong>(汇编).</p>
 <p>Get to know memory matters. </p>
 <p><strong>Ex.3</strong>: (Memory referencing bugs)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547154674891.png" alt="1547154674891"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547154674891.png" class width="1547154674891">
 <blockquote>
 <p>Double type has 2 bytes.( refer to a[2] &amp; a[3])</p>
 <p>System can be <strong><font color="red">vulnerable</font></strong> by this.</p>
 </blockquote>
 <p><strong>Ex.4</strong>. (Memory system performance)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547155431530.png" alt="1547155431530"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547155431530.png" class width="1547155431530">
 <blockquote>
 <p>Those two codes’  performance differs from each other as <strong>almost 10 times</strong> on speed.</p>
 <p>Showing as follows: （See in the Memory-Cache chapter, called “Memory Mountain”）</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547155607657.png" alt="1547155607657"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547155607657.png" class width="1547155607657">
 </blockquote>
 <p><strong><em><font color="red" face="fantasy" size="6">A programmer ‘s perspective</font></em></strong>.</p>
 <ul>
@@ -858,7 +859,7 @@
 <blockquote>
 <p>There is a difference between logical shift and arithmetical shift, see in the following pic: The <u>negative num’s arithmetical right shift</u> will fill in <strong>1</strong>s. (Others are <strong>0</strong>s)</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547159998158.png" alt="1547159998158"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547159998158.png" class width="1547159998158">
 <h2 id="Intergers"><a href="#Intergers" class="headerlink" title="Intergers"></a>Intergers</h2><h3 id="Unsigned-amp-Signed"><a href="#Unsigned-amp-Signed" class="headerlink" title="Unsigned &amp; Signed"></a>Unsigned &amp; Signed</h3><ul>
 <li><strong>Unsigned</strong> Values<ul>
 <li>$U_{Min} = 0$<ul>
@@ -891,34 +892,34 @@
 </li>
 </ul>
 <p>Here is a graph: (4 bits)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547162047772.png" alt="1547162047772"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547162047772.png" class width="1547162047772">
 <p><font color="red">Notice</font>:</p>
 <script type="math/tex; mode=display">
 \begin{split}
 &-T_{Min}=T_{Min}\quad\quad\text{(Not symmetrical)}\\
 &|T_{Min}|=T_{Max}+1\\
 &U_{Max}=2*T_{Max}+1
-\end{split}</script><h4 id="Conversion-Visualization"><a href="#Conversion-Visualization" class="headerlink" title="Conversion Visualization"></a>Conversion Visualization</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547162367485.png" alt="1547162367485"></p>
+\end{split}</script><h4 id="Conversion-Visualization"><a href="#Conversion-Visualization" class="headerlink" title="Conversion Visualization"></a>Conversion Visualization</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547162367485.png" class width="1547162367485">
 <h3 id="Casting-转换"><a href="#Casting-转换" class="headerlink" title="Casting(转换)"></a>Casting(转换)</h3><p>Principle: If there is a mix of unsigned and signed in single expression, <strong><em><font color="red">signed values implicitly cast to unsigned</font></em></strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547167241637.png" alt="1547167241637"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547167241637.png" class width="1547167241637">
 <blockquote>
 <p>Examples above are for W=32: TMIN=-2,147,483,648  ; TMAX=2,147,483,647.</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = n<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	do_sth(i);</span><br><span class="line"><span class="comment">//if i is unsigned, this loop will run forever!</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = n<span class="number">-1</span>; i - <span class="keyword">sizeof</span>(str)&gt;= <span class="number">0</span>; i--)</span><br><span class="line">	do_sth(i);</span><br><span class="line"><span class="comment">//sizeof() return an unsigned value, this loop will crash very strangely!</span></span><br></pre></td></tr></table></figure>
 <h3 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h3><h4 id="Sign-Extension"><a href="#Sign-Extension" class="headerlink" title="Sign Extension"></a>Sign Extension</h4><p>Principle: Add all <strong><font color="red">1</font></strong>s for the new blank.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547168305282.png" alt="1547168305282"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547168305282.png" class width="1547168305282">
 <h4 id="Unsigned"><a href="#Unsigned" class="headerlink" title="Unsigned"></a>Unsigned</h4><p>Principle: Add all <strong><font color="red">0</font></strong>s for the new blank. (Similarly)</p>
 <h3 id="Truncation-截断"><a href="#Truncation-截断" class="headerlink" title="Truncation(截断)"></a>Truncation(截断)</h3><p>Unsigned: <strong>mod</strong> operation, <del>Just drop it</del>.<br>Signed: similar to mod (sign can be converted in the process)</p>
 <h3 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h3><h4 id="Addition"><a href="#Addition" class="headerlink" title="Addition"></a>Addition</h4><h5 id="Unsigned-Addition"><a href="#Unsigned-Addition" class="headerlink" title="Unsigned Addition"></a>Unsigned Addition</h5><p><strong>Drop the overflowed part</strong>. (But when computing use extra bits)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547170397354.png" alt="1547170397354"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547170397354.png" class width="1547170397354">
 <h5 id="Two’s-Complement-Addition"><a href="#Two’s-Complement-Addition" class="headerlink" title="Two’s Complement Addition"></a>Two’s Complement Addition</h5><p><strong>Drop the overflowed part as well</strong>. (Will get the <u>exact correct answer</u>)</p>
 <blockquote>
 <p>TAdd and UAdd have identical bit-level behavior.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547170932559.png" alt="1547170932559"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547170932559.png" class width="1547170932559">
 <p>Visualizing 2’s complement addition:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547171039590.png" alt="1547171039590"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547171039590.png" class width="1547171039590">
 <h4 id="Multiplication"><a href="#Multiplication" class="headerlink" title="Multiplication"></a>Multiplication</h4><h5 id="Unsigned-multiplication"><a href="#Unsigned-multiplication" class="headerlink" title="Unsigned multiplication"></a>Unsigned multiplication</h5><p>Still drop the overflowed part.</p>
 <h5 id="Signed-multiplication"><a href="#Signed-multiplication" class="headerlink" title="Signed multiplication"></a>Signed multiplication</h5><p>Drop the overflowed part. (sign can be converted in the process)</p>
 <blockquote>
@@ -982,9 +983,9 @@
 <p>In java there is no unsigned.</p>
 </blockquote>
 <p>A new principle: Don’t use <u>without understanding implications</u>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547173603445.png" alt="1547173603445"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547173603445.png" class width="1547173603445">
 <p><strong>Counting down with Unsigned</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547173911825.png" alt="1547173911825"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547173911825.png" class width="1547173911825">
 <p>Finally, <strong>Why should I Use Unsigned?</strong></p>
 <ul>
 <li><strong>Do Use</strong> When Performing <strong>Modular Arithmetic</strong><ul>
@@ -1000,7 +1001,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Representation-in-memory-pointers-strings"><a href="#Representation-in-memory-pointers-strings" class="headerlink" title="Representation in memory, pointers, strings"></a>Representation in memory, pointers, strings</h3><h4 id="Byte-Oriented-Memory-Organization"><a href="#Byte-Oriented-Memory-Organization" class="headerlink" title="Byte-Oriented Memory Organization"></a>Byte-Oriented Memory Organization</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547174591516.png" alt="1547174591516"></p>
+<h3 id="Representation-in-memory-pointers-strings"><a href="#Representation-in-memory-pointers-strings" class="headerlink" title="Representation in memory, pointers, strings"></a>Representation in memory, pointers, strings</h3><h4 id="Byte-Oriented-Memory-Organization"><a href="#Byte-Oriented-Memory-Organization" class="headerlink" title="Byte-Oriented Memory Organization"></a>Byte-Oriented Memory Organization</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547174591516.png" class width="1547174591516">
 <p>BUG: SegmentFault.</p>
 <blockquote>
 <p>Trick: $2^{10}=1024\approx 1000=10^{3}$.</p>
@@ -1010,9 +1011,9 @@
 <p>For 32bits: limits addresses to 4GB(2^32 bytes)<br>For 64bits: limits addresses to 18PB(2^64 bytes)</p>
 </blockquote>
 <h4 id="Word-Oriented-Memory-Organization"><a href="#Word-Oriented-Memory-Organization" class="headerlink" title="Word-Oriented Memory Organization"></a>Word-Oriented Memory Organization</h4><p><strong>Addresses Specify Byte Locations</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547175024211.png" alt="1547175024211"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547175024211.png" class width="1547175024211">
 <p>Example Data Representations:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547175059616.png" alt="1547175059616"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547175059616.png" class width="1547175059616">
 <h4 id="Byte-Ordering-Endianness"><a href="#Byte-Ordering-Endianness" class="headerlink" title="Byte Ordering(Endianness)"></a>Byte Ordering(Endianness)</h4><ul>
 <li><strong>Big Endian</strong>: Sun (Oracle SPARC), PPC Mac, Internet<ul>
 <li>Least significant byte has highest address</li>
@@ -1024,11 +1025,11 @@
 </li>
 </ul>
 <p>Ex:(Variable x has 4-byte value of <strong>0x01234567</strong>, Address given by &amp;x is <strong>0x100</strong>)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547175239609.png" alt="1547175239609"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547175239609.png" class width="1547175239609">
 <p>Other representation can be see in the <a href="https://www.cs.cmu.edu/~213/lectures/03-bits-ints-part2.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 <hr>
 <p><strong>Puzzles</strong>: (32 bits for int)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547175886966.png" alt="1547175886966"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547175886966.png" class width="1547175886966">
 <blockquote>
 <p>For <code>x &gt; y ---&gt; -x &lt; y</code>, note that there is a special occasion:</p>
 <script type="math/tex; mode=display">
@@ -1040,7 +1041,7 @@
 </ul>
 </blockquote>
 <h2 id="Floating-Point"><a href="#Floating-Point" class="headerlink" title="Floating Point"></a>Floating Point</h2><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p><strong>What is 1011.101(2)</strong> ?</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547200593806.png" alt="1547200593806"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547200593806.png" class width="1547200593806">
 <p>Representation:</p>
 <ul>
 <li>Bits to right of “binary point” represent fractional powers of 2</li>
@@ -1091,11 +1092,11 @@
 <li><strong>Significand <font color="red">M</font></strong> normally a <strong>frac</strong>tional value in range [1.0, 2.0).</li>
 <li><strong>Exponent <font color="red">E</font></strong> weights value by power of two</li>
 </ul>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547201117356.png" alt="1547201117356"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547201117356.png" class width="1547201117356">
 <p>There are mainly <strong>two types of floats</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547201287683.png" alt="1547201287683"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547201287683.png" class width="1547201287683">
 <p>Three “kinds” of floating point numbers:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547201477780.png" alt="1547201477780"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547201477780.png" class width="1547201477780">
 <p><strong><font color="red">“Normalized” Values</font></strong>: (Very large and small numbers)</p>
 <ul>
 <li>When: <u>exp ≠ 000…0 and exp ≠ 111…1</u></li>
@@ -1119,7 +1120,7 @@
 </li>
 </ul>
 <p><strong>Ex</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547202141338.png" alt="1547202141338"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547202141338.png" class width="1547202141338">
 <p>Note: 0&lt;=Exp&lt;=255, -127&lt;=E&lt;=128</p>
 <p><strong><font color="red">Denormalized Values</font></strong>: ( represent values in $[0,1)$, especially <strong>0</strong>)</p>
 <ul>
@@ -1161,28 +1162,28 @@
 </li>
 </ul>
 <p><strong>Ex</strong>: (Do this and you will get the idea)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547216351183.png" alt="1547216351183"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547216351183.png" class width="1547216351183">
 <h4 id="Example-and-properties"><a href="#Example-and-properties" class="headerlink" title="Example and properties"></a>Example and properties</h4><p><strong>Tiny Floating Point Example</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547217197184.png" alt="1547217197184"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547217197184.png" class width="1547217197184">
 <blockquote>
 <p>8-bit Floating Point Representation<br>▪ the sign bit is in the most significant bit<br>▪ the next four bits are the exp, with <strong>a bias of 7</strong><br>▪ the last three bits are the frac</p>
 </blockquote>
 <p>As you can see as follows, look at the <font color="red">red arrows</font>. The mechanism actually give <u>a smooth change</u> from De. to Nor.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547217437064.png" alt="1547217437064"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547217437064.png" class width="1547217437064">
 <p>the distribution gets denser toward zero: (1s-3e-2f)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547217624711.png" alt="1547217624711"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547217624711.png" class width="1547217624711">
 <p>6-bit IEEE-like format (close-up view): (1s-3e-2f)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547217776981.png" alt="1547217776981"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547217776981.png" class width="1547217776981">
 <h3 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h3><p>Floating Point Operations: <strong>Basic Idea</strong><br>▪ First <font color="red">compute exact result</font><br>▪ Make it fit into desired precision<br>▪ Possibly overflow if exponent too large<br>▪ Possibly  <font color="red">round to fit into</font> frac</p>
 <h4 id="Rounding（取整）"><a href="#Rounding（取整）" class="headerlink" title="Rounding（取整）"></a>Rounding（取整）</h4><p><strong><font color="red">Rounding Modes</font></strong>: (illustrate with $ rounding)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547218082911.png" alt="1547218082911"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547218082911.png" class width="1547218082911">
 <blockquote>
 <p>Round to nearest, but if half-way in-between then round to nearest even(偶)</p>
 </blockquote>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547218728343.png" alt="1547218728343"></p>
-<h4 id="Addition-1"><a href="#Addition-1" class="headerlink" title="Addition"></a>Addition</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547219148576.png" alt="1547219148576"></p>
-<h4 id="Multiplication-1"><a href="#Multiplication-1" class="headerlink" title="Multiplication"></a>Multiplication</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547219129898.png" alt="1547219129898"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547218728343.png" class width="1547218728343">
+<h4 id="Addition-1"><a href="#Addition-1" class="headerlink" title="Addition"></a>Addition</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547219148576.png" class width="1547219148576">
+<h4 id="Multiplication-1"><a href="#Multiplication-1" class="headerlink" title="Multiplication"></a>Multiplication</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547219129898.png" class width="1547219129898">
 <blockquote>
 <p>Lecture note: <a href="https://www.cs.cmu.edu/~213/lectures/04-float.pdf" target="_blank" rel="noopener external nofollow noreferrer">here</a>.</p>
 </blockquote>
@@ -1212,14 +1213,14 @@
 </li>
 </ul>
 <p><strong>Floating Point Puzzles</strong>: </p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547219829755.png" alt="1547219829755"></p>
-<h3 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547220077346.png" alt="1547220077346"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547219829755.png" class width="1547219829755">
+<h3 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547220077346.png" class width="1547220077346">
 <h1 id="Machine-Programming"><a href="#Machine-Programming" class="headerlink" title="Machine Programming"></a>Machine Programming</h1><h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><p><strong><font color="red">Intel x86 Processors</font></strong> : Complex instruction set computer (<strong>CISC</strong>).</p>
 <blockquote>
 <p>The class will mainly use gcc complier.</p>
 </blockquote>
 <p>2018 State of the Art: (Coffee Lake)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547220973797.png" alt="1547220973797"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547220973797.png" class width="1547220973797">
 <blockquote>
 <p>History blablabla…</p>
 </blockquote>
@@ -1237,8 +1238,8 @@
 <li>Example ISAs:<br>▪ Intel: x86, IA32, Itanium, x86-64<br>▪ ARM: Used in almost all mobile phones<br>▪ RISC V: New open-source ISA</li>
 </ul>
 <p><strong>Assembly/Machine Code View</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547221546090.png" alt="1547221546090"></p>
-<h4 id="Turning-C-into-Object-Code"><a href="#Turning-C-into-Object-Code" class="headerlink" title="Turning C into Object Code"></a>Turning C into Object Code</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547221638010.png" alt="1547221638010"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547221546090.png" class width="1547221546090">
+<h4 id="Turning-C-into-Object-Code"><a href="#Turning-C-into-Object-Code" class="headerlink" title="Turning C into Object Code"></a>Turning C into Object Code</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547221638010.png" class width="1547221638010">
 <p><strong>Ex</strong>:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -S sum.c</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -1300,7 +1301,7 @@
 <p>sum is a binary file(to disassembly the origin function)</p>
 </blockquote>
 <h3 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h3><p><strong><font color="red">x86-64 Integer Registers</font></strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547223757301.png" alt="1547223757301"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547223757301.png" class width="1547223757301">
 <blockquote>
 <p>%rax(%eax) reserves the function’s <strong>return value</strong>.<br>$eip stands for instruction register and can not be changed. (Not in the picture)</p>
 <p><strong>%rsp(%esp): stack pointer</strong>.<br>%rbp(%ebp): base pointer.</p>
@@ -1308,17 +1309,17 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pushl %ebp  <span class="comment">#equal to</span></span><br><span class="line">	subl $<span class="number">4</span>,%esp</span><br><span class="line">	movl %ebp,(%esp)</span><br><span class="line">popl %ebp   <span class="comment">#equal to</span></span><br><span class="line">	movl (%esp),%ebp</span><br><span class="line">    addl $<span class="number">4</span>,%esp</span><br></pre></td></tr></table></figure>
 <p><strong>IA32 Registers</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547223798589.png" alt="1547223798589"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547223798589.png" class width="1547223798589">
 <blockquote>
 <p>Just a legacy thing.</p>
 </blockquote>
 <h3 id="Move"><a href="#Move" class="headerlink" title="Move"></a>Move</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">movq Source,Dest</span><br></pre></td></tr></table></figure>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547224139238.png" alt="1547224139238"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547224139238.png" class width="1547224139238">
 <blockquote>
 <p>Operand types showing above,</p>
 </blockquote>
 <p>Ex: (Understanding Swap())</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547224429434.png" alt="1547224429434"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547224429434.png" class width="1547224429434">
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">swap:</span><br><span class="line">    movq (%rdi), %rax <span class="comment"># t0 = *xp</span></span><br><span class="line">    movq (%rsi), %rdx <span class="comment"># t1 = *yp</span></span><br><span class="line">    movq %rdx, (%rdi) <span class="comment"># *xp = t1</span></span><br><span class="line">    movq %rax, (%rsi) <span class="comment"># *yp = t0</span></span><br><span class="line">	ret</span><br></pre></td></tr></table></figure>
 <h3 id="Addressing-Modes"><a href="#Addressing-Modes" class="headerlink" title="Addressing Modes"></a>Addressing Modes</h3><p><strong>Simple Memory Addressing Modes</strong></p>
 <ul>
@@ -1347,25 +1348,25 @@
 </li>
 </ul>
 <p><strong>Ex</strong>. (Addressing Modes)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547224793696.png" alt="1547224793696"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547224793696.png" class width="1547224793696">
 <h3 id="Arithmetic-amp-logical-operations"><a href="#Arithmetic-amp-logical-operations" class="headerlink" title="Arithmetic &amp; logical operations"></a>Arithmetic &amp; logical operations</h3><h4 id="Address-Computation-Instruction"><a href="#Address-Computation-Instruction" class="headerlink" title="Address Computation Instruction"></a>Address Computation Instruction</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">leaq Src, Dst</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Src is <strong>address</strong> mode expression<br>Set Dst to address denoted by expression</p>
 <p>Uses: (Actually similar to move op)<br>▪ Computing addresses <strong><font color="red">without a memory reference</font></strong><br>▪ E.g., translation of p = &amp;x[i];<br>▪ Computing arithmetic expressions of the form x + k*y<br>▪ k = 1, 2, 4, or 8</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547224928978.png" alt="1547224928978"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547224928978.png" class width="1547224928978">
 <p><strong>Difference from mov</strong>: (example)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mov <span class="number">1</span>(%eax),%ebx</span><br><span class="line">	<span class="comment"># b = *(a + 1)</span></span><br><span class="line">lea <span class="number">1</span>(%eax),%ebx</span><br><span class="line">	<span class="comment"># b = a + 1</span></span><br><span class="line">    <span class="comment"># equal to add &amp; mov without reference</span></span><br><span class="line">--------------------</span><br><span class="line"><span class="comment"># Consider %eax actually reserve an address, then lea load an address instead of load address's  reference value in memory like mov</span></span><br></pre></td></tr></table></figure>
 <h4 id="Some-Arithmetic-Operations"><a href="#Some-Arithmetic-Operations" class="headerlink" title="Some Arithmetic Operations"></a>Some Arithmetic Operations</h4><p><strong>Two Operand Instructions</strong>: (src=source)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547224970370.png" alt="1547224970370"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547224970370.png" class width="1547224970370">
 <blockquote>
 <p>Watch out for argument order! Src,Dest<br>(Warning: Intel docs use “op Dest,Src”)<br>No distinction between signed and unsigned int (why?)</p>
 </blockquote>
 <p>One Operand Instructions: (See book for more instructions)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547225374772.png" alt="1547225374772"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547225374772.png" class width="1547225374772">
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547225425648.png" alt="1547225425648"></p>
-<h2 id="Control"><a href="#Control" class="headerlink" title="Control"></a>Control</h2><h3 id="Control-Condition-codes"><a href="#Control-Condition-codes" class="headerlink" title="Control: Condition codes"></a>Control: Condition codes</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547226503605.png" alt="1547226503605"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547225425648.png" class width="1547225425648">
+<h2 id="Control"><a href="#Control" class="headerlink" title="Control"></a>Control</h2><h3 id="Control-Condition-codes"><a href="#Control-Condition-codes" class="headerlink" title="Control: Condition codes"></a>Control: Condition codes</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547226503605.png" class width="1547226503605">
 <p><strong>Compare Instruction</strong>:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmpq Src2,Src1 <span class="comment"># Src1 - Src2</span></span><br></pre></td></tr></table></figure>
 <p><strong>Test Instruction</strong>:</p>
@@ -1374,72 +1375,72 @@
 <p>Those instructions doesn’t change the value of registers.</p>
 </blockquote>
 <p><strong>SetX Instructions</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547227143624.png" alt="1547227143624"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547227143624.png" class width="1547227143624">
 <blockquote>
 <p>Help to change bit level values(t low-order byte of destination) for arithmetic.</p>
 </blockquote>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547227290214.png" alt="1547227290214"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547227290214.png" class width="1547227290214">
 <blockquote>
 <p>Note: (Intel x86 machine sets the upper bits to zeros implicitly)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547227329427.png" alt="1547227329427"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547227329427.png" class width="1547227329427">
 </blockquote>
 <h3 id="Conditional-branches"><a href="#Conditional-branches" class="headerlink" title="Conditional branches"></a>Conditional branches</h3><h4 id="Jumping"><a href="#Jumping" class="headerlink" title="Jumping"></a>Jumping</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jmp .L1 <span class="comment">#address</span></span><br></pre></td></tr></table></figure>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547227524003.png" alt="1547227524003"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547227524003.png" class width="1547227524003">
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547227649631.png" alt="1547227649631"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547227649631.png" class width="1547227649631">
 <blockquote>
 <p>It’s behavior is just like to “goto” statement in C.</p>
 </blockquote>
 <p><strong>Condition move</strong>: (if the instruction is simple, calculate it first and then judge)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547274552015.png" alt="1547274552015"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547274552015.png" class width="1547274552015">
 <h3 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h3><p>“<strong>Do-While</strong>” Loop Example: (it’s not often used)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547274736995.png" alt="1547274736995"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547274736995.png" class width="1547274736995">
 <p><strong>While Loop</strong> Example: (there is an initial test)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547275528661.png" alt="1547275528661"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547275528661.png" class width="1547275528661">
 <p><strong>“For” Loop</strong> Form: (can be converted into other 2 kinds of loops)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547275625693.png" alt="1547275625693"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547275625693.png" class width="1547275625693">
 <h3 id="Switch-Statements"><a href="#Switch-Statements" class="headerlink" title="Switch Statements"></a>Switch Statements</h3><p><strong>Ex</strong>. (use “break” to end early)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547275962727.png" alt="1547275962727"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547275962727.png" class width="1547275962727">
 <p><strong><font color="red">Jump Table</font></strong> Structure: (Avoid to step though all the codes)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547276298488.png" alt="1547276298488"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547276298488.png" class width="1547276298488">
 <p><strong>Ex</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547276450387.png" alt="1547276450387"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547276450387.png" class width="1547276450387">
 <blockquote>
 <p><strong>ja</strong>: jump above. (x&gt;6 and x&lt;0 will jump to default case)<br><strong>jmp</strong>: goto jump table</p>
 <p>.quad: state that need a 8byte value here.</p>
 <p><strong>Jump table</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547276715940.png" alt="1547276715940"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547276715940.png" class width="1547276715940">
 <p>Code Blocks (x == 2, x == 3): (Note that the block doesn’t have some orders)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547277014211.png" alt="1547277014211"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547277014211.png" class width="1547277014211">
 <p>Code Blocks (x == 5, x == 6, default):</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547277085015.png" alt="1547277085015"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547277085015.png" class width="1547277085015">
 </blockquote>
 <p>Summary:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547277972355.png" alt="1547277972355"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547277972355.png" class width="1547277972355">
 <h2 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h2><p>Function, method, procedure….</p>
-<h3 id="Mechanisms"><a href="#Mechanisms" class="headerlink" title="Mechanisms"></a>Mechanisms</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547279264175.png" alt="1547279264175"></p>
+<h3 id="Mechanisms"><a href="#Mechanisms" class="headerlink" title="Mechanisms"></a>Mechanisms</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547279264175.png" class width="1547279264175">
 <h3 id="Stack-Structure"><a href="#Stack-Structure" class="headerlink" title="Stack Structure"></a>Stack Structure</h3><p><strong>x86-64 Stack</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547279413442.png" alt="1547279413442"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547279413442.png" class width="1547279413442">
 <blockquote>
 <p>Note: the direction are <strong>controversial</strong> maybe.<br>(The memory doesn’t change, only the value of %rsp)</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#the %ebp contains a value to save</span></span><br><span class="line">pushl %ebp  <span class="comment">#equal to</span></span><br><span class="line">	subl $<span class="number">4</span>,%esp</span><br><span class="line">	movl %ebp,(%esp)</span><br><span class="line">popl %ebp   <span class="comment">#equal to</span></span><br><span class="line">	movl (%esp),%ebp</span><br><span class="line">    addl $<span class="number">4</span>,%esp</span><br><span class="line">----------------------</span><br><span class="line">pushl %rbp  <span class="comment">#equal to</span></span><br><span class="line">	subl $<span class="number">8</span>,%rsp</span><br><span class="line">	movl %rbp,(%rsp)</span><br><span class="line">popl %rbp   <span class="comment">#equal to</span></span><br><span class="line">	movl (%rsp),%rbp</span><br><span class="line">    addl $<span class="number">8</span>,%rsp</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">leave <span class="comment">#equal to</span></span><br><span class="line">	movl %ebp,%esp</span><br><span class="line">	popl %ebp</span><br></pre></td></tr></table></figure>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547279843850.png" alt="1547279843850"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547279843850.png" class width="1547279843850">
 <blockquote>
 <p>A example: <a href="https://www.jianshu.com/p/e7a22923867f" target="_blank" rel="noopener external nofollow noreferrer">Here</a>. (Chinese)</p>
 </blockquote>
 <h3 id="Calling-Conventions"><a href="#Calling-Conventions" class="headerlink" title="Calling Conventions"></a>Calling Conventions</h3><h4 id="Passing-control"><a href="#Passing-control" class="headerlink" title="Passing control"></a>Passing control</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">callq address &lt;func_name&gt;</span><br></pre></td></tr></table></figure>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547280032115.png" alt="1547280032115"></p>
-<h4 id="Passing-data"><a href="#Passing-data" class="headerlink" title="Passing data"></a>Passing data</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547280231780.png" alt="1547280231780"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547280032115.png" class width="1547280032115">
+<h4 id="Passing-data"><a href="#Passing-data" class="headerlink" title="Passing data"></a>Passing data</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547280231780.png" class width="1547280231780">
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547280313959.png" alt="1547280313959"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547280313959.png" class width="1547280313959">
 <h4 id="Managing-local-data"><a href="#Managing-local-data" class="headerlink" title="Managing local data"></a>Managing local data</h4><p><strong>Call Chain</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547280660054.png" alt="1547280660054"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547280660054.png" class width="1547280660054">
 <p><strong>Stack Frames</strong>: (<strong>%rsp</strong>)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547280713807.png" alt="1547280713807"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547280713807.png" class width="1547280713807">
 <blockquote>
 <p>Example see in the <a href="https://www.cs.cmu.edu/~213/lectures/07-machine-procedures.pdf" target="_blank" rel="noopener external nofollow noreferrer">slide</a>s.(Also the Illustration of Recursion part)</p>
 </blockquote>
@@ -1450,28 +1451,28 @@
 <p>Easy.</p>
 </blockquote>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547283990640.png" alt="1547283990640"></p>
-<h3 id="Structures"><a href="#Structures" class="headerlink" title="Structures"></a>Structures</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547286561100.png" alt="1547286561100"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547283990640.png" class width="1547283990640">
+<h3 id="Structures"><a href="#Structures" class="headerlink" title="Structures"></a>Structures</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547286561100.png" class width="1547286561100">
 <p><strong><font color="red">Alignment</font></strong>: (对齐)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547286715157.png" alt="1547286715157"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547286715157.png" class width="1547286715157">
 <blockquote>
 <p>Alignment is depending on the next data type.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547287192695.png" alt="1547287192695"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547287192695.png" class width="1547287192695">
 <p>Save space:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547287260503.png" alt="1547287260503"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547287260503.png" class width="1547287260503">
 </blockquote>
 <h3 id="Floating-Point-1"><a href="#Floating-Point-1" class="headerlink" title="Floating Point"></a>Floating Point</h3><p>Similarly.</p>
 <h2 id="Advanced-Topics"><a href="#Advanced-Topics" class="headerlink" title="Advanced Topics"></a>Advanced Topics</h2><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/09-machine-advanced.pdf" target="_blank" rel="noopener external nofollow noreferrer">slide</a>.</p>
 </blockquote>
-<h3 id="Memory-Layout"><a href="#Memory-Layout" class="headerlink" title="Memory Layout"></a>Memory Layout</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547288158389.png" alt="1547288158389"></p>
+<h3 id="Memory-Layout"><a href="#Memory-Layout" class="headerlink" title="Memory Layout"></a>Memory Layout</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547288158389.png" class width="1547288158389">
 <h3 id="Buffer-Overflow"><a href="#Buffer-Overflow" class="headerlink" title="Buffer Overflow"></a>Buffer Overflow</h3><blockquote>
 <p>when exceeding the memory size allocated for an array.</p>
 </blockquote>
 <p>String Library Code:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547319959091.png" alt="1547319959091"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547319959091.png" class width="1547319959091">
 <p><strong>Ex</strong>; (Buffer Overflow Disassembly)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547320185281.png" alt="1547320185281"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547320185281.png" class width="1547320185281">
 <blockquote>
 <p>Things can go wrong without a crash.</p>
 <p>For string, note that there is a byte order.</p>
@@ -1490,40 +1491,40 @@
 <li>GCC Implementation<br>▪ -fstack-protector<br>▪ Now the default (disabled earlier)</li>
 </ul>
 </blockquote>
-<h3 id="Unions"><a href="#Unions" class="headerlink" title="Unions"></a>Unions</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547322998178.png" alt="1547322998178"></p>
+<h3 id="Unions"><a href="#Unions" class="headerlink" title="Unions"></a>Unions</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547322998178.png" class width="1547322998178">
 <hr>
 <p><font color="red">Byte Ordering Example</font>: (only ordered <strong><u>inside a single data</u></strong>)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547323271495.png" alt="1547323271495"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547323296428.png" alt="1547323296428"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547323287363.png" alt="1547323287363"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547323271495.png" class width="1547323271495">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547323296428.png" class width="1547323296428">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547323287363.png" class width="1547323287363">
 <h1 id="Code-Optimization"><a href="#Code-Optimization" class="headerlink" title="Code Optimization"></a>Code Optimization</h1><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/10-optimization.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
 <h2 id="Generally-Useful-Optimizations"><a href="#Generally-Useful-Optimizations" class="headerlink" title="Generally Useful Optimizations"></a>Generally Useful Optimizations</h2><blockquote>
 <p>Optimizations that you or the compiler should do regardless of processor / compiler.</p>
 </blockquote>
-<h3 id="Code-Motion"><a href="#Code-Motion" class="headerlink" title="Code Motion"></a>Code Motion</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547323914397.png" alt="1547323914397"></p>
-<h3 id="Reduction-in-Strength"><a href="#Reduction-in-Strength" class="headerlink" title="Reduction in Strength"></a>Reduction in Strength</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547324007937.png" alt="1547324007937"></p>
-<h3 id="Share-Common-Subexpressions"><a href="#Share-Common-Subexpressions" class="headerlink" title="Share Common Subexpressions"></a>Share Common Subexpressions</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547324041845.png" alt="1547324041845"></p>
+<h3 id="Code-Motion"><a href="#Code-Motion" class="headerlink" title="Code Motion"></a>Code Motion</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547323914397.png" class width="1547323914397">
+<h3 id="Reduction-in-Strength"><a href="#Reduction-in-Strength" class="headerlink" title="Reduction in Strength"></a>Reduction in Strength</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547324007937.png" class width="1547324007937">
+<h3 id="Share-Common-Subexpressions"><a href="#Share-Common-Subexpressions" class="headerlink" title="Share Common Subexpressions"></a>Share Common Subexpressions</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547324041845.png" class width="1547324041845">
 <p><strong>Optimization Example: Bubblesort</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547324174042.png" alt="1547324174042"></p>
-<h2 id="Optimization-Blockers"><a href="#Optimization-Blockers" class="headerlink" title="Optimization Blockers"></a>Optimization Blockers</h2><h3 id="Procedure-calls"><a href="#Procedure-calls" class="headerlink" title="Procedure calls"></a>Procedure calls</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547324425190.png" alt="1547324425190"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547324174042.png" class width="1547324174042">
+<h2 id="Optimization-Blockers"><a href="#Optimization-Blockers" class="headerlink" title="Optimization Blockers"></a>Optimization Blockers</h2><h3 id="Procedure-calls"><a href="#Procedure-calls" class="headerlink" title="Procedure calls"></a>Procedure calls</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547324425190.png" class width="1547324425190">
 <blockquote>
 <p>Note the function <code>strlen()</code>, it will be running the whole time and make the program perform badly.($O(n^2)$)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547324625791.png" alt="1547324625791"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547324625791.png" class width="1547324625791">
 </blockquote>
-<h3 id="Memory-aliasing"><a href="#Memory-aliasing" class="headerlink" title="Memory aliasing"></a>Memory aliasing</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547324933006.png" alt="1547324933006"></p>
+<h3 id="Memory-aliasing"><a href="#Memory-aliasing" class="headerlink" title="Memory aliasing"></a>Memory aliasing</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547324933006.png" class width="1547324933006">
 <p><strong>Removing Aliasing</strong>: (don’t use reference unless you have to)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547325042701.png" alt="1547325042701"></p>
-<h2 id="Exploiting-Instruction-Level-Parallelism"><a href="#Exploiting-Instruction-Level-Parallelism" class="headerlink" title="Exploiting Instruction-Level Parallelism"></a>Exploiting Instruction-Level Parallelism</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547325479644.png" alt="1547325479644"></p>
-<h3 id="Cycles-Per-Element-CPE"><a href="#Cycles-Per-Element-CPE" class="headerlink" title="Cycles Per Element (CPE)"></a>Cycles Per Element (CPE)</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547325731482.png" alt="1547325731482"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547325042701.png" class width="1547325042701">
+<h2 id="Exploiting-Instruction-Level-Parallelism"><a href="#Exploiting-Instruction-Level-Parallelism" class="headerlink" title="Exploiting Instruction-Level Parallelism"></a>Exploiting Instruction-Level Parallelism</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547325479644.png" class width="1547325479644">
+<h3 id="Cycles-Per-Element-CPE"><a href="#Cycles-Per-Element-CPE" class="headerlink" title="Cycles Per Element (CPE)"></a>Cycles Per Element (CPE)</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547325731482.png" class width="1547325731482">
 <p><strong>Benchmark Performance</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547325930622.png" alt="1547325930622"></p>
-<h3 id="Loop-Unrolling"><a href="#Loop-Unrolling" class="headerlink" title="Loop Unrolling"></a>Loop Unrolling</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547327034519.png" alt="1547327034519"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547325930622.png" class width="1547325930622">
+<h3 id="Loop-Unrolling"><a href="#Loop-Unrolling" class="headerlink" title="Loop Unrolling"></a>Loop Unrolling</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547327034519.png" class width="1547327034519">
 <h3 id="Multiple-Accumulators"><a href="#Multiple-Accumulators" class="headerlink" title="Multiple Accumulators"></a>Multiple Accumulators</h3><p>Loop Unrolling with Separate Accumulators (2x2):</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547327354252.png" alt="1547327354252"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547327354252.png" class width="1547327354252">
 <p><strong>Summary</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547331350241.png" alt="1547331350241"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547331350241.png" class width="1547331350241">
 <h1 id="The-Memory-Hierarchy"><a href="#The-Memory-Hierarchy" class="headerlink" title="The Memory Hierarchy"></a>The Memory Hierarchy</h1><h2 id="Storage-technologies-and-trends"><a href="#Storage-technologies-and-trends" class="headerlink" title="Storage technologies and trends"></a>Storage technologies and trends</h2><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/11-memory-hierarchy.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
@@ -1532,46 +1533,46 @@
 <p>Disk.</p>
 <p>Solid State Disks(SSD).</p>
 <p>Bus.(总线)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547333849790.png" alt="1547333849790"></p>
-<h2 id="Locality-of-reference"><a href="#Locality-of-reference" class="headerlink" title="Locality of reference"></a>Locality of reference</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547333277107.png" alt="1547333277107"></p>
-<h2 id="Caching-in-the-memory-hierarchy"><a href="#Caching-in-the-memory-hierarchy" class="headerlink" title="Caching in the memory hierarchy"></a>Caching in the memory hierarchy</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547334354630.png" alt="1547334354630"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547333849790.png" class width="1547333849790">
+<h2 id="Locality-of-reference"><a href="#Locality-of-reference" class="headerlink" title="Locality of reference"></a>Locality of reference</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547333277107.png" class width="1547333277107">
+<h2 id="Caching-in-the-memory-hierarchy"><a href="#Caching-in-the-memory-hierarchy" class="headerlink" title="Caching in the memory hierarchy"></a>Caching in the memory hierarchy</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547334354630.png" class width="1547334354630">
 <p><strong>General Cache Concepts</strong>:</p>
 <blockquote>
 <p>See in the slides.</p>
 </blockquote>
 <p>3 Types of Cache Misses:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547335369033.png" alt="1547335369033"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547335369033.png" class width="1547335369033">
 <blockquote>
 <p>For conflict miss, <strong><u>each block represent one specific next level cache block</u></strong>. (Can’t use to save other values)</p>
 </blockquote>
 <h2 id="Cache-Memories"><a href="#Cache-Memories" class="headerlink" title="Cache Memories"></a>Cache Memories</h2><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/12-cache-memories.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547335909700.png" alt="1547335909700"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547335909700.png" class width="1547335909700">
 <hr>
-<h3 id="Cache-organization-and-operation"><a href="#Cache-organization-and-operation" class="headerlink" title="Cache organization and operation"></a>Cache organization and operation</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547335981511.png" alt="1547335981511"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547335994312.png" alt="1547335994312"></p>
+<h3 id="Cache-organization-and-operation"><a href="#Cache-organization-and-operation" class="headerlink" title="Cache organization and operation"></a>Cache organization and operation</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547335981511.png" class width="1547335981511">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547335994312.png" class width="1547335994312">
 <p> <strong><font color="red">Direct Mapped Cache</font></strong> (E = 1): (<strong>One line per set</strong>. Assume: cache block size B=8 bytes)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547336274671.png" alt="1547336274671"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547336274671.png" class width="1547336274671">
 <blockquote>
 <p>• <strong>Locate set</strong><br>• <strong>Check if any line in set</strong>has matching tag<br>• <strong>Yes + line valid</strong>: <strong><font color="red">hit</font></strong><br>• <strong>Locate data</strong> starting at offset</p>
 <p><strong><font color="red">If tag doesn’t match (= miss)</font></strong>: old line is evicted and replaced</p>
 </blockquote>
 <p><strong>Ex</strong>. (Direct-Mapped Cache Simulation)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547337293519.png" alt="1547337293519"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547337293519.png" class width="1547337293519">
 <p><strong><font color="red">E-way Set Associative Cache</font></strong> (Here: E = 2): </p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547338153960.png" alt="1547338153960"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547338153960.png" class width="1547338153960">
 <p><strong>Ex</strong>. (2-Way Set Associative Cache Simulation)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547338419283.png" alt="1547338419283"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547338419283.png" class width="1547338419283">
 <blockquote>
 <p>What about writes?</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547339208689.png" alt="1547339208689"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547339208689.png" class width="1547339208689">
 </blockquote>
 <h3 id="Performance-impact-of-caches"><a href="#Performance-impact-of-caches" class="headerlink" title="Performance impact of caches"></a>Performance impact of caches</h3><h4 id="The-memory-mountain"><a href="#The-memory-mountain" class="headerlink" title="The memory mountain"></a>The memory mountain</h4><p><strong>Read throughput</strong> (read bandwidth)<br>▪ Number of bytes read from memory per second (MB/s)<br><strong>Memory mountain</strong>: Measured <strong>read throughput</strong> as a function of spatial and temporal locality.<br>▪ Compact way to characterize memory system performance. </p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547339979979.png" alt="1547339979979"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547339979979.png" class width="1547339979979">
 <h4 id="Rearranging-loops-to-improve-spatial-locality"><a href="#Rearranging-loops-to-improve-spatial-locality" class="headerlink" title="Rearranging loops to improve spatial locality"></a>Rearranging loops to improve spatial locality</h4><p><strong>Ex</strong>. (Matrix Multiply Performance)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547340307928.png" alt="1547340307928"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547340272596.png" alt="1547340272596"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547340307928.png" class width="1547340307928">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547340272596.png" class width="1547340272596">
 <h4 id="Using-blocking-to-improve-temporal-locality"><a href="#Using-blocking-to-improve-temporal-locality" class="headerlink" title="Using blocking to improve temporal locality"></a>Using blocking to improve temporal locality</h4><blockquote>
 <p>See in the slides.</p>
 </blockquote>
@@ -1579,12 +1580,12 @@
 <p><a href="https://www.cs.cmu.edu/~213/lectures/13-linking.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
 <p><strong>Ex</strong>. (Example C Program)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547340841183.png" alt="1547340841183"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547340841183.png" class width="1547340841183">
 <blockquote>
 <p>Programs are translated and linked using a compiler driver:</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linux&gt; gcc -Og -o prog main.c sum.c</span><br><span class="line">linux&gt; .&#x2F;prog</span><br></pre></td></tr></table></figure>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547340897117.png" alt="1547340897117"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547340897117.png" class width="1547340897117">
 <p><strong>Why Linkers</strong>?</p>
 <ul>
 <li>Reason 1: Modularity</li>
@@ -1602,7 +1603,7 @@
 <li>Executable object file (a.out file)</li>
 <li>Shared object file (.so file)</li>
 </ul>
-<h2 id="Linker-Symbols"><a href="#Linker-Symbols" class="headerlink" title="Linker Symbols"></a>Linker Symbols</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547341535201.png" alt="1547341535201"></p>
+<h2 id="Linker-Symbols"><a href="#Linker-Symbols" class="headerlink" title="Linker Symbols"></a>Linker Symbols</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547341535201.png" class width="1547341535201">
 <blockquote>
 <p>just like: <strong>public, friend, and private</strong>.</p>
 </blockquote>
@@ -1611,7 +1612,7 @@
 <li><strong><font color="red">Strong</font></strong>: <u>procedures and initialized globals</u></li>
 <li><strong><font color="red">Weak</font></strong>: <u>uninitialized globals</u><br>Or ones declared with specifier <strong>extern</strong></li>
 </ul>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547372123409.png" alt="1547372123409"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547372123409.png" class width="1547372123409">
 <blockquote>
 <p>Rule 1: <strong>Multiple strong symbols are not allowed</strong></p>
 <ul>
@@ -1627,7 +1628,7 @@
 </ul>
 </blockquote>
 <p><strong>Ex</strong>. (Linker Puzzles)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547372584466.png" alt="1547372584466"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547372584466.png" class width="1547372584466">
 <blockquote>
 <p>Global Variables: (caution)</p>
 <ul>
@@ -1640,13 +1641,13 @@
 <p><a href="https://blog.csdn.net/unix21/article/details/8456801" target="_blank" rel="noopener external nofollow noreferrer">关于text段、data段和bss段</a></p>
 <p><a href="http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html" target="_blank" rel="noopener external nofollow noreferrer">Shared Library</a> (Modern Solution)</p>
 <p><a href="https://blog.csdn.net/spaceyqy/article/details/39393877" target="_blank" rel="noopener external nofollow noreferrer">地址重定位：静态重定位和动态重定位</a></p>
-<h2 id="Case-study-Library-interpositioning"><a href="#Case-study-Library-interpositioning" class="headerlink" title="Case study: Library interpositioning"></a>Case study: Library interpositioning</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547376541373.png" alt="1547376541373"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547376555472.png" alt="1547376555472"></p>
-<h1 id="ECF-Exceptional-Control-Flow"><a href="#ECF-Exceptional-Control-Flow" class="headerlink" title="ECF(Exceptional    Control    Flow)"></a>ECF(Exceptional    Control    Flow)</h1><h2 id="Exceptions-amp-Processes"><a href="#Exceptions-amp-Processes" class="headerlink" title="Exceptions &amp; Processes"></a>Exceptions &amp; Processes</h2><h3 id="Exceptional-Control-Flow"><a href="#Exceptional-Control-Flow" class="headerlink" title="Exceptional    Control    Flow"></a>Exceptional    Control    Flow</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547377173686.png" alt="1547377173686"></p>
-<h3 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547377211891.png" alt="1547377211891"></p>
-<h4 id="Interrupts-Asynchronous-Exceptions"><a href="#Interrupts-Asynchronous-Exceptions" class="headerlink" title="Interrupts(Asynchronous Exceptions)"></a>Interrupts(Asynchronous Exceptions)</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547377607727.png" alt="1547377607727"></p>
-<h4 id="Synchronous-Exceptions"><a href="#Synchronous-Exceptions" class="headerlink" title="Synchronous Exceptions"></a>Synchronous Exceptions</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547377563056.png" alt="1547377563056"></p>
-<h3 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547378100305.png" alt="1547378100305"></p>
+<h2 id="Case-study-Library-interpositioning"><a href="#Case-study-Library-interpositioning" class="headerlink" title="Case study: Library interpositioning"></a>Case study: Library interpositioning</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547376541373.png" class width="1547376541373">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547376555472.png" class width="1547376555472">
+<h1 id="ECF-Exceptional-Control-Flow"><a href="#ECF-Exceptional-Control-Flow" class="headerlink" title="ECF(Exceptional    Control    Flow)"></a>ECF(Exceptional    Control    Flow)</h1><h2 id="Exceptions-amp-Processes"><a href="#Exceptions-amp-Processes" class="headerlink" title="Exceptions &amp; Processes"></a>Exceptions &amp; Processes</h2><h3 id="Exceptional-Control-Flow"><a href="#Exceptional-Control-Flow" class="headerlink" title="Exceptional    Control    Flow"></a>Exceptional    Control    Flow</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547377173686.png" class width="1547377173686">
+<h3 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547377211891.png" class width="1547377211891">
+<h4 id="Interrupts-Asynchronous-Exceptions"><a href="#Interrupts-Asynchronous-Exceptions" class="headerlink" title="Interrupts(Asynchronous Exceptions)"></a>Interrupts(Asynchronous Exceptions)</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547377607727.png" class width="1547377607727">
+<h4 id="Synchronous-Exceptions"><a href="#Synchronous-Exceptions" class="headerlink" title="Synchronous Exceptions"></a>Synchronous Exceptions</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547377563056.png" class width="1547377563056">
+<h3 id="Processes"><a href="#Processes" class="headerlink" title="Processes"></a>Processes</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547378100305.png" class width="1547378100305">
 <h3 id="Process-Control"><a href="#Process-Control" class="headerlink" title="Process    Control"></a>Process    Control</h3><h4 id="Obtaining-Process-IDs"><a href="#Obtaining-Process-IDs" class="headerlink" title="Obtaining Process IDs"></a>Obtaining Process IDs</h4><p><code>pid_t getpid(void)</code></p>
 <ul>
 <li>Returns PID of current process</li>
@@ -1664,12 +1665,12 @@
 <blockquote>
 <p><strong><u>Returns 0 to the child process</u></strong>, child’s PID to parent process。（called once, <strong><font color="red">return twice</font></strong>）</p>
 <p><strong>Ex</strong>. (can’t predict the exact return value of fork)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547381165003.png" alt="1547381165003"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547381165003.png" class width="1547381165003">
 <p>Two    consecutive fork:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547391612972.png" alt="1547391612972"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547391612972.png" class width="1547391612972">
 <p>Nested forks in parent: (Similar)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547391661619.png" alt="1547391661619"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547391679091.png" alt="1547391679091"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547391661619.png" class width="1547391661619">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547391679091.png" class width="1547391679091">
 <p>More exercise: <a href="http://condor.depaul.edu/glancast/374class/hw/samplefinal.html" target="_blank" rel="noopener external nofollow noreferrer">Sample</a>, <a href="http://condor.depaul.edu/glancast/374class/docs/midterm_ans.html" target="_blank" rel="noopener external nofollow noreferrer">Modor</a></p>
 </blockquote>
 <p><code>int wait(int *child_status)</code></p>
@@ -1677,12 +1678,12 @@
 <p>return <code>child’s PID</code> if succeed, <code>-1</code> otherwise.</p>
 </blockquote>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547393088942.png" alt="1547393088942"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547393088942.png" class width="1547393088942">
 <p><strong>Ex</strong>. (fork + wait)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547392851262.png" alt="1547392851262"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547392851262.png" class width="1547392851262">
 <blockquote>
 <p>Note: (<u>The processes will run <strong><font color="red">parallelly</font></strong> unless some of them have to wait</u>)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547395602746.png" alt="1547395602746"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547395602746.png" class width="1547395602746">
 </blockquote>
 <p><code>int execve(char *filename, char *argv[], char *envp[])</code></p>
 <ul>
@@ -1702,45 +1703,45 @@
 <h1 id="Virtual-Memory"><a href="#Virtual-Memory" class="headerlink" title="Virtual Memory"></a>Virtual Memory</h1><h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/17-vm-concepts.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
-<h3 id="Address-spaces"><a href="#Address-spaces" class="headerlink" title="Address spaces"></a>Address spaces</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547397352855.png" alt="1547397352855"></p>
+<h3 id="Address-spaces"><a href="#Address-spaces" class="headerlink" title="Address spaces"></a>Address spaces</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547397352855.png" class width="1547397352855">
 <p>Why Virtual Memory (VM)?</p>
 <ul>
 <li>Uses main memory efficiently</li>
 <li>Simplifies memory management</li>
 <li>Isolates address spaces</li>
 </ul>
-<h4 id="VM-as-a-tool-for-caching"><a href="#VM-as-a-tool-for-caching" class="headerlink" title="VM as a tool for caching"></a>VM as a tool for caching</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547397695292.png" alt="1547397695292"></p>
+<h4 id="VM-as-a-tool-for-caching"><a href="#VM-as-a-tool-for-caching" class="headerlink" title="VM as a tool for caching"></a>VM as a tool for caching</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547397695292.png" class width="1547397695292">
 <p><strong>Enabling Data Structure: Page Table</strong></p>
 <p><strong>A page table is an array of page table entries (<font color="red">PTE</font>s)</strong> that maps virtual pages to physical pages.<br>▪ Per-process kernel data structure in DRAM</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547398071042.png" alt="1547398071042"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547398071042.png" class width="1547398071042">
 <blockquote>
 <p><strong>Page hit</strong>:  reference to VM word that is in physical memory (DRAM cache hit)<br><strong>Page fault</strong>: reference to VM word that is not in physical memory (DRAM cache miss)<br><strong>Handling Page Fault</strong>: Page miss causes page fault (an exception)</p>
 </blockquote>
 <p><strong><font color="red">Locality to the Rescue Again!</font></strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547398461378.png" alt="1547398461378"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547398461378.png" class width="1547398461378">
 <h4 id="VM-as-a-tool-for-memory-management"><a href="#VM-as-a-tool-for-memory-management" class="headerlink" title="VM as a tool for memory management"></a>VM as a tool for memory management</h4><blockquote>
 <p>Key idea: each process has its own virtual address space</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547399758879.png" alt="1547399758879"></p>
-<h4 id="VM-as-a-tool-for-memory-protection"><a href="#VM-as-a-tool-for-memory-protection" class="headerlink" title="VM as a tool for memory protection"></a>VM as a tool for memory protection</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547400232218.png" alt="1547400232218"></p>
-<h3 id="Address-translation"><a href="#Address-translation" class="headerlink" title="Address translation"></a>Address translation</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547400371064.png" alt="1547400371064"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547399758879.png" class width="1547399758879">
+<h4 id="VM-as-a-tool-for-memory-protection"><a href="#VM-as-a-tool-for-memory-protection" class="headerlink" title="VM as a tool for memory protection"></a>VM as a tool for memory protection</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547400232218.png" class width="1547400232218">
+<h3 id="Address-translation"><a href="#Address-translation" class="headerlink" title="Address translation"></a>Address translation</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547400371064.png" class width="1547400371064">
 <p><strong>Address Translation: Page Hit</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547400749761.png" alt="1547400749761"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547400749761.png" class width="1547400749761">
 <p><strong>Address Translation: Page Fault</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547400731481.png" alt="1547400731481"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547400731481.png" class width="1547400731481">
 <hr>
 <p><strong>Integrating VM and Cache</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547400842787.png" alt="1547400842787"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547400842787.png" class width="1547400842787">
 <blockquote>
 <p>VA: virtual address, PA: physical address, PTE: page table entry, PTEA = PTE address.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547401434276.png" alt="1547401434276"></p>
-<h4 id="Multi-Level-Page-Tables"><a href="#Multi-Level-Page-Tables" class="headerlink" title="Multi-Level Page Tables"></a>Multi-Level Page Tables</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547401541948.png" alt="1547401541948"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547401434276.png" class width="1547401434276">
+<h4 id="Multi-Level-Page-Tables"><a href="#Multi-Level-Page-Tables" class="headerlink" title="Multi-Level Page Tables"></a>Multi-Level Page Tables</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547401541948.png" class width="1547401541948">
 <p><strong>A Two-Level Page Table Hierarchy</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547401630774.png" alt="1547401630774"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547401630774.png" class width="1547401630774">
 <p><strong>Translating with a k-level Page Table</strong></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547401741126.png" alt="1547401741126"></p>
-<h2 id="Systems"><a href="#Systems" class="headerlink" title="Systems"></a>Systems</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547401893430.png" alt="1547401893430"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547401741126.png" class width="1547401741126">
+<h2 id="Systems"><a href="#Systems" class="headerlink" title="Systems"></a>Systems</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547401893430.png" class width="1547401893430">
 <h3 id="Case-study-Core-i7-Linux-memory-system"><a href="#Case-study-Core-i7-Linux-memory-system" class="headerlink" title="Case study: Core i7/Linux memory system"></a>Case study: Core i7/Linux memory system</h3><p>None.</p>
 <blockquote>
 <p>Some page were marked to be protected by core so that the user can’t alter.</p>
@@ -1750,7 +1751,7 @@
 <h3 id="Memory-mapping"><a href="#Memory-mapping" class="headerlink" title="Memory mapping"></a>Memory mapping</h3><blockquote>
 <p>The address translation is always running.</p>
 </blockquote>
-<h1 id="Dynamic-Memory-Allocation"><a href="#Dynamic-Memory-Allocation" class="headerlink" title="Dynamic Memory Allocation"></a>Dynamic Memory Allocation</h1><h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547632217288.png" alt="1547632217288"></p>
+<h1 id="Dynamic-Memory-Allocation"><a href="#Dynamic-Memory-Allocation" class="headerlink" title="Dynamic Memory Allocation"></a>Dynamic Memory Allocation</h1><h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547632217288.png" class width="1547632217288">
 <p><code>void* malloc(size_t size)</code></p>
 <ul>
 <li>get a block by given size</li>
@@ -1778,124 +1779,124 @@
 </ul>
 <blockquote>
 <p>Can cause by <strong>fragmentation</strong>.(internal or external)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547633458529.png" alt="1547633458529"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547633458529.png" class width="1547633458529">
 </blockquote>
 <h2 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h2><h3 id="Explicit-free-lists"><a href="#Explicit-free-lists" class="headerlink" title="Explicit free lists"></a>Explicit free lists</h3><p><strong>Keeping Track of Free Blocks</strong>：</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547632384923.png" alt="1547632384923"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547632384923.png" class width="1547632384923">
 <p>Explicit free lists：</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547632763444.png" alt="1547632763444"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547632763444.png" class width="1547632763444">
 <p><strong>Freeing With Explicit Free Lists</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547632870380.png" alt="1547632870380"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547632870380.png" class width="1547632870380">
 <blockquote>
 <p>Often use BBST to manage the allocated memory.</p>
 </blockquote>
 <p><strong>Explicit List Summary</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547633702762.png" alt="1547633702762"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547633702762.png" class width="1547633702762">
 <h3 id="Segregated-free-lists"><a href="#Segregated-free-lists" class="headerlink" title="Segregated free lists"></a>Segregated free lists</h3><p><strong>Each <font color="red">size class</font> of blocks has its own free list</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547633841902.png" alt="1547633841902"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547633866174.png" alt="1547633866174"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547633877113.png" alt="1547633877113"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547633841902.png" class width="1547633841902">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547633866174.png" class width="1547633866174">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547633877113.png" class width="1547633877113">
 <h3 id="Garbage-collection"><a href="#Garbage-collection" class="headerlink" title="Garbage collection"></a>Garbage collection</h3><p><strong>Garbage collection</strong> :automatic reclamation of heap-allocated storage—application never has to explicitly free memory.</p>
 <blockquote>
 <p>Common in many dynamic languages:</p>
 <p>▪Python, Ruby, Java, Perl, ML, Lisp, Mathematica</p>
 <p>The tech is still ongoing.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634384794.png" alt="1547634384794"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634384794.png" class width="1547634384794">
 </blockquote>
 <p>Graph:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634341801.png" alt="1547634341801"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634341801.png" class width="1547634341801">
 <p><strong>Mark and Sweep Collecting</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634660319.png" alt="1547634660319"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634660319.png" class width="1547634660319">
 <p>Assumptions For a Simple Implementation：</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634676657.png" alt="1547634676657"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634676657.png" class width="1547634676657">
 <p>Mark and Sweep (cont.)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634637283.png" alt="1547634637283"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634637283.png" class width="1547634637283">
 <h3 id="Memory-related-perils-and-pitfalls"><a href="#Memory-related-perils-and-pitfalls" class="headerlink" title="Memory-related perils and pitfalls"></a>Memory-related perils and pitfalls</h3><h4 id="Dereferencing-Bad-Pointers"><a href="#Dereferencing-Bad-Pointers" class="headerlink" title="Dereferencing Bad Pointers"></a>Dereferencing Bad Pointers</h4><p>The classic scanf bug:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634921046.png" alt="1547634921046"></p>
-<h4 id="Reading-Uninitialized-Memory"><a href="#Reading-Uninitialized-Memory" class="headerlink" title="Reading Uninitialized Memory"></a>Reading Uninitialized Memory</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635004089.png" alt="1547635004089"></p>
-<h4 id="Overwriting-Memory"><a href="#Overwriting-Memory" class="headerlink" title="Overwriting Memory"></a>Overwriting Memory</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635074780.png" alt="1547635074780"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547635083354.png" alt="1547635083354"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547635094290.png" alt="1547635094290"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547635106717.png" alt="1547635106717"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547635130333.png" alt="1547635130333"></p>
-<h4 id="Referencing-Nonexistent-Variables"><a href="#Referencing-Nonexistent-Variables" class="headerlink" title="Referencing Nonexistent Variables"></a>Referencing Nonexistent Variables</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635148682.png" alt="1547635148682"></p>
-<h4 id="Freeing-Blocks-Multiple-Times"><a href="#Freeing-Blocks-Multiple-Times" class="headerlink" title="Freeing Blocks Multiple Times"></a>Freeing Blocks Multiple Times</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635163203.png" alt="1547635163203"></p>
-<h4 id="Referencing-Freed-Blocks"><a href="#Referencing-Freed-Blocks" class="headerlink" title="Referencing Freed Blocks"></a>Referencing Freed Blocks</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635195448.png" alt="1547635195448"></p>
-<h4 id="Failing-to-Free-Blocks-Memory-Leaks"><a href="#Failing-to-Free-Blocks-Memory-Leaks" class="headerlink" title="Failing to Free Blocks (Memory Leaks)"></a>Failing to Free Blocks (Memory Leaks)</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547635216062.png" alt="1547635216062"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547635226516.png" alt="1547635226516"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634921046.png" class width="1547634921046">
+<h4 id="Reading-Uninitialized-Memory"><a href="#Reading-Uninitialized-Memory" class="headerlink" title="Reading Uninitialized Memory"></a>Reading Uninitialized Memory</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635004089.png" class width="1547635004089">
+<h4 id="Overwriting-Memory"><a href="#Overwriting-Memory" class="headerlink" title="Overwriting Memory"></a>Overwriting Memory</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635074780.png" class width="1547635074780">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547635083354.png" class width="1547635083354">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547635094290.png" class width="1547635094290">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547635106717.png" class width="1547635106717">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547635130333.png" class width="1547635130333">
+<h4 id="Referencing-Nonexistent-Variables"><a href="#Referencing-Nonexistent-Variables" class="headerlink" title="Referencing Nonexistent Variables"></a>Referencing Nonexistent Variables</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635148682.png" class width="1547635148682">
+<h4 id="Freeing-Blocks-Multiple-Times"><a href="#Freeing-Blocks-Multiple-Times" class="headerlink" title="Freeing Blocks Multiple Times"></a>Freeing Blocks Multiple Times</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635163203.png" class width="1547635163203">
+<h4 id="Referencing-Freed-Blocks"><a href="#Referencing-Freed-Blocks" class="headerlink" title="Referencing Freed Blocks"></a>Referencing Freed Blocks</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635195448.png" class width="1547635195448">
+<h4 id="Failing-to-Free-Blocks-Memory-Leaks"><a href="#Failing-to-Free-Blocks-Memory-Leaks" class="headerlink" title="Failing to Free Blocks (Memory Leaks)"></a>Failing to Free Blocks (Memory Leaks)</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547635216062.png" class width="1547635216062">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547635226516.png" class width="1547635226516">
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634870116.png" alt="1547634870116"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547634883889.png" alt="1547634883889"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634870116.png" class width="1547634870116">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547634883889.png" class width="1547634883889">
 <h1 id="System-Level-I-O"><a href="#System-Level-I-O" class="headerlink" title="System-Level I/O"></a>System-Level I/O</h1><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/16-io.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547636269869.png" alt="1547636269869"></p>
-<h2 id="Unix-I-O"><a href="#Unix-I-O" class="headerlink" title="Unix I/O"></a>Unix I/O</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547636283880.png" alt="1547636283880"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547636269869.png" class width="1547636269869">
+<h2 id="Unix-I-O"><a href="#Unix-I-O" class="headerlink" title="Unix I/O"></a>Unix I/O</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547636283880.png" class width="1547636283880">
 <p><strong>Unix I/O Overview</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547636304283.png" alt="1547636304283"></p>
-<h3 id="File-Types"><a href="#File-Types" class="headerlink" title="File Types"></a>File Types</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547636442697.png" alt="1547636442697"></p>
-<h3 id="Regular-Files"><a href="#Regular-Files" class="headerlink" title="Regular Files"></a>Regular Files</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547636488286.png" alt="1547636488286"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547636304283.png" class width="1547636304283">
+<h3 id="File-Types"><a href="#File-Types" class="headerlink" title="File Types"></a>File Types</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547636442697.png" class width="1547636442697">
+<h3 id="Regular-Files"><a href="#Regular-Files" class="headerlink" title="Regular Files"></a>Regular Files</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547636488286.png" class width="1547636488286">
 <blockquote>
 <p>Windows type <code>\r\n</code> actually relates to the usage of typewriter.</p>
 </blockquote>
-<h3 id="Pathname"><a href="#Pathname" class="headerlink" title="Pathname"></a>Pathname</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547637170160.png" alt="1547637170160"></p>
-<h3 id="Opening-Files"><a href="#Opening-Files" class="headerlink" title="Opening Files"></a>Opening Files</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547637196057.png" alt="1547637196057"></p>
-<h3 id="Closing-Files"><a href="#Closing-Files" class="headerlink" title="Closing Files"></a>Closing Files</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547637230296.png" alt="1547637230296"></p>
-<h3 id="Reading-Files"><a href="#Reading-Files" class="headerlink" title="Reading Files"></a>Reading Files</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547637274563.png" alt="1547637274563"></p>
-<h3 id="Writing-Files"><a href="#Writing-Files" class="headerlink" title="Writing Files"></a>Writing Files</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547637288790.png" alt="1547637288790"></p>
+<h3 id="Pathname"><a href="#Pathname" class="headerlink" title="Pathname"></a>Pathname</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547637170160.png" class width="1547637170160">
+<h3 id="Opening-Files"><a href="#Opening-Files" class="headerlink" title="Opening Files"></a>Opening Files</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547637196057.png" class width="1547637196057">
+<h3 id="Closing-Files"><a href="#Closing-Files" class="headerlink" title="Closing Files"></a>Closing Files</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547637230296.png" class width="1547637230296">
+<h3 id="Reading-Files"><a href="#Reading-Files" class="headerlink" title="Reading Files"></a>Reading Files</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547637274563.png" class width="1547637274563">
+<h3 id="Writing-Files"><a href="#Writing-Files" class="headerlink" title="Writing Files"></a>Writing Files</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547637288790.png" class width="1547637288790">
 <p><strong>Ex</strong>. (sample)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547637342089.png" alt="1547637342089"></p>
-<h2 id="Metadata-sharing-and-redirection"><a href="#Metadata-sharing-and-redirection" class="headerlink" title="Metadata. sharing, and redirection"></a>Metadata. sharing, and redirection</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547637499977.png" alt="1547637499977"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547638259903.png" alt="1547638259903"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547637342089.png" class width="1547637342089">
+<h2 id="Metadata-sharing-and-redirection"><a href="#Metadata-sharing-and-redirection" class="headerlink" title="Metadata. sharing, and redirection"></a>Metadata. sharing, and redirection</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547637499977.png" class width="1547637499977">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547638259903.png" class width="1547638259903">
 <p><strong>Ex</strong>. (Example of Accessing File Metadata)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639415439.png" alt="1547639415439"></p>
-<h3 id="File-Sharing"><a href="#File-Sharing" class="headerlink" title="File Sharing"></a>File Sharing</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547638324632.png" alt="1547638324632"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547638404001.png" alt="1547638404001"></p>
-<h3 id="I-O-Redirection"><a href="#I-O-Redirection" class="headerlink" title="I/O Redirection"></a>I/O Redirection</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547638494620.png" alt="1547638494620"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639415439.png" class width="1547639415439">
+<h3 id="File-Sharing"><a href="#File-Sharing" class="headerlink" title="File Sharing"></a>File Sharing</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547638324632.png" class width="1547638324632">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547638404001.png" class width="1547638404001">
+<h3 id="I-O-Redirection"><a href="#I-O-Redirection" class="headerlink" title="I/O Redirection"></a>I/O Redirection</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547638494620.png" class width="1547638494620">
 <h2 id="Standard-I-O"><a href="#Standard-I-O" class="headerlink" title="Standard I/O"></a>Standard I/O</h2><p><strong>Functions</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639071441.png" alt="1547639071441"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639071441.png" class width="1547639071441">
 <p>Std. I/O Streams:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639102970.png" alt="1547639102970"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639102970.png" class width="1547639102970">
 <p>Buffering in Standard I/O:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639217650.png" alt="1547639217650"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639252437.png" alt="1547639252437"></p>
-<h2 id="RIO-robust-I-O-package"><a href="#RIO-robust-I-O-package" class="headerlink" title="RIO(robust I/O) package"></a>RIO(robust I/O) package</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547637720207.png" alt="1547637720207"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639217650.png" class width="1547639217650">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639252437.png" class width="1547639252437">
+<h2 id="RIO-robust-I-O-package"><a href="#RIO-robust-I-O-package" class="headerlink" title="RIO(robust I/O) package"></a>RIO(robust I/O) package</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547637720207.png" class width="1547637720207">
 <p><strong>Buffered I/O: Implementation</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547637828298.png" alt="1547637828298"></p>
-<h2 id="Closing-remarks"><a href="#Closing-remarks" class="headerlink" title="Closing remarks"></a>Closing remarks</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547639020855.png" alt="1547639020855"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547637828298.png" class width="1547637828298">
+<h2 id="Closing-remarks"><a href="#Closing-remarks" class="headerlink" title="Closing remarks"></a>Closing remarks</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547639020855.png" class width="1547639020855">
 <blockquote>
 <p>For more information:</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639383577.png" alt="1547639383577"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639383577.png" class width="1547639383577">
 <h1 id="Network-Programing"><a href="#Network-Programing" class="headerlink" title="Network Programing"></a>Network Programing</h1><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/21-netprog1.pdf" target="_blank" rel="noopener external nofollow noreferrer">slide1</a>, <a href="https://www.cs.cmu.edu/~213/lectures/22-netprog2.pdf" target="_blank" rel="noopener external nofollow noreferrer">slide2</a>.</p>
 </blockquote>
-<h2 id="A-Client-Server-Transaction"><a href="#A-Client-Server-Transaction" class="headerlink" title="A Client-Server Transaction"></a>A Client-Server Transaction</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547639774401.png" alt="1547639774401"></p>
-<h3 id="Computer-Networks"><a href="#Computer-Networks" class="headerlink" title="Computer Networks"></a>Computer Networks</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547639820521.png" alt="1547639820521"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547639834807.png" alt="1547639834807"></p>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><h3 id="Lowest-Level-Ethernet-Segment"><a href="#Lowest-Level-Ethernet-Segment" class="headerlink" title="Lowest Level: Ethernet Segment"></a>Lowest Level: Ethernet Segment</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547640042340.png" alt="1547640042340"></p>
+<h2 id="A-Client-Server-Transaction"><a href="#A-Client-Server-Transaction" class="headerlink" title="A Client-Server Transaction"></a>A Client-Server Transaction</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547639774401.png" class width="1547639774401">
+<h3 id="Computer-Networks"><a href="#Computer-Networks" class="headerlink" title="Computer Networks"></a>Computer Networks</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547639820521.png" class width="1547639820521">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547639834807.png" class width="1547639834807">
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><h3 id="Lowest-Level-Ethernet-Segment"><a href="#Lowest-Level-Ethernet-Segment" class="headerlink" title="Lowest Level: Ethernet Segment"></a>Lowest Level: Ethernet Segment</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547640042340.png" class width="1547640042340">
 <blockquote>
 <p>Broadcast mechanism.</p>
 </blockquote>
-<h3 id="Next-Level-Bridged-Ethernet-Segment"><a href="#Next-Level-Bridged-Ethernet-Segment" class="headerlink" title="Next Level: Bridged Ethernet Segment"></a>Next Level: Bridged Ethernet Segment</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547640030470.png" alt="1547640030470"></p>
+<h3 id="Next-Level-Bridged-Ethernet-Segment"><a href="#Next-Level-Bridged-Ethernet-Segment" class="headerlink" title="Next Level: Bridged Ethernet Segment"></a>Next Level: Bridged Ethernet Segment</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547640030470.png" class width="1547640030470">
 <blockquote>
 <p>LAN: Local area network.<br>WLAN: Wireless local area network.</p>
 </blockquote>
-<h3 id="Next-Level-internets"><a href="#Next-Level-internets" class="headerlink" title="Next Level: internets"></a>Next Level: internets</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547640194691.png" alt="1547640194691"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547640020500.png" alt="1547640020500"></p>
+<h3 id="Next-Level-internets"><a href="#Next-Level-internets" class="headerlink" title="Next Level: internets"></a>Next Level: internets</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547640194691.png" class width="1547640194691">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547640020500.png" class width="1547640020500">
 <p>Transferring internet Data Via Encapsulation:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547640403914.png" alt="1547640403914"></p>
-<h2 id="Global-IP-Internet"><a href="#Global-IP-Internet" class="headerlink" title="Global IP Internet"></a>Global IP Internet</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547640557961.png" alt="1547640557961"></p>
-<h3 id="Internet-Domain-Name"><a href="#Internet-Domain-Name" class="headerlink" title="Internet Domain Name"></a>Internet Domain Name</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547641215724.png" alt="1547641215724"></p>
-<h3 id="Domain-Naming-System-DNS"><a href="#Domain-Naming-System-DNS" class="headerlink" title="Domain Naming System (DNS)"></a>Domain Naming System (DNS)</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547641252464.png" alt="1547641252464"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547640403914.png" class width="1547640403914">
+<h2 id="Global-IP-Internet"><a href="#Global-IP-Internet" class="headerlink" title="Global IP Internet"></a>Global IP Internet</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547640557961.png" class width="1547640557961">
+<h3 id="Internet-Domain-Name"><a href="#Internet-Domain-Name" class="headerlink" title="Internet Domain Name"></a>Internet Domain Name</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547641215724.png" class width="1547641215724">
+<h3 id="Domain-Naming-System-DNS"><a href="#Domain-Naming-System-DNS" class="headerlink" title="Domain Naming System (DNS)"></a>Domain Naming System (DNS)</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547641252464.png" class width="1547641252464">
 <blockquote>
 <p>can be multi-multi mapping.</p>
 </blockquote>
-<h2 id="Sockets"><a href="#Sockets" class="headerlink" title="Sockets"></a>Sockets</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547642020101.png" alt="1547642020101"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547642053038.png" alt="1547642053038"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547642145169.png" alt="1547642145169"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547642156153.png" alt="1547642156153"></p>
-<h3 id="Socket-Interface"><a href="#Socket-Interface" class="headerlink" title="Socket Interface"></a>Socket Interface</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547642365345.png" alt="1547642365345"></p>
+<h2 id="Sockets"><a href="#Sockets" class="headerlink" title="Sockets"></a>Sockets</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547642020101.png" class width="1547642020101">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547642053038.png" class width="1547642053038">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547642145169.png" class width="1547642145169">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547642156153.png" class width="1547642156153">
+<h3 id="Socket-Interface"><a href="#Socket-Interface" class="headerlink" title="Socket Interface"></a>Socket Interface</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547642365345.png" class width="1547642365345">
 <blockquote>
 <p>The advanced topic can be seen in the video and related slides.</p>
 </blockquote>
@@ -1903,111 +1904,110 @@
 <p><a href="https://www.cs.cmu.edu/~213/lectures/23-concprog.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 <p><del>The lecturer always says “good to see you”</del>.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547646573504.png" alt="1547646573504"></p>
-<h2 id="Situation-Examples"><a href="#Situation-Examples" class="headerlink" title="Situation Examples"></a>Situation Examples</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547646713486.png" alt="1547646713486"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547646573504.png" class width="1547646573504">
+<h2 id="Situation-Examples"><a href="#Situation-Examples" class="headerlink" title="Situation Examples"></a>Situation Examples</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547646713486.png" class width="1547646713486">
 <p><strong>Data Race</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547646641411.png" alt="1547646641411"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547646641411.png" class width="1547646641411">
 <p><strong>Deadlock</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547646688116.png" alt="1547646688116"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547646688116.png" class width="1547646688116">
 <p><strong>Starvation</strong>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547646755864.png" alt="1547646755864"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547646950976.png" alt="1547646950976"></p>
-<h2 id="Iterative-Servers"><a href="#Iterative-Servers" class="headerlink" title="Iterative Servers"></a>Iterative Servers</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547647075791.png" alt="1547647075791"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547646755864.png" class width="1547646755864">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547646950976.png" class width="1547646950976">
+<h2 id="Iterative-Servers"><a href="#Iterative-Servers" class="headerlink" title="Iterative Servers"></a>Iterative Servers</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547647075791.png" class width="1547647075791">
 <p><strong>Iterative servers process <font color="red" size="4">one request at a time</font></strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547647023405.png" alt="1547647023405"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547647023405.png" class width="1547647023405">
 <p><strong>Fundamental Flaw of Iterative Servers</strong>: (example)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547647298201.png" alt="1547647298201"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547647298201.png" class width="1547647298201">
 <h2 id="Writing-Concurrent-Servers"><a href="#Writing-Concurrent-Servers" class="headerlink" title="Writing Concurrent Servers"></a>Writing Concurrent Servers</h2><p><font color="brown" size="5">Approaches for Writing Concurrent Servers</font>:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547647413898.png" alt="1547647413898"></p>
-<h3 id="Approach-1-Process-based-Servers-进程"><a href="#Approach-1-Process-based-Servers-进程" class="headerlink" title="Approach 1: Process-based Servers(进程)"></a>Approach 1: Process-based Servers(进程)</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547647627512.png" alt="1547647627512"></p>
-<h3 id="Approach-2-Event-based-Servers"><a href="#Approach-2-Event-based-Servers" class="headerlink" title="Approach 2: Event-based Servers"></a>Approach 2: Event-based Servers</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547649281259.png" alt="1547649281259"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547647413898.png" class width="1547647413898">
+<h3 id="Approach-1-Process-based-Servers-进程"><a href="#Approach-1-Process-based-Servers-进程" class="headerlink" title="Approach 1: Process-based Servers(进程)"></a>Approach 1: Process-based Servers(进程)</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547647627512.png" class width="1547647627512">
+<h3 id="Approach-2-Event-based-Servers"><a href="#Approach-2-Event-based-Servers" class="headerlink" title="Approach 2: Event-based Servers"></a>Approach 2: Event-based Servers</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547649281259.png" class width="1547649281259">
 <p>I/O Multiplexed Event Processing:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547649302626.png" alt="1547649302626"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547649302626.png" class width="1547649302626">
 <h3 id="Approach-3-Thread-based-Servers-线程"><a href="#Approach-3-Thread-based-Servers-线程" class="headerlink" title="Approach 3: Thread-based Servers(线程)"></a>Approach 3: Thread-based Servers(线程)</h3><blockquote>
 <p>Very similar to approach #1 (process-based)</p>
 <p>…but using threads instead of processes</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547649366445.png" alt="1547649366445"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547649399772.png" alt="1547649399772"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650144510.png" alt="1547650144510"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650155901.png" alt="1547650155901"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547649366445.png" class width="1547649366445">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547649399772.png" class width="1547649399772">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650144510.png" class width="1547650144510">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650155901.png" class width="1547650155901">
 <p>Summary: Approaches to Concurrency</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650200705.png" alt="1547650200705"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650200705.png" class width="1547650200705">
 <h1 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h1><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/24-sync-basic.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides-basic</a>, <a href="https://www.cs.cmu.edu/~213/lectures/25-sync-advanced.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides-advanced</a>.</p>
 </blockquote>
-<h2 id="Threads-review"><a href="#Threads-review" class="headerlink" title="Threads review"></a>Threads review</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547650418667.png" alt="1547650418667"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650457857.png" alt="1547650457857"></p>
+<h2 id="Threads-review"><a href="#Threads-review" class="headerlink" title="Threads review"></a>Threads review</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547650418667.png" class width="1547650418667">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650457857.png" class width="1547650457857">
 <h2 id="Sharing"><a href="#Sharing" class="headerlink" title="Sharing"></a>Sharing</h2><p><strong>Ex</strong>. (Example Program to Illustrate Sharing)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650532298.png" alt="1547650532298"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650532298.png" class width="1547650532298">
 <p>Mapping Variable Instances to Memory:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650564204.png" alt="1547650564204"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650564204.png" class width="1547650564204">
 <blockquote>
 <p><strong>Ex</strong>.</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650619028.png" alt="1547650619028"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650619028.png" class width="1547650619028">
 <p><strong>Ex</strong>. (Shared Variable Analysis)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547650823729.png" alt="1547650823729"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547650823729.png" class width="1547650823729">
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547652937800.png" alt="1547652937800"></p>
-<h2 id="Mutual-exclusion"><a href="#Mutual-exclusion" class="headerlink" title="Mutual exclusion"></a>Mutual exclusion</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547652958297.png" alt="1547652958297"></p>
-<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547652991943.png" alt="1547652991943"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547652937800.png" class width="1547652937800">
+<h2 id="Mutual-exclusion"><a href="#Mutual-exclusion" class="headerlink" title="Mutual exclusion"></a>Mutual exclusion</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547652958297.png" class width="1547652958297">
+<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547652991943.png" class width="1547652991943">
 <p>Summary:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547653037579.png" alt="1547653037579"></p>
-<h2 id="Using-semaphores-to-schedule-shared-resources"><a href="#Using-semaphores-to-schedule-shared-resources" class="headerlink" title="Using semaphores to schedule shared resources"></a>Using semaphores to schedule shared resources</h2><h3 id="Producer-consumer-problem"><a href="#Producer-consumer-problem" class="headerlink" title="Producer-consumer problem"></a>Producer-consumer problem</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547653614225.png" alt="1547653614225"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547653037579.png" class width="1547653037579">
+<h2 id="Using-semaphores-to-schedule-shared-resources"><a href="#Using-semaphores-to-schedule-shared-resources" class="headerlink" title="Using semaphores to schedule shared resources"></a>Using semaphores to schedule shared resources</h2><h3 id="Producer-consumer-problem"><a href="#Producer-consumer-problem" class="headerlink" title="Producer-consumer problem"></a>Producer-consumer problem</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547653614225.png" class width="1547653614225">
 <blockquote>
 <p>Note: <strong><em><font color="red" size="5">limited buffer</font></em></strong></p>
 </blockquote>
 <p>Maintain two semaphores: full + empty</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547653662469.png" alt="1547653662469"></p>
-<h4 id="Circular-Buffer"><a href="#Circular-Buffer" class="headerlink" title="Circular Buffer"></a>Circular Buffer</h4><p><img data-src="Notes-of-Intro-to-Computer-System/1547654854691.png" alt="1547654854691"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547654864042.png" alt="1547654864042"></p>
-<h3 id="Readers-writers-problem"><a href="#Readers-writers-problem" class="headerlink" title="Readers-writers problem"></a>Readers-writers problem</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547657321523.png" alt="1547657321523"></p>
-<h2 id="Other-concurrency-issues"><a href="#Other-concurrency-issues" class="headerlink" title="Other concurrency issues"></a>Other concurrency issues</h2><h3 id="Thread-safety"><a href="#Thread-safety" class="headerlink" title="Thread safety"></a>Thread safety</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547657606023.png" alt="1547657606023"></p>
-<h3 id="Races"><a href="#Races" class="headerlink" title="Races"></a>Races</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547657467677.png" alt="1547657467677"></p>
-<h3 id="Deadlocks"><a href="#Deadlocks" class="headerlink" title="Deadlocks"></a>Deadlocks</h3><p><img data-src="Notes-of-Intro-to-Computer-System/1547657507570.png" alt="1547657507570"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547653662469.png" class width="1547653662469">
+<h4 id="Circular-Buffer"><a href="#Circular-Buffer" class="headerlink" title="Circular Buffer"></a>Circular Buffer</h4><img data-src="/Notes-of-Intro-to-Computer-System/1547654854691.png" class width="1547654854691">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547654864042.png" class width="1547654864042">
+<h3 id="Readers-writers-problem"><a href="#Readers-writers-problem" class="headerlink" title="Readers-writers problem"></a>Readers-writers problem</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547657321523.png" class width="1547657321523">
+<h2 id="Other-concurrency-issues"><a href="#Other-concurrency-issues" class="headerlink" title="Other concurrency issues"></a>Other concurrency issues</h2><h3 id="Thread-safety"><a href="#Thread-safety" class="headerlink" title="Thread safety"></a>Thread safety</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547657606023.png" class width="1547657606023">
+<h3 id="Races"><a href="#Races" class="headerlink" title="Races"></a>Races</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547657467677.png" class width="1547657467677">
+<h3 id="Deadlocks"><a href="#Deadlocks" class="headerlink" title="Deadlocks"></a>Deadlocks</h3><img data-src="/Notes-of-Intro-to-Computer-System/1547657507570.png" class width="1547657507570">
 <p>Avoid:</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547657532124.png" alt="1547657532124"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547657532124.png" class width="1547657532124">
 <h1 id="Thread-Level-Parallelism"><a href="#Thread-Level-Parallelism" class="headerlink" title="Thread-Level Parallelism"></a>Thread-Level Parallelism</h1><blockquote>
 <p><a href="https://www.cs.cmu.edu/~213/lectures/26-parallelism.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a>.</p>
 <p>Longer term perspective. <strong><em><font color="red" size="6">Think bigger!</font></em></strong></p>
 </blockquote>
-<h2 id="Today"><a href="#Today" class="headerlink" title="Today"></a>Today</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547657871360.png" alt="1547657871360"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547658046864.png" alt="1547658046864"></p>
+<h2 id="Today"><a href="#Today" class="headerlink" title="Today"></a>Today</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547657871360.png" class width="1547657871360">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547658046864.png" class width="1547658046864">
 <blockquote>
 <p>Just see the video.</p>
 </blockquote>
 <h1 id="Future-of-Computing"><a href="#Future-of-Computing" class="headerlink" title="Future of Computing"></a>Future of Computing</h1><blockquote>
 <p>slides: <a href="https://www.cs.cmu.edu/~213/lectures/27-future1.pdf" target="_blank" rel="noopener external nofollow noreferrer">part1</a>, <a href="https://www.cs.cmu.edu/~213/lectures/28-future2.pdf" target="_blank" rel="noopener external nofollow noreferrer">part2</a>.</p>
 </blockquote>
-<h2 id="Moore’s-Law"><a href="#Moore’s-Law" class="headerlink" title="Moore’s Law"></a>Moore’s Law</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547665746325.png" alt="1547665746325"></p>
+<h2 id="Moore’s-Law"><a href="#Moore’s-Law" class="headerlink" title="Moore’s Law"></a>Moore’s Law</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547665746325.png" class width="1547665746325">
 <hr>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547660408168.png" alt="1547660408168"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547660408168.png" class width="1547660408168">
 <blockquote>
 <p>The blue ones are actually for celphones.<br>The general trend is produced by regression.</p>
 <p>It’s a prediction rather than a law.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547666287044.png" alt="1547666287044"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547666287044.png" class width="1547666287044">
 <p><a href="https://en.wikipedia.org/wiki/Technological_singularity" target="_blank" rel="noopener external nofollow noreferrer">Technological singularity</a>:</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NLQNBfI97Ck" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547666579930.png" alt="1547666579930"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547667467170.png" alt="1547667467170"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547668381602.png" alt="1547668381602"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547666579930.png" class width="1547666579930">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547667467170.png" class width="1547667467170">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547668381602.png" class width="1547668381602">
 <p><strong>Ex</strong>. (3D structure)</p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547668475898.png" alt="1547668475898"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547668534807.png" alt="1547668534807"></p>
-<h2 id="High-Performance-Computing"><a href="#High-Performance-Computing" class="headerlink" title="High-Performance Computing"></a>High-Performance Computing</h2><p><img data-src="Notes-of-Intro-to-Computer-System/1547668699471.png" alt="1547668699471"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547668729420.png" alt="1547668729420"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547668475898.png" class width="1547668475898">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547668534807.png" class width="1547668534807">
+<h2 id="High-Performance-Computing"><a href="#High-Performance-Computing" class="headerlink" title="High-Performance Computing"></a>High-Performance Computing</h2><img data-src="/Notes-of-Intro-to-Computer-System/1547668699471.png" class width="1547668699471">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547668729420.png" class width="1547668729420">
 <h2 id="What’s-So-Special-About-Big-Learning"><a href="#What’s-So-Special-About-Big-Learning" class="headerlink" title="What’s So Special About Big Learning?"></a>What’s So Special About Big Learning?</h2><blockquote>
 <p>This part is available only on 2017 Fall version or after.</p>
 <p>Please just see the <a href="https://www.cs.cmu.edu/~213/lectures/28-future2.pdf" target="_blank" rel="noopener external nofollow noreferrer">slides</a> and watch the video.</p>
 <p><a href="https://turi.com/" target="_blank" rel="noopener external nofollow noreferrer">GraphLab</a>, <a href="https://wdxtub.com/2016/04/13/graphlab-guide/" target="_blank" rel="noopener external nofollow noreferrer">GraphLab-Guide_Chinese</a>.</p>
 </blockquote>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547669478016.png" alt="1547669478016"></p>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547669717022.png" alt="1547669717022"></p>
+<img data-src="/Notes-of-Intro-to-Computer-System/1547669478016.png" class width="1547669478016">
+<img data-src="/Notes-of-Intro-to-Computer-System/1547669717022.png" class width="1547669717022">
 <hr>
-<p><img data-src="Notes-of-Intro-to-Computer-System/1547669625241.png" alt="1547669625241"></p>
-
+<img data-src="/Notes-of-Intro-to-Computer-System/1547669625241.png" class width="1547669625241">
     </div>
 
     
@@ -2272,9 +2272,10 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -2390,6 +2391,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -2397,6 +2399,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -2453,7 +2456,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

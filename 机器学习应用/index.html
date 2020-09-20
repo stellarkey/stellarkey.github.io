@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,22 +31,22 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="本文是机器学习工程应用相关的笔记。主要参考吴恩达《机器学习训练秘籍》。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch04_03.png">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/Dq2.png">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1547752453147.png">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553055522456.png">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/soft-thresholding.svg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch29_01.jpg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch30_02.jpg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_01.jpg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_02.jpg">
-<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553746821819.png">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch04_03.png">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/Dq2.png">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1547752453147.png">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553055522456.png">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/soft-thresholding.svg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch29_01.jpg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch30_02.jpg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_01.jpg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_02.jpg">
+<meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553746821819.png">
 <meta property="article:published_time" content="2019-03-15T09:34:06.000Z">
 <meta property="article:modified_time" content="2019-05-22T05:18:51.260Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg">
+<meta name="twitter:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg">
 
 <link rel="canonical" href="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/">
 
@@ -278,11 +279,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p><img data-src="机器学习应用/ch01_cats.jpg" alt="ch01_cats.jpg"></p>
+        <script src="/assets/js/APlayer.min.js"> </script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg" class title="ch01_cats.jpg">
 <p>本文是机器学习工程应用相关的笔记。主要参考吴恩达《机器学习训练秘籍》。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn/tree/master/" target="_blank" rel="noopener external nofollow noreferrer">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener external nofollow noreferrer">吴恩达</a>） 面向工程应用的指南</p>
 <div class="pdfobject-container" data-target="MLY-zh-cn.pdf" data-height="500px"></div>
-<p><img data-src="机器学习应用/ch04_03.png" alt="ch04_03.png"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch04_03.png" class title="ch04_03.png">
 <h1 id="开发与测试"><a href="#开发与测试" class="headerlink" title="开发与测试"></a>开发与测试</h1><h2 id="三分原则"><a href="#三分原则" class="headerlink" title="三分原则"></a>三分原则</h2><ul>
 <li><strong>训练集（training set）</strong>用于运行你的学习算法。</li>
 <li><strong><font color="red">开发集</font>（development set）</strong>用于调整参数，选择特征，以及对学习算法作出其它决定。有时也称为<strong>留出交叉验证集（hold-out cross validation set）</strong>。</li>
@@ -414,7 +415,7 @@
 <p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwjjz7zBk5DhAhWEFIgKHdhyAT8QFjAEegQIBRAC&amp;url=https%3A%2F%2Fcourses.cs.washington.edu%2Fcourses%2Fcse446%2F13sp%2Fslides%2Flasso-annotated.pdf&amp;usg=AOvVaw1pxryhCfvYCj41fnwe68Nk" target="_blank" rel="noopener external nofollow noreferrer">Variable Selection LASSO: Sparse Regression - University of …</a></p>
 </blockquote>
 <p>L2正则化和L1正则化。如下图：</p>
-<p><img data-src="机器学习应用/Dq2.png" alt="正则化"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/Dq2.png" class title="正则化">
 <p>目标函数（误差函数）就是<strong>求蓝圈+红圈的和的最小值</strong>（回想等高线的概念并参照3式），而这个值通在很多情况下是<strong>两个曲面相交的地方</strong>。</p>
 <blockquote>
 <p>L1正则化系数可以让原本较小的<code>w</code>分量为0，原本较大的<code>w</code>分量有限；让原本不太重要的输入不起作用了，让原本比较重要的输入的系数其作用的强度限制在有限值。</p>
@@ -422,7 +423,7 @@
 </blockquote>
 <hr>
 <h3 id="“small-large-problem”与Overfitting"><a href="#“small-large-problem”与Overfitting" class="headerlink" title="“small , large  problem”与Overfitting"></a>“small , large  problem”与Overfitting</h3><p><code>n</code>（数据量）$\ll$<code>m</code>（数据维度）的时候，<u>从概率上来说，过拟合就无法避免了</u>。（摘自《<a href="https://vel.life/机器学习进阶">机器学习进阶</a>》）</p>
-<p><img data-src="机器学习应用/1547752453147.png" alt="1547752453147"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1547752453147.png" class width="1547752453147">
 <blockquote>
 <p>因为我们通常认为<strong>数据在维度上总是饱满的</strong>，这样而言，<strong>实界就极其庞大</strong>。</p>
 </blockquote>
@@ -478,7 +479,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
     \mathop{\arg\min}_{w} \ \ \cfrac{1}{n}\|y-Xw\|^2,\ \ s.t.\  \|w\|\leq{\color{blue}{C} }
 \end{equation}</script><blockquote>
 <p>这样就解释了最开始的图的原理：</p>
-<p><img data-src="机器学习应用/1553055522456.png" alt="1553055522456"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553055522456.png" class width="1553055522456">
 </blockquote>
 <p>你可以想象一个带有棱角的正方形和球分别落向（较平坦的）地面，那么它们随机地与地面最先接触的那一部分，就是上图中的极值点。</p>
 <hr>
@@ -490,7 +491,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <script type="math/tex; mode=display">
 {\color{red}{w} }=(X^TX)^{-1}X^Ty=\cfrac{1}{n}X^Ty</script><p>同时对Lasso回归有，</p>
 <script type="math/tex; mode=display">
-</script><p><img data-src="机器学习应用/soft-thresholding.svg" alt="img"></p>
+</script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/soft-thresholding.svg" class title="img">
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="table-container">
 <table>
 <thead>
@@ -532,11 +533,11 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 </table>
 </div>
 <h1 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h1><p>随着训练集数据量的增加：<strong><font color="red">开发误差</font></strong>、<strong><font color="blue">训练误差</font></strong>、<strong><font color="gree">期望性能</font></strong>。</p>
-<p><img data-src="机器学习应用/ch29_01.jpg" alt="ch29_01.jpg"></p>
-<h2 id="解读学习曲线：高偏差"><a href="#解读学习曲线：高偏差" class="headerlink" title="解读学习曲线：高偏差"></a>解读学习曲线：高偏差</h2><p><img data-src="机器学习应用/ch30_02.jpg" alt="ch30_02.jpg"></p>
-<h2 id="解读学习曲线：高方差"><a href="#解读学习曲线：高方差" class="headerlink" title="解读学习曲线：高方差"></a>解读学习曲线：高方差</h2><p><img data-src="机器学习应用/ch31_01.jpg" alt="ch31_01.jpg"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch29_01.jpg" class title="ch29_01.jpg">
+<h2 id="解读学习曲线：高偏差"><a href="#解读学习曲线：高偏差" class="headerlink" title="解读学习曲线：高偏差"></a>解读学习曲线：高偏差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch30_02.jpg" class title="ch30_02.jpg">
+<h2 id="解读学习曲线：高方差"><a href="#解读学习曲线：高方差" class="headerlink" title="解读学习曲线：高方差"></a>解读学习曲线：高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_01.jpg" class title="ch31_01.jpg">
 <p>蓝色训练误差曲线相对较低，红色的开发误差曲线比蓝色训练误差高得多。因此，偏差很小，但方差很大。添加更多的训练数据可能有助于缩小开发误差和训练误差之间的差距。</p>
-<h2 id="解读学习曲线：高偏差-高方差"><a href="#解读学习曲线：高偏差-高方差" class="headerlink" title="解读学习曲线：高偏差+高方差"></a>解读学习曲线：高偏差+高方差</h2><p><img data-src="机器学习应用/ch31_02.jpg" alt="ch31_02.jpg"></p>
+<h2 id="解读学习曲线：高偏差-高方差"><a href="#解读学习曲线：高偏差-高方差" class="headerlink" title="解读学习曲线：高偏差+高方差"></a>解读学习曲线：高偏差+高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_02.jpg" class title="ch31_02.jpg">
 <p>最后提一点，绘制一个学习曲线的成本可能非常高：例如，你可能需要训练 10 个模型，其中样本规模可以是 1000 个，然后是 2000 个，一直到<br>10000 个。使用小数据集训练模型比使用大型数据集要快得多。因此，你可以用 1000、2000、4000、6000 和 10000<br>个样本来训练模型，而不是像上面那样将训练集的大小均匀地间隔在一个线性的范围内。这仍然可以让你对学习曲线的变化趋势有一个清晰的认识。当然，这种技术只有在训练所有额外模型所需的计算成本很重要时才有意义。</p>
 <h1 id="与人类表现对比"><a href="#与人类表现对比" class="headerlink" title="与人类表现对比"></a>与人类表现对比</h1><p>有许多理由表明在处理人类擅长的任务时，构建一个机器学习系统会更加简单：</p>
 <ol>
@@ -615,7 +616,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <li><strong>目标（得分函数）存在问题。</strong> 我们对 Score(S) = P(S|A) 的估计并不准确。尤其在此例中，我们的得分函数没能辨认出 “我爱机器学习” 是正确的转录。</li>
 </ol>
 <p>对应不同的失败原因，你需要优先考虑的工作方向也将很不一样。如果原因 1 导致了问题，你应该改进搜索算法。如果原因 2 导致了问题，你应该在评估学习算法的函数上面多花些心思。</p>
-<p><img data-src="机器学习应用/1553746821819.png" alt="1553746821819"></p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553746821819.png" class width="1553746821819">
 <h1 id="端到端学习"><a href="#端到端学习" class="headerlink" title="端到端学习"></a>端到端学习</h1><h1 id="组件误差分析"><a href="#组件误差分析" class="headerlink" title="组件误差分析"></a>组件误差分析</h1>
     </div>
 
@@ -877,9 +878,10 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -995,6 +997,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -1002,6 +1005,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -1058,7 +1062,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

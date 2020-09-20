@@ -14,12 +14,13 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -30,13 +31,13 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="组合数学（Combinatorics）是什么?“数数”。根据组合数学 - 维基百科，组合数学，亦称组合论、组合学，数学的一个分支，亦和离散数学的排列组合研究，所研究的是计数的技巧。总之，组合数学是一门研究离散对象的数学科学。组合数学的主要内容有组合计数、组合设计、组合矩阵、组合优化等。幻方是最早被探索的组合数学问题，除此之外，还有十四巧板、杨辉三角……，在四色问题的证明上，引发了一个新领域：机器证">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
-<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/76AEAAEF62B0A9E63A80CEE2BDB14210.png">
+<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
+<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/76AEAAEF62B0A9E63A80CEE2BDB14210.png">
 <meta property="article:published_time" content="2020-09-08T08:16:49.000Z">
 <meta property="article:modified_time" content="2020-09-19T14:37:57.180Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
+<meta name="twitter:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
 
 <link rel="canonical" href="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">
 
@@ -296,7 +297,7 @@
 </li>
 </ul>
 <h2 id="幻方"><a href="#幻方" class="headerlink" title="幻方"></a>幻方</h2><p>一个连续整数集在棋盘上放置，并满足约束：横竖、对角之和相同。棋盘的长宽称为幻方的阶数。</p>
-<p><img data-src="%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png" alt="image-20200916110046048"></p>
+<img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png" class title="image-20200916110046048">
 <blockquote>
 <p>二阶幻方不存在。（约束太强）</p>
 <p>大约30年前德国数学家L. Bieberbach证明了：「对于任意大于等于3的数n，都存在一个n阶的幻方。」</p>
@@ -304,7 +305,7 @@
 <h3 id="幻方的构造"><a href="#幻方的构造" class="headerlink" title="幻方的构造"></a>幻方的构造</h3><p>根据构造方法的不同，幻方可以分三类：奇数阶幻方、 4M阶幻方和4M+2阶幻方。</p>
 <hr>
 <p>对于奇数阶幻方：从1开始（幻方的中间最上角）斜循环遍历。</p>
-<p><img data-src="%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/76AEAAEF62B0A9E63A80CEE2BDB14210.png" alt="76AEAAEF62B0A9E63A80CEE2BDB14210"></p>
+<img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/76AEAAEF62B0A9E63A80CEE2BDB14210.png" class title="76AEAAEF62B0A9E63A80CEE2BDB14210">
 <p>偶数阶幻方需要分类讨论为4m+2和4m+4。可以自行搜索。</p>
 <h3 id="幻方的计数"><a href="#幻方的计数" class="headerlink" title="幻方的计数"></a>幻方的计数</h3><p>三阶幻方只有一个（旋转等价）。</p>
 <p>试问：n阶普通幻方的个数?</p>
@@ -588,9 +589,10 @@ C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
   <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
@@ -706,6 +708,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
+          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -713,6 +716,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -769,7 +773,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {
