@@ -33,8 +33,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/76AEAAEF62B0A9E63A80CEE2BDB14210.png">
+<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923195021438.png">
+<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923200107107.png">
+<meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923205710799.png">
 <meta property="article:published_time" content="2020-09-08T08:16:49.000Z">
-<meta property="article:modified_time" content="2020-09-19T14:37:57.180Z">
+<meta property="article:modified_time" content="2020-09-23T13:24:09.052Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200916110046048.png">
@@ -311,6 +314,32 @@
 <p>试问：n阶普通幻方的个数?</p>
 <p>实际上到目前为止连6阶幻方的计数都还没有完全解决。。</p>
 <h3 id="幻方的应用"><a href="#幻方的应用" class="headerlink" title="幻方的应用"></a>幻方的应用</h3><p>幻方可以与密码学结合。。。</p>
+<h2 id="安卓九宫格"><a href="#安卓九宫格" class="headerlink" title="安卓九宫格"></a>安卓九宫格</h2><h3 id="模拟法"><a href="#模拟法" class="headerlink" title="模拟法"></a>模拟法</h3><p>求解思路就是模拟，从每个点出发，然后对下一个步骤点进行决策，如果这个决策是合法的，就递归模拟即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="literal">False</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)]</span><br><span class="line">ret = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(p, depth, required_depth)</span>:</span></span><br><span class="line">    a[ p[<span class="number">0</span>] ][ p[<span class="number">1</span>] ] = <span class="literal">True</span></span><br><span class="line">    depth += <span class="number">1</span></span><br><span class="line">    <span class="keyword">global</span> ret</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> depth == required_depth:  <span class="comment"># 达到密码长度</span></span><br><span class="line">        a[ p[<span class="number">0</span>] ][ p[<span class="number">1</span>] ] = <span class="literal">False</span></span><br><span class="line">        ret += <span class="number">1</span>  <span class="comment"># 统计结果</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">-2</span>, <span class="number">3</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">-2</span>, <span class="number">3</span>):</span><br><span class="line">                <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">and</span> j == <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 若合法的话</span></span><br><span class="line">                    <span class="keyword">if</span> p[<span class="number">0</span>] + i &lt;= <span class="number">2</span> <span class="keyword">and</span> p[<span class="number">0</span>] + i &gt;= <span class="number">0</span> <span class="keyword">and</span> p[<span class="number">1</span>] + j &lt;= <span class="number">2</span> <span class="keyword">and</span> p[<span class="number">1</span>] + j &gt;= <span class="number">0</span>: </span><br><span class="line">                        <span class="comment"># 开始</span></span><br><span class="line">                        <span class="keyword">if</span> (abs(i) == <span class="number">2</span> <span class="keyword">or</span> abs(j) == <span class="number">2</span>) <span class="keyword">and</span> (abs(i) + abs(j) != <span class="number">3</span>):</span><br><span class="line">                            m = int(i / <span class="number">2</span>) <span class="keyword">if</span> abs(i) == <span class="number">2</span> <span class="keyword">else</span> i</span><br><span class="line">                            n = int(j / <span class="number">2</span>) <span class="keyword">if</span> abs(j) == <span class="number">2</span> <span class="keyword">else</span> j</span><br><span class="line">                            <span class="keyword">if</span> a[ p[<span class="number">0</span>] + m ][ p[<span class="number">1</span>] + n ] == <span class="literal">True</span>:</span><br><span class="line">                                <span class="keyword">if</span> a[ p[<span class="number">0</span>] + i ][ p[<span class="number">1</span>] + j ] == <span class="literal">False</span>:</span><br><span class="line">                                    dfs([p[<span class="number">0</span>] + i, p[<span class="number">1</span>] + j],   depth,   required_depth)</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">if</span> a[ p[<span class="number">0</span>] + i ][ p[<span class="number">1</span>] + j ] == <span class="literal">False</span>:</span><br><span class="line">                                dfs([p[<span class="number">0</span>] + i, p[<span class="number">1</span>] + j],   depth,   required_depth)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    a[ p[<span class="number">0</span>] ][ p[<span class="number">1</span>] ] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">4</span>, <span class="number">10</span>):</span><br><span class="line">        tmp = ret</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">                dfs([i,j], <span class="number">0</span>, k)</span><br><span class="line">        print(k, <span class="string">"位:"</span>, ret - tmp)</span><br><span class="line">    print(ret)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> 位: <span class="number">1624</span></span><br><span class="line"><span class="number">5</span> 位: <span class="number">7152</span></span><br><span class="line"><span class="number">6</span> 位: <span class="number">26016</span></span><br><span class="line"><span class="number">7</span> 位: <span class="number">72912</span></span><br><span class="line"><span class="number">8</span> 位: <span class="number">140704</span></span><br><span class="line"><span class="number">9</span> 位: <span class="number">140704</span></span><br><span class="line"><span class="number">389112</span></span><br><span class="line">[Finished <span class="keyword">in</span> <span class="number">5.0</span>s]</span><br></pre></td></tr></table></figure>
+<p>运行：</p>
+<img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923195021438.png" class title="模拟法求解安卓九宫格组合数">
+<h3 id="补集法"><a href="#补集法" class="headerlink" title="补集法"></a>补集法</h3><p>求解思路就是枚举出所有的数字排列（有序，代表连接手势的顺序），然后去掉那些不符合要求的排列。</p>
+<p>这些排列可以通过正则匹配的方式识别并排除。</p>
+<p>比如这些模式在有效序列中是非法的：<code>13</code>，<code>31</code>，<code>46</code>，<code>64</code>，<code>79</code>，<code>97</code>，<code>17</code>，<code>71</code>，<code>28</code>，<code>82</code>，<code>39</code>，<code>93</code>，<code>19</code>，<code>91</code>，<code>37</code>，<code>73</code>。需要一一排除。</p>
+<p>注意到，如果中点提前被经过了，那么某些序列可能会变合法。比如，<code>13</code>如果是<code>..4..13</code>的形式，则变成一种合法的模式。如下图所示：</p>
+<img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923200107107.png" class title="image-20200923200107107">
+<p>这样，我们需要的正则表达式如下：</p>
+<ul>
+<li><code>([^2]*)(13|31)</code></li>
+<li><code>([^4]*)(17|71)</code></li>
+<li><code>([^6]*)(39|93)</code></li>
+<li><code>([^8]*)(79|97)</code></li>
+<li><code>([^5]*)(46|64|28|82|19|91|37|73)</code></li>
+</ul>
+<p>这些正则表达式将匹配出所有非法的序列。现在我们只需要生成所有可能的序列就行了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 补集法</span></span><br><span class="line"><span class="comment"># 求解思路就是枚举出所有的数字排列（有序，代表连接手势的顺序），然后去掉那些不符合要求的排列。</span></span><br><span class="line"><span class="comment"># 这些排列可以通过正则匹配的方式识别并排除。</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">ret = <span class="number">0</span></span><br><span class="line">illegal_pattern = <span class="string">'(([^2]*)(13|31))|(([^4]*)(17|71))|(([^6]*)(39|93))|(([^8]*)(79|97))|(([^5]*)(46|64|28|82|19|91|37|73))'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(string, depth, k)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> ret</span><br><span class="line">    <span class="keyword">global</span> illegal_pattern</span><br><span class="line">    <span class="keyword">if</span> depth == k:</span><br><span class="line">        illegal_match = re.match(illegal_pattern, string)</span><br><span class="line">        ret += (illegal_match == <span class="literal">None</span>) <span class="comment"># 序列合法则统计</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">if</span> str(i) <span class="keyword">not</span> <span class="keyword">in</span> string:</span><br><span class="line">            solve(string + str(i), depth + <span class="number">1</span>, k)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">4</span>, <span class="number">10</span>):</span><br><span class="line">        tmp = ret</span><br><span class="line">        solve(<span class="string">""</span>, <span class="number">0</span>, k)</span><br><span class="line">        print(k, <span class="string">"位:"</span>, ret - tmp)</span><br><span class="line">    print(ret)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> 位: <span class="number">1624</span></span><br><span class="line"><span class="number">5</span> 位: <span class="number">7152</span></span><br><span class="line"><span class="number">6</span> 位: <span class="number">26016</span></span><br><span class="line"><span class="number">7</span> 位: <span class="number">72912</span></span><br><span class="line"><span class="number">8</span> 位: <span class="number">140704</span></span><br><span class="line"><span class="number">9</span> 位: <span class="number">140704</span></span><br><span class="line"><span class="number">389112</span></span><br><span class="line">[Finished <span class="keyword">in</span> <span class="number">4.3</span>s]</span><br></pre></td></tr></table></figure>
+<p>运行：</p>
+<img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20200923205710799.png" class title="正则表达式法">
+<h3 id="数学法"><a href="#数学法" class="headerlink" title="数学法"></a>数学法</h3><p>似乎按照2017年是通过内部结构来分类计算的，想想就很麻烦。。还是先算了吧。。</p>
 <h1 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h1><blockquote>
 <p><em>无重复、无遗漏。</em></p>
 </blockquote>
@@ -321,13 +350,30 @@
 <script type="math/tex; mode=display">
 P(n,r)=\cfrac{n!}{(n-r)!}</script><p>组合（Combination）：</p>
 <script type="math/tex; mode=display">
-C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
-<p>二项式组合；</p>
+C(n,r)=\cfrac{n!}{(n-r)! { \color{blue}{\cdot r!} } }</script><p>多重全排列：（$r_1+r_2+…+r_t=n$）</p>
+<script type="math/tex; mode=display">
+P(n;r_1,r_2,...,r_t)=\cfrac{n!}{r_1!\cdot r_2!\cdot ...\cdot r_t!}</script><p>二项式组合；</p>
 <script type="math/tex; mode=display">
 \begin{equation}(a+b)^{n}=\sum_{0 \leq k \leq n} \frac{n !}{k !(n-k) !} a^{k} b^{n-k}=\sum_{0 \leq k \leq n} C(n, k) a^{k} b^{n-k}\end{equation}</script><blockquote>
 <p>二项式推广：</p>
 <script type="math/tex; mode=display">
 \begin{equation}\left(a_{1}+a_{2}+\ldots+a_{t}\right)^{n}=\sum \frac{n !}{r_{1} ! \ldots r !} a_{1}^{r 1} \ldots a_{t}^{r t}\end{equation}</script></blockquote>
+<p>可重组合：（$n$个类型元素，每个类的元素个数无限）</p>
+<script type="math/tex; mode=display">
+\bar C(n,r)</script><blockquote>
+<p>隔板法。</p>
+<p>从可重组合构造无重组合。</p>
+<ul>
+<li>编号 + 位置号，构造无重序列</li>
+</ul>
+</blockquote>
+<h1 id="放球模型"><a href="#放球模型" class="headerlink" title="放球模型"></a>放球模型</h1><p>常用方法：</p>
+<ul>
+<li>下标法</li>
+<li>隔板法</li>
+<li>模拟法</li>
+<li>index法</li>
+</ul>
 
     </div>
 
@@ -431,7 +477,7 @@ C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组合数学的三大问题"><span class="nav-number">2.1.</span> <span class="nav-text">组合数学的三大问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幻方"><span class="nav-number">2.2.</span> <span class="nav-text">幻方</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的构造"><span class="nav-number">2.2.1.</span> <span class="nav-text">幻方的构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的计数"><span class="nav-number">2.2.2.</span> <span class="nav-text">幻方的计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的应用"><span class="nav-number">2.2.3.</span> <span class="nav-text">幻方的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排列组合"><span class="nav-number">3.</span> <span class="nav-text">排列组合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加法法则和乘法法则"><span class="nav-number">3.1.</span> <span class="nav-text">加法法则和乘法法则</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组合数学的三大问题"><span class="nav-number">2.1.</span> <span class="nav-text">组合数学的三大问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幻方"><span class="nav-number">2.2.</span> <span class="nav-text">幻方</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的构造"><span class="nav-number">2.2.1.</span> <span class="nav-text">幻方的构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的计数"><span class="nav-number">2.2.2.</span> <span class="nav-text">幻方的计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幻方的应用"><span class="nav-number">2.2.3.</span> <span class="nav-text">幻方的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓九宫格"><span class="nav-number">2.3.</span> <span class="nav-text">安卓九宫格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟法"><span class="nav-number">2.3.1.</span> <span class="nav-text">模拟法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补集法"><span class="nav-number">2.3.2.</span> <span class="nav-text">补集法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学法"><span class="nav-number">2.3.3.</span> <span class="nav-text">数学法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排列组合"><span class="nav-number">3.</span> <span class="nav-text">排列组合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加法法则和乘法法则"><span class="nav-number">3.1.</span> <span class="nav-text">加法法则和乘法法则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#放球模型"><span class="nav-number">4.</span> <span class="nav-text">放球模型</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,7 +493,7 @@ C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">153</span>
+          <span class="site-state-item-count">154</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -460,7 +506,7 @@ C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -536,7 +582,7 @@ C(n,r)=\cfrac{n!}{(n-r)!\cdot r!}</script><p>多重全排列：</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">988k</span>
+    <span title="Symbols count total">999k</span>
 </div>
 
         

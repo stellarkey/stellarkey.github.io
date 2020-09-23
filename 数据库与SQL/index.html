@@ -33,8 +33,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914194753909.png">
 <meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914211612426.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921193357373.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203823110.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203839680.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203947844.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921205345664.png">
+<meta property="og:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921210426281.png">
 <meta property="article:published_time" content="2019-02-20T16:55:37.000Z">
-<meta property="article:modified_time" content="2020-09-17T00:44:27.322Z">
+<meta property="article:modified_time" content="2020-09-21T13:23:02.876Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200914194753909.png">
@@ -331,9 +337,74 @@
 </ul>
 </li>
 </ul>
+<h2 id="数据库模式"><a href="#数据库模式" class="headerlink" title="数据库模式"></a>数据库模式</h2><blockquote>
+<p>根据数据抽象的3个不同级别，DBMS也应该提供<strong>观察数据库的3个不同角度</strong>，以方便不同的用户使用数据库的需要。这就是数据库的三级模式结构。</p>
+</blockquote>
+<p>数据库分为三层模式：</p>
+<ul>
+<li><strong>外模式</strong>：也称子模式或用户模式，对应于视图层数据抽象。是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一具体应用有关的数据的逻辑表示。</li>
+<li><strong>模式</strong>（逻辑模式）：对应于逻辑层数据抽象，是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。</li>
+<li><strong>内模式</strong>（存储模式）：对应于物理层数据抽象，它是数据的物理结构和存储方式的描述，是数据在数据库内部的表示方式。</li>
+</ul>
+<img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921193357373.png" class title="image-20200921193357373">
 <h2 id="数据库语言"><a href="#数据库语言" class="headerlink" title="数据库语言"></a>数据库语言</h2><p>数据库系统（DBMS）提供数据定义语言（DDL）来定义数据库中的数据对象，和数据操纵语言（DML）来表达数据库的查询和更新（增删改）。这两者只是功能的差别，在实际使用中通常合并形成一种数据库语言，如SQL语言。</p>
 <p>DBMS还提供了对数据的组织、存储和管理等功能。</p>
-<h1 id="Oracle环境"><a href="#Oracle环境" class="headerlink" title="Oracle环境"></a>Oracle环境</h1><h1 id="SQL编程"><a href="#SQL编程" class="headerlink" title="SQL编程"></a>SQL编程</h1><p>SQL（<strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage）结构化查询语言是用于访问和处理数据库的标准语言。</p>
+<h1 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h1><p><strong><font color="deepskyblue">关系模型</font></strong>：包括关系数据结构、关系操作集合和关系完整性约束。</p>
+<ul>
+<li><strong><font color="blue">关系数据结构</font></strong>：数据库中全部数据及其相互联系都被组织成关系（二维表）形式。<mark>关系是关系模型基本的数据结构</mark>。</li>
+<li><strong><font color="blue">关系操作集合</font></strong>：关系模型提供一组完备的高级关系运算，以支持对数据库的各种操作。</li>
+<li><strong><font color="blue">关系完整性约束</font></strong>：数据库中数据必须满足实体完整性、参照完整性和用户定义完整性三类完整性规则。</li>
+</ul>
+<h2 id="关系数据结构"><a href="#关系数据结构" class="headerlink" title="关系数据结构"></a>关系数据结构</h2><p><strong><font color="red">关系数据结构</font></strong>的数学基础是<strong>笛卡尔积</strong>：</p>
+<script type="math/tex; mode=display">
+D_!\times D_2 \times D_3 \times ... \times D_n</script><p>以上形式的集合的一个子集，称为在域 $D_1,D_2,D_3…,Dn$ 上的<strong>关系</strong>。<br>关系是笛卡尔积的有限子集，所以关系也是一个<strong>二维表</strong>。</p>
+<blockquote>
+<p>表的每行对应于关系的一个<strong>元组</strong>，表的每列对应于关系的一个域。由于域可以相同，为了区别就必须给每列起一个名字，称为属性(attribute)。n 目/度/元 关系共有 n 个属性。 </p>
+</blockquote>
+<h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><p><strong><font color="red">关系操作</font></strong>的特点是集合操作方式。</p>
+<blockquote>
+<p>关系操作的对象和结果都是集合。这种操作方式也称为一次一个集合的方式。<br>非关系数据模型的操作方式则为一次一个记录的方式。</p>
+</blockquote>
+<p>关系模型中的关系操作有查询操作和更新操作。</p>
+<ul>
+<li><strong><font color="red">查询操作</font></strong>是关系操作中最主要的部分，查询操作又可以分为<strong>选择</strong>(select)、<strong>投影</strong>(project)、<strong>连接</strong>(join)、<strong>除</strong>(divide)、<strong>并</strong>(union)、<strong>交</strong>(intersection)、<strong>差</strong>(except)、<strong>笛卡尔积</strong>等</li>
+<li><strong><font color="red">更新操作</font></strong>包括<strong>插入</strong>(insert)、<strong>删除</strong>(delete)和<strong>修改</strong>(update)</li>
+</ul>
+<p>关系操作能力可用两种方式来表示：代数方式和逻辑方式。</p>
+<ul>
+<li><strong><font color="blue">关系代数</font></strong>是用代数方式表达的关系查询语言</li>
+<li><strong><font color="blue">关系演算</font></strong>是用逻辑方式表达的关系查询语言<br>关系演算又可按谓词变元的基本对象是元组变量还是域变量分为<strong>元组关系演算</strong>和<strong>域关系演算</strong>。</li>
+</ul>
+<h2 id="关系完整性约束"><a href="#关系完整性约束" class="headerlink" title="关系完整性约束"></a>关系完整性约束</h2><h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><p>实体完整性：</p>
+<ul>
+<li>若属性集A是关系r的<strong>主码</strong>，则A<strong>不能取空值</strong></li>
+<li>如果主码是由若干个属性的集合构成，则要求<strong>构成主码的每一个属性的值都不能取空值</strong></li>
+</ul>
+<h3 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h3><p>设F是关系r的一个属性(或属性集)，Ks是关系s的主码。如果F与Ks相对应，则称F是关系r参照关系s的<strong><font color="red">外码</font></strong>(foreign key)，简称F是关系r的外码。并称关系r为参照关系，关系s为被参照关系或目标关系。 </p>
+<p>参照完整性：</p>
+<ul>
+<li><strong>外码要么为空值，要么等于其对应引用的关系中某个元组的主码</strong>。</li>
+</ul>
+<h4 id="多对一联系的属性引用"><a href="#多对一联系的属性引用" class="headerlink" title="多对一联系的属性引用"></a>多对一联系的属性引用</h4><p>学生归属于同一个课程，在学生关系中引入课程主键作为外键。</p>
+<img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203823110.png" class title="image-20200921203823110">
+<h4 id="多对多联系的联系关系及属性引用"><a href="#多对多联系的联系关系及属性引用" class="headerlink" title="多对多联系的联系关系及属性引用"></a>多对多联系的联系关系及属性引用</h4><p>学生和课程之间存在多对多的联系，通过中间关系 <code>Score</code> 双向引用外键，实现了多对多的选修记录。</p>
+<img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203839680.png" class title="image-20200921203839680">
+<h4 id="关系内部属性间的引用联系"><a href="#关系内部属性间的引用联系" class="headerlink" title="关系内部属性间的引用联系"></a>关系内部属性间的引用联系</h4><p>例如：某个课程的先修课程。这时，需要引用<code>courseNo</code>，实现内部的外码。</p>
+<img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921203947844.png" class title="image-20200921203947844">
+<h3 id="用户自定义完整性"><a href="#用户自定义完整性" class="headerlink" title="用户自定义完整性"></a>用户自定义完整性</h3><p>任何关系数据库管理系统都应该支持<strong>实体完整性</strong>和<strong>参照完整性</strong> 。</p>
+<p><strong>用户定义的完整性</strong>就是针对某一具体应用要求来定义的约束条件。</p>
+<ul>
+<li>限制关系中某些属性的取值要<strong>符合业务语义要求</strong>。 </li>
+<li>限制关系中某些属性的取值之间需要<strong>满足一定的逻辑关系</strong>。 </li>
+<li>限制关系中某属性集上的<strong>取值必须唯一</strong>。 <ul>
+<li>如：身份证号</li>
+</ul>
+</li>
+</ul>
+<h2 id="关系模型总结"><a href="#关系模型总结" class="headerlink" title="关系模型总结"></a>关系模型总结</h2><img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921205345664.png" class title="image-20200921205345664">
+<h1 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h1><p>关系代数是一种抽象的查询语言，是关系数据操纵语言的一种传统表达方式。它是以关系为运算对象的一组高级运算的集合。它的运算结果也是关系。关系代数用到的运算符包括四类：集合运算符、专门的关系运算符、算术比较运算符、逻辑运算符。</p>
+<img data-src="/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8ESQL/image-20200921210426281.png" class title="image-20200921210426281">
+<h2 id="集合算符"><a href="#集合算符" class="headerlink" title="集合算符"></a>集合算符</h2><h3 id="并、差、交"><a href="#并、差、交" class="headerlink" title="并、差、交"></a>并、差、交</h3><h3 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h3><h2 id="关系算符"><a href="#关系算符" class="headerlink" title="关系算符"></a>关系算符</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><h3 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h3><h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><h2 id="比较算符和逻辑算符"><a href="#比较算符和逻辑算符" class="headerlink" title="比较算符和逻辑算符"></a>比较算符和逻辑算符</h2><h1 id="Oracle环境"><a href="#Oracle环境" class="headerlink" title="Oracle环境"></a>Oracle环境</h1><h1 id="SQL编程"><a href="#SQL编程" class="headerlink" title="SQL编程"></a>SQL编程</h1><p>SQL（<strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage）结构化查询语言是用于访问和处理数据库的标准语言。</p>
 <h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="Create-创建表"><a href="#Create-创建表" class="headerlink" title="Create 创建表"></a>Create 创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table 表名</span><br><span class="line">(</span><br><span class="line">    列1    类型1    默认值 [列约束],</span><br><span class="line">    列2    类型2    默认值 [列约束],</span><br><span class="line">    列3    类型3    默认值 [列约束],</span><br><span class="line">    ... ,</span><br><span class="line">    [表约束]</span><br><span class="line">);</span><br><span class="line">create table 表名 as (select ...);      &#x2F;* 利用结果集创建新表 *&#x2F;</span><br></pre></td></tr></table></figure>
 <p>其中，列约束定义一个完整性约束作为列定义的一部分，包括：</p>
 <ul>
@@ -490,7 +561,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非结构化数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半结构化数据"><span class="nav-number">2.2.3.</span> <span class="nav-text">半结构化数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.3.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库语言"><span class="nav-number">2.4.</span> <span class="nav-text">数据库语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle环境"><span class="nav-number">3.</span> <span class="nav-text">Oracle环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL编程"><span class="nav-number">4.</span> <span class="nav-text">SQL编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">4.1.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-创建表"><span class="nav-number">4.1.1.</span> <span class="nav-text">Create 创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alter-修改表"><span class="nav-number">4.1.2.</span> <span class="nav-text">Alter 修改表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-删除表"><span class="nav-number">4.1.3.</span> <span class="nav-text">Drop 删除表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据操作"><span class="nav-number">4.2.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-Into-插入"><span class="nav-number">4.2.1.</span> <span class="nav-text">Insert Into 插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-更新"><span class="nav-number">4.2.2.</span> <span class="nav-text">Update 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-批量更新（Oracle-11g）"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">Merge 批量更新（Oracle 11g）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-删除"><span class="nav-number">4.2.3.</span> <span class="nav-text">Delete 删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Select-选取"><span class="nav-number">4.3.</span> <span class="nav-text">Select 选取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#As-昵称"><span class="nav-number">4.3.1.</span> <span class="nav-text">As 昵称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distinct-唯一化"><span class="nav-number">4.3.2.</span> <span class="nav-text">Distinct 唯一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Where-约束"><span class="nav-number">4.3.3.</span> <span class="nav-text">Where 约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-By-排序"><span class="nav-number">4.3.4.</span> <span class="nav-text">Order By 排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件表达式"><span class="nav-number">4.4.</span> <span class="nav-text">条件表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerBuilder"><span class="nav-number">5.</span> <span class="nav-text">PowerBuilder</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">2.1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非结构化数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半结构化数据"><span class="nav-number">2.2.3.</span> <span class="nav-text">半结构化数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">2.3.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库模式"><span class="nav-number">2.4.</span> <span class="nav-text">数据库模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库语言"><span class="nav-number">2.5.</span> <span class="nav-text">数据库语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系模型"><span class="nav-number">3.</span> <span class="nav-text">关系模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系数据结构"><span class="nav-number">3.1.</span> <span class="nav-text">关系数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系操作"><span class="nav-number">3.2.</span> <span class="nav-text">关系操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系完整性约束"><span class="nav-number">3.3.</span> <span class="nav-text">关系完整性约束</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实体完整性"><span class="nav-number">3.3.1.</span> <span class="nav-text">实体完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参照完整性"><span class="nav-number">3.3.2.</span> <span class="nav-text">参照完整性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多对一联系的属性引用"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">多对一联系的属性引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多对多联系的联系关系及属性引用"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">多对多联系的联系关系及属性引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系内部属性间的引用联系"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">关系内部属性间的引用联系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户自定义完整性"><span class="nav-number">3.3.3.</span> <span class="nav-text">用户自定义完整性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系模型总结"><span class="nav-number">3.4.</span> <span class="nav-text">关系模型总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系代数"><span class="nav-number">4.</span> <span class="nav-text">关系代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合算符"><span class="nav-number">4.1.</span> <span class="nav-text">集合算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并、差、交"><span class="nav-number">4.1.1.</span> <span class="nav-text">并、差、交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笛卡尔积"><span class="nav-number">4.1.2.</span> <span class="nav-text">笛卡尔积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系算符"><span class="nav-number">4.2.</span> <span class="nav-text">关系算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择"><span class="nav-number">4.2.1.</span> <span class="nav-text">选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影"><span class="nav-number">4.2.2.</span> <span class="nav-text">投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接"><span class="nav-number">4.2.3.</span> <span class="nav-text">连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除"><span class="nav-number">4.2.4.</span> <span class="nav-text">除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较算符和逻辑算符"><span class="nav-number">4.3.</span> <span class="nav-text">比较算符和逻辑算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle环境"><span class="nav-number">5.</span> <span class="nav-text">Oracle环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL编程"><span class="nav-number">6.</span> <span class="nav-text">SQL编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">6.1.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-创建表"><span class="nav-number">6.1.1.</span> <span class="nav-text">Create 创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alter-修改表"><span class="nav-number">6.1.2.</span> <span class="nav-text">Alter 修改表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-删除表"><span class="nav-number">6.1.3.</span> <span class="nav-text">Drop 删除表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据操作"><span class="nav-number">6.2.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-Into-插入"><span class="nav-number">6.2.1.</span> <span class="nav-text">Insert Into 插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-更新"><span class="nav-number">6.2.2.</span> <span class="nav-text">Update 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-批量更新（Oracle-11g）"><span class="nav-number">6.2.2.1.</span> <span class="nav-text">Merge 批量更新（Oracle 11g）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-删除"><span class="nav-number">6.2.3.</span> <span class="nav-text">Delete 删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Select-选取"><span class="nav-number">6.3.</span> <span class="nav-text">Select 选取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#As-昵称"><span class="nav-number">6.3.1.</span> <span class="nav-text">As 昵称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distinct-唯一化"><span class="nav-number">6.3.2.</span> <span class="nav-text">Distinct 唯一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Where-约束"><span class="nav-number">6.3.3.</span> <span class="nav-text">Where 约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-By-排序"><span class="nav-number">6.3.4.</span> <span class="nav-text">Order By 排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件表达式"><span class="nav-number">6.4.</span> <span class="nav-text">条件表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerBuilder"><span class="nav-number">7.</span> <span class="nav-text">PowerBuilder</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -506,7 +577,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">153</span>
+          <span class="site-state-item-count">154</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -519,7 +590,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -595,7 +666,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">988k</span>
+    <span title="Symbols count total">999k</span>
 </div>
 
         

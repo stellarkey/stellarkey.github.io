@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://vel.life/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/image-20200911151058960.png">
 <meta property="og:image" content="https://vel.life/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/image-20200911154034396.png">
 <meta property="article:published_time" content="2020-05-25T02:21:59.000Z">
-<meta property="article:modified_time" content="2020-09-16T06:40:09.979Z">
+<meta property="article:modified_time" content="2020-09-22T03:45:34.457Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/image-20200909100051682.png">
@@ -472,7 +472,57 @@ z \\
 <p><a href="https://link.springer.com/book/10.1007/978-0-85729-760-0" target="_blank" rel="noopener external nofollow noreferrer">Quaternions for Computer Graphics</a></p>
 </blockquote>
 <p>四元数相当于复数的虚部扩展成3个虚部，每个虚部之间两两正交。</p>
-<h2 id="观测变换-Viewing-Transformation"><a href="#观测变换-Viewing-Transformation" class="headerlink" title="观测变换 Viewing Transformation"></a>观测变换 Viewing Transformation</h2><h3 id="视图变换-View-Camera-Transformation"><a href="#视图变换-View-Camera-Transformation" class="headerlink" title="视图变换 View/Camera Transformation"></a>视图变换 View/Camera Transformation</h3><h3 id="投影变换-Projection-Transformation"><a href="#投影变换-Projection-Transformation" class="headerlink" title="投影变换 Projection Transformation"></a>投影变换 Projection Transformation</h3><h4 id="正交投影-Orthographic-Projection"><a href="#正交投影-Orthographic-Projection" class="headerlink" title="正交投影 Orthographic Projection"></a>正交投影 Orthographic Projection</h4><h4 id="透视投影-perspective-Projection"><a href="#透视投影-perspective-Projection" class="headerlink" title="透视投影 perspective Projection"></a>透视投影 perspective Projection</h4><h1 id="光栅化-Rasdterization"><a href="#光栅化-Rasdterization" class="headerlink" title="光栅化 Rasdterization"></a>光栅化 Rasdterization</h1><h1 id="投影-Shading"><a href="#投影-Shading" class="headerlink" title="投影 Shading"></a>投影 Shading</h1><h1 id="几何-Geomery"><a href="#几何-Geomery" class="headerlink" title="几何 Geomery"></a>几何 Geomery</h1><h1 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪 Ray Tracing"></a>光线追踪 Ray Tracing</h1><h1 id="渲染-Rendering"><a href="#渲染-Rendering" class="headerlink" title="渲染 Rendering"></a>渲染 Rendering</h1><h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画 Animation"></a>动画 Animation</h1>
+<h2 id="观测变换-Viewing-Transformation"><a href="#观测变换-Viewing-Transformation" class="headerlink" title="观测变换 Viewing Transformation"></a>观测变换 Viewing Transformation</h2><h3 id="视图变换-View-Camera-Transformation"><a href="#视图变换-View-Camera-Transformation" class="headerlink" title="视图变换 View/Camera Transformation"></a>视图变换 View/Camera Transformation</h3><h3 id="投影变换-Projection-Transformation"><a href="#投影变换-Projection-Transformation" class="headerlink" title="投影变换 Projection Transformation"></a>投影变换 Projection Transformation</h3><h4 id="正交投影-Orthographic-Projection"><a href="#正交投影-Orthographic-Projection" class="headerlink" title="正交投影 Orthographic Projection"></a>正交投影 Orthographic Projection</h4><h4 id="透视投影-perspective-Projection"><a href="#透视投影-perspective-Projection" class="headerlink" title="透视投影 perspective Projection"></a>透视投影 perspective Projection</h4><h1 id="光栅化-Rasdterization"><a href="#光栅化-Rasdterization" class="headerlink" title="光栅化 Rasdterization"></a>光栅化 Rasdterization</h1><h1 id="投影-Shading"><a href="#投影-Shading" class="headerlink" title="投影 Shading"></a>投影 Shading</h1><h1 id="几何-Geomery"><a href="#几何-Geomery" class="headerlink" title="几何 Geomery"></a>几何 Geomery</h1><h1 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪 Ray Tracing"></a>光线追踪 Ray Tracing</h1><h1 id="渲染-Rendering"><a href="#渲染-Rendering" class="headerlink" title="渲染 Rendering"></a>渲染 Rendering</h1><h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画 Animation"></a>动画 Animation</h1><h1 id="课堂笔记-Rough"><a href="#课堂笔记-Rough" class="headerlink" title="课堂笔记 Rough"></a>课堂笔记 Rough</h1><h2 id="简单光反射模型：Phong模型"><a href="#简单光反射模型：Phong模型" class="headerlink" title="简单光反射模型：Phong模型"></a>简单光反射模型：Phong模型</h2><p>简单光反射模型：<strong>Phong模型</strong>。</p>
+<ul>
+<li>光源被假定为点光源，反射作用被细分为镜面反射（Specular Reflection）和漫反射。</li>
+<li>只考虑直接光照，物体间的光反射作用，只用环境光表示。</li>
+</ul>
+<p>Phong模型的三个光部：</p>
+<ul>
+<li>理想漫反射</li>
+<li>镜面反射</li>
+<li>环境光<ul>
+<li>指间接光源对物体的影响，是在物体和环境之间多次反射，最终达到平衡时的一种光。我们近似地认为同一环境下的光强是均匀的。</li>
+</ul>
+</li>
+</ul>
+<p>Phong模型的近似算法</p>
+<ul>
+<li>光源在无穷远处</li>
+<li>视点在无穷远处</li>
+</ul>
+<blockquote>
+<p>大幅降低计算量。</p>
+</blockquote>
+<h2 id="增量光反射模型：Gou"><a href="#增量光反射模型：Gou" class="headerlink" title="增量光反射模型：Gou"></a>增量光反射模型：Gou</h2><p>马赫带效应：人类视觉系统夸大具有不同常量光强</p>
+<p>——双线性光强插值</p>
+<p>增量可以有效利用每次计算的结果，从而减少计算量。</p>
+<p>插值方法的缺陷</p>
+<h2 id="局部光反射模型"><a href="#局部光反射模型" class="headerlink" title="局部光反射模型"></a>局部光反射模型</h2><p>光的电磁理论：由自然光产生的反射光，其反射角由如下Fresnel公式确定。</p>
+<blockquote>
+<p>Fresnel公式表明，物体的反射率不仅与光线的</p>
+</blockquote>
+<p>微平面法向的分布函数</p>
+<p>局部基于入射光能量导出的光辐射模型</p>
+<p>简单光反射模型基于经验</p>
+<h2 id="光线追踪-Ray-Tracing-1"><a href="#光线追踪-Ray-Tracing-1" class="headerlink" title="光线追踪 Ray Tracing"></a>光线追踪 Ray Tracing</h2><p>Turner Whitter，光线跟踪算法是他的第一篇论文，他一共只发表过26篇论文</p>
+<p>将视窗区域看成是由空间中的像素组成的矩阵，人眼透过这些像素看到场景中的物体，每一个像素都形成一条光路，然后逆向跟踪，在每一个反射点计算相应的局部光照模型。（递归算法）</p>
+<p>正向：利用产生的光子模拟反射路径，然后对管线进行跟踪，</p>
+<h3 id="光线求交-Ray-Intersection"><a href="#光线求交-Ray-Intersection" class="headerlink" title="光线求交 Ray Intersection"></a>光线求交 Ray Intersection</h3><h3 id="光线的表示"><a href="#光线的表示" class="headerlink" title="光线的表示"></a>光线的表示</h3><h4 id="光线与平面求交"><a href="#光线与平面求交" class="headerlink" title="光线与平面求交"></a>光线与平面求交</h4><p>求解联立方程</p>
+<h4 id="光线与三角形求交"><a href="#光线与三角形求交" class="headerlink" title="光线与三角形求交"></a>光线与三角形求交</h4><p>先与平面求交</p>
+<p>检查交点在三角形内部</p>
+<h4 id="光线与球面求交"><a href="#光线与球面求交" class="headerlink" title="光线与球面求交"></a>光线与球面求交</h4><p>计算球心到光线的距离来确定是否相交</p>
+<p>计算投影点到光线与球面的焦点的位置关系</p>
+<p>使用视角的像素光栅发射光线，并形成光照模型</p>
+<h3 id="光线投射-Ray-Casting"><a href="#光线投射-Ray-Casting" class="headerlink" title="光线投射 Ray Casting"></a>光线投射 Ray Casting</h3><blockquote>
+<p>光线追踪的青春版。</p>
+</blockquote>
+<p>Ray Casting就相当于0层递归。</p>
+<p>添加阴影（Shadows）</p>
+<p>多层递归</p>
+<p>添加纹理（Texture）</p>
+<h3 id="光线追踪符合物理原理吗"><a href="#光线追踪符合物理原理吗" class="headerlink" title="光线追踪符合物理原理吗"></a>光线追踪符合物理原理吗</h3><p>毕竟是反向追踪QAQ</p>
+
     </div>
 
     
@@ -575,7 +625,7 @@ z \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intro"><span class="nav-number">2.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变换-Transformation"><span class="nav-number">3.</span> <span class="nav-text">变换 Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换-Linear-Transform"><span class="nav-number">3.1.</span> <span class="nav-text">线性变换 Linear Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缩放-Scale"><span class="nav-number">3.1.1.</span> <span class="nav-text">缩放 Scale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像-Reflection"><span class="nav-number">3.1.2.</span> <span class="nav-text">镜像 Reflection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切变-Shear"><span class="nav-number">3.1.3.</span> <span class="nav-text">切变 Shear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转-Rotate"><span class="nav-number">3.1.4.</span> <span class="nav-text">旋转 Rotate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仿射变换-Affine-Transform"><span class="nav-number">3.2.</span> <span class="nav-text">仿射变换 Affine Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平移-Translation"><span class="nav-number">3.2.1.</span> <span class="nav-text">平移 Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#齐次坐标-Homogeneous-Coordinates"><span class="nav-number">3.2.2.</span> <span class="nav-text">齐次坐标 Homogeneous Coordinates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿射变换-Affine-Transformations"><span class="nav-number">3.2.3.</span> <span class="nav-text">仿射变换 Affine Transformations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆变换-Inverse-Transform"><span class="nav-number">3.3.</span> <span class="nav-text">逆变换 Inverse Transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合变换-Composing-Transforms"><span class="nav-number">3.4.</span> <span class="nav-text">复合变换 Composing Transforms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换分解-Decomposing-Complex-Transforms"><span class="nav-number">3.5.</span> <span class="nav-text">变换分解 Decomposing Complex Transforms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D变换-3D-Transformations"><span class="nav-number">3.6.</span> <span class="nav-text">3D变换 3D Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3D旋转"><span class="nav-number">3.6.1.</span> <span class="nav-text">3D旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四元数"><span class="nav-number">3.6.2.</span> <span class="nav-text">四元数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观测变换-Viewing-Transformation"><span class="nav-number">3.7.</span> <span class="nav-text">观测变换 Viewing Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图变换-View-Camera-Transformation"><span class="nav-number">3.7.1.</span> <span class="nav-text">视图变换 View&#x2F;Camera Transformation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影变换-Projection-Transformation"><span class="nav-number">3.7.2.</span> <span class="nav-text">投影变换 Projection Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正交投影-Orthographic-Projection"><span class="nav-number">3.7.2.1.</span> <span class="nav-text">正交投影 Orthographic Projection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透视投影-perspective-Projection"><span class="nav-number">3.7.2.2.</span> <span class="nav-text">透视投影 perspective Projection</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光栅化-Rasdterization"><span class="nav-number">4.</span> <span class="nav-text">光栅化 Rasdterization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影-Shading"><span class="nav-number">5.</span> <span class="nav-text">投影 Shading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几何-Geomery"><span class="nav-number">6.</span> <span class="nav-text">几何 Geomery</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光线追踪-Ray-Tracing"><span class="nav-number">7.</span> <span class="nav-text">光线追踪 Ray Tracing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渲染-Rendering"><span class="nav-number">8.</span> <span class="nav-text">渲染 Rendering</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画-Animation"><span class="nav-number">9.</span> <span class="nav-text">动画 Animation</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intro"><span class="nav-number">2.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变换-Transformation"><span class="nav-number">3.</span> <span class="nav-text">变换 Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变换-Linear-Transform"><span class="nav-number">3.1.</span> <span class="nav-text">线性变换 Linear Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缩放-Scale"><span class="nav-number">3.1.1.</span> <span class="nav-text">缩放 Scale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像-Reflection"><span class="nav-number">3.1.2.</span> <span class="nav-text">镜像 Reflection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切变-Shear"><span class="nav-number">3.1.3.</span> <span class="nav-text">切变 Shear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转-Rotate"><span class="nav-number">3.1.4.</span> <span class="nav-text">旋转 Rotate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仿射变换-Affine-Transform"><span class="nav-number">3.2.</span> <span class="nav-text">仿射变换 Affine Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平移-Translation"><span class="nav-number">3.2.1.</span> <span class="nav-text">平移 Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#齐次坐标-Homogeneous-Coordinates"><span class="nav-number">3.2.2.</span> <span class="nav-text">齐次坐标 Homogeneous Coordinates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿射变换-Affine-Transformations"><span class="nav-number">3.2.3.</span> <span class="nav-text">仿射变换 Affine Transformations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆变换-Inverse-Transform"><span class="nav-number">3.3.</span> <span class="nav-text">逆变换 Inverse Transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合变换-Composing-Transforms"><span class="nav-number">3.4.</span> <span class="nav-text">复合变换 Composing Transforms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变换分解-Decomposing-Complex-Transforms"><span class="nav-number">3.5.</span> <span class="nav-text">变换分解 Decomposing Complex Transforms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D变换-3D-Transformations"><span class="nav-number">3.6.</span> <span class="nav-text">3D变换 3D Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3D旋转"><span class="nav-number">3.6.1.</span> <span class="nav-text">3D旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四元数"><span class="nav-number">3.6.2.</span> <span class="nav-text">四元数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观测变换-Viewing-Transformation"><span class="nav-number">3.7.</span> <span class="nav-text">观测变换 Viewing Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图变换-View-Camera-Transformation"><span class="nav-number">3.7.1.</span> <span class="nav-text">视图变换 View&#x2F;Camera Transformation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投影变换-Projection-Transformation"><span class="nav-number">3.7.2.</span> <span class="nav-text">投影变换 Projection Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正交投影-Orthographic-Projection"><span class="nav-number">3.7.2.1.</span> <span class="nav-text">正交投影 Orthographic Projection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透视投影-perspective-Projection"><span class="nav-number">3.7.2.2.</span> <span class="nav-text">透视投影 perspective Projection</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光栅化-Rasdterization"><span class="nav-number">4.</span> <span class="nav-text">光栅化 Rasdterization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影-Shading"><span class="nav-number">5.</span> <span class="nav-text">投影 Shading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几何-Geomery"><span class="nav-number">6.</span> <span class="nav-text">几何 Geomery</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光线追踪-Ray-Tracing"><span class="nav-number">7.</span> <span class="nav-text">光线追踪 Ray Tracing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渲染-Rendering"><span class="nav-number">8.</span> <span class="nav-text">渲染 Rendering</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画-Animation"><span class="nav-number">9.</span> <span class="nav-text">动画 Animation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课堂笔记-Rough"><span class="nav-number">10.</span> <span class="nav-text">课堂笔记 Rough</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单光反射模型：Phong模型"><span class="nav-number">10.1.</span> <span class="nav-text">简单光反射模型：Phong模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增量光反射模型：Gou"><span class="nav-number">10.2.</span> <span class="nav-text">增量光反射模型：Gou</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部光反射模型"><span class="nav-number">10.3.</span> <span class="nav-text">局部光反射模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光线追踪-Ray-Tracing-1"><span class="nav-number">10.4.</span> <span class="nav-text">光线追踪 Ray Tracing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光线求交-Ray-Intersection"><span class="nav-number">10.4.1.</span> <span class="nav-text">光线求交 Ray Intersection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线的表示"><span class="nav-number">10.4.2.</span> <span class="nav-text">光线的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#光线与平面求交"><span class="nav-number">10.4.2.1.</span> <span class="nav-text">光线与平面求交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光线与三角形求交"><span class="nav-number">10.4.2.2.</span> <span class="nav-text">光线与三角形求交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光线与球面求交"><span class="nav-number">10.4.2.3.</span> <span class="nav-text">光线与球面求交</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线投射-Ray-Casting"><span class="nav-number">10.4.3.</span> <span class="nav-text">光线投射 Ray Casting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线追踪符合物理原理吗"><span class="nav-number">10.4.4.</span> <span class="nav-text">光线追踪符合物理原理吗</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -591,7 +641,7 @@ z \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">153</span>
+          <span class="site-state-item-count">154</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -604,7 +654,7 @@ z \\
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -680,7 +730,7 @@ z \\
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">988k</span>
+    <span title="Symbols count total">999k</span>
 </div>
 
         
