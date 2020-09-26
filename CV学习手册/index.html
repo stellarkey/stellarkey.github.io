@@ -32,7 +32,7 @@
 <meta property="og:description" content="CV（Computer Vision），计算机视觉。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-02-13T09:59:57.000Z">
-<meta property="article:modified_time" content="2020-07-05T15:31:28.015Z">
+<meta property="article:modified_time" content="2020-09-24T12:47:11.183Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
@@ -270,6 +270,47 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><p><code>CV</code>（Computer Vision），计算机视觉。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p> <a href="https://www.bilibili.com/video/BV1TJ411d7b7" target="_blank" rel="noopener external nofollow noreferrer">CS231n【B站视频】</a></p>
+<h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="前景提取法"><a href="#前景提取法" class="headerlink" title="前景提取法"></a>前景提取法</h2><h3 id="帧间差分"><a href="#帧间差分" class="headerlink" title="帧间差分"></a>帧间差分</h3><h3 id="背景差分"><a href="#背景差分" class="headerlink" title="背景差分"></a>背景差分</h3><h2 id="先验特征法"><a href="#先验特征法" class="headerlink" title="先验特征法"></a>先验特征法</h2><p>早期视觉专家专注于挖掘各种特征.</p>
+<p>比如：人脸的肤色特征；车辆的水平/垂直边缘、角点，车灯，对称性，车底阴影。</p>
+<p>缺点：不鲁棒，挑选困难。</p>
+<h2 id="机器学习法"><a href="#机器学习法" class="headerlink" title="机器学习法"></a>机器学习法</h2><h3 id="Adaboost基本原理"><a href="#Adaboost基本原理" class="headerlink" title="Adaboost基本原理"></a>Adaboost基本原理</h3><p>一种<strong>集成学习</strong>的方法。</p>
+<p>通过一系列的弱分类器（这些分类器可能只有51%的极低准确率，但只要有点效果就行了，slightly better and random）。</p>
+<p>每个<strong>弱分类器</strong>都定义了一个弱分类能力的超平面，我们通过调整超平面的位置<strong>尽量使得这个超平面让所有的正确样本识别正确</strong>。（自动调整权重，<strong>Ada</strong>boost）</p>
+<p>每一个这样的弱超平面都可以在一定程度上去掉一些负样本。</p>
+<p>这样就可以集成出一个<strong>包络超平面</strong>，这个包络超平面形成了一个<strong>强分类器</strong>。</p>
+<blockquote>
+<p>这样的算法对那些检测型的任务（确定是否存在）十分有效。</p>
+</blockquote>
+<h3 id="基于Adaboost的人脸检测"><a href="#基于Adaboost的人脸检测" class="headerlink" title="基于Adaboost的人脸检测"></a>基于Adaboost的人脸检测</h3><p><em>Robust Real-time Face Detection</em> - 微软论文，2004年发表于IJCV</p>
+<p>利用<strong>Haar特征</strong>（小波）来刻画人脸。</p>
+<p>快速提取特征：<strong>积分图</strong>（相当于二维的后缀数组）。</p>
+<p>总共有4万多个特征，利用Adaboost从中挑出200多个特征（弱分类器）作为最后的强分类器。</p>
+<p>此时扫描一张384*288的图像需要0.7秒。</p>
+<p>远远达不到实时（小于<strong>0.067</strong>秒，可以骗过人眼）。</p>
+<hr>
+<p>解决实时问题：【级联剪枝】</p>
+<ul>
+<li>抑制背景样本——The <strong>cascade分类器</strong><ul>
+<li>每个特征依次检测，<strong>串联</strong>，只有通过了才能检测下一个</li>
+<li>变成一个类似决策链的东西</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="雷达和视觉的融合目标检测"><a href="#雷达和视觉的融合目标检测" class="headerlink" title="雷达和视觉的融合目标检测"></a>雷达和视觉的融合目标检测</h4><h4 id="在线Boosting"><a href="#在线Boosting" class="headerlink" title="在线Boosting"></a>在线Boosting</h4><h3 id="目标检测存在的问题"><a href="#目标检测存在的问题" class="headerlink" title="目标检测存在的问题"></a>目标检测存在的问题</h3><ul>
+<li>检测不稳定<ul>
+<li>漏检、误检</li>
+<li><strong>目标跟踪</strong></li>
+</ul>
+</li>
+<li>局部特征<ul>
+<li>全局特征</li>
+</ul>
+</li>
+<li>目标检测之后<ul>
+<li><strong>目标识别</strong></li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -377,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标检测"><span class="nav-number">2.</span> <span class="nav-text">目标检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前景提取法"><span class="nav-number">2.1.</span> <span class="nav-text">前景提取法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧间差分"><span class="nav-number">2.1.1.</span> <span class="nav-text">帧间差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景差分"><span class="nav-number">2.1.2.</span> <span class="nav-text">背景差分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先验特征法"><span class="nav-number">2.2.</span> <span class="nav-text">先验特征法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习法"><span class="nav-number">2.3.</span> <span class="nav-text">机器学习法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaboost基本原理"><span class="nav-number">2.3.1.</span> <span class="nav-text">Adaboost基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Adaboost的人脸检测"><span class="nav-number">2.3.2.</span> <span class="nav-text">基于Adaboost的人脸检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">2.3.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#雷达和视觉的融合目标检测"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">雷达和视觉的融合目标检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线Boosting"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">在线Boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标检测存在的问题"><span class="nav-number">2.3.4.</span> <span class="nav-text">目标检测存在的问题</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,7 +441,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -482,7 +523,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">999k</span>
+    <span title="Symbols count total">1m</span>
 </div>
 
         
