@@ -24,20 +24,22 @@
   </script>
 
 
-  <meta name="description" content="《Interpreting Deep Learning-Based Networking Systems》看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种黑箱技术存在，而本文引入">
+  <meta name="description" content="《Interpreting Deep Learning-Based Networking Systems》来自SIGCOMM会议，看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阅《Interpreting Deep Learning-Based Networking Systems》">
 <meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="《Interpreting Deep Learning-Based Networking Systems》看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种黑箱技术存在，而本文引入">
+<meta property="og:description" content="《Interpreting Deep Learning-Based Networking Systems》来自SIGCOMM会议，看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924185011814.png">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924213524895.png">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924214819313.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200928171614149.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200927230455109.png">
 <meta property="article:published_time" content="2020-09-14T06:54:13.000Z">
-<meta property="article:modified_time" content="2020-09-24T14:49:14.089Z">
+<meta property="article:modified_time" content="2020-09-28T14:24:00.534Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png">
@@ -273,23 +275,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>《Interpreting Deep Learning-Based Networking Systems》看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种黑箱技术存在，而本文引入了一种称为Metis的框架，通过两种典型的基于决策树、超图的方法，将DNN的模型作用转换为<strong>可解释</strong>的形式。<a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>《Interpreting Deep Learning-Based Networking Systems》来自<strong>SIGCOMM</strong>会议，看作者是网研院的Paper。注意到题目上要对“Networking system”这个词稍加注意，结合发表人也能猜到这是（互联网）网络系统，而不是指的DNN的神经网络架构。这篇文章属于“人工智能应用于网络传输”主题中的一篇选文。通过摘要我们可以知道，深度学习通常作为一种黑箱技术存在，而本文引入了一种称为Metis的框架，通过两种典型的基于决策树、超图的方法，将DNN的模型作用转换为<strong>可解释</strong>的形式。<a id="more"></a>我觉得这里引入的对局部（local）和整体（Global）的分别处理，倒是很有启发性，但是这也在某种意义上引入一种复杂性。网络体系结构的设计通常是从底层到高层（或者反过来），但是从小到大或者从大到小却是（在我看来）一种不常见的方式。</p>
 <blockquote>
 <p>本篇源于高等计算机网络课程的阅读任务，领域为“<strong><em>人工智能应用于网络传输</em></strong> ”。</p>
 </blockquote>
-<p>在此之前，基于DNN算力的网络优化问题其实已经发过不少的paper了，包括video streaming，local traffic control，parallel job scheduling，network resource management等等。论文中可以查找到相关的文献。DNN是一种非常具有亲和性的技术，它可以与强化学习等标准的优化技术结合在一起，并产生数据驱动的自动化性能提升。</p>
-<p>在另一方面，DNN的巨大计算量和模型内存消耗，以及本质上的巨大参数集，使得对DNN模型的理解非常困难。这其中虽然有一些对神经元的分析，但是对于大体量、差异化的DNN系统来说，这样的解释力是不足的。</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="./1.4.pdf">Interpreting Deep Learning-Based Networking Systems</a></p>
 <div class="pdfobject-container" data-target="./1.4.pdf" data-height="500px"></div>
 <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Decision_tree" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Decision_tree</a></p>
 </blockquote>
-<p>决策树非常简单。将二叉树的分支解释为决策/分类行为，即形成了决策树。</p>
+<p>决策树非常简单。将<strong>二叉树</strong>的分支解释为决策/分类行为，即形成了决策树。</p>
 <img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png" class title="Decision Tree Elements">
 <h2 id="超图"><a href="#超图" class="headerlink" title="超图"></a>超图</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Hypergraph" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Hypergraph</a></p>
 </blockquote>
-<p>超图可以理解为每条边可以包含两个以上的点所构成的图。</p>
+<p>超图可以理解为<strong>每条边可以包含两个以上的点</strong>所构成的图。</p>
 <img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png" class title="超图">
 <blockquote>
 <p>每个边所包含的顶点个数相同且都为k个的，称为k阶超图。</p>
@@ -297,12 +297,85 @@
 <h2 id="CCS-CONCEPTS"><a href="#CCS-CONCEPTS" class="headerlink" title="CCS CONCEPTS"></a>CCS CONCEPTS</h2><p>可以在论文中发现如下的段落：</p>
 <img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924185011814.png" class title="CCS CONCEPTS">
 <p>这其实是ACM论文中作者对自己论文的分类。</p>
-<p>在投稿阶段不用写，当收录之后再行添加。</p>
+<p><strong>在投稿阶段不用写，当收录之后再行添加。</strong></p>
 <blockquote>
 <p><a href="https://www.zhihu.com/question/278822945/answer/673383541" target="_blank" rel="noopener external nofollow noreferrer">ACM论文中的 CCS CONCEPTS 是什么意思？ - 高正杰的回答 - 知乎</a></p>
 <blockquote>
 <p>在ACM的”<a href="https://link.zhihu.com/?target=http%3A//dl.acm.org/ccs/ccs.cfm" rel="external nofollow noreferrer">http://dl.acm.org/ccs/ccs.cfm</a>“网页中，选择合适自己的分类，然后点击左侧的“Assign This CCS Concept”，再选择相关性高、中、低，系统就会自动生成对应的LaTeX代码。</p>
 </blockquote>
+</blockquote>
+<h2 id="fine-tune"><a href="#fine-tune" class="headerlink" title="fine-tune"></a>fine-tune</h2><blockquote>
+<p><a href="https://blog.csdn.net/u013841196/article/details/80919857" target="_blank" rel="noopener external nofollow noreferrer">迁移学习——Fine-tune</a></p>
+</blockquote>
+<p>在深度学习中常常会提到fine-tune（微调）。</p>
+<p>fine-tune是一种迁移学习(Transfer learning) 的实现方法。fine-tune通常是对靠近输出层的参数附加一定训练。</p>
+<p>迁移学习，即把某个模型从一个领域迁移应用到另一个领域。</p>
+<blockquote>
+<p>这些领域之间的数据分布可能会有不同。</p>
+</blockquote>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>在此之前，基于DNN算力的网络优化问题其实已经发过不少的paper了，包括video streaming，local traffic control，parallel job scheduling，network resource management等等。论文中可以查找到相关的文献。</p>
+<p>DNN是一种非常具有亲和性的技术，它可以与强化学习等标准的优化技术结合在一起，并产生数据驱动的自动化性能提升。</p>
+<p>在另一方面，DNN的巨大计算量和模型内存消耗，以及本质上的巨大参数集，使得对DNN模型的理解非常困难。这其中虽然有一些对神经元的分析，但是对于大体量、差异化的DNN系统来说，这样的解释力是不足的。</p>
+<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><blockquote>
+<p>这也是主要创新点了，毕竟是重新设计了一个框架。</p>
+</blockquote>
+<ul>
+<li><strong>Metis框架</strong>：提供基于DNN的网络模型中两种通用类别的理解，局部系统（<strong><font color="red">决策树</font></strong>）、全局系统（<strong><font color="red">超图</font></strong>）。</li>
+<li><strong>Metis原型</strong>：Metis的具体实现，以及它如何理解/发掘启发信息和新知识。</li>
+<li><strong>应用场景</strong>：提供了4个典型的网络场景，Metis可以帮助网络工作者设计、诊断、部署、随机调整等。</li>
+</ul>
+<h1 id="写作动机"><a href="#写作动机" class="headerlink" title="写作动机"></a>写作动机</h1><p>作者分析了目前基于深度学习的网络系统的一些缺陷和不足，以及现有的增强可解释性的方法对其解释力不足的客观事实，这促使他们设计并实现了Metis。</p>
+<h2 id="基于深度学习的网络系统的缺陷"><a href="#基于深度学习的网络系统的缺陷" class="headerlink" title="基于深度学习的网络系统的缺陷"></a>基于深度学习的网络系统的缺陷</h2><ul>
+<li><strong>过于复杂的结构</strong>（Incomprehensible structure）<ul>
+<li>数以亿计的节点</li>
+<li>难以优化、维护或重构</li>
+<li>最新的DNN模型正在变得越来越庞大</li>
+</ul>
+</li>
+<li><strong>部署资源消耗大</strong>（Heavyweight to deploy）<ul>
+<li>DNN在资源消耗和决策延迟上没有优势</li>
+<li>网络系统通常是有限资源且需要低时延的</li>
+<li>很多实际应用只能给出“best-effort”的结果，而不是DNN的最优结果</li>
+</ul>
+</li>
+<li><strong>缺少调参方法论</strong>（Nonadjustable policies）<ul>
+<li>实际场景的迁移通常需要调整模型参数</li>
+<li>网络管理者缺少对DNN的理解，只能随机调参，效率低下，甚至会带来严重的性能下降</li>
+</ul>
+</li>
+</ul>
+<h2 id="现有增强可解释性的方法的不足"><a href="#现有增强可解释性的方法的不足" class="headerlink" title="现有增强可解释性的方法的不足"></a>现有增强可解释性的方法的不足</h2><ul>
+<li><strong>解释目的不同</strong>（Different interpretation goal）<ul>
+<li>机器学习领域更关心DNN内部的ML模型的机制</li>
+<li>网络领域更关系输入和输出之间的联系<ul>
+<li><strong>理解</strong>DNN中从输入到输出的<strong>映射</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>差异化的网络系统</strong>（Diverse networking systems）<ul>
+<li>DL-based网络系统有不同的应用场景，并采用着不同的DNN模型</li>
+<li>理解这些模型用单一的解释方法很难做到<ul>
+<li>例如，LEMNA只能解释RNN的行为，而无法应该到GNN上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>非标准的状态/行为空间</strong>（Non-standard state and action spaces）<ul>
+<li>现有的解释法通常设计在easy-encoded的状态/行为空间<ul>
+<li>例如，图像分类的解释法是基于 grid-based RGB encoding 来设计的</li>
+</ul>
+</li>
+<li>网络系统根本上总是在和非标准的状态/行为空间打交道<ul>
+<li>例如，RouteNet接受一个拓扑图作为输入，并输出一个变长的路由路径</li>
+<li>需要对网络系统单独设计特殊的理解方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>In response, to interpret DL-based networking systems, Metis introduces a decision tree-based method together with a hypergraph-based method for different systems.</p>
 </blockquote>
 <h1 id="Metis"><a href="#Metis" class="headerlink" title="Metis"></a>Metis</h1><blockquote>
 <p>Metis是一个希腊神，他提供wisdom和consultation。</p>
@@ -328,6 +401,98 @@
 <p>以上这些scenario在之前的论文工作中都已经有相应的案例实现了。</p>
 </blockquote>
 <img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924214819313.png" class title="Metis的分类处理">
+<h2 id="Local-systems"><a href="#Local-systems" class="headerlink" title="Local systems"></a>Local systems</h2><p>在<strong>Local systems</strong>方面，Metis引入了基于决策树的转化方法。这样做的起因是因为目前存在的启发式local system通常都是基于简单的规则式决策模型，而且通常具有简单的逻辑。</p>
+<p>转化的决策树通常需要由DNN来产生，这被称为一个“Teacher-Student”过程。也就是说，我们需要得到的决策树是基于DNN生成的输入输出来训练的。这种方法直接产生的决策树，通常为了拟合DNN而具有了过多的分支。因此，Metis中引入了两个手段来“<strong>prune the branches</strong>”（剪枝）。</p>
+<ul>
+<li>借助DNN生成的<strong>数据的分布</strong>，提前降低决策树的决策空间</li>
+<li>一个<strong>特殊设计的重采样</strong>算法，可以让DNN引导决策树获得最好的效果</li>
+</ul>
+<p>在这样的机制下，实践中Metis的决策树具有可读性特征，而且在性能上只比原来的DNN下降了2%。</p>
+<h2 id="Global-systems"><a href="#Global-systems" class="headerlink" title="Global systems"></a>Global systems</h2><p>在<strong>Global systems</strong>方面，Metis引入了超图作为解决方案。大多数网络系统要么有基于图形式的数据结构的输入，要么就是在两个元素之间建立映射，而这样两类关系都可以用超图来表示。</p>
+<blockquote>
+<p>比如，routing paths（路由路径）是一条网络上的路径，这在超图中等效为一条“hyperedge”。</p>
+</blockquote>
+<p>通过超图，Metis设计了优化问题来计算超图内部每个部分的重要程度。例如，找寻网络中的关键路径（finding critical routing decisions to the overall performance）。</p>
+<p>有了重要性程度的度量以后，网络工作人员就可以更加清晰地理解基于深度学习的网络系统的行为。因为他们能够定性（甚至部分定量）地知道这些决策将有怎么样的效果和影响。</p>
+<blockquote>
+<p>当然Metis还设计了更加concrete的评估。</p>
+</blockquote>
+<h1 id="决策树-1"><a href="#决策树-1" class="headerlink" title="决策树"></a>决策树</h1><p>Metis想用新的解释法将DNN模型转化为更加简单的模型。这样的备选的简单模型实际上有很多，比如(super)线性回归、决策树等。</p>
+<p>选择决策树的原因如下：</p>
+<ul>
+<li>决策树的结构功能与网络系统的策略相似，都是基于规则的策略</li>
+<li>决策树有很强的表达能力和置信度，因为它们是非参数的，能够表达非常复杂的策略</li>
+<li>决策树在网络系统中非常轻量，有利于资源消耗和决策时延</li>
+</ul>
+<p>决策树的决策过程是一个透明的过程，我们能够轻易地理解决策的结果。</p>
+<h2 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h2><p>采用“teacher-student”训练法。 以下是转换中的关键步骤：</p>
+<ul>
+<li><strong>迹聚合</strong>（Traces collection）<ul>
+<li>DNN的所有可能状态/行为对（pair），非常庞大，并且不能表现网络系统中的概率分布。</li>
+<li>放权给DNN网络，让决策树充分追踪DNN中的trajectory</li>
+</ul>
+</li>
+<li><strong>重采样</strong>（Resampling）<ul>
+<li>Local systems常常优化一组策略而不是单个行为<ul>
+<li>不同的网络系统行为可能对优化目标有不同程度的重要性</li>
+<li>决策树算法针对所有的单个行为进行优化</li>
+</ul>
+</li>
+<li>基于RL强化学习的DNN网络系统可以优化一组策略<ul>
+<li>转化这样的系统为决策树，然后根据advantage function来重采样</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>剪枝</strong>（Pruning）<ul>
+<li>过分庞大的决策树模型也会影响网络运作者的理解</li>
+<li>CCP（Cost Complex Pruning）<ul>
+<li>CCP设计了一个损失函数来控制剪枝后决策树的准确度和复杂度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>部署</strong>（Deployment）<ul>
+<li>网管终于可以同时享受DNN所带来的性能提升和决策树所带来的可解释性辣</li>
+</ul>
+</li>
+</ul>
+<h1 id="超图-1"><a href="#超图-1" class="headerlink" title="超图"></a>超图</h1><p>超图使得我们可以在统一的框架下，对多种global systems进行描述。</p>
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200928171614149.png" class title="借助超图描述多种global systems">
+<p>下图是SDN中路由超图的一个示例：</p>
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200927230455109.png" class title="论文中的SDN路由超图">
+<p>可以看到，一条路由路径在超图中就表现为一条超边（亦即一个顶点集）。</p>
+<h2 id="超图的表示能力"><a href="#超图的表示能力" class="headerlink" title="超图的表示能力"></a>超图的表示能力</h2><p>论文中实证性地提供了global system需要的两个核心特征，只要具备两个特征中的任意一个，便可以将global systems转化为超图模型，并使用Metis来理解它。</p>
+<ul>
+<li><strong>图结构的输入/输出</strong>（Graph-structured inputs or outputs）<ul>
+<li>显然，图结构是超图的一个子集，所以这样的系统可以非常自然地采用超图。</li>
+</ul>
+</li>
+<li><strong>二元映射</strong>（Bivariate mapping）<ul>
+<li>如果一个global system设定了一种在两个变量之间的映射，那么这两个变量和映射就可以被转化为相应的顶点和超边。<ul>
+<li>在实际中，许多资源分配系统都维护了一种从资源到需求的映射关系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>论文中发现，许多global systems都含有上述特征中的至少一个。</p>
+<h2 id="关键路径搜索"><a href="#关键路径搜索" class="headerlink" title="关键路径搜索"></a>关键路径搜索</h2><p>论文中设计了一种比较复杂的平衡算法来实现确认某个连接对输出的重要程度。</p>
+<blockquote>
+<p>没细看了。</p>
+</blockquote>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="Pensieve实现"><a href="#Pensieve实现" class="headerlink" title="Pensieve实现"></a>Pensieve实现</h2><p>Pensieve is a deep RL-based ABR system to <strong>optimize bitrates with network observations</strong> such as past chunk throughput, buffer occupancy.</p>
+<h2 id="AuTO实现"><a href="#AuTO实现" class="headerlink" title="AuTO实现"></a>AuTO实现</h2><p>AuTO is a <strong>flow scheduling system</strong> to optimize flow completion time (FCT) based on deep RL.</p>
+<h2 id="RouteNet-实现"><a href="#RouteNet-实现" class="headerlink" title="RouteNet 实现"></a>RouteNet 实现</h2><p>We train the model on the <strong>traffic dataset</strong> of the NSFNet topology provided by RouteNet.</p>
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><p>在实验部分，作者做了一系列各方面的测试。比如，系统的理解，模型的设计指导，DUBUG能力测试，轻量部署，随机调整，还有对Metis的深入分析等等。</p>
+<blockquote>
+<p>这些内容以及appendix的内容都比较多。来不及看了。。</p>
+</blockquote>
+<h1 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h1><p>这篇文章中，Metis只是一个原型机。这意味着Metis还有很大的改进空间，以及更加广泛的应用场景。</p>
+<p>比如，文章中只介绍了4个实际的应用，帮助网络工作者设计、诊断、部署、随机调整等。我们可以去思考一些新的应用方式。</p>
+<p>对深度学习模型的理解是一种目前急需解决的事情。Metis的设计虽然在网络系统领域一定程度地解决了DNN模型的可解释性问题，但是它是通过回避DNN，转化为决策树的方式做到的。Metis的方法并不能够真正意义上解决深度学习模型的可解释问题。因此，可解释性的研究，或者说，基于深度学习网络的可解释性研究，还需要一些其它的未知的手段。</p>
+<p>并且在论文中也提到了，Metis甚至不能够解释所有的网络系统（因为需要两个要点中的至少一个）。</p>
+
     </div>
 
     
@@ -430,7 +595,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">2.1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超图"><span class="nav-number">2.2.</span> <span class="nav-text">超图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CCS-CONCEPTS"><span class="nav-number">2.3.</span> <span class="nav-text">CCS CONCEPTS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Metis"><span class="nav-number">3.</span> <span class="nav-text">Metis</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">2.1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超图"><span class="nav-number">2.2.</span> <span class="nav-text">超图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CCS-CONCEPTS"><span class="nav-number">2.3.</span> <span class="nav-text">CCS CONCEPTS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fine-tune"><span class="nav-number">2.4.</span> <span class="nav-text">fine-tune</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">3.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">4.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作动机"><span class="nav-number">5.</span> <span class="nav-text">写作动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于深度学习的网络系统的缺陷"><span class="nav-number">5.1.</span> <span class="nav-text">基于深度学习的网络系统的缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现有增强可解释性的方法的不足"><span class="nav-number">5.2.</span> <span class="nav-text">现有增强可解释性的方法的不足</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Metis"><span class="nav-number">6.</span> <span class="nav-text">Metis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-systems"><span class="nav-number">6.1.</span> <span class="nav-text">Local systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-systems"><span class="nav-number">6.2.</span> <span class="nav-text">Global systems</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-1"><span class="nav-number">7.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#转换方法"><span class="nav-number">7.1.</span> <span class="nav-text">转换方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超图-1"><span class="nav-number">8.</span> <span class="nav-text">超图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超图的表示能力"><span class="nav-number">8.1.</span> <span class="nav-text">超图的表示能力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键路径搜索"><span class="nav-number">8.2.</span> <span class="nav-text">关键路径搜索</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">9.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pensieve实现"><span class="nav-number">9.1.</span> <span class="nav-text">Pensieve实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AuTO实现"><span class="nav-number">9.2.</span> <span class="nav-text">AuTO实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RouteNet-实现"><span class="nav-number">9.3.</span> <span class="nav-text">RouteNet 实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验"><span class="nav-number">10.</span> <span class="nav-text">实验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#展望"><span class="nav-number">11.</span> <span class="nav-text">展望</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -453,7 +618,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
