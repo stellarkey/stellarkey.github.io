@@ -394,7 +394,7 @@
 <blockquote>
 <p>感知机算是最早期的Hypothesis模型了。（参考林轩田老师的<a href="https://www.bilibili.com/video/av1624332/?p=6" target="_blank" rel="noopener external nofollow noreferrer">视频</a>）<br>一个感知机的简洁算法称为<strong>Perceptron Learning Algorithm</strong>（<strong>PLA</strong>，感知机学习算法）。如下图：<br><img data-src="/Notes-of-Machine-Learning-Part2/1547234017119.png" class width="1547234017119"></p>
 <p>注意<strong><font color="red">W</font></strong>是决策边界的法向量。该原理是矢量叉乘判断方向(左/右)。（<a href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+70240183x_1+sp/about" target="_blank" rel="noopener external nofollow noreferrer">计算几何</a>）</p>
-<p>证明：我们有<strong>评价分数</strong>为$y<em>nW</em>{t}^{T}x_n$（同向正值），并且</p>
+<p>证明：我们有<strong>评价分数</strong>为$y_nW_{t}^{T}x_n$（同向正值），并且</p>
 <script type="math/tex; mode=display">
 W_{t+1}:=W_t+y_nx_n</script><p>则等价为下式，其中红色部分$\geq0​$</p>
 <script type="math/tex; mode=display">
@@ -741,7 +741,7 @@ J(\theta) = \frac{1}{2m} [\sum\limits_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2+\lamb
 <p>引入如下符号：</p>
 <ul>
 <li>$(x^{(1)},y^{(1)})$：训练样本</li>
-<li>$(x<em>{test}^{(1)},y</em>{test}^{(1)})$：测试样本</li>
+<li>$(x_{test}^{(1)},y_{test}^{(1)})$：测试样本</li>
 <li>$m$：训练集样本容量</li>
 <li>$m_{test}$：测试集样本容量</li>
 </ul>
@@ -1087,7 +1087,7 @@ F_1 Score &= 1, \quad \mbox{if $P=1$ and $R=1$}
 <h2 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h2><p><strong>例</strong>：（Designing a high accuracy learning system）</p>
 <ul>
 <li>自动完形填空：（Classify between confusable words）<ul>
-<li>For breakfast I ate <em>_</em> eggs.（to/<strong>two</strong>/too）</li>
+<li>For breakfast I ate ___ eggs.（to/<strong>two</strong>/too）</li>
 </ul>
 </li>
 </ul>
@@ -1113,7 +1113,7 @@ F_1 Score &= 1, \quad \mbox{if $P=1$ and $R=1$}
 </ul>
 <h1 id="SVM-支持向量机"><a href="#SVM-支持向量机" class="headerlink" title="SVM(支持向量机)"></a>SVM(支持向量机)</h1><h2 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h2><p>在正式讲述SVM之前，我们将<strong>回顾逻辑回归</strong>。</p>
 <p>在Logistic回归中，我们的预测函数为：$h_{\theta}(x) = \frac{1}{1+e^{-\theta^T x} }$。</p>
-<p>代价函数为：$cost = -ylogh<em>{\theta}(x)+(1-y)log(1-h</em>{\theta}(x))$。</p>
+<p>代价函数为：$cost = -ylogh_{\theta}(x)+(1-y)log(1-h_{\theta}(x))$。</p>
 <p>同时，当预测值 y=1 时，代价函数就为：（其实之前本来就是下面这个表达式推出来上面的）</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -1160,10 +1160,10 @@ h_\theta(x) =
 <blockquote>
 <p>这个时候，与Logistic回归不同的是，SVM的决策边界将<u>张成一个与原空间同维的空间</u>，相当于给出了一个<strong>补空间</strong>。<br>补空间记录了既不属于正类也不属于负类的额外可能。（有点像无监督学习了）</p>
 </blockquote>
-<h3 id="数学原理"><a href="#数学原理" class="headerlink" title="数学原理"></a>数学原理</h3><p>假定两个2维向量：$u=\left(\begin{matrix}u_1 \ u_2\end{matrix}\right),v=\left(\begin{matrix}v_1 \ v_2\end{matrix}\right)$。<br>令 p 为 v 投影到 u 的线段长（该值可正可负），如下图所示：</p>
+<h3 id="数学原理"><a href="#数学原理" class="headerlink" title="数学原理"></a>数学原理</h3><p>假定两个2维向量：$u=\left(\begin{matrix}u_1 \\ u_2\end{matrix}\right),v=\left(\begin{matrix}v_1 \\ v_2\end{matrix}\right)$。<br>令 p 为 v 投影到 u 的线段长（该值可正可负），如下图所示：</p>
 <p><img data-src="https://i.imgur.com/uNOKtUv.png" width="230"></p>
 <p>则 u、v 的内积为：$ u^Tv = p \cdot ||u|| = u_1v_1+u_2v_2 $。（||u|| 为 u 的范数，这里是 u 的长度。）</p>
-<p>假定我们的 $\theta=\left(\begin{matrix}\theta_1 \ \theta_2\end{matrix}\right)$，且令 θ_0=0，以使得向量 θ 过原点，则优化约束可写为：</p>
+<p>假定我们的 $\theta=\left(\begin{matrix}\theta_1 \\ \theta_2\end{matrix}\right)$，且令 θ_0=0，以使得向量 θ 过原点，则优化约束可写为：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \min\limits_\theta\frac{1}{2}\sum\limits_{j=1}^{2}\theta_j^2 &=\min\limits_\theta\frac{1}{2}(\theta_1+\theta_2)^2 \\

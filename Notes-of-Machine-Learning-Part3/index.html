@@ -501,7 +501,7 @@ z^{(i)}=U_{reduce}^{\color{red}{T} } \cdot x^{(i)}</script></li>
 </ol>
 <h2 id="主成分数量选择"><a href="#主成分数量选择" class="headerlink" title="主成分数量选择"></a>主成分数量选择</h2><p>从 PCA 的执行流程中，我们知道，需要为 PCA 指定目的维度 k。如果降维不多，则性能提升不大；如果目标维度太小，则又丢失了许多信息。<br>通常，使用如下的流程的来<strong>评估 k 值选取优异</strong>：</p>
 <ol>
-<li><p>求各样本的<strong>投影均方误差</strong>:  $\min\frac{1}{m}\sum\limits<em>{j=1}^{m}||x^{(i)}-x</em>{approx}^{(i)}||^2$</p>
+<li><p>求各样本的<strong>投影均方误差</strong>:  $\min\frac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}-x_{approx}^{(i)}||^2$</p>
 </li>
 <li><p>求数据的<strong>总变差</strong>（variation）：$\cfrac{1}{m}\sum\limits_{j=1}^{m}||x^{(i)}||^2$</p>
 </li>
@@ -573,7 +573,7 @@ p(x; \mu, \delta^2)=\frac{1}{\sqrt{2\pi}\delta}e^{-\frac{(x-\mu)^2}{2} }</script
 <p>如果学过概率论，这里对参数 μ 和参数 $δ^2$ 的估计就是二者的<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1" target="_blank" rel="noopener external nofollow noreferrer">极大似然估计</a>。</p>
 <p>当然，在数学上对于$δ^2$也有除以m-1的，但在实际使用中几乎没有什么区别。</p>
 </blockquote>
-<h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><p>假定我们有数据集：${x^{(1)},x^{(2)},\cdots,x^{(m)} }, x \in R^n$。并且，各个特征服从于高斯分布。<br>完成了对于各个特征分布的参数估计后，可以得到：</p>
+<h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><p>假定我们有数据集：$\{x^{(1)},x^{(2)},\cdots,x^{(m)} \}, x \in R^n$。并且，各个特征服从于高斯分布。<br>完成了对于各个特征分布的参数估计后，可以得到：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 p(x) &= p(x_1;{\color{red}{\mu_1, \delta^2_1} })p(x_2;{\color{red}{\mu_2, \delta^2_2} }) \cdots p(x_n;{\color{red}{\mu_n, \delta^2_n} }) \\
@@ -1230,7 +1230,7 @@ Y =
 + \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2
 + {\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><p>由于该用户没有对任何电影作出评价，$θ^{(5)}$能影响上式的项只有：</p>
 <script type="math/tex; mode=display">
-{\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><p>为了最小化该式，则显然会得到 $\theta^{(5)} = \begin{pmatrix} 0 \ 0 \end{pmatrix}$，从而，<code>Eve(5)</code> 对任何电影的评价将会被预测为：</p>
+{\color{green}{\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n(\theta_k^{(j)})^2} }</script><p>为了最小化该式，则显然会得到 $\theta^{(5)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$，从而，<code>Eve(5)</code> 对任何电影的评价将会被预测为：</p>
 <script type="math/tex; mode=display">
 y(i, 5) = (\theta^{(5)})^T x^{(i)}= 0</script><p>显然，这就是一种“<strong>not useful</strong>”的预测了，系统会因此认为 <code>Eve</code> 对任何电影都不感冒，那么，<code>Eve</code> 就是<del>吃饱了撑的</del>来注册这个网站。</p>
 <p>为了这个解决这个问题，我们会先求取各个电影的平均得分 μ：</p>

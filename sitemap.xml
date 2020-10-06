@@ -1201,27 +1201,6 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/NLP/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vel.life/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vel.life/tags/CV/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://vel.life/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
@@ -1236,6 +1215,20 @@
   </url>
   
   <url>
+    <loc>https://vel.life/tags/NLP/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vel.life/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://vel.life/tags/JavaScript/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
@@ -1243,7 +1236,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/Echarts/</loc>
+    <loc>https://vel.life/tags/CV/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1251,6 +1244,13 @@
   
   <url>
     <loc>https://vel.life/tags/GNN/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vel.life/tags/Echarts/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1327,7 +1327,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/</loc>
+    <loc>https://vel.life/tags/CS/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1341,7 +1341,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/CS/</loc>
+    <loc>https://vel.life/tags/%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1355,21 +1355,14 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vel.life/tags/%E7%A7%91%E5%B9%BB/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://vel.life/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vel.life/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1383,7 +1376,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E5%87%B8%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://vel.life/tags/%E7%A7%91%E5%B9%BB/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1397,7 +1390,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E5%89%91%E6%8C%87Offer/</loc>
+    <loc>https://vel.life/tags/%E5%87%B8%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1405,6 +1398,13 @@
   
   <url>
     <loc>https://vel.life/tags/%E5%8C%BA%E5%9D%97%E9%93%BE-%E6%AF%94%E7%89%B9%E5%B8%81-%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6-%E5%8D%9A%E5%BC%88%E8%AE%BA-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6-P2P/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vel.life/tags/%E5%89%91%E6%8C%87Offer/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1460,13 +1460,6 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://vel.life/tags/%E6%8B%93%E6%89%91%E5%AD%A6/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
@@ -1474,7 +1467,21 @@
   </url>
   
   <url>
+    <loc>https://vel.life/tags/%E4%BB%A3%E6%95%B0/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://vel.life/tags/%E6%B4%9B%E8%B0%B7/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vel.life/tags/%E6%AD%A3%E5%88%99-%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1495,7 +1502,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/tags/%E6%AD%A3%E5%88%99-%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</loc>
+    <loc>https://vel.life/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1503,13 +1510,6 @@
   
   <url>
     <loc>https://vel.life/tags/Deeplearning/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vel.life/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1672,6 +1672,13 @@
   </url>
   
   <url>
+    <loc>https://vel.life/categories/Read/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://vel.life/categories/Conference/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
@@ -1686,14 +1693,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/categories/AI/</loc>
-    <lastmod>2020-10-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vel.life/categories/Read/</loc>
+    <loc>https://vel.life/categories/CS/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1707,7 +1707,7 @@
   </url>
   
   <url>
-    <loc>https://vel.life/categories/CS/</loc>
+    <loc>https://vel.life/categories/AI/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1728,14 +1728,14 @@
   </url>
   
   <url>
-    <loc>https://vel.life/categories/SF/</loc>
+    <loc>https://vel.life/categories/Math/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vel.life/categories/Math/</loc>
+    <loc>https://vel.life/categories/SF/</loc>
     <lastmod>2020-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

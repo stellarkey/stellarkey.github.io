@@ -67,7 +67,7 @@
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201006192611811.png">
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201006220639268.png">
 <meta property="article:published_time" content="2020-09-08T08:16:49.000Z">
-<meta property="article:modified_time" content="2020-10-06T15:35:21.680Z">
+<meta property="article:modified_time" content="2020-10-06T15:50:04.932Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201004120831174.png">
@@ -447,9 +447,9 @@ P(n,r)=\cfrac{n!}{(n-r)!}</script><h3 id="圆排列"><a href="#圆排列" class=
 <p>引入了镜像对称。</p>
 </blockquote>
 <script type="math/tex; mode=display">
-\cfrac{P(n,r)}{ {\color{blue}{2\cdot} } r}</script><h3 id="多重集"><a href="#多重集" class="headerlink" title="多重集"></a>多重集</h3><p><strong><font color="red">多重集</font></strong>：元素可以多次出现的集合。$q_i =0,1, …,∞$ 表示元素 $a_i$ 可以出现的次数，含有 $n$ 个不同元素的多重集可以记为 ${q_1 ·a_1 , q_2 ·a_2 …,q_t ·a_t }$。</p>
+\cfrac{P(n,r)}{ {\color{blue}{2\cdot} } r}</script><h3 id="多重集"><a href="#多重集" class="headerlink" title="多重集"></a>多重集</h3><p><strong><font color="red">多重集</font></strong>：元素可以多次出现的集合。$q_i =0,1, …,∞$ 表示元素 $a_i$ 可以出现的次数，含有 $n$ 个不同元素的多重集可以记为 $\{q_1 ·a_1 , q_2 ·a_2 …,q_t ·a_t \}$。</p>
 <img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201004162401749.png" class title="多重集划分排列">
-<h3 id="多重全排列"><a href="#多重全排列" class="headerlink" title="多重全排列"></a>多重全排列</h3><p><strong><font color="red">多重全排列</font></strong>：（$r<em>1+r_2+…+r_t=\sum r</em>{i}=n$）</p>
+<h3 id="多重全排列"><a href="#多重全排列" class="headerlink" title="多重全排列"></a>多重全排列</h3><p><strong><font color="red">多重全排列</font></strong>：（$r_1+r_2+…+r_t=\sum r_{i}=n$）</p>
 <ul>
 <li>$r_1$ 个元素 <code>1</code>，$r2$ 个元素 <code>2</code>，……，$r_t$ 个元素 <code>t</code>，共计 n 个元素进行排列，记为 $P(n;r_1,r_2,…,r_t)$。</li>
 </ul>
@@ -503,7 +503,7 @@ C(n,r)</script><blockquote>
 <p>例2： $(x+y+z)^ 4$ 有多少项？ $A={x,y,z}$ 三个元素中取r=4个做可重组合。</p>
 <script type="math/tex; mode=display">
 C(n+r-1,r)=C(3+4-1,4)=C(6,4) = 15</script></blockquote>
-<h3 id="不相邻组合"><a href="#不相邻组合" class="headerlink" title="不相邻组合"></a>不相邻组合</h3><p>不相邻的组合是指从 $A={1,2,…n}$ 中取r个不相邻的数进行组合(不可重)，即不存在相邻的两个数 $j, j+1$ 的组合。</p>
+<h3 id="不相邻组合"><a href="#不相邻组合" class="headerlink" title="不相邻组合"></a>不相邻组合</h3><p>不相邻的组合是指从 $A=\{1,2,…n\}$ 中取r个不相邻的数进行组合(不可重)，即不存在相邻的两个数 $j, j+1$ 的组合。</p>
 <script type="math/tex; mode=display">
 C(n-r+1,r)</script><blockquote>
 <p>这个证明同样可以利用index法完成（ <font color="blue"><strong><code>a[i] -= i</code></strong></font> ）。将不相邻组合转化为无重组合。</p>
@@ -647,11 +647,11 @@ C(m+n,r)=C(m,0)C(n,r)+C(m,1)C(n,r-1)+
 <ul>
 <li>从右向左扫描都是增的，就不存在下一个；</li>
 <li>要找第一次出现下降的位置 <code>a Ab</code>；<ul>
-<li>$j=max{i\;|\;p<em>i&lt;p</em>{i+1}}$</li>
+<li>$j=max\{i\;|\;p_i&lt;p_{i+1}\}$</li>
 </ul>
 </li>
 <li><code>a</code> 与后面比 <code>a</code> 大的最小元素 <code>b</code> 交换；（【二分】）<ul>
-<li>$ k=max{i\;|\;p_i &gt; p_j }$</li>
+<li>$ k=max\{i\;|\;p_i &gt; p_j \}$</li>
 </ul>
 </li>
 <li>将 <code>b</code> 后缀重排成升序<ul>
@@ -774,7 +774,7 @@ C(m+n,r)=C(m,0)C(n,r)+C(m,1)C(n,r-1)+
 </blockquote>
 <h2 id="邻位对换法"><a href="#邻位对换法" class="headerlink" title="邻位对换法"></a>邻位对换法</h2><h3 id="可移动数"><a href="#可移动数" class="headerlink" title="可移动数"></a>可移动数</h3><p><strong><font color="red">可移动数</font></strong>（mobile int.）：每个数字具有方向，若该方向<strong>当前</strong>指向一个相邻更小数，那么称其为<strong><font color="red">可移动</font></strong>的数。</p>
 <blockquote>
-<font color="red">*k* is called mobile if its arrow points to a smaller integer.</font>
+<font color="red"><i>k</i> is called mobile if its arrow points to a smaller integer.</font>
 
 <blockquote>
 <p>序列两端有默认的无穷大固定哨兵。</p>
@@ -821,7 +821,7 @@ C(m+n,r)=C(m,0)C(n,r)+C(m,1)C(n,r-1)+
 </ul>
 <p>4的方向由b2+b3为奇可以断定向右，</p>
 <ul>
-<li>$8{\color{blue}{\overrightarrow{3} } }96{\color{red}{\overrightarrow{4} } }75\overleftarrow{2} \overleftarrow{1}$【<strong><code>i</code> 为偶数，其方向性决定于 $b<em>{i-1} + b</em>{i-2}$ 的奇偶性</strong>】<ul>
+<li>$8{\color{blue}{\overrightarrow{3} } }96{\color{red}{\overrightarrow{4} } }75\overleftarrow{2} \overleftarrow{1}$【<strong><code>i</code> 为偶数，其方向性决定于 $b_{i-1} + b_{i-2}$ 的奇偶性</strong>】<ul>
 <li>背向4的方向中比4小的数字有1个，<strong>b4=1</strong></li>
 </ul>
 </li>
@@ -1033,7 +1033,7 @@ C(m+n,r)=C(m,0)C(n,r)+C(m,1)C(n,r-1)+
 </ul>
 <p>4的方向由b2+b3为奇可以断定向右，</p>
 <ul>
-<li>$8{\color{blue}{\overrightarrow{3} } }67{\color{red}{\overrightarrow{4} } }5\overleftarrow{2} \overleftarrow{1}$【<strong><code>i</code> 为偶数，其方向性决定于 $b<em>{i-1} + b</em>{i-2}$ 的奇偶性</strong>】<ul>
+<li>$8{\color{blue}{\overrightarrow{3} } }67{\color{red}{\overrightarrow{4} } }5\overleftarrow{2} \overleftarrow{1}$【<strong><code>i</code> 为偶数，其方向性决定于 $b_{i-1} + b_{i-2}$ 的奇偶性</strong>】<ul>
 <li>背向4的方向中比4小的数字有1个，<strong>b4=1</strong></li>
 </ul>
 </li>

@@ -645,7 +645,7 @@ P(s_1,s_2,…s_n)=c \cdot \{P(O_1,O_2,…O_n|S_1,S_2,…S_n)\cdot P(S_1,S_2,…S
 <p><img data-src="https://i.imgur.com/jW212Sg.png" alt="Imgur"></p>
 <p>计算特定S序列产生O序列的概率：</p>
 <script type="math/tex; mode=display">
-P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><p>式右边利用了马尔可夫假设【$P(S<em>t|S</em>{t-1})$】和独立输出假设【$P(O_t|S_t)$】。</p>
+P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><p>式右边利用了马尔可夫假设【$P(S_t|S_{t-1})$】和独立输出假设【$P(O_t|S_t)$】。</p>
 <p>现在我们利用上式和前面的简化式的相似性完成对简化式的估计。</p>
 <blockquote>
 <p>相似性体现如下：</p>
@@ -660,7 +660,7 @@ P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><
 <li>（<font color="red"><strong>溯源</strong></font>）给定模型+特定O序列，估计最佳似然S序列【<a href="https://www.jianshu.com/p/218c1e4f0891" target="_blank" rel="noopener external nofollow noreferrer">Viterbi算法</a>】</li>
 <li>（<font color="red"><strong>训练</strong></font>）<strong>给定观测数据，训练隐马尔可夫模型参数</strong>【<a href="https://blog.csdn.net/u014688145/article/details/53046765" target="_blank" rel="noopener external nofollow noreferrer">Baum-Welch算法</a>】</li>
 </ul>
-<p>对于训练，可以使用监督学习获得参数$P(S<em>t|S</em>{t-1})和P(O_t|S_t)$，但标注数据的获取成本高。</p>
+<p>对于训练，可以使用监督学习获得参数$P(S_t|S_{t-1})和P(O_t|S_t)$，但标注数据的获取成本高。</p>
 <blockquote>
 <p>于是有了无监督的Baum-Welch算法。</p>
 </blockquote>
@@ -674,7 +674,7 @@ P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><
 <li>再次反向生成、生成……</li>
 <li>……</li>
 <li>直到收敛。找到质量足够好的模型$M_n$（<a href="https://zh.wikipedia.org/zh-hans/%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95" target="_blank" rel="noopener external nofollow noreferrer">期望最大化</a>）<ul>
-<li>用$M<em>n近似表示最佳模型M</em>{\theta}$。</li>
+<li>用$M_n近似表示最佳模型M_{\theta}$。</li>
 </ul>
 </li>
 </ul>
@@ -1094,7 +1094,7 @@ Z({x_1,x_2,…,x_{20}})=\sum^de^{\lambda_1(x_1,d)+\lambda_1(x_2,d)+…+\lambda_1
 <hr>
 <p>上述方法对于模糊的语言处理能力较弱，为了处理更加随意的文法分析，逐渐形成了<strong>浅层分析</strong>（Shallow Parsing），找到句子中主要的词组已经它们对应的关系即可。</p>
 <p><strong>条件随机场</strong>使得浅层分析的正确率大大提高。（栅栏图）</p>
-<p><a href="https://www.jianshu.com/p/55755fc649b1" target="_blank" rel="noopener external nofollow noreferrer">条件随机场</a>是隐马尔可夫模型的多元推广版本，此时观测序列的Oi将与前后的状态都相关，即与$S<em>{i-1},S_i,S</em>{i+1}$相关。（S序列仍然是马尔可夫链，但独立输出假设被推广了）</p>
+<p><a href="https://www.jianshu.com/p/55755fc649b1" target="_blank" rel="noopener external nofollow noreferrer">条件随机场</a>是隐马尔可夫模型的多元推广版本，此时观测序列的Oi将与前后的状态都相关，即与$S_{i-1},S_i,S_{i+1}$相关。（S序列仍然是马尔可夫链，但独立输出假设被推广了）</p>
 <blockquote>
 <p>条件随机场是无向图。仍然遵循马尔可夫假设。</p>
 </blockquote>
