@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://vel.life/%E5%8C%BA%E5%9D%97%E9%93%BE/image-20200922172336711.png">
 <meta property="og:image" content="https://vel.life/%E5%8C%BA%E5%9D%97%E9%93%BE/image-20200929151824343.png">
 <meta property="article:published_time" content="2020-08-31T15:35:17.000Z">
-<meta property="article:modified_time" content="2020-09-29T07:18:38.253Z">
+<meta property="article:modified_time" content="2020-10-06T06:23:56.302Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="区块链,比特币,共识机制,博弈论,智能合约,P2P">
 <meta name="twitter:card" content="summary">
@@ -332,6 +332,15 @@
 <h1 id="P2P系统"><a href="#P2P系统" class="headerlink" title="P2P系统"></a>P2P系统</h1><p>P2P（Peer to Peer）为点对点的网络架构，它是分布式或者无中心化应用的核心拓扑。</p>
 <p>P2P强调所有节点之间的对等性。C/S则通常需要中心化的服务器来维持应用工作。</p>
 <img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE/image-20200929151824343.png" class title="C&#x2F;S 和 P2P">
+<h2 id="分布式哈希表-DHT"><a href="#分布式哈希表-DHT" class="headerlink" title="分布式哈希表 DHT"></a>分布式哈希表 DHT</h2><h3 id="DHT的问题"><a href="#DHT的问题" class="headerlink" title="DHT的问题"></a>DHT的问题</h3><ul>
+<li>只能进行 <strong><em><font color="red">精确</font></em></strong>  匹配，实用价值有局限</li>
+<li><strong>适应节点动态变化的能力低</strong></li>
+<li>经过哈希之后，<strong>节点的位置信息被破坏</strong>了，来自同一个子网的站点很可能节点号相距甚远，这不利于查询性能的优化</li>
+<li>基于哈希表的系统<strong>不能利用应用本身的信息</strong>，许多应用（比如文件系统）的数据本身是按照层次结构组织的，而使用哈希函数后，这些<strong>层次信息就丢失了</strong><ul>
+<li>TerraDir[8]中提出了一种面向层次结构的查找机制</li>
+</ul>
+</li>
+</ul>
 <h1 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h1><h1 id="共识机制"><a href="#共识机制" class="headerlink" title="共识机制"></a>共识机制</h1><h1 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h1><p>比特币的区块链只有转账这一基本功能。</p>
 <h1 id="联盟链"><a href="#联盟链" class="headerlink" title="联盟链"></a>联盟链</h1><h1 id="零知识证明"><a href="#零知识证明" class="headerlink" title="零知识证明"></a>零知识证明</h1>
     </div>
@@ -440,7 +449,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础概念"><span class="nav-number">2.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博弈论"><span class="nav-number">3.</span> <span class="nav-text">博弈论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#比特币中的非合作博弈"><span class="nav-number">3.1.</span> <span class="nav-text">比特币中的非合作博弈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比特币中的合作博弈"><span class="nav-number">3.2.</span> <span class="nav-text">比特币中的合作博弈</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P2P系统"><span class="nav-number">4.</span> <span class="nav-text">P2P系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比特币"><span class="nav-number">5.</span> <span class="nav-text">比特币</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共识机制"><span class="nav-number">6.</span> <span class="nav-text">共识机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#智能合约"><span class="nav-number">7.</span> <span class="nav-text">智能合约</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联盟链"><span class="nav-number">8.</span> <span class="nav-text">联盟链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识证明"><span class="nav-number">9.</span> <span class="nav-text">零知识证明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础概念"><span class="nav-number">2.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博弈论"><span class="nav-number">3.</span> <span class="nav-text">博弈论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#比特币中的非合作博弈"><span class="nav-number">3.1.</span> <span class="nav-text">比特币中的非合作博弈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比特币中的合作博弈"><span class="nav-number">3.2.</span> <span class="nav-text">比特币中的合作博弈</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P2P系统"><span class="nav-number">4.</span> <span class="nav-text">P2P系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式哈希表-DHT"><span class="nav-number">4.1.</span> <span class="nav-text">分布式哈希表 DHT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DHT的问题"><span class="nav-number">4.1.1.</span> <span class="nav-text">DHT的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比特币"><span class="nav-number">5.</span> <span class="nav-text">比特币</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共识机制"><span class="nav-number">6.</span> <span class="nav-text">共识机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#智能合约"><span class="nav-number">7.</span> <span class="nav-text">智能合约</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联盟链"><span class="nav-number">8.</span> <span class="nav-text">联盟链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识证明"><span class="nav-number">9.</span> <span class="nav-text">零知识证明</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -456,7 +465,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">154</span>
+          <span class="site-state-item-count">155</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -469,7 +478,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
