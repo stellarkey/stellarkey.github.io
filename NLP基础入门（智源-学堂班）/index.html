@@ -24,18 +24,20 @@
   </script>
 
 
-  <meta name="description" content="2333学堂在线组织的自然语言处理入门班。">
+  <meta name="description" content="学堂在线组织的自然语言处理入门班。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP基础入门（智源&amp;学堂班）">
 <meta property="og:url" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="2333学堂在线组织的自然语言处理入门班。">
+<meta property="og:description" content="学堂在线组织的自然语言处理入门班。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201011203919968.png">
 <meta property="article:published_time" content="2020-10-08T10:46:09.000Z">
-<meta property="article:modified_time" content="2020-10-08T10:56:34.105Z">
+<meta property="article:modified_time" content="2020-10-11T14:55:41.757Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201011203919968.png">
 
 <link rel="canonical" href="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/">
 
@@ -268,13 +270,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>2333学堂在线组织的自然语言处理入门班。<a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>学堂在线组织的自然语言处理入门班。<a id="more"></a></p>
 <p>感觉自己一直在入门，从未系统地学习过NLP。不如趁此机会，加上那个中医药的比赛，重重DDL的促使下，也许会真的开始做一些事情吧。hhh</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><blockquote>
+<p>自然语言处理是人工智能皇冠上的明珠。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.xuetangx.com/training/xuetangx08091003473/4339910" target="_blank" rel="noopener external nofollow noreferrer">学堂在线 - 理论和实践：自然语言处理</a></p>
+<blockquote>
 <p>课表：</p>
 </blockquote>
 
-<h1 id="作业一-word2vec"><a href="#作业一-word2vec" class="headerlink" title="作业一 word2vec"></a>作业一 word2vec</h1>
+<h1 id="绪论：NLP基本问题和研究范式"><a href="#绪论：NLP基本问题和研究范式" class="headerlink" title="绪论：NLP基本问题和研究范式"></a>绪论：NLP基本问题和研究范式</h1><p>什么是自然语言？人类语言。</p>
+<p>什么是自然语言处理？让计算机能够处理并理解自然语言。</p>
+<p>语言和人类智能：</p>
+<ul>
+<li>感知：人类感官模态系统（五官）</li>
+<li>认知：语言、逻辑、推理、思维、学习、决策……</li>
+</ul>
+<p>自然语言处理的经典应用：</p>
+<ul>
+<li>信息检索、抽取、过滤、分类及摘要，搜索引擎，数字图书馆，电子商务等</li>
+</ul>
+<blockquote>
+<p>例：</p>
+<ul>
+<li><strong>和服</strong> | <strong>务</strong> | 于三日后裁制完毕。</li>
+<li>这个酒店的设施 | <strong>和</strong> | <strong>服务</strong> | 是一流的。</li>
+</ul>
+</blockquote>
+<img data-src="/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201011203919968.png" class title="早期Google引擎的分词问题">
+<blockquote>
+<p>搜索引擎，机器翻译，跨语言信息检索，问答系统，面向语音识别的语言模型，用于OCR的语言模型，用于TTS（text2speech）的语言模型，语法改错，简繁汉字转换……</p>
+</blockquote>
+<hr>
+<p>NLP顶会：ACL，EMNLP，北美ACL</p>
+<hr>
+<p>语音层和音位层（Phonetic and phonological level）</p>
+<p>词法层（Morphological level）</p>
+<blockquote>
+<p>语素：自由语素、约束语素（词缀）</p>
+<p>构词法：加缀（派生、曲折）；复合</p>
+</blockquote>
+<p>句法层（Syntactic level）</p>
+<p>语义层（Semantic level）</p>
+<p>话语层（Discourse level）</p>
+<p>语用层（Pragmatic level）</p>
+<p>语言知识、世界知识（+常识知识）</p>
+<hr>
+<p>自然语言的特点：</p>
+<ul>
+<li>结构性</li>
+<li>无限性（递归性）</li>
+<li>歧义性（ambiguity）<ul>
+<li>词汇歧义</li>
+<li>结构歧义</li>
+</ul>
+</li>
+<li>统计性（Markov链）</li>
+<li>模糊性</li>
+<li>文化差异性</li>
+<li>持续演化性</li>
+<li>语言表达的非规范性</li>
+</ul>
+<hr>
+<h1 id="词法及语言模型"><a href="#词法及语言模型" class="headerlink" title="词法及语言模型"></a>词法及语言模型</h1><h1 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h1><h1 id="作业一-word2vec"><a href="#作业一-word2vec" class="headerlink" title="作业一 word2vec"></a>作业一 word2vec</h1>
     </div>
 
     
@@ -318,7 +375,10 @@
     <a href="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E9%99%90%E9%80%89%E4%B8%93%E9%A2%98/" rel="prev" title="组合数学限选专题">
       <i class="fa fa-chevron-left"></i> 组合数学限选专题
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/" rel="next" title="阅《TIMELY: RTT-based Congestion Control for the Datacenter》">
+      阅《TIMELY: RTT-based Congestion Control for the Datacenter》 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -378,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业一-word2vec"><span class="nav-number">2.</span> <span class="nav-text">作业一 word2vec</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论：NLP基本问题和研究范式"><span class="nav-number">2.</span> <span class="nav-text">绪论：NLP基本问题和研究范式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#词法及语言模型"><span class="nav-number">3.</span> <span class="nav-text">词法及语言模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#句法分析"><span class="nav-number">4.</span> <span class="nav-text">句法分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业一-word2vec"><span class="nav-number">5.</span> <span class="nav-text">作业一 word2vec</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -394,20 +454,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">158</span>
+          <span class="site-state-item-count">164</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -483,7 +543,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1m</span>
+    <span title="Symbols count total">1.1m</span>
 </div>
 
         

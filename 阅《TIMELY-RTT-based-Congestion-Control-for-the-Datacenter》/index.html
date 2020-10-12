@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="《TIMELY: RTT-based Congestion Control for the Datacenter》发表于 SIGMOD 2015。SIGMOD会议主要包含SIGMOD&#x2F;PODS两个子部分，它覆盖了数据库、信息系统方面的前沿研究问题。 数据传输中心总是希望达到一种既低延迟，又有高吞吐量（high throughput）的性能效果。这篇论文尝试利用RTT的实时测量（利用NIC硬件）结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅《TIMELY: RTT-based Congestion Control for the Datacenter》">
+<meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="《TIMELY: RTT-based Congestion Control for the Datacenter》发表于 SIGMOD 2015。SIGMOD会议主要包含SIGMOD&#x2F;PODS两个子部分，它覆盖了数据库、信息系统方面的前沿研究问题。 数据传输中心总是希望达到一种既低延迟，又有高吞吐量（high throughput）的性能效果。这篇论文尝试利用RTT的实时测量（利用NIC硬件）结果">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010113601600.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222405035.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222503822.png">
+<meta property="article:published_time" content="2020-10-09T12:12:40.000Z">
+<meta property="article:modified_time" content="2020-10-10T14:53:18.053Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010113601600.png">
+
+<link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>阅《TIMELY: RTT-based Congestion Control for the Datacenter》 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阅《TIMELY: RTT-based Congestion Control for the Datacenter》
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper/" itemprop="url" rel="index"><span itemprop="name">Paper</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/" class="post-meta-item leancloud_visitors" data-flag-title="阅《TIMELY: RTT-based Congestion Control for the Datacenter》" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>《TIMELY: RTT-based Congestion Control for the Datacenter》发表于 <strong><a href="https://sigmod2015.org/" target="_blank" rel="noopener external nofollow noreferrer">SIGMOD 2015</a></strong>。SIGMOD会议主要包含SIGMOD/PODS两个子部分，它覆盖了数据库、信息系统方面的前沿研究问题。</p>
+<p>数据传输中心总是希望达到一种既低延迟，又有高吞吐量（high throughput）的性能效果。这篇论文尝试利用RTT的实时测量（利用NIC硬件）结果——一个时间序列，这样的时间序列显然存在一个差分，从而获得一个RTT在实时时间线上的梯度信息。</p>
+<p><strong>TIMELY</strong>（<strong>T</strong>ransport <strong>I</strong>nformed by <strong>ME</strong>asurement of <strong>L</strong>atenc<strong>Y</strong>）接收了RTT的梯度信息，并根据RTT梯度来调整传输速率，从而保证了高带宽和低(数据包)延迟的共存。TIMELY成为了第一个使用延迟信息来在数据中心进行拥塞控制的协议，尽管它的RTT信号（由于NIC offload）比以前的基于延迟的方案少了一个数量级（in the presence of infrequent RTT signals and NIC offload）。（<del>Veges表示受到了冒犯QAQ</del>）<a id="more"></a></p>
+<blockquote>
+<p>本篇论文源于高等计算机网络课程的阅读任务，领域为“<strong><em>数据中心拥塞控制</em></strong> ”。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="./2.1.pdf">TIMELY: RTT-based Congestion Control for the Datacenter</a></p>
+<div class="pdfobject-container" data-target="./2.1.pdf" data-height="500px"></div>
+<p><a href="http://blog.sina.com.cn/s/blog_6b05189a0100ykrl.html" target="_blank" rel="noopener external nofollow noreferrer">数据库顶级会议——SIGMOD介绍</a></p>
+<blockquote>
+<p>SIGMOD是数据库顶级会议，和另外两大数据库会议VLDB、ICDE构成了数据库领域的三个顶级会议。相对而言，SIGMOD比另外两个会议的含金量更高，被录取的难度更大。</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/qq_21125183/article/details/104657860" target="_blank" rel="noopener external nofollow noreferrer">一周一论文（翻译）——[SIGMOD 2015] TIMELY RTT-based Congestion Control for the Datacenter</a></p>
+<p><a href="https://yi-ran.github.io/2019/03/27/Timely-SIGCOMM-2015/" target="_blank" rel="noopener external nofollow noreferrer">Timely SIGCOMM 2015</a></p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="RTT-Round-trip-Time-往返时延"><a href="#RTT-Round-trip-Time-往返时延" class="headerlink" title="RTT (Round-trip Time) 往返时延"></a>RTT (Round-trip Time) 往返时延</h2><blockquote>
+<p><a href="https://www.zhihu.com/question/39244840" target="_blank" rel="noopener external nofollow noreferrer">TCP对往返时延RTT的定义？</a></p>
+</blockquote>
+<p>RTT指的是数据传输的往返时延，即，在信道上传输一个来回所需要的时间。</p>
+<blockquote>
+<p>不包含发送数据的耗时，只计算数据在线路上传播的耗时。</p>
+<p>注：RTT需要考虑在线路上经过中间节点可能产生的处理和<strong>排队时延</strong>。</p>
+</blockquote>
+<h2 id="NIC-网卡"><a href="#NIC-网卡" class="headerlink" title="NIC 网卡"></a>NIC 网卡</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/Nic" target="_blank" rel="noopener external nofollow noreferrer">Nic - 百度百科</a></p>
+<blockquote>
+<p><strong>网络接口控制器</strong>（英语：network interface controller，NIC），又称<strong>网络接口控制器</strong>，<strong>网络适配器</strong>（network adapter），<strong>网卡</strong>（network interface card），或<strong>局域网接收器</strong>（LAN adapter），是一块被设计用来允许计算机在计算机网络上进行通讯的计算机硬件。</p>
+</blockquote>
+</blockquote>
+<p>由上可知，NIC就是俗称的网卡，因此NIC硬件可以监测和计算RTT也就不足为奇了。</p>
+<h2 id="OS-bypass"><a href="#OS-bypass" class="headerlink" title="OS-bypass"></a>OS-bypass</h2><blockquote>
+<p><a href="https://blogs.cisco.com/performance/mpi-newbie-what-is-operating-system-bypass" target="_blank" rel="noopener external nofollow noreferrer">https://blogs.cisco.com/performance/mpi-newbie-what-is-operating-system-bypass</a></p>
+<blockquote>
+<p>These software stacks live in userspace middleware libraries (such as MPI), and can therefore expose <strong>extremely high levels of network I/O performance</strong> to HPC applications.  Since these libraries communicate directly with NIC hardware, they effectively bring mini specialized “device drivers” up into userspace.</p>
+</blockquote>
+</blockquote>
+<p>简单来说，OS-bypass 就是指硬件的处理过程<strong>绕过操作系统</strong>。这样，在一些specific的场景下，可以提高模型的性能（一般来说，由操作系统捕获一个请求，进入内核态，再分发到对应的设备，这样的过程是很慢的）。</p>
+<p>类似的还有DMA这种I/O设备，通过在设备上直接进行批量的数据处理，减少了对CPU的访问，从而提升性能。</p>
+<h3 id="NIC-offload"><a href="#NIC-offload" class="headerlink" title="NIC-offload"></a>NIC-offload</h3><blockquote>
+<p><a href="http://jaminzhang.github.io/hardware/NIC-offload-Introduction/" target="_blank" rel="noopener external nofollow noreferrer">网卡 offload 简介</a></p>
+<blockquote>
+<p>现在，越来越多的网卡设备支持 offload 特性，来提升网络收/发性能。<br><strong>offload 是将本来该操作系统进行的一些数据包处理（如分片、重组等）放到网卡硬件中去做， 降低系统 CPU 消耗的同时，提高处理的性能。</strong></p>
+</blockquote>
+</blockquote>
+<p>可以看到，NIC 的 offload 其实就是做了 OS-bypass。</p>
+<h1 id="论文简介"><a href="#论文简介" class="headerlink" title="论文简介"></a>论文简介</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>数据中心压力很大，在高并发的密集需求处理中，还要保证低响应时间（100 ms）。这就给数据中心提出了高带宽 <strong>high bandwidth</strong> (Gbps) 和低时延 <strong>low latency</strong> (msec) 的要求。</p>
+<blockquote>
+<p>at odds：有争议</p>
+</blockquote>
+<p>以前已经存在各种方法：基于丢包率的简单算法，基于抽象的网络流分析的高级算法……这篇论文则寻找了一种较为简单的机制，实现对数据中心的调度，并且是 <strong>immediately deployable</strong> design。</p>
+<hr>
+<p><strong><font color="red">研究的最大难题是寻找一个合适的拥塞信号（congestion signal）</font></strong>。</p>
+<p>一个理想的拥塞信号应该拥有以下的性质：</p>
+<ul>
+<li>It would be fine-grained(细粒度) and timely to <strong>quickly inform</strong> senders about the extent of congestion.</li>
+<li>It would be discriminative enough to work in <strong>complex environments</strong> with multiple traffic classes.</li>
+<li>It would be <strong>easy to deploy</strong>.</li>
+</ul>
+<p>神奇的是，作者找到了一个已经存在很久了的信号——可以满足上面的所有性质。</p>
+<ul>
+<li><strong><font color="red">delay in the form of RTT measurements</font></strong></li>
+</ul>
+<blockquote>
+<p>RTT is a fine-grained measure of congestion that comes with every acknowledgment. It effectively supports multiple traffic classes by <strong>providing an inflated measure for lower-priority transfers that wait behind higher priority ones</strong>. Further, it requires no support from network switches.</p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010113601600.png" class title="RTT度量的精细程度">
+<hr>
+<p>实际上，以前的研究人员之所以不用delay measurement，是因为数据中心的RTT非常难以精确测量（到microsecond granularity 微秒的尺度）。</p>
+<p><strong><font color="red">最新的NIC硬件方面的突破，使得这样的精确测量成为可能</font></strong>。</p>
+<hr>
+<hr>
+<hr>
+<h2 id="论文主要工作"><a href="#论文主要工作" class="headerlink" title="论文主要工作"></a>论文主要工作</h2><ul>
+<li>校验RTT信号与网络排队之间的强相关性<ul>
+<li>We experimentally demonstrate how multi-bit RTT signals measured with NIC hardware are strongly correlated with network queueing.</li>
+</ul>
+</li>
+<li>设计TIMELY协议<ul>
+<li>We present Transport Informed by MEasurement of LatencY (TIMELY): an RTT-based congestion control scheme.</li>
+</ul>
+</li>
+<li>测试和验证TIMELY的实际效能<ul>
+<li>We evaluate TIMELY with an OS-bypass messaging implementation using hundreds of machines on a Clos network topology.</li>
+</ul>
+</li>
+</ul>
+<h1 id="RTT的特点"><a href="#RTT的特点" class="headerlink" title="RTT的特点"></a>RTT的特点</h1><ul>
+<li>RTT directly reflects latency.<ul>
+<li>RTT直接测量：end-to-end latency inflated by network queueing</li>
+<li>ECN这样的从queue occupancy中获得的参数，反映延迟的能力很弱。</li>
+</ul>
+</li>
+<li>RTT can be measured accurately in practice.<ul>
+<li>NIC提供了硬件级别的支持</li>
+</ul>
+</li>
+<li>RTT is a rapid, multi-bit signal.<ul>
+<li>提供了更丰富的信息</li>
+</ul>
+</li>
+<li>Limitations of RTTs.<ul>
+<li>RTT对双向流量的管控，可能导致ACKs的传播（增加ACK的优先级）</li>
+<li>The other classic shortcoming of RTTs is that <strong>changing network paths have disparate delays</strong>. It is less of a problem in datacenters as all paths have small propagation delays.<ul>
+<li><strong>网络结构的变动会让RTT明显测不准</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="TIMELY框架"><a href="#TIMELY框架" class="headerlink" title="TIMELY框架"></a>TIMELY框架</h1><p>TIMELY分为三个部分：</p>
+<ul>
+<li>（数据采集）<strong>RTT measurement</strong> to monitor the network for congestion</li>
+<li>（数据转换）a <strong>computation engine</strong> that converts RTT signals into target sending rates</li>
+<li>（策略制定）a <strong>control engine</strong> that inserts delays between segments to achieve the target rate</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+R T T=t_{\text {completion }}-t_{\text {send }}-\frac{\text { seg. size }}{\text { NIC line rate }}
+\end{equation}</script><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222405035.png" class title="TIMELY - Control">
+<h2 id="TIMELY拥塞控制"><a href="#TIMELY拥塞控制" class="headerlink" title="TIMELY拥塞控制"></a>TIMELY拥塞控制</h2><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222503822.png" class title="不同的拥塞程度采用不同的调控策略">
+<blockquote>
+<p>具体细节和实验，暂时就不看了。</p>
+</blockquote>
+<h1 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h1><p>我们已经从论文中了解到，RTT这个idea并不算新，作者所做的工作无非是因为现代NIC硬件技术的提升所带来的对RTT精确测量的可能。这却是很像神经网络，感知机在上个世纪中叶就出现了，但是由此变化而来的深度学习却足足等了五六十年才借助计算机算力的大幅提升而成为现实。</p>
+<p>所以，这篇论文的创新点其实是不足的。我想之所以成为一篇好论文，主要原因还是因为他们在整个设计和实验上投入的精力。他们确实调研了许多东西，也确实做出了很好的结果。但从我的观点来看，工程 &gt; 科研。</p>
+<p>我觉得，需要更加认真地思考RTT在整个拥塞控制中的作用——比如，是否应该只依赖RTT？RTT和其它指标的耦合程度和区别又是什么？我们能不能将整个网络的信息积聚起来，做一些更有意义的统计？而不是说，“嘿，我们找到了一个度量，它的效果还不错”，这样的科研显然是没有什么借鉴价值的。</p>
+<p>但是，这样重复利用现有机制的方法，也许还不错。对旧的理论也不必全然抛弃。</p>
+<p>当我们认真审视的时候，也许会有不一样的发现。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/" title="阅《TIMELY: RTT-based Congestion Control for the Datacenter》">https://vel.life/阅《TIMELY-RTT-based-Congestion-Control-for-the-Datacenter》/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/" rel="prev" title="NLP基础入门（智源&学堂班）">
+      <i class="fa fa-chevron-left"></i> NLP基础入门（智源&学堂班）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%98%85%E3%80%8AOff-Path-TCP-Exploit-How-Wireless-Routers-Can-Jeopardize-Your-Secrets%E3%80%8B/" rel="next" title="阅《Off-Path TCP Exploit: How Wireless Routers Can Jeopardize Your Secrets》">
+      阅《Off-Path TCP Exploit: How Wireless Routers Can Jeopardize Your Secrets》 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RTT-Round-trip-Time-往返时延"><span class="nav-number">2.1.</span> <span class="nav-text">RTT (Round-trip Time) 往返时延</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIC-网卡"><span class="nav-number">2.2.</span> <span class="nav-text">NIC 网卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-bypass"><span class="nav-number">2.3.</span> <span class="nav-text">OS-bypass</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NIC-offload"><span class="nav-number">2.3.1.</span> <span class="nav-text">NIC-offload</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文简介"><span class="nav-number">3.</span> <span class="nav-text">论文简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">3.1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论文主要工作"><span class="nav-number">3.2.</span> <span class="nav-text">论文主要工作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RTT的特点"><span class="nav-number">4.</span> <span class="nav-text">RTT的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TIMELY框架"><span class="nav-number">5.</span> <span class="nav-text">TIMELY框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TIMELY拥塞控制"><span class="nav-number">5.1.</span> <span class="nav-text">TIMELY拥塞控制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#展望"><span class="nav-number">6.</span> <span class="nav-text">展望</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">164</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">1.1m</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

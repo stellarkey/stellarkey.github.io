@@ -33,8 +33,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png">
 <meta property="og:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921115302298.png">
+<meta property="og:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png">
+<meta property="og:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png">
+<meta property="og:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png">
 <meta property="article:published_time" content="2020-09-13T10:42:29.000Z">
-<meta property="article:modified_time" content="2020-10-08T10:57:40.778Z">
+<meta property="article:modified_time" content="2020-10-12T04:09:59.590Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://vel.life/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png">
@@ -475,6 +478,104 @@
 </ul>
 </li>
 </ul>
+<h1 id="Internet-传输层"><a href="#Internet-传输层" class="headerlink" title="Internet 传输层"></a>Internet 传输层</h1><img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png" class title="TCP&#x2F;IP协议栈">
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>早期UDP在以太网上是广播，所以很占带宽，也就是说，只要有一些视频媒体的流量，其他人可能就做不了什么事情了。</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>分组交换没法解决拥塞问题。</p>
+<blockquote>
+<p>——提出TCP的<strong>自适应</strong>的想法。</p>
+</blockquote>
+<p>拥塞控制和拥塞避免。</p>
+<ul>
+<li>避免：尽量别出事<ul>
+<li>93年TCP Vegas</li>
+</ul>
+</li>
+</ul>
+<p>BIC：快速找最合适的窗口大小。</p>
+<h3 id="TCP-Header"><a href="#TCP-Header" class="headerlink" title="TCP Header"></a>TCP Header</h3><p>Flags：<code>RESET</code>可以用来断开连接，所以常常用来干扰某个TCP连接。</p>
+<h3 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>可靠数据传输：IP层是不可靠的，需要在TCP中加入检查和确认等机制。</p>
+<p>两种冗余方式：</p>
+<ul>
+<li>空间冗余：在编码上的冗余</li>
+<li>时间冗余：确认+超时重传机制</li>
+</ul>
+<h4 id="可靠性机制"><a href="#可靠性机制" class="headerlink" title="可靠性机制"></a>可靠性机制</h4><p>Mechanisms:</p>
+<ul>
+<li>Checksum: detects corruption <em>in</em> <em>pkts</em> <em>&amp;</em> <em>acks</em></li>
+<li>ACK: “packet correctly received”</li>
+<li>Duplicate ACK: “packet <strong>incorrectly</strong> received”</li>
+<li>Sequence number</li>
+<li>Timeout only at sender</li>
+</ul>
+<p>Provides reliable transmission over:</p>
+<ul>
+<li>A <em>forward</em> <em>&amp; reverse</em> channel with <em>bit</em>-errors</li>
+<li>Detects <em>duplicates</em> of packets/acks</li>
+<li><em>NAKs eliminated</em></li>
+<li>A <em>forward &amp; reverse</em> channel with <em>packet</em>-errors (loss)</li>
+</ul>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>3-way-handshake</p>
+<h3 id="TCP窗口流控"><a href="#TCP窗口流控" class="headerlink" title="TCP窗口流控"></a>TCP窗口流控</h3><p>MSS：最大段长，默认536字节。</p>
+<blockquote>
+<p>越大效率越高，但同时如果丢包损失也越高。</p>
+<p>可以和MTU最大传输单元进行适配。避免中途重新分配的时延。</p>
+</blockquote>
+<p>TCP流控：发送的包不要超过接收窗口。</p>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>网络中堵塞之后，出现丢包问题，丢包又触发了重传……丢包、重传、丢包、重传……这便是TCP拥塞的特征。</p>
+<p>Van Jacobson: save the Internet.</p>
+<h4 id="拥塞控制和拥塞避免"><a href="#拥塞控制和拥塞避免" class="headerlink" title="拥塞控制和拥塞避免"></a>拥塞控制和拥塞避免</h4><p>让传输速率保持在knee附近是比较明智的选择。</p>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png" class title="拥塞控制图">
+<h4 id="动态的自适应方案"><a href="#动态的自适应方案" class="headerlink" title="动态的自适应方案"></a>动态的自适应方案</h4><p>基于网络的模型：预先分配每个节点的网络流量限制。比如，ATM、故宫。</p>
+<p>拥塞控制的目标：</p>
+<ul>
+<li>稳定<ul>
+<li>一个动态系统的均衡点</li>
+</ul>
+</li>
+<li>有效</li>
+<li>公平<ul>
+<li>公平的问题比较复杂。。</li>
+<li>提前定义规则，按照可预测的方式去分配资源</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Max-min fairness：</p>
+<ul>
+<li>没有拥塞时：$f = max(x_i)$</li>
+<li>否则：$\sum_j \text{min}(x_i,f)=c$</li>
+</ul>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png" class title="Max-min fairness">
+<p>ACK自时钟控制分组收发：每收到一个包，发送一个ACK。保持进出均衡。</p>
+<blockquote>
+<p>保持在knee点附近波动。实现自适应。</p>
+</blockquote>
+<hr>
+<p>TCK：慢加快减。收敛到平衡点。</p>
+<hr>
+<p>TCK Reno：快重传，快恢复。（跳过了慢启动）</p>
+<p>TCK Vegas：平滑的发送窗口。不会丢包。（前提时buffer足够大）</p>
+<blockquote>
+<p>算法主要看延迟，即RTT时间梯度。</p>
+</blockquote>
+<p>BIC：对RTT最优窗口值进行二分查找。但RTT更小的人更容易拿到窗口，不公平。</p>
+<p>CUBIC：试图解决BIC的公平性问题，找到一种RTT无关的最优窗口查找算法。</p>
+<p>————————————————</p>
+<p>找到带宽最大和延迟最小的点。但它们之间是相关的，所以研究人员一开始觉得是不可能的。</p>
+<p><strong><font color="red">BBR</font></strong>：分别估计，并计算<strong>时延带宽积</strong>。按照这个值去优化。</p>
+<blockquote>
+<p><strong>主动测量</strong>。测量短时间（10s内）的最小RTT。</p>
+<p>BBR的问题：</p>
+<ul>
+<li>公平性问题</li>
+<li>ACK压缩问题（一个ACK应答多个报文，如200个）</li>
+<li>应用重启时如何快速恢复带宽</li>
+<li>不匹配的接收窗口</li>
+</ul>
+<blockquote>
+<p>BBR对于数据中心网络的应用还存在一些问题。</p>
+</blockquote>
+</blockquote>
 <h1 id="课程项目"><a href="#课程项目" class="headerlink" title="课程项目"></a>课程项目</h1><h2 id="项目调研"><a href="#项目调研" class="headerlink" title="项目调研"></a>项目调研</h2><h3 id="DDoS"><a href="#DDoS" class="headerlink" title="DDoS"></a>DDoS</h3><h3 id="NetFPGA"><a href="#NetFPGA" class="headerlink" title="NetFPGA"></a>NetFPGA</h3><blockquote>
 <p><a href="https://netfpga.org/" target="_blank" rel="noopener external nofollow noreferrer">https://netfpga.org/</a></p>
 </blockquote>
@@ -582,7 +683,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程目标"><span class="nav-number">2.1.</span> <span class="nav-text">课程目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关课程"><span class="nav-number">2.2.</span> <span class="nav-text">相关课程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要教学内容"><span class="nav-number">2.3.</span> <span class="nav-text">主要教学内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教材和参考书"><span class="nav-number">2.4.</span> <span class="nav-text">教材和参考书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考核方式"><span class="nav-number">2.5.</span> <span class="nav-text">考核方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络研究的基本问题"><span class="nav-number">2.6.</span> <span class="nav-text">网络研究的基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络体系结构-Architecture"><span class="nav-number">2.6.1.</span> <span class="nav-text">网络体系结构 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络与分布式系统"><span class="nav-number">2.6.2.</span> <span class="nav-text">网络与分布式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络与分布式系统的基础科学问题"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">网络与分布式系统的基础科学问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络研究的基本方法"><span class="nav-number">2.7.</span> <span class="nav-text">网络研究的基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文献阅读"><span class="nav-number">2.7.1.</span> <span class="nav-text">文献阅读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络模型与实验"><span class="nav-number">2.8.</span> <span class="nav-text">网络模型与实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-10-tips-for-writing-a-paper"><span class="nav-number">2.9.</span> <span class="nav-text">Top-10 tips for writing a paper</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Internet"><span class="nav-number">3.</span> <span class="nav-text">The Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网组织"><span class="nav-number">3.1.</span> <span class="nav-text">互联网组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Society-ISOC"><span class="nav-number">3.1.1.</span> <span class="nav-text">Internet Society (ISOC)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Internet-Hall-of-Fame"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">Internet Hall of Fame</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Engineering-Task-Force-IETF"><span class="nav-number">3.1.2.</span> <span class="nav-text">Internet Engineering Task Force (IETF)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Internet-Engineering-Steering-Group-IESG"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">The Internet Engineering Steering Group (IESG)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Research-Task-Force-IRTF"><span class="nav-number">3.1.3.</span> <span class="nav-text">Internet Research Task Force (IRTF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Architecture-Board-IAB"><span class="nav-number">3.1.4.</span> <span class="nav-text">Internet Architecture Board (IAB)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Corporation-for-Assigned-Names-and-Numbers-ICANN"><span class="nav-number">3.1.5.</span> <span class="nav-text">Internet Corporation for Assigned Names and Numbers (ICANN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘论"><span class="nav-number">3.2.</span> <span class="nav-text">边缘论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层次化选择"><span class="nav-number">3.2.1.</span> <span class="nav-text">层次化选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程项目"><span class="nav-number">4.</span> <span class="nav-text">课程项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目调研"><span class="nav-number">4.1.</span> <span class="nav-text">项目调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DDoS"><span class="nav-number">4.1.1.</span> <span class="nav-text">DDoS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetFPGA"><span class="nav-number">4.1.2.</span> <span class="nav-text">NetFPGA</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程目标"><span class="nav-number">2.1.</span> <span class="nav-text">课程目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关课程"><span class="nav-number">2.2.</span> <span class="nav-text">相关课程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要教学内容"><span class="nav-number">2.3.</span> <span class="nav-text">主要教学内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教材和参考书"><span class="nav-number">2.4.</span> <span class="nav-text">教材和参考书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考核方式"><span class="nav-number">2.5.</span> <span class="nav-text">考核方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络研究的基本问题"><span class="nav-number">2.6.</span> <span class="nav-text">网络研究的基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络体系结构-Architecture"><span class="nav-number">2.6.1.</span> <span class="nav-text">网络体系结构 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络与分布式系统"><span class="nav-number">2.6.2.</span> <span class="nav-text">网络与分布式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络与分布式系统的基础科学问题"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">网络与分布式系统的基础科学问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络研究的基本方法"><span class="nav-number">2.7.</span> <span class="nav-text">网络研究的基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文献阅读"><span class="nav-number">2.7.1.</span> <span class="nav-text">文献阅读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络模型与实验"><span class="nav-number">2.8.</span> <span class="nav-text">网络模型与实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-10-tips-for-writing-a-paper"><span class="nav-number">2.9.</span> <span class="nav-text">Top-10 tips for writing a paper</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Internet"><span class="nav-number">3.</span> <span class="nav-text">The Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网组织"><span class="nav-number">3.1.</span> <span class="nav-text">互联网组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Society-ISOC"><span class="nav-number">3.1.1.</span> <span class="nav-text">Internet Society (ISOC)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Internet-Hall-of-Fame"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">Internet Hall of Fame</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Engineering-Task-Force-IETF"><span class="nav-number">3.1.2.</span> <span class="nav-text">Internet Engineering Task Force (IETF)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Internet-Engineering-Steering-Group-IESG"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">The Internet Engineering Steering Group (IESG)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Research-Task-Force-IRTF"><span class="nav-number">3.1.3.</span> <span class="nav-text">Internet Research Task Force (IRTF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Architecture-Board-IAB"><span class="nav-number">3.1.4.</span> <span class="nav-text">Internet Architecture Board (IAB)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Corporation-for-Assigned-Names-and-Numbers-ICANN"><span class="nav-number">3.1.5.</span> <span class="nav-text">Internet Corporation for Assigned Names and Numbers (ICANN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘论"><span class="nav-number">3.2.</span> <span class="nav-text">边缘论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层次化选择"><span class="nav-number">3.2.1.</span> <span class="nav-text">层次化选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internet-传输层"><span class="nav-number">4.</span> <span class="nav-text">Internet 传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">4.1.</span> <span class="nav-text">UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">4.2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-Header"><span class="nav-number">4.2.1.</span> <span class="nav-text">TCP Header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可靠数据传输"><span class="nav-number">4.2.2.</span> <span class="nav-text">可靠数据传输</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠性机制"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">可靠性机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">4.2.3.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP窗口流控"><span class="nav-number">4.2.4.</span> <span class="nav-text">TCP窗口流控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP拥塞控制"><span class="nav-number">4.2.5.</span> <span class="nav-text">TCP拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拥塞控制和拥塞避免"><span class="nav-number">4.2.5.1.</span> <span class="nav-text">拥塞控制和拥塞避免</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态的自适应方案"><span class="nav-number">4.2.5.2.</span> <span class="nav-text">动态的自适应方案</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程项目"><span class="nav-number">5.</span> <span class="nav-text">课程项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目调研"><span class="nav-number">5.1.</span> <span class="nav-text">项目调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DDoS"><span class="nav-number">5.1.1.</span> <span class="nav-text">DDoS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetFPGA"><span class="nav-number">5.1.2.</span> <span class="nav-text">NetFPGA</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -598,20 +699,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">158</span>
+          <span class="site-state-item-count">164</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -687,7 +788,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1m</span>
+    <span title="Symbols count total">1.1m</span>
 </div>
 
         

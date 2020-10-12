@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="110周年自然语言处理助手专项。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自然语言处理助手专项：知识图谱">
+<meta property="og:url" content="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="110周年自然语言处理助手专项。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/1529464461822.png">
+<meta property="og:image" content="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/v2-8726f493c46f2e193a89cc01c0dca531_720w.jpg">
+<meta property="article:published_time" content="2020-10-11T02:08:20.000Z">
+<meta property="article:modified_time" content="2020-10-11T09:02:49.085Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/1529464461822.png">
+
+<link rel="canonical" href="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>自然语言处理助手专项：知识图谱 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自然语言处理助手专项：知识图谱
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/" class="post-meta-item leancloud_visitors" data-flag-title="自然语言处理助手专项：知识图谱" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>110周年自然语言处理助手专项。<a id="more"></a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>《知识图谱》，赵军</p>
+<p>《知识图谱与深度学习》，刘知远，韩旭，孙茂松</p>
+<p><a href="https://zhuanlan.zhihu.com/p/71128505" target="_blank" rel="noopener external nofollow noreferrer">什么是知识图谱?</a></p>
+<p><a href="https://www.jianshu.com/p/cd937f20bf55" target="_blank" rel="noopener external nofollow noreferrer">知识图谱基础（一）-什么是知识图谱</a></p>
+<p><a href="https://www.jianshu.com/p/941dc6d7e760" target="_blank" rel="noopener external nofollow noreferrer">知识图谱基础（二）-知识图谱的知识表达系统</a></p>
+<p><a href="http://wp.openkg.cn/" target="_blank" rel="noopener external nofollow noreferrer">OpenKG.CN</a></p>
+<p><a href="https://www.jiqizhixin.com/articles/2018-06-20-4" target="_blank" rel="noopener external nofollow noreferrer">这是一份通俗易懂的知识图谱技术与应用指南</a></p>
+<h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><p>任务：在“资料库”（一个结构化的维基百科式的数据库）基础上，<strong>从非结构化文本中抽取关键信息</strong>（“实体-关系-实体”三元组），校验算法抽取和人工抽取的结果，融合得到“知识图谱”。</p>
+<h2 id="知识图谱的构成方式"><a href="#知识图谱的构成方式" class="headerlink" title="知识图谱的构成方式"></a>知识图谱的构成方式</h2><blockquote>
+<p><em>知识图谱的本质上是语义网络（Semantic Network）的知识库。</em></p>
+<p><a href="https://zhuanlan.zhihu.com/p/31864048" target="_blank" rel="noopener external nofollow noreferrer">语义网络，语义网，链接数据和知识图谱</a></p>
+</blockquote>
+<p>知识图谱本质上是语义网络，是一种基于图的数据结构，由节点(Point)和边(Edge)组成。在知识图谱里，每个节点表示现实世界中存在的“实体”，每条边为实体与实体之间的“关系”。知识图谱是关系的最有效的表示方式。通俗地讲，知识图谱就是把所有不同种类的信息（Heterogeneous Information）连接在一起而得到的一个关系网络。知识图谱提供了从“关系”的角度去分析问题的能力。 知识图谱这个概念最早由Google提出，主要是用来优化现有的搜索引擎。不同于基于关键词搜索的传统搜索引擎，知识图谱可用来更好地查询复杂的关联信息，从语义层面理解用户意图，改进搜索质量。比如在Google的搜索框里输入Bill Gates的时候，搜索结果页面的右侧还会出现Bill Gates相关的信息比如出生年月，家庭情况等等。</p>
+<blockquote>
+<p>来源： <a href="https://www.jiqizhixin.com/articles/2015-12-08-6" target="_blank" rel="noopener external nofollow noreferrer">机器之心</a></p>
+</blockquote>
+<h3 id="实体-Entity"><a href="#实体-Entity" class="headerlink" title="实体 Entity"></a>实体 Entity</h3><p>有时候会把实体称为topic。</p>
+<h3 id="关系-Relation"><a href="#关系-Relation" class="headerlink" title="关系 Relation"></a>关系 Relation</h3><p>实体关系可分为两种：属性property，关系relation。</p>
+<blockquote>
+<p>属性常常连接一个实体和一个描述；关系则是连接两个实体。</p>
+</blockquote>
+<h3 id="三元组"><a href="#三元组" class="headerlink" title="三元组"></a>三元组</h3><p><strong><font color="red">三元组</font></strong>：一个三元组由<strong>主体</strong>、<strong>关系</strong>和<strong>客体</strong>构成。</p>
+<blockquote>
+<p>SPO三元组(Subject-Predicate-Object)</p>
+</blockquote>
+<h2 id="知识图谱的构建流程"><a href="#知识图谱的构建流程" class="headerlink" title="知识图谱的构建流程"></a>知识图谱的构建流程</h2><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/45470163" target="_blank" rel="noopener external nofollow noreferrer">知识图谱（Knowledge Graph）简介</a></p>
+</blockquote>
+<p>主要涉及：</p>
+<ul>
+<li>实体命名识别（Name Entity Recognition）   </li>
+<li>关系抽取（Relation Extraction）   </li>
+<li>实体统一（Entity Resolution）   </li>
+<li>指代消解（Coreference Resolution）</li>
+</ul>
+<p><strong>知识图谱主要有两种存储方式：一种是基于<font color="red">RDF</font>的存储；另一种是基于<font color="red">图数据库</font>的存储。</strong></p>
+<img data-src="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/1529464461822.png" class title="https:&#x2F;&#x2F;image.jiqizhixin.com&#x2F;uploads&#x2F;editor&#x2F;6d23ee75-a606-46ac-9e00-3320a870c0e8&#x2F;1529464461822.png">
+<blockquote>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/71128505" target="_blank" rel="noopener external nofollow noreferrer">什么是知识图谱?</a></p>
+</blockquote>
+<p>曾经知识图谱非常流行自顶向下(top-down)的构建方式。自顶向下指的是先为知识图谱定义好本体与数据模式，再将实体加入到知识库。该构建方式需要利用一些现有的结构化知识库作为其基础知识库，例如 Freebase 项目就是采用这种方式，它的绝大部分数据是从维基百科中得到的。</p>
+<p>然而目前，大多数知识图谱都采用自底向上(bottom-up)的构建方式。自底向上指的是从一些开放链接数据（也就是 “信息”）中提取出实体，选择其中置信度较高的加入到知识库，再构建实体与实体之间的联系。</p>
+</blockquote>
+<h2 id="RDF标准"><a href="#RDF标准" class="headerlink" title="RDF标准"></a>RDF标准</h2><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/32122644" target="_blank" rel="noopener external nofollow noreferrer">知识图谱基础之RDF，RDFS与OWL</a></p>
+<p><a href="https://www.w3.org/TR/rdf-schema/" target="_blank" rel="noopener external nofollow noreferrer">RDF Schema 1.1</a></p>
+</blockquote>
+<img data-src="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/v2-8726f493c46f2e193a89cc01c0dca531_720w.jpg" class title="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-8726f493c46f2e193a89cc01c0dca531_720w.jpg">
+<p>RDF是一种描述知识图谱构成的语言规范。</p>
+<blockquote>
+<p>RDF(Resource Description Framework)，即资源描述框架，其本质是一个数据模型（Data Model）。它提供了一个统一的标准，用于描述实体/资源。简单来说，就是表示事物的一种方法和手段。<strong>RDF形式上表示为SPO三元组</strong>，有时候也称为一条语句（statement），知识图谱中我们也称其为一条知识。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/" title="自然语言处理助手专项：知识图谱">https://vel.life/自然语言处理助手专项/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/" rel="prev" title="高等计算机网络课程项目">
+      <i class="fa fa-chevron-left"></i> 高等计算机网络课程项目
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Preparation"><span class="nav-number">2.</span> <span class="nav-text">Preparation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识图谱的构成方式"><span class="nav-number">2.1.</span> <span class="nav-text">知识图谱的构成方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实体-Entity"><span class="nav-number">2.1.1.</span> <span class="nav-text">实体 Entity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系-Relation"><span class="nav-number">2.1.2.</span> <span class="nav-text">关系 Relation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元组"><span class="nav-number">2.1.3.</span> <span class="nav-text">三元组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识图谱的构建流程"><span class="nav-number">2.2.</span> <span class="nav-text">知识图谱的构建流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDF标准"><span class="nav-number">2.3.</span> <span class="nav-text">RDF标准</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">164</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">1.1m</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8A%A9%E6%89%8B%E4%B8%93%E9%A1%B9/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
