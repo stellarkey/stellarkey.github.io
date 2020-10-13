@@ -67,7 +67,7 @@
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201006192611811.png">
 <meta property="og:image" content="https://vel.life/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201006220639268.png">
 <meta property="article:published_time" content="2020-09-08T08:16:49.000Z">
-<meta property="article:modified_time" content="2020-10-13T04:40:36.608Z">
+<meta property="article:modified_time" content="2020-10-13T08:19:17.286Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="组合数学">
 <meta name="twitter:card" content="summary">
@@ -510,6 +510,9 @@ C(n-r+1,r)</script><blockquote>
 <p>这个证明同样可以利用index法完成（ <font color="blue"><strong><code>a[i] -= i</code></strong></font> ）。将不相邻组合转化为无重组合。</p>
 </blockquote>
 <img data-src="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/image-20201004181616893.png" class title="利用index法求不相邻组合数">
+<blockquote>
+<p>也可以将未选取的数列成一排，选取的不相邻组合其实就是往中间插空（一共 $n-r+1$ 个空）。</p>
+</blockquote>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="放球模型"><a href="#放球模型" class="headerlink" title="放球模型"></a>放球模型</h3><p>n 个<strong><font color="red">不同</font></strong>的球中，取出 r 个，放入 r 个<strong><font color="red">不同</font></strong>的盒子里，<strong><font color="red">每盒1个</font></strong>。</p>
 <script type="math/tex; mode=display">
 P(n, r)=n(n-1) \cdots \cdots(n-r+1)=\frac{n !}{(n-r) !}</script><p>n 个<strong><font color="red">不同</font></strong>的球中，取出 r 个，放入 r 个<strong><font color="blue">相同</font></strong>的盒子里，<strong><font color="red">每盒1个</font></strong>。</p>
