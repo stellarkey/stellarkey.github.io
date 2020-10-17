@@ -31,11 +31,14 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="CV（Computer Vision），计算机视觉。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20201016150232770.png">
+<meta property="og:image" content="https://vel.life/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20201016150426378.png">
 <meta property="article:published_time" content="2019-02-13T09:59:57.000Z">
-<meta property="article:modified_time" content="2020-10-10T12:40:28.796Z">
+<meta property="article:modified_time" content="2020-10-16T07:24:38.361Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20201016150232770.png">
 
 <link rel="canonical" href="https://vel.life/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">
 
@@ -270,10 +273,10 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><p><code>CV</code>（Computer Vision），计算机视觉。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p> <a href="https://www.bilibili.com/video/BV1TJ411d7b7" target="_blank" rel="noopener external nofollow noreferrer">CS231n【B站视频】</a></p>
-<h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><h2 id="前景提取法"><a href="#前景提取法" class="headerlink" title="前景提取法"></a>前景提取法</h2><h3 id="帧间差分"><a href="#帧间差分" class="headerlink" title="帧间差分"></a>帧间差分</h3><h3 id="背景差分"><a href="#背景差分" class="headerlink" title="背景差分"></a>背景差分</h3><h2 id="先验特征法"><a href="#先验特征法" class="headerlink" title="先验特征法"></a>先验特征法</h2><p>早期视觉专家专注于挖掘各种特征.</p>
+<h1 id="课程笔记"><a href="#课程笔记" class="headerlink" title="课程笔记"></a>课程笔记</h1><h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><h3 id="前景提取法"><a href="#前景提取法" class="headerlink" title="前景提取法"></a>前景提取法</h3><h4 id="帧间差分"><a href="#帧间差分" class="headerlink" title="帧间差分"></a>帧间差分</h4><h4 id="背景差分"><a href="#背景差分" class="headerlink" title="背景差分"></a>背景差分</h4><h3 id="先验特征法"><a href="#先验特征法" class="headerlink" title="先验特征法"></a>先验特征法</h3><p>早期视觉专家专注于挖掘各种特征.</p>
 <p>比如：人脸的肤色特征；车辆的水平/垂直边缘、角点，车灯，对称性，车底阴影。</p>
 <p>缺点：不鲁棒，挑选困难。</p>
-<h2 id="机器学习法"><a href="#机器学习法" class="headerlink" title="机器学习法"></a>机器学习法</h2><h3 id="Adaboost基本原理"><a href="#Adaboost基本原理" class="headerlink" title="Adaboost基本原理"></a>Adaboost基本原理</h3><p>一种<strong>集成学习</strong>的方法。</p>
+<h3 id="机器学习法"><a href="#机器学习法" class="headerlink" title="机器学习法"></a>机器学习法</h3><h4 id="Adaboost基本原理"><a href="#Adaboost基本原理" class="headerlink" title="Adaboost基本原理"></a>Adaboost基本原理</h4><p>一种<strong>集成学习</strong>的方法。</p>
 <p>通过一系列的弱分类器（这些分类器可能只有51%的极低准确率，但只要有点效果就行了，slightly better and random）。</p>
 <p>每个<strong>弱分类器</strong>都定义了一个弱分类能力的超平面，我们通过调整超平面的位置<strong>尽量使得这个超平面让所有的正确样本识别正确</strong>。（自动调整权重，<strong>Ada</strong>boost）</p>
 <p>每一个这样的弱超平面都可以在一定程度上去掉一些负样本。</p>
@@ -281,7 +284,7 @@
 <blockquote>
 <p>这样的算法对那些检测型的任务（确定是否存在）十分有效。</p>
 </blockquote>
-<h3 id="基于Adaboost的人脸检测"><a href="#基于Adaboost的人脸检测" class="headerlink" title="基于Adaboost的人脸检测"></a>基于Adaboost的人脸检测</h3><p><em>Robust Real-time Face Detection</em> - 微软论文，2004年发表于IJCV</p>
+<h4 id="基于Adaboost的人脸检测"><a href="#基于Adaboost的人脸检测" class="headerlink" title="基于Adaboost的人脸检测"></a>基于Adaboost的人脸检测</h4><p><em>Robust Real-time Face Detection</em> - 微软论文，2004年发表于IJCV</p>
 <p>利用<strong>Haar特征</strong>（小波）来刻画人脸。</p>
 <p>快速提取特征：<strong>积分图</strong>（相当于二维的后缀数组）。</p>
 <p>总共有4万多个特征，利用Adaboost从中挑出200多个特征（弱分类器）作为最后的强分类器。</p>
@@ -296,7 +299,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="雷达和视觉的融合目标检测"><a href="#雷达和视觉的融合目标检测" class="headerlink" title="雷达和视觉的融合目标检测"></a>雷达和视觉的融合目标检测</h4><h4 id="在线Boosting"><a href="#在线Boosting" class="headerlink" title="在线Boosting"></a>在线Boosting</h4><h3 id="目标检测存在的问题"><a href="#目标检测存在的问题" class="headerlink" title="目标检测存在的问题"></a>目标检测存在的问题</h3><ul>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><h5 id="雷达和视觉的融合目标检测"><a href="#雷达和视觉的融合目标检测" class="headerlink" title="雷达和视觉的融合目标检测"></a>雷达和视觉的融合目标检测</h5><h5 id="在线Boosting"><a href="#在线Boosting" class="headerlink" title="在线Boosting"></a>在线Boosting</h5><h4 id="目标检测存在的问题"><a href="#目标检测存在的问题" class="headerlink" title="目标检测存在的问题"></a>目标检测存在的问题</h4><ul>
 <li>检测不稳定<ul>
 <li>漏检、误检</li>
 <li><strong>目标跟踪</strong></li>
@@ -311,11 +314,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="多媒体的自动字幕生成"><a href="#多媒体的自动字幕生成" class="headerlink" title="多媒体的自动字幕生成"></a>多媒体的自动字幕生成</h1><blockquote>
+<h2 id="多媒体的自动字幕生成"><a href="#多媒体的自动字幕生成" class="headerlink" title="多媒体的自动字幕生成"></a>多媒体的自动字幕生成</h2><blockquote>
 <p>captioning</p>
 </blockquote>
 <p>understanding</p>
-<h2 id="Image-Captioning"><a href="#Image-Captioning" class="headerlink" title="Image Captioning"></a>Image Captioning</h2><p>Instance recognition 事例识别</p>
+<h3 id="Image-Captioning"><a href="#Image-Captioning" class="headerlink" title="Image Captioning"></a>Image Captioning</h3><p>Instance recognition 事例识别</p>
 <p>Scene recognition</p>
 <p>Attribute recognition 形容词形式</p>
 <hr>
@@ -346,16 +349,55 @@
 <p><em>Towards embodied scene description</em></p>
 </blockquote>
 </blockquote>
-<h2 id="Video-Captioning"><a href="#Video-Captioning" class="headerlink" title="Video Captioning"></a>Video Captioning</h2><p>多了声音和时间特征。</p>
+<h3 id="Video-Captioning"><a href="#Video-Captioning" class="headerlink" title="Video Captioning"></a>Video Captioning</h3><p>多了声音和时间特征。</p>
 <p>但是在信息密度上比图片多很多，所以实际效果其实一般。。</p>
-<h2 id="Audio-Captioning"><a href="#Audio-Captioning" class="headerlink" title="Audio Captioning"></a>Audio Captioning</h2><p>声音的噪声较多。</p>
+<h3 id="Audio-Captioning"><a href="#Audio-Captioning" class="headerlink" title="Audio Captioning"></a>Audio Captioning</h3><p>声音的噪声较多。</p>
 <p>声音提供的信息有限。</p>
 <p>数据集：AudioCaps，MSR-VTT。</p>
 <hr>
 <p>知识图谱用进来，按照图片的QA~</p>
 <p>captioning和强化学习的结合~</p>
 <p>…………</p>
-
+<h2 id="稀疏编码"><a href="#稀疏编码" class="headerlink" title="稀疏编码"></a>稀疏编码</h2><h3 id="压缩感知-Compress-Sense"><a href="#压缩感知-Compress-Sense" class="headerlink" title="压缩感知 Compress Sense"></a>压缩感知 Compress Sense</h3><blockquote>
+<p><em>研究兴趣：从香农定理如何发展到稀疏编码？</em></p>
+</blockquote>
+<p><strong>奈奎斯特-香农定理</strong>：为了完美地重构信号，需要按照不小于2倍带宽采样率对信号进行采样。</p>
+<blockquote>
+<p>可能需要专门学习来理解。。</p>
+<p>通过提高采样频率来防止信号交叉重叠。</p>
+</blockquote>
+<p>2006年这个定理遭遇了巨大的挑战——只要感兴趣的信号是<strong>可压缩</strong>的（或者是可稀疏表示的），那么我们就可以通过<strong>少于</strong>，甚至是远少于Nyquist-Shanon的要求对信号采样就可<strong>精确</strong>地获得该信号。（<strong><font color="red">压缩感知</font></strong>，2006）</p>
+<blockquote>
+<p>可以认为是一种近似算法。通过牺牲一定的精确性，来换取更高的采样效率。</p>
+</blockquote>
+<p>在感知的过程中同时做压缩。</p>
+<ul>
+<li>信号的稀疏表示</li>
+<li>编码测量</li>
+<li>重构算法</li>
+</ul>
+<h3 id="稀疏编码-1"><a href="#稀疏编码-1" class="headerlink" title="稀疏编码"></a>稀疏编码</h3><p>零范数：向量中非零元素的个数。</p>
+<p>对大多数欠定系统，1-范数求解和零范数求解的稀疏结果是一致的。</p>
+<blockquote>
+<p>大多数？OK，（假装自己是大多数。。工程上默认满足这个条件。</p>
+<p>LASSO方法的求解简单很多。零范数却是组合优化问题（NP）。</p>
+</blockquote>
+<hr>
+<p>压缩感知综述特别多。</p>
+<hr>
+<p>人脸识别。人脸图像空间的线性子空间假设。（回忆PCA方法）</p>
+<p>给一张新的人脸照片，让重构的子空间样本图片尽可能少——引入稀疏表示。</p>
+<hr>
+<p>SRC算法——巨大提升。</p>
+<p>运算便利，并且具有鲁棒性。</p>
+<h3 id="结构化稀疏编码"><a href="#结构化稀疏编码" class="headerlink" title="结构化稀疏编码"></a>结构化稀疏编码</h3><h2 id="Why-is-it-so-hard-to-make-self-driving-cars"><a href="#Why-is-it-so-hard-to-make-self-driving-cars" class="headerlink" title="Why is it so hard to make self-driving cars?"></a>Why is it so hard to make self-driving cars?</h2><blockquote>
+<p>Trustworthy Automomous Systems</p>
+</blockquote>
+<p><em>Joseph Sifakis</em>: Turing award.</p>
+<img data-src="/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20201016150232770.png" class title="Autonomous systems">
+<img data-src="/CV%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/image-20201016150426378.png" class title="why is it so hard">
+<hr>
+<h3 id="Trustworthiness"><a href="#Trustworthiness" class="headerlink" title="Trustworthiness"></a>Trustworthiness</h3><h4 id="Trusting-a-System-to-Perform-a-Task"><a href="#Trusting-a-System-to-Perform-a-Task" class="headerlink" title="Trusting a System to Perform a Task"></a>Trusting a System to Perform a Task</h4><h4 id="Trustworthy-Autopilot-Design"><a href="#Trustworthy-Autopilot-Design" class="headerlink" title="Trustworthy Autopilot Design"></a>Trustworthy Autopilot Design</h4>
     </div>
 
     
@@ -462,7 +504,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标检测"><span class="nav-number">2.</span> <span class="nav-text">目标检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前景提取法"><span class="nav-number">2.1.</span> <span class="nav-text">前景提取法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧间差分"><span class="nav-number">2.1.1.</span> <span class="nav-text">帧间差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景差分"><span class="nav-number">2.1.2.</span> <span class="nav-text">背景差分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先验特征法"><span class="nav-number">2.2.</span> <span class="nav-text">先验特征法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习法"><span class="nav-number">2.3.</span> <span class="nav-text">机器学习法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adaboost基本原理"><span class="nav-number">2.3.1.</span> <span class="nav-text">Adaboost基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Adaboost的人脸检测"><span class="nav-number">2.3.2.</span> <span class="nav-text">基于Adaboost的人脸检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">2.3.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#雷达和视觉的融合目标检测"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">雷达和视觉的融合目标检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线Boosting"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">在线Boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标检测存在的问题"><span class="nav-number">2.3.4.</span> <span class="nav-text">目标检测存在的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多媒体的自动字幕生成"><span class="nav-number">3.</span> <span class="nav-text">多媒体的自动字幕生成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Captioning"><span class="nav-number">3.1.</span> <span class="nav-text">Image Captioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Captioning"><span class="nav-number">3.2.</span> <span class="nav-text">Video Captioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Audio-Captioning"><span class="nav-number">3.3.</span> <span class="nav-text">Audio Captioning</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程笔记"><span class="nav-number">2.</span> <span class="nav-text">课程笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标检测"><span class="nav-number">2.1.</span> <span class="nav-text">目标检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前景提取法"><span class="nav-number">2.1.1.</span> <span class="nav-text">前景提取法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#帧间差分"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">帧间差分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景差分"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">背景差分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先验特征法"><span class="nav-number">2.1.2.</span> <span class="nav-text">先验特征法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习法"><span class="nav-number">2.1.3.</span> <span class="nav-text">机器学习法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Adaboost基本原理"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">Adaboost基本原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Adaboost的人脸检测"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">基于Adaboost的人脸检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#雷达和视觉的融合目标检测"><span class="nav-number">2.1.3.3.1.</span> <span class="nav-text">雷达和视觉的融合目标检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在线Boosting"><span class="nav-number">2.1.3.3.2.</span> <span class="nav-text">在线Boosting</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标检测存在的问题"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">目标检测存在的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体的自动字幕生成"><span class="nav-number">2.2.</span> <span class="nav-text">多媒体的自动字幕生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Captioning"><span class="nav-number">2.2.1.</span> <span class="nav-text">Image Captioning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Video-Captioning"><span class="nav-number">2.2.2.</span> <span class="nav-text">Video Captioning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Audio-Captioning"><span class="nav-number">2.2.3.</span> <span class="nav-text">Audio Captioning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稀疏编码"><span class="nav-number">2.3.</span> <span class="nav-text">稀疏编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩感知-Compress-Sense"><span class="nav-number">2.3.1.</span> <span class="nav-text">压缩感知 Compress Sense</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#稀疏编码-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">稀疏编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化稀疏编码"><span class="nav-number">2.3.3.</span> <span class="nav-text">结构化稀疏编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-is-it-so-hard-to-make-self-driving-cars"><span class="nav-number">2.4.</span> <span class="nav-text">Why is it so hard to make self-driving cars?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trustworthiness"><span class="nav-number">2.4.1.</span> <span class="nav-text">Trustworthiness</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trusting-a-System-to-Perform-a-Task"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">Trusting a System to Perform a Task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Trustworthy-Autopilot-Design"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">Trustworthy Autopilot Design</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -478,7 +520,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">165</span>
+          <span class="site-state-item-count">166</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -24,17 +24,24 @@
   </script>
 
 
-  <meta name="description" content="《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 TKDE 期刊。">
+  <meta name="description" content="《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 TKDE 期刊。区块链技术近年来快速发展。区块链是什么呢？它应用于缺乏信任的群体中，保存一个分布式账本，并在账本中记载一系列全局性的信息。群体则在其存在性、价值和历史状态上达成一个共识。但是区块链的技术栈事实上是在不断扩张的，我们需要理解其">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阅《Untangling Blockchain A Data Processing View of Blockchain Systems》">
 <meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 TKDE 期刊。">
+<meta property="og:description" content="《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 TKDE 期刊。区块链技术近年来快速发展。区块链是什么呢？它应用于缺乏信任的群体中，保存一个分布式账本，并在账本中记载一系列全局性的信息。群体则在其存在性、价值和历史状态上达成一个共识。但是区块链的技术栈事实上是在不断扩张的，我们需要理解其">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201014165729062.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015131843334.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015001122094.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015132324210.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015165704634.png">
 <meta property="article:published_time" content="2020-09-15T10:03:12.000Z">
-<meta property="article:modified_time" content="2020-10-09T14:46:30.479Z">
+<meta property="article:modified_time" content="2020-10-15T09:16:32.752Z">
 <meta property="article:author" content="工云">
+<meta property="article:tag" content="区块链">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201014165729062.png">
 
 <link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/">
 
@@ -267,12 +274,234 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="_blank" rel="noopener external nofollow noreferrer">TKDE</a></strong> 期刊。<a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="_blank" rel="noopener external nofollow noreferrer">TKDE</a></strong> 期刊。区块链技术近年来快速发展。区块链是什么呢？它应用于缺乏信任的群体中，保存一个分布式账本，并在账本中记载一系列全局性的信息。群体则在其存在性、价值和历史状态上达成一个共识。但是区块链的技术栈事实上是在不断扩张的，我们需要理解其中最核心的机制。尤其是<strong>数据处理</strong>的部分。（<del>这句话显得就很强行的感觉</del>）</p>
+<p>这篇论文首先做了一个<strong>对私链最新研究成果的 <font color="red">survey</font></strong>。他们从产业界和学术界两方面分析出了几个最关键的技术概念：<strong><font color="blue">分布式账本</font></strong>（distributed ledger）、<strong><font color="blue">密码学</font></strong>（cryptography）、<strong><font color="blue">共识协议</font></strong>（consensus protocol）、<strong><font color="blue">智能合约</font></strong>（smart contract）。（这篇文章实际上花了一半以上的篇幅写survey）</p>
+<p>接着，他们提供了一个区块链的跑分框架：<strong>BLOCKBENCH</strong>，来评估私有链在应对数据处理工作量时的性能。他们在实验中采用了三个主流的区块链系统来测试BLOCKBENCH，分别是：Ethereum，Parity，Hyperledger Fabric。结果显示，在设计区块链时存在很多trade-off，同时还有<strong>区块链和数据库系统之间的巨大性能差异</strong>——于是他们根据数据库系统的若干设计原则，指出了未来提升区块链性能的若干研究方向。<a id="more"></a></p>
 <blockquote>
 <p>本篇论文来自于《赛博智能经济与区块链》课程论文列表，属于 <strong><em>理论研究</em></strong> 专题。</p>
 </blockquote>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="./1.pdf">Untangling Blockchain: A Data Processing View of Blockchain Systems</a></p>
 <div class="pdfobject-container" data-target="./1.pdf" data-height="500px"></div>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>append-only：只可追加的（意味着已经存在的不能修改）</p>
+<p><strong><font color="red">miner</font></strong> &amp; <strong><font color="red">nonce</font></strong>: some information about the creator of the block (see PoW)</p>
+<h2 id="TKDE-期刊"><a href="#TKDE-期刊" class="headerlink" title="TKDE 期刊"></a>TKDE 期刊</h2><p>全称：IEEE Transactions on Knowledge and Data Engineering (TKDE)。</p>
+<p>TKDE是数据挖掘领域的顶级期刊。</p>
+<p>TKDE期刊的审稿周期较长，一般在3-6个月（中途会有major revision，那时就差不多可以算中了），但是某些也会到1、2年……</p>
+<p>在搜索这个期刊的时候，第二个搜索结果竟然是软件学院的某位老师：<a href="http://www.thss.tsinghua.edu.cn/publish/soft/3641/2016/20160818085056012465839/20160818085056012465839_.html" target="_blank" rel="noopener external nofollow noreferrer">龙明盛</a>。在看了简介之后，了解到他是TKDE的一位审稿人。并且他的5篇期刊论文有4篇都发表在TKDE，均是迁移学习方面的研究。</p>
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201014165729062.png" class title="龙老师的期刊论文">
+<p>龙明盛老师也是机器学习理论方向的研究组。</p>
+<blockquote>
+<p><em>Our team is interested in developing foundational theories, effective algorithms, and reliable systems of machine learning to enable systematic generalization in data representation, inference, and decision making. We focus on industrial applications of AI and data science, including text, sequence, image, video, and scientific data analysis and understanding.</em></p>
+</blockquote>
+<h2 id="Sybil-Attacks-女巫攻击"><a href="#Sybil-Attacks-女巫攻击" class="headerlink" title="Sybil Attacks 女巫攻击"></a>Sybil Attacks 女巫攻击</h2><blockquote>
+<p><a href="https://www.jianshu.com/p/078307c6f634" target="_blank" rel="noopener external nofollow noreferrer">女巫攻击（Sybil Attack)</a></p>
+</blockquote>
+<p>在一个P2P网络上，由于节点任意进出，同一份数据通常需要有若干的冗余备份（数据冗余机制）。</p>
+<p><strong>女巫攻击是攻击数据冗余机制的一种有效手段</strong>。节点通过伪装自己，伪造一系列新的节点身份，这些节点什么都将可以申请对数据的备份，但真正的有效备份只对应一个真实备份——如果备份是唯一的，那么对信息的篡改就存在可能了。这样的攻击破坏了系统的冗余策略，<strong>能够获得对网络的不成比例的控制水平</strong>。</p>
+<p>如何解决女巫攻击？</p>
+<ul>
+<li>工作量证明（PoW）：你必须消耗巨大的算力证明你是一个真正的节点。增加攻击成本。</li>
+<li>身份认证：<ul>
+<li>第三方认证：节点需要与第三方节点进行身份认证</li>
+<li>分布式认证：新节点需要获得网络中所有可靠节点的认证</li>
+</ul>
+</li>
+</ul>
+<h2 id="Eclipse-Attacks-日蚀攻击"><a href="#Eclipse-Attacks-日蚀攻击" class="headerlink" title="Eclipse Attacks 日蚀攻击"></a>Eclipse Attacks 日蚀攻击</h2><blockquote>
+<p><a href="https://www.jinse.com/news/blockchain/397234.html" target="_blank" rel="noopener external nofollow noreferrer">什么是日蚀攻击（Eclipse Attack）丨金色百科</a></p>
+<p><a href="http://www.5bite.com/post/8559.html" target="_blank" rel="noopener external nofollow noreferrer">什么是日蚀攻击（Eclipse Attack）？</a></p>
+</blockquote>
+<p>攻击者通过使节点从整个网络上消失，从而完全控制特定节点对信息的访问。</p>
+<p>在流行的对等式网络（例如比特币和以太坊）中，<strong>攻击者可通过确保受害者节点不再从网络的其余部分接收正确的信息，而只接收由攻击者操纵的信息来执行日蚀攻击</strong>（Eclipse Attack）。</p>
+<p>换言之，当网络上的大多数对等节点都是恶意的时候，并且正在控制特定节点的连接时，就会发生这类攻击。控制此类连接的攻击者，可确保此<strong>特定节点被恶意节点包围</strong>。</p>
+<p>日蚀攻击的目标是单个节点，而女巫攻击的目标是整个网络范围，旨在篡改网络协议的信誉体系。</p>
+<p>日蚀攻击可以称为其它类型攻击的前奏，攻击者一旦成功发动日蚀攻击，那么他有可能通过远低于全网51%的算力发动51%攻击。</p>
+<h2 id="DAO-Attack-以太坊DAO攻击事件"><a href="#DAO-Attack-以太坊DAO攻击事件" class="headerlink" title="DAO Attack 以太坊DAO攻击事件"></a>DAO Attack 以太坊DAO攻击事件</h2><blockquote>
+<p><a href="https://www.coindesk.com/understanding-dao-hack-journalists" target="_blank" rel="noopener external nofollow noreferrer">Understanding The DAO Attack</a></p>
+<p><a href="https://blog.csdn.net/qq_35624642/article/details/78138081" target="_blank" rel="noopener external nofollow noreferrer">震惊全球的The DAO黑客事件全程回顾</a></p>
+<p><a href="https://blog.csdn.net/sportshark/article/details/51820008" target="_blank" rel="noopener external nofollow noreferrer">TheDAO被攻击事件考察报告</a></p>
+</blockquote>
+<p>DAO Attack 特指以太坊智能合约相关的某次攻击事件。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>传统的数据库假设了：</p>
+<ul>
+<li>安全的运行环境</li>
+<li>用常用的并行方法来排序交易</li>
+</ul>
+<p>相比这些正在被使用的数据库系统，区块链则提供了一个更加安全的解决方案。</p>
+<p>区块链的简单架构和低人力成本，使得像Oracle或者MySQL这样的企业数据库系统的业务受到挑战。</p>
+<blockquote>
+<p>Applications such as security trading and settlement [6], asset and finance management [7], [8], banking and insurance [9] are being built and evaluated.</p>
+</blockquote>
+<p>区块链的不可篡改性、透明性，让人工操作错误的影响降到最低。</p>
+<p>区块链可以让流式处理商业（streamline business processes）从数据管理中解放出来，减少他们的重复性工作。</p>
+<hr>
+<p><strong>如何深入理解区块链技术</strong>？（A quest for understanding blockchain must ultimately answer the following questions:）</p>
+<ul>
+<li>什么是区块链？它有什么样的<strong>特性</strong>可以让当前和未来的应用受益？</li>
+<li>不同的区块链项目之间有什么<strong>区别</strong>？包括架构设计的定性分析，以及性能表现的定量分析。</li>
+<li>当前的<strong>挑战</strong>是什么？<strong>未来</strong>的区块链应该长什么样？</li>
+</ul>
+<p>为了回答以上的问题，论文中解释了四个关键技术概念：<strong><font color="blue">分布式账本</font></strong>（distributed ledger）、<strong><font color="blue">密码学</font></strong>（cryptography）、<strong><font color="blue">共识协议</font></strong>（consensus protocol）、<strong><font color="blue">智能合约</font></strong>（smart contract）。</p>
+<p>接着详述了BLOCKBENCH框架。（<del>这些部分跟Introduction一模一样</del>）</p>
+<blockquote>
+<p><em>The results show that current blockchains’ performance is limited, far below what a state-of-</em><br><em>the-art database system can offer.</em></p>
+</blockquote>
+<h1 id="论文主要贡献"><a href="#论文主要贡献" class="headerlink" title="论文主要贡献"></a>论文主要贡献</h1><p>1) We provide <strong>an in-depth <font color="red">survey</font> of blockchain systems</strong>. We discuss state of the art, and categorize current systems along four dimensions: distributed ledger, cryptography, consensus protocol and smart contract.</p>
+<p>2) We describe our <strong>benchmarking framework, <font color="red">BLOCKBENCH</font></strong>, that is designed for understanding performance of private blockchains against data processing workloads.</p>
+<p>3) We present <strong>a comprehensive <font color="red">evaluation</font> of Ethereum, Parity and Hyperledger</strong>. The results show the limitation of blockchains as data processing platforms. They identify several performance bottlenecks, and therefore can serve as a baseline for future blockchain research and development.</p>
+<h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><p>一个典型的区块链系统通常包含大量互不信任的节点。</p>
+<p>所有节点共同保存全局状态，通过加入交易区块来修改全局状态。</p>
+<p>一个区块总是记载一个hash pointer指向它前面的区块，知道创世（genesis）区块。</p>
+<h2 id="公有链"><a href="#公有链" class="headerlink" title="公有链"></a>公有链</h2><p><strong>所有节点自由进出，区块链是完全分布式的，类似于P2P系统。</strong></p>
+<p>Bitcoin：</p>
+<ul>
+<li>状态：比特币数字货币</li>
+<li>交易：将数字货币在若干地址间转移</li>
+<li>矿工：收集和验证交易并发布到挖出的区块上</li>
+<li>共识协议：工作量证明机制（PoW）<ul>
+<li>通过复杂的随机计算找到合适的nonce放到区块链的头部</li>
+</ul>
+</li>
+<li>只有一个区块之后接了6个以上的区块时，该区块才能被确认</li>
+</ul>
+<p>大多数公有链都采用PoW作为公式协议，因为它可以有效的抵抗女巫攻击（Sybil attacks）。但是，由于其中的随机性和计算的巨大消耗，它不适用于银行业、金融等需要决定性的大交易量的应用场景。</p>
+<h2 id="私有链"><a href="#私有链" class="headerlink" title="私有链"></a>私有链</h2><p><strong>限制参与人，只有得到许可的节点才可以加入。</strong></p>
+<p>Hyperledger算是最受欢迎的私有区块链项目了。</p>
+<p>流行的私有共识协议：Zab，Raft，Paxos，PBFT。</p>
+<blockquote>
+<p>Hyperledger早期版本(v0.6.0)使用的就是PBFT。</p>
+</blockquote>
+<p><strong>PBFT</strong>是一个三步（three-phase）的协议：</p>
+<ol>
+<li>前准备（pre-prepare）：领导节点广播一个值，并让其它节点们commit</li>
+<li>准备（prepare）：节点们广播将要commit的值</li>
+<li>提交（commit）：确保2/3以上的节点在上一步同意，然后确认commit值</li>
+</ol>
+<p>PBFT存在通信上的缺陷 / bound，但是它在非完全同步的网络（partially synchronous networks）中实现了安全性和活跃性。</p>
+<p>私有链上还支持智能合约，并可以在智能合约中定义各种复杂的交易逻辑。这些特性在商业和金融领域中尤为重要。</p>
+<h1 id="四大核心"><a href="#四大核心" class="headerlink" title="四大核心"></a>四大核心</h1><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015131843334.png" class title="Comparison of Blockchain Systems">
+<h2 id="分布式账本-Distributed-Ledger"><a href="#分布式账本-Distributed-Ledger" class="headerlink" title="分布式账本 Distributed Ledger"></a>分布式账本 Distributed Ledger</h2><p>一个账本就是一个<strong>记载着一系列有顺序的交易记录</strong>的数据结构。</p>
+<p>在区块链中，每个节点都需要保存一份分布式账本的copy。</p>
+<p>分布式账本是append-only的。</p>
+<p>区块链从初始状态开始，账本中则记录了所有在之后对状态进行更新的操作。</p>
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015001122094.png" class title="Examples of Distributed Ledgers">
+<p>如上表，一个支持分布式账本的系统可以分为三个维度来描述：</p>
+<ul>
+<li>the application built on top of the ledger determines the data model of what being stored in the ledger</li>
+<li>the system may have <strong>one or more ledgers</strong> which may be connected to each other</li>
+<li><strong>ledger ownership may vary</strong> from completely open to public to strictly controlled by one party</li>
+</ul>
+<hr>
+<p>Recall that a system supporting distributed ledgers is characterized by its target applications, by the number of ledgers, and by the ledger ownership.</p>
+<h3 id="Crypto-Currency"><a href="#Crypto-Currency" class="headerlink" title="Crypto-Currency"></a>Crypto-Currency</h3><p>数字货币是区块链技术最成功的应用。</p>
+<p>在数据模型方面分为：transaction-based model，account-based model。</p>
+<p>货币的自然性质要求账本的公开性以及唯一性。</p>
+<h3 id="Digital-Assets"><a href="#Digital-Assets" class="headerlink" title="Digital Assets"></a>Digital Assets</h3><p>Crypto-currency实际是数字资产的一个实例。</p>
+<p>但是有所区别的是，Digital Assets通常会对应到现实中的实体；区块链只负责记录它们的存在性和发生的交易。</p>
+<h3 id="General-Applications"><a href="#General-Applications" class="headerlink" title="General Applications"></a>General Applications</h3><p>这里指的就是智能合约。</p>
+<h2 id="密码学-Cryptography"><a href="#密码学-Cryptography" class="headerlink" title="密码学 Cryptography"></a>密码学 Cryptography</h2><p>在区块链中，密码学用于保证账本的integrity。在没有信任的公链中，这尤为关键（账本必须要具备抵抗双花攻击的能力）。即使在私链中，对已经验证节点有敌意的行为的制约也是很有必要的。</p>
+<p>两个层次的integrity protection：</p>
+<ul>
+<li>First, the <strong>global states</strong> are protected by a hash (Merkle) tree whose root hash is stored in a block.<ul>
+<li>The tree’s leaves contain the states, the internal nodes contain the hashes of their children.</li>
+</ul>
+</li>
+<li>Second, the <strong>block history</strong> is protected, that is the blocks are immutable once they are appended to the blockchain.（append-only）<ul>
+<li>use hash pointers to link the blocks</li>
+</ul>
+</li>
+</ul>
+<p>密码学对公钥私钥也有很大的作用，如果丢失私钥，那么在区块链系统中会造成不可逆转的经济损失。</p>
+<p>也存在很多基于复杂的密码学原理设计的区块链，旨在提高性能和安全性。一些典型的技术如：零知识证明（<strong>zero-knowledge proofs</strong>），团体签名（<strong>group signatures</strong>），可信任硬件（<strong>trusted hardware</strong>）。</p>
+<hr>
+<h3 id="Identity-Management"><a href="#Identity-Management" class="headerlink" title="Identity Management"></a>Identity Management</h3><p>区块链中，通过公钥来唯一标识一个用户。公钥由密钥生成，在区块链中公钥又称为地址。</p>
+<h3 id="Trusted-Hardware"><a href="#Trusted-Hardware" class="headerlink" title="Trusted Hardware"></a>Trusted Hardware</h3><p>一些区块链系统可能会采用可信任的硬件系统来完成某些记录工作，在损失一小部分安全性的同时，提高整个系统的性能。比如，PoET（proof of elapsed time），这样的系统往往比纯密码学的系统更弱（易受攻击）一些。它们依赖于一些运行在trusted hardware上的TCB（trusted computing base），当这样的TCB形式越精简，安全性则越高。</p>
+<p>所有基于trusted hardware的系统，都依赖于remote attestation protocols.（远程验证协议）</p>
+<h3 id="Transaction-Privacy"><a href="#Transaction-Privacy" class="headerlink" title="Transaction Privacy"></a>Transaction Privacy</h3><p>大多数区块链只保证交易的稳定性，但不会关注交易中的隐私保护。</p>
+<p>一个具有交易隐私的区块链系统应该：</p>
+<ul>
+<li>交易不能追踪到另外的交易</li>
+<li>交易内容只有参与者知晓</li>
+</ul>
+<p>私链中对交易隐私的需求其实不大，而公链则可能有较大需求。一是因为去匿名化攻击实际导致了交易人现实信息的泄露；二是因为交易的连接性可能削弱货币系统的可替代性，从而因为交易历史原因导致部分货币更有价值。</p>
+<p>Zerocoin是第一实现去除交易中的连接性的区块链，它是对bitcoin的一种扩展，它通过引入中间货币zerocoins，加入密码学混淆技术，从而使得无法追踪准确的比特币来源。其中需要用到零知识证明的技术。</p>
+<h3 id="Advanced-Signatures"><a href="#Advanced-Signatures" class="headerlink" title="Advanced Signatures"></a>Advanced Signatures</h3><p>一般是指多重签名 / 多步验证。提高安全性。</p>
+<h2 id="共识机制-Consensus"><a href="#共识机制-Consensus" class="headerlink" title="共识机制 Consensus"></a>共识机制 Consensus</h2><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015132324210.png" class title="Comparison of Consensus Protocols">
+<p>因为每个节点保存着一份账本的copy，为了修改/更新分布式账本，多个成员之间必须达成一致——这就是共识。</p>
+<p>共识机制必须可以忍受Byzantine failures。</p>
+<p>共识机制可以分为两类extreme：</p>
+<ul>
+<li><strong>纯粹基于算力的协议</strong>：通过算力比拼来随机选节点来操作下一步<ul>
+<li>PoW</li>
+</ul>
+</li>
+<li><strong>纯粹基于通信的协议</strong>：通过投票和多轮通信来获得共识<ul>
+<li>PBFT</li>
+</ul>
+</li>
+</ul>
+<p>在这两种极端协议之间，很多人想结合它们各自的优点，提出了很多混合式的共识协议。</p>
+<blockquote>
+<p>Some are used in public blockchains to address the inefficiency of PoW. One example is Proof-of-Elapsed-Time (PoET) which replaces PoW with another protocol based on trusted hardware such as Intel SGX. Other examples are Elastico [26] and Algorand [27] which improve PoW by randomly sampling a small set of nodes at each round. Other hybrid protocols, for example Proof-of-Authority (PoA) [28], Stellar [29] and Ripple [6], are used in private blockchains where they improve PBFT by executing consensus in smaller networks called federates</p>
+</blockquote>
+<hr>
+<h3 id="Proof-of-Work-Variants"><a href="#Proof-of-Work-Variants" class="headerlink" title="Proof of Work Variants"></a>Proof of Work Variants</h3><p>所有基于工作量证明机制的区块链，都要求矿工去完成某种形式的计算难题，一般是基于某种hash算法。</p>
+<p>即，找到满足下面条件的一个random nonce $n$：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+H(n \| H(b))<t
+\end{equation}</script><p>$H$ 是一个hash函数，$t$ 是一个阈值（通常对应着难度，$t$ 越小问题越难），$b$ 是当前最新区块的内容。</p>
+<p>Bitcoin最早使用SHA-256作作为 $H$。Ethereum则使用Dagger-Hashimoto函数。</p>
+<p>一个区块的生成速度取决于上述问题的难度。</p>
+<p>为了解决同时找到两个区块（有一定概率发生）的问题，<strong>GHOST协议</strong>允许在区块链中产生分支，只要这些分支没有包含相互冲突的交易即可。</p>
+<h3 id="Proof-of-Stake"><a href="#Proof-of-Stake" class="headerlink" title="Proof of Stake"></a>Proof of Stake</h3><p>PoW是一个<strong><font color="red">相当消耗资源</font></strong>的策略。它消耗的电力总量可以为一个小国家（丹麦）供电。</p>
+<p>PoS则可以减少挖矿的代价。PoS将矿工在节点上质押的货币量作为核心权重。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+H(n \| H(b))< {\color{blue} {s(M)} } \cdot t
+\end{equation}</script><p>$s(M)$ 表示矿工质押的stake总量，可以看到，stake越多，挖矿就越容易。</p>
+<p>Peercoin是最早开始采用PoS的区块链系统之一。</p>
+<h3 id="PBFT-Variants"><a href="#PBFT-Variants" class="headerlink" title="PBFT Variants"></a>PBFT Variants</h3><p>PoW还有一个缺点是，新加入的区块总是要等到足够长的时间以后才能被真正确认（链变得足够长）。</p>
+<p>PBFT则是决定性的，一旦区块被加入，它就变得永久化并且无法修改。每轮agreement需要在网络中发送 $O(N^2)$ 的消息，其中 $N$ 是网络中的节点数。</p>
+<p>PBFT的性能问题是它最大的缺点。因此它不能扩展到超大规模的网络中。</p>
+<h3 id="Trusted-Hardware-1"><a href="#Trusted-Hardware-1" class="headerlink" title="Trusted Hardware"></a>Trusted Hardware</h3><p>然后又是trusted hardware。。</p>
+<h3 id="Federated"><a href="#Federated" class="headerlink" title="Federated"></a>Federated</h3><p>为了让PBFT能够应用到更大规模的场景中，Stellar and Ripple设计了一种联邦机制，每个联邦内部运行一个local的共识协议，因为体量小所以不会产生扩展性的问题。在局部达成agreement之后再广播到全网。</p>
+<h3 id="Non-Byzantine"><a href="#Non-Byzantine" class="headerlink" title="Non-Byzantine"></a>Non-Byzantine</h3><p>就是没有什么复杂验证的简单机制，这样的机制比较适合小型的私有链，因为代价较小。</p>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>IOTA：DAG based区块链，自行设计共识协议。</p>
+<h2 id="智能合约-Smart-Contracts"><a href="#智能合约-Smart-Contracts" class="headerlink" title="智能合约 Smart Contracts"></a>智能合约 Smart Contracts</h2><p>智能合约可以看成在一个交易过程中的计算内容，即存储在交易中的一种自动执行的程序。</p>
+<p>所有的区块链都有内置的智能合约来实现它们的交易逻辑。</p>
+<p>我们可以通过智能合约所使用的编程语言来分类，也可以用它们的运行时环境来作区分。</p>
+<hr>
+<h3 id="Scripts"><a href="#Scripts" class="headerlink" title="Scripts"></a>Scripts</h3><p>Bitcoin：提供一些预先定义的opcode，用户可以利用这些opcodes实现stack-based的程序。</p>
+<blockquote>
+<p>这样的方式自然能实现的功能有限。</p>
+</blockquote>
+<h3 id="Turing-Complete"><a href="#Turing-Complete" class="headerlink" title="Turing Complete"></a>Turing Complete</h3><p>Ethereum以太坊是最早实现”图灵完备“的智能合约。</p>
+<blockquote>
+<p>也就是说，在以太坊上可以实现非常复杂的智能合约。</p>
+</blockquote>
+<p>实现图灵完备，意味着智能合约中的BUG很难避免（安全性降低）。</p>
+<h3 id="Verifiable"><a href="#Verifiable" class="headerlink" title="Verifiable"></a>Verifiable</h3><p>在DAO攻击事件发生之前，很多区块链已经拒绝模型中存在<strong>无限制的计算行为</strong>（unconstrained computations）。它们通过对智能合约的形式化、可解释性、引入纯函数的方法降低智能合约出现漏洞的可能。这样，智能合约的安全性得到一定的保证。</p>
+<h1 id="BLOCKBENCH"><a href="#BLOCKBENCH" class="headerlink" title="BLOCKBENCH"></a>BLOCKBENCH</h1><blockquote>
+<p><em>Designed for quantitative analysis of blockchains as data processing platforms, the framework targets private blockchains with Turing-complete smart contracts.</em></p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015165704634.png" class title="Blockchain software stack on a fully validating node.">
+<p>上图展示了区块链的典型技术栈。</p>
+<p>BLOCKBENCH跑分时主要收集数据并做出以下指标上的评估：</p>
+<ul>
+<li><strong>Throughput</strong>（TPS，吞吐量）: the number of successful transactions per second. A workload can be configured with multiple clients and threads per clients to saturate the blockchain throughput.</li>
+<li><strong>Latency</strong>（延迟）: the response time per transaction. Driver implements blocking transactions, i.e., it waits for one transaction to finish before starting another.</li>
+<li><strong>Scalability</strong>（可扩展性）: the changes in throughput and latency when increasing the number of nodes and number of concurrent workloads.</li>
+<li><strong>Fault tolerance</strong>（容错能力）: the changes in throughput and latency during node failure. We simulate crashes, network delays and random message corruptions.</li>
+<li><strong>Security metrics</strong>（安全性）: the ratio between the total number of blocks included in the main branch and the total number of confirmed blocks. The lower the ratio, the less vulnerable the system is from double spending or selfish mining.</li>
+</ul>
+<hr>
+<p>接着就是实验，各种测试了。。</p>
+<h1 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h1><p>其实这篇文章的创新性几乎 = 0。</p>
+<p>无非是做了一个跑分程序。不过survey的质量还是不错的，可以学到和了解到想知道的信息。</p>
+<p>最后的Discussion就是畅想了，这里我不再专门记录。其主要内容即是对数据库系统和区块链的比较。</p>
+<p>总的来说，如何把数据库的优势和区块链的优势结合起来，或者如何优化区块链，文章并没有给出具体的方案。</p>
+<p>所以这一部分应该可以作为一个未来的研究方向。</p>
 
     </div>
 
@@ -298,6 +527,10 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+          </div>
 
         
   <div class="post-widgets">
@@ -376,7 +609,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TKDE-期刊"><span class="nav-number">2.1.</span> <span class="nav-text">TKDE 期刊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sybil-Attacks-女巫攻击"><span class="nav-number">2.2.</span> <span class="nav-text">Sybil Attacks 女巫攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eclipse-Attacks-日蚀攻击"><span class="nav-number">2.3.</span> <span class="nav-text">Eclipse Attacks 日蚀攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DAO-Attack-以太坊DAO攻击事件"><span class="nav-number">2.4.</span> <span class="nav-text">DAO Attack 以太坊DAO攻击事件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">3.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文主要贡献"><span class="nav-number">4.</span> <span class="nav-text">论文主要贡献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#区块链"><span class="nav-number">5.</span> <span class="nav-text">区块链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#公有链"><span class="nav-number">5.1.</span> <span class="nav-text">公有链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#私有链"><span class="nav-number">5.2.</span> <span class="nav-text">私有链</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四大核心"><span class="nav-number">6.</span> <span class="nav-text">四大核心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式账本-Distributed-Ledger"><span class="nav-number">6.1.</span> <span class="nav-text">分布式账本 Distributed Ledger</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Crypto-Currency"><span class="nav-number">6.1.1.</span> <span class="nav-text">Crypto-Currency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Assets"><span class="nav-number">6.1.2.</span> <span class="nav-text">Digital Assets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Applications"><span class="nav-number">6.1.3.</span> <span class="nav-text">General Applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码学-Cryptography"><span class="nav-number">6.2.</span> <span class="nav-text">密码学 Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Identity-Management"><span class="nav-number">6.2.1.</span> <span class="nav-text">Identity Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trusted-Hardware"><span class="nav-number">6.2.2.</span> <span class="nav-text">Trusted Hardware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transaction-Privacy"><span class="nav-number">6.2.3.</span> <span class="nav-text">Transaction Privacy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced-Signatures"><span class="nav-number">6.2.4.</span> <span class="nav-text">Advanced Signatures</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共识机制-Consensus"><span class="nav-number">6.3.</span> <span class="nav-text">共识机制 Consensus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-of-Work-Variants"><span class="nav-number">6.3.1.</span> <span class="nav-text">Proof of Work Variants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-of-Stake"><span class="nav-number">6.3.2.</span> <span class="nav-text">Proof of Stake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PBFT-Variants"><span class="nav-number">6.3.3.</span> <span class="nav-text">PBFT Variants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trusted-Hardware-1"><span class="nav-number">6.3.4.</span> <span class="nav-text">Trusted Hardware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Federated"><span class="nav-number">6.3.5.</span> <span class="nav-text">Federated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Byzantine"><span class="nav-number">6.3.6.</span> <span class="nav-text">Non-Byzantine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Others"><span class="nav-number">6.3.7.</span> <span class="nav-text">Others</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能合约-Smart-Contracts"><span class="nav-number">6.4.</span> <span class="nav-text">智能合约 Smart Contracts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scripts"><span class="nav-number">6.4.1.</span> <span class="nav-text">Scripts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Turing-Complete"><span class="nav-number">6.4.2.</span> <span class="nav-text">Turing Complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verifiable"><span class="nav-number">6.4.3.</span> <span class="nav-text">Verifiable</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BLOCKBENCH"><span class="nav-number">7.</span> <span class="nav-text">BLOCKBENCH</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#展望"><span class="nav-number">8.</span> <span class="nav-text">展望</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -392,7 +625,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">165</span>
+          <span class="site-state-item-count">166</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
