@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="Open Shortest Path First (OSPF) 协议，是互联网上当今最广泛使用的内部网关路由协议。与之对应的BGP协议，则是在外部网络之间中使用最频繁的协议。 本篇论文中提出了两种全新的对OSPF的攻击，揭示了OSPF协议在设计上的缺陷。这些新的攻击方式可以在改变路由上不被攻击者控制的路由选择时，保护攻击者不受到所谓的OSPF的“fight-back”自卫机制的困扰。 通过发现的漏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅《Persistent OSPF Attacks》">
+<meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="Open Shortest Path First (OSPF) 协议，是互联网上当今最广泛使用的内部网关路由协议。与之对应的BGP协议，则是在外部网络之间中使用最频繁的协议。 本篇论文中提出了两种全新的对OSPF的攻击，揭示了OSPF协议在设计上的缺陷。这些新的攻击方式可以在改变路由上不被攻击者控制的路由选择时，保护攻击者不受到所谓的OSPF的“fight-back”自卫机制的困扰。 通过发现的漏">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109120736560.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109151110377.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109152624602.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109162309951.png">
+<meta property="article:published_time" content="2020-11-04T15:45:10.000Z">
+<meta property="article:modified_time" content="2020-11-09T08:50:53.185Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109120736560.png">
+
+<link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>阅《Persistent OSPF Attacks》 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阅《Persistent OSPF Attacks》
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper/" itemprop="url" rel="index"><span itemprop="name">Paper</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/" class="post-meta-item leancloud_visitors" data-flag-title="阅《Persistent OSPF Attacks》" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>Open Shortest Path First (OSPF) 协议，是互联网上当今最广泛使用的内部网关路由协议。与之对应的BGP协议，则是在外部网络之间中使用最频繁的协议。</p>
+<p>本篇论文中提出了两种全新的对OSPF的攻击，揭示了OSPF协议在设计上的缺陷。这些新的攻击方式可以在改变路由上不被攻击者控制的路由选择时，保护攻击者不受到所谓的OSPF的“fight-back”自卫机制的困扰。</p>
+<p>通过发现的漏洞，攻击者可以长时间地伪造大量路由拓扑信息，从而间接地控制网络内部的流量。最终可能会引起包括<strong>DoS</strong>（denial of service），<strong>窃听</strong>（eavesdropping），<strong>中间人攻击</strong>（man in the middle attacks）等后续攻击。</p>
+<p>最后文章讨论一些减轻攻击影响的策略，并提供了一个对OSPF协议的更新补丁来增强OSPF的总体安全性。</p>
+<a id="more"></a>
+<blockquote>
+<p>本篇论文源于高等计算机网络课程的阅读任务，领域为“<strong><em>路由协议安全</em></strong> ”。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="./6.4.pdf">Persistent OSPF Attacks</a></p>
+<div class="pdfobject-container" data-target="./6.4.pdf" data-height="500px"></div>
+<blockquote>
+<p><em>The paper is organized as follows. Section 2 gives a brief overview of the OSPF specification and principal functionality. Section 3 reviews known attacks that exploit design vulnerabilities of OSPF. Section 4 presents the new found attacks. Section 5 evaluates the power of attacks and their effects on real-world AS topologies. Section 6 proposes mitigation measures and Section 7 concludes the paper.</em></p>
+</blockquote>
+<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><blockquote>
+<p><a href="https://www.jianshu.com/p/63093df8064c" target="_blank" rel="noopener external nofollow noreferrer">RIP与OSPF协议详细对比</a></p>
+</blockquote>
+<p>OSPF协议使路由器可以在一个自治系统中维护它们各自的路由表，并且能够动态地适应该自治系统中网络拓扑的变化。OSPF协议是一种链路状态协议，每个路由器都向整个网络广播它的邻居的拓扑状态，最后每个节点都获知整个网络的拓扑结构（保存成路由表），然后进行最优路径求解（Dijkstra算法）。</p>
+<p>如下图所示，Rb路由器向整个网络广播了它的邻居拓扑。这样的一次在自治系统内的广播被称为LSA（Link State Advertisements）。</p>
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109120736560.png" class title="链路状态广播">
+<hr>
+<hr>
+<hr>
+<p>基本假设：（<strong>LSA伪造技术</strong>）</p>
+<blockquote>
+<p><em>As in most previously published OSPF attacks we assume the attacker has the ability to send LSAs to routers in the routing domain and that routers process them as valid LSAs.</em></p>
+</blockquote>
+<h2 id="DoS-denial-of-service"><a href="#DoS-denial-of-service" class="headerlink" title="DoS denial of service"></a>DoS denial of service</h2><p><strong><font color="red">DoS</font></strong>: the attacker’s goal is to degrade the network’s ability to forward traffic with a desirable quality of service.</p>
+<p>The attacker can do so using one of the following strategies: </p>
+<ol>
+<li><strong>链路过载 Link overload</strong> – Diverting large volume of traffic thorough a limited capacity link.</li>
+<li><strong>链路过长 Long routes</strong> – Diverting traffic over unnecessarily long routes while wasting network resources.</li>
+<li><strong>伪造断连 Delivery failure</strong> – Making some portion of the network mistakenly believe that it is disconnected from the AS.</li>
+<li><strong>路由循环 Routing loops</strong> – Routing traffic in loops between two or more routers while consuming network resources before being dropped.</li>
+<li><strong>波动路由 Churn</strong> – Changing traffic routes rapidly while resulting in a network instability and performance degradation of congestion control mechanisms (e.g. TCP).</li>
+</ol>
+<h2 id="窃听-Eavesdropping"><a href="#窃听-Eavesdropping" class="headerlink" title="窃听 Eavesdropping"></a>窃听 Eavesdropping</h2><p><strong><font color="red">Eavesdropping</font></strong>: the attacker can <strong>divert remote traffic</strong> to pass through a router or a network the attacker has access to thereby letting the attacker eavesdrop on the traffic.</p>
+<h2 id="中间人攻击-man-in-the-middle-and-impersonation-attacks"><a href="#中间人攻击-man-in-the-middle-and-impersonation-attacks" class="headerlink" title="中间人攻击 man-in-the-middle and impersonation attacks"></a>中间人攻击 man-in-the-middle and impersonation attacks</h2><p><strong>Traffic diversion</strong> may also facilitate man-in-the-middle and impersonation attacks.</p>
+<blockquote>
+<p>跟窃听一个原理。</p>
+</blockquote>
+<h2 id="OSPF-Basis"><a href="#OSPF-Basis" class="headerlink" title="OSPF Basis"></a>OSPF Basis</h2><p>除了之前介绍的之后，LSA泛洪广播还是周期性的，每30分钟广播一次，以保证维持最新的自治系统的拓扑结构。</p>
+<p>为了保证LSA的版本管理，每一个LSA都会携带一个sequence number，用来区分新旧。节点总是接受最新的LSA——序列号更高的那个。</p>
+<p><strong><font color="red">adjacency</font></strong>: After mutual discovery two neighboring routers may set up a special relationship called adjacency.</p>
+<blockquote>
+<p><em>To alleviate memory and processing load an adjacency is set up only when one of the two peers acts</em><br><em>as a designated router.</em></p>
+<p><em>The purpose of a setting up an adjacency is to make sure that the two routers have identical copies of the LSA database.</em></p>
+</blockquote>
+<p><strong>“<font color="red">Fight-back</font>”</strong>: Once a router receives an instance of its own LSA which is newer than the last instance it originated, it immediately advertises a newer instance of the LSA which cancels out the false one.</p>
+<h2 id="Previous-Attacks"><a href="#Previous-Attacks" class="headerlink" title="Previous Attacks"></a>Previous Attacks</h2><p>最常规的attack往往是基于攻击者完全控制的一些路由开展的，在这种情况下伪造LSA不会产生Fight-back。所有的发送到这些路由的信息都将可以被推流给attacker。</p>
+<p>另一种是基于没有控制的路由展开的，这种情况会引起Fight-back。但是这样至少可以使得自治系统本身变得unstable。只是，这样的攻击是无法持久化的，也不够隐蔽（易导致attacker的暴露）；它并不能有效地误导路由器在整个AS拓扑上的视野。</p>
+<blockquote>
+<p>Jones提出了一种对抗Fight-back机制的方法，利用OSPF中的漏洞，可以让受攻击的路由收到一个新的伪造LSA时，不发送更新的LSA。</p>
+</blockquote>
+<p>还有一种是用<strong>幽灵路由</strong>（phantom router，伪造不存在的路由）发送LSA，这种方式不会触发Fight-back，但是也不会影响路由表（因为bidirectional links机制的保证），但是它可以让路由器的LSA database过载，从而变成一种有效的攻击。</p>
+<h1 id="New-Attacks"><a href="#New-Attacks" class="headerlink" title="New Attacks"></a>New Attacks</h1><h2 id="Remote-False-Adjacency"><a href="#Remote-False-Adjacency" class="headerlink" title="Remote False Adjacency"></a>Remote False Adjacency</h2><img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109151110377.png" class title="The remote false adjacency attack">
+<p>攻击者通过构造虚假的Hello和DBD消息，让victim路由器误以为真，和一个幽灵路由形成了adjacency关系。</p>
+<blockquote>
+<p>攻击者伪造了一个合法的对应子网的IP地址，作为消息头的源IP。</p>
+<blockquote>
+<p><em>the source IP address is always set to the address of the phantom router, a fictitious address in the subnet of the victim’s local network.</em></p>
+</blockquote>
+</blockquote>
+<p>在建立了一个伪造的adjacency之后，attacker可以通过伪造幽灵路由的LSA来满足bidirectional links条件，从而混入到真正的路由表中。</p>
+<p>幽灵路由可以放置任何部分，因此在一个子网中放置若干个幽灵路由就可以吸收掉所有通向另一个指定网络的流量，变成”流量黑洞“。如下图(a)所示。</p>
+<p>如果这个幽灵路由刚好形成了一个对于大多数流量来说的捷径路由，那么危害将会更大。如下图(b)所示，在两个独立的子网上分别伪造幽灵路由，从而吸收掉它们之间的所有网间流量。</p>
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109152624602.png" class title="Potential use cases for the remote false adjacency attack">
+<h3 id="Caveats-and-Assumptions"><a href="#Caveats-and-Assumptions" class="headerlink" title="Caveats and Assumptions"></a>Caveats and Assumptions</h3><ul>
+<li>The false Hello and DBD messages are remotely unicasted directly to the victim. Therefore, <strong>the attacker must know the secret authentication key of the victim’s local network</strong>.<ul>
+<li>大多数情况下成立，但是这种成立对网络来说并不是必须的</li>
+</ul>
+</li>
+<li>The adjacency must be <strong>continuously maintained by sending a Hello message</strong> every time interval defined by the victim’s RouterDeadInterval parameter.<ul>
+<li>If the victim does not receive a Hello message within that time interval it will tear down<br>the adjacency.</li>
+</ul>
+</li>
+<li>The victim floods LSAs to the phantom and <strong>expects to receive LSA acknowledgments in return</strong>.<ul>
+<li>the attacker can spoof the acknowledgment messages</li>
+</ul>
+</li>
+</ul>
+<h2 id="Disguised-LSA"><a href="#Disguised-LSA" class="headerlink" title="Disguised LSA"></a>Disguised LSA</h2><p>在OSPF协议中规定了如何区分LSA：</p>
+<ul>
+<li>Sequence Number</li>
+<li>Checksum</li>
+<li>Age</li>
+</ul>
+<p>当以上三者均相同时，则视为同一个LSA。</p>
+<blockquote>
+<p>在实际操作中，Age的minor difference（&lt; 15 minutes）被视为近似等同。</p>
+<blockquote>
+<p><em>The key point is that the spec considers these two LSAs to be the same even if the actual advertised links in the LSAs differ.</em></p>
+</blockquote>
+</blockquote>
+<p><strong><font color="red">Disguised LSA</font></strong>: A naive exploitation of this feature is to advertise an LSA with <strong>false links</strong> on behalf of a victim router while having <strong>the same values of the above three fields</strong> as the valid LSA advertised by the victim.</p>
+<p>当路由器收到Disguised LSA不会引发fight-back，因为这被认为是一个它之前发送的LSA的identical copy。但是，不幸的是，所有的其它路由器都会将这个视为一个已经接收过的LSA，从而不会将它纳入它们的LSA database。所以其实到目前为止，没啥用。</p>
+<p>一个更好的举措是<strong>在发送路由器刚刚完成发送，并且在那些路由器收到真正的LSA之前，将伪造的LSA发送给它们</strong>。这样，Disguised LSA便可以替换掉真正的LSA，并被其他路由器植入LSA database。</p>
+<p>因此，<strong><font color="blue">时机很重要</font></strong>。</p>
+<p>下图(a)展示了一个实例，也说明了Disguised LSA在实际应用中的限制——因为时间约束的关系，它只能影响一小部分节点。</p>
+<p>另一个种方式如下图(b)，通过遥测/控制下一个LSA的产生时间，攻击者可以抢先发送Disguised LSA，从而影响到更多的节点。并且，通过有意地触发fight-back机制，攻击者实际上可以精准控制真LSA的产生时间。</p>
+<blockquote>
+<p><em>Just before sending the disguised LSA the attacker floods a false LSA which is not disguised.</em></p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109162309951.png" class title="The effects of the disguised LSA attack: shaded routers are poisoned">
+<p>Disguised LSA还面临三个变量：Sequence Number，Checksum，Age的设置问题。万幸的是，这些变量在实际操作中都是可以准确预测的。</p>
+<h1 id="Mitigation-Measures"><a href="#Mitigation-Measures" class="headerlink" title="Mitigation Measures"></a>Mitigation Measures</h1><p>首先，Remote false adjacency和Disguised LSA揭示现存网络系统的一些缺陷。</p>
+<p><strong>Disguised LSA</strong>:</p>
+<ol>
+<li>a router considers two LSAs to be identical even if their contents is not, and</li>
+<li>the entire contents of a future LSA is predictable.</li>
+</ol>
+<p><strong>Remote false adjacency</strong>:</p>
+<ol>
+<li>same secret key used for integrity on all links, and</li>
+<li>the master can complete the adjacency protocol without seeing any of the slave’s messages.</li>
+</ol>
+<h2 id="兼容协议的措施"><a href="#兼容协议的措施" class="headerlink" title="兼容协议的措施"></a>兼容协议的措施</h2><p><strong>Disguised LSA</strong>:</p>
+<ul>
+<li>mitigate the predictability vulnerability by adding to valid LSAs a dummy advertised link with <strong>random values</strong>.</li>
+</ul>
+<p><strong>Remote false adjacency</strong>:</p>
+<ul>
+<li>the AS ensures that <strong>different links use independent secret keys</strong> for packet integrity and the secret key is known only to routers on the link.<ul>
+<li>现实中很难操作，因为必须要额外设计对于密钥的管理系统</li>
+</ul>
+</li>
+<li>routers can employ <strong>anti source-IP spoofing measures</strong> on OSPF packets.<ul>
+<li>These measures could potentially be extended – at some cost – to all links on the AS. This will prevent the spoofed Hello and DBD messages from reaching the victim.</li>
+</ul>
+</li>
+</ul>
+<h2 id="改进协议的措施（后向兼容）"><a href="#改进协议的措施（后向兼容）" class="headerlink" title="改进协议的措施（后向兼容）"></a>改进协议的措施（后向兼容）</h2><p><strong>Disguised LSA</strong>:</p>
+<ul>
+<li>To address the core weakness we propose to extend the LSA database by also storing a cryptographic hash (e.g. SHA-256) of the installed LSA. (<strong>excluding the Age field</strong>)<ul>
+<li>利用哈希指纹来二次确认两个LSA是否完全一样</li>
+<li>If the hashes are also equal the two LSAs are considered identical. If they are different, the LSA which was last received is considered newer.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Remote false adjacency</strong>:</p>
+<ul>
+<li>Once the slave receives a DBD message from the master it would send its next DBD message with probability p…<ul>
+<li>引入概率工具</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结和展望"><a href="#总结和展望" class="headerlink" title="总结和展望"></a>总结和展望</h1><p>本文展示了两种新的OSPF攻击方法：</p>
+<ul>
+<li>remote false adjacency</li>
+<li>disguised LSA</li>
+</ul>
+<p>并且，在广泛部署的路由器以及真实的AS拓扑结构上进行了一系列实验，两种攻击方式表现出了优越的性能。</p>
+<p>为了遏制这两种攻击，作者又提供了多种对抗措施，使得经过改造的路由器可以抵抗这些攻击。其中一些防御手段则可能需要对OSPF协议进行一些小的更新。</p>
+<p>以往发现的攻击方式和本文中新发现的攻击方式，都在暗示着一个缜密的安全分析工具非常必要。这也被作者当作了future work的点。靠运气和排查来发现新的漏洞，固然是非常有价值的，这样的工作显示了科研人员的经验水平和坚强意志，但总归不是一个全面、彻底的解决方案；我们需要一个更好的高度自动的漏洞检测机制。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/" title="阅《Persistent OSPF Attacks》">https://vel.life/阅《Persistent-OSPF-Attacks》/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/" rel="prev" title="阅《Named Data Networking》">
+      <i class="fa fa-chevron-left"></i> 阅《Named Data Networking》
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intro"><span class="nav-number">2.</span> <span class="nav-text">Intro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DoS-denial-of-service"><span class="nav-number">2.1.</span> <span class="nav-text">DoS denial of service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窃听-Eavesdropping"><span class="nav-number">2.2.</span> <span class="nav-text">窃听 Eavesdropping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人攻击-man-in-the-middle-and-impersonation-attacks"><span class="nav-number">2.3.</span> <span class="nav-text">中间人攻击 man-in-the-middle and impersonation attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSPF-Basis"><span class="nav-number">2.4.</span> <span class="nav-text">OSPF Basis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Previous-Attacks"><span class="nav-number">2.5.</span> <span class="nav-text">Previous Attacks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#New-Attacks"><span class="nav-number">3.</span> <span class="nav-text">New Attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Remote-False-Adjacency"><span class="nav-number">3.1.</span> <span class="nav-text">Remote False Adjacency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Caveats-and-Assumptions"><span class="nav-number">3.1.1.</span> <span class="nav-text">Caveats and Assumptions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disguised-LSA"><span class="nav-number">3.2.</span> <span class="nav-text">Disguised LSA</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mitigation-Measures"><span class="nav-number">4.</span> <span class="nav-text">Mitigation Measures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容协议的措施"><span class="nav-number">4.1.</span> <span class="nav-text">兼容协议的措施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进协议的措施（后向兼容）"><span class="nav-number">4.2.</span> <span class="nav-text">改进协议的措施（后向兼容）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结和展望"><span class="nav-number">5.</span> <span class="nav-text">总结和展望</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">1.2m</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

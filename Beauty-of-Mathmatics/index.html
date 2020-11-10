@@ -31,21 +31,21 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="《数学之美》是吴军的作品。主要包括自然语言处理，信息学和搜索算法等内容。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.imgur.com/LiivAdu.png">
-<meta property="og:image" content="https://i.imgur.com/uVGlpvL.png">
-<meta property="og:image" content="https://i.imgur.com/U57DH6s.png">
-<meta property="og:image" content="https://i.imgur.com/jW212Sg.png">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/88/Logistic-curve.svg">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/LiivAdu.png">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/uVGlpvL.png">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/U57DH6s.png">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/jW212Sg.png">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/Logistic-curve.svg">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png">
-<meta property="og:image" content="https://i.imgur.com/lMn0aAi.jpg">
+<meta property="og:image" content="https://vel.life/Beauty-of-Mathmatics/lMn0aAi.jpg">
 <meta property="article:published_time" content="2018-12-23T23:03:08.000Z">
-<meta property="article:modified_time" content="2019-01-03T14:43:36.416Z">
+<meta property="article:modified_time" content="2020-11-09T13:34:55.273Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="幻想学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/LiivAdu.png">
+<meta name="twitter:image" content="https://vel.life/Beauty-of-Mathmatics/LiivAdu.png">
 
 <link rel="canonical" href="https://vel.life/Beauty-of-Mathmatics/">
 
@@ -385,7 +385,7 @@
 <ul>
 <li>假设任意一个词出现的概率<strong>只同它前面的词</strong>有关。（<strong>前驱</strong>，联想链表）</li>
 </ul>
-<p><img data-src="https://i.imgur.com/LiivAdu.png" alt="二元模型"></p>
+<img data-src="/Beauty-of-Mathmatics/LiivAdu.png" class title="二元模型">
 <blockquote>
 <p>条件概率公式为</p>
 <script type="math/tex; mode=display">
@@ -397,7 +397,9 @@ P(w_k|w_1,w_2,…,w_{k-1})=P(w_k|w_{k-1})</script><p>于是得到</p>
 P(w_1,w_2,…,w_n)=P(w_1)P(w_2|w_1)P(w_3|w_2)…P(w_n|w_{n-1})</script><p>该公式对应着<strong><a href="https://zh.wikipedia.org/wiki/N%E5%85%83%E8%AF%AD%E6%B3%95" target="_blank" rel="noopener external nofollow noreferrer">二元模型</a></strong>（<a href="https://zhuanlan.zhihu.com/p/29824784" target="_blank" rel="noopener external nofollow noreferrer">More</a>）。</p>
 <blockquote>
 <p>当所考虑的前驱不止一个时（一般为有限个），称为<strong>n元语法模型</strong>。</p>
-<p><img data-src="https://i.imgur.com/uVGlpvL.png" alt="n元语法模型"></p>
+</blockquote>
+<img data-src="/Beauty-of-Mathmatics/uVGlpvL.png" class title="n元语法模型">
+<blockquote>
 <p>对应的简化公式为：（以三元为例）</p>
 <script type="math/tex; mode=display">
 P(w_1,w_2,…,w_n)=P(w_1)P(w_2)P(w_3|w_2,w_1)…P(w_n|w_{n-1},w_{n-2})</script></blockquote>
@@ -586,7 +588,7 @@ dp[i,j]=max_{k\in\{i,i+1,…,j-1\}}(dp[i,k]+dp[k+1,j])</script><p>其中$dp[i,j]
 <hr>
 <p>由于维特比算法的传播特性，维特比算法可以等效为一个<strong><a href="https://zh.wikipedia.org/zh/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" target="_blank" rel="noopener external nofollow noreferrer">BFS</a></strong>。</p>
 <p>如下图：（相当于一条马尔可夫链的状态伸展【上下伸展】，每一列代表原来的一个时刻）</p>
-<p><img data-src="https://i.imgur.com/U57DH6s.png" alt="篱笆图"></p>
+<img data-src="/Beauty-of-Mathmatics/U57DH6s.png" class title="篱笆图">
 <blockquote>
 <p>在两条竖线之间就是维特比算法的篱笆图。<br>维特比求的是最优值。其实就是求从左到右的最短路。<br>我们在左右端添加两个头尾节点（红色节点），连上一些0权的边（黄色边），即可以使用从节点$I$到$O$的BFS了。</p>
 <p>设共有$N$列，每一列节点的最大数量记为$D$（篱笆高度），可以算出两列间边数的上限为$D^2$（篱笆间隙）。<br>维特比算法只须遍历所有的边，故算法复杂度为$O(ND^2)$。<br>（相比穷举的指数级复杂度：$O((D^2)^N)=O(D^N)$优化不少）</p>
@@ -642,7 +644,7 @@ P(s_1,s_2,…s_n)=c \cdot \{P(O_1,O_2,…O_n|S_1,S_2,…S_n)\cdot P(S_1,S_2,…S
 <p>注意，$O_i=f(S_i)$表示$O_i$是且仅是$S_i$的函数。（<strong>独立输出假设</strong>）</p>
 </blockquote>
 <p>如下图所示：</p>
-<p><img data-src="https://i.imgur.com/jW212Sg.png" alt="Imgur"></p>
+<img data-src="/Beauty-of-Mathmatics/jW212Sg.png" class title="表序列和隐序列">
 <p>计算特定S序列产生O序列的概率：</p>
 <script type="math/tex; mode=display">
 P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><p>式右边利用了马尔可夫假设【$P(S_t|S_{t-1})$】和独立输出假设【$P(O_t|S_t)$】。</p>
@@ -670,7 +672,7 @@ P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><
 <ul>
 <li>首先找到任意一个满足O序列的HMM模型$M_i$</li>
 <li>通过$M_1$可以利用O序列<strong>反向生成</strong>一个标注数据集</li>
-<li>利用标注数据集，根据隐马尔可夫（解码算法）<strong>生成</strong>新的模型$M_{i+1}​$</li>
+<li>利用标注数据集，根据隐马尔可夫（解码算法）<strong>生成</strong>新的模型$M_{i+1}$</li>
 <li>再次反向生成、生成……</li>
 <li>……</li>
 <li>直到收敛。找到质量足够好的模型$M_n$（<a href="https://zh.wikipedia.org/zh-hans/%E6%9C%80%E5%A4%A7%E6%9C%9F%E6%9C%9B%E7%AE%97%E6%B3%95" target="_blank" rel="noopener external nofollow noreferrer">期望最大化</a>）<ul>
@@ -902,7 +904,7 @@ B_{i+1}=A\cdot B_i</script><p>一般迭代10次左右就基本收敛。</p>
 相关性=TF_1+TF_2+TF_3+…+TF_N</script><p>为了进一步确认权重，引入了IDF。</p>
 <p><strong>IDF</strong>：Inverse Document Frequency，逆文本频率指数。</p>
 <blockquote>
-<p>定义式：$IDF=log\cfrac{D}{D_w}​$。（关键词$w​$在$D_w​$个网页中出现过，$D​$是总网页数）</p>
+<p>定义式：$IDF=log\cfrac{D}{D_w}$。（关键词$w$在$D_w$个网页中出现过，$D$是总网页数）</p>
 <p>假如中文网页数是$D=10亿$，停止词“的”在所有网页中出现，则它的$IDF=log\frac{10亿}{10亿}=0$。<br>假如专用词“原子能”在200万个网页中出现，那么它的$IDF=log\frac{10亿}{100万}=8.96$。（以2为底）<br>假如通用词“应用”在5亿个网页中出现，那么它的$IDF=log\frac{10亿}{5亿}=1$。</p>
 </blockquote>
 <p>于是，得到引入权重后的相关性：</p>
@@ -1015,9 +1017,11 @@ A_{M\times N}=X_{M\times r}\cdot B_{r\times r}\cdot Y_{r\times N}</script><p>$X_
 <p>逻辑回归模型：将一个事件出现的概率逐渐适应到一条逻辑曲线（Logistic Curve）上。</p>
 <blockquote>
 <p>一个简单的逻辑回归函数：$f(z)=\cfrac{e^Z}{e^Z+1}=\cfrac{1}{1+e^{-Z}}$。（指数模型）</p>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/8/88/Logistic-curve.svg" alt="逻辑回归"></p>
-<p>逻辑回归的定义域在$(-\infty ,+\infty)​$，值域在$(0,1)​$。</p>
-<p>对于$(-\infty ,+\infty)​$，对于任何信号都可进行回归。<br>而对于$[0,1]​$，可以看作概率函数，于是逻辑回归与概率分布联系起来。</p>
+</blockquote>
+<img data-src="/Beauty-of-Mathmatics/Logistic-curve.svg" class title="逻辑回归">
+<blockquote>
+<p>逻辑回归的定义域在$(-\infty ,+\infty)$，值域在$(0,1)$。</p>
+<p>对于$(-\infty ,+\infty)$，对于任何信号都可进行回归。<br>而对于$[0,1]$，可以看作概率函数，于是逻辑回归与概率分布联系起来。</p>
 </blockquote>
 <p>对于预估点击率而言，假设$k$个影响变量$x_1,x_2,…,x_k$。</p>
 <p>则可线性组合得到$z=\beta_0+\beta_1x_1+\beta_2x_2+…+\beta_kx_k$。</p>
@@ -1125,7 +1129,7 @@ P(O_1,O_2,…,O_n,S_1,S_2,…,S_m)=\cfrac{e^{f_1+f_2+…+f_k}}{Z}</script><p>这
 <p>如Google的<a href="https://www.zhihu.com/question/22741652" target="_blank" rel="noopener external nofollow noreferrer">Rephil</a>，通过贝叶斯网络完成对词、概念（词类）、文章的联系，将上千万关键词合成了上百万概念的聚类。</p>
 </blockquote>
 <h3 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h3><p>下图来自<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener external nofollow noreferrer"><strong>Here</strong></a>，展示了一个典型的四层人工神经网络（多层感知机）的运作方式：</p>
-<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif" alt></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*eEKb2RxREV6-MtLz2DNWFQ.gif" alt="多层感知机"></p>
 <p>可以认为<a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank" rel="noopener external nofollow noreferrer">神经网络</a>是一种特殊的有向图（90度左旋后的篱笆图）。</p>
 <ul>
 <li>所有节点分层，每一层通过有向弧指向上一层节点，但同一层无弧连接，不跨层连接</li>
@@ -1136,7 +1140,7 @@ P(O_1,O_2,…,O_n,S_1,S_2,…,S_m)=\cfrac{e^{f_1+f_2+…+f_k}}{Z}</script><p>这
 <p><strong><a href="https://blog.csdn.net/dcrmg/article/details/73743742" target="_blank" rel="noopener external nofollow noreferrer">神经元函数</a></strong>：为线性模型增加一次非线性变换，从而增强神经网络的分类能力。</p>
 </blockquote>
 <h4 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h4><p><strong><a href="https://zh.wikipedia.org/wiki/%E6%84%9F%E7%9F%A5%E5%99%A8" target="_blank" rel="noopener external nofollow noreferrer">感知机</a></strong>：一个输出层，一个输入层。一个计算夹层。最简单的神经网络。</p>
-<p><img data-src="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png" alt></p>
+<p><img data-src="https://cdn-images-1.medium.com/max/800/1*n6sJ4yZQzwKL9wnF5wnVNg.png" alt="感知机"></p>
 <blockquote>
 <p>详细内容直接参考<a href="https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53" target="_blank" rel="noopener external nofollow noreferrer">Here</a>吧。</p>
 </blockquote>
@@ -1145,7 +1149,7 @@ P(O_1,O_2,…,O_n,S_1,S_2,…,S_m)=\cfrac{e^{f_1+f_2+…+f_k}}{Z}</script><p>这
 <script type="math/tex; mode=display">
 Vector_{output}=A_n\times A_{n-1}\times …\times A_1\times Vector_{inputr}</script><p>为了基于线性分类实现复杂的非线性分类，多层的神经网络采用复杂函数拟合，利用隐藏层完成非线性空间到线性的变换。</p>
 <p>一般来说，层数越多，神经网络的效果越好。（如<a href="https://www.cnblogs.com/subconscious/p/5058741.html#sixth" target="_blank" rel="noopener external nofollow noreferrer">下图</a>）</p>
-<p><img data-src="https://i.imgur.com/lMn0aAi.jpg" alt="多层神经网络"></p>
+<img data-src="/Beauty-of-Mathmatics/lMn0aAi.jpg" class title="多层神经网络">
 <hr>
 <blockquote>
 <p><a href="http://www.ruanyifeng.com/blog/2017/07/neural-network.html" target="_blank" rel="noopener external nofollow noreferrer">神经网络入门</a></p>
@@ -1174,7 +1178,7 @@ Vector_{output}=A_n\times A_{n-1}\times …\times A_1\times Vector_{inputr}</scr
 </ul>
 <hr>
 <p>记同一类中各个点到中心的平均距离为$d$，不同类中心之间的距离为$D$。</p>
-<p><strong>我们希望每次迭代，$d​$变小，$D​$变大</strong>。</p>
+<p><strong>我们希望每次迭代，$d$变小，$D$变大</strong>。</p>
 <p>假设第1类到第K类中分别有$n_1,n_2,…,n_k$个点。每一类到中心的平均距离为$d_1,d_2,…,d_k$。</p>
 <p>则有总平均距离</p>
 <script type="math/tex; mode=display">
@@ -1326,7 +1330,7 @@ d(i+1)<d(i)且D(i+1)>D(i)</script><hr>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">173</span>
+          <span class="site-state-item-count">176</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1339,7 +1343,7 @@ d(i+1)<d(i)且D(i+1)>D(i)</script><hr>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1415,7 +1419,7 @@ d(i+1)<d(i)且D(i+1)>D(i)</script><hr>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1.1m</span>
+    <span title="Symbols count total">1.2m</span>
 </div>
 
         

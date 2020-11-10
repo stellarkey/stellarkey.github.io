@@ -32,7 +32,7 @@
 <meta property="og:description" content="本指南主要选取HTML&#x2F;CSS中的核心部分，浅尝辄止。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-12-30T10:34:01.000Z">
-<meta property="article:modified_time" content="2019-01-10T16:51:48.644Z">
+<meta property="article:modified_time" content="2020-11-09T14:05:02.569Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="HTML">
 <meta property="article:tag" content="CSS">
@@ -270,11 +270,122 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><p>本指南主要选取HTML/CSS中的核心部分，浅尝辄止。<a id="more"></a></p>
-<blockquote>
-<p>网络工具综合学习网站：<a href="http://www.runoob.com/" target="_blank" rel="noopener external nofollow noreferrer"><strong>Runoob</strong></a>。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>网络工具综合学习网站：<a href="http://www.runoob.com/" target="_blank" rel="noopener external nofollow noreferrer"><strong>Runoob</strong></a>。</p>
 <p>博文：<a href="https://qianling.pw/grammar/" target="_blank" rel="noopener external nofollow noreferrer">语法汇总</a>。（包含HTML/CSS/Markdown）</p>
-</blockquote>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>相对于使用rgb(255,255,0)，使用rgba(255,255,0,0.5)可以实现设置颜色透明度的功能，这里的0.5表示透明度，范围0~1。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(255,255,0,0.25)"</span>&gt;</span></span><br><span class="line">通过 rbg 值设置背景颜色</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(255,255,0,0.5)"</span>&gt;</span></span><br><span class="line">通过 rbg 值设置背景颜色</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(255,255,0,0.75)"</span>&gt;</span></span><br><span class="line">通过 rbg 值设置背景颜色</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:rgba(255,0,200,0.75)"</span>&gt;</span></span><br><span class="line">通过 rbg 值设置字体颜色</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="background-color:rgba(255,255,0,0.25)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="background-color:rgba(255,255,0,0.5)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="background-color:rgba(255,255,0,0.75)">
+通过 rbg 值设置背景颜色
+</p>
+<p style="color:rgba(255,0,200,0.75)">
+通过 rbg 值设置字体颜色
+</p>
 
+<h3 id="颜色表"><a href="#颜色表" class="headerlink" title="颜色表"></a>颜色表</h3><blockquote>
+<p><a href="http://www.runoob.com/html/html-colornames.html" target="_blank" rel="noopener external nofollow noreferrer">http://www.runoob.com/html/html-colornames.html</a> 颜色名索引</p>
+</blockquote>
+<table class="reference notranslate">
+<tbody><tr>
+<th align="left" width="25%">颜色名</th>
+<th align="left" width="15%">HEX</th>
+    <th align="left" width="43%">Color</th></tr>
+<tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Aqua" rel="noopener noreferrer">Aqua</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00FFFF" rel="noopener noreferrer">#00FFFF</a></td>
+<td bgcolor="#00FFFF">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Blue" rel="noopener noreferrer">Blue</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=0000FF" rel="noopener noreferrer">#0000FF</a></td>
+<td bgcolor="#0000FF">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=BlueViolet" rel="noopener noreferrer">BlueViolet</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=8A2BE2" rel="noopener noreferrer">#8A2BE2</a></td>
+<td bgcolor="#8A2BE2">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Chartreuse" rel="noopener noreferrer">Chartreuse</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=7FFF00" rel="noopener noreferrer">#7FFF00</a></td>
+<td bgcolor="#7FFF00">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Cyan" rel="noopener noreferrer">Cyan</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00FFFF" rel="noopener noreferrer">#00FFFF</a></td>
+<td bgcolor="#00FFFF">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=DarkOrange" rel="noopener noreferrer">DarkOrange</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF8C00" rel="noopener noreferrer">#FF8C00</a></td>
+<td bgcolor="#FF8C00">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=DeepPink" rel="noopener noreferrer">DeepPink</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF1493" rel="noopener noreferrer">#FF1493</a></td>
+<td bgcolor="#FF1493">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=DeepSkyBlue" rel="noopener noreferrer">DeepSkyBlue</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00BFFF" rel="noopener noreferrer">#00BFFF</a></td>
+<td bgcolor="#00BFFF">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Fuchsia" rel="noopener noreferrer">Fuchsia</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF00FF" rel="noopener noreferrer">#FF00FF</a></td>
+<td bgcolor="#FF00FF">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=HotPink" rel="noopener noreferrer">HotPink</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF69B4" rel="noopener noreferrer">#FF69B4</a></td>
+<td bgcolor="#FF69B4">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=LawnGreen" rel="noopener noreferrer">LawnGreen</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=7CFC00" rel="noopener noreferrer">#7CFC00</a></td>
+<td bgcolor="#7CFC00">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Gold" rel="noopener noreferrer">Gold</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FFD700" rel="noopener noreferrer">#FFD700</a></td>
+<td bgcolor="#FFD700">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Lime" rel="noopener noreferrer">Lime</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00FF00" rel="noopener noreferrer">#00FF00</a></td>
+<td bgcolor="#00FF00">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=MediumSpringGreen" rel="noopener noreferrer">MediumSpringGreen</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00FA9A" rel="noopener noreferrer">#00FA9A</a></td>
+<td bgcolor="#00FA9A">&nbsp;</td></tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Orange" rel="noopener noreferrer">Orange</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FFA500" rel="noopener noreferrer">#FFA500</a></td>
+<td bgcolor="#FFA500">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=OrangeRed" rel="noopener noreferrer">OrangeRed</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF4500" rel="noopener noreferrer">#FF4500</a></td>
+<td bgcolor="#FF4500">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Red" rel="noopener noreferrer">Red</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FF0000" rel="noopener noreferrer">#FF0000</a></td>
+<td bgcolor="#FF0000">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Purple" rel="noopener noreferrer">Purple</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=800080" rel="noopener noreferrer">#800080</a></td>
+<td bgcolor="#800080">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=SpringGreen" rel="noopener noreferrer">SpringGreen</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=00FF7F" rel="noopener noreferrer">#00FF7F</a></td>
+<td bgcolor="#00FF7F">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Violet" rel="noopener noreferrer">Violet</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=EE82EE" rel="noopener noreferrer">#EE82EE</a></td>
+<td bgcolor="#EE82EE">&nbsp;</td>
+</tr><tr>
+<td align="left"><a target="_blank" href="/try/color.php?color=Yellow" rel="noopener noreferrer">Yellow</a>&nbsp;</td>
+<td align="left"><a target="_blank" href="/try/color.php?hex=FFFF00" rel="noopener noreferrer">#FFFF00</a></td>
+<td bgcolor="#FFFF00">&nbsp;</td>
+    </tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><h2 id="框架（嵌入页）"><a href="#框架（嵌入页）" class="headerlink" title="框架（嵌入页）"></a>框架（嵌入页）</h2><p>通过使用框架可以在同一个浏览器窗口中显示不止一个页面。</p>
+<p>iframe语法：<code>&lt;iframe src=&quot;URL&quot;&gt;&lt;/iframe&gt;</code></p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1>
     </div>
 
     
@@ -382,6 +493,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML"><span class="nav-number">2.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色"><span class="nav-number">2.1.</span> <span class="nav-text">颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色表"><span class="nav-number">2.1.1.</span> <span class="nav-text">颜色表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.2.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.3.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">2.3.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">2.3.2.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义列表"><span class="nav-number">2.3.3.</span> <span class="nav-text">自定义列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架（嵌入页）"><span class="nav-number">2.4.</span> <span class="nav-text">框架（嵌入页）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">3.</span> <span class="nav-text">CSS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -397,7 +509,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">173</span>
+          <span class="site-state-item-count">176</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -410,7 +522,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -486,7 +598,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">1.1m</span>
+    <span title="Symbols count total">1.2m</span>
 </div>
 
         
