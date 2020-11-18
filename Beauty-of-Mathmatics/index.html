@@ -336,7 +336,7 @@
 <blockquote>
 <p>1970-21世纪。基于数学模型+统计方法。实质性突破。</p>
 </blockquote>
-<p>核心结论：<strong>计算机并不需要拥有类似人类的智能才能完成翻译</strong>。（<strong><font color="red">唯象派</font></strong>）</p>
+<p>核心结论：<strong>计算机并不需要拥有类似人类的智能才能完成翻译</strong>。（<strong><font color=red>唯象派</font></strong>）</p>
 <hr>
 <p>早期的研究如下：</p>
 <blockquote>
@@ -385,7 +385,7 @@
 <ul>
 <li>假设任意一个词出现的概率<strong>只同它前面的词</strong>有关。（<strong>前驱</strong>，联想链表）</li>
 </ul>
-<img data-src="/Beauty-of-Mathmatics/LiivAdu.png" class title="二元模型">
+<img data-src="/Beauty-of-Mathmatics/LiivAdu.png" class="" title="二元模型">
 <blockquote>
 <p>条件概率公式为</p>
 <script type="math/tex; mode=display">
@@ -398,12 +398,12 @@ P(w_1,w_2,…,w_n)=P(w_1)P(w_2|w_1)P(w_3|w_2)…P(w_n|w_{n-1})</script><p>该公
 <blockquote>
 <p>当所考虑的前驱不止一个时（一般为有限个），称为<strong>n元语法模型</strong>。</p>
 </blockquote>
-<img data-src="/Beauty-of-Mathmatics/uVGlpvL.png" class title="n元语法模型">
+<img data-src="/Beauty-of-Mathmatics/uVGlpvL.png" class="" title="n元语法模型">
 <blockquote>
 <p>对应的简化公式为：（以三元为例）</p>
 <script type="math/tex; mode=display">
 P(w_1,w_2,…,w_n)=P(w_1)P(w_2)P(w_3|w_2,w_1)…P(w_n|w_{n-1},w_{n-2})</script></blockquote>
-<p>这样的模型之所以在自然语言中很成功，是因为大多数自然语言都具有<strong><font color="red">局部性</font></strong>。（人类的联想大多是初等的）</p>
+<p>这样的模型之所以在自然语言中很成功，是因为大多数自然语言都具有<strong><font color=red>局部性</font></strong>。（人类的联想大多是初等的）</p>
 <blockquote>
 <p>由于现实中，联想总是相对稀少，统计模型的成功也就不难理解了。事实上，越是重复度高，统计模型就越有用武之地。（大数定律）</p>
 <blockquote>
@@ -533,7 +533,7 @@ dp[i,j]=max_{k\in\{i,i+1,…,j-1\}}(dp[i,k]+dp[k+1,j])</script><p>其中$dp[i,j]
 <td style="text-align:center">0.1</td>
 <td style="text-align:center"><strong>0.4</strong></td>
 <td style="text-align:center">0.44</td>
-<td style="text-align:center"><font color="red"><strong>0.55</strong></font></td>
+<td style="text-align:center"><font color=red><strong>0.55</strong></font></td>
 </tr>
 <tr>
 <td style="text-align:center"><strong>1</strong></td>
@@ -588,7 +588,7 @@ dp[i,j]=max_{k\in\{i,i+1,…,j-1\}}(dp[i,k]+dp[k+1,j])</script><p>其中$dp[i,j]
 <hr>
 <p>由于维特比算法的传播特性，维特比算法可以等效为一个<strong><a href="https://zh.wikipedia.org/zh/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" target="_blank" rel="noopener external nofollow noreferrer">BFS</a></strong>。</p>
 <p>如下图：（相当于一条马尔可夫链的状态伸展【上下伸展】，每一列代表原来的一个时刻）</p>
-<img data-src="/Beauty-of-Mathmatics/U57DH6s.png" class title="篱笆图">
+<img data-src="/Beauty-of-Mathmatics/U57DH6s.png" class="" title="篱笆图">
 <blockquote>
 <p>在两条竖线之间就是维特比算法的篱笆图。<br>维特比求的是最优值。其实就是求从左到右的最短路。<br>我们在左右端添加两个头尾节点（红色节点），连上一些0权的边（黄色边），即可以使用从节点$I$到$O$的BFS了。</p>
 <p>设共有$N$列，每一列节点的最大数量记为$D$（篱笆高度），可以算出两列间边数的上限为$D^2$（篱笆间隙）。<br>维特比算法只须遍历所有的边，故算法复杂度为$O(ND^2)$。<br>（相比穷举的指数级复杂度：$O((D^2)^N)=O(D^N)$优化不少）</p>
@@ -639,12 +639,12 @@ P(s_1,s_2,…s_n)=c \cdot \{P(O_1,O_2,…O_n|S_1,S_2,…S_n)\cdot P(S_1,S_2,…S
 <p>显然，我们可以通过统计频率的方法来估计概率转移矩阵。</p>
 </blockquote>
 <p>但是，当观测条件受限时，则要引入隐马尔可夫。（可以想成<strong>唯象化</strong>的马尔可夫链）</p>
-<p><strong>隐马尔可夫</strong>：<font color="red"><strong>源</strong></font><strong>马尔可夫链</strong>（$S_1,S_2,…S_T$，隐序列）不可观测。我们将接收到一个新序列（$O_1,O_2,…O_n$，表序列），其中满足$O_i=f(S_i)$。</p>
+<p><strong>隐马尔可夫</strong>：<font color=red><strong>源</strong></font><strong>马尔可夫链</strong>（$S_1,S_2,…S_T$，隐序列）不可观测。我们将接收到一个新序列（$O_1,O_2,…O_n$，表序列），其中满足$O_i=f(S_i)$。</p>
 <blockquote>
 <p>注意，$O_i=f(S_i)$表示$O_i$是且仅是$S_i$的函数。（<strong>独立输出假设</strong>）</p>
 </blockquote>
 <p>如下图所示：</p>
-<img data-src="/Beauty-of-Mathmatics/jW212Sg.png" class title="表序列和隐序列">
+<img data-src="/Beauty-of-Mathmatics/jW212Sg.png" class="" title="表序列和隐序列">
 <p>计算特定S序列产生O序列的概率：</p>
 <script type="math/tex; mode=display">
 P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><p>式右边利用了马尔可夫假设【$P(S_t|S_{t-1})$】和独立输出假设【$P(O_t|S_t)$】。</p>
@@ -658,9 +658,9 @@ P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><
 <hr>
 <p>隐马尔可夫模型（<strong>HMM</strong>）有三个典型问题：</p>
 <ul>
-<li>（<font color="red"><strong>预测</strong></font>）给定模型，计算特定O序列的概率【<a href="https://blog.csdn.net/allanjie/article/details/17884965" target="_blank" rel="noopener external nofollow noreferrer">Forward-Backward算法</a>】</li>
-<li>（<font color="red"><strong>溯源</strong></font>）给定模型+特定O序列，估计最佳似然S序列【<a href="https://www.jianshu.com/p/218c1e4f0891" target="_blank" rel="noopener external nofollow noreferrer">Viterbi算法</a>】</li>
-<li>（<font color="red"><strong>训练</strong></font>）<strong>给定观测数据，训练隐马尔可夫模型参数</strong>【<a href="https://blog.csdn.net/u014688145/article/details/53046765" target="_blank" rel="noopener external nofollow noreferrer">Baum-Welch算法</a>】</li>
+<li>（<font color=red><strong>预测</strong></font>）给定模型，计算特定O序列的概率【<a href="https://blog.csdn.net/allanjie/article/details/17884965" target="_blank" rel="noopener external nofollow noreferrer">Forward-Backward算法</a>】</li>
+<li>（<font color=red><strong>溯源</strong></font>）给定模型+特定O序列，估计最佳似然S序列【<a href="https://www.jianshu.com/p/218c1e4f0891" target="_blank" rel="noopener external nofollow noreferrer">Viterbi算法</a>】</li>
+<li>（<font color=red><strong>训练</strong></font>）<strong>给定观测数据，训练隐马尔可夫模型参数</strong>【<a href="https://blog.csdn.net/u014688145/article/details/53046765" target="_blank" rel="noopener external nofollow noreferrer">Baum-Welch算法</a>】</li>
 </ul>
 <p>对于训练，可以使用监督学习获得参数$P(S_t|S_{t-1})和P(O_t|S_t)$，但标注数据的获取成本高。</p>
 <blockquote>
@@ -699,7 +699,7 @@ P(S_1,S_2,…S_n,O_1,O_2,…O_n)=\prod_tP(S_t|S_{t-1})\cdot P(O_t|S_t)</script><
 <p>$H(X)\geq H(X|Y)$。（可以推广。意味着n元模型的精确度高于n-1元模型）</p>
 </blockquote>
 <ul>
-<li><font color="red"><strong>互信息</strong></font>：$I(X;Y)=\sum_{x\in X,y\in Y}P(x,y)log \cfrac{P(x,y)}{P(x)P(y)}$。</li>
+<li><font color=red><strong>互信息</strong></font>：$I(X;Y)=\sum_{x\in X,y\in Y}P(x,y)log \cfrac{P(x,y)}{P(x)P(y)}$。</li>
 </ul>
 <blockquote>
 <p>$I(X;Y)=H(X)-H(X|Y)$。</p>
@@ -764,7 +764,7 @@ P_k=\frac{(N-1)(N-2)…(N-k+1)}{N^{k-1}}\approx \frac{c({N})^{k-1}}{N^{k-1}}=c=e
 <hr>
 <p>在《数学之美》中采用的估计函数如下：</p>
 <script type="math/tex; mode=display">
-P_k=\frac{(N-1)(N-2)…(N-k+1)}{N^{k-1}}\approx e^{-\frac{1}{n}}e^{-\frac{2}{n}}…e^{-\frac{k}{n}}=exp(-\frac {k(k+1)}{2N})</script><p>同时，若要$k$个指纹重复的数学期望超过1，则$P_k<0.5$，此时可以解得$k>\frac {-1+\sqrt{1+8Nlog2}}{2}\approx2^{64}\approx 1.8\times 10^{19}$。可能性几乎为0。</0.5$，此时可以解得$k></p>
+P_k=\frac{(N-1)(N-2)…(N-k+1)}{N^{k-1}}\approx e^{-\frac{1}{n}}e^{-\frac{2}{n}}…e^{-\frac{k}{n}}=exp(-\frac {k(k+1)}{2N})</script><p>同时，若要$k$个指纹重复的数学期望超过1，则$P_k<0.5$，此时可以解得$k>\frac {-1+\sqrt{1+8Nlog2}}{2}\approx2^{64}\approx 1.8\times 10^{19}$。可能性几乎为0。</p>
 <h3 id="相似哈希"><a href="#相似哈希" class="headerlink" title="相似哈希"></a>相似哈希</h3><p>相似哈希是一种特殊的信息指纹。</p>
 <p>假设一个网页有若干词$T：t_1,t_2,…t_k$，对应的权重（比如TF-IDF值）为$w_1,w_2,…_k$。计算出$T$向量的信息指纹$FP(T)$。（假设指纹为8位）</p>
 <ul>
@@ -1018,7 +1018,7 @@ A_{M\times N}=X_{M\times r}\cdot B_{r\times r}\cdot Y_{r\times N}</script><p>$X_
 <blockquote>
 <p>一个简单的逻辑回归函数：$f(z)=\cfrac{e^Z}{e^Z+1}=\cfrac{1}{1+e^{-Z}}$。（指数模型）</p>
 </blockquote>
-<img data-src="/Beauty-of-Mathmatics/Logistic-curve.svg" class title="逻辑回归">
+<img data-src="/Beauty-of-Mathmatics/Logistic-curve.svg" class="" title="逻辑回归">
 <blockquote>
 <p>逻辑回归的定义域在$(-\infty ,+\infty)$，值域在$(0,1)$。</p>
 <p>对于$(-\infty ,+\infty)$，对于任何信号都可进行回归。<br>而对于$[0,1]$，可以看作概率函数，于是逻辑回归与概率分布联系起来。</p>
@@ -1149,7 +1149,7 @@ P(O_1,O_2,…,O_n,S_1,S_2,…,S_m)=\cfrac{e^{f_1+f_2+…+f_k}}{Z}</script><p>这
 <script type="math/tex; mode=display">
 Vector_{output}=A_n\times A_{n-1}\times …\times A_1\times Vector_{inputr}</script><p>为了基于线性分类实现复杂的非线性分类，多层的神经网络采用复杂函数拟合，利用隐藏层完成非线性空间到线性的变换。</p>
 <p>一般来说，层数越多，神经网络的效果越好。（如<a href="https://www.cnblogs.com/subconscious/p/5058741.html#sixth" target="_blank" rel="noopener external nofollow noreferrer">下图</a>）</p>
-<img data-src="/Beauty-of-Mathmatics/lMn0aAi.jpg" class title="多层神经网络">
+<img data-src="/Beauty-of-Mathmatics/lMn0aAi.jpg" class="" title="多层神经网络">
 <hr>
 <blockquote>
 <p><a href="http://www.ruanyifeng.com/blog/2017/07/neural-network.html" target="_blank" rel="noopener external nofollow noreferrer">神经网络入门</a></p>

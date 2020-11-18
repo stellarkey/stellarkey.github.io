@@ -382,7 +382,7 @@
 </tr>
 <tr>
 <td><code>memset(a，b，n)</code></td>
-<td>设置；b可为<code>0</code> / <code>-1</code> / <code>0x3f</code>(Inf.)；<br>前n项设为数字b（char型初始化函数）</td>
+<td>设置；b可为<code>0</code> / <code>-1</code> / <code>0x3f</code>(Inf.)；<br />前n项设为数字b（char型初始化函数）</td>
 </tr>
 <tr>
 <td><code>unique(beg, end, cmp)</code></td>
@@ -394,7 +394,7 @@
 </tr>
 <tr>
 <td><code>rotate(beg, mid, end)</code></td>
-<td>旋转；操作后变为<code>[mid, end)+[beg, mid)</code>；<br>返回旋转前beg元素的新位置</td>
+<td>旋转；操作后变为<code>[mid, end)+[beg, mid)</code>；<br />返回旋转前beg元素的新位置</td>
 </tr>
 <tr>
 <td><code>equal(beg1, end1, beg2)</code></td>
@@ -506,7 +506,7 @@
 </tr>
 <tr>
 <td><code>equal_range(beg, end, e, cmp)</code></td>
-<td>返回<code>pair</code>对<code>(A, B)</code>;<br>分别是<code>lower_bound</code>和<code>upper_bound</code>的返回值</td>
+<td>返回<code>pair</code>对<code>(A, B)</code>;<br />分别是<code>lower_bound</code>和<code>upper_bound</code>的返回值</td>
 </tr>
 <tr>
 <td><code>min_element(beg, end, func)</code></td>
@@ -530,7 +530,7 @@
 <tbody>
 <tr>
 <td><strong><code>sort(beg, end, cmp)</code></strong></td>
-<td>排序；默认升序<code>less</code>($&lt;$)；<br>内置<code>greater</code> / <code>less_equal</code> / <code>greater_equal</code></td>
+<td>排序；默认升序<code>less</code>($&lt;$)；<br />内置<code>greater</code> / <code>less_equal</code> / <code>greater_equal</code></td>
 </tr>
 <tr>
 <td><code>stable_sort(beg, end, cmp)</code></td>
@@ -542,11 +542,11 @@
 </tr>
 <tr>
 <td><strong><code>partial_sort(beg, beg+k, end, cmp)</code></strong></td>
-<td>部分排序；比如求<strong>前 k 大元素</strong><br>将序列中前k小元素按顺序置于前k个位置<br>其他元素不保证顺序。O(nlogk)</td>
+<td>部分排序；比如求<strong>前 k 大元素</strong><br />将序列中前k小元素按顺序置于前k个位置<br />其他元素不保证顺序。O(nlogk)</td>
 </tr>
 <tr>
 <td><strong><code>nth_element(beg, nth, end, cmp)</code></strong></td>
-<td><code>nth</code>必须为迭代器，初始指向首位，最后返回所求位置；<br>比如求<strong>第<code>n</code>大元素</strong>；并且会按照该元素划分</td>
+<td><code>nth</code>必须为迭代器，初始指向首位，最后返回所求位置；<br />比如求<strong>第<code>n</code>大元素</strong>；并且会按照该元素划分</td>
 </tr>
 <tr>
 <td><strong><code>partition(beg, end, func)</code></strong></td>
@@ -602,15 +602,15 @@
 </tr>
 <tr>
 <td><code>accumulate(beg, end, init, op)</code></td>
-<td>序列求和；<code>init</code>为初值<br><code>op</code>可自定义二元运算<br>返回<code>init</code>的类型</td>
+<td>序列求和；<code>init</code>为初值<br /><code>op</code>可自定义二元运算<br />返回<code>init</code>的类型</td>
 </tr>
 <tr>
 <td><code>inner_product(beg1, end1, beg2, init, op1, op2)</code></td>
-<td>内积；<code>init</code>为初始值；<br><code>op1</code>和<code>op2</code>为可选的广义加法/乘法</td>
+<td>内积；<code>init</code>为初始值；<br /><code>op1</code>和<code>op2</code>为可选的广义加法/乘法</td>
 </tr>
 <tr>
 <td><code>partial_sum(beg, end, dest, op)</code></td>
-<td>计算后缀数组；<br>每一个新元素等于其前缀的累计和</td>
+<td>计算后缀数组；<br />每一个新元素等于其前缀的累计和</td>
 </tr>
 <tr>
 <td><code>iota(beg, end, e)</code></td>

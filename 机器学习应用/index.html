@@ -279,25 +279,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg" class title="ch01_cats.jpg">
+        <script src="/assets/js/APlayer.min.js"> </script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch01_cats.jpg" class="" title="ch01_cats.jpg">
 <p>本文是机器学习工程应用相关的笔记。主要参考吴恩达《机器学习训练秘籍》。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://github.com/deeplearning-ai/machine-learning-yearning-cn/tree/master/" target="_blank" rel="noopener external nofollow noreferrer">机器学习训练秘籍</a>（<a href="https://zh.wikipedia.org/zh-hans/%E5%90%B4%E6%81%A9%E8%BE%BE" target="_blank" rel="noopener external nofollow noreferrer">吴恩达</a>） 面向工程应用的指南</p>
 <div class="pdfobject-container" data-target="MLY-zh-cn.pdf" data-height="500px"></div>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch04_03.png" class title="ch04_03.png">
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch04_03.png" class="" title="ch04_03.png">
 <h1 id="开发与测试"><a href="#开发与测试" class="headerlink" title="开发与测试"></a>开发与测试</h1><h2 id="三分原则"><a href="#三分原则" class="headerlink" title="三分原则"></a>三分原则</h2><ul>
 <li><strong>训练集（training set）</strong>用于运行你的学习算法。</li>
-<li><strong><font color="red">开发集</font>（development set）</strong>用于调整参数，选择特征，以及对学习算法作出其它决定。有时也称为<strong>留出交叉验证集（hold-out cross validation set）</strong>。</li>
-<li><strong><font color="red">测试集</font>（test set）</strong>用于评估算法的性能，但不会据此改变学习算法或参数。</li>
+<li><strong><font color=red>开发集</font>（development set）</strong>用于调整参数，选择特征，以及对学习算法作出其它决定。有时也称为<strong>留出交叉验证集（hold-out cross validation set）</strong>。</li>
+<li><strong><font color=red>测试集</font>（test set）</strong>用于评估算法的性能，但不会据此改变学习算法或参数。</li>
 </ul>
 <h2 id="开发集和测试集的选择"><a href="#开发集和测试集的选择" class="headerlink" title="开发集和测试集的选择"></a>开发集和测试集的选择</h2><ul>
 <li>被选择作为开发集和测试集的数据，应当与你未来计划获取并对其进行良好处理的数据有着<strong>相同的分布</strong>，而<u>不一定和训练集的数据分布一致</u>。</li>
 <li><strong>开发集和测试集的分布应当尽可能一致</strong>。</li>
 <li>为你的团队选择一个<strong>单值评估指标</strong>进行优化。当需要考虑多项目标时，不妨将它们整合到一个表达式里（比如对多个误差指标取平均），或者设定满意度指标和优化指标。</li>
 <li>机器学习是一个<strong>高度迭代</strong>的过程：在出现最终令人满意的方案之前，你可能<strong>要尝试很多想法</strong>。</li>
-<li>拥有<strong>开发集、测试集和单值<font color="red">评估指标</font>可以帮助你快速评估一个算法</strong>，从而加速迭代进程。</li>
+<li>拥有<strong>开发集、测试集和单值<font color=red>评估指标</font>可以帮助你快速评估一个算法</strong>，从而加速迭代进程。</li>
 <li>当你要探索一个全新的应用时，尽可能在一周内建立你的开发集、测试集和评估指标；而在已经相对成熟的应用上，可以考虑花费更长的时间来执行这些工作。</li>
 <li>传统的 70% / 30% 训练集/测试集划分对于<strong>大规模数据</strong>并不适用，实际上，<strong>开发集和测试集的比例会远低于 30%</strong>.</li>
-<li>开发集的<font color="red">规模</font>应当大到能够<strong>检测出算法精度的细微改变</strong>，但也不需要太大；测试集的规模应该大到能够使你能<strong>对系统的最终性能作出一个充分的估计</strong>。</li>
+<li>开发集的<font color=red>规模</font>应当大到能够<strong>检测出算法精度的细微改变</strong>，但也不需要太大；测试集的规模应该大到能够使你能<strong>对系统的最终性能作出一个充分的估计</strong>。</li>
 <li>当开发集和评估指标对于团队已经不能提供一个正确的导向时，尽快修改它们：<ul>
 <li>(i)  如果算法在开发集上过拟合，则需要获取更多的开发集数据。</li>
 <li>(ii) 如果开发集与测试集的数据分布和实际数据分布不同，则需要获取新的开发集和测试集。  </li>
@@ -328,7 +328,7 @@
 </ul>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
 <li>当你开始一个新项目，尤其是在一个你不擅长的领域开展项目时，很难正确预判出最有前景的方向。</li>
-<li>所以，<strong>不要在一开始就试图设计和构建一个完美的系统</strong>。相反，应尽可能快（例如在短短几天内）地构建和训练一个系统雏形。然后使用<strong><font color="red">误差分析法</font></strong>去帮助你识别出最有前景的方向，并据此不断迭代改进你的算法。</li>
+<li>所以，<strong>不要在一开始就试图设计和构建一个完美的系统</strong>。相反，应尽可能快（例如在短短几天内）地构建和训练一个系统雏形。然后使用<strong><font color=red>误差分析法</font></strong>去帮助你识别出最有前景的方向，并据此不断迭代改进你的算法。</li>
 <li>通过手动检查约 100 个被算法错误分类的开发集样本来执行误差分析，并计算主要的错误类别。使用这些信息来确定优先修正哪种类型的错误。</li>
 <li>考虑将开发集分为<strong>人为检查的 Eyeball 开发集和非人为检查的 Blackbox 开发集</strong>。如果在 Eyeball 开发集上的性能比在 Blackbox 开发集上好很多，说明你已过拟合 Eyeball 开发集，下一步应该考虑为其获取更多数据。</li>
 <li><strong>Eyeball 开发集应该足够大</strong>，以便于算法有足够多的错误分类样本供你分析。对大多数应用来说，含有1000-10000个样本的 Blackbox 开发集已足够。</li>
@@ -336,24 +336,24 @@
 </ul>
 <h1 id="偏差和方差"><a href="#偏差和方差" class="headerlink" title="偏差和方差"></a>偏差和方差</h1><p>假设你的算法<u>在开发集上有  16% 的错误率</u>（84% 精度），我们将这 16% 的错误率分为两部分：</p>
 <ul>
-<li>第一部分是算法在<strong>训练集</strong>上的错误率。在本例中，它是 15%。我们非正式地将它作为算法的<strong><font color="red">偏差</font>（bias）</strong>。<ul>
+<li>第一部分是算法在<strong>训练集</strong>上的错误率。在本例中，它是 15%。我们非正式地将它作为算法的<strong><font color=red>偏差</font>（bias）</strong>。<ul>
 <li>高偏差（<strong>high bias</strong>）$\longrightarrow$欠拟合（<strong>underfitting</strong>）</li>
 </ul>
 </li>
-<li>第二部分指的是算法在<strong>开发集</strong>（或测试集）上的表现比训练集上差多少。在本例中，开发集表现比训练集差 1%。我们非正式地将它作为算法的<strong><font color="red">方差</font>（variance）</strong>。<ul>
+<li>第二部分指的是算法在<strong>开发集</strong>（或测试集）上的表现比训练集上差多少。在本例中，开发集表现比训练集差 1%。我们非正式地将它作为算法的<strong><font color=red>方差</font>（variance）</strong>。<ul>
 <li>高方差（<strong>high variance</strong>）$\longrightarrow$过拟合（<strong>overfitting</strong>）</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>粗略地说，偏差指的是算法在大型训练集上的错误率；方差指的是算法在测试集上的表现低于训练集的程度。当你使用均方误差（MSE）作为误差度量指标时，你可以写下偏差和方差对应的两个公式，并且证明<strong><font color="red">总误差=偏差+方差</font></strong>。但在处理机器学习问题时，此处给出的偏差和方差的非正式定义已经足够。</p>
+<p>粗略地说，偏差指的是算法在大型训练集上的错误率；方差指的是算法在测试集上的表现低于训练集的程度。当你使用均方误差（MSE）作为误差度量指标时，你可以写下偏差和方差对应的两个公式，并且证明<strong><font color=red>总误差=偏差+方差</font></strong>。但在处理机器学习问题时，此处给出的偏差和方差的非正式定义已经足够。</p>
 <p>完全可以同时发生过拟合和欠拟合。</p>
 </blockquote>
 <p>一些<u>学习算法的优化能解决误差来源的第一个部分——偏差</u>，并且提高算法在训练集上的性能；而<u>另一些优化能解决第二个部分——方差</u>，并帮助算法从训练集到开发/测试集上更好地泛化。为了选择最有成效的改变方向，了解二者哪一方更需解决是很有用的。</p>
 <blockquote>
 <p>还有一些方法能够<u>对系统架构做出较大改变，同时减少偏差和方差</u>。但是这些方法往往难以鉴定和实现。</p>
 </blockquote>
-<p><strong>建立对偏差和方差的<font color="blue">良好直觉</font></strong>将帮助你为算法选择出有效的改进策略。</p>
+<p><strong>建立对偏差和方差的<font color=blue>良好直觉</font></strong>将帮助你为算法选择出有效的改进策略。</p>
 <h2 id="最优错误率"><a href="#最优错误率" class="headerlink" title="最优错误率"></a>最优错误率</h2><p>存在一个<strong>理想错误率</strong>，达到如此之低的错误率以后，我们不应该期望还能继续降低错误率。</p>
 <blockquote>
 <p>假设你正在构建一个语音识别系统，并发现 14% 的音频片段背景噪声太多，或者十分难以理解，导致即使是人类也无法识别出所说的内容。在这种情况下，<u>即使是“最优”的语音识别系统也可能约有 14% 的误差</u>。</p>
@@ -366,9 +366,9 @@
 </blockquote>
 <p>对于<u>最佳错误率远超零</u>的状况，有一个对算法误差更详细的分解。继续使用上述语音识别的例子，可以将 30% 的总开发集误差分解如下（类似的分析可以应用于测试集误差）：</p>
 <ul>
-<li><strong><font color="red">最优错误率</font>（“不可避免偏差”）</strong>：14%。假设我们决定，即使是世界上最好的语音系统，仍会有 14% 的误差。我们可以将其认为是学习算法的偏差“不可避免”的部分。</li>
-<li><strong><font color="blue">可避免偏差</font></strong>：1%。即训练错误率和最优误差率之间的差值。</li>
-<li><strong><font color="brown">方差</font></strong>：15%。即开发错误和训练错误之间的差值。</li>
+<li><strong><font color=red>最优错误率</font>（“不可避免偏差”）</strong>：14%。假设我们决定，即使是世界上最好的语音系统，仍会有 14% 的误差。我们可以将其认为是学习算法的偏差“不可避免”的部分。</li>
+<li><strong><font color=blue>可避免偏差</font></strong>：1%。即训练错误率和最优误差率之间的差值。</li>
+<li><strong><font color=brown>方差</font></strong>：15%。即开发错误和训练错误之间的差值。</li>
 </ul>
 <p>在统计学上，最优错误率也被称为<strong>贝叶斯错误率（Bayes error rate）</strong>，或贝叶斯率。</p>
 <h2 id="处理措施"><a href="#处理措施" class="headerlink" title="处理措施"></a>处理措施</h2><p>最简单的形式：</p>
@@ -388,19 +388,19 @@
 </ul>
 <h3 id="减少可避免偏差"><a href="#减少可避免偏差" class="headerlink" title="减少可避免偏差"></a>减少可避免偏差</h3><p>如果你的学习算法存在着很高的可避免偏差，你可能会尝试以下方法：</p>
 <ul>
-<li><strong><font color="red">根据误差分析结果修改输入特征</font></strong>：假设误差分析结果鼓励你增加额外的特征，从而帮助算法消除某个特定类别的误差。（我们会在接下来的章节深入讨论这个话题。）这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；当这种情况发生时，你可以加入正则化来抵消方差的增加。</li>
-<li><strong><font color="red">减少或者去除正则化</font></strong>（L2 正则化，L1 正则化，dropout）：这将减少可避免偏差，但会增大方差。</li>
+<li><strong><font color=red>根据误差分析结果修改输入特征</font></strong>：假设误差分析结果鼓励你增加额外的特征，从而帮助算法消除某个特定类别的误差。（我们会在接下来的章节深入讨论这个话题。）这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；当这种情况发生时，你可以加入正则化来抵消方差的增加。</li>
+<li><strong><font color=red>减少或者去除正则化</font></strong>（L2 正则化，L1 正则化，dropout）：这将减少可避免偏差，但会增大方差。</li>
 <li><strong>修改模型架构</strong>（比如神经网络架构）使之更适用于你的问题：这将同时影响偏差和方差。</li>
 <li><strong>加大模型规模</strong>（例如神经元/层的数量）：这项技术能够使算法更好地拟合训练集，从而减少偏差。当你发现这样做会增大方差时，通过加入正则化可以抵消方差的增加。</li>
 </ul>
 <h3 id="减少方差"><a href="#减少方差" class="headerlink" title="减少方差"></a>减少方差</h3><p>如果你的学习算法存在着高方差问题，可以考虑尝试下面的技术：</p>
 <ul>
-<li><strong><font color="red">根据误差分析结果修改输入特征</font></strong>：假设误差分析的结果鼓励你创建额外的特征，从而帮助算法消除某个特定类别的误差。这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；当这种情况发生时，加入正则化，这可以消除方差的增加。</li>
-<li><strong><font color="red">加入正则化</font></strong>（L2 正则化，L1 正则化，dropout）：这项技术可以降低方差，但却增大了偏差。<ul>
+<li><strong><font color=red>根据误差分析结果修改输入特征</font></strong>：假设误差分析的结果鼓励你创建额外的特征，从而帮助算法消除某个特定类别的误差。这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；当这种情况发生时，加入正则化，这可以消除方差的增加。</li>
+<li><strong><font color=red>加入正则化</font></strong>（L2 正则化，L1 正则化，dropout）：这项技术可以降低方差，但却增大了偏差。<ul>
 <li><strong>加入提前终止</strong>（例如根据开发集误差提前终止梯度下降）：这项技术可以降低方差但却增大了偏差。提前终止（Early stopping）有点像正则化理论，一些学者认为它是正则化技术之一。</li>
 </ul>
 </li>
-<li><strong><font color="red">通过特征选择减少输入特征的数量和种类</font></strong>：这种技术或许有助于解决方差问题，但也可能增加偏差。稍微减少特征的数量（比如从  1000 个特征减少到 900 个）也许不会对偏差产生很大的影响，但显著地减少它们（比如从 1000 个特征减少到 100 个，10  倍地降低）则很有可能产生很大的影响，你也许排除了太多有用的特征。在现代深度学习研究过程中，当数据充足时，特征选择的比重需要做些调整，现在我们更可能将拥有的所有特征提供给算法，并让算法根据数据来确定哪些特征可以使用。而当你的训练集很小的时候，特征选择是非常有用的。</li>
+<li><strong><font color=red>通过特征选择减少输入特征的数量和种类</font></strong>：这种技术或许有助于解决方差问题，但也可能增加偏差。稍微减少特征的数量（比如从  1000 个特征减少到 900 个）也许不会对偏差产生很大的影响，但显著地减少它们（比如从 1000 个特征减少到 100 个，10  倍地降低）则很有可能产生很大的影响，你也许排除了太多有用的特征。在现代深度学习研究过程中，当数据充足时，特征选择的比重需要做些调整，现在我们更可能将拥有的所有特征提供给算法，并让算法根据数据来确定哪些特征可以使用。而当你的训练集很小的时候，特征选择是非常有用的。</li>
 <li><strong>添加更多的训练数据</strong>：这是最简单最可靠的一种处理方差的策略，只要你有大量的数据和对应的计算能力来处理他们。</li>
 <li><strong>减小模型规模</strong>（比如神经元/层的数量）：<em>谨慎使用。</em>这种技术可以减少方差，同时可能增加偏差。然而我不推荐这种处理方差的方法，添加正则化通常能更好的提升分类性能。   减少模型规模的好处是降低了计算成本，从而加快了你训练模型的速度。如果加速模型训练是有用的，那么无论如何都要考虑减少模型的规模。但如果你的目标是减少方差，且不关心计算成本，那么考虑添加正则化会更好。</li>
 <li><strong>修改模型架构</strong>（比如神经网络架构）使之更适用于你的问题：这项策略将同时影响偏差和方差。</li>
@@ -415,7 +415,7 @@
 <p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwjjz7zBk5DhAhWEFIgKHdhyAT8QFjAEegQIBRAC&amp;url=https%3A%2F%2Fcourses.cs.washington.edu%2Fcourses%2Fcse446%2F13sp%2Fslides%2Flasso-annotated.pdf&amp;usg=AOvVaw1pxryhCfvYCj41fnwe68Nk" target="_blank" rel="noopener external nofollow noreferrer">Variable Selection LASSO: Sparse Regression - University of …</a></p>
 </blockquote>
 <p>L2正则化和L1正则化。如下图：</p>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/Dq2.png" class title="正则化">
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/Dq2.png" class="" title="正则化">
 <p>目标函数（误差函数）就是<strong>求蓝圈+红圈的和的最小值</strong>（回想等高线的概念并参照3式），而这个值通在很多情况下是<strong>两个曲面相交的地方</strong>。</p>
 <blockquote>
 <p>L1正则化系数可以让原本较小的<code>w</code>分量为0，原本较大的<code>w</code>分量有限；让原本不太重要的输入不起作用了，让原本比较重要的输入的系数其作用的强度限制在有限值。</p>
@@ -423,7 +423,7 @@
 </blockquote>
 <hr>
 <h3 id="“small-large-problem”与Overfitting"><a href="#“small-large-problem”与Overfitting" class="headerlink" title="“small , large  problem”与Overfitting"></a>“small , large  problem”与Overfitting</h3><p><code>n</code>（数据量）$\ll$<code>m</code>（数据维度）的时候，<u>从概率上来说，过拟合就无法避免了</u>。（摘自《<a href="https://vel.life/机器学习进阶">机器学习进阶</a>》）</p>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1547752453147.png" class width="1547752453147">
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1547752453147.png" class="" width="1547752453147">
 <blockquote>
 <p>因为我们通常认为<strong>数据在维度上总是饱满的</strong>，这样而言，<strong>实界就极其庞大</strong>。</p>
 </blockquote>
@@ -440,9 +440,9 @@
 \Longrightarrow \quad \theta=(X^TX)^{-1}X^Ty</script></li>
 <li><p>注意：（当X可逆能推出）$X\theta=y$。</p>
 <ul>
-<li>也就是说，我们<strong>实际上是在尝试<font color="red">求解一个广义线性方程组</font></strong>。（普通线性方程组并不一定有惟一解，<a href="https://blog.csdn.net/lynn0085/article/details/79375614" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</li>
+<li>也就是说，我们<strong>实际上是在尝试<font color=red>求解一个广义线性方程组</font></strong>。（普通线性方程组并不一定有惟一解，<a href="https://blog.csdn.net/lynn0085/article/details/79375614" target="_blank" rel="noopener external nofollow noreferrer">More</a>）</li>
 <li>在上述算法中<strong>求解条件弱化</strong>到只须$X^TX$可逆<ul>
-<li>若我们考虑<a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B9%89%E9%80%86%E9%98%B5" target="_blank" rel="noopener external nofollow noreferrer">伪逆</a>，则求解条件<strong>进一步<font color="red">弱化</font></strong>：<strong>对任意的$X$，我们均能求得惟一解</strong>！</li>
+<li>若我们考虑<a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B9%89%E9%80%86%E9%98%B5" target="_blank" rel="noopener external nofollow noreferrer">伪逆</a>，则求解条件<strong>进一步<font color=red>弱化</font></strong>：<strong>对任意的$X$，我们均能求得惟一解</strong>！</li>
 </ul>
 </li>
 </ul>
@@ -466,7 +466,7 @@
 <p><a href="https://www.zhihu.com/question/21345731" target="_blank" rel="noopener external nofollow noreferrer">如何理解拉格朗日松弛技术？</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28958014" target="_blank" rel="noopener external nofollow noreferrer">非凸转成凸、约束转无约－运筹学和支持向量机中的拉格朗日松弛法</a></p>
 </blockquote>
-<p>注：如果深入研究，则需要一点<strong><font color="red">凸优化</font></strong>的知识。不展开。</p>
+<p>注：如果深入研究，则需要一点<strong><font color=red>凸优化</font></strong>的知识。不展开。</p>
 <h3 id="岭回归-Ridge-Regression-L2正则"><a href="#岭回归-Ridge-Regression-L2正则" class="headerlink" title="岭回归 Ridge Regression L2正则"></a>岭回归 Ridge Regression L2正则</h3><script type="math/tex; mode=display">
 J_R(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||^{\color{blue}{2} } } }</script><p><strong>等价于</strong>约束问题，</p>
 <script type="math/tex; mode=display">
@@ -479,7 +479,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
     \mathop{\arg\min}_{w} \ \ \cfrac{1}{n}\|y-Xw\|^2,\ \ s.t.\  \|w\|\leq{\color{blue}{C} }
 \end{equation}</script><blockquote>
 <p>这样就解释了最开始的图的原理：</p>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553055522456.png" class width="1553055522456">
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553055522456.png" class="" width="1553055522456">
 </blockquote>
 <p>你可以想象一个带有棱角的正方形和球分别落向（较平坦的）地面，那么它们随机地与地面最先接触的那一部分，就是上图中的极值点。</p>
 <hr>
@@ -487,11 +487,11 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <blockquote>
 <p>正交设计已经预设了<code>X</code>阵是可逆的。可以通过对数据进行 <a href="http://en.wikipedia.org/wiki/Principal_component_analysis" target="_blank" rel="noopener external nofollow noreferrer">PCA</a> 以及模长 normalize 来实现。</p>
 </blockquote>
-<p>通过正交设计，可以化简正规方程的解：（${\color{red}{w} }$是<font color="red">全局最优解</font>）</p>
+<p>通过正交设计，可以化简正规方程的解：（${\color{red}{w} }$是<font color=red>全局最优解</font>）</p>
 <script type="math/tex; mode=display">
 {\color{red}{w} }=(X^TX)^{-1}X^Ty=\cfrac{1}{n}X^Ty</script><p>同时对Lasso回归有，</p>
 <script type="math/tex; mode=display">
-</script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/soft-thresholding.svg" class title="img">
+</script><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/soft-thresholding.svg" class="" title="img">
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="table-container">
 <table>
 <thead>
@@ -502,48 +502,48 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
-<td style="text-align:center">样本<font color="red"><strong>++</strong></font></td>
+<td style="text-align:center"><strong><font color=orange>高方差</font></strong></td>
+<td style="text-align:center">样本<font color=red><strong>++</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
-<td style="text-align:center">特征数<font color="blue"><strong>- -</strong></font></td>
+<td style="text-align:center"><strong><font color=orange>高方差</font></strong></td>
+<td style="text-align:center">特征数<font color=blue><strong>- -</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><strong><font color="orange">高方差</font></strong></td>
-<td style="text-align:center">正则因子 λ<font color="red"><strong>++</strong></font></td>
+<td style="text-align:center"><strong><font color=orange>高方差</font></strong></td>
+<td style="text-align:center">正则因子 λ<font color=red><strong>++</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
-<td style="text-align:center">特征数<font color="red"><strong>++</strong></font></td>
+<td style="text-align:center"><font color=brown><strong>高偏差</strong></font></td>
+<td style="text-align:center">特征数<font color=red><strong>++</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
-<td style="text-align:center">正则因子 λ<font color="blue"><strong>- -</strong></font></td>
+<td style="text-align:center"><font color=brown><strong>高偏差</strong></font></td>
+<td style="text-align:center">正则因子 λ<font color=blue><strong>- -</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
-<td style="text-align:center">多项式次数<font color="red"><strong>++</strong></font></td>
+<td style="text-align:center"><font color=brown><strong>高偏差</strong></font></td>
+<td style="text-align:center">多项式次数<font color=red><strong>++</strong></font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="brown"><strong>高偏差</strong></font></td>
-<td style="text-align:center">模型复杂度<font color="red"><strong>++</strong></font></td>
+<td style="text-align:center"><font color=brown><strong>高偏差</strong></font></td>
+<td style="text-align:center">模型复杂度<font color=red><strong>++</strong></font></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h1 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h1><p>随着训练集数据量的增加：<strong><font color="red">开发误差</font></strong>、<strong><font color="blue">训练误差</font></strong>、<strong><font color="gree">期望性能</font></strong>。</p>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch29_01.jpg" class title="ch29_01.jpg">
-<h2 id="解读学习曲线：高偏差"><a href="#解读学习曲线：高偏差" class="headerlink" title="解读学习曲线：高偏差"></a>解读学习曲线：高偏差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch30_02.jpg" class title="ch30_02.jpg">
-<h2 id="解读学习曲线：高方差"><a href="#解读学习曲线：高方差" class="headerlink" title="解读学习曲线：高方差"></a>解读学习曲线：高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_01.jpg" class title="ch31_01.jpg">
+<h1 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h1><p>随着训练集数据量的增加：<strong><font color=red>开发误差</font></strong>、<strong><font color=blue>训练误差</font></strong>、<strong><font color=gree>期望性能</font></strong>。</p>
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch29_01.jpg" class="" title="ch29_01.jpg">
+<h2 id="解读学习曲线：高偏差"><a href="#解读学习曲线：高偏差" class="headerlink" title="解读学习曲线：高偏差"></a>解读学习曲线：高偏差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch30_02.jpg" class="" title="ch30_02.jpg">
+<h2 id="解读学习曲线：高方差"><a href="#解读学习曲线：高方差" class="headerlink" title="解读学习曲线：高方差"></a>解读学习曲线：高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_01.jpg" class="" title="ch31_01.jpg">
 <p>蓝色训练误差曲线相对较低，红色的开发误差曲线比蓝色训练误差高得多。因此，偏差很小，但方差很大。添加更多的训练数据可能有助于缩小开发误差和训练误差之间的差距。</p>
-<h2 id="解读学习曲线：高偏差-高方差"><a href="#解读学习曲线：高偏差-高方差" class="headerlink" title="解读学习曲线：高偏差+高方差"></a>解读学习曲线：高偏差+高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_02.jpg" class title="ch31_02.jpg">
+<h2 id="解读学习曲线：高偏差-高方差"><a href="#解读学习曲线：高偏差-高方差" class="headerlink" title="解读学习曲线：高偏差+高方差"></a>解读学习曲线：高偏差+高方差</h2><img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/ch31_02.jpg" class="" title="ch31_02.jpg">
 <p>最后提一点，绘制一个学习曲线的成本可能非常高：例如，你可能需要训练 10 个模型，其中样本规模可以是 1000 个，然后是 2000 个，一直到<br>10000 个。使用小数据集训练模型比使用大型数据集要快得多。因此，你可以用 1000、2000、4000、6000 和 10000<br>个样本来训练模型，而不是像上面那样将训练集的大小均匀地间隔在一个线性的范围内。这仍然可以让你对学习曲线的变化趋势有一个清晰的认识。当然，这种技术只有在训练所有额外模型所需的计算成本很重要时才有意义。</p>
 <h1 id="与人类表现对比"><a href="#与人类表现对比" class="headerlink" title="与人类表现对比"></a>与人类表现对比</h1><p>有许多理由表明在处理人类擅长的任务时，构建一个机器学习系统会更加简单：</p>
 <ol>
-<li><strong>易于从人为<font color="red">标签</font>中获取数据。</strong>举个例子，由于人类可以很好地识别图片中的猫，因此让人们为你的学习算法提供高精度的带标签数据也很方便。</li>
-<li><strong>基于人类<font color="red">直觉</font>进行误差分析。</strong>假设某个语音识别系统的表现要低于人类的表现水平。比如错误地将音频片段 “This recipe calls for a <em>pear</em> of apples” 中的 “<em>pair</em>” 认为是 “<em>pear</em>”. 此时你可以利用人类的直觉来尝试理解，普通人会利用何种信息来获取正确的转录内容，并且试着修改你的学习算法，使它在相同的知识点上有着更好的表现。</li>
-<li><strong>使用人类表现水平来估计<font color="red">最优错误率</font>，并设置可达到的“期望错误率”。</strong> 假设你的算法在某个任务上达到了  10% 的误差，但普通人所能达到的误差是 2% . 由此我们就可以知道最优错误率是 2% 或更低，这也表明可避免偏差至少是 8% .  所以你应当尝试一下降低偏差的技术。更一般地说，有一个合理可实现的“期望错误率”可以帮助你去估计学习算法的可避免偏差。这反过来也帮你决定是否使用误差降低技术。</li>
+<li><strong>易于从人为<font color=red>标签</font>中获取数据。</strong>举个例子，由于人类可以很好地识别图片中的猫，因此让人们为你的学习算法提供高精度的带标签数据也很方便。</li>
+<li><strong>基于人类<font color=red>直觉</font>进行误差分析。</strong>假设某个语音识别系统的表现要低于人类的表现水平。比如错误地将音频片段 “This recipe calls for a <em>pear</em> of apples” 中的 “<em>pair</em>” 认为是 “<em>pear</em>”. 此时你可以利用人类的直觉来尝试理解，普通人会利用何种信息来获取正确的转录内容，并且试着修改你的学习算法，使它在相同的知识点上有着更好的表现。</li>
+<li><strong>使用人类表现水平来估计<font color=red>最优错误率</font>，并设置可达到的“期望错误率”。</strong> 假设你的算法在某个任务上达到了  10% 的误差，但普通人所能达到的误差是 2% . 由此我们就可以知道最优错误率是 2% 或更低，这也表明可避免偏差至少是 8% .  所以你应当尝试一下降低偏差的技术。更一般地说，有一个合理可实现的“期望错误率”可以帮助你去估计学习算法的可避免偏差。这反过来也帮你决定是否使用误差降低技术。</li>
 </ol>
 <p><u>连人类都不擅长的任务也是存在的</u>。比如向你推荐一本书，或者在某个网站上选择向用户展示的广告，或者对股票市场进行预测。如今计算机在此类任务上的表现已经远超过人类。对于这些应用，我们主要面临着下面的问题：</p>
 <ul>
@@ -581,7 +581,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <ol>
 <li>它在训练集上表现不佳，这属于训练集分布上的高（可避免）偏差的问题。</li>
 <li>它在训练集上做得很好，但是不能很好地泛化到与训练集分布相同的未知数据，这是高方差问题。</li>
-<li>它能够很好地泛化到与训练集相同分布的未知数据，但不能很好地泛化到与开发/测试集相同分布的未知数据。我们将这种情况称之为<strong><font color="red">数据不匹配</font></strong>（上下采样喵喵喵？？？），因为训练集的数据与开发/测试集的数据匹配得相当地糟糕。</li>
+<li>它能够很好地泛化到与训练集相同分布的未知数据，但不能很好地泛化到与开发/测试集相同分布的未知数据。我们将这种情况称之为<strong><font color=red>数据不匹配</font></strong>（上下采样喵喵喵？？？），因为训练集的数据与开发/测试集的数据匹配得相当地糟糕。</li>
 </ol>
 <p>例如，假设人类在猫识别任务上取得近乎完美的表现。你的算法实现了：</p>
 <ul>
@@ -589,7 +589,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <li>1.5% 的与训练集分布相同的未知数据上的误差</li>
 <li>10% 的开发集误差</li>
 </ul>
-<p>在这种情况下，显然存在着数据不匹配问题。为了解决这个问题，你可能会尝试<strong><font color="red">使训练数据更类似于开发/测试数据</font></strong>。</p>
+<p>在这种情况下，显然存在着数据不匹配问题。为了解决这个问题，你可能会尝试<strong><font color=red>使训练数据更类似于开发/测试数据</font></strong>。</p>
 <p>为了诊断一个算法在上面 1 到 3  个问题受到了多大程度的影响，存在另一个数据集将是很有用的。具体地说，与其给算法提供所有可用的训练数据，你还可以把它分成两个子集：算法将进行训练的实际训练集，以及一个单独的集合，我们称之为“训练开发”集，我们将不会对它进行训练。</p>
 <p>你现在有四个数据子集：</p>
 <ul>
@@ -606,7 +606,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 </ul>
 <h2 id="数据合成"><a href="#数据合成" class="headerlink" title="数据合成"></a>数据合成</h2><p>你的语音系统需要更多的数据，它们听起来就像是从车里录制得到的。与其在开车的时候收集大量的数据，不如通过<strong>人工合成数据</strong>来获取这些数据。</p>
 <p>假设你获得了大量的汽车/道路噪音的音频剪辑。你可以从几个网站下载这些数据。假设你也有一群在安静的房间里说话的人。如果你把一个人的音频片段“添加”到一个汽车/道路噪音的音频片段，你会得到一个音频剪辑，听起来就好像那个人在嘈杂的汽车里说话一样。使用这个过程，你可以“合成”大量的数据，听起来就像是在汽车里收集的。</p>
-<p>请记住，人工数据合成存在一定的挑战：<strong><font color="red">有时候创建一个对人而言真实的合成数据比创建对计算机而言真实的数据要容易得多</font></strong>。例如，假设你有 1000 小时的语音训练数据，但只有 1 小时的汽车噪音。如果你反复使用相同的 1 小时的汽车噪音，从最初的 1000 小时的训练数据中，你将会得到一个合成的数据集，然而同样的汽车噪音会不断重复。听这段音频的人可能无法分辨——所有的汽车噪音对我们大多数人来说都是一样的——但是某种学习算法可能会“过拟合”一小时的汽车噪音。因此，它可能无法很好地泛化到一个新的音频剪辑片段，里面汽车的噪音听起来是不同的。</p>
+<p>请记住，人工数据合成存在一定的挑战：<strong><font color=red>有时候创建一个对人而言真实的合成数据比创建对计算机而言真实的数据要容易得多</font></strong>。例如，假设你有 1000 小时的语音训练数据，但只有 1 小时的汽车噪音。如果你反复使用相同的 1 小时的汽车噪音，从最初的 1000 小时的训练数据中，你将会得到一个合成的数据集，然而同样的汽车噪音会不断重复。听这段音频的人可能无法分辨——所有的汽车噪音对我们大多数人来说都是一样的——但是某种学习算法可能会“过拟合”一小时的汽车噪音。因此，它可能无法很好地泛化到一个新的音频剪辑片段，里面汽车的噪音听起来是不同的。</p>
 <h1 id="算法验证测试"><a href="#算法验证测试" class="headerlink" title="算法验证测试"></a>算法验证测试</h1><h2 id="优化验证测试"><a href="#优化验证测试" class="headerlink" title="优化验证测试"></a>优化验证测试</h2><blockquote>
 <p><a href="https://accepteddoge.com/machine-learning-yearning-cn/docs/ch44/" target="_blank" rel="noopener external nofollow noreferrer">https://accepteddoge.com/machine-learning-yearning-cn/docs/ch44/</a></p>
 </blockquote>
@@ -616,7 +616,7 @@ J_L(W)=\cfrac{1}{n}\|y-Xw\|^2{\color{red}{+{\color{blue}{\lambda} }||w||_{\color
 <li><strong>目标（得分函数）存在问题。</strong> 我们对 Score(S) = P(S|A) 的估计并不准确。尤其在此例中，我们的得分函数没能辨认出 “我爱机器学习” 是正确的转录。</li>
 </ol>
 <p>对应不同的失败原因，你需要优先考虑的工作方向也将很不一样。如果原因 1 导致了问题，你应该改进搜索算法。如果原因 2 导致了问题，你应该在评估学习算法的函数上面多花些心思。</p>
-<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553746821819.png" class width="1553746821819">
+<img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8/1553746821819.png" class="" width="1553746821819">
 <h1 id="端到端学习"><a href="#端到端学习" class="headerlink" title="端到端学习"></a>端到端学习</h1><h1 id="组件误差分析"><a href="#组件误差分析" class="headerlink" title="组件误差分析"></a>组件误差分析</h1>
     </div>
 

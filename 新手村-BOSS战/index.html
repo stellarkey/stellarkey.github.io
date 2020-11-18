@@ -276,7 +276,7 @@
 <p>现在已知n个苹果到达地上的高度xi，椅子的高度a，陶陶手伸直的最大长度b，陶陶所剩的力气s，陶陶摘一个苹果需要的力气yi，求陶陶最多能摘到多少个苹果。</p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>所有数据：n&lt;=5000 a&lt;=50 b&lt;=200 s&lt;=1000</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xi&lt;&#x3D;280  yi&lt;&#x3D;100</span><br></pre></td></tr></table></figure>
-<h2 id="Code-O-nlogn"><a href="#Code-O-nlogn" class="headerlink" title="Code $O(nlogn)$"></a>Code $O(nlogn)$</h2><h3 id="贪心-O-nlogn"><a href="#贪心-O-nlogn" class="headerlink" title="贪心 $O(nlogn)$"></a>贪心 $O(nlogn)$</h3><p>Force的话就是递归，对每一个苹果按状态选、不选（<font size="6"><del>决策树？？</del></font>），直到<code>s</code>用完。复杂度约$O(2^n)$。可以用DFS，就不写了。。</p>
+<h2 id="Code-O-nlogn"><a href="#Code-O-nlogn" class="headerlink" title="Code $O(nlogn)$"></a>Code $O(nlogn)$</h2><h3 id="贪心-O-nlogn"><a href="#贪心-O-nlogn" class="headerlink" title="贪心 $O(nlogn)$"></a>贪心 $O(nlogn)$</h3><p>Force的话就是递归，对每一个苹果按状态选、不选（<font size=6><del>决策树？？</del></font>），直到<code>s</code>用完。复杂度约$O(2^n)$。可以用DFS，就不写了。。</p>
 <blockquote>
 <p><strong><em>滑稽题解第二弹</em></strong></p>
 <p>作者: <a href="https://www.luogu.org/space/show?uid=65960" target="_blank" rel="noopener external nofollow noreferrer">ASZIIIS</a><br>更新时间: 2018-10-31 18:25</p>
@@ -315,7 +315,7 @@
 <blockquote>
 <p>没有调用<code>gcd()</code>。</p>
 </blockquote>
-<p>然后我发现，<font size="5"><del>题意就有问题吧啊喂！！！</del></font>调用公约数反而错了？？？？？成比例这个事很邪乎啊啊啊啊啊。难道不应该<del>很自然地化简</del>吗。。</p>
+<p>然后我发现，<font size=5><del>题意就有问题吧啊喂！！！</del></font>调用公约数反而错了？？？？？成比例这个事很邪乎啊啊啊啊啊。难道不应该<del>很自然地化简</del>吗。。</p>
 <h1 id="P1579-哥德巴赫猜想（升级版）-素数-模拟"><a href="#P1579-哥德巴赫猜想（升级版）-素数-模拟" class="headerlink" title="P1579 哥德巴赫猜想（升级版） 素数+模拟"></a><a href="https://www.luogu.org/problemnew/show/P1579" target="_blank" rel="noopener external nofollow noreferrer">P1579 哥德巴赫猜想（升级版）</a> 素数+模拟</h1><h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>1742年6月7日哥德巴赫写信给当时的大数学家欧拉，正式提出了以下的猜想：任何一个大于9的奇数都可以表示成3个质数之和。质数是指除了1和本身之外没有其他约数的数，如2和11都是质数，而6不是质数，因为6除了约数1和6之外还有约数2和3。需要特别说明的是1不是质数。</p>
 <p>这就是哥德巴赫猜想。欧拉在回信中说，他相信这个猜想是正确的，但他不能证明。</p>
 <p>从此，这道数学难题引起了几乎所有数学家的注意。哥德巴赫猜想由此成为数学皇冠上一颗可望不可及的“明珠”。</p>
@@ -371,7 +371,7 @@ S_n=\cfrac{a_0(1-q^n)}{1-q}\Longrightarrow n=log_q\left(1-\cfrac{S_n(1-q)}{a_0}\
 <blockquote>
 <p>小于1s，则区间内包含的每秒里程点不超过1个，则总是能1s内跳过。</p>
 </blockquote>
-<h1 id="P1464-Function-记忆宏"><a href="#P1464-Function-记忆宏" class="headerlink" title="P1464 Function 记忆宏"></a><a href="https://www.luogu.org/problemnew/show/P1464" target="_blank" rel="noopener external nofollow noreferrer">P1464 Function</a> 记忆宏</h1><img data-src="/%E6%96%B0%E6%89%8B%E6%9D%91-BOSS%E6%88%98/1548580075159.png" class width="1548580075159">
+<h1 id="P1464-Function-记忆宏"><a href="#P1464-Function-记忆宏" class="headerlink" title="P1464 Function 记忆宏"></a><a href="https://www.luogu.org/problemnew/show/P1464" target="_blank" rel="noopener external nofollow noreferrer">P1464 Function</a> 记忆宏</h1><img data-src="/%E6%96%B0%E6%89%8B%E6%9D%91-BOSS%E6%88%98/1548580075159.png" class="" width="1548580075159">
 <h2 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h2><p>记忆化搜索</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>模拟。状态方程都给出来了。。规模比较小。。</p>
 <h3 id="递归-记忆-宏函数"><a href="#递归-记忆-宏函数" class="headerlink" title="递归+记忆+宏函数"></a>递归+记忆+宏函数</h3><p>直接定义一个记忆宏就行辣。（重复写那么多会累死orz）</p>
@@ -414,7 +414,7 @@ S_n=\cfrac{a_0(1-q^n)}{1-q}\Longrightarrow n=log_q\left(1-\cfrac{S_n(1-q)}{a_0}\
 </blockquote>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l=<span class="number">1</span>,r,mid,n,a;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    </span><br><span class="line">    r=n;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">        mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(mid*(mid+<span class="number">1</span>)/<span class="number">2</span>&lt;n)l=mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> r=mid;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    a=n-l*(l<span class="number">-1</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(l%<span class="number">2</span>==<span class="number">0</span>)<span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">'/'</span>&lt;&lt;l+<span class="number">1</span>-a;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;l+<span class="number">1</span>-a&lt;&lt;<span class="string">'/'</span>&lt;&lt;a;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="超级数论-O-1"><a href="#超级数论-O-1" class="headerlink" title="*超级数论 $O(1)$"></a>*超级数论 $O(1)$</h3><p>Cantor表里的每一个数都是行数除以列数【<strong><font color="red">坐标</font></strong>】。</p>
+<h3 id="超级数论-O-1"><a href="#超级数论-O-1" class="headerlink" title="*超级数论 $O(1)$"></a>*超级数论 $O(1)$</h3><p>Cantor表里的每一个数都是行数除以列数【<strong><font color=red>坐标</font></strong>】。</p>
 <blockquote>
 <p><a href="https://www.luogu.org/problemnew/solution/P1014" target="_blank" rel="noopener external nofollow noreferrer">更多解法</a>。各种叼炸天的数论分析。</p>
 <blockquote>
@@ -442,7 +442,7 @@ S_n=\cfrac{a_0(1-q^n)}{1-q}\Longrightarrow n=log_q\left(1-\cfrac{S_n(1-q)}{a_0}\
 <li>遇到<code>=</code>则加入<code>Const</code>，清空缓存并退出</li>
 </ul>
 </li>
-<li>将变量系数<code>Var</code>和常数<code>Const</code><strong><font color="red">变号</font></strong></li>
+<li>将变量系数<code>Var</code>和常数<code>Const</code><strong><font color=red>变号</font></strong></li>
 <li>然后再继续读入（<del>虽然理论上两个读入可以合到一个函数里然而懒的改了orz</del>）<ul>
 <li>遇到数字先缓存</li>
 <li>遇到字母将缓存根据<code>flag</code>加入<code>Var</code>，清空缓存（记录字母）</li>

@@ -31,14 +31,12 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="CS挑战营。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://vel.life/CS%E6%8C%91%E6%88%98%E8%90%A5/CS%E6%8C%91%E6%88%98%E8%90%A5/1557722177514.png">
-<meta property="og:image" content="https://vel.life/CS%E6%8C%91%E6%88%98%E8%90%A5/CS%E6%8C%91%E6%88%98%E8%90%A5/%E8%8D%89%E7%A8%BF%E7%BA%B8-10.jpg">
 <meta property="og:image" content="https://dsa.cs.tsinghua.edu.cn/oj/attachment/737d/737d12ac05493543175802701d48fa572c3853dd.png">
 <meta property="article:published_time" content="2019-05-12T23:33:46.000Z">
 <meta property="article:modified_time" content="2020-07-12T17:55:16.000Z">
 <meta property="article:author" content="工云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vel.life/CS%E6%8C%91%E6%88%98%E8%90%A5/CS%E6%8C%91%E6%88%98%E8%90%A5/1557722177514.png">
+<meta name="twitter:image" content="https://dsa.cs.tsinghua.edu.cn/oj/attachment/737d/737d12ac05493543175802701d48fa572c3853dd.png">
 
 <link rel="canonical" href="https://vel.life/CS%E6%8C%91%E6%88%98%E8%90%A5/">
 
@@ -280,7 +278,7 @@
 </ul>
 <p>Interesting：直径恒定的异体图形（挑战者号事故）</p>
 <p>Trick：<code>sizeof(dxy)/sizeof(dxy[0])</code>获取数组元素数量</p>
-<p><img data-src="CS挑战营/1557722177514.png" width="300"></p>
+<p><img data-src=CS挑战营/1557722177514.png width=300></p>
 <h1 id="计算思维"><a href="#计算思维" class="headerlink" title="计算思维"></a>计算思维</h1><p>Slides: <a href="./L01-计算思维-CS精英挑战营.pdf">L01-计算思维-CS精英挑战营</a> </p>
 <div class="pdfobject-container" data-target="./L01-计算思维-CS精英挑战营.pdf" data-height="500px"></div>
 <h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>CS精英挑战营第1期，2019。</p>
@@ -288,8 +286,8 @@
 <p>似乎人们还在等待最终时刻的到来，只剩下最后一分钟。</p>
 <p>嗯。</p>
 <p>可计算性的歧义：机器可理解性到实际运行可期望（在有限、有效时间内求解问题）。</p>
-<p>课程定位：理解一下背后的<strong><font color="red">思想</font></strong>。</p>
-<h2 id="引例：楼梯"><a href="#引例：楼梯" class="headerlink" title="引例：楼梯"></a>引例：楼梯</h2><p>经典例题：下楼梯（动态规划）。——<a href="https://en.wikipedia.org/wiki/And%E2%80%93or_tree" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color="red">与或图</font></strong></a>。</p>
+<p>课程定位：理解一下背后的<strong><font color=red>思想</font></strong>。</p>
+<h2 id="引例：楼梯"><a href="#引例：楼梯" class="headerlink" title="引例：楼梯"></a>引例：楼梯</h2><p>经典例题：下楼梯（动态规划）。——<a href="https://en.wikipedia.org/wiki/And%E2%80%93or_tree" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color=red>与或图</font></strong></a>。</p>
 <ul>
 <li>循环枚举法：语音识别例子，暴力匹配优化方法。可以写成迭代或递归。</li>
 </ul>
@@ -354,7 +352,7 @@
 <li>C 倒入 B。（A:50, B:30, C:0)</li>
 </ul>
 <p>最终，A中有50ml，B中有30ml，C中有0ml，不符合题目要求，故非正确答案。</p>
-<h3 id="Code-打表-1"><a href="#Code-打表-1" class="headerlink" title="Code 打表"></a>Code 打表</h3><p><img data-src="CS挑战营/草稿纸-10.jpg" width="350"></p>
+<h3 id="Code-打表-1"><a href="#Code-打表-1" class="headerlink" title="Code 打表"></a>Code 打表</h3><p><img data-src=CS挑战营/草稿纸-10.jpg width=350></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"7\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"A B\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"B C\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"C A\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"B C\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"A B\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"B C\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"C A\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="带洞N皇后问题"><a href="#带洞N皇后问题" class="headerlink" title="带洞N皇后问题"></a>带洞N皇后问题</h2><hr>
 <h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h3><p>N皇后问题是一个经典的问题，其目标是在一个N*N的棋盘上的每一行放置1个皇后，并使其不能互相攻击（同一行、同一列、同一斜线上的皇后都会自动攻击）。</p>
@@ -551,7 +549,7 @@ G(x)=\prod_{i\in [0,n)} (1+x^{w_i})</script><p>答案就是$x^v$的系数。</p>
 <h3 id="样例2-3"><a href="#样例2-3" class="headerlink" title="样例2"></a><strong>样例2</strong></h3><h3 id="Input-5"><a href="#Input-5" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100000 100000</span><br></pre></td></tr></table></figure>
 <h3 id="Output-5"><a href="#Output-5" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6079301507</span><br></pre></td></tr></table></figure>
 <h3 id="提示-2"><a href="#提示-2" class="headerlink" title="提示"></a><strong>提示</strong></h3><p><a href="https://dsa.cs.tsinghua.edu.cn/oj/attachment/bf96/bf96f71fdded97ba8ee10a8c836d91b0567f2885.html" target="_blank" rel="noopener external nofollow noreferrer"> 点击查看</a></p>
-<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><p>无非就是求形如$\cfrac{x}{y}$的<strong><font color="red">最简分式</font></strong>数量。</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><p>无非就是求形如$\cfrac{x}{y}$的<strong><font color=red>最简分式</font></strong>数量。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>

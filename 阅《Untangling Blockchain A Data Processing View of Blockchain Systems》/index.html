@@ -275,7 +275,7 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><p>《Untangling Blockchain A Data Processing View of Blockchain Systems》在 2018 年发表于 <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="_blank" rel="noopener external nofollow noreferrer">TKDE</a></strong> 期刊。区块链技术近年来快速发展。区块链是什么呢？它应用于缺乏信任的群体中，保存一个分布式账本，并在账本中记载一系列全局性的信息。群体则在其存在性、价值和历史状态上达成一个共识。但是区块链的技术栈事实上是在不断扩张的，我们需要理解其中最核心的机制。尤其是<strong>数据处理</strong>的部分。（<del>这句话显得就很强行的感觉</del>）</p>
-<p>这篇论文首先做了一个<strong>对私链最新研究成果的 <font color="red">survey</font></strong>。他们从产业界和学术界两方面分析出了几个最关键的技术概念：<strong><font color="blue">分布式账本</font></strong>（distributed ledger）、<strong><font color="blue">密码学</font></strong>（cryptography）、<strong><font color="blue">共识协议</font></strong>（consensus protocol）、<strong><font color="blue">智能合约</font></strong>（smart contract）。（这篇文章实际上花了一半以上的篇幅写survey）</p>
+<p>这篇论文首先做了一个<strong>对私链最新研究成果的 <font color=red>survey</font></strong>。他们从产业界和学术界两方面分析出了几个最关键的技术概念：<strong><font color=blue>分布式账本</font></strong>（distributed ledger）、<strong><font color=blue>密码学</font></strong>（cryptography）、<strong><font color=blue>共识协议</font></strong>（consensus protocol）、<strong><font color=blue>智能合约</font></strong>（smart contract）。（这篇文章实际上花了一半以上的篇幅写survey）</p>
 <p>接着，他们提供了一个区块链的跑分框架：<strong>BLOCKBENCH</strong>，来评估私有链在应对数据处理工作量时的性能。他们在实验中采用了三个主流的区块链系统来测试BLOCKBENCH，分别是：Ethereum，Parity，Hyperledger Fabric。结果显示，在设计区块链时存在很多trade-off，同时还有<strong>区块链和数据库系统之间的巨大性能差异</strong>——于是他们根据数据库系统的若干设计原则，指出了未来提升区块链性能的若干研究方向。<a id="more"></a></p>
 <blockquote>
 <p>本篇论文来自于《赛博智能经济与区块链》课程论文列表，属于 <strong><em>理论研究</em></strong> 专题。</p>
@@ -283,12 +283,12 @@
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="./1.pdf">Untangling Blockchain: A Data Processing View of Blockchain Systems</a></p>
 <div class="pdfobject-container" data-target="./1.pdf" data-height="500px"></div>
 <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>append-only：只可追加的（意味着已经存在的不能修改）</p>
-<p><strong><font color="red">miner</font></strong> &amp; <strong><font color="red">nonce</font></strong>: some information about the creator of the block (see PoW)</p>
+<p><strong><font color=red>miner</font></strong> &amp; <strong><font color=red>nonce</font></strong>: some information about the creator of the block (see PoW)</p>
 <h2 id="TKDE-期刊"><a href="#TKDE-期刊" class="headerlink" title="TKDE 期刊"></a>TKDE 期刊</h2><p>全称：IEEE Transactions on Knowledge and Data Engineering (TKDE)。</p>
 <p>TKDE是数据挖掘领域的顶级期刊。</p>
 <p>TKDE期刊的审稿周期较长，一般在3-6个月（中途会有major revision，那时就差不多可以算中了），但是某些也会到1、2年……</p>
 <p>在搜索这个期刊的时候，第二个搜索结果竟然是软件学院的某位老师：<a href="http://www.thss.tsinghua.edu.cn/publish/soft/3641/2016/20160818085056012465839/20160818085056012465839_.html" target="_blank" rel="noopener external nofollow noreferrer">龙明盛</a>。在看了简介之后，了解到他是TKDE的一位审稿人。并且他的5篇期刊论文有4篇都发表在TKDE，均是迁移学习方面的研究。</p>
-<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201014165729062.png" class title="龙老师的期刊论文">
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201014165729062.png" class="" title="龙老师的期刊论文">
 <p>龙明盛老师也是机器学习理论方向的研究组。</p>
 <blockquote>
 <p><em>Our team is interested in developing foundational theories, effective algorithms, and reliable systems of machine learning to enable systematic generalization in data representation, inference, and decision making. We focus on industrial applications of AI and data science, including text, sequence, image, video, and scientific data analysis and understanding.</em></p>
@@ -341,14 +341,14 @@
 <li>不同的区块链项目之间有什么<strong>区别</strong>？包括架构设计的定性分析，以及性能表现的定量分析。</li>
 <li>当前的<strong>挑战</strong>是什么？<strong>未来</strong>的区块链应该长什么样？</li>
 </ul>
-<p>为了回答以上的问题，论文中解释了四个关键技术概念：<strong><font color="blue">分布式账本</font></strong>（distributed ledger）、<strong><font color="blue">密码学</font></strong>（cryptography）、<strong><font color="blue">共识协议</font></strong>（consensus protocol）、<strong><font color="blue">智能合约</font></strong>（smart contract）。</p>
+<p>为了回答以上的问题，论文中解释了四个关键技术概念：<strong><font color=blue>分布式账本</font></strong>（distributed ledger）、<strong><font color=blue>密码学</font></strong>（cryptography）、<strong><font color=blue>共识协议</font></strong>（consensus protocol）、<strong><font color=blue>智能合约</font></strong>（smart contract）。</p>
 <p>接着详述了BLOCKBENCH框架。（<del>这些部分跟Introduction一模一样</del>）</p>
 <blockquote>
 <p><em>The results show that current blockchains’ performance is limited, far below what a state-of-</em><br><em>the-art database system can offer.</em></p>
 </blockquote>
-<h1 id="论文主要贡献"><a href="#论文主要贡献" class="headerlink" title="论文主要贡献"></a>论文主要贡献</h1><p>1) We provide <strong>an in-depth <font color="red">survey</font> of blockchain systems</strong>. We discuss state of the art, and categorize current systems along four dimensions: distributed ledger, cryptography, consensus protocol and smart contract.</p>
-<p>2) We describe our <strong>benchmarking framework, <font color="red">BLOCKBENCH</font></strong>, that is designed for understanding performance of private blockchains against data processing workloads.</p>
-<p>3) We present <strong>a comprehensive <font color="red">evaluation</font> of Ethereum, Parity and Hyperledger</strong>. The results show the limitation of blockchains as data processing platforms. They identify several performance bottlenecks, and therefore can serve as a baseline for future blockchain research and development.</p>
+<h1 id="论文主要贡献"><a href="#论文主要贡献" class="headerlink" title="论文主要贡献"></a>论文主要贡献</h1><p>1) We provide <strong>an in-depth <font color=red>survey</font> of blockchain systems</strong>. We discuss state of the art, and categorize current systems along four dimensions: distributed ledger, cryptography, consensus protocol and smart contract.</p>
+<p>2) We describe our <strong>benchmarking framework, <font color=red>BLOCKBENCH</font></strong>, that is designed for understanding performance of private blockchains against data processing workloads.</p>
+<p>3) We present <strong>a comprehensive <font color=red>evaluation</font> of Ethereum, Parity and Hyperledger</strong>. The results show the limitation of blockchains as data processing platforms. They identify several performance bottlenecks, and therefore can serve as a baseline for future blockchain research and development.</p>
 <h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><p>一个典型的区块链系统通常包含大量互不信任的节点。</p>
 <p>所有节点共同保存全局状态，通过加入交易区块来修改全局状态。</p>
 <p>一个区块总是记载一个hash pointer指向它前面的区块，知道创世（genesis）区块。</p>
@@ -379,12 +379,12 @@
 </ol>
 <p>PBFT存在通信上的缺陷 / bound，但是它在非完全同步的网络（partially synchronous networks）中实现了安全性和活跃性。</p>
 <p>私有链上还支持智能合约，并可以在智能合约中定义各种复杂的交易逻辑。这些特性在商业和金融领域中尤为重要。</p>
-<h1 id="四大核心"><a href="#四大核心" class="headerlink" title="四大核心"></a>四大核心</h1><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015131843334.png" class title="Comparison of Blockchain Systems">
+<h1 id="四大核心"><a href="#四大核心" class="headerlink" title="四大核心"></a>四大核心</h1><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015131843334.png" class="" title="Comparison of Blockchain Systems">
 <h2 id="分布式账本-Distributed-Ledger"><a href="#分布式账本-Distributed-Ledger" class="headerlink" title="分布式账本 Distributed Ledger"></a>分布式账本 Distributed Ledger</h2><p>一个账本就是一个<strong>记载着一系列有顺序的交易记录</strong>的数据结构。</p>
 <p>在区块链中，每个节点都需要保存一份分布式账本的copy。</p>
 <p>分布式账本是append-only的。</p>
 <p>区块链从初始状态开始，账本中则记录了所有在之后对状态进行更新的操作。</p>
-<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015001122094.png" class title="Examples of Distributed Ledgers">
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015001122094.png" class="" title="Examples of Distributed Ledgers">
 <p>如上表，一个支持分布式账本的系统可以分为三个维度来描述：</p>
 <ul>
 <li>the application built on top of the ledger determines the data model of what being stored in the ledger</li>
@@ -426,7 +426,7 @@
 <p>私链中对交易隐私的需求其实不大，而公链则可能有较大需求。一是因为去匿名化攻击实际导致了交易人现实信息的泄露；二是因为交易的连接性可能削弱货币系统的可替代性，从而因为交易历史原因导致部分货币更有价值。</p>
 <p>Zerocoin是第一实现去除交易中的连接性的区块链，它是对bitcoin的一种扩展，它通过引入中间货币zerocoins，加入密码学混淆技术，从而使得无法追踪准确的比特币来源。其中需要用到零知识证明的技术。</p>
 <h3 id="Advanced-Signatures"><a href="#Advanced-Signatures" class="headerlink" title="Advanced Signatures"></a>Advanced Signatures</h3><p>一般是指多重签名 / 多步验证。提高安全性。</p>
-<h2 id="共识机制-Consensus"><a href="#共识机制-Consensus" class="headerlink" title="共识机制 Consensus"></a>共识机制 Consensus</h2><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015132324210.png" class title="Comparison of Consensus Protocols">
+<h2 id="共识机制-Consensus"><a href="#共识机制-Consensus" class="headerlink" title="共识机制 Consensus"></a>共识机制 Consensus</h2><img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015132324210.png" class="" title="Comparison of Consensus Protocols">
 <p>因为每个节点保存着一份账本的copy，为了修改/更新分布式账本，多个成员之间必须达成一致——这就是共识。</p>
 <p>共识机制必须可以忍受Byzantine failures。</p>
 <p>共识机制可以分为两类extreme：</p>
@@ -454,7 +454,7 @@ H(n \| H(b))<t
 <p>Bitcoin最早使用SHA-256作作为 $H$。Ethereum则使用Dagger-Hashimoto函数。</p>
 <p>一个区块的生成速度取决于上述问题的难度。</p>
 <p>为了解决同时找到两个区块（有一定概率发生）的问题，<strong>GHOST协议</strong>允许在区块链中产生分支，只要这些分支没有包含相互冲突的交易即可。</p>
-<h3 id="Proof-of-Stake"><a href="#Proof-of-Stake" class="headerlink" title="Proof of Stake"></a>Proof of Stake</h3><p>PoW是一个<strong><font color="red">相当消耗资源</font></strong>的策略。它消耗的电力总量可以为一个小国家（丹麦）供电。</p>
+<h3 id="Proof-of-Stake"><a href="#Proof-of-Stake" class="headerlink" title="Proof of Stake"></a>Proof of Stake</h3><p>PoW是一个<strong><font color=red>相当消耗资源</font></strong>的策略。它消耗的电力总量可以为一个小国家（丹麦）供电。</p>
 <p>PoS则可以减少挖矿的代价。PoS将矿工在节点上质押的货币量作为核心权重。</p>
 <script type="math/tex; mode=display">
 \begin{equation}
@@ -485,7 +485,7 @@ H(n \| H(b))< {\color{blue} {s(M)} } \cdot t
 <h1 id="BLOCKBENCH"><a href="#BLOCKBENCH" class="headerlink" title="BLOCKBENCH"></a>BLOCKBENCH</h1><blockquote>
 <p><em>Designed for quantitative analysis of blockchains as data processing platforms, the framework targets private blockchains with Turing-complete smart contracts.</em></p>
 </blockquote>
-<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015165704634.png" class title="Blockchain software stack on a fully validating node.">
+<img data-src="/%E9%98%85%E3%80%8AUntangling%20Blockchain%20A%20Data%20Processing%20View%20of%20Blockchain%20Systems%E3%80%8B/image-20201015165704634.png" class="" title="Blockchain software stack on a fully validating node.">
 <p>上图展示了区块链的典型技术栈。</p>
 <p>BLOCKBENCH跑分时主要收集数据并做出以下指标上的评估：</p>
 <ul>

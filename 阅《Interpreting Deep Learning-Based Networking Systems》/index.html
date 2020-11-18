@@ -285,17 +285,17 @@
 <p><a href="https://en.wikipedia.org/wiki/Decision_tree" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Decision_tree</a></p>
 </blockquote>
 <p>决策树非常简单。将<strong>二叉树</strong>的分支解释为决策/分类行为，即形成了决策树。</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png" class title="Decision Tree Elements">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/Decision-Tree-Elements.png" class="" title="Decision Tree Elements">
 <h2 id="超图"><a href="#超图" class="headerlink" title="超图"></a>超图</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Hypergraph" target="_blank" rel="noopener external nofollow noreferrer">https://en.wikipedia.org/wiki/Hypergraph</a></p>
 </blockquote>
 <p>超图可以理解为<strong>每条边可以包含两个以上的点</strong>所构成的图。</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png" class title="超图">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/20190606191822753.png" class="" title="超图">
 <blockquote>
 <p>每个边所包含的顶点个数相同且都为k个的，称为k阶超图。</p>
 </blockquote>
 <h2 id="CCS-CONCEPTS"><a href="#CCS-CONCEPTS" class="headerlink" title="CCS CONCEPTS"></a>CCS CONCEPTS</h2><p>可以在论文中发现如下的段落：</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924185011814.png" class title="CCS CONCEPTS">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924185011814.png" class="" title="CCS CONCEPTS">
 <p>这其实是ACM论文中作者对自己论文的分类。</p>
 <p><strong>在投稿阶段不用写，当收录之后再行添加。</strong></p>
 <blockquote>
@@ -320,7 +320,7 @@
 <p>这也是主要创新点了，毕竟是重新设计了一个框架。</p>
 </blockquote>
 <ul>
-<li><strong>Metis框架</strong>：提供基于DNN的网络模型中两种通用类别的理解，局部系统（<strong><font color="red">决策树</font></strong>）、全局系统（<strong><font color="red">超图</font></strong>）。</li>
+<li><strong>Metis框架</strong>：提供基于DNN的网络模型中两种通用类别的理解，局部系统（<strong><font color=red>决策树</font></strong>）、全局系统（<strong><font color=red>超图</font></strong>）。</li>
 <li><strong>Metis原型</strong>：Metis的具体实现，以及它如何理解/发掘启发信息和新知识。</li>
 <li><strong>应用场景</strong>：提供了4个典型的网络场景，Metis可以帮助网络工作者设计、诊断、部署、随机调整等。</li>
 </ul>
@@ -381,7 +381,7 @@
 <p>Metis是一个希腊神，他提供wisdom和consultation。</p>
 </blockquote>
 <p>下面这幅图描述了Metis的整体意图。可以看到图中最上面是具体的任务场景，中间是训练得到的深度模型，但是这种模型缺乏可解释性。最下面一层，通过引入Metis，深度模型被分解为决策树和超图两种模型，解释性增强。</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924213524895.png" class title="Metis的整体工作流">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924213524895.png" class="" title="Metis的整体工作流">
 <p>Metis将网络传输系统分为两个视界（层次）来处理：</p>
 <ul>
 <li><strong>Local systems</strong>：局部收集信息，为单个实例/实体做决策<ul>
@@ -400,7 +400,7 @@
 <blockquote>
 <p>以上这些scenario在之前的论文工作中都已经有相应的案例实现了。</p>
 </blockquote>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924214819313.png" class title="Metis的分类处理">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200924214819313.png" class="" title="Metis的分类处理">
 <h2 id="Local-systems"><a href="#Local-systems" class="headerlink" title="Local systems"></a>Local systems</h2><p>在<strong>Local systems</strong>方面，Metis引入了基于决策树的转化方法。这样做的起因是因为目前存在的启发式local system通常都是基于简单的规则式决策模型，而且通常具有简单的逻辑。</p>
 <p>转化的决策树通常需要由DNN来产生，这被称为一个“Teacher-Student”过程。也就是说，我们需要得到的决策树是基于DNN生成的输入输出来训练的。这种方法直接产生的决策树，通常为了拟合DNN而具有了过多的分支。因此，Metis中引入了两个手段来“<strong>prune the branches</strong>”（剪枝）。</p>
 <ul>
@@ -458,9 +458,9 @@
 </li>
 </ul>
 <h1 id="超图-1"><a href="#超图-1" class="headerlink" title="超图"></a>超图</h1><p>超图使得我们可以在统一的框架下，对多种global systems进行描述。</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200928171614149.png" class title="借助超图描述多种global systems">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200928171614149.png" class="" title="借助超图描述多种global systems">
 <p>下图是SDN中路由超图的一个示例：</p>
-<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200927230455109.png" class title="论文中的SDN路由超图">
+<img data-src="/%E9%98%85%E3%80%8AInterpreting%20Deep%20Learning-Based%20Networking%20Systems%E3%80%8B/image-20200927230455109.png" class="" title="论文中的SDN路由超图">
 <p>可以看到，一条路由路径在超图中就表现为一条超边（亦即一个顶点集）。</p>
 <h2 id="超图的表示能力"><a href="#超图的表示能力" class="headerlink" title="超图的表示能力"></a>超图的表示能力</h2><p>论文中实证性地提供了global system需要的两个核心特征，只要具备两个特征中的任意一个，便可以将global systems转化为超图模型，并使用Metis来理解它。</p>
 <ul>

@@ -269,7 +269,7 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>偶然想到了行列式。<br>众所周知，行列式都是方阵，$n \times n$。</p>
-<p>那么，<font color="red"><strong>存不存在$m \times n$的行列式</strong></font>呢？甚至，如何求解呢？<a id="more"></a></p>
+<p>那么，<font color=red><strong>存不存在$m \times n$的行列式</strong></font>呢？甚至，如何求解呢？<a id="more"></a></p>
 <p>有了这个想法以后，我决定从行列式的几何意义出发。</p>
 <ul>
 <li>2阶行列式，代表了2个2维向量张成的<strong>面积</strong>（<em>张，即伸展</em>）</li>
@@ -305,7 +305,7 @@ B= \begin{bmatrix}
 0&0&0&{a_{24}}&{\cdots}&{a_{2n}}\\
 {\vdots}&{\vdots}&{\vdots}&{\vdots}&{\ddots}&{\vdots}\\
 {0}&{0}&{0}&{0}&{\cdots}&{a_{mn}}\\
-\end{bmatrix}</script><p>然后为该矩阵<strong>补上<code>n-m</code>个线性无关的单位行向量</strong>，按照方阵行列式求解即可（将$B_{more}$称为B的<font color="red"><strong>补充矩阵</strong></font>）</p>
+\end{bmatrix}</script><p>然后为该矩阵<strong>补上<code>n-m</code>个线性无关的单位行向量</strong>，按照方阵行列式求解即可（将$B_{more}$称为B的<font color=red><strong>补充矩阵</strong></font>）</p>
 <script type="math/tex; mode=display">
 |A|=B_{more}=\begin{vmatrix}
 {a_{11}}&{a_{12}}&{a_{13}}&{a_{14}}&{\cdots}&{a_{1n}}\\
@@ -320,7 +320,7 @@ B= \begin{bmatrix}
 <p>因此，行阶梯矩阵中的阶梯角上的元素之和可以被称为广义迹。</p>
 <h2 id="广义特征值"><a href="#广义特征值" class="headerlink" title="广义特征值"></a>广义特征值</h2><p>既然存在广义行列式，广义迹，那么难道不应该存在广义特征值吗？</p>
 <p>特征值只需满足$|\lambda E - A|=0$。</p>
-<p>但$E$的一般定义只有方阵，因此我们需要额外得到关于A的<font color="red"><strong>广义相关单位矩阵</strong></font>$E_A$。</p>
+<p>但$E$的一般定义只有方阵，因此我们需要额外得到关于A的<font color=red><strong>广义相关单位矩阵</strong></font>$E_A$。</p>
 <p>即有</p>
 <script type="math/tex; mode=display">
 |\lambda E_A - A|=0</script><p>显然，$E_A$满足，</p>
@@ -340,7 +340,7 @@ E_A=\begin{bmatrix}
 <p>我们知道了A的特征值。</p>
 <p>可不可以进一步求A的特征向量呢？</p>
 <script type="math/tex; mode=display">
-A\xi_n=\lambda \xi_m</script><p>……似乎引申出了一种广义的<font color="red"><strong>特征变换</strong></font>。（相似变换）</p>
+A\xi_n=\lambda \xi_m</script><p>……似乎引申出了一种广义的<font color=red><strong>特征变换</strong></font>。（相似变换）</p>
 <blockquote>
 <p>特征变换可以将不同维度的向量联系起来，即，<strong>$\xi_n$和$\xi_m$关于A矩阵相似</strong>。</p>
 </blockquote>

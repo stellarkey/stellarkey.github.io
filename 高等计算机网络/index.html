@@ -337,7 +337,7 @@
 <li><strong>网络管理</strong>：失效管理、配置管理、计费管理、性能管理、安全管理</li>
 <li><strong>网络安全</strong>：完整性、机密性、可用性</li>
 </ul>
-<h3 id="网络与分布式系统"><a href="#网络与分布式系统" class="headerlink" title="网络与分布式系统"></a>网络与分布式系统</h3><p><strong><font color="purple">网络与分布式系统的界限日益模糊</font></strong>：</p>
+<h3 id="网络与分布式系统"><a href="#网络与分布式系统" class="headerlink" title="网络与分布式系统"></a>网络与分布式系统</h3><p><strong><font color=purple>网络与分布式系统的界限日益模糊</font></strong>：</p>
 <ul>
 <li><strong>网络本质上就是分布式系统</strong></li>
 <li><strong>互联网服务已经成为信息服务的基本模式</strong></li>
@@ -432,7 +432,7 @@
 <h4 id="The-Internet-Engineering-Steering-Group-IESG"><a href="#The-Internet-Engineering-Steering-Group-IESG" class="headerlink" title="The Internet Engineering Steering Group (IESG)"></a>The Internet Engineering Steering Group (IESG)</h4><p>The IESG is responsible for technical management of IETF activities and the Internet standards process</p>
 <p>Composed of the <strong>Area Directors</strong> of the IETF working groups</p>
 <p>看起来很民主很透明，但IETF实际上仍然是一个中心化组织，其中最重要的部门就是IESG。下面的这些主席对标准化工作有几乎绝对的话语权。</p>
-<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png" class title="image-20200921105404457">
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png" class="" title="image-20200921105404457">
 <blockquote>
 <p>Futurewei 跟华为关系比较密切，常常道华为开会来跟进新技术的标准化工作。</p>
 </blockquote>
@@ -450,7 +450,7 @@
 <h2 id="边缘论"><a href="#边缘论" class="headerlink" title="边缘论"></a>边缘论</h2><blockquote>
 <p><em>“核心简单，边缘复杂”。</em></p>
 </blockquote>
-<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921115302298.png" class title="image-20200921115302298">
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921115302298.png" class="" title="image-20200921115302298">
 <p>边缘论的解释：</p>
 <ul>
 <li>One interpretation: <ul>
@@ -478,7 +478,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="Internet-传输层"><a href="#Internet-传输层" class="headerlink" title="Internet 传输层"></a>Internet 传输层</h1><img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png" class title="TCP&#x2F;IP协议栈">
+<h1 id="Internet-传输层"><a href="#Internet-传输层" class="headerlink" title="Internet 传输层"></a>Internet 传输层</h1><img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png" class="" title="TCP&#x2F;IP协议栈">
 <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>早期UDP在以太网上是广播，所以很占带宽，也就是说，只要有一些视频媒体的流量，其他人可能就做不了什么事情了。</p>
 <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>分组交换没法解决拥塞问题。</p>
 <blockquote>
@@ -524,7 +524,7 @@
 <h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>网络中堵塞之后，出现丢包问题，丢包又触发了重传……丢包、重传、丢包、重传……这便是TCP拥塞的特征。</p>
 <p>Van Jacobson: save the Internet.</p>
 <h4 id="拥塞控制和拥塞避免"><a href="#拥塞控制和拥塞避免" class="headerlink" title="拥塞控制和拥塞避免"></a>拥塞控制和拥塞避免</h4><p>让传输速率保持在knee附近是比较明智的选择。</p>
-<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png" class title="拥塞控制图">
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png" class="" title="拥塞控制图">
 <h4 id="动态的自适应方案"><a href="#动态的自适应方案" class="headerlink" title="动态的自适应方案"></a>动态的自适应方案</h4><p>基于网络的模型：预先分配每个节点的网络流量限制。比如，ATM、故宫。</p>
 <p>拥塞控制的目标：</p>
 <ul>
@@ -545,7 +545,7 @@
 <li>没有拥塞时：$f = max(x_i)$</li>
 <li>否则：$\sum_j \text{min}(x_i,f)=c$</li>
 </ul>
-<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png" class title="Max-min fairness">
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png" class="" title="Max-min fairness">
 <p>ACK自时钟控制分组收发：每收到一个包，发送一个ACK。保持进出均衡。</p>
 <blockquote>
 <p>保持在knee点附近波动。实现自适应。</p>
@@ -562,7 +562,7 @@
 <p>CUBIC：试图解决BIC的公平性问题，找到一种RTT无关的最优窗口查找算法。</p>
 <p>————————————————</p>
 <h4 id="BBR"><a href="#BBR" class="headerlink" title="BBR"></a>BBR</h4><p>找到带宽最大和延迟最小的点。但它们之间是相关的，所以研究人员一开始觉得是不可能的。</p>
-<p><strong><font color="red">BBR</font></strong>：分别估计，并计算<strong>时延带宽积</strong>。按照这个值去优化。</p>
+<p><strong><font color=red>BBR</font></strong>：分别估计，并计算<strong>时延带宽积</strong>。按照这个值去优化。</p>
 <blockquote>
 <p><strong>主动测量</strong>。测量短时间（10s内）的最小RTT。</p>
 <p>BBR的问题：</p>
@@ -592,7 +592,7 @@
 <p>TCP &amp; AQM。拥塞控制变成一个在互联网上求解最优化的问题。</p>
 <hr>
 <p>拥塞控制是Internet最重要的问题之一。</p>
-<h1 id="Internet-服务质量"><a href="#Internet-服务质量" class="headerlink" title="Internet 服务质量"></a>Internet 服务质量</h1><p>网络研究中主要关注网络<strong><font color="blue">保证性能</font></strong>的能力。</p>
+<h1 id="Internet-服务质量"><a href="#Internet-服务质量" class="headerlink" title="Internet 服务质量"></a>Internet 服务质量</h1><p>网络研究中主要关注网络<strong><font color=blue>保证性能</font></strong>的能力。</p>
 <p>和性能相关的主要的QoS参数：</p>
 <ul>
 <li>带宽</li>

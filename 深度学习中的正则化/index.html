@@ -279,13 +279,13 @@
 </blockquote>
 <p>正则化的典型策略包括：</p>
 <ul>
-<li><strong><font color="red">约束</font></strong>：模型限制，函数惩罚</li>
+<li><strong><font color=red>约束</font></strong>：模型限制，函数惩罚</li>
 <li><strong>偏好</strong>：先验知识，奥卡姆剃刀（偏好是预约束）</li>
-<li><strong><font color="red">集成</font></strong>：Bagging，Boosting</li>
+<li><strong><font color=red>集成</font></strong>：Bagging，Boosting</li>
 </ul>
 <p>正则化通常涉及<strong>trade-off</strong>，也就是权衡（方差+偏差）。一个好的正则化能够提高泛化能力，并且不显著降低表示能力。</p>
 <h1 id="统计学习原理选讲"><a href="#统计学习原理选讲" class="headerlink" title="统计学习原理选讲"></a>统计学习原理选讲</h1><p>在<a href="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/">机器学习进阶</a>中我曾做过一个统计学习基本原理的归纳。这里介绍其中的两个，它们与正则化密切相关。这两个定理都摘自西瓜书。</p>
-<h2 id="短见定理"><a href="#短见定理" class="headerlink" title="短见定理"></a>短见定理</h2><p><strong><font color="red">短见定理</font></strong>：过拟合无法彻底避免。</p>
+<h2 id="短见定理"><a href="#短见定理" class="headerlink" title="短见定理"></a>短见定理</h2><p><strong><font color=red>短见定理</font></strong>：过拟合无法彻底避免。</p>
 <blockquote>
 <p><strong>反证</strong>：（基本假设：P$\neq$NP）</p>
 <ul>
@@ -294,7 +294,7 @@
 </ul>
 <p>机器学习是短视、贪心的。</p>
 </blockquote>
-<h2 id="午餐定理"><a href="#午餐定理" class="headerlink" title="午餐定理"></a>午餐定理</h2><p><strong><font color="red">午餐定理</font></strong>：对完全随机问题，任意学习算法的期望性能一致。（<a href="https://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization" target="_blank" rel="noopener external nofollow noreferrer">no free lunch</a>）</p>
+<h2 id="午餐定理"><a href="#午餐定理" class="headerlink" title="午餐定理"></a>午餐定理</h2><p><strong><font color=red>午餐定理</font></strong>：对完全随机问题，任意学习算法的期望性能一致。（<a href="https://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization" target="_blank" rel="noopener external nofollow noreferrer">no free lunch</a>）</p>
 <blockquote>
 <p>证明：（考虑二分类问题）</p>
 </blockquote>
@@ -358,7 +358,7 @@
 <li>假设空间可以看作样本空间与标记空间的<strong>笛卡尔积</strong>的组合空间</li>
 </ul>
 <p><strong>版本空间</strong>（version space）：假设空间中，与训练集表现一致的子空间</p>
-<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96/gQPmxjS.png" class title="Imgur">
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96/gQPmxjS.png" class="" title="Imgur">
 <p>选择假设空间可以控制训练模型的容量。例如：</p>
 <ul>
 <li>线性回归：所有线性函数</li>

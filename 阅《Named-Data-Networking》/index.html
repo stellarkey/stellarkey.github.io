@@ -274,7 +274,7 @@
         <script src="/assets/js/APlayer.min.js"> </script><p>Named Data Networking（NDN）是美国国家科学基金资助的五个“未来网络架构项目”之一。NDN项目可以追溯到2006年的Content-Cenric Networking（CCN）项目。NDN项目的主要目标在于：</p>
 <center><strong>host-centric</strong> network architecture (IP) ---> a <strong>data-centric</strong> network architecture (NDN)</center>
 
-<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109085548241.png" class title="Architecture">
+<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109085548241.png" class="" title="Architecture">
 <a id="more"></a>
 <blockquote>
 <p>本篇论文源于高等计算机网络课程的阅读任务，领域为“<strong><em>网络体系结构</em></strong> ”。</p>
@@ -284,8 +284,8 @@
 <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>当下的计算机网络架构是一种<strong>沙漏</strong>式的结构。它非常依赖于瓶颈层——一个统一的网络层（例：IP），这一层为全球互联提供了最小的完备功能集。</p>
 <p>有了这样一层隔离之后，上层的抽象和下层的偏硬件的设计可以互相独立发展，从而使得互联网高速增长。</p>
 <p>然而IP层的最初的设计初衷是提供了<strong>通信网络</strong>（communication network），它主要提供的是端到端的数据包传输服务。</p>
-<p>但现在基于电子商务、数字媒体、社交网络、手机应用的新互联网则更倾向于一种<strong><font color="red">分布式网络</font></strong>（distribution network），需要更强的大规模分发能力，而不仅仅局限于双方的信息交互。分布式网络可以高效地解决分布式应用问题，而不需要使用端到端的通信协议来额外增加复杂度和错误的可能。</p>
-<p>NDN将网络服务的语义从“<strong>给定目的地址端到端地发送某个数据包</strong>”，变为了“<strong>根据给定的命名获取数据</strong>”。在NDN中，一个<font color="red"><strong>命名（name）</strong></font>可以指代任何东西，<em>an endpoint, a data chunk in a movie or a book, a command to turn on some lights, etc.</em></p>
+<p>但现在基于电子商务、数字媒体、社交网络、手机应用的新互联网则更倾向于一种<strong><font color=red>分布式网络</font></strong>（distribution network），需要更强的大规模分发能力，而不仅仅局限于双方的信息交互。分布式网络可以高效地解决分布式应用问题，而不需要使用端到端的通信协议来额外增加复杂度和错误的可能。</p>
+<p>NDN将网络服务的语义从“<strong>给定目的地址端到端地发送某个数据包</strong>”，变为了“<strong>根据给定的命名获取数据</strong>”。在NDN中，一个<font color=red><strong>命名（name）</strong></font>可以指代任何东西，<em>an endpoint, a data chunk in a movie or a book, a command to turn on some lights, etc.</em></p>
 <p>这种观念性的改变使得NDN不仅可以解决端到端的通信，还能解决<strong>内容分发</strong>和<strong>网络控制</strong>方面的问题。除此之外，NDN还原生支持：</p>
 <ul>
 <li><strong>security primitives</strong> (via signatures on all named data)</li>
@@ -308,7 +308,7 @@
 </ul>
 </li>
 </ul>
-<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109090817762.png" class title="Packets in NDN">
+<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109090817762.png" class="" title="Packets in NDN">
 <p>NDN中的路由节点：</p>
 <ul>
 <li>a Pending Interest Table (<strong>PIT</strong>)</li>
@@ -316,7 +316,7 @@
 <li>a Content Store (<strong>CS</strong>)</li>
 <li>a Forwarding Strategy module</li>
 </ul>
-<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109092920408.png" class title="NDN Node">
+<img data-src="/%E9%98%85%E3%80%8ANamed-Data-Networking%E3%80%8B/image-20201109092920408.png" class="" title="NDN Node">
 <h2 id="Names"><a href="#Names" class="headerlink" title="Names"></a>Names</h2><blockquote>
 <p><em>Naming data enables support for functionality such as content distribution, multicast, mobility, and delay-tolerant networking.</em></p>
 </blockquote>

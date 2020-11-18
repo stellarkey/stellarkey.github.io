@@ -273,7 +273,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553687383401.png" class width="1553687383401">
+        <script src="/assets/js/APlayer.min.js"> </script><img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553687383401.png" class="" width="1553687383401">
 <p>图神经网络(GNN)学习笔记。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://github.com/nnzhan/Awesome-Graph-Neural-Networks" target="_blank" rel="noopener external nofollow noreferrer"><strong>Awesome-Graph-Neural-Networks</strong></a></p>
 <p>• [MPNN] <a href="https://arxiv.org/pdf/1704.01212.pdf" target="_blank" rel="noopener external nofollow noreferrer">Neural message passing for quantum chemistry</a><br>• [NLNN] <a href="https://arxiv.org/pdf/1711.07971.pdf" target="_blank" rel="noopener external nofollow noreferrer">Non-local neural networks</a><br>• [GN] <a href="https://arxiv.org/pdf/1806.01261.pdf" target="_blank" rel="noopener external nofollow noreferrer">Relational inductive biases, deep learning, and graph networks</a><br>• <a href="https://arxiv.org/pdf/1605.05273.pdf" target="_blank" rel="noopener external nofollow noreferrer">Learning CNN for graphs</a><br>• <a href="https://tkipf.github.io/graph-convolutional-networks/" target="_blank" rel="noopener external nofollow noreferrer">https://tkipf.github.io/graph-convolutional-networks/</a><br>• DeepWalk: <a href="http://www.perozzi.net/publications/14_kdd_deepwalk.pdf" target="_blank" rel="noopener external nofollow noreferrer">Online Learning of Social Representations</a><br>• node2vec: <a href="https://cs.stanford.edu/~jure/pubs/node2vec-kdd16.pdf" target="_blank" rel="noopener external nofollow noreferrer">Scalable Feature Learning for Networks</a></p>
@@ -281,8 +281,8 @@
 <p><a href="https://zhuanlan.zhihu.com/p/54505069" target="_blank" rel="noopener external nofollow noreferrer">图卷积网络(GCN)新手村完全指南</a></p>
 <h1 id="GNN"><a href="#GNN" class="headerlink" title="GNN"></a>GNN</h1><p>图神经网络（Graph Neural Network，<code>GNN</code>）。</p>
 <ul>
-<li>从神经网络（RNN，CNN）的全连接到GNN中的<strong><font color="red">散链接</font></strong>。</li>
-<li>不再满足欧式空间（更加关注<strong><font color="red">拓扑</font></strong>性质）</li>
+<li>从神经网络（RNN，CNN）的全连接到GNN中的<strong><font color=red>散链接</font></strong>。</li>
+<li>不再满足欧式空间（更加关注<strong><font color=red>拓扑</font></strong>性质）</li>
 </ul>
 <p>$\longrightarrow$符号主义、连接主义、行为主义。</p>
 <ul>
@@ -290,7 +290,7 @@
 <li>连接主义+符号主义：GNN</li>
 </ul>
 <hr>
-<p><strong><font color="red">MPNN</font></strong>。很多GNN都可以统一为MPNN。</p>
+<p><strong><font color=red>MPNN</font></strong>。很多GNN都可以统一为MPNN。</p>
 <ul>
 <li>Message passing phase<ul>
 <li>下一时刻由邻居的上一时刻决定（<strong>拓扑空间中的元胞自动机</strong>）（t？）</li>
@@ -317,9 +317,9 @@
 <p>将一个图向量化。</p>
 <ul>
 <li><p><strong><code>DeepWalk</code></strong>（深度游走算法）</p>
-<img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553686970616.png" class width="1553686970616">
+<img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553686970616.png" class="" width="1553686970616">
 <ul>
-<li><font color="red">*把每个节点**表示**为一个向量*</font></li>
+<li><font color=red>*把每个节点**表示**为一个向量*</font></li>
 <li>节点的聚类</li>
 <li>节点的连通性强弱</li>
 <li>随机游走形成的序列就生成了所求的向量</li>
@@ -327,7 +327,7 @@
 </ul>
 </li>
 <li><p><strong><code>node2vec</code></strong></p>
-<img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553687062209.png" class width="1553687062209">
+<img data-src="/GNN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1553687062209.png" class="" width="1553687062209">
 <ul>
 <li>条件独立假设 + 空间对称假设（归一化）</li>
 <li>图遍历策略（BFS vs. DFS$\longrightarrow$通过<strong>基于距离的概率超参</strong>来调节广度和深度的权衡）</li>

@@ -319,7 +319,7 @@
 <p><a href="https://hackernoon.com/text-classification-simplified-with-facebooks-fasttext-b9d3022ac9cb" target="_blank" rel="noopener external nofollow noreferrer">Text Classification Simplified with Facebook’s FastText</a></p>
 <p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjADegQIBRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fsinat_26917383%2Farticle%2Fdetails%2F54850933&amp;usg=AOvVaw13-0y3Npvz1tOzbi1zuy97" target="_blank" rel="noopener external nofollow noreferrer">NLP︱高级词向量表达（二）——FastText（简述、学习笔记） - 素质云笔记 …</a></p>
 <p><a href="https://blog.csdn.net/ymaini/article/details/81489599" target="_blank" rel="noopener external nofollow noreferrer">FastText学习笔记</a></p>
-<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color="red">源码分析</font>- Helei’s Tech Notes</strong></a></p>
+<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
 <p><a href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-faqs.md#常问问题" target="_blank" rel="noopener external nofollow noreferrer">常问问题</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/36872508" target="_blank" rel="noopener external nofollow noreferrer">中文训练好的词向量</a></p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>FastText可以进行：</p>
@@ -435,7 +435,7 @@
 <blockquote>
 <p>fasttext将Ngrams也当做词训练word2vec模型；用CBOW的思路来做分类。（fasttext有一个有监督的模式，但是模型等同于<code>cbow</code>，只是target变成了label而不是word）</p>
 </blockquote>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/fasttext-arch.png" class title="fasttext-arch">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/fasttext-arch.png" class="" title="fasttext-arch">
 <p>fasttext只有1层神经网络，属于所谓的shallow learning，但是fasttext的效果并不差，而且具备学习和预测速度快的优势，在工业界这点非常重要。它比一般的神经网络模型的精确度还要高。</p>
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p><img data-src="https://heleifz.github.io/media/14732610572844/fasttext-model-arch.png" alt="fasttext-model-arch"></p>
 <h3 id="DAN-deep-averaging-network"><a href="#DAN-deep-averaging-network" class="headerlink" title="DAN (deep averaging network)"></a>DAN (deep averaging network)</h3><blockquote>
@@ -443,11 +443,11 @@
 <p><a href="https://github.com/llhthinker/NLP-Papers/blob/master/text%20classification/2017-11/Deep%20Unordered%20Composition%20Rivals%20Syntactic%20Methods%20for%20Text%20Classification/note.md" target="_blank" rel="noopener external nofollow noreferrer">论文笔记：Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
 <p>fastText简而言之，就是把文档中所有词通过lookup table变成向量，取平均后直接用线性分类器得到分类结果。fastText和ACL-15上的deep averaging network (<strong>DAN</strong>，如下图)非常相似，区别就是<u>去掉了中间的隐层</u>。两篇文章的结论也比较类似，也是指出对一些简单的分类任务，没有必要使用太复杂的网络结构就可以取得差不多的结果。</p>
 </blockquote>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553936021538.png" class width="1553936021538">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553936021538.png" class="" width="1553936021538">
 <p><strong>RecNN</strong>: Recursive Neural Nets（递归神经网络）。</p>
 <p>对于任意数量的词语（n），DAN计算<code>2</code>层非线性层，而RecNN需要计算<code>n-1</code>层。</p>
 <h3 id="fastText"><a href="#fastText" class="headerlink" title="fastText"></a>fastText</h3><p>下面是fastText的架构：</p>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553945064441.png" class width="1553945064441">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553945064441.png" class="" width="1553945064441">
 <h2 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h2><blockquote>
 <p><a href="https://www.cnblogs.com/peghoty/p/3857839.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>word2vec 中的数学原理详解</strong></a></p>
 <p><a href="https://arxiv.org/pdf/1301.3781.pdf" target="_blank" rel="noopener external nofollow noreferrer">Efficient Estimation of Word Representations in Vector Space</a></p>
@@ -456,16 +456,16 @@
 <p>fastText 提供了两种用于计算词表示的模型：<code>skipgram</code> 和 <code>cbow</code> (‘<strong>c</strong>ontinuous-<strong>b</strong>ag-<strong>o</strong>f-<strong>w</strong>ords’)。</p>
 <p><strong>上下文</strong>：指在目标词左边和右边的固定单词数和。</p>
 <p> <code>cbow</code> 模型是<strong>根据目标词的上下文来预测目标词</strong>。<code>skipgram</code> 模型是<strong>学习近邻的单词来预测目标单词</strong>。</p>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/cbo_vs_skipgram.png" class title="cbow vs skipgram">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/cbo_vs_skipgram.png" class="" title="cbow vs skipgram">
 <blockquote>
 <p><code>skipgram</code> 模型会比 <code>cbow</code> 模型在 subword information（子词信息）方面效果更好。</p>
 </blockquote>
-<h3 id="神经语言模型"><a href="#神经语言模型" class="headerlink" title="神经语言模型"></a>神经语言模型</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273776416.png" class width="1554273776416">
+<h3 id="神经语言模型"><a href="#神经语言模型" class="headerlink" title="神经语言模型"></a>神经语言模型</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273776416.png" class="" width="1554273776416">
 <p>神经语言模型又常常被简记为下图：</p>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273816475.png" class width="1554273816475">
-<h3 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273658779.png" class width="1554273658779">
-<h3 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554275902231.png" class width="1554275902231">
-<h2 id="层次softmax"><a href="#层次softmax" class="headerlink" title="层次softmax"></a>层次softmax</h2><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/20180206115602122.jpg" class title="层次softmax">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273816475.png" class="" width="1554273816475">
+<h3 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273658779.png" class="" width="1554273658779">
+<h3 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554275902231.png" class="" width="1554275902231">
+<h2 id="层次softmax"><a href="#层次softmax" class="headerlink" title="层次softmax"></a>层次softmax</h2><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/20180206115602122.jpg" class="" title="层次softmax">
 <h2 id="N-gram"><a href="#N-gram" class="headerlink" title="N-gram"></a>N-gram</h2><p>来源于马尔可夫链。</p>
 <p><img data-src="https://cdn-images-1.medium.com/max/1600/1*tufb2Ea4ZBVydTuvrIUT5A.png" alt="img"></p>
 <p><strong>N-gram features</strong>：</p>
@@ -474,10 +474,10 @@
 <li>用hashing来减少N-gram的存储</li>
 </ul>
 <p>由于n-gram的量远比word大的多，完全存下所有的n-gram也不现实。Fasttext采用了Hash桶的方式，把所有的n-gram都哈希到buckets个桶中，哈希到同一个桶的所有n-gram共享一个embedding vector。如下图所示：</p>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554292920220.png" class width="1554292920220">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554292920220.png" class="" width="1554292920220">
 <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>fastText在实现上很考究。源码采用<code>C++</code>实现。</p>
 <blockquote>
-<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color="red">源码分析</font>- Helei’s Tech Notes</strong></a></p>
+<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
 </blockquote>
 <h1 id="Text-Classification-文本分类"><a href="#Text-Classification-文本分类" class="headerlink" title="Text Classification 文本分类"></a>Text Classification 文本分类</h1><p>确认进入实验目录：<code>***/***/fastTest</code>.</p>
 <p>运行以下命令：（不加参数）</p>
@@ -554,7 +554,7 @@
 </blockquote>
 <h2 id="Cooking-实验"><a href="#Cooking-实验" class="headerlink" title="Cooking 实验"></a>Cooking 实验</h2><h3 id="获得数据"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wget https:&#x2F;&#x2F;dl.fbaipublicfiles.com&#x2F;fasttext&#x2F;data&#x2F;cooking.stackexchange.tar.gz &amp;&amp; tar xvzf cooking.stackexchange.tar.gz</span><br><span class="line">&gt;&gt; head cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p> <strong><font color="red">All the labels start by the <code>__label__</code> prefix</font>, which is how fastText recognize what is a label or what is a word.</strong>（其实后面也可以在训练里通过<code>-label</code>参数改改）</p>
+<p> <strong><font color=red>All the labels start by the <code>__label__</code> prefix</font>, which is how fastText recognize what is a label or what is a word.</strong>（其实后面也可以在训练里通过<code>-label</code>参数改改）</p>
 <p> <code>wget [url]</code>获取云端文件，<code>&amp;&amp;</code>是<strong>短路</strong>写法，<code>tar xvzf</code>解压缩。</p>
 <p> <a href="https://www.cnblogs.com/peida/archive/2012/11/06/2756278.html" target="_blank" rel="noopener external nofollow noreferrer">每天一个linux命令（14）：head 命令</a></p>
 <blockquote>
@@ -589,22 +589,22 @@
 </thead>
 <tbody>
 <tr>
-<td><strong><font color="red">-input</font></strong></td>
+<td><strong><font color=red>-input</font></strong></td>
 <td>训练数据</td>
 <td></td>
 </tr>
 <tr>
-<td><strong><font color="red">-output</font></strong></td>
+<td><strong><font color=red>-output</font></strong></td>
 <td>模型输出，会输出模型和embedding结果，后缀是.vec和.bin</td>
 <td></td>
 </tr>
 <tr>
-<td><strong><font color="red">-lr</font></strong></td>
+<td><strong><font color=red>-lr</font></strong></td>
 <td>学习率</td>
 <td><strong>0.1</strong></td>
 </tr>
 <tr>
-<td><strong><font color="red">-epoch</font></strong></td>
+<td><strong><font color=red>-epoch</font></strong></td>
 <td>迭代次数</td>
 <td><strong>5</strong></td>
 </tr>
@@ -728,10 +728,10 @@
 <p>The predicted tag is <code>baking</code>  which fits well to this question. Let us now try a second example:</p>
 <p><em>Why not put knives in the dishwasher?</em></p>
 <p>The label predicted by the model is <code>food-safety</code>, which  is not relevant. （实测这里也是<code>baking</code>，而且，该模型似乎对大小写敏感，见下图）Somehow, the model seems to fail on simple examples.</p>
-<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553827693158.png" class width="1553827693158">
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553827693158.png" class="" width="1553827693158">
 <p>To  get a better sense of its quality, let’s test it on the validation data  by running:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; .&#x2F;fasttext test model_cooking.bin cooking.valid                 </span><br><span class="line">N  3000</span><br><span class="line">P@1  0.124</span><br><span class="line">R@1  0.0541</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
-<p>The output of fastText are <strong><font color="red">the precision at one (<code>P@1</code>) and the recall at one (<code>R@1</code>)</font></strong>. We can also compute the precision at five and recall at five with:</p>
+<p>The output of fastText are <strong><font color=red>the precision at one (<code>P@1</code>) and the recall at one (<code>R@1</code>)</font></strong>. We can also compute the precision at five and recall at five with:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext <span class="built_in">test</span> model_cooking.bin cooking.valid 5 0.1              </span><br><span class="line">N  3000</span><br><span class="line">P@5  0.0668</span><br><span class="line">R@5  0.146</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwitpt3_q6bhAhVuyosBHe2FAw4QFjAAegQIAxAB&amp;url=https%3A%2F%2Fdatascience.stackexchange.com%2Fquestions%2F13327%2Fwhat-does-prec1-in-fasttext-mean&amp;usg=AOvVaw0ndx98AGbKY-PDVy4Gk0dy" target="_blank" rel="noopener external nofollow noreferrer">machine learning - What does Prec@1 in fastText mean? - Data …</a></p>
@@ -765,7 +765,7 @@
 <tr>
 <td style="text-align:center">4</td>
 <td style="text-align:center">分字[default] + <code>-epoch 25</code></td>
-<td style="text-align:center">N    61363<br>P@1    <strong><font color="red">0.827</font></strong><br>R@1    <strong><font color="red">0.827</font></strong></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.827</font></strong><br>R@1    <strong><font color=red>0.827</font></strong></td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
@@ -779,7 +779,7 @@
 </tr>
 <tr>
 <td style="text-align:center">7</td>
-<td style="text-align:center">分字[default] + <code>-epoch 30 -wordNgrams 2 -loss hs</code><br>运行速度明显提升，性能下降<br>层次sortmax</td>
+<td style="text-align:center">分字[default] + <code>-epoch 30 -wordNgrams 2 -loss hs</code><br/>运行速度明显提升，性能下降<br>层次sortmax</td>
 <td style="text-align:center">N    61363<br>P@1    0.761<br>R@1    0.761</td>
 </tr>
 <tr>
@@ -790,12 +790,12 @@
 <tr>
 <td style="text-align:center">9</td>
 <td style="text-align:center">分字[default] + 预训练词向量[300维]<br><code>-dim 300</code></td>
-<td style="text-align:center">N    61363<br>P@1    <strong><font color="red">0.862</font></strong><br>R@1    <strong><font color="red">0.862</font></strong></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.862</font></strong><br/>R@1    <strong><font color=red>0.862</font></strong></td>
 </tr>
 <tr>
 <td style="text-align:center">10</td>
 <td style="text-align:center">分字[default] + 预训练词向量[300维]+<code>-epoch 30 -wordNgrams 2</code></td>
-<td style="text-align:center">N    61363<br>P@1    <strong><font color="red">0.909</font></strong><br>R@1    <strong><font color="red">0.909</font></strong></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.909</font></strong><br>R@1    <strong><font color=red>0.909</font></strong></td>
 </tr>
 <tr>
 <td style="text-align:center"></td>

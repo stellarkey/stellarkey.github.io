@@ -276,41 +276,41 @@
 <p><a href="https://www.bilibili.com/video/av20538548" target="_blank" rel="noopener external nofollow noreferrer">函数式编程 / 算法 / Python CS61A Spring 2018</a></p>
 <h1 id="函数式编程简介"><a href="#函数式编程简介" class="headerlink" title="函数式编程简介"></a>函数式编程简介</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener external nofollow noreferrer">函数式编程</a>以函数为核心，万事万物皆归约为某一个对应的函数。</p>
 <h2 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h2><p>函数式编程是一种<a href="http://en.wikipedia.org/wiki/Programming_paradigm" target="_blank" rel="noopener external nofollow noreferrer">“编程范式”</a>（programming paradigm），也就是如何编写程序的方法论。</p>
-<p>常见的编程范式有<strong><font color="red"><a href="https://zh.wikipedia.org/wiki/指令式編程" target="_blank" rel="noopener external nofollow noreferrer">命令式编程</a></font>（Imperative programming）</strong>，<strong><font color="red"><a href="https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B" target="_blank" rel="noopener external nofollow noreferrer">声明式编程</a></font></strong>等。</p>
+<p>常见的编程范式有<strong><font color=red><a href="https://zh.wikipedia.org/wiki/指令式編程" target="_blank" rel="noopener external nofollow noreferrer">命令式编程</a></font>（Imperative programming）</strong>，<strong><font color=red><a href="https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B" target="_blank" rel="noopener external nofollow noreferrer">声明式编程</a></font></strong>等。</p>
 <blockquote>
 <p>比如，面向对象编程（OOP）是一种命令式编程。</p>
 </blockquote>
-<p><strong><font color="blue">命令式编程</font></strong>是面向<strong>计算机硬件</strong>的抽象，有<strong>变量</strong>（对应着存储单元），<strong>赋值语句</strong>（获取，存储指令），<strong>表达式</strong>（内存引用和算术运算）和<strong>控制语句</strong>（跳转指令），一句话，命令式程序就是一个<strong>冯诺依曼机</strong>的<strong>指令序列</strong>。</p>
-<p><strong><font color="blue">声明式编程</font></strong>通常被定义为除<a href="https://zh.wikipedia.org/wiki/命令式编程" target="_blank" rel="noopener external nofollow noreferrer">命令式</a>以外的编程范式。声明式编程不用告诉电脑问题领域，从而避免随之而来的副作用。而命令式编程则需要用算法来明确的指出每一步该怎么做。</p>
-<p>而<strong><font color="blue">函数式编程</font></strong>作为一种<strong>声明式编程</strong>，是面向数学的抽象，将计算描述为一种<strong>表达式求值</strong>，一句话，函数式程序就是一个<strong>表达式</strong>。函数式编程更加强调程序执行的结果而非执行的过程，倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。</p>
-<h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><p><strong><font color="red">纯函数</font></strong>：若一个函数的输出<strong>由且仅由</strong>其给定的输入决定，称其为纯函数。</p>
+<p><strong><font color=blue>命令式编程</font></strong>是面向<strong>计算机硬件</strong>的抽象，有<strong>变量</strong>（对应着存储单元），<strong>赋值语句</strong>（获取，存储指令），<strong>表达式</strong>（内存引用和算术运算）和<strong>控制语句</strong>（跳转指令），一句话，命令式程序就是一个<strong>冯诺依曼机</strong>的<strong>指令序列</strong>。</p>
+<p><strong><font color=blue>声明式编程</font></strong>通常被定义为除<a href="https://zh.wikipedia.org/wiki/命令式编程" target="_blank" rel="noopener external nofollow noreferrer">命令式</a>以外的编程范式。声明式编程不用告诉电脑问题领域，从而避免随之而来的副作用。而命令式编程则需要用算法来明确的指出每一步该怎么做。</p>
+<p>而<strong><font color=blue>函数式编程</font></strong>作为一种<strong>声明式编程</strong>，是面向数学的抽象，将计算描述为一种<strong>表达式求值</strong>，一句话，函数式程序就是一个<strong>表达式</strong>。函数式编程更加强调程序执行的结果而非执行的过程，倡导利用若干简单的执行单元让计算结果不断渐进，逐层推导复杂的运算，而不是设计一个复杂的执行过程。</p>
+<h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><p><strong><font color=red>纯函数</font></strong>：若一个函数的输出<strong>由且仅由</strong>其给定的输入决定，称其为纯函数。</p>
 <blockquote>
 <p>如果一个函数内部的计算依赖全局变量，则它不是纯函数。</p>
 <p>如果一个函数以引用的方式传递数据结构，并且其中对DS发生了修改，则它不是纯函数。</p>
 <p>如果一个函数在过程中进行了额外的IO操作，则它不是纯函数。</p>
 </blockquote>
 <p>函数式编程希望函数设计应该越纯越好。</p>
-<p><strong><font color="blue">副作用</font></strong>（side effect）：函数的调用过程中，产生的<u>没有体现为函数的返回值</u>的附加效果。</p>
+<p><strong><font color=blue>副作用</font></strong>（side effect）：函数的调用过程中，产生的<u>没有体现为函数的返回值</u>的附加效果。</p>
 <blockquote>
 <p>一个纯函数是一个没有副作用的函数。</p>
 </blockquote>
 <h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h2 id="持久化数据结构"><a href="#持久化数据结构" class="headerlink" title="持久化数据结构"></a>持久化数据结构</h2><p>函数式编程中为了实现变量的<code>immutable</code>，并且降低各种操作的成本，引入了持久化数据结构。</p>
 <h1 id="λ演算系统"><a href="#λ演算系统" class="headerlink" title="λ演算系统"></a>λ演算系统</h1><p><a href="http://pauillac.inria.fr/~levy/courses/tsinghua/lambda/lambdaplan.pdf" target="_blank" rel="noopener external nofollow noreferrer"><code>Lambda Calculus</code></a>是美国逻辑学家<strong>Alonzo Church</strong>在1930年代发明的，并于1941年在论文《<a href="https://www.cambridge.org/core/journals/journal-of-symbolic-logic/article/alonzo-church-the-calculi-of-lambdaconversion-annals-of-mathematics-studies-no-6-lithoprinted-princeton-university-press-princeton1941-77-pp/B25AA86E102E282A10595C7693D9417A" target="_blank" rel="noopener external nofollow noreferrer"><em>The Calculi of Lambda Conversion</em></a>》中理论化。</p>
 <blockquote>
-<p>Alonzo Church本意是创建<strong><font color="red">形式化的数理逻辑系统</font></strong>，并未曾想到去创建一种编程语言。</p>
+<p>Alonzo Church本意是创建<strong><font color=red>形式化的数理逻辑系统</font></strong>，并未曾想到去创建一种编程语言。</p>
 <p>事实上，直到计算机编程产生后，这一理论与编程之间的关系才被发现。</p>
 </blockquote>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong><font color="red"> λ演算</font></strong>（Lambda Calculus）：λ演算是一套<strong>λ表达式</strong>变换和形式化的规则。 </p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong><font color=red> λ演算</font></strong>（Lambda Calculus）：λ演算是一套<strong>λ表达式</strong>变换和形式化的规则。 </p>
 <blockquote>
 <p> λ演算是<a href="https://zh.wikipedia.org/wiki/圖靈完備性" target="_blank" rel="noopener external nofollow noreferrer">图灵完全</a>的，也就是说，这是一个可以用于模拟任何<a href="https://zh.wikipedia.org/wiki/图灵机" target="_blank" rel="noopener external nofollow noreferrer">图灵机</a>的通用<a href="https://zh.wikipedia.org/wiki/计算模型_(数学" target="_blank" rel="noopener external nofollow noreferrer">模型</a>)。 </p>
 </blockquote>
-<p><strong><font color="red"> λ表达式</font></strong>：t是一个<strong>λ表达式</strong>，仅当如下条件之一成立时：</p>
+<p><strong><font color=red> λ表达式</font></strong>：t是一个<strong>λ表达式</strong>，仅当如下条件之一成立时：</p>
 <ul>
 <li>（一）变量：$t=x,\;\;\; x ∈ Var$<ul>
 <li>表示参数或数学/逻辑值的字符或字符串</li>
 </ul>
 </li>
-<li><font color="blue">（二）抽象化</font>：$t=λx.M,\;\;\; x ∈ Var\;且\;M是λ表达式$<ul>
+<li><font color=blue>（二）抽象化</font>：$t=λx.M,\;\;\; x ∈ Var\;且\;M是λ表达式$<ul>
 <li>函数定义（M是一个λ表达式项）。变量x在表达式中已被绑定。 </li>
 </ul>
 </li>
@@ -319,7 +319,7 @@
 </ul>
 </li>
 </ul>
-<p><strong><font color="red">$\lambda$算子</font></strong>：<strong>λ算子</strong>包含三种不同类型的<strong>λ表达式</strong>:</p>
+<p><strong><font color=red>$\lambda$算子</font></strong>：<strong>λ算子</strong>包含三种不同类型的<strong>λ表达式</strong>:</p>
 <ul>
 <li><code>variables</code> - 变量(用于引用λ表达式)</li>
 <li><code>lambda abstraction</code> - λ抽象(用于定义函数)</li>
@@ -328,13 +328,13 @@
 <blockquote>
 <p> 其中application中的<code>()</code>并非必须的。使用<code>()</code>主要是因为后面即将阐述的application的结合律。</p>
 </blockquote>
-<p>注意到λ表达式的<strong><font color="blue">（二）抽象化</font></strong>中，只规定了单个参数的情况。为了推广到多参数，我们引入了柯里化方法。</p>
+<p>注意到λ表达式的<strong><font color=blue>（二）抽象化</font></strong>中，只规定了单个参数的情况。为了推广到多参数，我们引入了柯里化方法。</p>
 <h3 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h3><p>对于“多参数函数”，<a href="http://zh.wikipedia.org/wiki/柯里化" target="_blank" rel="noopener external nofollow noreferrer">Curry(柯里化)</a>的处理技巧如下：</p>
 <blockquote>
-<p><strong>N参函数</strong>可以表述为返回<strong>N-1参函数的函数</strong>的<strong><font color="red">递归调用</font></strong>，即函数可以像“数据一样”被返回。 </p>
+<p><strong>N参函数</strong>可以表述为返回<strong>N-1参函数的函数</strong>的<strong><font color=red>递归调用</font></strong>，即函数可以像“数据一样”被返回。 </p>
 <p>比如，对于1个二元函数：$y^x$，如果固定了$y=2$，则得到1个单元函数$2^x$。</p>
 </blockquote>
-<p>这样的处理，使得每一个函数都只需要处理一个参数（从而利用<strong><font color="purple">单参函数实现多参函数功能</font></strong>）。</p>
+<p>这样的处理，使得每一个函数都只需要处理一个参数（从而利用<strong><font color=purple>单参函数实现多参函数功能</font></strong>）。</p>
 <p>函数柯里化的对偶是<strong>Uncurrying</strong>，一种使用匿名单参数函数来实现多参数函数的方法。例如： </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = function(a) &#123;</span><br><span class="line">  <span class="keyword">return</span> function(b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a * a + b * b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样调用上述函数：<code>(foo(3))(4)</code>，或直接<code>foo(3)(4)</code>。 </p>
@@ -359,9 +359,9 @@
 </blockquote>
 <p>为了简洁，不妨记λ函数ADD = <em>lambda</em> x y<strong>.</strong> x + y。</p>
 <blockquote>
-<p>从而得到一般形式的调用语句：<code>(ADD 2 3)</code> 或 <strong><font color="red"><code>ADD(2, 3)</code></font></strong>。</p>
+<p>从而得到一般形式的调用语句：<code>(ADD 2 3)</code> 或 <strong><font color=red><code>ADD(2, 3)</code></font></strong>。</p>
 </blockquote>
-<h2 id="α变换（代数）"><a href="#α变换（代数）" class="headerlink" title="α变换（代数）"></a>α变换（代数）</h2><p><strong><font color="red">α变换</font></strong>：α变换共有三个规则，</p>
+<h2 id="α变换（代数）"><a href="#α变换（代数）" class="headerlink" title="α变换（代数）"></a>α变换（代数）</h2><p><strong><font color=red>α变换</font></strong>：α变换共有三个规则，</p>
 <ul>
 <li>$λx.M \longrightarrow λx’.M\;\;\;\;\;[x \longrightarrow x’] $</li>
 <li>$λx.M \longleftarrow λx’.M\;\;\;\;\; [x \longleftarrow x’] $</li>

@@ -286,14 +286,14 @@
 <p>首先，我看了看<a href="https://www.bilibili.com/video/BV1mg4y1i7gV" target="_blank" rel="noopener external nofollow noreferrer">从入门到真香！全面预探虚幻 Unreal 5 新技术！【就知道玩游戏102】</a>。了解到一些游戏建模的简单知识。以下是一些总结。</p>
 <p>游戏的画面技术进步常常受限于算力，即短时间内可以有效调用的计算资源。一个几何模型，通常需要大量的三角形来模拟复杂的曲面结构，而这样的三角形则至少需要数十万个来达到拟真的水平。</p>
 <h2 id="曲面构造"><a href="#曲面构造" class="headerlink" title="曲面构造"></a>曲面构造</h2><p>顾名思义，从最简单的曲面开始，逐步进行若干轮<strong>切割、拉伸、挤压</strong>等变换，直至得到一个需要的复杂曲面。这个过程<strong>与工业设计中的3D建模比较相似</strong>，需要对每一步的工艺进行手动设计，但是对于游戏的曲面构造，则一般没有严苛的尺寸要求。这样的建模方式因为人工操作要求较多，效率很低。（注：以下及之后的部分图片均来自Gamker的视频截图）</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614224005223.png" class title="image-20200614224005223">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614224005223.png" class="" title="image-20200614224005223">
 <h3 id="雕刻建模"><a href="#雕刻建模" class="headerlink" title="雕刻建模"></a>雕刻建模</h3><p>这种方式的艺术性更强，比较方便非专业的工程人士也能方便地绘制想要的模型。通过模拟画笔、调刀等工具，这样的建模过程更贴近于现实，在模型上绘制出细致的纹理。</p>
 <blockquote>
 <p>最流行的雕刻软件：<a href="https://www.zbrushcn.com/" target="_blank" rel="noopener external nofollow noreferrer"><strong>Zbrush</strong></a>。</p>
 </blockquote>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614224102889.png" class title="image-20200614224102889">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614224102889.png" class="" title="image-20200614224102889">
 <h2 id="高模-High-Poly"><a href="#高模-High-Poly" class="headerlink" title="高模 High Poly"></a>高模 High Poly</h2><p>一个细节精致的模型需要的三角形数可达上百万个，称为<strong>高模</strong>（High Poly）。高模常用于渲染时间充足的场景，如影视行业。</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614225326079.png" class title="image-20200614225326079">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614225326079.png" class="" title="image-20200614225326079">
 <h3 id="低模-Low-Poly"><a href="#低模-Low-Poly" class="headerlink" title="低模 Low Poly"></a>低模 Low Poly</h3><p>但在游戏中，由于渲染的实时性，计算机无法提供高模所需要的大量计算资源。因此游戏中只能采用<strong>低模</strong>（Low Poly）。</p>
 <p>随着硬件技术的进步，游戏中人物模型的三角形数逐渐从上百个发展到二十万个。这个时候，对于人物细节的整体刻画已经接近完美。</p>
 <h2 id="法线贴图-Normal-Mapping"><a href="#法线贴图-Normal-Mapping" class="headerlink" title="法线贴图 Normal Mapping"></a>法线贴图 Normal Mapping</h2><p>但是，对于复杂的<strong>自然场景</strong>，数以百万的三角形总数仍然无法达到足够好的表现。</p>
@@ -304,7 +304,7 @@
 <p><a href="https://learnopengl-cn.github.io/05%20Advanced%20Lighting/04%20Normal%20Mapping/" target="_blank" rel="noopener external nofollow noreferrer">法线贴图 - LearnOpenGL</a></p>
 <p><a href="https://blog.csdn.net/puppet_master/article/details/53591167" target="_blank" rel="noopener external nofollow noreferrer">Unity Shader-法线贴图（Normal）及其原理</a></p>
 <p>法线贴图的主要方式就是通过人为地改变平面上每个点的法线方向，从而产生具有凹凸感的光照效果。</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/normal_mapping_surfaces.png" class title="img">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/normal_mapping_surfaces.png" class="" title="img">
 </blockquote>
 <h2 id="置换贴图"><a href="#置换贴图" class="headerlink" title="置换贴图"></a>置换贴图</h2><blockquote>
 <p><a href="https://www.cnblogs.com/jim-game-dev/p/5476336.html" target="_blank" rel="noopener external nofollow noreferrer">置换贴图 Displacement Mapping</a></p>
@@ -313,16 +313,16 @@
 </blockquote>
 </blockquote>
 <p>在真正改变物体轮廓之后， 必须要重新计算表面法线，之后才能进行正确的光照计算。如下图，右侧的便是置换贴图，由于法线没有进行重新计算，得出了错误的光照计算结果，相比于左侧真实的模型表面，缺少立体感。</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/720042-20160510004453124-662366241.jpg" class title="img">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/720042-20160510004453124-662366241.jpg" class="" title="img">
 <p>因为置换贴图改变了模型本身，消耗三角形较多，并不能像法线贴图一样大量使用。但置换贴图的效果确实很好。</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614232452978.png" class title="image-20200614232452978">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614232452978.png" class="" title="image-20200614232452978">
 <p>由于是对顶点进行拉伸，当拉伸过度时，<strong>拉伸方向上会出现较为明显的细节失真</strong>。如下图。</p>
-<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614232622847.png" class title="image-20200614232622847">
+<img data-src="/%E8%99%9A%E5%B9%BB%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/image-20200614232622847.png" class="" title="image-20200614232622847">
 <h2 id="多层次细节-LOD"><a href="#多层次细节-LOD" class="headerlink" title="多层次细节 LOD"></a>多层次细节 LOD</h2><p>LOD（Levels of Detail）根据物体离玩家的距离来自动调节模型的细节程度。但是设置LOD的非常麻烦。</p>
 <h1 id="虚幻5的新技术"><a href="#虚幻5的新技术" class="headerlink" title="虚幻5的新技术"></a>虚幻5的新技术</h1><blockquote>
 <p><a href="https://www.bilibili.com/video/BV1BK411W75W" target="_blank" rel="noopener external nofollow noreferrer">虚幻引擎5！！！4K画质PS5实机演示！</a></p>
 </blockquote>
-<center><iframe width="90%" height="360" src="//player.bilibili.com/player.html?aid=498190004&bvid=BV1BK411W75W&cid=190794216&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+<center><iframe width=90% height=360 src="//player.bilibili.com/player.html?aid=498190004&bvid=BV1BK411W75W&cid=190794216&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
 
 <h2 id="虚拟微多边形几何-Nanite"><a href="#虚拟微多边形几何-Nanite" class="headerlink" title="虚拟微多边形几何 Nanite"></a>虚拟微多边形几何 Nanite</h2><blockquote>
 <p>Nanite虚拟几何技术的出现意味着具有极其复杂几何的影视级艺术作品可以直接被导入虚幻引擎，几何数据可以被实时流送和缩放，因此艺术家们无需再考虑多边形数量预算、多边形内存预算，也不用再将细节烘焙到法线贴图或手动编辑细节层次(LOD)。艺术家们的创造力不再被技术所限制，这极大地推动计算机图形学领域的发展。</p>

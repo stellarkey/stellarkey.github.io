@@ -321,7 +321,7 @@
 </blockquote>
 <p>以前已经存在各种方法：基于丢包率的简单算法，基于抽象的网络流分析的高级算法……这篇论文则寻找了一种较为简单的机制，实现对数据中心的调度，并且是 <strong>immediately deployable</strong> design。</p>
 <hr>
-<p><strong><font color="red">研究的最大难题是寻找一个合适的拥塞信号（congestion signal）</font></strong>。</p>
+<p><strong><font color=red>研究的最大难题是寻找一个合适的拥塞信号（congestion signal）</font></strong>。</p>
 <p>一个理想的拥塞信号应该拥有以下的性质：</p>
 <ul>
 <li>It would be fine-grained(细粒度) and timely to <strong>quickly inform</strong> senders about the extent of congestion.</li>
@@ -330,15 +330,15 @@
 </ul>
 <p>神奇的是，作者找到了一个已经存在很久了的信号——可以满足上面的所有性质。</p>
 <ul>
-<li><strong><font color="red">delay in the form of RTT measurements</font></strong></li>
+<li><strong><font color=red>delay in the form of RTT measurements</font></strong></li>
 </ul>
 <blockquote>
 <p>RTT is a fine-grained measure of congestion that comes with every acknowledgment. It effectively supports multiple traffic classes by <strong>providing an inflated measure for lower-priority transfers that wait behind higher priority ones</strong>. Further, it requires no support from network switches.</p>
 </blockquote>
-<img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010113601600.png" class title="RTT度量的精细程度">
+<img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010113601600.png" class="" title="RTT度量的精细程度">
 <hr>
 <p>实际上，以前的研究人员之所以不用delay measurement，是因为数据中心的RTT非常难以精确测量（到microsecond granularity 微秒的尺度）。</p>
-<p><strong><font color="red">最新的NIC硬件方面的突破，使得这样的精确测量成为可能</font></strong>。</p>
+<p><strong><font color=red>最新的NIC硬件方面的突破，使得这样的精确测量成为可能</font></strong>。</p>
 <hr>
 <hr>
 <hr>
@@ -388,8 +388,8 @@
 <script type="math/tex; mode=display">
 \begin{equation}
 R T T=t_{\text {completion }}-t_{\text {send }}-\frac{\text { seg. size }}{\text { NIC line rate }}
-\end{equation}</script><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222405035.png" class title="TIMELY - Control">
-<h2 id="TIMELY拥塞控制"><a href="#TIMELY拥塞控制" class="headerlink" title="TIMELY拥塞控制"></a>TIMELY拥塞控制</h2><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222503822.png" class title="不同的拥塞程度采用不同的调控策略">
+\end{equation}</script><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222405035.png" class="" title="TIMELY - Control">
+<h2 id="TIMELY拥塞控制"><a href="#TIMELY拥塞控制" class="headerlink" title="TIMELY拥塞控制"></a>TIMELY拥塞控制</h2><img data-src="/%E9%98%85%E3%80%8ATIMELY-RTT-based-Congestion-Control-for-the-Datacenter%E3%80%8B/image-20201010222503822.png" class="" title="不同的拥塞程度采用不同的调控策略">
 <blockquote>
 <p>具体细节和实验，暂时就不看了。</p>
 </blockquote>

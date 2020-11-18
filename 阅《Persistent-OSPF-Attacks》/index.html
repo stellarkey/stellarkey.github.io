@@ -290,7 +290,7 @@
 </blockquote>
 <p>OSPF协议使路由器可以在一个自治系统中维护它们各自的路由表，并且能够动态地适应该自治系统中网络拓扑的变化。OSPF协议是一种链路状态协议，每个路由器都向整个网络广播它的邻居的拓扑状态，最后每个节点都获知整个网络的拓扑结构（保存成路由表），然后进行最优路径求解（Dijkstra算法）。</p>
 <p>如下图所示，Rb路由器向整个网络广播了它的邻居拓扑。这样的一次在自治系统内的广播被称为LSA（Link State Advertisements）。</p>
-<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109120736560.png" class title="链路状态广播">
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109120736560.png" class="" title="链路状态广播">
 <hr>
 <hr>
 <hr>
@@ -298,7 +298,7 @@
 <blockquote>
 <p><em>As in most previously published OSPF attacks we assume the attacker has the ability to send LSAs to routers in the routing domain and that routers process them as valid LSAs.</em></p>
 </blockquote>
-<h2 id="DoS-denial-of-service"><a href="#DoS-denial-of-service" class="headerlink" title="DoS denial of service"></a>DoS denial of service</h2><p><strong><font color="red">DoS</font></strong>: the attacker’s goal is to degrade the network’s ability to forward traffic with a desirable quality of service.</p>
+<h2 id="DoS-denial-of-service"><a href="#DoS-denial-of-service" class="headerlink" title="DoS denial of service"></a>DoS denial of service</h2><p><strong><font color=red>DoS</font></strong>: the attacker’s goal is to degrade the network’s ability to forward traffic with a desirable quality of service.</p>
 <p>The attacker can do so using one of the following strategies: </p>
 <ol>
 <li><strong>链路过载 Link overload</strong> – Diverting large volume of traffic thorough a limited capacity link.</li>
@@ -307,26 +307,26 @@
 <li><strong>路由循环 Routing loops</strong> – Routing traffic in loops between two or more routers while consuming network resources before being dropped.</li>
 <li><strong>波动路由 Churn</strong> – Changing traffic routes rapidly while resulting in a network instability and performance degradation of congestion control mechanisms (e.g. TCP).</li>
 </ol>
-<h2 id="窃听-Eavesdropping"><a href="#窃听-Eavesdropping" class="headerlink" title="窃听 Eavesdropping"></a>窃听 Eavesdropping</h2><p><strong><font color="red">Eavesdropping</font></strong>: the attacker can <strong>divert remote traffic</strong> to pass through a router or a network the attacker has access to thereby letting the attacker eavesdrop on the traffic.</p>
+<h2 id="窃听-Eavesdropping"><a href="#窃听-Eavesdropping" class="headerlink" title="窃听 Eavesdropping"></a>窃听 Eavesdropping</h2><p><strong><font color=red>Eavesdropping</font></strong>: the attacker can <strong>divert remote traffic</strong> to pass through a router or a network the attacker has access to thereby letting the attacker eavesdrop on the traffic.</p>
 <h2 id="中间人攻击-man-in-the-middle-and-impersonation-attacks"><a href="#中间人攻击-man-in-the-middle-and-impersonation-attacks" class="headerlink" title="中间人攻击 man-in-the-middle and impersonation attacks"></a>中间人攻击 man-in-the-middle and impersonation attacks</h2><p><strong>Traffic diversion</strong> may also facilitate man-in-the-middle and impersonation attacks.</p>
 <blockquote>
 <p>跟窃听一个原理。</p>
 </blockquote>
 <h2 id="OSPF-Basis"><a href="#OSPF-Basis" class="headerlink" title="OSPF Basis"></a>OSPF Basis</h2><p>除了之前介绍的之后，LSA泛洪广播还是周期性的，每30分钟广播一次，以保证维持最新的自治系统的拓扑结构。</p>
 <p>为了保证LSA的版本管理，每一个LSA都会携带一个sequence number，用来区分新旧。节点总是接受最新的LSA——序列号更高的那个。</p>
-<p><strong><font color="red">adjacency</font></strong>: After mutual discovery two neighboring routers may set up a special relationship called adjacency.</p>
+<p><strong><font color=red>adjacency</font></strong>: After mutual discovery two neighboring routers may set up a special relationship called adjacency.</p>
 <blockquote>
 <p><em>To alleviate memory and processing load an adjacency is set up only when one of the two peers acts</em><br><em>as a designated router.</em></p>
 <p><em>The purpose of a setting up an adjacency is to make sure that the two routers have identical copies of the LSA database.</em></p>
 </blockquote>
-<p><strong>“<font color="red">Fight-back</font>”</strong>: Once a router receives an instance of its own LSA which is newer than the last instance it originated, it immediately advertises a newer instance of the LSA which cancels out the false one.</p>
+<p><strong>“<font color=red>Fight-back</font>”</strong>: Once a router receives an instance of its own LSA which is newer than the last instance it originated, it immediately advertises a newer instance of the LSA which cancels out the false one.</p>
 <h2 id="Previous-Attacks"><a href="#Previous-Attacks" class="headerlink" title="Previous Attacks"></a>Previous Attacks</h2><p>最常规的attack往往是基于攻击者完全控制的一些路由开展的，在这种情况下伪造LSA不会产生Fight-back。所有的发送到这些路由的信息都将可以被推流给attacker。</p>
 <p>另一种是基于没有控制的路由展开的，这种情况会引起Fight-back。但是这样至少可以使得自治系统本身变得unstable。只是，这样的攻击是无法持久化的，也不够隐蔽（易导致attacker的暴露）；它并不能有效地误导路由器在整个AS拓扑上的视野。</p>
 <blockquote>
 <p>Jones提出了一种对抗Fight-back机制的方法，利用OSPF中的漏洞，可以让受攻击的路由收到一个新的伪造LSA时，不发送更新的LSA。</p>
 </blockquote>
 <p>还有一种是用<strong>幽灵路由</strong>（phantom router，伪造不存在的路由）发送LSA，这种方式不会触发Fight-back，但是也不会影响路由表（因为bidirectional links机制的保证），但是它可以让路由器的LSA database过载，从而变成一种有效的攻击。</p>
-<h1 id="New-Attacks"><a href="#New-Attacks" class="headerlink" title="New Attacks"></a>New Attacks</h1><h2 id="Remote-False-Adjacency"><a href="#Remote-False-Adjacency" class="headerlink" title="Remote False Adjacency"></a>Remote False Adjacency</h2><img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109151110377.png" class title="The remote false adjacency attack">
+<h1 id="New-Attacks"><a href="#New-Attacks" class="headerlink" title="New Attacks"></a>New Attacks</h1><h2 id="Remote-False-Adjacency"><a href="#Remote-False-Adjacency" class="headerlink" title="Remote False Adjacency"></a>Remote False Adjacency</h2><img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109151110377.png" class="" title="The remote false adjacency attack">
 <p>攻击者通过构造虚假的Hello和DBD消息，让victim路由器误以为真，和一个幽灵路由形成了adjacency关系。</p>
 <blockquote>
 <p>攻击者伪造了一个合法的对应子网的IP地址，作为消息头的源IP。</p>
@@ -337,7 +337,7 @@
 <p>在建立了一个伪造的adjacency之后，attacker可以通过伪造幽灵路由的LSA来满足bidirectional links条件，从而混入到真正的路由表中。</p>
 <p>幽灵路由可以放置任何部分，因此在一个子网中放置若干个幽灵路由就可以吸收掉所有通向另一个指定网络的流量，变成”流量黑洞“。如下图(a)所示。</p>
 <p>如果这个幽灵路由刚好形成了一个对于大多数流量来说的捷径路由，那么危害将会更大。如下图(b)所示，在两个独立的子网上分别伪造幽灵路由，从而吸收掉它们之间的所有网间流量。</p>
-<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109152624602.png" class title="Potential use cases for the remote false adjacency attack">
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109152624602.png" class="" title="Potential use cases for the remote false adjacency attack">
 <h3 id="Caveats-and-Assumptions"><a href="#Caveats-and-Assumptions" class="headerlink" title="Caveats and Assumptions"></a>Caveats and Assumptions</h3><ul>
 <li>The false Hello and DBD messages are remotely unicasted directly to the victim. Therefore, <strong>the attacker must know the secret authentication key of the victim’s local network</strong>.<ul>
 <li>大多数情况下成立，但是这种成立对网络来说并不是必须的</li>
@@ -365,16 +365,16 @@
 <p><em>The key point is that the spec considers these two LSAs to be the same even if the actual advertised links in the LSAs differ.</em></p>
 </blockquote>
 </blockquote>
-<p><strong><font color="red">Disguised LSA</font></strong>: A naive exploitation of this feature is to advertise an LSA with <strong>false links</strong> on behalf of a victim router while having <strong>the same values of the above three fields</strong> as the valid LSA advertised by the victim.</p>
+<p><strong><font color=red>Disguised LSA</font></strong>: A naive exploitation of this feature is to advertise an LSA with <strong>false links</strong> on behalf of a victim router while having <strong>the same values of the above three fields</strong> as the valid LSA advertised by the victim.</p>
 <p>当路由器收到Disguised LSA不会引发fight-back，因为这被认为是一个它之前发送的LSA的identical copy。但是，不幸的是，所有的其它路由器都会将这个视为一个已经接收过的LSA，从而不会将它纳入它们的LSA database。所以其实到目前为止，没啥用。</p>
 <p>一个更好的举措是<strong>在发送路由器刚刚完成发送，并且在那些路由器收到真正的LSA之前，将伪造的LSA发送给它们</strong>。这样，Disguised LSA便可以替换掉真正的LSA，并被其他路由器植入LSA database。</p>
-<p>因此，<strong><font color="blue">时机很重要</font></strong>。</p>
+<p>因此，<strong><font color=blue>时机很重要</font></strong>。</p>
 <p>下图(a)展示了一个实例，也说明了Disguised LSA在实际应用中的限制——因为时间约束的关系，它只能影响一小部分节点。</p>
 <p>另一个种方式如下图(b)，通过遥测/控制下一个LSA的产生时间，攻击者可以抢先发送Disguised LSA，从而影响到更多的节点。并且，通过有意地触发fight-back机制，攻击者实际上可以精准控制真LSA的产生时间。</p>
 <blockquote>
 <p><em>Just before sending the disguised LSA the attacker floods a false LSA which is not disguised.</em></p>
 </blockquote>
-<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109162309951.png" class title="The effects of the disguised LSA attack: shaded routers are poisoned">
+<img data-src="/%E9%98%85%E3%80%8APersistent-OSPF-Attacks%E3%80%8B/image-20201109162309951.png" class="" title="The effects of the disguised LSA attack: shaded routers are poisoned">
 <p>Disguised LSA还面临三个变量：Sequence Number，Checksum，Age的设置问题。万幸的是，这些变量在实际操作中都是可以准确预测的。</p>
 <h1 id="Mitigation-Measures"><a href="#Mitigation-Measures" class="headerlink" title="Mitigation Measures"></a>Mitigation Measures</h1><p>首先，Remote false adjacency和Disguised LSA揭示现存网络系统的一些缺陷。</p>
 <p><strong>Disguised LSA</strong>:</p>

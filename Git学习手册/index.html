@@ -281,7 +281,7 @@
 <blockquote>
 <p>More: <a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener external nofollow noreferrer">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a></p>
 </blockquote>
-<h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p><strong>版本控制系统</strong>（VCS）：一种记录一个或若干文件内容<strong><font color="red">变化</font></strong>以及快速检阅修订情况的系统。</p>
+<h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><p><strong>版本控制系统</strong>（VCS）：一种记录一个或若干文件内容<strong><font color=red>变化</font></strong>以及快速检阅修订情况的系统。</p>
 <blockquote>
 <p>一个VCS能够有效管理一个多人参与、修改频繁的代码库。</p>
 </blockquote>
@@ -295,8 +295,8 @@
 <p>在这类系统中，像 Git，Mercurial，Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照，而是<strong>把代码仓库完整地镜像下来</strong>。</p>
 <p><code>git</code>是<code>Linux</code>开源系统维护时开发出来的。</p>
 </blockquote>
-<h2 id="Git原理"><a href="#Git原理" class="headerlink" title="Git原理"></a><code>Git</code>原理</h2><p>Git只关心<font color="red"><strong>文件数据的整体是否发生变化</strong></font>。</p>
-<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/18333fig0105-tn.png" class title="img">
+<h2 id="Git原理"><a href="#Git原理" class="headerlink" title="Git原理"></a><code>Git</code>原理</h2><p>Git只关心<font color=red><strong>文件数据的整体是否发生变化</strong></font>。</p>
+<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/18333fig0105-tn.png" class="" title="img">
 <p><strong>快照</strong>（Snapshot）：数据存储的某一时刻的状态记录；备份则是数据存储的某一个时刻的副本。</p>
 <blockquote>
 <p><a href="https://www.zhihu.com/question/20374919" target="_blank" rel="noopener external nofollow noreferrer">快照与备份有什么区别？快照是备份的其中一种么？还是两种不同的概念 …</a></p>
@@ -310,7 +310,7 @@
 <li>已修改（<strong>modified</strong>）：已修改表示修改了文件，但还没保存到数据库中。</li>
 <li>已暂存（<strong>staged</strong>）：已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
 </ul>
-<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/lifecycle.png" class title="Git 下文件生命周期图。">
+<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/lifecycle.png" class="" title="Git 下文件生命周期图。">
 <h3 id="Git-工作区域"><a href="#Git-工作区域" class="headerlink" title="Git 工作区域"></a><strong>Git 工作区域</strong></h3><ul>
 <li>Git 仓库：用来保存<u>项目的元数据和对象数据库</u>的地方。（克隆操作的执行位置）</li>
 <li>工作目录：对项目的<strong>某个版本</strong>独立提取出来的内容。</li>
@@ -321,7 +321,7 @@
 <li>暂存文件，将文件的快照放入暂存区域。（这个一般会自动检测）</li>
 <li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。（然后push更新到服务器）</li>
 </ol>
-<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/areas.png" class title="工作目录、暂存区域以及 Git 仓库。">
+<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/areas.png" class="" title="工作目录、暂存区域以及 Git 仓库。">
 <p>Git 工作平台：<code>Terminal</code>终端（<code>cmd</code>）</p>
 <h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a><code>Git</code>配置</h2><blockquote>
 <p><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener external nofollow noreferrer">1.6 起步 - 初次运行 Git 前的配置</a></p>
@@ -365,7 +365,7 @@
 <p><code>git add</code> 命令使用文件或目录的路径作为参数；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件。（<code>git add .</code>）</p>
 <p>只要在 <code>Changes to be committed</code> 这行下面的，就说明是已暂存(staged)状态。</p>
 </blockquote>
-<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/lifecycle.png" class title="Git 下文件生命周期图。">
+<img data-src="/Git%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/lifecycle.png" class="" title="Git 下文件生命周期图。">
 <p><code>.gitignore</code>： 忽略文件<code>$ cat .gitignore</code></p>
 <blockquote>
 <p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。</p>
@@ -393,7 +393,7 @@
 <blockquote>
 <p><code>git checkout Some.java</code>：取消单个文件的更改（注意先save！）</p>
 </blockquote>
-<p><code>git stash drop [SnapshotIndex]</code>：<strong>在栈上移除</strong>快照。（<strong><font color="red">慎用</font></strong>，用<code>tab</code>键快速搞一下）</p>
+<p><code>git stash drop [SnapshotIndex]</code>：<strong>在栈上移除</strong>快照。（<strong><font color=red>慎用</font></strong>，用<code>tab</code>键快速搞一下）</p>
 <blockquote>
 <p>如果项目真的不小心就drop掉了。。如果在IDE界面打开了，则可以<code>Ctrl+Z</code>一下。</p>
 </blockquote>

@@ -318,21 +318,21 @@
 </li>
 </ul>
 <h2 id="命名实体"><a href="#命名实体" class="headerlink" title="命名实体"></a>命名实体</h2><p>实体抽取通常作为作为信息抽取的第一步。在此基础上可以实现其它很多NLP任务，如情感分析、知识问答、信息结构化……</p>
-<p><strong><font color="red">命名实体</font></strong>：任何指代着一个<strong>适定名称</strong>的事物。（例：某个人物、地点、组织……）</p>
+<p><strong><font color=red>命名实体</font></strong>：任何指代着一个<strong>适定名称</strong>的事物。（例：某个人物、地点、组织……）</p>
 <blockquote>
 <p>适定名称就是<strong>确定无歧义</strong>的指代名。</p>
 <p>这个术语也常常扩展到非实体的领域，如：日期、事件等temporal expression，价格等numerical expression。下图是一个NER的示例：</p>
 </blockquote>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926123214018.png" class title="NER的示例">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926123214018.png" class="" title="NER的示例">
 <blockquote>
 <p>上图中有13个命名实体，包括5个organization，4个location，2个time，1个person和1个money。</p>
 </blockquote>
 <h3 id="命名实体类"><a href="#命名实体类" class="headerlink" title="命名实体类"></a>命名实体类</h3><p>下图给出了常见的命名实体种类，当然这种形式的分类是面向通用任务的。中医药比赛或者说自定义的人物场景，可以根据需求来设计更细致、面向领域的分类。比如，蛋白质分类、基因、商品、艺术品、药品……</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926124051196.png" class title="常见的命名实体种类">
-<h2 id="命名实体识别"><a href="#命名实体识别" class="headerlink" title="命名实体识别"></a>命名实体识别</h2><p><strong><font color="red">命名实体识别</font></strong>：寻找包含适定名称的文本段，并分类对应实体。</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926124051196.png" class="" title="常见的命名实体种类">
+<h2 id="命名实体识别"><a href="#命名实体识别" class="headerlink" title="命名实体识别"></a>命名实体识别</h2><p><strong><font color=red>命名实体识别</font></strong>：寻找包含适定名称的文本段，并分类对应实体。</p>
 <blockquote>
 <p>识别任务的难度部分在于分词（准确地界定实体边界），另一部分在于分类时的歧义（Type Ambiguity）。</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926130704988.png" class title="分类时的歧义">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926130704988.png" class="" title="分类时的歧义">
 </blockquote>
 <h2 id="序列标注-Sequence-Labeling"><a href="#序列标注-Sequence-Labeling" class="headerlink" title="序列标注 Sequence Labeling"></a>序列标注 Sequence Labeling</h2><p>NER的基本算法是（word by word）序列标注任务。</p>
 <p>常见的序列标注模型：<strong>HMM</strong>，<strong>MEMM</strong>，<strong>CRF</strong>，<strong>bi-LSTM</strong>……</p>
@@ -361,16 +361,16 @@
 </ul>
 <p>各种序列标注法的差异大多集中于对边界和特殊情况的处理，但是总的来说 <strong>IO</strong> 标注是最基础的序列标注单元。</p>
 <p>如下面的一个例子：</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132249986.png" class title="example">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132249986.png" class="" title="example">
 <p>使用了 IO 和 IOB(-2) 即 IBO 方法给出序列标注的结果：</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132417992.png" class title="IO and IOB">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132417992.png" class="" title="IO and IOB">
 <p>可以看到 IOB(-2) 即 IBO 在命名实体相邻的情况下会产生区分效果，但是这种情况在英文场景中较少出现。</p>
 <p>一般来说在不追求极致性能的场景下，BIO标注方法的效果就足够好了。当然如果有精力，测试一下BIOES的效果也是可以的。</p>
 <h2 id="基于特征的NER算法"><a href="#基于特征的NER算法" class="headerlink" title="基于特征的NER算法"></a>基于特征的NER算法</h2><p>基于特征的NER算法首先要做的事就是提取特征。然后用这些特征来train一个MEMM或者CRF之类的序列模型。</p>
 <p>下面具体介绍一种用于英文的特征：</p>
 <p><strong>word shape</strong>：文本的一种抽象的模式表示方法，将小写字母表示为<code>x</code>，大写字母表示为<code>X</code>，数字表示为<code>d</code>，并保留标点。例如<code>DC10-30a</code>会被映成<code>XXdd-ddx</code>。如果考虑压缩映射，把连续的同类字符合并，那么<code>DC10-30a</code>会被映成<code>Xd-dx</code>。这种特征，在基于特征的（English new text）NER任务中被证明非常成功。Shape features在诸如蛋白质名、基因等规范命名领域也很重要。</p>
 <p>加上其它的特征，一个named entity token例如<code>L&#39;Occitane</code>将初步生成以下非零值的特征值：</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926151702490.png" class title="L" alt="Occitane生成非零值的特征值">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926151702490.png" class="" title="L" alt="Occitane生成非零值的特征值">
 <blockquote>
 <p>token：什么是token?（<a href="https://www.zhihu.com/question/64984731" target="_blank" rel="noopener external nofollow noreferrer">Here</a>）</p>
 <ul>
@@ -385,15 +385,15 @@
 </ul>
 </blockquote>
 <p>下图是在序列标注的结果上加入了<em><a href="https://zhuanlan.zhihu.com/p/60531442" target="_blank" rel="noopener external nofollow noreferrer">part of speech tags</a></em>，<em>syntactic base-phrase chunk tags</em>，和一些shape的信息：</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926152815244.png" class title="加入特征">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926152815244.png" class="" title="加入特征">
 <p>下图展示了一个基于特征的序列标注模型的运行方式。所有的箭头都是特征。在这里我们只考虑前后两个单词作为我们的上下文。这些所有的特征联合起来共同提供给classifier，并实现预测。</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926154923374.png" class title="运行示意">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926154923374.png" class="" title="运行示意">
 <h2 id="基于神经网络的NER算法"><a href="#基于神经网络的NER算法" class="headerlink" title="基于神经网络的NER算法"></a>基于神经网络的NER算法</h2><p>标准的基于神经网络的NER算法，使用<strong>bi-LSTM</strong>作为模型。</p>
 <blockquote>
 <p>bi-LSTM是单独的一章，<em>Speech and Language Processing - 3rd</em>。</p>
 </blockquote>
 <p>注意到最上层仍然有CRF层，这是因为CRF对特征的处理更好，从而形成更好的输出序列。</p>
-<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926191745058.png" class title="bi-LSTM">
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926191745058.png" class="" title="bi-LSTM">
 <h2 id="基于规则的NER算法"><a href="#基于规则的NER算法" class="headerlink" title="基于规则的NER算法"></a>基于规则的NER算法</h2><h1 id="CRF模型"><a href="#CRF模型" class="headerlink" title="CRF模型"></a>CRF模型</h1><h1 id="bi-LSTM模型"><a href="#bi-LSTM模型" class="headerlink" title="bi-LSTM模型"></a>bi-LSTM模型</h1><h1 id="BERT模型"><a href="#BERT模型" class="headerlink" title="BERT模型"></a>BERT模型</h1><h1 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h1><h1 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h1>
     </div>
 
