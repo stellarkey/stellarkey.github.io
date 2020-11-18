@@ -24,16 +24,17 @@
   </script>
 
 
-  <meta name="description" content="学堂在线组织的自然语言处理入门班。">
+  <meta name="description" content="自然语言处理是人工智能皇冠上的明珠。  学堂在线组织的自然语言处理入门班。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP基础入门（智源&amp;学堂班）">
 <meta property="og:url" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="学堂在线组织的自然语言处理入门班。">
+<meta property="og:description" content="自然语言处理是人工智能皇冠上的明珠。  学堂在线组织的自然语言处理入门班。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201011203919968.png">
+<meta property="og:image" content="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201118171252142.png">
 <meta property="article:published_time" content="2020-10-08T10:46:09.000Z">
-<meta property="article:modified_time" content="2020-11-18T04:51:37.935Z">
+<meta property="article:modified_time" content="2020-11-18T09:13:10.664Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
@@ -270,14 +271,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>学堂在线组织的自然语言处理入门班。<a id="more"></a></p>
-<p>自然语言处理是人工智能皇冠上的明珠。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><center><i><font color=deepskyblue face=kaiti size=4.5>自然语言处理是人工智能皇冠上的明珠。</font></i></center>
+
+<p>学堂在线组织的自然语言处理入门班。<a id="more"></a></p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.xuetangx.com/training/xuetangx08091003473/4339910" target="_blank" rel="noopener external nofollow noreferrer">学堂在线 - 理论和实践：自然语言处理</a></p>
 <blockquote>
 <p>课表：</p>
 </blockquote>
 
-<h1 id="绪论：NLP基本问题和研究范式"><a href="#绪论：NLP基本问题和研究范式" class="headerlink" title="绪论：NLP基本问题和研究范式"></a>绪论：NLP基本问题和研究范式</h1><p>什么是自然语言？人类语言。</p>
+<h1 id="NLP基本问题和研究范式"><a href="#NLP基本问题和研究范式" class="headerlink" title="NLP基本问题和研究范式"></a>NLP基本问题和研究范式</h1><h2 id="自然语言范畴"><a href="#自然语言范畴" class="headerlink" title="自然语言范畴"></a>自然语言范畴</h2><p>什么是自然语言？人类语言。</p>
 <p>什么是自然语言处理？让计算机能够处理并理解自然语言。</p>
 <p>语言和人类智能：</p>
 <ul>
@@ -301,36 +303,102 @@
 </blockquote>
 <hr>
 <p>NLP顶会：ACL，EMNLP，北美ACL</p>
-<hr>
-<p>语音层和音位层（Phonetic and phonological level）</p>
-<p>词法层（Morphological level）</p>
-<blockquote>
-<p>语素：自由语素、约束语素（词缀）</p>
-<p>构词法：加缀（派生、曲折）；复合</p>
-</blockquote>
-<p>句法层（Syntactic level）</p>
-<p>语义层（Semantic level）</p>
-<p>话语层（Discourse level）</p>
-<p>语用层（Pragmatic level）</p>
-<p>语言知识、世界知识（+常识知识）</p>
-<hr>
-<p>自然语言的特点：</p>
+<h2 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h2><ul>
+<li><strong>语音层和音位层</strong>（Phonetic and phonological level）</li>
+<li><p><strong>词法层</strong>（Morphological level）</p>
 <ul>
+<li>语素：<ul>
+<li>自由语素：可以理解为一个词汇</li>
+<li>约束语素（就是词缀）<ul>
+<li>例：<ul>
+<li>improperly -&gt; im+proper+ly</li>
+<li>unrelatedness -&gt; un+relat+ed+ness</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>构词法：加缀（派生、曲折）；复合</li>
+</ul>
+</li>
+<li><p><strong>句法层</strong>（Syntactic level）</p>
+<ul>
+<li>利用句法树来表示句子的结构</li>
+</ul>
+</li>
+<li><strong>语义层</strong>（Semantic level）<ul>
+<li>揭示句法树中元素的语义角色</li>
+<li>引入谓词逻辑</li>
+<li>语义层相对其他层具有稳定性</li>
+</ul>
+</li>
+<li><strong>话语层</strong>（Discourse level）‘<ul>
+<li>多个句子的场景</li>
+</ul>
+</li>
+<li><strong>语用层</strong>（Pragmatic level）</li>
+<li><strong>语言知识、世界知识</strong>（+常识知识）</li>
+</ul>
+<p>分层之后，可以在不同层次来衡量语言理解的程度。比如，如果画对了句法树，则可以认为在句法层理解了一个句子；给出了正确的一阶谓词逻辑，则可以认为在语义层理解了一个句子。这样有利于定量地开展研究。</p>
+<h2 id="自然语言的特点"><a href="#自然语言的特点" class="headerlink" title="自然语言的特点"></a>自然语言的特点</h2><ul>
 <li>结构性</li>
 <li>无限性（递归性）</li>
 <li>歧义性（ambiguity）<ul>
 <li>词汇歧义</li>
-<li>结构歧义</li>
+<li>结构歧义<ul>
+<li>句法结构歧义<ul>
+<li>亚洲语言学会</li>
 </ul>
 </li>
-<li>统计性（Markov链）</li>
-<li>模糊性</li>
-<li>文化差异性</li>
-<li>持续演化性</li>
+<li>语义结构歧义<ul>
+<li>他借我一本书。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>统计性（Markov链）<ul>
+<li>我在吃……？</li>
+<li>我在吃北京……？烤鸭！</li>
+</ul>
+</li>
+<li>模糊性<ul>
+<li>下半旗</li>
+</ul>
+</li>
+<li>文化差异性<ul>
+<li>“in bed” 与 “在床上”<ul>
+<li>英文中的bed包含床上用品如被子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>持续演化性<ul>
+<li>不断地演变；网络语言</li>
+</ul>
+</li>
 <li>语言表达的非规范性</li>
 </ul>
-<hr>
-<h1 id="词法及语言模型"><a href="#词法及语言模型" class="headerlink" title="词法及语言模型"></a>词法及语言模型</h1><h1 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h1><h1 id="作业一-word2vec"><a href="#作业一-word2vec" class="headerlink" title="作业一 word2vec"></a>作业一 word2vec</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/">阅《深度文本匹配综述》</a></li><li><a href="https://vel.life/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/">AI未来说-青年学术论坛（自然语言专场）</a></li><li><a href="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">NLP学习手册</a></li></ul></div>
+<h2 id="下一步该怎么走"><a href="#下一步该怎么走" class="headerlink" title="下一步该怎么走"></a>下一步该怎么走</h2><img data-src="/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/image-20201118171252142.png" class="" title="参数越来越多……">
+<h2 id="第一讲：课后思考题"><a href="#第一讲：课后思考题" class="headerlink" title="第一讲：课后思考题"></a>第一讲：课后思考题</h2><p>【切分】请尝试将如下英文句子切分为语素序列：Morphemes are the smallest meaningful units of language</p>
+<blockquote>
+</blockquote>
+<p>【探讨】自然语言中存在词汇歧义（lexical ambiguity）和结构歧义（structural ambiguity）两种基本的歧义类型。请各给出5个汉语（也可以是你熟悉的任何语言）中的歧义例子，通过搜索引擎考察其具体用法，并给出必要的分析。</p>
+<blockquote>
+</blockquote>
+<p>【评估】根据个人兴趣，在网上寻找一个任意类型的、与自然语言处理有关的任意可运行系统，进行小规模、具有一定典型性的测试，对结果给出某种形式的定量评估，并按照你自己的理解做相应分析。（针对text或借助于text的image、video、audio智能处理等均可；商用系统及尚处于研究中的demo系统也都可以）</p>
+<blockquote>
+</blockquote>
+<h1 id="词法及语言模型"><a href="#词法及语言模型" class="headerlink" title="词法及语言模型"></a>词法及语言模型</h1><h2 id="第二讲：课后思考题"><a href="#第二讲：课后思考题" class="headerlink" title="第二讲：课后思考题"></a>第二讲：课后思考题</h2><p>“star” 与 “sun” 两个单词的one-hot词向量的夹角余弦值是多少？</p>
+<blockquote>
+</blockquote>
+<p>基于词表大小为N的文本语料库，采用长度为3的窗口计算Term-Term矩阵，得到的矩阵维度是？</p>
+<blockquote>
+</blockquote>
+<p>简要总结CBOW与Skip-Gram的不同点？</p>
+<h2 id="实践项目一-word2vec实现"><a href="#实践项目一-word2vec实现" class="headerlink" title="实践项目一 word2vec实现"></a>实践项目一 word2vec实现</h2><h1 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h1><h2 id="第三讲：课后思考题"><a href="#第三讲：课后思考题" class="headerlink" title="第三讲：课后思考题"></a>第三讲：课后思考题</h2><h1 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h1><h2 id="第四讲：课后思考题"><a href="#第四讲：课后思考题" class="headerlink" title="第四讲：课后思考题"></a>第四讲：课后思考题</h2><h1 id="篇章分析"><a href="#篇章分析" class="headerlink" title="篇章分析"></a>篇章分析</h1><h2 id="第五讲：课后思考题"><a href="#第五讲：课后思考题" class="headerlink" title="第五讲：课后思考题"></a>第五讲：课后思考题</h2><h2 id="第五讲：课后讨论题"><a href="#第五讲：课后讨论题" class="headerlink" title="第五讲：课后讨论题"></a>第五讲：课后讨论题</h2><h1 id="信息抽取"><a href="#信息抽取" class="headerlink" title="信息抽取"></a>信息抽取</h1><h2 id="第六讲：课后思考题"><a href="#第六讲：课后思考题" class="headerlink" title="第六讲：课后思考题"></a>第六讲：课后思考题</h2><h2 id="第六讲：课后讨论题"><a href="#第六讲：课后讨论题" class="headerlink" title="第六讲：课后讨论题"></a>第六讲：课后讨论题</h2><h1 id="主题分析与文本分类"><a href="#主题分析与文本分类" class="headerlink" title="主题分析与文本分类"></a>主题分析与文本分类</h1><h2 id="第七讲：课后思考题"><a href="#第七讲：课后思考题" class="headerlink" title="第七讲：课后思考题"></a>第七讲：课后思考题</h2><h2 id="第七讲：课后讨论题"><a href="#第七讲：课后讨论题" class="headerlink" title="第七讲：课后讨论题"></a>第七讲：课后讨论题</h2><h2 id="实践项目二-文本分类"><a href="#实践项目二-文本分类" class="headerlink" title="实践项目二 文本分类"></a>实践项目二 文本分类</h2><h1 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h1><h2 id="第八讲：课后思考题"><a href="#第八讲：课后思考题" class="headerlink" title="第八讲：课后思考题"></a>第八讲：课后思考题</h2><h2 id="第八讲：课后讨论题"><a href="#第八讲：课后讨论题" class="headerlink" title="第八讲：课后讨论题"></a>第八讲：课后讨论题</h2><h1 id="预训练模型"><a href="#预训练模型" class="headerlink" title="预训练模型"></a>预训练模型</h1><h2 id="第九讲：课后思考题"><a href="#第九讲：课后思考题" class="headerlink" title="第九讲：课后思考题"></a>第九讲：课后思考题</h2><h2 id="第九讲：课后讨论题"><a href="#第九讲：课后讨论题" class="headerlink" title="第九讲：课后讨论题"></a>第九讲：课后讨论题</h2><h1 id="情感分析"><a href="#情感分析" class="headerlink" title="情感分析"></a>情感分析</h1><h2 id="第十讲：课后思考题"><a href="#第十讲：课后思考题" class="headerlink" title="第十讲：课后思考题"></a>第十讲：课后思考题</h2><h2 id="第十讲：课后讨论题"><a href="#第十讲：课后讨论题" class="headerlink" title="第十讲：课后讨论题"></a>第十讲：课后讨论题</h2><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/">阅《深度文本匹配综述》</a></li><li><a href="https://vel.life/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/">AI未来说-青年学术论坛（自然语言专场）</a></li><li><a href="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">NLP学习手册</a></li></ul></div>
     </div>
 
     
@@ -437,7 +505,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论：NLP基本问题和研究范式"><span class="nav-number">2.</span> <span class="nav-text">绪论：NLP基本问题和研究范式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#词法及语言模型"><span class="nav-number">3.</span> <span class="nav-text">词法及语言模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#句法分析"><span class="nav-number">4.</span> <span class="nav-text">句法分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业一-word2vec"><span class="nav-number">5.</span> <span class="nav-text">作业一 word2vec</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NLP基本问题和研究范式"><span class="nav-number">2.</span> <span class="nav-text">NLP基本问题和研究范式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自然语言范畴"><span class="nav-number">2.1.</span> <span class="nav-text">自然语言范畴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层次模型"><span class="nav-number">2.2.</span> <span class="nav-text">层次模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自然语言的特点"><span class="nav-number">2.3.</span> <span class="nav-text">自然语言的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一步该怎么走"><span class="nav-number">2.4.</span> <span class="nav-text">下一步该怎么走</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一讲：课后思考题"><span class="nav-number">2.5.</span> <span class="nav-text">第一讲：课后思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#词法及语言模型"><span class="nav-number">3.</span> <span class="nav-text">词法及语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二讲：课后思考题"><span class="nav-number">3.1.</span> <span class="nav-text">第二讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实践项目一-word2vec实现"><span class="nav-number">3.2.</span> <span class="nav-text">实践项目一 word2vec实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#句法分析"><span class="nav-number">4.</span> <span class="nav-text">句法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第三讲：课后思考题"><span class="nav-number">4.1.</span> <span class="nav-text">第三讲：课后思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语义分析"><span class="nav-number">5.</span> <span class="nav-text">语义分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第四讲：课后思考题"><span class="nav-number">5.1.</span> <span class="nav-text">第四讲：课后思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#篇章分析"><span class="nav-number">6.</span> <span class="nav-text">篇章分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第五讲：课后思考题"><span class="nav-number">6.1.</span> <span class="nav-text">第五讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五讲：课后讨论题"><span class="nav-number">6.2.</span> <span class="nav-text">第五讲：课后讨论题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息抽取"><span class="nav-number">7.</span> <span class="nav-text">信息抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第六讲：课后思考题"><span class="nav-number">7.1.</span> <span class="nav-text">第六讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六讲：课后讨论题"><span class="nav-number">7.2.</span> <span class="nav-text">第六讲：课后讨论题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题分析与文本分类"><span class="nav-number">8.</span> <span class="nav-text">主题分析与文本分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第七讲：课后思考题"><span class="nav-number">8.1.</span> <span class="nav-text">第七讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七讲：课后讨论题"><span class="nav-number">8.2.</span> <span class="nav-text">第七讲：课后讨论题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实践项目二-文本分类"><span class="nav-number">8.3.</span> <span class="nav-text">实践项目二 文本分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器翻译"><span class="nav-number">9.</span> <span class="nav-text">机器翻译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第八讲：课后思考题"><span class="nav-number">9.1.</span> <span class="nav-text">第八讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八讲：课后讨论题"><span class="nav-number">9.2.</span> <span class="nav-text">第八讲：课后讨论题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预训练模型"><span class="nav-number">10.</span> <span class="nav-text">预训练模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第九讲：课后思考题"><span class="nav-number">10.1.</span> <span class="nav-text">第九讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九讲：课后讨论题"><span class="nav-number">10.2.</span> <span class="nav-text">第九讲：课后讨论题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情感分析"><span class="nav-number">11.</span> <span class="nav-text">情感分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第十讲：课后思考题"><span class="nav-number">11.1.</span> <span class="nav-text">第十讲：课后思考题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十讲：课后讨论题"><span class="nav-number">11.2.</span> <span class="nav-text">第十讲：课后讨论题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
