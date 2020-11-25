@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vel.life","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="这篇论文可以说是在蹭DL的热度（Doesn’t matter though）。“Neural-Enhanced”指的就是把深度学习引入流媒体传输领域。另一个值得注意的关键词是“Online Learning”，即在线学习，这说明深度学习算法在这里面需要动态调整。从中可以感受到一点强化学习的影子。最后，“Live Streaming”说明是直播，也就是从单个用户端到群体的流媒体分发。  直播流媒体数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅《Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning》">
+<meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这篇论文可以说是在蹭DL的热度（Doesn’t matter though）。“Neural-Enhanced”指的就是把深度学习引入流媒体传输领域。另一个值得注意的关键词是“Online Learning”，即在线学习，这说明深度学习算法在这里面需要动态调整。从中可以感受到一点强化学习的影子。最后，“Live Streaming”说明是直播，也就是从单个用户端到群体的流媒体分发。  直播流媒体数">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123205259397.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123182557171.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201124174609729.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201124004240828.png">
+<meta property="article:published_time" content="2020-11-23T05:06:43.000Z">
+<meta property="article:modified_time" content="2020-11-24T10:34:03.286Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123205259397.png">
+
+<link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>阅《Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning》 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-contact">
+
+    <a href="/contact" rel="section"><i class="fas fa-comments fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阅《Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning》
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper/" itemprop="url" rel="index"><span itemprop="name">Paper</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/" class="post-meta-item leancloud_visitors" data-flag-title="阅《Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning》" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>这篇论文可以说是<del>在蹭DL的热度</del>（<del>Doesn’t matter though</del>）。“Neural-Enhanced”指的就是把深度学习引入流媒体传输领域。另一个值得注意的关键词是“Online Learning”，即<strong>在线学习</strong>，这说明深度学习算法在这里面需要动态调整。从中可以感受到一点强化学习的影子。最后，“Live Streaming”说明是<strong>直播</strong>，也就是从单个用户端到群体的流媒体分发。</p>
+<blockquote>
+<p>直播流媒体数据量如今已经占据了相当一部分的网络带宽。（<a href="https://bg.qianzhan.com/report/detail/300/191029-db68392a.html" target="_blank" rel="noopener external nofollow noreferrer">Here</a>）</p>
+<p><em>With its steady growth, market reports predict that live video will take up 17 percent of Internet video traffic by 2022.</em></p>
+</blockquote>
+<p>流媒体传输中存在什么非常实在、紧急的问题？自然是网络带宽和计算资源的limitation，即时空限制。</p>
+<p>论文提出了<strong><font color=red>LiveNAS</font></strong>，可以动态调整服务器端的计算资源，并利用在线学习的方法提升实时的用户服务质量。</p>
+<p>文章的CCS Concepts分类为：</p>
+<ul>
+<li>Information systems → <strong>Multimedia streaming</strong></li>
+<li>Networks → <strong>Network resources allocation</strong></li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>本篇论文源于高等计算机网络课程的阅读任务，领域为“<strong><em>流媒体与网络传输</em></strong> ”。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>《<a href="./5.4.pdf">Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning</a>》</p>
+<div class="pdfobject-container" data-target="./5.4.pdf" data-height="500px"></div>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="Quality-of-Experience-QoE"><a href="#Quality-of-Experience-QoE" class="headerlink" title="Quality of Experience QoE"></a>Quality of Experience QoE</h2><blockquote>
+<p><a href="https://searchcustomerexperience.techtarget.com/definition/Quality-of-Experience-QoE-or-QoX" target="_blank" rel="noopener external nofollow noreferrer">Quality of Experience (QoE or QoX)</a></p>
+</blockquote>
+<p>跟服务质量（Quality of Service, QoS）的功能类似。</p>
+<p>QoS用来度量网络服务的性能。QoE则用来度量流媒体传输的性能。</p>
+<p>QoE采用了综合主观和客观的用户体验的测量方法。因此，QoE是user-dependent的。一般来说，一个合理的QoE度量的获取，需要基于大规模用户数据来提升准确度。</p>
+<h2 id="内容交付网络-Content-Delivery-Network-CDN"><a href="#内容交付网络-Content-Delivery-Network-CDN" class="headerlink" title="内容交付网络 Content Delivery Network CDN"></a>内容交付网络 Content Delivery Network CDN</h2><blockquote>
+<p><a href="https://www.ijsr.net/archive/v6i10/ART20177729.pdf" target="_blank" rel="noopener external nofollow noreferrer"><strong>Content Delivery Network: A Survey</strong></a></p>
+<p><a href="https://link.springer.com/chapter/10.1007%2F978-981-15-2767-8_9" target="_blank" rel="noopener external nofollow noreferrer">Recent Developments in Content Delivery Network: A Survey</a></p>
+</blockquote>
+<p>CDN一般作为现代网络的一个<strong>中间层</strong>。CND的设计目标是降低网络中的流量压力——传统的端到端网络传输对于内容分发来讲是低效的，并且根本不能做到大规模分发（中心服务器承担的访问压力过大）。</p>
+<p>CDN网络中有存储节点（surrogate servers）专门用来存放高频的内容，使得内容分发更高效。</p>
+<blockquote>
+<p>可以认为CDN借鉴了部分的分布式系统的思想。</p>
+</blockquote>
+<p>CDN常常跟边缘计算（Edge Computing）联系在一起。</p>
+<h2 id="超分辨率-amp-上采样"><a href="#超分辨率-amp-上采样" class="headerlink" title="超分辨率 &amp; 上采样"></a>超分辨率 &amp; 上采样</h2><blockquote>
+<p><a href="https://arxiv.org/pdf/1902.06068.pdf" target="_blank" rel="noopener external nofollow noreferrer"><strong>Deep Learning for Image Super-resolution: A Survey</strong></a></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/sinat_17456165/article/details/106233714" target="_blank" rel="noopener external nofollow noreferrer">超分辨率 | 综述！使用深度学习来实现图像超分辨率</a></p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/carsonzhu/p/10860594.html" target="_blank" rel="noopener external nofollow noreferrer">【超分辨率】—图像超分辨率(Super-Resolution)技术研究</a></p>
+</blockquote>
+<p><strong>超分辨率</strong>（Super-resolution）是一种对低质量图像、视频的<strong>上采样</strong>（Upsampling）技术。</p>
+<p>深度神经网络可以有效地进行超分辨率，这方面的研究也很多。</p>
+<p>本论文中采用超分辨率技术都是基于监督学习的，意味着要有超清的图像才能进行训练。</p>
+<img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123205259397.png" class="" title="Image Super-resolution">
+<h1 id="LiveNAS简介"><a href="#LiveNAS简介" class="headerlink" title="LiveNAS简介"></a>LiveNAS简介</h1><p>下图是LiveNAS分发系统：</p>
+<img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png" class="" title="LiveNAS System Overview">
+<h2 id="Live-Streaming-System"><a href="#Live-Streaming-System" class="headerlink" title="Live Streaming System"></a>Live Streaming System</h2><p>下图是端到端的流媒体分发系统：</p>
+<img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123182557171.png" class="" title="End2end Systems">
+<p>直播中双方实体的目的和需求是不对等的。</p>
+<p>对于直播方（distribution side）来说，它更看重内容是否能够被有效地分发给成千上万的人；对于接收方（ingest side）而言，它更看重收到的直播流是否有足够低的延迟。</p>
+<h3 id="端到端的局限性"><a href="#端到端的局限性" class="headerlink" title="端到端的局限性"></a>端到端的局限性</h3><p>在一个端到端的系统中，对直播方的带宽和计算资源要求很高。当直播方和中心视频服务器的连接不稳定时，所有观众都会受到影响。</p>
+<p>并且，在带宽受限的情况，观众是无法享受到诸如4K这样的实时高画质直播的。</p>
+<h2 id="超分辨率"><a href="#超分辨率" class="headerlink" title="超分辨率"></a>超分辨率</h2><p><strong>NAS</strong>引入了神经网络的超分辨率技术，通过生成式模型的方法，把低画质的视频变成高画质的视频。</p>
+<blockquote>
+<p>但是这种方法需要对每个video单独预训练一个DNN，也就是需要大量的预备时间，所以还不能直接应用到直播这样的场景中。</p>
+<p><em>However, live video cannot benefit from NAS because it requires a pre-trained DNN model for each video and <strong>ten minutes of DNN training is required on GPU per minute of video</strong>.</em></p>
+</blockquote>
+<h2 id="在线训练"><a href="#在线训练" class="headerlink" title="在线训练"></a>在线训练</h2><p>在线训练 + 超分辨率，（<del>这个，加这个</del>）就变成<strong><font color=red>LiveNAS</font></strong>啦。</p>
+<p>引入在线训练，原来NAS需要的预备时间就省掉了。因此可以用到直播行业。</p>
+<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a><font color=red>Contribution</font></h2><ul>
+<li><strong>Video quality improvement for end-users</strong><ul>
+<li>LiveNAS带来的用户端QoE指标的提升</li>
+</ul>
+</li>
+<li><strong>4K live in constrained environments</strong><ul>
+<li>利用超分辨率获得伪4K推流</li>
+</ul>
+</li>
+<li><strong>Quality optimization with online training</strong><ul>
+<li>在线训练时，在高质量转换和实时推流两方面之间进行权衡</li>
+</ul>
+</li>
+<li><strong>Resource optimization for online training</strong><ul>
+<li>在不同场景下自动地优化在线训练的策略；比如，当场景变化不大的时候，降低在线训练量，从而节约资源；当超分辨率质量下降时，增加更多的GPU、计算资源，加强在线学习……</li>
+</ul>
+</li>
+</ul>
+<h1 id="Ingest-Client-Design"><a href="#Ingest-Client-Design" class="headerlink" title="Ingest Client Design"></a>Ingest Client Design</h1><img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png" class="" title="LiveNAS System Overview">
+<h2 id="Quality-Optimizing-Scheduler"><a href="#Quality-Optimizing-Scheduler" class="headerlink" title="Quality-Optimizing Scheduler"></a>Quality-Optimizing Scheduler</h2><p>LiveNAS scheduler在有限带宽的情况下，需要在以下两者之间权衡 ：</p>
+<ul>
+<li>high-quality labels $p_t$<ul>
+<li>传输高质量图像用作标注数据，以启动在线训练</li>
+</ul>
+</li>
+<li>live video $v_t$<ul>
+<li>传输低质量图像用于流媒体传输</li>
+</ul>
+</li>
+</ul>
+<p>这两者都需要占据带宽。</p>
+<p>最后变成优化下面的目标：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\max _{v_{t}, p_{t}} Q_{\text {video}}\left(v_{t}\right)+\gamma \cdot Q_{D N N}\left(\sum_{k=0}^{t} p_{k}\right)
+\end{equation}</script><p>其中，左边是video质量，右边是在线训练期望获得的质量提升。通过参数调整，让两部分之和最大。</p>
+<p>然后弄弄梯度下降即可。</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+p_{t+1}=\alpha \cdot\left\{\gamma \cdot \frac{d Q_{D N N}}{d p_{t}}+\frac{d Q_{\text {video}}}{d p_{t}}\right\}+p_{t}
+\end{equation}</script><h2 id="Patch-Selection"><a href="#Patch-Selection" class="headerlink" title="Patch Selection"></a>Patch Selection</h2><img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201124174609729.png" class="" title="Patch Selection">
+<p>因为直播带宽有限，所以一段时间内只能采样其中一部分的高画质画面打包成一个patch，然后发送给服务器上的远端DNN训练。</p>
+<p>Patch selection就是选择最优的训练集，以期获得最大收益。</p>
+<blockquote>
+<p>比如，把那些经过encoded失真最严重的帧作为优先训练的对象。</p>
+</blockquote>
+<p>但是即使做了selection，图片的数据量仍然太大了。图中的Compression就是图片压缩算法，在损失一定可接受的精度（5%）的情况，把图片的大小压缩到平均1/10左右。</p>
+<h1 id="Media-Server-Design"><a href="#Media-Server-Design" class="headerlink" title="Media Server Design"></a>Media Server Design</h1><img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201123212531970.png" class="" title="LiveNAS System Overview">
+<h2 id="Content-Adaptive-Online-Learning"><a href="#Content-Adaptive-Online-Learning" class="headerlink" title="Content-Adaptive Online Learning"></a>Content-Adaptive Online Learning</h2><p>Online learning也需要在GPU计算量和视频质量之间权衡。</p>
+<p>也就是根据超分辨率结果质量来动态调整GPU资源使用量。</p>
+<p>注意，这里调整的依据是<strong>差分质量</strong>，也就是DNN生成的质量对时间的导数。</p>
+<h2 id="Super-resolution-Processor"><a href="#Super-resolution-Processor" class="headerlink" title="Super-resolution Processor"></a>Super-resolution Processor</h2><p>这里主要介绍的是并行化技术。</p>
+<ul>
+<li>把一张图片切分成多个子图，分给若干GPU独立生成超分辨率子图</li>
+<li>协作学习，把图片集分给多个CPU，共同计算梯度，并让那些在最近的patch训练得到的梯度获得更大的权重</li>
+</ul>
+<h1 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h1><p>效果图：</p>
+<img data-src="/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/image-20201124004240828.png" class="" title="LiveNAS live stream results">
+<p>LiveNAS，一种新的直播分发框架，引入超分辨率深度神经网络来提升直播视频质量，同时不致加重ingest-side的网络带宽负载。</p>
+<p>通过引入Quality-Optimizing Scheduler、Content-Adaptive Trainer等新结构，LiveNAS很好地实现了在线学习，并取得了不错的性能。</p>
+<hr>
+<p>我想，超分辨率的技术可不可以引入无监督学习？这样，对于上行流量的带宽需求就会更小了，因为不需要输送大量用于监督学习的标签样本（占用大量的流量）。但这样可能会影响整体的技术效果。</p>
+<p>虽然超分辨率技术的研究不是本文，甚至也不是这个领域的重点，但是它的确在制约着LiveNAS及其类似框架的性能上限。因此，研究一定的超分辨率技术的机理，做出一定改进，也是未来一个可能的方向。</p>
+<p>当然，内容分发网络是否可以更高效，底层网络传输和硬件性能的提升对整个技术的效果也会起到很好的作用。</p>
+<p>目前看来，LiveNAS更像是一个根据已有的工具设计的一个产品。</p>
+<p>对于一个产品的改进，除了框架的设计以外，所用到的技术才是真的核心。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/" title="阅《Neural-Enhanced Live Streaming: Improving Live Video Ingest via Online Learning》">https://vel.life/阅《Neural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning》/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%98%85%E3%80%8AExperience%20Grounds%20Language%E3%80%8B/" rel="prev" title="阅《Experience Grounds Language》">
+      <i class="fa fa-chevron-left"></i> 阅《Experience Grounds Language》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/NetFPGA%E6%8E%A2%E7%9F%A5/" rel="next" title="NetFPGA探知">
+      NetFPGA探知 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quality-of-Experience-QoE"><span class="nav-number">2.1.</span> <span class="nav-text">Quality of Experience QoE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容交付网络-Content-Delivery-Network-CDN"><span class="nav-number">2.2.</span> <span class="nav-text">内容交付网络 Content Delivery Network CDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超分辨率-amp-上采样"><span class="nav-number">2.3.</span> <span class="nav-text">超分辨率 &amp; 上采样</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LiveNAS简介"><span class="nav-number">3.</span> <span class="nav-text">LiveNAS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Live-Streaming-System"><span class="nav-number">3.1.</span> <span class="nav-text">Live Streaming System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#端到端的局限性"><span class="nav-number">3.1.1.</span> <span class="nav-text">端到端的局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超分辨率"><span class="nav-number">3.2.</span> <span class="nav-text">超分辨率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线训练"><span class="nav-number">3.3.</span> <span class="nav-text">在线训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">3.4.</span> <span class="nav-text">Contribution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ingest-Client-Design"><span class="nav-number">4.</span> <span class="nav-text">Ingest Client Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quality-Optimizing-Scheduler"><span class="nav-number">4.1.</span> <span class="nav-text">Quality-Optimizing Scheduler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Patch-Selection"><span class="nav-number">4.2.</span> <span class="nav-text">Patch Selection</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Media-Server-Design"><span class="nav-number">5.</span> <span class="nav-text">Media Server Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Adaptive-Online-Learning"><span class="nav-number">5.1.</span> <span class="nav-text">Content-Adaptive Online Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super-resolution-Processor"><span class="nav-number">5.2.</span> <span class="nav-text">Super-resolution Processor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结与展望"><span class="nav-number">6.</span> <span class="nav-text">总结与展望</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">190</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">1.2m</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://vel.life/%E9%98%85%E3%80%8ANeural-Enhanced-Live-Streaming-Improving-Live-Video-Ingest-via-Online-Learning%E3%80%8B/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '7qyl7APVl1trJcpWE7KLNTBR-gzGzoHsz',
+      appKey     : 't193IqlxzRLOLV2m3Rhar9SQ',
+      placeholder: "Never stop thinking.",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

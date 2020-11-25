@@ -24,18 +24,34 @@
   </script>
 
 
-  <meta name="description" content="阅《深度文本匹配综述》。">
+  <meta name="description" content="《深度文本匹配综述（A Survey on Deep Text Matching）》，发表于2017年的计算机学报。 自然语言理解的许多任务，本质上都可以归结、抽象为文本匹配任务。  信息检索（Information Retrieval）：查询项和文本的匹配 将文档模型和LDA模型融合，将词向量的结果作为特征 TREC(Text REtrieval Conference)数据集   自动问答（Qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阅《深度文本匹配综述》">
 <meta property="og:url" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="阅《深度文本匹配综述》。">
+<meta property="og:description" content="《深度文本匹配综述（A Survey on Deep Text Matching）》，发表于2017年的计算机学报。 自然语言理解的许多任务，本质上都可以归结、抽象为文本匹配任务。  信息检索（Information Retrieval）：查询项和文本的匹配 将文档模型和LDA模型融合，将词向量的结果作为特征 TREC(Text REtrieval Conference)数据集   自动问答（Qu">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201119221335668.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120112845890.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120121542139.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120124118371.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120133304041.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120134107043.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121193839308.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121200850579.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121201326252.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215026899.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215100312.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215158904.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121230411260.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215235002.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215305252.png">
 <meta property="article:published_time" content="2019-03-06T03:40:37.000Z">
-<meta property="article:modified_time" content="2020-09-14T07:29:36.000Z">
+<meta property="article:modified_time" content="2020-11-23T03:56:09.504Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201119221335668.png">
 
 <link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/">
 
@@ -232,7 +248,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper/" itemprop="url" rel="index"><span itemprop="name">Paper</span></a>
+                  <a href="/categories/Survey/" itemprop="url" rel="index"><span itemprop="name">Survey</span></a>
                 </span>
             </span>
 
@@ -268,12 +284,353 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>阅《深度文本匹配综述》。<a id="more"></a></p>
-<div class="pdfobject-container" data-target="深度文本匹配综述.pdf" data-height="500px"></div>
+        <script src="/assets/js/APlayer.min.js"> </script><p>《深度文本匹配综述（A Survey on Deep Text Matching）》，发表于2017年的计算机学报。</p>
+<p>自然语言理解的许多任务，本质上都可以归结、抽象为文本匹配任务。</p>
+<ul>
+<li><strong>信息检索</strong>（Information Retrieval）：查询项和文本的匹配<ul>
+<li>将文档模型和LDA模型融合，将词向量的结果作为特征</li>
+<li>TREC(Text REtrieval Conference)数据集</li>
+</ul>
+</li>
+<li><strong>自动问答</strong>（Question Answering）：问题和候选答案的匹配<ul>
+<li>基于知识库（结构化数据）检索</li>
+<li>Yahoo! Answers社区问答数据集</li>
+</ul>
+</li>
+<li>机器翻译（Machine Translation）：两种语言间的匹配</li>
+<li>对话系统（Dialog System）：前一句对话和回复的匹配<ul>
+<li>基于句型模式识别和语义提取</li>
+</ul>
+</li>
+<li><strong>复述问题</strong>（Paraphrase Identification）：两个同义词句的匹配<ul>
+<li>MSRP(Microsoft Research paraphrase)数据集<a id="more"></a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>但我觉得这样的解释方式是很牵强的，只不过是在描述<strong>输入和输出的匹配</strong>（而这恰恰是很自然的），输入和输出都是文本而已。</p>
+</blockquote>
+<p>对于传统模型，在一个任务上表现很好的特征，很难用到其他文本匹配任务上。相对传统方法，深度文本匹配可以自动抽取实体关系、结构和层次化信息，从而更精细地描述文本匹配问题。</p>
+<p><strong><font color=blue>深度文本匹配</font></strong>：基于深度学习的文本匹配方法。利用深度学习很强的特征抽取能力，自动从原始数据中学习特征。</p>
+<div class="pdfobject-container" data-target="./深度文本匹配综述.pdf" data-height="500px"></div>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://tool.yovisun.com/scihub/" target="_blank" rel="noopener external nofollow noreferrer">http://tool.yovisun.com/scihub/</a>  下论文网站</p>
 <p><a href="http://gen.lib.rus.ec/" target="_blank" rel="noopener external nofollow noreferrer">http://gen.lib.rus.ec/</a>  可以下书</p>
-<p><a href="https://www.storkapp.me/?ref=50560" target="_blank" rel="noopener external nofollow noreferrer">https://www.storkapp.me/?ref=50560</a>  注册一下追踪最新文献</p>
-<p><a href="http://pqdt.bjzhongke.com.cn/" target="_blank" rel="noopener external nofollow noreferrer">http://pqdt.bjzhongke.com.cn/</a> 国外学位论文 </p>
+<p><a href="http://pqdt.bjzhongke.com.cn/" target="_blank" rel="noopener external nofollow noreferrer">http://pqdt.bjzhongke.com.cn/</a> 国外学位论文下载</p>
+<p><a href="https://zhuanlan.zhihu.com/p/159274651" target="_blank" rel="noopener external nofollow noreferrer">贾珈：自然语言处理中9个不可不知的研究热点</a></p>
+<p><a href="http://muchong.com/t-8168801-1-authorid-2004083" target="_blank" rel="noopener external nofollow noreferrer">survey, review, overview的区别</a></p>
+<blockquote>
+<p>三者都属于综述性文章，含义上稍有差别<br>survey 有综述的功能，但更偏向于某些领域方向的综述，更靠近调查、探究<br>review 综述，介绍领域的全貌，还需要有所评述<br>overview 概述，某个领域全貌概述</p>
+</blockquote>
+<h1 id="文本匹配"><a href="#文本匹配" class="headerlink" title="文本匹配"></a>文本匹配</h1><h2 id="文本匹配面临的挑战"><a href="#文本匹配面临的挑战" class="headerlink" title="文本匹配面临的挑战"></a>文本匹配面临的挑战</h2><h3 id="词语匹配的多元性"><a href="#词语匹配的多元性" class="headerlink" title="词语匹配的多元性"></a>词语匹配的多元性</h3><p><strong>不同词语可以表示同一个语义</strong>。</p>
+<blockquote>
+<p>荷花、莲花、水芙蓉……</p>
+</blockquote>
+<p><strong>不同语境同一词语可以表示不同语义</strong>。</p>
+<blockquote>
+<p>苹果：苹果公司、一种水果</p>
+</blockquote>
+<p>深度文本匹配模型结合词向量技术，更好地解决了词语匹配的多元性问题。</p>
+<h3 id="短语匹配的结构性"><a href="#短语匹配的结构性" class="headerlink" title="短语匹配的结构性"></a>短语匹配的结构性</h3><p><strong>词语的相对顺序影响短语的语义</strong>。</p>
+<blockquote>
+<p>机器学习、学习机器。</p>
+</blockquote>
+<h3 id="文本匹配的层次性"><a href="#文本匹配的层次性" class="headerlink" title="文本匹配的层次性"></a>文本匹配的层次性</h3><p>词语、短语、句子、段落、篇章……</p>
+<p><strong>做文本匹配的时候需要考虑不同层次的匹配信息</strong>。</p>
+<p>得益于神经网络的层次化设计原理，深度文本匹配模型能较好地符合短语匹配的结构性和文本匹配的层次性特征。</p>
+<h2 id="文本匹配问题描述"><a href="#文本匹配问题描述" class="headerlink" title="文本匹配问题描述"></a>文本匹配问题描述</h2><p>文本匹配的目标是：在训练数据上，自动学习匹配模型$f$，使得对于测试数据上的任意输入$s_1\in S_1, s_2\in S_2$，能够预测出$s_1$和$s_2$的匹配度$r$，然后通过匹配度排序得到结果。</p>
+<p>针对不同的任务，匹配度的概念定义不同。</p>
+<h3 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h3><blockquote>
+<p>定义真实排序前$k$个文本中，匹配文本的数量为$G_k$；而在预测排序中前$k$个文本中，匹配文本的数量为$Y_k$。</p>
+</blockquote>
+<ul>
+<li><font color=red>P@$k$</font> (Precision at $k$ )</li>
+<li><font color=red>R@$k$</font>  (Recall at $k$ )</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+P @ k=\frac{Y_{k}}{k}, \quad R @ k=\frac{Y_{k}}{G_{k}}
+\end{equation}</script><blockquote>
+<p>假设预测排序中的真实匹配的文本的排序位置分别为$k_1,k_2,\cdots,k_r$，其中$r$为整个列表中所有匹配文本的数量。</p>
+</blockquote>
+<ul>
+<li><font color=red>MAP</font> (Mean Average Precision)</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+M A P=\frac{\sum_{i=1}^{r} P @ k_{i}}{r}
+\end{equation}</script><ul>
+<li><font color=red>MRR</font> (Mean Reciprocal Rank)：只考虑排名最靠前的真实匹配的文本$k_1$</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+M R R=P @ k_{1}
+\end{equation}</script><blockquote>
+<p>以上的评价指标都是二值化的（要么匹配，要么不匹配）。<br>对于有些问题匹配时有等级的，我们进一步引入<strong>匹配程度</strong>，例如分为0、1、2这3个等级。<br>给定最优排序，按照顺序每个位置的文档对应的匹配度为$\widehat{r e l}_{1}, \widehat{r e l}_{2}, \cdots, \widehat{r e l}_{n}$；<br>给定预测的排序，按照顺序每个位置的文档对应的匹配度为$\text {rel}_{1}, \text {rel}_{2}, \cdots, \text {rel}_{n}$。</p>
+</blockquote>
+<ul>
+<li><font color=red>nDCG</font> (normalized Discounted Cumulative Gain)</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+I D C G &=\hat{r e l}_{1}+\sum_{i=2}^{n} \frac{\widehat{r e l}_{i}}{\log _{2} i} \\
+D C G &=r e l_{1}+\sum_{i=2}^{n} \frac{r e l_{i}}{\log _{2} i} \\
+n D C G &=\frac{D C G}{I D C G}
+\end{aligned}
+\end{equation}</script><h2 id="传统文本匹配学习模型"><a href="#传统文本匹配学习模型" class="headerlink" title="传统文本匹配学习模型"></a>传统文本匹配学习模型</h2><p>传统文本匹配模型主要基于让人工提取的特征。</p>
+<p>目前常用的有：统计机器翻译模型、隐空间模型，有监督学习语义索引模型……</p>
+<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a><font color=red>存在的问题</font></h3><ul>
+<li><strong>人工提取特征的代价很大</strong><ul>
+<li>不仅需要工程经验，还需要大规模的特征选择过程</li>
+</ul>
+</li>
+<li><strong>基于主题模型的隐空间模型还比较粗糙</strong>，不能精确建模文本匹配中的语义相近程度</li>
+<li><strong>传统模型很难发掘一些隐含在大量数据中，含义不明显的特征</strong><ul>
+<li>往往有些特殊情况需要这样的特征才能提高性能</li>
+</ul>
+</li>
+</ul>
+<h1 id="深度文本匹配模型"><a href="#深度文本匹配模型" class="headerlink" title="深度文本匹配模型"></a>深度文本匹配模型</h1><h2 id="深度学习的优势"><a href="#深度学习的优势" class="headerlink" title="深度学习的优势"></a><font color=red>深度学习的优势</font></h2><ul>
+<li>深度学习模型可以<strong>将单词投射到语义空间</strong>，利用向量距离来更准确地描述单词之间的语义关系</li>
+<li>深度学习模型<strong>自身的结构是层次化和序列化的</strong>，能够比较自然地描述自然语言中的层次结构、序列结构和组合操作</li>
+<li>深度学习模型很好地利用<strong>大规模数据和高性能计算</strong>的优势，将神经网络的灵活结构匹配上复杂的自然语言的知识表示。</li>
+</ul>
+<p>深度学习在NLP的多个任务上已经有了很多突破性的进展，如词性标注、语法分析、情感分析、关系分类等，相关的工具包括CNN、RNN等。</p>
+<p>CNN的卷积核结构能够建模局部化信息，并具有平移不变性，堆叠起来的卷积层可以很方便地模拟语言<strong>层次化</strong>的特性。</p>
+<p>RNN则更偏向于<strong>序列化</strong>建模，将历史信息压缩到一个向量中，并提供给之后的计算。符合建模文本的序列性。</p>
+<hr>
+<h2 id="深度匹配模型分类"><a href="#深度匹配模型分类" class="headerlink" title="深度匹配模型分类"></a>深度匹配模型分类</h2><p>根据特征提取的不同结构，深度匹配模型可分为：</p>
+<ul>
+<li>基于<strong>单语义文档表达</strong>的深度学习模型<ul>
+<li>将单个文本先表达成一个<strong>稠密向量</strong>（分布式表达），然后直接计算两个向量间的相似度作为文本间的匹配度</li>
+</ul>
+</li>
+<li>基于<strong>多语义文档表达</strong>的深度学习模型<ul>
+<li>分别提取词、短语、句子等<strong>不同层次</strong>级别的表达向量，再计算不同粒度向量间的相似度作为文本间的匹配度</li>
+</ul>
+</li>
+<li><strong>直接建模匹配模式</strong>的深度学习模型<ul>
+<li>认为匹配问题需要更精细的建模匹配的模式，也就是需要更早地让两段文本进行交互，然后挖掘<strong>文本交互</strong>后的模式特征，综合得到文本间地匹配度</li>
+</ul>
+</li>
+</ul>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201119221335668.png" class="" title="深度文本匹配模型的分类">
+<h2 id="关键操作"><a href="#关键操作" class="headerlink" title="关键操作"></a>关键操作</h2><h3 id="单词表达"><a href="#单词表达" class="headerlink" title="单词表达"></a><font color=blue>单词表达</font></h3><p>利用函数$\phi$映射得到单词$x_i,y_i$到词向量$\boldsymbol{w}_{i}, \boldsymbol{v}_{i}$的映像：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{w}_{i}=\phi\left(x_{i}\right), \boldsymbol{v}_{i}=\phi\left(y_{i}\right)</script><p>整个句子映射后得到矩阵$\boldsymbol{w}$和$\boldsymbol{v}$。</p>
+<blockquote>
+<p>词哈希，word2vec……</p>
+</blockquote>
+<h3 id="短语-句子表达"><a href="#短语-句子表达" class="headerlink" title="短语/句子表达"></a><font color=blue>短语/句子表达</font></h3><p>利用函数$\Phi$映射得到短语或者整个句子的表达$\boldsymbol{p},\boldsymbol{q}$：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\boldsymbol{p}=\Phi(\boldsymbol{w}), \boldsymbol{q}=\Phi(\boldsymbol{v})
+\end{equation}</script><blockquote>
+<p>全连接、CNN，RNN……</p>
+</blockquote>
+<h3 id="文本交互"><a href="#文本交互" class="headerlink" title="文本交互"></a>文本交互</h3><p>利用函数$f$映射得到两段文本交互后的结果$\boldsymbol{M}_{0}$：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\boldsymbol{M}_{0}=f(\boldsymbol{p}, \boldsymbol{q})
+\end{equation}</script><blockquote>
+<p>余弦相似度、神经张量网络NTN……</p>
+</blockquote>
+<h3 id="匹配空间内的模式提取"><a href="#匹配空间内的模式提取" class="headerlink" title="匹配空间内的模式提取"></a>匹配空间内的模式提取</h3><p>利用级联函数$g$进一步提取匹配空间中的模式信息：（<strong>深度学习</strong>）</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\boldsymbol{M}_{k}=g\left(\boldsymbol{M}_{k-1}\right)
+\end{equation}</script><h3 id="匹配程度得分"><a href="#匹配程度得分" class="headerlink" title="匹配程度得分"></a>匹配程度得分</h3><p>利用打分函数$h$得到最终匹配程度的打分：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+r=h\left(\boldsymbol{M}_{n}\right)
+\end{equation}</script><h1 id="基于单语义文档表达的深度学习模型"><a href="#基于单语义文档表达的深度学习模型" class="headerlink" title="基于单语义文档表达的深度学习模型"></a>基于单语义文档表达的深度学习模型</h1><p><font color=red><strong>文档表达</strong></font>：将文档表达成一个向量，这个向量就称为文档的表达。</p>
+<blockquote>
+<p>任意一个文档的特征都可以称作文档的表达。</p>
+</blockquote>
+<p>基于单语义文档表达的深度学习模型，首先获得文档的稠密向量表示。</p>
+<blockquote>
+<p>目前利用深度学习的方式生成句子表达的方法有：基于扩展Word2Vec的方法、卷积神经的方法、循环神经网络的方法、树状的递归神经网络的方法……</p>
+</blockquote>
+<p>得到两个文档的表达后，计算向量相似度即可得到匹配度。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120112845890.png" class="" title="基于单语义文档表达的深度学习模型统一框架">
+<p>这类方法的核心是<strong>构建单个文档表达</strong>的差异。</p>
+<blockquote>
+<p>文本交互函数$f$定义得比较直接，比如余弦相似度，或者更复杂点的神经张量网络。</p>
+</blockquote>
+<h2 id="全连接网络"><a href="#全连接网络" class="headerlink" title="全连接网络"></a>全连接网络</h2><h3 id="DSSM"><a href="#DSSM" class="headerlink" title="DSSM"></a>DSSM</h3><p>微软研究团队提出的<strong>深度语义结构模型</strong>（Deep Semantic Structured Model，<strong>DSSM</strong>）是典型的Siamese框架。</p>
+<blockquote>
+<p><strong>Siamese框架</strong>：利用同质的网络得到两个对象的表达，然后通过表达的相似度来衡量两个对象的匹配度。</p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120121542139.png" class="" title="深度语义结构模型">
+<p>词哈希就是该模型中使用的单词向量。上图中的$f(q,d_i)$代表查询项$q$和文档$d_i$的匹配概率的计算（加和为1，利用Softmax）。每一列代表对一个文档的单独处理，主题向量即最终得到的文档表达。</p>
+<h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><h3 id="CDSSM"><a href="#CDSSM" class="headerlink" title="CDSSM"></a>CDSSM</h3><p>在实践中，微软团队发现深度语义结构模型，由于采用全连接，参数太多很难优化；而且构造输入数据利用的是词袋模式（忽略了词与词之间序的关系），对于匹配这种局部信息很强的任务，没法将一些学到的局部匹配信息应用到全局。</p>
+<p>最终，改进得到了<strong>基于单词序列的卷积深度语义结构模型</strong>（Convolutional Deep Semantic，<strong>CDSSM</strong>）。</p>
+<p>卷积深度语义结构模型将生成句子向量的全连接层换成了卷积层（Convolutional Layer）和池化层（Pooling Layer）。其它部分不变。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120124118371.png" class="" title="卷积深度语义结构模型">
+<p>卷积深度语义结构模型对每一个固定窗口内的词向量进行卷积操作，然后在得到的卷积层上进行maxpooling。由于滑动窗口的结构形式考虑到了句子中的单词顺序信息，在相关度判断方面相对于全连接有了一定提升。</p>
+<h3 id="ARC-I"><a href="#ARC-I" class="headerlink" title="ARC-I"></a>ARC-I</h3><p>华为诺亚方舟实验室的李航等人提出了ARC-Ⅰ模型。</p>
+<p>ARC-I模型将两个待匹配的句子表达为两个定长的向量，然后拼接两个向量并输入一个全连接的多层感知机，最后输出匹配值。</p>
+<blockquote>
+<p>也就是说，这是一个卷积+全连接的混合模型，</p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120133304041.png" class="" title="ARC-I模型">
+<h3 id="CNTN"><a href="#CNTN" class="headerlink" title="CNTN"></a>CNTN</h3><p>复旦大学Qiu等人提出了卷积张量神经网络（Convolutional Neural Tensor Network）。刻画更加复杂的匹配关系，在社区问答（Community Question Answering）等应用场景中取得了良好的效果。</p>
+<blockquote>
+<p>可以理解为把ARC-I的多层感知机换成了TNN。</p>
+</blockquote>
+<p>张量神经网络有很大的自由度，可以学习并模拟多种相似度的计算公式，例如：余弦相似度、点积或者双线性（bilinear）相似度。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201120134107043.png" class="" title="CNTN模型">
+<hr>
+<p>然而这些基于CNN的深层匹配结构只考虑了滑动窗口内的词序，所以无法表达句子中远距离的依存关系和复杂语义。</p>
+<blockquote>
+<p>存疑？我感觉在卷积网络的上层完全会考虑到更大的窗口内的抽象语段的排序啊。</p>
+</blockquote>
+<h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><h3 id="LSTM-RNN"><a href="#LSTM-RNN" class="headerlink" title="LSTM-RNN"></a>LSTM-RNN</h3><p>为解决基于卷积神经网络没法捕捉句子长距离的依存关系，微软的研究团队Palangi等人提出基于长短时记忆（Long Short Term Memory）的文本匹配模型（<strong>LSTM-RNN</strong>）。</p>
+<p>两个文档分别由LSTM-RNN表达为一个向量，然后计算两者的余弦相似度作为匹配值。</p>
+<blockquote>
+<p>该方法在网页搜索的在线日志数据上取得了不错的效果。</p>
+</blockquote>
+<p>LSTM可以保持并利用长距离信息，其中门的机制可以抽取出匹配文本中的关键词。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>将文本映射为一个简洁的表达，便于储存</li>
+<li>匹配的计算速度快<ul>
+<li>可以和一些加速方法，如位置敏感哈希（Locality Sensitive Hashing，LSH）技术结合，进一步提供计算速度</li>
+</ul>
+</li>
+<li>模型可以用大量无监督的数据进行预训练<ul>
+<li>半监督学习</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>该模型适合<strong>信息检索</strong>这种对存储和速度要求都比较高的任务。</p>
+</blockquote>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>很多匹配问题不具备传递性<ul>
+<li>问答系统中问题和答案的位置不能互换，因此不适用于用一个度量空间（参数相同的神经网络）来描述</li>
+</ul>
+</li>
+<li>文本的表示学习本身非常困难，该模型只有效捕捉与描述对匹配有用的局部化（细节）信息</li>
+</ul>
+<h1 id="基于多语义文档表达的深度学习模型"><a href="#基于多语义文档表达的深度学习模型" class="headerlink" title="基于多语义文档表达的深度学习模型"></a>基于多语义文档表达的深度学习模型</h1><p>引入了多粒度、层次的语义信息。</p>
+<h2 id="可伸展递归自动编码器-uRAE"><a href="#可伸展递归自动编码器-uRAE" class="headerlink" title="可伸展递归自动编码器 uRAE"></a>可伸展递归自动编码器 uRAE</h2><p>首先对两段文本进行句法分析，并自动构建<strong>句法树</strong>，得到的句法树作为递归自动编码器（Recursive Autoencoder）树状连接的结构。并利用大量的无监督样本进行预训练得到一个能够编码句子、短语、词的模型。进而把文本中的不同层次的片段变换成对应的向量。</p>
+<p><strong>由于使用递归自动编码器，这些向量处在同一个语义空间中</strong>，所有片段之间的匹配度可以直接计算得到。遍历语法树即可得到两段文本之间的<strong>匹配相似度矩阵</strong>。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121193839308.png" class="" title="可伸展递归自动编码器模型">
+<p>由于句子的片段切分数量不定，因此引入了动态池化技术（Dynamic Pooling），将变长的相似度矩阵变成定长的相似度矩阵。</p>
+<blockquote>
+<p><strong>动态池化技术</strong>：针对不同样本使用<strong>变尺度的池化核进</strong>行池化操作。</p>
+</blockquote>
+<p>最后通过一个简单的神经网络模型计算出两个句子的最终匹配值。</p>
+<blockquote>
+<p>类似于ARC-Ⅰ模型的多层感知机。</p>
+</blockquote>
+<h2 id="多粒度卷积神经网络-MultiGranCNN"><a href="#多粒度卷积神经网络-MultiGranCNN" class="headerlink" title="多粒度卷积神经网络 MultiGranCNN"></a>多粒度卷积神经网络 MultiGranCNN</h2><p>多粒度卷积神经网络（MultiGranCNN）将1个句子拆解为4个层次：</p>
+<ul>
+<li>单词级别</li>
+<li><strong>短语级别</strong></li>
+<li><strong>长短语级别</strong></li>
+<li>句子级别</li>
+</ul>
+<p>之后将两个句子不同级别的特征进行两两的相似度计算，得到相似度矩阵，然后动态池化即可得到两个句子的相似度得分。</p>
+<blockquote>
+<p>实验表明，长短语级别和短语级别的特征对复述任务十分关键，而单词和句子特征就相对弱一些。</p>
+</blockquote>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121200850579.png" class="" title="多粒度卷积神经网络">
+<h2 id="多视角循环神经网络-MV-LSTM"><a href="#多视角循环神经网络-MV-LSTM" class="headerlink" title="多视角循环神经网络 MV-LSTM"></a>多视角循环神经网络 MV-LSTM</h2><p>RNN在扫描一个句子的过程能够在不同位置都输出一个表达，表示从句子开始位置到当前位置的信息的前缀和。</p>
+<p>多视角循环神经网络首先使用了<strong>Bi-LSTM</strong>，从双向获得的信息拼接。</p>
+<blockquote>
+<p><strong>在同一个位置会得到两个表达，一个是前缀信息和，一个是后缀信息和。两者拼接到一起作为以当前位置为中心的整个句子的表达。</strong><br>这样每个句子都可以看做是由不同中心词产生的多个视角表达的集合。</p>
+<p>每个位置的表达也可以类似看作一个变长的窗口的卷积操作，在不同位置有不同粒度的窗口。这和多粒度卷积神经网络的功能类似。而且这里的窗口大小更加灵活一些，不像卷积核一样大小固定。</p>
+</blockquote>
+<p>将两个句子不同视角的句子表达两两计算相似度，得到相似度矩阵。然后动态池化，加上全连接网络得到最后的匹配度。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121201326252.png" class="" title="多视角循环神经网络模型">
+<h2 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>考虑不同粒度的表达，细粒度的表达带来了更丰富的信息，因而获得更好的效果<ul>
+<li>句子、单词、短语……</li>
+</ul>
+</li>
+<li>可以进行大量无监督的预训练<ul>
+<li>例如：uRAE 和 MultiGranCNN</li>
+<li>模型预训练使得模型更具鲁棒性，用于训练好的参数在小数据集上微调（fine-tune）的结果更具泛化能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>可伸展递归自动编码器依赖于一个给定的句法树<ul>
+<li>句法树算法自身准确性不高，导致整个算法鲁棒性不足</li>
+</ul>
+</li>
+<li>无法区分不同上下文中局部化信息的重要性<ul>
+<li>在语言多义的挑战下，很难将局部化信息与全局化信息进行有效地整合利用</li>
+</ul>
+</li>
+<li>匹配不仅仅是一元的一一对应，而且是有层次、有结构的，分别从两个对象单独提取特征，很难捕获匹配中的结构信息</li>
+</ul>
+<h1 id="直接建模匹配模式的深度学习模型"><a href="#直接建模匹配模式的深度学习模型" class="headerlink" title="直接建模匹配模式的深度学习模型"></a>直接建模匹配模式的深度学习模型</h1><p>和关注文本表达（局部化或者全局化）为核心的思路，直接建模匹配模式的深度学习模型旨在直接捕获<strong>匹配的特征</strong>：<strong>匹配的程度和匹配的结构</strong>。</p>
+<p>当进行两端文本的匹配时，先看关键词匹配，再看关键词的相对位置是否匹配，最后整合整个句子意思给匹配程度打分。</p>
+<p>实验显示这些模型能在相对复杂的问题上表现更为优秀。</p>
+<h2 id="主题深度匹配模型-DeepMatch"><a href="#主题深度匹配模型-DeepMatch" class="headerlink" title="主题深度匹配模型 DeepMatch"></a>主题深度匹配模型 DeepMatch</h2><p>主题深度匹配模型（DeepMatch）包含局部匹配层和综合层两个部分。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215026899.png" class="" title="主题深度匹配模型">
+<p>局部匹配层包含多个局部匹配模型（每个都是<strong>双语主题模型</strong>），用于将输入的文本对表达为多个局部匹配的结果。</p>
+<blockquote>
+<p>图中左侧的矩阵，行和列都是词袋（bag of words）序列。同一个局部块（主题连续）的单词会统一连接到下一层的一个隐节点，相当于模拟了卷积核。（<del>准确地讲应该是池化核吧</del>）</p>
+</blockquote>
+<p>综合层是一个多层神经网络，用来计算匹配分数。</p>
+<h2 id="树深度匹配模型-DeepMatch-Tree"><a href="#树深度匹配模型-DeepMatch-Tree" class="headerlink" title="树深度匹配模型 DeepMatch$_{Tree}$"></a>树深度匹配模型 DeepMatch$_{Tree}$</h2><p>树深度匹配模型（DeepMatch$_{Tree}$），采用<strong>依存树</strong>作为文本（一般为短文本）的表示。它也分为局部匹配模型和综合层。</p>
+<p>局部模型是千万量级的基于依存树的二值匹配模型，每个模型对应一个子树对，模型输出（0或1）取决于输入的句子对是否含有子树对所表示的依存结构。</p>
+<p>综合层则是一个深层神经网络，将稀疏的二值表示稠密化，并最终输出匹配度。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215100312.png" class="" title="树深度匹配模型">
+<p>该模型的匹配精细程度有所上升，但是作为代价，树深度匹配模型需要大规模的图挖掘和深层神经网络作为支撑，</p>
+<h2 id="卷积网络深度匹配模型-ARC-Ⅱ"><a href="#卷积网络深度匹配模型-ARC-Ⅱ" class="headerlink" title="卷积网络深度匹配模型 ARC-Ⅱ"></a>卷积网络深度匹配模型 ARC-Ⅱ</h2><p>如图所示，需要注意的是，最左边的卷积窗口是指选中对应行、列的词向量，然后作为基本单元进行卷积操作（一维卷积）。</p>
+<p>接着就是一般的CNN和多层感知机了。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215158904.png" class="" title="卷积网络深度匹配模型">
+<p>与主题模型相比，卷积模型考虑了词序；与树模型相比，卷积模型更灵活，但是精细结构上有所欠缺。</p>
+<h2 id="MatchPyramid模型"><a href="#MatchPyramid模型" class="headerlink" title="MatchPyramid模型"></a>MatchPyramid模型</h2><p>ARC-Ⅱ更早地让两段文本进行了交互。</p>
+<p>MatchPyramid模型地核心是先得到一个匹配矩阵。模型利用两个词的词向量之间的同或关系、余弦相似度或者点积来定义词之间的相似度。</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121230411260.png" class="" title="匹配矩阵">
+<blockquote>
+<p>注意：因为所有的词都会得到相关度（包括大量不相关的词），这个矩阵的噪声很大，因此当数据集不够大时，模型容易拟合到噪声上。</p>
+</blockquote>
+<p>有了匹配矩阵以后，整个问题被转换为一个<strong>图像识别</strong>问题。（把匹配矩阵当作一幅图像）</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215235002.png" class="" title="MatchPyramid模型">
+<p>图中卷积层的多通道代表着类似于n-gram和n-term这样的信号。</p>
+<p>经过多层卷积以后，连接到多层感知机输出匹配度。</p>
+<h2 id="Match-SRNN模型"><a href="#Match-SRNN模型" class="headerlink" title="Match-SRNN模型"></a>Match-SRNN模型</h2><p>和MatchPyramid模型的区别是，Match-SRNN模型使用二维的RNN来建模特征空间的模式。</p>
+<blockquote>
+<p>尤其是<strong>2D-GRU网络能够模拟最长公共子序列的计算过程</strong>，最长公共 子序列也是快速求解字符串精确子串匹配的动态规划算法。</p>
+</blockquote>
+<p>注意，这里使用的不再是匹配矩阵，而是<strong>匹配张量</strong>。两个词之间的交互信息被表达为一个向量。（利用神经张量网络）</p>
+<img data-src="/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215305252.png" class="" title="Match-SRNN模型">
+<p>对于结构性明显的数据（如：自动问答），该模型有明显的提升。</p>
+<h2 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>从模型的输入开始两段文本就进行了交互，并具有单词级别的细粒度<ul>
+<li>保持细粒度的匹配信息，避免在一段文本抽象成一个表达时，细节的匹配信息丢失</li>
+</ul>
+</li>
+</ul>
+<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>需要大量的有监督的文本匹配的数据训练<ul>
+<li>无法通过无监督的文本进行预训练</li>
+</ul>
+</li>
+<li>预测的时候资源消耗较大<ul>
+<li>每一对文档都得完全通过一遍网络，没法像基于单语义文档表达或者多语义文档表达的模型可以离线计算好每个文本的特征，预测的时候直接利用算好的特征，并增量地计算新来的文本。</li>
+</ul>
+</li>
+</ul>
+<h1 id="研究展望"><a href="#研究展望" class="headerlink" title="研究展望"></a>研究展望</h1><h2 id="变长文本问题"><a href="#变长文本问题" class="headerlink" title="变长文本问题"></a>变长文本问题</h2><p>过短的文本进入深度模型会产生过度的变换影响效果；过长的文本，则会引入大量无关的噪声。</p>
+<p>并且两段文本长度差异过大（10词 vs. 1000词），直接建模法得到的匹配矩阵会变得很窄，偏向于长文本方向的信息积累，而在短文本上获取的信息则比较有限。</p>
+<blockquote>
+<p>可能可以引入<strong>查询扩展</strong>和<strong>文档摘要</strong>这样的工作，预处理两段文本。</p>
+</blockquote>
+<h2 id="匹配可解释性"><a href="#匹配可解释性" class="headerlink" title="匹配可解释性"></a>匹配可解释性</h2><p>深度学习的可解释性差是一种常见现象了。这里不展开说。</p>
+<h2 id="判别式模型到生成式模型"><a href="#判别式模型到生成式模型" class="headerlink" title="判别式模型到生成式模型"></a>判别式模型到生成式模型</h2><p>如果我们通过大量样本学习到一段文本对应的匹配的文本应该是什么样子，那么我们是否可以构造出一个生成式模型呢？</p>
+<blockquote>
+<p>例如，对话系统中利用CNN来构建生成式模型的<strong>genCNN</strong>。</p>
+</blockquote>
+<h2 id="跨模态文本匹配"><a href="#跨模态文本匹配" class="headerlink" title="跨模态文本匹配"></a>跨模态文本匹配</h2><p>主要是指声音、图像这种多媒体数据。比如，文本和图像的匹配。</p>
+<p>传统跨模态匹配是针对文本和图像分别提取特征，然后计算相似度。</p>
+<p>深度模型则更倾向于端到端。不过具体流程跟文本匹配差不多，只不过要针对异质数据做一些处理罢了。</p>
 <div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/NLP%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E6%99%BA%E6%BA%90-%E5%AD%A6%E5%A0%82%E7%8F%AD%EF%BC%89/">NLP基础入门（智源&学堂班）</a></li><li><a href="https://vel.life/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/">AI未来说-青年学术论坛（自然语言专场）</a></li><li><a href="https://vel.life/NLP%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">NLP学习手册</a></li></ul></div>
     </div>
 
@@ -381,7 +738,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本匹配"><span class="nav-number">2.</span> <span class="nav-text">文本匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本匹配面临的挑战"><span class="nav-number">2.1.</span> <span class="nav-text">文本匹配面临的挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#词语匹配的多元性"><span class="nav-number">2.1.1.</span> <span class="nav-text">词语匹配的多元性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#短语匹配的结构性"><span class="nav-number">2.1.2.</span> <span class="nav-text">短语匹配的结构性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本匹配的层次性"><span class="nav-number">2.1.3.</span> <span class="nav-text">文本匹配的层次性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本匹配问题描述"><span class="nav-number">2.2.</span> <span class="nav-text">文本匹配问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评价指标"><span class="nav-number">2.2.1.</span> <span class="nav-text">评价指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统文本匹配学习模型"><span class="nav-number">2.3.</span> <span class="nav-text">传统文本匹配学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存在的问题"><span class="nav-number">2.3.1.</span> <span class="nav-text">存在的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度文本匹配模型"><span class="nav-number">3.</span> <span class="nav-text">深度文本匹配模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习的优势"><span class="nav-number">3.1.</span> <span class="nav-text">深度学习的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度匹配模型分类"><span class="nav-number">3.2.</span> <span class="nav-text">深度匹配模型分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键操作"><span class="nav-number">3.3.</span> <span class="nav-text">关键操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单词表达"><span class="nav-number">3.3.1.</span> <span class="nav-text">单词表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#短语-句子表达"><span class="nav-number">3.3.2.</span> <span class="nav-text">短语&#x2F;句子表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本交互"><span class="nav-number">3.3.3.</span> <span class="nav-text">文本交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配空间内的模式提取"><span class="nav-number">3.3.4.</span> <span class="nav-text">匹配空间内的模式提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配程度得分"><span class="nav-number">3.3.5.</span> <span class="nav-text">匹配程度得分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于单语义文档表达的深度学习模型"><span class="nav-number">4.</span> <span class="nav-text">基于单语义文档表达的深度学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全连接网络"><span class="nav-number">4.1.</span> <span class="nav-text">全连接网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DSSM"><span class="nav-number">4.1.1.</span> <span class="nav-text">DSSM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络"><span class="nav-number">4.2.</span> <span class="nav-text">卷积神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CDSSM"><span class="nav-number">4.2.1.</span> <span class="nav-text">CDSSM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARC-I"><span class="nav-number">4.2.2.</span> <span class="nav-text">ARC-I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNTN"><span class="nav-number">4.2.3.</span> <span class="nav-text">CNTN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环神经网络"><span class="nav-number">4.3.</span> <span class="nav-text">循环神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-RNN"><span class="nav-number">4.3.1.</span> <span class="nav-text">LSTM-RNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">4.4.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">4.4.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">4.4.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于多语义文档表达的深度学习模型"><span class="nav-number">5.</span> <span class="nav-text">基于多语义文档表达的深度学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可伸展递归自动编码器-uRAE"><span class="nav-number">5.1.</span> <span class="nav-text">可伸展递归自动编码器 uRAE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多粒度卷积神经网络-MultiGranCNN"><span class="nav-number">5.2.</span> <span class="nav-text">多粒度卷积神经网络 MultiGranCNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多视角循环神经网络-MV-LSTM"><span class="nav-number">5.3.</span> <span class="nav-text">多视角循环神经网络 MV-LSTM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点-1"><span class="nav-number">5.4.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点-1"><span class="nav-number">5.4.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-1"><span class="nav-number">5.4.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接建模匹配模式的深度学习模型"><span class="nav-number">6.</span> <span class="nav-text">直接建模匹配模式的深度学习模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题深度匹配模型-DeepMatch"><span class="nav-number">6.1.</span> <span class="nav-text">主题深度匹配模型 DeepMatch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树深度匹配模型-DeepMatch-Tree"><span class="nav-number">6.2.</span> <span class="nav-text">树深度匹配模型 DeepMatch$_{Tree}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积网络深度匹配模型-ARC-Ⅱ"><span class="nav-number">6.3.</span> <span class="nav-text">卷积网络深度匹配模型 ARC-Ⅱ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MatchPyramid模型"><span class="nav-number">6.4.</span> <span class="nav-text">MatchPyramid模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Match-SRNN模型"><span class="nav-number">6.5.</span> <span class="nav-text">Match-SRNN模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点-2"><span class="nav-number">6.6.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点-2"><span class="nav-number">6.6.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-2"><span class="nav-number">6.6.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#研究展望"><span class="nav-number">7.</span> <span class="nav-text">研究展望</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变长文本问题"><span class="nav-number">7.1.</span> <span class="nav-text">变长文本问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匹配可解释性"><span class="nav-number">7.2.</span> <span class="nav-text">匹配可解释性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判别式模型到生成式模型"><span class="nav-number">7.3.</span> <span class="nav-text">判别式模型到生成式模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨模态文本匹配"><span class="nav-number">7.4.</span> <span class="nav-text">跨模态文本匹配</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -397,14 +754,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">177</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/image-20201117195142941.png">
 <meta property="og:image" content="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/image-20201117195939562.png">
 <meta property="article:published_time" content="2019-01-17T07:07:37.000Z">
-<meta property="article:modified_time" content="2020-11-18T04:50:30.976Z">
+<meta property="article:modified_time" content="2020-11-24T13:41:56.714Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -328,7 +328,42 @@
 <p><a href="https://aitopics.org/misc/brief-history" target="_blank" rel="noopener external nofollow noreferrer">A Brief History of AI</a></p>
 <p><a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence" target="_blank" rel="noopener external nofollow noreferrer">History of artificial intelligence</a></p>
 </blockquote>
-<p>从符号主义（逻辑学派）到联结主义（仿生学），再到不确定性人工智能。</p>
+<h3 id="智能系统"><a href="#智能系统" class="headerlink" title="智能系统"></a>智能系统</h3><p>智能是一种现象，表现在个体和社会群体的行为过程中。智能系统的根源可以追溯到两个基本前提条件：</p>
+<ul>
+<li><strong>物理环境客观的现实与因果链条</strong>。<ul>
+<li>不同的环境下，可以容纳和演化出的智能的形式是不一样的。</li>
+</ul>
+</li>
+<li><strong>智能物种与生俱来的任务与价值链条</strong>。<ul>
+<li>任务表现为生物的根本需求，如：饮食、交配。并从基本任务衍生出大量的其他任务。</li>
+<li>任务代表了价值观和决策函数，价值函数如：多巴胺（快乐）、血清素（痛苦）、乙酰胆碱（焦虑、不确定性）、去甲肾上腺素（新奇、兴奋）。</li>
+</ul>
+</li>
+</ul>
+<p>要构造一个智能系统（如机器人或者游戏环境中的虚拟的人物），我们先给他们定义好身体的基本行动的功能，再定一个模型的空间（包括价值函数）。</p>
+<blockquote>
+<p>我们并不需要真的实现某种肾上腺素系统，而只需要AI在面临紧急情况时可以全面调动所有可行资源即可。这样的思路被称为<strong>功能模拟</strong>。也就是说，我们选择去模拟功能，而不是模仿结构或原理。就像飞机并非模仿鸟类飞行一样。</p>
+</blockquote>
+<p>模型空间是一个数学概念。比如，人脑可以看成一个抽象的点，在这个空间中移动。模型的空间通过价值函数、决策函数、感知、认知、任务计划等来表达。通俗来说，一个脑模型就是世界观、人生观、价值观的一个数学的表达。这个空间的复杂度决定了个体的智商和成就。</p>
+<p>模型在空间中的运动依赖于：</p>
+<ul>
+<li>外来的<strong><font color=red>数据</font></strong>：数据来源于观察（observation）和实践（experimentation）。观察的数据一般用于学习各种<strong>统计模型</strong>，这种模型就是某种时间和空间的联合分布，也就是统计的关联与相关性。实践的数据用于学习各种<strong>因果模型</strong>，将行为与结果联系在一起。</li>
+<li>内在的<strong><font color=red>任务</font></strong>：由内在的价值函数驱动的行为、以期达到某种目的。任务往往会导致对环境中某些变量的敏感或者偏好。</li>
+</ul>
+<p>任何一个模型由数据与任务来共同塑造。</p>
+<h4 id="小数据-大任务"><a href="#小数据-大任务" class="headerlink" title="小数据 + 大任务"></a>小数据 + 大任务</h4><p>深度学习方法虽然取得了一定的成就，但是往往表现为”<strong>大数据、小任务</strong>“范式（big data for small task）：针对某个特定的任务，如人脸识别和物体识别，设计一个简单的价值函数 Loss function，用大量数据训练特定的模型。</p>
+<p>人工智能的发展，需要进入一个“<strong>小数据、大任务</strong>”范式（small data for big tasks），要用大量任务、而不是大量数据来塑造智能系统和模型。“任务塑造了智能”。人的各种感知和行为，时时刻刻都是被任务驱动的。</p>
+<p>如果我们把整个发展的过程都考虑进来，智能系统的影响可以分成三个时间段：</p>
+<ol>
+<li>亿万年的进化，被达尔文理论的适者生存驱动；</li>
+<li>千年的文化形成与传承；</li>
+<li><strong>几十年个体的学习与适应</strong>。</li>
+</ol>
+<p>人工智能研究通常考虑的是第三个阶段。</p>
+<blockquote>
+<p>如何定义大量的任务？人所感兴趣的任务有多少，是个什么空间结构？这个问题，心理和认知科学一直说不清楚，写不下来。这是人工智能发展的一个巨大挑战。</p>
+</blockquote>
+<h3 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h3><p>从符号主义（逻辑学派）到联结主义（仿生学），再到不确定性人工智能。</p>
 <blockquote>
 <p>不确定性，即潜藏在视界之中的混沌。</p>
 </blockquote>
@@ -402,54 +437,20 @@
 <blockquote>
 <p>从我个人的角度来看，目前的大数据更像是一种“不求甚解”的刷题过程，对每一份数据的利用程度极低，而人类的思考过程，则常常通过仔细、少量的分析来获取结果，这样对信息的发掘自然比AI效果高。可以这么说，AI对信息的利用效率目前还太低太低。</p>
 </blockquote>
-<h3 id="智能系统"><a href="#智能系统" class="headerlink" title="智能系统"></a>智能系统</h3><p>智能是一种现象，表现在个体和社会群体的行为过程中。智能系统的根源可以追溯到两个基本前提条件：</p>
-<ul>
-<li><strong>物理环境客观的现实与因果链条</strong>。<ul>
-<li>不同的环境下，可以容纳和演化出的智能的形式是不一样的。</li>
-</ul>
-</li>
-<li><strong>智能物种与生俱来的任务与价值链条</strong>。<ul>
-<li>任务表现为生物的根本需求，如：饮食、交配。并从基本任务衍生出大量的其他任务。</li>
-<li>任务代表了价值观和决策函数，价值函数如：多巴胺（快乐）、血清素（痛苦）、乙酰胆碱（焦虑、不确定性）、去甲肾上腺素（新奇、兴奋）。</li>
-</ul>
-</li>
-</ul>
-<p>要构造一个智能系统（如机器人或者游戏环境中的虚拟的人物），我们先给他们定义好身体的基本行动的功能，再定一个模型的空间（包括价值函数）。</p>
-<p>模型空间是一个数学概念。比如，人脑可以看成一个抽象的点，在这个空间中移动。模型的空间通过价值函数、决策函数、感知、认知、任务计划等来表达。通俗来说，一个脑模型就是世界观、人生观、价值观的一个数学的表达。这个空间的复杂度决定了个体的智商和成就。</p>
-<p>模型在空间中的运动依赖于：</p>
-<ul>
-<li>外来的<strong><font color=red>数据</font></strong>：数据来源于观察（observation）和实践（experimentation）。观察的数据一般用于学习各种<strong>统计模型</strong>，这种模型就是某种时间和空间的联合分布，也就是统计的关联与相关性。实践的数据用于学习各种<strong>因果模型</strong>，将行为与结果联系在一起。</li>
-<li>内在的<strong><font color=red>任务</font></strong>：由内在的价值函数驱动的行为、以期达到某种目的。任务往往会导致对环境中某些变量的敏感或者偏好。</li>
-</ul>
-<p>任何一个模型由数据与任务来共同塑造。</p>
-<h4 id="小数据、大任务"><a href="#小数据、大任务" class="headerlink" title="小数据、大任务"></a>小数据、大任务</h4><p>深度学习方法虽然取得了一定的成就，但是往往表现为”<strong>大数据、小任务范式</strong>“（big data for small task）：针对某个特定的任务，如人脸识别和物体识别，设计一个简单的价值函数 Loss function，用大量数据训练特定的模型。</p>
-<p>人工智能的发展，需要进入一个“<strong>小数据、大任务范式</strong>（small data for big tasks）”，要用大量任务、而不是大量数据来塑造智能系统和模型。“任务塑造了智能”。人的各种感知和行为，时时刻刻都是被任务驱动的。</p>
-<p>如果我们把整个发展的过程都考虑进来，智能系统的影响可以分成三个时间段：</p>
-<ol>
-<li>亿万年的进化，被达尔文理论的一个客观的适者生存的pheontype landscape 驱动；</li>
-<li>千年的文化形成与传承；</li>
-<li><strong>几十年个体的学习与适应</strong>。</li>
-</ol>
-<p>人工智能研究通常考虑的是第三个阶段。</p>
-<p>如何定义大量的任务？人所感兴趣的任务有多少，是个什么空间结构？这个问题，心理和认知科学一直说不清楚，写不下来。这是人工智能发展的一个巨大挑战。</p>
-<h3 id="六大领域"><a href="#六大领域" class="headerlink" title="六大领域"></a>六大领域</h3><h4 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h4><h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><p><strong><font color=red>机器学习</font></strong>：为了寻找更好<strong>数据表示</strong>的自动<strong>搜索</strong>。</p>
-<h3 id="生成式-Generative"><a href="#生成式-Generative" class="headerlink" title="生成式 Generative"></a>生成式 Generative</h3><blockquote>
-<p>GPT-2/3, VQ-VAE, ……</p>
+<h3 id="六大领域"><a href="#六大领域" class="headerlink" title="六大领域"></a>六大领域</h3><h4 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h4><h4 id="自然语言理解与交流"><a href="#自然语言理解与交流" class="headerlink" title="自然语言理解与交流"></a>自然语言理解与交流</h4><h4 id="认知与推理"><a href="#认知与推理" class="headerlink" title="认知与推理"></a>认知与推理</h4><h4 id="机器人学"><a href="#机器人学" class="headerlink" title="机器人学"></a>机器人学</h4><h4 id="博弈与伦理"><a href="#博弈与伦理" class="headerlink" title="博弈与伦理"></a>博弈与伦理</h4><h4 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h4><h2 id="通用人工智能"><a href="#通用人工智能" class="headerlink" title="通用人工智能"></a>通用人工智能</h2><blockquote>
+<p><a href="https://ansafe.xust.edu.cn/DownLoad/2020third-artificial-intelligence.pdf" target="_blank" rel="noopener external nofollow noreferrer">迈向第三代人工智能</a>，张钹* , 朱军, 苏航</p>
+<p><a href="https://mp.weixin.qq.com/s/4h3CW3qF8MADeZ66oCYLsw" target="_blank" rel="noopener external nofollow noreferrer">领域通用智能的可能技术路径</a>，刘康、黄高、沈华伟、张家俊</p>
 </blockquote>
-<p>模型从参数中生成数据。</p>
-<h3 id="鉴别式-Contrastive"><a href="#鉴别式-Contrastive" class="headerlink" title="鉴别式 Contrastive"></a>鉴别式 Contrastive</h3><blockquote>
-<p>SimCLR, MoCo, ……</p>
-</blockquote>
-<p>模型从数据中输出判断。</p>
 <h2 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a>模式识别</h2><p><strong><font color=red>模式识别</font></strong>：从数据中获得<code>规律</code>/<code>模式</code>/<code>特征</code>。</p>
 <center><font size=5>数据 = 模式 + 噪声</font></center>
 
+<h2 id="机器学习-1"><a href="#机器学习-1" class="headerlink" title="机器学习"></a>机器学习</h2><p><strong><font color=red>机器学习</font></strong>：为了寻找更好<strong>数据表示</strong>的自动<strong>搜索</strong>。</p>
 <h2 id="统计学习要素"><a href="#统计学习要素" class="headerlink" title="统计学习要素"></a>统计学习要素</h2><p><strong><font color=red>模型</font></strong>：构建从输入到输出的一类映射，从而产生假设空间。</p>
 <p><strong><font color=red>策略</font></strong>：按什么样的准则在假设空间中学习最优的模型。</p>
 <p><strong><font color=red>算法</font></strong>：学习模型的具体计算方法。</p>
 <h2 id="短见定理"><a href="#短见定理" class="headerlink" title="短见定理"></a>短见定理</h2><p><strong><font color=red>短见定理</font></strong>：过拟合无法彻底避免。</p>
 <blockquote>
-<p><strong>反证</strong>：（基本假设：P$\neq$NP）</p>
+<p><strong>反证</strong>：（基本假设：P $\neq$ NP）</p>
 <ul>
 <li>机器学习通常面临着NP-Hard问题（甚至更难），而有效的学习算法必然在多项式时间内运行完毕。</li>
 <li>若可以彻底避免过拟合，则通过经验误差最小化就能获得最优解，意味着我们构造性地证明了“P=NP”。<strong>矛盾</strong>。</li>
@@ -576,16 +577,28 @@
 <li>使用新特征构造高维空间，并让样本空间线性可分</li>
 <li>使用<strong>软间隔SVM</strong>，而不是硬间隔SVM</li>
 </ul>
-<h3 id="SVM用于回归"><a href="#SVM用于回归" class="headerlink" title="SVM用于回归"></a>SVM用于回归</h3><h3 id="核技巧-Kernel-Trick"><a href="#核技巧-Kernel-Trick" class="headerlink" title="核技巧 Kernel Trick"></a>核技巧 Kernel Trick</h3><h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><h1 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h1><h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><p><a href="https://www.zhihu.com/question/49972233" target="_blank" rel="noopener external nofollow noreferrer">请问如何用数学方法证明K-means是EM算法的特例？</a></p>
+<h3 id="SVM用于回归"><a href="#SVM用于回归" class="headerlink" title="SVM用于回归"></a>SVM用于回归</h3><h3 id="核技巧-Kernel-Trick"><a href="#核技巧-Kernel-Trick" class="headerlink" title="核技巧 Kernel Trick"></a>核技巧 Kernel Trick</h3><h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>高维空间易过拟合。</p>
+<h2 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h2><p>在<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2/#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener external nofollow noreferrer">机器学习-神经网络基础-感知机</a>有基础介绍。</p>
+<h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><h1 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h1><h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><p><a href="https://www.zhihu.com/question/49972233" target="_blank" rel="noopener external nofollow noreferrer">请问如何用数学方法证明K-means是EM算法的特例？</a></p>
 <p>高维空间欧式距离度量失效。</p>
-<h1 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><p>深度学习是一种机器学习技术，它采用神经网络的方法抽取模式/特征。</p>
+<h1 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h1><h2 id="少样本学习-Few-shot"><a href="#少样本学习-Few-shot" class="headerlink" title="少样本学习 Few-shot"></a>少样本学习 Few-shot</h2><h2 id="零次学习-Zero-shot"><a href="#零次学习-Zero-shot" class="headerlink" title="零次学习 Zero-shot"></a>零次学习 Zero-shot</h2><h1 id="自监督学习"><a href="#自监督学习" class="headerlink" title="自监督学习"></a>自监督学习</h1><blockquote>
+</blockquote>
+<h3 id="生成式学习-Generative-Methods"><a href="#生成式学习-Generative-Methods" class="headerlink" title="生成式学习 Generative Methods"></a>生成式学习 Generative Methods</h3><blockquote>
+<p>GPT-2/3, VQ-VAE, ……</p>
+</blockquote>
+<p>模型从参数中生成数据。</p>
+<h4 id="鉴别式模型-Discriminative-Model"><a href="#鉴别式模型-Discriminative-Model" class="headerlink" title="鉴别式模型 Discriminative Model"></a>鉴别式模型 Discriminative Model</h4><p>模型从数据中输出判断。</p>
+<h3 id="对比式学习-Contrastive-Methods"><a href="#对比式学习-Contrastive-Methods" class="headerlink" title="对比式学习 Contrastive Methods"></a>对比式学习 Contrastive Methods</h3><blockquote>
+<p>SimCLR, MoCo, ……</p>
+</blockquote>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><p>深度学习是一种机器学习技术，它采用神经网络的方法抽取模式/特征。</p>
 <img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/image-20201013193903913.png" class="" title="Why Deep Learning?">
 <h2 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h2><h2 id="卷积神经网络-CNN"><a href="#卷积神经网络-CNN" class="headerlink" title="卷积神经网络 CNN"></a>卷积神经网络 CNN</h2><h3 id="常用CNN架构"><a href="#常用CNN架构" class="headerlink" title="常用CNN架构"></a>常用CNN架构</h3><h2 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络 RNN"></a>循环神经网络 RNN</h2><p>RNN is a directive graph model.</p>
 <h1 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h1><h1 id="表示学习"><a href="#表示学习" class="headerlink" title="表示学习"></a>表示学习</h1><blockquote>
 <p>一切学习算法都是在学习数据的一种更好的表示。因此表示学习是机器学习的本质，也是核心。</p>
 </blockquote>
 <p><strong><font color=red>表示学习</font></strong>（Feature learning / Representation learning）：</p>
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="图嵌入"><a href="#图嵌入" class="headerlink" title="图嵌入"></a>图嵌入</h2><h3 id="DeepWalk"><a href="#DeepWalk" class="headerlink" title="DeepWalk"></a>DeepWalk</h3><p>使用随机游走生成的多条路径作为输入序列，从而可以采用词嵌入方法（词嵌入的本质是对语言序列关系的分布式表示）。</p>
+<h1 id="图学习"><a href="#图学习" class="headerlink" title="图学习"></a>图学习</h1><h2 id="图嵌入"><a href="#图嵌入" class="headerlink" title="图嵌入"></a>图嵌入</h2><h3 id="DeepWalk"><a href="#DeepWalk" class="headerlink" title="DeepWalk"></a>DeepWalk</h3><p>使用随机游走生成的多条路径作为输入序列，从而可以采用词嵌入方法（词嵌入的本质是对语言序列关系的分布式表示）。</p>
 <img data-src="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%9B%E9%98%B6/image-20201117195401380.png" class="" title="DeepWalk">
 <p>对DeepWalk的改进通常集中在如何生成更好的序列上。</p>
 <h4 id="node2vec"><a href="#node2vec" class="headerlink" title="node2vec"></a>node2vec</h4><p>采用从节点出发的有限BFS、DFS（带有额外策略）生成的序列。</p>
@@ -601,9 +614,36 @@
 <blockquote>
 <p>但是，直接做矩阵分解的算力消耗比random walk更多。</p>
 </blockquote>
-<h2 id="图卷积-GCN"><a href="#图卷积-GCN" class="headerlink" title="图卷积 GCN"></a>图卷积 GCN</h2><h1 id="逻辑回归-1"><a href="#逻辑回归-1" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>高维空间易过拟合。</p>
-<h1 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h1><p>在<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2/#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener external nofollow noreferrer">机器学习-神经网络基础-感知机</a>有基础介绍。</p>
-<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><h1 id="概率图"><a href="#概率图" class="headerlink" title="概率图"></a>概率图</h1><h1 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h1><h1 id="自监督学习"><a href="#自监督学习" class="headerlink" title="自监督学习"></a>自监督学习</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%8D%95%E5%88%86%E7%B1%BB/">单分类（one-class classification）</a></li><li><a href="https://vel.life/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">时间序列异常检测</a></li><li><a href="https://vel.life/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/">关于对抗样本的思考</a></li><li><a href="https://vel.life/%E7%9F%A5%E8%AF%86%E6%99%BA%E8%83%BD%E8%AE%B2%E5%BA%A7/">知识智能讲座</a></li><li><a href="https://vel.life/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/">第十八期人工智能前沿学生论坛——语音识别前沿技术</a></li></ul></div>
+<h2 id="图卷积-GCN"><a href="#图卷积-GCN" class="headerlink" title="图卷积 GCN"></a>图卷积 GCN</h2><h1 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h1><h1 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h1><h1 id="自动机器学习"><a href="#自动机器学习" class="headerlink" title="自动机器学习"></a>自动机器学习</h1><p>学习模型的性能表现常常是超参数敏感的。</p>
+<p><strong>AutoML</strong>: true end2end learning.</p>
+<blockquote>
+<p>Meta-level learning &amp; optimization.</p>
+</blockquote>
+<hr>
+<p>Random Search works better than grid search. 更容易收敛到最优值。</p>
+<p>Bayesian optimization: 利用期望和方差综合选择最优的下一个超参数集。</p>
+<p>Tree of Parzen Estimators (TPE).</p>
+<p>Population-based methods. （基因算法、进化算法、模拟退火……）</p>
+<hr>
+<p>为了加快超参训练，可以引入超参数的梯度下降；可以预测模型的学习曲线，从而提前结束效果不好的训练；利用一个小的子样本集近似代表训练性能（Successive Halving, SH）。</p>
+<p>Hyperband: 层次化的超参选择，不同层次用不同的加速方法……</p>
+<blockquote>
+<p>Hyperband加速效果很好 / 收敛快，Bayesian optimization最终效果很好，两者在不同的训练阶段综合起来（先H后B），就可以同时兼具效率和性能了。</p>
+</blockquote>
+<p>Network morphisms. One-shot. 超级高效的训练速度。</p>
+<h2 id="元学习"><a href="#元学习" class="headerlink" title="元学习"></a>元学习</h2><p>multi-task learning &amp; ensemble learning</p>
+<h1 id="对抗学习"><a href="#对抗学习" class="headerlink" title="对抗学习"></a>对抗学习</h1><p>White-box Attack</p>
+<p>Black-box Attack: random samples</p>
+<p>Graph Model Attack</p>
+<blockquote>
+<p>There is a contest in KDDCUP 2020</p>
+</blockquote>
+<h2 id="Defense"><a href="#Defense" class="headerlink" title="Defense"></a>Defense</h2><blockquote>
+<font color=blue>Defense is possible but hard in real life.</font>
+
+</blockquote>
+<p>data augmentation</p>
+<h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%8D%95%E5%88%86%E7%B1%BB/">单分类（one-class classification）</a></li><li><a href="https://vel.life/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">时间序列异常检测</a></li><li><a href="https://vel.life/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/">关于对抗样本的思考</a></li><li><a href="https://vel.life/%E7%9F%A5%E8%AF%86%E6%99%BA%E8%83%BD%E8%AE%B2%E5%BA%A7/">知识智能讲座</a></li><li><a href="https://vel.life/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/">第十八期人工智能前沿学生论坛——语音识别前沿技术</a></li></ul></div>
     </div>
 
     
@@ -710,7 +750,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程"><span class="nav-number">1.1.</span> <span class="nav-text">课程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考书"><span class="nav-number">1.2.</span> <span class="nav-text">参考书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶级会议"><span class="nav-number">1.3.</span> <span class="nav-text">顶级会议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶级期刊"><span class="nav-number">1.4.</span> <span class="nav-text">顶级期刊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理篇"><span class="nav-number">2.</span> <span class="nav-text">原理篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能"><span class="nav-number">2.1.</span> <span class="nav-text">人工智能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#智能系统"><span class="nav-number">2.1.1.</span> <span class="nav-text">智能系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小数据、大任务"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">小数据、大任务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六大领域"><span class="nav-number">2.1.2.</span> <span class="nav-text">六大领域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机视觉"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">计算机视觉</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习"><span class="nav-number">2.2.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成式-Generative"><span class="nav-number">2.2.1.</span> <span class="nav-text">生成式 Generative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鉴别式-Contrastive"><span class="nav-number">2.2.2.</span> <span class="nav-text">鉴别式 Contrastive</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式识别"><span class="nav-number">2.3.</span> <span class="nav-text">模式识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计学习要素"><span class="nav-number">2.4.</span> <span class="nav-text">统计学习要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短见定理"><span class="nav-number">2.5.</span> <span class="nav-text">短见定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#午餐定理"><span class="nav-number">2.6.</span> <span class="nav-text">午餐定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类分布律"><span class="nav-number">2.7.</span> <span class="nav-text">聚类分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形分布律"><span class="nav-number">2.8.</span> <span class="nav-text">流形分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极大似然律"><span class="nav-number">2.9.</span> <span class="nav-text">极大似然律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大熵原理"><span class="nav-number">2.10.</span> <span class="nav-text">最大熵原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习"><span class="nav-number">3.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-NN"><span class="nav-number">3.1.</span> <span class="nav-text">K-NN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN的性质"><span class="nav-number">3.1.1.</span> <span class="nav-text">KNN的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN的问题"><span class="nav-number">3.1.2.</span> <span class="nav-text">KNN的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN用于回归"><span class="nav-number">3.1.3.</span> <span class="nav-text">KNN用于回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN分类算法"><span class="nav-number">3.1.4.</span> <span class="nav-text">KNN分类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数方法-Parametric-Method"><span class="nav-number">3.1.5.</span> <span class="nav-text">参数方法 Parametric Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">3.2.</span> <span class="nav-text">SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优线性分类器"><span class="nav-number">3.2.1.</span> <span class="nav-text">最优线性分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性SVM"><span class="nav-number">3.2.2.</span> <span class="nav-text">线性SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日乘子法"><span class="nav-number">3.2.3.</span> <span class="nav-text">拉格朗日乘子法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dual-Hard-SVM"><span class="nav-number">3.2.4.</span> <span class="nav-text">Dual Hard SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性不可分问题"><span class="nav-number">3.2.5.</span> <span class="nav-text">线性不可分问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM用于回归"><span class="nav-number">3.2.6.</span> <span class="nav-text">SVM用于回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核技巧-Kernel-Trick"><span class="nav-number">3.2.7.</span> <span class="nav-text">核技巧 Kernel Trick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯"><span class="nav-number">3.3.</span> <span class="nav-text">朴素贝叶斯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归"><span class="nav-number">3.4.</span> <span class="nav-text">逻辑回归</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无监督学习"><span class="nav-number">4.</span> <span class="nav-text">无监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-means"><span class="nav-number">4.1.</span> <span class="nav-text">K-means</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#半监督学习"><span class="nav-number">5.</span> <span class="nav-text">半监督学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习"><span class="nav-number">6.</span> <span class="nav-text">深度学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播算法"><span class="nav-number">6.1.</span> <span class="nav-text">反向传播算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络-CNN"><span class="nav-number">6.2.</span> <span class="nav-text">卷积神经网络 CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用CNN架构"><span class="nav-number">6.2.1.</span> <span class="nav-text">常用CNN架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环神经网络-RNN"><span class="nav-number">6.3.</span> <span class="nav-text">循环神经网络 RNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习"><span class="nav-number">7.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示学习"><span class="nav-number">8.</span> <span class="nav-text">表示学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-number">9.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图嵌入"><span class="nav-number">9.1.</span> <span class="nav-text">图嵌入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepWalk"><span class="nav-number">9.1.1.</span> <span class="nav-text">DeepWalk</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#node2vec"><span class="nav-number">9.1.1.1.</span> <span class="nav-text">node2vec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#metapath2vec"><span class="nav-number">9.1.1.2.</span> <span class="nav-text">metapath2vec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetMF"><span class="nav-number">9.1.2.</span> <span class="nav-text">NetMF</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图卷积-GCN"><span class="nav-number">9.2.</span> <span class="nav-text">图卷积 GCN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归-1"><span class="nav-number">10.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#感知机"><span class="nav-number">11.</span> <span class="nav-text">感知机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">12.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率图"><span class="nav-number">13.</span> <span class="nav-text">概率图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预训练"><span class="nav-number">14.</span> <span class="nav-text">预训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自监督学习"><span class="nav-number">15.</span> <span class="nav-text">自监督学习</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程"><span class="nav-number">1.1.</span> <span class="nav-text">课程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考书"><span class="nav-number">1.2.</span> <span class="nav-text">参考书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶级会议"><span class="nav-number">1.3.</span> <span class="nav-text">顶级会议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顶级期刊"><span class="nav-number">1.4.</span> <span class="nav-text">顶级期刊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理篇"><span class="nav-number">2.</span> <span class="nav-text">原理篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能"><span class="nav-number">2.1.</span> <span class="nav-text">人工智能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#智能系统"><span class="nav-number">2.1.1.</span> <span class="nav-text">智能系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小数据-大任务"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">小数据 + 大任务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究方向"><span class="nav-number">2.1.2.</span> <span class="nav-text">研究方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六大领域"><span class="nav-number">2.1.3.</span> <span class="nav-text">六大领域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机视觉"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">计算机视觉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自然语言理解与交流"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">自然语言理解与交流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#认知与推理"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">认知与推理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器人学"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">机器人学</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#博弈与伦理"><span class="nav-number">2.1.3.5.</span> <span class="nav-text">博弈与伦理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习"><span class="nav-number">2.1.3.6.</span> <span class="nav-text">机器学习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用人工智能"><span class="nav-number">2.2.</span> <span class="nav-text">通用人工智能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式识别"><span class="nav-number">2.3.</span> <span class="nav-text">模式识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习-1"><span class="nav-number">2.4.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计学习要素"><span class="nav-number">2.5.</span> <span class="nav-text">统计学习要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#短见定理"><span class="nav-number">2.6.</span> <span class="nav-text">短见定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#午餐定理"><span class="nav-number">2.7.</span> <span class="nav-text">午餐定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类分布律"><span class="nav-number">2.8.</span> <span class="nav-text">聚类分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形分布律"><span class="nav-number">2.9.</span> <span class="nav-text">流形分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极大似然律"><span class="nav-number">2.10.</span> <span class="nav-text">极大似然律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大熵原理"><span class="nav-number">2.11.</span> <span class="nav-text">最大熵原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习"><span class="nav-number">3.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-NN"><span class="nav-number">3.1.</span> <span class="nav-text">K-NN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN的性质"><span class="nav-number">3.1.1.</span> <span class="nav-text">KNN的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN的问题"><span class="nav-number">3.1.2.</span> <span class="nav-text">KNN的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN用于回归"><span class="nav-number">3.1.3.</span> <span class="nav-text">KNN用于回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN分类算法"><span class="nav-number">3.1.4.</span> <span class="nav-text">KNN分类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数方法-Parametric-Method"><span class="nav-number">3.1.5.</span> <span class="nav-text">参数方法 Parametric Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">3.2.</span> <span class="nav-text">SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优线性分类器"><span class="nav-number">3.2.1.</span> <span class="nav-text">最优线性分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性SVM"><span class="nav-number">3.2.2.</span> <span class="nav-text">线性SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日乘子法"><span class="nav-number">3.2.3.</span> <span class="nav-text">拉格朗日乘子法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dual-Hard-SVM"><span class="nav-number">3.2.4.</span> <span class="nav-text">Dual Hard SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性不可分问题"><span class="nav-number">3.2.5.</span> <span class="nav-text">线性不可分问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM用于回归"><span class="nav-number">3.2.6.</span> <span class="nav-text">SVM用于回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核技巧-Kernel-Trick"><span class="nav-number">3.2.7.</span> <span class="nav-text">核技巧 Kernel Trick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯"><span class="nav-number">3.3.</span> <span class="nav-text">朴素贝叶斯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归"><span class="nav-number">3.4.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机"><span class="nav-number">3.5.</span> <span class="nav-text">感知机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">3.6.</span> <span class="nav-text">决策树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无监督学习"><span class="nav-number">4.</span> <span class="nav-text">无监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-means"><span class="nav-number">4.1.</span> <span class="nav-text">K-means</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#半监督学习"><span class="nav-number">5.</span> <span class="nav-text">半监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#少样本学习-Few-shot"><span class="nav-number">5.1.</span> <span class="nav-text">少样本学习 Few-shot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#零次学习-Zero-shot"><span class="nav-number">5.2.</span> <span class="nav-text">零次学习 Zero-shot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自监督学习"><span class="nav-number">6.</span> <span class="nav-text">自监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成式学习-Generative-Methods"><span class="nav-number">6.0.1.</span> <span class="nav-text">生成式学习 Generative Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#鉴别式模型-Discriminative-Model"><span class="nav-number">6.0.1.1.</span> <span class="nav-text">鉴别式模型 Discriminative Model</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对比式学习-Contrastive-Methods"><span class="nav-number">6.0.2.</span> <span class="nav-text">对比式学习 Contrastive Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习"><span class="nav-number">7.</span> <span class="nav-text">深度学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播算法"><span class="nav-number">7.1.</span> <span class="nav-text">反向传播算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络-CNN"><span class="nav-number">7.2.</span> <span class="nav-text">卷积神经网络 CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用CNN架构"><span class="nav-number">7.2.1.</span> <span class="nav-text">常用CNN架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环神经网络-RNN"><span class="nav-number">7.3.</span> <span class="nav-text">循环神经网络 RNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习"><span class="nav-number">8.</span> <span class="nav-text">强化学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示学习"><span class="nav-number">9.</span> <span class="nav-text">表示学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图学习"><span class="nav-number">10.</span> <span class="nav-text">图学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图嵌入"><span class="nav-number">10.1.</span> <span class="nav-text">图嵌入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepWalk"><span class="nav-number">10.1.1.</span> <span class="nav-text">DeepWalk</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#node2vec"><span class="nav-number">10.1.1.1.</span> <span class="nav-text">node2vec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#metapath2vec"><span class="nav-number">10.1.1.2.</span> <span class="nav-text">metapath2vec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetMF"><span class="nav-number">10.1.2.</span> <span class="nav-text">NetMF</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图卷积-GCN"><span class="nav-number">10.2.</span> <span class="nav-text">图卷积 GCN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预训练"><span class="nav-number">11.</span> <span class="nav-text">预训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迁移学习"><span class="nav-number">12.</span> <span class="nav-text">迁移学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动机器学习"><span class="nav-number">13.</span> <span class="nav-text">自动机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元学习"><span class="nav-number">13.1.</span> <span class="nav-text">元学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗学习"><span class="nav-number">14.</span> <span class="nav-text">对抗学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Defense"><span class="nav-number">14.1.</span> <span class="nav-text">Defense</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN"><span class="nav-number">14.2.</span> <span class="nav-text">GAN</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -726,14 +766,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">177</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://vel.life/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111194210629.png">
 <meta property="og:image" content="https://vel.life/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111200941691.png">
 <meta property="article:published_time" content="2020-11-02T07:42:05.000Z">
-<meta property="article:modified_time" content="2020-11-18T04:44:50.196Z">
+<meta property="article:modified_time" content="2020-11-24T08:15:11.488Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="零知识证明">
 <meta name="twitter:card" content="summary">
@@ -277,12 +277,13 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><p>本文为《 赛博智能经济与区块链》的公众号文章撰写任务。<a id="more"></a></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zhuanlan.zhihu.com/p/90711138" target="_blank" rel="noopener external nofollow noreferrer">零知识证明学习资源汇总</a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://zhuanlan.zhihu.com/p/90711138" target="_blank" rel="noopener external nofollow noreferrer">零知识证明学习资源汇总</a></p>
 <p><a href="https://www2.kenyon.edu/Depts/Math/Aydin/Teach/Sp14/328/AliBabaCave.pdf" target="_blank" rel="noopener external nofollow noreferrer">How to Explain Zero-Knowledge Protocols to Your Children</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/31651393" target="_blank" rel="noopener external nofollow noreferrer">区块链学习笔记 (1)：零知识证明的江湖</a></p>
 <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>什么是零知识证明？</p>
+<p>零知识证明看上去字面上好像是“<strong>不用任何知识就证明了某件事情</strong>”的意思。。但是事情并非如此简单……</p>
 <p>首先我们一定明白，零知识证明<strong><font  color=red>不可能等于</font></strong><strong><font color=blue>没有利用任何信息而完成证明</font></strong>。如果有人宣称他证明了哥德巴赫猜想，那么他也至少需要给各位发送这样一条“声明”：“兄弟们，快来看看！新鲜的哥德巴赫猜想证明。俺完成的。”这本身就是一种信息的传递。</p>
-<p>事实上大家也注意到，证明本身就是一个信息交互的过程。</p>
+<p>事实上大家也注意到，证明是一个信息交互的过程。</p>
 <p>那么，我们不由得疑惑：</p>
 <blockquote>
 <p><em>零知识证明，究竟“零知识”到什么程度？</em></p>
@@ -338,8 +339,8 @@
 <img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111200941691.png" class="" title="伪造者决策树">
 <p>每一次测试都是一个分支点，只需要在分支点处进行有限次的回滚，就一定能够通过测试。</p>
 <hr>
-<p>既然一个对解一无所知的伪造者都能通过测试，那么提问者想要从测试中获得关于解的有用信息，看上去就不太可能的……在这种情况下，这样的测试就完成了零知识级的信息传递。</p>
-<h2 id="永不坍缩的观测"><a href="#永不坍缩的观测" class="headerlink" title="永不坍缩的观测"></a>永不坍缩的观测</h2><p>时光机作弊的特点在于，无论观察多少次，提问者永远无法区分一个有解和对解一无所知的人的区别。</p>
+<p>既然一个对解一无所知的伪造者都能通过测试，那么提问者想要从测试中获得关于解的有用信息，看上去就不太可能了……在这种情况下，这样的测试就完成了零知识级的信息传递。</p>
+<h2 id="永不坍缩的观测"><a href="#永不坍缩的观测" class="headerlink" title="永不坍缩的观测"></a>永不坍缩的观测</h2><p>时光机作弊的特点在于，无论观察多少次，提问者永远无法区分一个有解和另一个对解一无所知的人的区别。</p>
 <blockquote>
 <p>想想，时光倒流，你可以预知你的一切已有经历，但是除此之外你仍然一无所知，从前你不知道的东西现在你依然不知道。</p>
 </blockquote>
@@ -395,6 +396,36 @@
 <li>发送者的钱确实被销毁了</li>
 </ol>
 <p>整个过程中矿工并不关心具体花了多少钱，以及参与交易的双方是谁；矿工只关心整个系统的货币是否守恒。</p>
+<h1 id="延伸思考1-零知识证明的隐藏前提"><a href="#延伸思考1-零知识证明的隐藏前提" class="headerlink" title="延伸思考1-零知识证明的隐藏前提"></a>延伸思考1-零知识证明的隐藏前提</h1><blockquote>
+<p>零知识的正式内容介绍已经结束了。这一部分的正确性无法保证，只是一种简单的思考。</p>
+</blockquote>
+<p>我的观点是，零知识证明需要一个问题是离线可解的。也就是在获得的相关信息不变的约束下，某个问题单纯通过计算就可以获得解答。</p>
+<blockquote>
+<p>在幻想学中这对应着想界不变。</p>
+<p>如果一个问题是想界内不可解的，那么它无法变成一个零知识证明。</p>
+</blockquote>
+<p>如果一个问题，是无法单纯通过计算就可以获得解答，那么在不给出新的信息时，就无法构造出零知识证明。</p>
+<p>从另一个角度，零知识证明的前提，应该是对于验证者来说：</p>
+<ul>
+<li>问题的解是藏在他已知的一个解空间之中的（<strong>可知性</strong>）</li>
+<li>对于任意一个解空间中的位置，都可以进行离线的验证（<strong>可解性</strong>）</li>
+</ul>
+<p>也就是说，不是所有的问题和场景都可以构造零知识证明。</p>
+<h1 id="延伸思考2-模拟器-时光机佯谬"><a href="#延伸思考2-模拟器-时光机佯谬" class="headerlink" title="延伸思考2-模拟器/时光机佯谬"></a>延伸思考2-模拟器/时光机佯谬</h1><blockquote>
+<p><em>以下是对证明模拟器/时光机零知识的一个反驳。</em></p>
+</blockquote>
+<p>虽然我无法区分究竟是在哪个世界、哪个角色，或者有没有使用时光机作弊。</p>
+<p>但是，simulator的确从真实世界获得了所有的必要的交互验证信息。</p>
+<p>也就是说，如果simulator可以一直保持这样的超能力——那么无论simulator知不知道证明，它对我来说都具有有效的证明力。</p>
+<p>也就是，当模拟器具有证明力的时候，它必须与真实世界有连接。一旦它失去连接，它就失去了证明力。也就是说，模拟器相当于真实世界的一个<strong>接口</strong> / <strong>Interface</strong>（<strong>它们是一体的不可分的</strong>）。模拟器不知道，但是模拟器和真实世界的联合体是知道证明的。</p>
+<blockquote>
+<p>说模拟器不知道证明，就好像在说，<strong>我的手不知道我脑袋的想法</strong>一样。</p>
+<blockquote>
+<p>就算对于真实世界来说，也不是真实角色的所有的“部分”都拥有零知识证明的信息。</p>
+</blockquote>
+</blockquote>
+<p>也就是这样的证明方法是不足的。</p>
+<p>应该用多重宇宙的方法，在无穷多的平行空间中，存在一个随机宇宙，它不能作弊，但是它也能做出跟真实世界一样的证明。这时，双方就没有连接了。</p>
 
     </div>
 
@@ -502,7 +533,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引子"><span class="nav-number">2.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三色问题"><span class="nav-number">3.</span> <span class="nav-text">三色问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识"><span class="nav-number">4.</span> <span class="nav-text">零知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图灵测试"><span class="nav-number">5.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时光倒流"><span class="nav-number">6.</span> <span class="nav-text">时光倒流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永不坍缩的观测"><span class="nav-number">6.1.</span> <span class="nav-text">永不坍缩的观测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识证明"><span class="nav-number">7.</span> <span class="nav-text">零知识证明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引子"><span class="nav-number">2.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三色问题"><span class="nav-number">3.</span> <span class="nav-text">三色问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识"><span class="nav-number">4.</span> <span class="nav-text">零知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图灵测试"><span class="nav-number">5.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时光倒流"><span class="nav-number">6.</span> <span class="nav-text">时光倒流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永不坍缩的观测"><span class="nav-number">6.1.</span> <span class="nav-text">永不坍缩的观测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识证明"><span class="nav-number">7.</span> <span class="nav-text">零知识证明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸思考1-零知识证明的隐藏前提"><span class="nav-number">8.</span> <span class="nav-text">延伸思考1-零知识证明的隐藏前提</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸思考2-模拟器-时光机佯谬"><span class="nav-number">9.</span> <span class="nav-text">延伸思考2-模拟器&#x2F;时光机佯谬</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -518,14 +549,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">177</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
