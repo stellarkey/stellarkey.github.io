@@ -32,7 +32,7 @@
 <meta property="og:description" content="关于对抗样本的思考。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-02-15T09:03:46.000Z">
-<meta property="article:modified_time" content="2019-03-13T09:39:06.000Z">
+<meta property="article:modified_time" content="2020-11-30T04:22:52.569Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="计算机视觉">
@@ -299,12 +299,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">0000000000000011100000000000</span><br><span class="line">0000000000000111111000000000</span><br><span class="line">0000000000111111111110000000</span><br><span class="line">0000000000111111111110000000</span><br><span class="line">0000000011111111000000000000</span><br><span class="line">0000000111111100000000000000</span><br><span class="line">0000000111110000000000000000</span><br><span class="line">0000001111110000000000000000</span><br><span class="line">0000000111110000000000000000</span><br><span class="line">0000001111110000000000000000</span><br><span class="line">0000001111100000000000000000</span><br><span class="line">0000001111000001111000000000</span><br><span class="line">0000001111100011111110000000</span><br><span class="line">0000011111101111111111000000</span><br><span class="line">0000011111111111111111110000</span><br><span class="line">0000011111111111111111110000</span><br><span class="line">0000011111111110001111110000</span><br><span class="line">0000001111111110000111111000</span><br><span class="line">0000001111111100000011111000</span><br><span class="line">0000011111110000000001111000</span><br><span class="line">0000001111100000000001111000</span><br><span class="line">0000000111110000000000111100</span><br><span class="line">0000000111111000000001111100</span><br><span class="line">0000000111111000000011111100</span><br><span class="line">0000000011111111111111111000</span><br><span class="line">0000000000111111111111111000</span><br><span class="line">0000000000001111111111100000</span><br><span class="line">0000000000000000111000000000</span><br></pre></td></tr></table></figure>
 <p>我们估算一下图片空间究竟有多大：</p>
 <ul>
-<li>784个二值像素，则整个图片空间相当于$2^{784}\approx 10^{80}​$。</li>
+<li>784个二值像素，则整个图片空间相当于$2^{784}\approx 10^{80}$。</li>
 </ul>
 <p>而训练数据有多少呢？</p>
 <ul>
 <li><code>420k</code>$\approx 10^{5}$。</li>
-<li>只相当于整个图片空间的$\cfrac{1}{10^{75} }​$。（几乎可以忽略不计）</li>
+<li>只相当于整个图片空间的$\cfrac{1}{10^{75} }$。（几乎可以忽略不计）</li>
 </ul>
 <blockquote>
 <p>这简直退化成为了<strong>异常检测</strong>问题。因为图片是数字的概率几乎与图片出现某种异常的概率接近。</p>
@@ -312,7 +312,8 @@
 <p>这就是一个<strong>正样本空间相对于总空间极度稀疏</strong>的问题了。</p>
 <p>首先我们必须认识到，一个$2^{784}\approx 10^{80}$大小的空间容量甚至可以与<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwiH3vCYv73gAhWHdd4KHRcvDfoQFjADegQIBRAB&amp;url=https%3A%2F%2Fwww.wukong.com%2Fquestion%2F6432490235526906113%2F&amp;usg=AOvVaw06y8ocDrG45tttsfab1K1g" target="_blank" rel="noopener external nofollow noreferrer">宇宙的基本粒子总数</a>等量齐观。</p>
 <h1 id="天涯海角-欧式距离的膨胀"><a href="#天涯海角-欧式距离的膨胀" class="headerlink" title="天涯海角-欧式距离的膨胀"></a>天涯海角-欧式距离的膨胀</h1><p>欧式距离，曼哈顿距离。</p>
-<h1 id="心意相通-同余类引理"><a href="#心意相通-同余类引理" class="headerlink" title="心意相通-同余类引理"></a>心意相通-同余类引理</h1><p>在<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwidodiEtL3gAhVMZt4KHTaRBmkQFjAAegQICRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fbhneo%2Farticle%2Fdetails%2F82254198&amp;usg=AOvVaw2LfjLxAPfV4FftLr-E0qR6" target="_blank" rel="noopener external nofollow noreferrer">深度学习的几何观点（1） - 流形分布定律- bhneo的博客- CSDN博客</a>中提到了：</p>
+<p>继续在图片中沿用欧氏距离度量是非常不明智的，因为相似的图片可以在高维空间中存在极大的欧氏距离。这使得分类器很难产生合理的决策超平面。</p>
+<h1 id="心意相通-同余类引理"><a href="#心意相通-同余类引理" class="headerlink" title="心意相通-同余类引理"></a>心意相通-同余类引理</h1><p>在<a href="https://blog.csdn.net/bhneo/article/details/82254198" target="_blank" rel="noopener external nofollow noreferrer">深度学习的几何观点（1） - 流形分布定律</a>中提到了：</p>
 <ul>
 <li><strong>流形分布定律</strong>：自然界中同一类别的高维数据，往往集中在某个低维流形附近。</li>
 <li><strong>聚类分布定律</strong>：这一类别中不同的子类对应着流形上的不同概率分布，这些分布之间的距离大到足够将这些子类区分。 </li>
@@ -445,7 +446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">197</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -633,8 +634,6 @@ darkmode.showWidget();
 <script src="/js/next-boot.js"></script>
 
 
-  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
-    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
 
 
   
