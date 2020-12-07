@@ -47,7 +47,7 @@
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215235002.png">
 <meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8A%E6%B7%B1%E5%BA%A6%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D%E7%BB%BC%E8%BF%B0%E3%80%8B/image-20201121215305252.png">
 <meta property="article:published_time" content="2019-03-06T03:40:37.000Z">
-<meta property="article:modified_time" content="2020-11-25T16:36:24.262Z">
+<meta property="article:modified_time" content="2020-12-03T06:16:19.668Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
@@ -365,10 +365,16 @@ M A P=\frac{\sum_{i=1}^{r} P @ k_{i}}{r}
 \begin{equation}
 M R R=P @ k_{1}
 \end{equation}</script><blockquote>
-<p>以上的评价指标都是二值化的（要么匹配，要么不匹配）。<br>对于有些问题匹配时有等级的，我们进一步引入<strong>匹配程度</strong>，例如分为0、1、2这3个等级。<br>给定最优排序，按照顺序每个位置的文档对应的匹配度为$\widehat{r e l}_{1}, \widehat{r e l}_{2}, \cdots, \widehat{r e l}_{n}$；<br>给定预测的排序，按照顺序每个位置的文档对应的匹配度为$\text {rel}_{1}, \text {rel}_{2}, \cdots, \text {rel}_{n}$。</p>
+<p>以上的评价指标都是<strong>二值化</strong>的（要么匹配，要么不匹配）。<br>对于有些问题匹配时有等级的，我们进一步引入<strong>匹配程度</strong>，例如分为0、1、2这3个等级。</p>
+<p>给定<strong>最优排序</strong>，按照顺序每个位置的文档对应的匹配度为$\widehat{r e l}_{1}, \widehat{r e l}_{2}, \cdots, \widehat{r e l}_{n}$；</p>
+<p>给定<strong>预测的排序</strong>，按照顺序每个位置的文档对应的匹配度为$\text {rel}_{1}, \text {rel}_{2}, \cdots, \text {rel}_{n}$。</p>
 </blockquote>
 <ul>
-<li><font color=red>nDCG</font> (normalized Discounted Cumulative Gain)</li>
+<li><font color=red>nDCG</font> (<strong><font color=deepskyblue>normalized</font></strong> <strong><font color=blue>Discounted</font></strong> <strong><font color=green>Cumulative</font></strong> Gain) 【预测/最优】<ul>
+<li>DCG考虑排序顺序，使得排名靠前的item增益更高，对排名靠后的item进行折损（乘以权重$\cfrac{1}{log_2 i}$）。</li>
+<li>除以IDCG获得一个normalized的值</li>
+</ul>
+</li>
 </ul>
 <script type="math/tex; mode=display">
 \begin{equation}
@@ -377,7 +383,10 @@ I D C G &=\hat{r e l}_{1}+\sum_{i=2}^{n} \frac{\widehat{r e l}_{i}}{\log _{2} i}
 D C G &=r e l_{1}+\sum_{i=2}^{n} \frac{r e l_{i}}{\log _{2} i} \\
 n D C G &=\frac{D C G}{I D C G}
 \end{aligned}
-\end{equation}</script><h2 id="传统文本匹配学习模型"><a href="#传统文本匹配学习模型" class="headerlink" title="传统文本匹配学习模型"></a>传统文本匹配学习模型</h2><p>传统文本匹配模型主要基于让人工提取的特征。</p>
+\end{equation}</script><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/84206752" target="_blank" rel="noopener external nofollow noreferrer">NDCG及实现</a></p>
+</blockquote>
+<h2 id="传统文本匹配学习模型"><a href="#传统文本匹配学习模型" class="headerlink" title="传统文本匹配学习模型"></a>传统文本匹配学习模型</h2><p>传统文本匹配模型主要基于让人工提取的特征。</p>
 <p>目前常用的有：统计机器翻译模型、隐空间模型，有监督学习语义索引模型……</p>
 <h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a><font color=red>存在的问题</font></h3><ul>
 <li><strong>人工提取特征的代价很大</strong><ul>
@@ -761,7 +770,7 @@ r=h\left(\boldsymbol{M}_{n}\right)
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
