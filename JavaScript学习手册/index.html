@@ -24,18 +24,20 @@
   </script>
 
 
-  <meta name="description" content="本指南主要选取JavaScript中实用性最大的部分，浅尝辄止。JavaScript是web开发人员必须学习的3门语言之一：HTML定义了网页的内容，CSS描述了网页的布局，JavaScript则负责定义网页的行为。">
+  <meta name="description" content="JavaScript是web开发人员必须学习的3门语言之一：  HTML定义了网页的内容，CSS描述了网页的布局，JavaScript则负责定义网页的行为。  三大前端框架：React、Vue、Angular。  来玩一个小游戏吧~点击这里     var image_num &#x3D; 1; function changeImage() {     element&#x3D;document.getElement">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript学习指南">
 <meta property="og:url" content="https://vel.life/JavaScript%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/index.html">
 <meta property="og:site_name" content="思维之海">
-<meta property="og:description" content="本指南主要选取JavaScript中实用性最大的部分，浅尝辄止。JavaScript是web开发人员必须学习的3门语言之一：HTML定义了网页的内容，CSS描述了网页的布局，JavaScript则负责定义网页的行为。">
+<meta property="og:description" content="JavaScript是web开发人员必须学习的3门语言之一：  HTML定义了网页的内容，CSS描述了网页的布局，JavaScript则负责定义网页的行为。  三大前端框架：React、Vue、Angular。  来玩一个小游戏吧~点击这里     var image_num &#x3D; 1; function changeImage() {     element&#x3D;document.getElement">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/images/emoji_dragon/0.jpg">
 <meta property="article:published_time" content="2018-12-30T08:34:01.000Z">
-<meta property="article:modified_time" content="2020-10-08T03:17:18.000Z">
+<meta property="article:modified_time" content="2020-12-16T17:28:52.404Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/images/emoji_dragon/0.jpg">
 
 <link rel="canonical" href="https://vel.life/JavaScript%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">
 
@@ -232,7 +234,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -268,15 +270,146 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>本指南主要选取JavaScript中实用性最大的部分，浅尝辄止。JavaScript是web开发人员必须学习的3门语言之一：<strong>HTML</strong>定义了网页的<strong>内容</strong>，<strong>CSS</strong>描述了网页的<strong>布局</strong>，<strong>JavaScript</strong>则负责定义网页的<strong>行为</strong>。<a id="more"></a></p>
-<blockquote>
-<p>在参加Conflux的UMA的时候，发现编程时不可避免地要涉及到写JS脚本。所以又开始填坑了。。</p>
-</blockquote>
-<p>网络工具综合学习网站：<a href="http://www.runoob.com/" target="_blank" rel="noopener external nofollow noreferrer"><strong>Runoob</strong></a>。</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.runoob.com/js/js-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">JavaScript 教程-Runood</a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>JavaScript是web开发人员必须学习的3门语言之一：</p>
+<ul>
+<li><strong>HTML</strong>定义了网页的<strong>内容</strong>，<strong>CSS</strong>描述了网页的<strong>布局</strong>，<strong><font color=blue>JavaScript</font></strong>则负责定义<font color=red>网页的<strong>行为</strong></font>。</li>
+</ul>
+<p><strong>三大前端框架</strong>：<a href="https://zh-hans.reactjs.org/" target="_blank" rel="noopener external nofollow noreferrer"><strong>React</strong></a>、<a href="https://cn.vuejs.org/index.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>Vue</strong></a>、<a href="https://angularjs.org/" target="_blank" rel="noopener external nofollow noreferrer"><strong>Angular</strong></a>。</p>
+<hr>
+<center><button type="button"  onclick="changeImage()">来玩一个小游戏吧~点击这里</button></center>
+
+<p><br></br></p>
+<p><img id="myimageQAQ" data-src="/images/emoji_dragon/0.jpg"></p>
+<script>
+var image_num = 1;
+function changeImage()
+{
+    element=document.getElementById('myimageQAQ')
+    element.src="/images/emoji_dragon/"+ image_num.toString() +".jpg";
+    image_num = (image_num + 1) % 50;
+}
+</script>
+
+<a id="more"></a>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>网络工具综合学习网站：<a href="http://www.runoob.com/" target="_blank" rel="noopener external nofollow noreferrer">Runoob</a>。</p>
+<p><a href="http://www.runoob.com/js/js-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">JavaScript 教程-Runood</a></p>
 <p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000" target="_blank" rel="noopener external nofollow noreferrer">JavaScript教程-廖雪峰</a></p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript" target="_blank" rel="noopener external nofollow noreferrer">JS游戏开发教程</a></p>
 <p><a href="https://www.unrealengine.com/zh-CN/" target="_blank" rel="noopener external nofollow noreferrer">虚幻4</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/learn/JavaScript" target="_blank" rel="noopener external nofollow noreferrer">JavaScript教程 - MDN</a></p>
+<h1 id="我的第一段-JavaScript"><a href="#我的第一段-JavaScript" class="headerlink" title="我的第一段 JavaScript"></a>我的第一段 JavaScript</h1><center><button type="button" onclick="myFunction2()">点击这里</button></center>
+
+<p><p id="demo2">
+来玩一个小游戏吧~。<br>
+</p></p>
+<script>
+var count = 1;
+var color = 2333;
+function myFunction2()
+{
+    x=document.getElementById("demo2");  // 找到元素
+    x.innerHTML= x.innerHTML + "<strong><font color=" +color.toString() + ">QAQ:"+ count.toString() + "</font></strong> ";    // 改变内容
+    count = count + 1;
+    color = color + 23333;
+}
+</script>
+
+
+<blockquote>
+<p>QAQ</p>
+</blockquote>
+<hr>
+<p>源代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">"demo2"</span>&gt;</span><br><span class="line">来玩一个小游戏吧~。&lt;br&gt;</span><br><span class="line">&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">var count = 1;</span></span><br><span class="line"><span class="regexp">var color = 2333;</span></span><br><span class="line"><span class="regexp">function myFunction2()</span></span><br><span class="line"><span class="regexp">&#123;</span></span><br><span class="line"><span class="regexp">	x=document.getElementById("demo2");  /</span><span class="regexp">/ 找到元素</span></span><br><span class="line"><span class="regexp">    x.innerHTML= x.innerHTML + "&lt;strong&gt;&lt;font color=" +color.toString() + "&gt;QAQ:"+ count.toString() + "&lt;/</span>font&gt;&lt;<span class="regexp">/strong&gt; ";    /</span><span class="regexp">/ 改变内容</span></span><br><span class="line"><span class="regexp">    count = count + 1;</span></span><br><span class="line"><span class="regexp">    color = color + 23333;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="基础工具"><a href="#基础工具" class="headerlink" title="基础工具"></a>基础工具</h1><h2 id="JSON格式-json"><a href="#JSON格式-json" class="headerlink" title="JSON格式 .json"></a>JSON格式 <code>.json</code></h2><blockquote>
+<p><a href="https://www.w3school.com.cn/json/json_syntax.asp" target="_blank" rel="noopener external nofollow noreferrer">JSON 语法</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/JSON" target="_blank" rel="noopener external nofollow noreferrer">使用JSON</a>，<a href="https://www.cnblogs.com/hwtblog/p/8483573.html" target="_blank" rel="noopener external nofollow noreferrer">json文件格式详解</a></p>
+<p><a href="http://www.json.cn/" target="_blank" rel="noopener external nofollow noreferrer">JSON在线解析及格式化验证 - JSON.cn</a></p>
+</blockquote>
+<p>JSON（<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation）是一个数据交换协议规范。它的设计简约，从而在Web开发中得到大量的应用。JSON文件后缀为<code>.json</code>。不同的语言中存在不同的对JSON文件的解析器，如JavaScript中的<code>eval()</code>函数。</p>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/27487096" target="_blank" rel="noopener external nofollow noreferrer">什么是数据交换语言?</a></p>
+<blockquote>
+<p><strong>在不同的系统不同的语言间交换数据时，我们一般倾向于使用无关于平台及语言的数据交换语言。此类语言主要包括XML，JSON，YAML，Protobuf等，常用于接口调用，配置文件，数据存储等场景。</strong></p>
+</blockquote>
+</blockquote>
+<h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><p>JSON允许以下基本元素 / 值（value）：</p>
+<ul>
+<li><strong>字符串</strong>（string）</li>
+<li><strong>数值</strong>（number）</li>
+<li><strong>布尔值</strong>（true、false）</li>
+<li><strong>空值</strong>（null）</li>
+</ul>
+<p>以及嵌套元素：</p>
+<ul>
+<li><strong><font color=blue>对象</font></strong>（object）</li>
+<li><strong><font color=blue>数组</font></strong>（array）</li>
+</ul>
+<blockquote>
+<p><strong><font color=red>一个JSON文件就是一个元素（具有任意的复杂度）。</font></strong></p>
+</blockquote>
+<hr>
+<p>在JavaScript中可以直接创建JSON格式的变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employees = [</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Bill"</span> , <span class="string">"lastName"</span>:<span class="string">"Gates"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"George"</span> , <span class="string">"lastName"</span>:<span class="string">"Bush"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Thomas"</span> , <span class="string">"lastName"</span>: <span class="string">"Carter"</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>可以像这样访问 JavaScript 对象数组中的第一项：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employees[<span class="number">0</span>].lastName;</span><br></pre></td></tr></table></figure>
+<p>返回的内容是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gates</span><br></pre></td></tr></table></figure>
+<p>可以像这样修改数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employees[<span class="number">0</span>].lastName = <span class="string">"Jobs"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象 {}"></a>对象 <code>{}</code></h3><p>一个JSON对象就是一个字典，即，“键-值对”（<code>key: value</code>）。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"firstName"</span>:<span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"lastName"</span>:<span class="string">"Doe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组 []"></a>数组 <code>[]</code></h3><p>JSON 数组在方括号中书写。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"employees"</span>: [</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"John"</span> , <span class="attr">"lastName"</span>:<span class="string">"Doe"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"Anna"</span> , <span class="attr">"lastName"</span>:<span class="string">"Smith"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"Peter"</span> , <span class="attr">"lastName"</span>:<span class="string">"Jones"</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="NPM-前端套件管理器"><a href="#NPM-前端套件管理器" class="headerlink" title="NPM 前端套件管理器"></a>NPM 前端套件管理器</h2><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/24357770" target="_blank" rel="noopener external nofollow noreferrer">npm 是干什么的？（非教程）</a></p>
+<p><a href="https://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="noopener external nofollow noreferrer">NPM 使用介绍</a></p>
+<p><a href="https://tw.alphacamp.co/blog/npm-node-package-manager" target="_blank" rel="noopener external nofollow noreferrer">NPM是什么？了解Node Package Manager套件管理机制</a></p>
+</blockquote>
+<p><strong>NPM</strong>（<strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager），前端套件管理工具。除此之外还有类似的<strong>Yarn</strong>。</p>
+<blockquote>
+<p>Node.js：一种javascript的运行环境，能够使得javascript脱离浏览器运行。它是一种提供给后端服务器的技术。</p>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/33578075/answer/57099264" target="_blank" rel="noopener external nofollow noreferrer">Node.js是用来做什么的？ - Gavin的回答 - 知乎</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener external nofollow noreferrer">Node.js - 廖雪峰</a></p>
+</blockquote>
+</blockquote>
+<h3 id="Package-json"><a href="#Package-json" class="headerlink" title="Package.json"></a><code>Package.json</code></h3><blockquote>
+<p><a href="https://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener external nofollow noreferrer">package.json文件— JavaScript 标准参考教程（alpha）</a></p>
+</blockquote>
+<ul>
+<li><strong>name</strong> - 包名。</li>
+<li><strong>version</strong> - 包的版本号。</li>
+<li><strong>description</strong> - 包的描述。</li>
+<li><strong>homepage</strong> - 包的官网 url 。</li>
+<li><strong>author</strong> - 包的作者姓名。</li>
+<li><strong>contributors</strong> - 包的其他贡献者姓名。</li>
+<li><strong>scripts</strong> - 指定了运行脚本命令的npm命令行缩写。比如start指定了运行<code>npm run start</code>时，所要执行的命令。</li>
+<li><strong>dependencies</strong> - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
+<li><strong>repository</strong> - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
+<li><strong>main</strong> - main 字段指定了程序的主入口文件，require(‘moduleName’) 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。</li>
+<li><strong>keywords</strong> - 关键字</li>
+</ul>
+<h3 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a><code>npm init</code></h3><p>NPM通过初始化项目来填写基本信息，并创建<code>Package.json</code>文件。</p>
+<h3 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a><code>npm install</code></h3><blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener external nofollow noreferrer">npm 模块安装机制简介</a></p>
+</blockquote>
+<p><code>npm install</code> 检查当前位置下的<code>package.json</code>，并根据该文件计算缺少的套件，自动更新相关的依赖。并且生成<code>node_modules</code>文件夹用于保存下载的依赖包。</p>
+<p>安装指定模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;Module Name&gt;</span><br></pre></td></tr></table></figure>
+<p>安装并记录到<code>Package.json</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save	 # 将该模块写入dependencies属性</span><br><span class="line">npm install express --save-dev # 将该模块写入devDependencies属性</span><br></pre></td></tr></table></figure>
+<p>全局安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g   # 全局安装</span><br></pre></td></tr></table></figure>
+<p>卸载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall &lt;Module Name&gt;</span><br></pre></td></tr></table></figure>
+<p>查看依赖树：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls</span><br></pre></td></tr></table></figure>
+<p>版本检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>升级：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
+<h3 id="npm-run-lt-scripts-gt"><a href="#npm-run-lt-scripts-gt" class="headerlink" title="npm run &lt;scripts&gt;"></a><code>npm run &lt;scripts&gt;</code></h3><p>运行<code>Package.json</code>中”scripts”属性所设置的脚本。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br></pre></td></tr></table></figure>
 <div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/Java%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">Java学习手册</a></li><li><a href="https://vel.life/C++%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C/">C++学习手册</a></li></ul></div>
     </div>
 
@@ -384,7 +517,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的第一段-JavaScript"><span class="nav-number">2.</span> <span class="nav-text">我的第一段 JavaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础工具"><span class="nav-number">3.</span> <span class="nav-text">基础工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON格式-json"><span class="nav-number">3.1.</span> <span class="nav-text">JSON格式 .json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素"><span class="nav-number">3.1.1.</span> <span class="nav-text">元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">3.1.2.</span> <span class="nav-text">对象 {}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.1.3.</span> <span class="nav-text">数组 []</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM-前端套件管理器"><span class="nav-number">3.2.</span> <span class="nav-text">NPM 前端套件管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Package-json"><span class="nav-number">3.2.1.</span> <span class="nav-text">Package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-init"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install"><span class="nav-number">3.2.3.</span> <span class="nav-text">npm install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-run-lt-scripts-gt"><span class="nav-number">3.2.4.</span> <span class="nav-text">npm run &lt;scripts&gt;</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,20 +533,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">196</span>
+          <span class="site-state-item-count">202</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-count">87</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
