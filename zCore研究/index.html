@@ -331,7 +331,7 @@
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// creates a child process of the calling process, similar to fork but wait for execve</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">async</span> <span class="function"><span class="keyword">fn</span> <span class="title">sys_vfork</span></span>(&amp;<span class="keyword">self</span>) -&gt; SysResult &#123;</span><br><span class="line">    info!(<span class="string">"vfork:"</span>);</span><br><span class="line">    <span class="keyword">let</span> new_proc = Process::fork_from(<span class="keyword">self</span>.zircon_process(), <span class="literal">true</span>)?;</span><br><span class="line">    <span class="keyword">let</span> new_thread = Thread::create_linux(&amp;new_proc)?;</span><br><span class="line">    new_thread.start_with_regs(GeneralRegs::new_fork(<span class="keyword">self</span>.regs), <span class="keyword">self</span>.spawn_fn)?;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> new_proc: Arc&lt;<span class="keyword">dyn</span> KernelObject&gt; = new_proc;</span><br><span class="line">    info!(<span class="string">"vfork: &#123;&#125; -&gt; &#123;&#125;"</span>, <span class="keyword">self</span>.zircon_process().id(), new_proc.id());</span><br><span class="line">    new_proc.wait_signal(Signal::SIGNALED).<span class="keyword">await</span>; <span class="comment">// wait for execve</span></span><br><span class="line">    <span class="literal">Ok</span>(new_proc.id() <span class="keyword">as</span> <span class="built_in">usize</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>首先需要在函数头部注明使用 Async 机制，即标注 <code>... async fn ...</code>。在需要进行异步处理的代码，第10行处用 <code>.await</code> 来表示使用 Async 机制的语法。</p>
 <h3 id="HAL-硬件抽象层"><a href="#HAL-硬件抽象层" class="headerlink" title="HAL 硬件抽象层"></a>HAL 硬件抽象层</h3><p>硬件抽象层（Hardware Abstraction Layer，HAL）。</p>
-
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/">912内容学习计划</a></li><li><a href="https://vel.life/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9A%91%E6%9C%9F%E9%A1%B9%E7%9B%AE/">操作系统暑期项目</a></li><li><a href="https://vel.life/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li></ul></div>
     </div>
 
     
@@ -461,13 +461,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-count">73</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
