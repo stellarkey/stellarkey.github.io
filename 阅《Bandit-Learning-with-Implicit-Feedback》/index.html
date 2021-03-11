@@ -31,13 +31,17 @@
 <meta property="og:site_name" content="思维之海">
 <meta property="og:description" content="《Bandit Learning with Implicit Feedback》，发表于NeurIPS 2018。  作者：Yi Qi, Qingyun Wu, Hongning Wang, Jie Tang, Maosong Sun。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117175726812.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117190705489.png">
+<meta property="og:image" content="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117191029193.png">
 <meta property="article:published_time" content="2020-12-20T06:15:10.000Z">
-<meta property="article:modified_time" content="2021-01-04T16:07:18.804Z">
+<meta property="article:modified_time" content="2021-01-17T13:40:28.099Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Paper">
 <meta property="article:tag" content="强化学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117175726812.png">
 
 <link rel="canonical" href="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/">
 
@@ -267,7 +271,181 @@
 <a id="more"></a>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>《<a href="http://keg.cs.tsinghua.edu.cn/jietang/publications/NIPS18-Qi-et-al-Bandit-Learning-with-Implicit-Feedback.pdf" target="_blank" rel="noopener external nofollow noreferrer">Bandit Learning with Implicit Feedback</a>》</p>
 <div class="pdfobject-container" data-target="./NIPS18-Qi-et-al-Bandit-Learning-with-Implicit-Feedback.pdf" data-height="500px"></div>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="Bandit-老虎机"><a href="#Bandit-老虎机" class="headerlink" title="Bandit 老虎机"></a>Bandit 老虎机</h2><div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%BC%E8%BF%B0%E6%8E%A2%E7%9F%A5/">可视化综述探知</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ADeep-Learning%E3%80%8B/">阅《Deep Learning》</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ADark-Beyond-Deep-A-Paradigm-Shift-to-Cognitive-AI-with-Humanlike-Common-Sense%E3%80%8B/">阅《Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense》</a></li><li><a href="https://vel.life/%E8%AE%A4%E7%9F%A5%E5%9B%BE%E8%B0%B1%E6%8E%A2%E7%9F%A5/">认知图谱探知</a></li><li><a href="https://vel.life/%E7%8F%A0%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%8E%A2%E7%9F%A5/">珠算学习框架探知</a></li></ul></div>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h1 id="Bandit-老虎机"><a href="#Bandit-老虎机" class="headerlink" title="Bandit 老虎机"></a>Bandit 老虎机</h1><h2 id="Contextual-Bandits-上下文老虎机"><a href="#Contextual-Bandits-上下文老虎机" class="headerlink" title="Contextual Bandits 上下文老虎机"></a>Contextual Bandits 上下文老虎机</h2><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/82566742" target="_blank" rel="noopener external nofollow noreferrer">强化学习落地：上下文老虎机(Contextual Bandits) - 知乎</a></p>
+<p><a href="https://www.6aiq.com/article/1589071471990" target="_blank" rel="noopener external nofollow noreferrer">基于强化学习的Contextual Bandits 算法在推荐场景中的应用- AIQ</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/35753281" target="_blank" rel="noopener external nofollow noreferrer">Contextual Bandit算法在推荐系统中的实现及应用</a></p>
+</blockquote>
+<h2 id="Regret-遗憾"><a href="#Regret-遗憾" class="headerlink" title="Regret 遗憾"></a>Regret 遗憾</h2><p>由于上下文多臂老虎机方法是一种在线学习方法，其没有一个标准的经验损失函数用来更新参数，所以一般情况下会使用累计遗憾的程度来描述模型效果。遗憾的上界也就成为衡量在线学习算法性能的标准。</p>
+<h2 id="Matrix-Completion-矩阵补全"><a href="#Matrix-Completion-矩阵补全" class="headerlink" title="Matrix Completion 矩阵补全"></a>Matrix Completion 矩阵补全</h2><h2 id="Side-Information-边信息"><a href="#Side-Information-边信息" class="headerlink" title="Side Information 边信息"></a>Side Information 边信息</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/边信息" target="_blank" rel="noopener external nofollow noreferrer">边信息_百度百科</a></p>
+</blockquote>
+<h1 id="正文翻译"><a href="#正文翻译" class="headerlink" title="正文翻译"></a>正文翻译</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p><strong>隐反馈</strong>（比如用户点击）在信息系统中是一种非常丰富的数据，但是却很难在模型对用户的评价中起到显著的作用。没有合适的建模方法的话，这种不完全的监督学习很容易让模型的评估产生偏差，尤其是在老虎机学习设置这种场景中，反馈的获取往往十分频繁。</p>
+<p>在本文的工作中，我们通过把反馈作为用户结果检验和相关性检验的一部分，实现了一个基于隐反馈的上下文老虎机（Contextual Bandits）学习模型。因为用户的检查行为是不可见的，我们引入了隐变量的描述来建模。我们还用汤普森采样法在变分贝叶斯推断上进行摇臂选取和模型更新。我们的算法在遗憾上界（upper regret bound）分析中被证明具有（在老虎机的设置中）从隐反馈中学习的能力。同时我们也在实验中对从慕课（MOOC）平台获得的点击数据进行了评估，并证明实际有效。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>基于Contextual bandit的系列算法已被证明在现代的信息服务系统有效，通常它们被<strong>用于在用户和物品之间寻找联系</strong>（good mappings）。这个系列的算法采用线性的选取方法，根据收集到的用户与物品的相关信息来调整推荐的策略——基于即时的用户反馈让用户长期的满意度最大化。它们已广泛部署在实际系统中用于内容推荐和展示广告。</p>
+<p>但是，<strong>在这种系统中用户反馈的最主要形式是<font color=red>隐式反馈</font></strong>，例如点击，这对于用户对系统输出的评估是有偏见且不完整的。 例如，用户跳过推荐项目可能不是因为他/她不喜欢物品，而仅仅是因为他/她不检查该显示位置，即位置偏差。 不幸的是， 在上下文老虎机中的常见做法只是将无点击视为否定形式的反馈。 由于跳过的项目可能会导致模型更新不一致，它们可能并非真的无关紧要；从而不可避免地导致老虎机算法的输出收敛到次优解。</p>
+<p>在这项工作中，我们专注于<strong>通过用户点击反馈来学习上下文老虎机</strong>，并将这种隐式反馈建模为用户结果检查和相关性判断的组合。检验假设是点击建模中的基本假设，它假设用户只有在用户检查了该结果并且当前与该用户的信息需求相关时，才能点击系统返回的结果。由于未观察到用户的检查行为，因此我们将其建模为潜在变量，并在概率模型中实现检查假设。我们通过逻辑函数在相应的上下文特征上定义了结果检查和相关性判断的条件概率。为了执行模型更新，我们采用变分贝叶斯方法来动态开发模型参数的后验分布的闭合形式近似值。这种近似也为在老虎机学习中选择臂的有效汤普森采样策略铺平了道路。我们的有限时间分析证明，尽管潜在变量引入的参数估计越来越复杂，但基于真实后验的汤普森采样策略仍可以保证以高概率实现亚线性贝叶斯遗憾。我们还证明了基于近似后验的汤普森采样的遗憾是显而易见的。此外，我们证明了，如果在点击反馈中未能对结果检查建模时，线性增加的遗憾是可能的，因为该模型无法在负面反馈中区分检查驱动的跳跃与相关性驱动的跳跃。</p>
+<p>我们在一个中国的<strong>大规模开放式在线课程（MOOC）平台XuetangX</strong>上对该算法进行了测试，以进行个性化教育。为了个性化学生在此平台上的学习体验，我们在学生观看视频时，在讲座视频上方以标语的形式推荐类似测验的问题。其中的算法需要决定在视频中的哪个位置向目标学生显示哪个问题。如果学生认为显示的问题有助于他/她理解讲座内容，则他/她可以单击标语以阅读答案以及有关该问题的更多相关在线内容。因此，我们的目标是使所选问题的点击率（CTR）最大化。但是，此应用的多个属性会放大点击反馈的偏见和不完整性。首先，基于用户体验的考虑，为了最大程度地减少使任何学生感到厌烦的风险，标语的显示时间限制为几秒钟。其次，由于此功能是该平台的新功能，因此许多用户可能没有意识到他们可以单击问题以阅读有关此问题的更多相关内容。结果是，没有点击任何问题并不一定表示它不相关。我们在四个月的时间里对该应用中的算法进行了测试，为该算法手动编译了总共69个问题，以在20多个主要视频以及超过10万次学生视频观看会话中进行选择。基于无偏见的离线评估政策，与未对用户的检查行为建模的标准上下文老虎机相比，我们的算法实现了8.9％的点击率提升。</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>我们对用户搜索结果的点击建模进行了广泛研究，我们发现，各种因素都会影响用户的点击决策；（用户对结果的）结果检查在其中起着核心作用。不幸的是，老虎机算法的大多数应用只是将用户点击视为模型更新的显式反馈，其中，<strong>“不点击某个结果”被视为负面反馈</strong>。这不可避免地导致不正确的模型更新和次优的臂选择。有一系列相关研究开发了基于点击模型的老虎机算法，用于学习对问题进行排名。例如，通过假设跳过的文档比排名列表中后来单击的文档吸引力小，Kveton等人开发了一个级联的老虎机模型来从点击和跳过搜索结果中学习。为了能够从同一结果排名列表中的多次点击中学习，他们采用了依存点击模型来推断一系列点击之后的用户满意度，后来又将其扩展到更广泛的点击模型。但是，此类算法旨在在不指定任何特定排名功能的情况下，以每个查询为基础评估最佳结果排名。因此，很难将他们推广到看不见的查询。实际上，这直接限制了它们的应用场景。 Lagrée等人开发的解决方案是最接近我们的，它利用了在不同显示位置上由不同考试概率引起的奖励分配偏差。但是他们假设检查的可能性仅取决于位置，而我们允许任何合理的特征作为决定因素。此外，他们假设每个位置的检查概率是通过试探性设置或凭经验估计的，并且此后是固定的；而我们是根据与用户互动获得的观察动态估算的。</p>
+<p>相关研究的另一条线是具有潜在变量的老虎机学习。 Maillard和Mannor研究了潜在的老虎机问题，它假设奖励分布是聚类的，并且聚类由一些潜在变量确定。他们仅在没有上下文的情况下研究了该问题，并且当奖励分布在这些集群中未知时，将提供非常弱的性能保证。 Kawale等开发了用于在线矩阵分解的汤普森采样方案。潜在特征是通过在线低秩矩阵补全来提取的，该完成度基于从汤普森即时采样中选择的样本。由于因子分解方法和老虎机方法的组合是临时的，从而几乎没有提供理论分析。 Wang等研究了背景老虎机的潜在特征学习问题。他们在线性奖励结构下扩展了具有潜在特征的臂上下文向量，并将上置信界原理应用到坐标下降上来迭代地估计隐藏特征和模型参数。线性奖励结构禁止它识别点击反馈中结果检查与相关性判断之间的非线性依赖性。他们的遗憾分析在很大程度上取决于算法的初始化，而这在实践中可能很难实现。</p>
+<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>我们考虑一个具有有限（但可能大规模）的臂的数量的上下文老虎机问题。 记臂集为$A$。在每次试验t = 1，…，T时，学习器观察候选子臂集$A_t$（作为$A$的一个子集），其中每个臂$a$与上下文向量$x^a$相关联，概括了关于臂$a$的边信息。 一旦根据某种策略$\pi$选择了$A_t$处的臂，相应的隐式二进制反馈$C_{a_t}$（例如用户点击）就会作为奖励提供给学习器。 学习器的目标是调整其臂选择策略，以随着时间的推移最大化其累积奖励。 使该问题与众不同且具有挑战性的原因是，$C_{a_t}$不能真正反映用户对所选臂的评价。 基于检查假设，当$C_{a_t}=1$时，选择的$a_t$必须与时间$t$的用户信息需求相关； 但是当$C_{a_t}=0$时，$a_t$可能是相关的，但用户只是没有进行检查。 不幸的是，学习器无法观察到用户进行结果检查的实际状况。</p>
+<p>我们通过二进制潜在变量$E_{a_t}$来模拟用户的结果检查，并假设臂$a$的上下文向量$x_t^a$可分解为$\left(\mathbf{x}_{C, t}^{a}, \mathbf{x}_{E, t}^{a}\right)$，其中$\mathbf{x}_{C, t}^{a}$和$\mathbf{x}_{E, t}^{a}$的维数分别是$d_C$和$d_E$。 因此，假设用户的结果检查和相关性判断决定受$\left(\mathbf{x}_{C, t}^{a}, \mathbf{x}_{E, t}^{a}\right)$猜想和相应的老虎机参数$\boldsymbol{\theta}^{<em>}=\left(\boldsymbol{\theta}_{C}^{</em>}, \boldsymbol{\theta}_{E}^{*}\right)$支配。 在本文的其余部分，当不引入歧义时，我们删除索引$a$来简化表示法。 作为结果，我们对观察到的臂上的点击Ct进行了以下生成假设，</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\mathbb{P}\left(C_{t}=1 \mid E_{t}=0, \mathbf{x}_{C, t}\right) &=0 \\
+\mathbb{P}\left(C_{t}=1 \mid E_{t}=1, \mathbf{x}_{C, t}\right) &=\rho\left(\mathbf{x}_{C, t}^{\top} \theta_{C}^{*}\right) \\
+\mathbb{P}\left(E_{t}=1 \mid \mathbf{x}_{E, t}\right) &=\rho\left(\mathbf{x}_{E, t}^{\top} \theta_{E}^{*}\right)
+\end{aligned}
+\end{equation}</script><p>其中，$\rho(x)=\frac{1}{1+e^{-x}}$。基于这个假设，我们可以得到 $\mathbb{E}\left[C_{t} \mid \mathbf{x}_{t}\right]=\rho\left(\mathbf{x}_{C, t}^{\top} \boldsymbol{\theta}_{C}^{<em>}\right) \rho\left(\mathbf{x}_{E, t}^{\top} \boldsymbol{\theta}_{E}^{</em>}\right)$。作为结果，观察到的点击反馈$C_t$是来自该生成过程的样本。定义 $f_{\boldsymbol{\theta}}(\mathbf{x}):=\mathbb{E}[C \mid \mathbf{x}, \boldsymbol{\theta}]=\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)$。直到时间T为止，关于策略$\pi$的累积遗憾定义为</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\operatorname{Regret}\left(T, \pi, \boldsymbol{\theta}^{*}\right)=\sum_{t=1}^{T} \max _{a \in \mathcal{A}_{t}} f_{\boldsymbol{\theta}^{*}}\left(\mathbf{x}^{a}\right)-f_{\boldsymbol{\theta}^{*}}\left(\mathbf{x}^{a_{t}}\right)
+\end{equation}</script><p>其中$\mathbf{x}^{a_{t}}:=\left(\mathbf{x}_{C}^{a_{t}}, \mathbf{x}_{E}^{a_{t}}\right)$是策略$\pi$在时间t基于历史 $\mathcal{H}_{t}:=\left\{\left(\mathcal{A}_{i}, \mathbf{x}_{i}, C_{i}\right)\right\}_{i=1}^{t-1}$ 的关于臂 $a_t$ 的上下文向量。 贝叶斯遗憾则由$\mathbb{E}\left[\operatorname{Regret}\left(T, \pi, \theta^{<em>}\right)\right]$定义，其中期望是关于$\boldsymbol{\theta}^{</em>}$上的先验分布的，可以写成：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\text { BayesRegret }(T, \pi)=\sum_{t=1}^{T} \mathbb{E}\left[\max _{a \in \mathcal{A}_{t}} f_{\boldsymbol{\theta}^{*}}\left(\mathbf{x}^{a}\right)-f_{\boldsymbol{\theta}^{*}}\left(\mathbf{x}^{a_{t}}\right)\right]
+\end{equation}</script><p>在我们的在线学习设计中，目标是找到最大程度地减少对 $T$ 的遗憾的策略 $\pi$。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>学习器需要根据其随时间获得的互动获得的点击反馈 $\left\{\mathbf{x}_{i}, C_{i}\right\}_{i=1}^{t}$ 来估计老虎机参数 $\theta_{C}^{<em>}$ 和 $\theta_{E}^{</em>}$。理想地，可以通过相对于老虎机模型参数最大化数据似然性来获得该估计。但是，在我们的老虎机学习环境中，将检查作为潜在变量包括在内对参数估计和臂选择都提出了严峻的挑战。由于相应优化问题的非凸性，传统的最小二乘估计器和最大似然估计器都无法轻易地运行，更不用说计算效率了。更糟的是，两个流行的老虎机学习范例，包括上置信界原理和汤普森采样，都要求对老虎机参数及其不确定性进行准确估计。在本节中，我们提出了一个有效的新解决方案来应对这两个挑战，该解决方案利用变分贝叶斯推理技术近似实时地学习参数，并桥接参数估计和臂选择策略设计。</p>
+<h3 id="基于变分贝叶斯的参数估计"><a href="#基于变分贝叶斯的参数估计" class="headerlink" title="基于变分贝叶斯的参数估计"></a>基于变分贝叶斯的参数估计</h3><p>为了完成第3节中定义的生成过程，我们进一步假设 $\boldsymbol{\theta}_{C}$ 和 $\boldsymbol{\theta}_{E}$ 分别遵循高斯分布$N\left(\hat{\boldsymbol{\theta}}_{C}, \boldsymbol{\Sigma}_{C}\right)$ 和 $N\left(\hat{\boldsymbol{\theta}}_{E}, \boldsymbol{\Sigma}_{E}\right)$。 当新获得的观测值 $\left(\mathrm{x}_{C}, \mathrm{x}_{E}, C\right)$ 可用时，我们有兴趣开发一种与其后代近似的封闭形式。 通过在对数空间中应用贝叶斯规则，我们可以得到</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+& \log \mathbb{P}\left(\boldsymbol{\theta}_{C}, \boldsymbol{\theta}_{E} \mid \mathbf{x}_{C}, \mathbf{x}_{E}, C\right) \\
+=& \log \mathbb{P}\left(C \mid \boldsymbol{\theta}_{C}, \boldsymbol{\theta}_{E}, \mathbf{x}_{C}, \mathbf{x}_{E}\right)+\log \mathbb{P}\left(\boldsymbol{\theta}_{C}, \boldsymbol{\theta}_{E}\right)+\log \text { const } \\
+=& C \log \rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)+(1-C) \log \left(1-\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)\right) \\
+&-\frac{1}{2}\left(\boldsymbol{\theta}_{C}-\hat{\boldsymbol{\theta}}_{C}\right)^{\top} \boldsymbol{\Sigma}_{C}^{-1}\left(\boldsymbol{\theta}_{C}-\hat{\boldsymbol{\theta}}_{C}\right)-\frac{1}{2}\left(\boldsymbol{\theta}_{E}-\hat{\boldsymbol{\theta}}_{E}\right)^{\top} \boldsymbol{\Sigma}_{E}^{-1}\left(\boldsymbol{\theta}_{E}-\hat{\boldsymbol{\theta}}_{E}\right)+\log \mathrm{const}
+\end{aligned}
+\end{equation}</script><p>其关键思想是为对数似然函数设计一个 $\boldsymbol{\theta}_{C}$ 和 $\boldsymbol{\theta}_{E}$ 的二次形式的变分下界。 由于对数 $\log \rho(x)-\frac{x}{2}$ 相对于 $x^2$ 的凸性（请参见附录B.1）以及关于 $\log x$ 的琴生不等式（请参见附录B.2），因此可以实现所需形式的下限。 当 $C = 1$ 时，根据附录B.3中的等式（16），我们有</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+l_{C=1}\left(\mathbf{x}_{C}, \mathbf{x}_{E}, \boldsymbol{\theta}\right):=\log \left(\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)\right) \geq g\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}, \xi_{C}\right)+g\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}, \xi_{E}\right)
+\end{equation}</script><p>其中 $g(x, \xi):=\frac{x}{2}-\frac{\xi}{2}+\log \rho(\xi)-\lambda(\xi)\left(x^{2}-\xi^{2}\right), \lambda(\xi)=\frac{\tanh \frac{5}{2}}{4 \xi}, x, \xi \in \mathcal{R}$，同时， 当 $C = $0 时，根据附录B.3中的等式（17），我们有</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+l_{C=0}\left(\mathbf{x}_{C}, \mathbf{x}_{E}, \boldsymbol{\theta}\right) &:=\log \left(1-\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)\right) \\
+& \geq H(q)+q g\left(-\mathbf{x}_{C}^{\top} \boldsymbol{\theta}, \xi_{C}\right)+q g\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}, \xi_{E, 1}\right)+(1-q) g\left(-\mathbf{x}_{E}^{\top} \boldsymbol{\theta}, \xi_{E, 2}\right)
+\end{aligned}
+\end{equation}</script><p>其中 $H(q):=-q \log q-(1-q) \log (1-q)$。 一旦建立了二次形式的下界，我们就可以使用高斯分布来近似我们的目标后验，其均值和协方差矩阵由以下方程式确定，</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\boldsymbol{\Sigma}_{C, \text { post }}^{-1} &=\boldsymbol{\Sigma}_{C}^{-1}+2 q^{1-C} \lambda\left(\xi_{C}\right) \mathbf{x}_{C} \mathbf{x}_{C}^{\top} \\
+\hat{\boldsymbol{\theta}}_{C, \text { post }} &=\boldsymbol{\Sigma}_{C, \text { post }}\left(\boldsymbol{\Sigma}_{C}^{-1} \hat{\boldsymbol{\theta}}_{C}+\frac{1}{2}(-q)^{1-C} \mathbf{x}_{C}\right) \\
+\boldsymbol{\Sigma}_{E, \text { post }}^{-1} &=\boldsymbol{\Sigma}_{E}^{-1}+2 \lambda\left(\xi_{E}\right) \mathbf{x}_{E} \mathbf{x}_{E}^{\top} \\
+\hat{\boldsymbol{\theta}}_{E, \text { post }} &=\boldsymbol{\Sigma}_{E, \text { post }}\left(\boldsymbol{\Sigma}_{E}^{-1} \hat{\boldsymbol{\theta}}_{E}+\frac{1}{2}(2 q-1)^{1-C} \mathbf{x}_{E}\right)
+\end{aligned}
+\end{equation}</script><p>下标 “post” 表示高斯分布中逼近所需后验的参数。 可以将连续观察顺序地并入近似后验。 还有一件事要决定，即选择变分参数$\left(\xi_{C}, \xi_{E}, q\right)$。 典型的标准是选择值，以使观察结果的可能性最大化。 与[12]所做的选择类似，我们选择这些变分参数的闭式更新公式为，</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\xi_{C} &=\sqrt{\mathbf{E}_{\boldsymbol{\theta}_{C}}\left[\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right]^{2}} \\
+\xi_{E} &=\sqrt{\mathbf{E}_{\boldsymbol{\theta}_{E}}\left[\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right]^{2}} \\
+q &=\frac{\exp \left(g\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}, \xi_{C}\right)+g\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}, \xi_{E}\right)-g\left(-\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}, \xi_{E}\right)\right)}{1+\exp \left(g\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}, \xi_{C}\right)+g\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}, \xi_{E}\right)-g\left(-\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}, \xi_{E}\right)\right)}
+\end{aligned}
+\end{equation}</script><p>所有期望值均在近似后验条件下得出。 根据经验，我们发现近似后验的迭代更新和变分参数收敛非常快，因此在我们的实验中，通常只需要进行几轮迭代即可获得令人满意的局部最大值。</p>
+<h3 id="基于汤普森采样的近似下界"><a href="#基于汤普森采样的近似下界" class="headerlink" title="基于汤普森采样的近似下界"></a>基于汤普森采样的近似下界</h3><p>汤普森采用，也称为概率匹配，广泛用于老虎机学习中以平衡勘探和开发，并显示出出色的经验性能。 汤普森采样需要分配模型参数以进行采样。 在标准的汤普森采样中，需要从模型参数的真实后验中进行采样。 但是由于逻辑回归没有共轭先验，因此我们问题中定义的模型没有确切的后验。 我们决定从等式（3）到等式（6）中得出的近似后验进行采样。 稍后我们将证明这是一个非常严格的后验近似。 一旦完成对 $\left(\tilde{\boldsymbol{\theta}}_{C}, \tilde{\boldsymbol{\theta}}_{E}\right)$ 的采样，我们可以在 $a_{t} \in \mathcal{A}_{t}$ 处选择对应的臂，从而使 $\rho\left(\mathbf{x}_{C}^{\top} \tilde{\boldsymbol{\theta}}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \tilde{\boldsymbol{\theta}}_{E}\right)$ 最大。 我们将最终的老虎机算法命名为“检查-点击老虎机”，简称E-C老虎机，并在算法1中进行了总结。</p>
+<img data-src="/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117175726812.png" class="" title="汤普森采样">
+<h2 id="遗憾分析"><a href="#遗憾分析" class="headerlink" title="遗憾分析"></a>遗憾分析</h2><p>回想一下，我们的目的是要找到一种使贝叶斯遗憾最小化的政策， </p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\text { BayesRegret }(T, \pi)=\sum_{t=1}^{T} \mathbb{E}\left[\max _{a \in \mathcal{A}_{t}} f_{\theta^{*}}\left(\mathbf{x}^{a}\right)-f_{\boldsymbol{\theta}^{*}}\left(\mathbf{x}^{a_{t}}\right)\right]
+\end{equation}</script><p>其中 $f_{\boldsymbol{\theta}}(\mathbf{x}):=\mathbb{E}[C \mid \mathbf{x}, \boldsymbol{\theta}]=\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)$。我们基于最大似然估计器的算法等效于使用二进制随机变量将对数损失最小化的估计器。在本节中，我们将首先在命题1中约束模型中使用的对数损失估计量的总经验差异。这为定理1中使用汤普森采样策略的对数损失估计量下的通用贝叶斯遗憾上限做准备。基于这个通用的贝叶斯遗憾界限，我们研究了我们提出的EC老虎机的贝叶斯遗憾的上限。由于篇幅所限，我们在附录中提供所有详细的证明。</p>
+<p>为了进一步简化我们的表示法，我们对 $f_{\theta}$ 使用 $f$，$f_{\theta}$ 是基于估计的老虎机参数 $\theta$ 的奖励函数，对 $f_{\theta}(x^{a_k})$ 使用 $f_{k}$，即对臂 $a_k$ 的奖励。 我们使用 $f^<em>$ 表示 $f_{\theta^</em>}$，这是基于真实的老虎机参数的奖励函数，相应地使用 $f_k^<em>$ 表示 $f_{\theta^</em>}(x^{a_k})$。我们假设 $f_k^*$ 位于已知函数空间 $F$ 中，其中任何 $f \in \mathcal{F}$ 都是从臂集 $A$ 到范围 $(0，1)$ 的函数映射。我们通过 $\hat{f}_{t}^{\mathrm{LOGLOSS}} \in \arg \min _{f \in \mathcal{F}} L_{2, t}(f)$ 定义对数损耗估计量。我们有以下的命题：</p>
+<p><strong>命题1</strong>：定义总体经验差异为 $\sum_{k=1}^{t}\left(f_{k}-f_{k}^{<em>}\right)^{2}$ （通过 $\left|f-f^{</em>}\right|_{E}^{2}$）。对任意 $\delta&gt;0$ 且 $\alpha&gt;0$，若对所有的 $t \in N$，均有 $\mathcal{F}_{t}=\left\{f \in \mathcal{F}:\left|f-\hat{f}_{t}^{\mathrm{LOGLOSS}}\right|_{E, t} \leq \sqrt{\beta_{t}^{*}(\mathcal{F}, \delta, \alpha)}\right\}$，则</p>
+<script type="math/tex; mode=display">
+\mathbb{P}\left(f^{*} \in \cap_{t=1}^{\infty} \mathcal{F}_{t}\right)>1-\delta</script><p>其中，$\beta_{t}^{*}(\mathcal{F}, \delta, \alpha):=\frac{2}{\lambda_{0}} \log \left(N\left(\mathcal{F}, \alpha,|\cdot|_{\infty}\right) / \delta\right)+2 \alpha \eta_{t}$ 是一个适当构造的置信度参数。</p>
+<p><strong>备注1</strong>：附录C中提供了证明。在此，我们讨论两个重要的细节，这些细节与我们以后关于E-C强盗后悔的证明有关。首先，在F的某些情况下，很难精确地优化ˆf LOGLOSS t 2 arg minf2F L2，t（f）。例如，当F是一组非凸函数时。但是，只要可以限制近似误差，我们总是可以采用近似方法来解决优化问题。确实，在我们的E-C强盗中，我们诉诸于变化推论来即时估算ˆf LOGLOSS t，发现它在实践中效果很好。其次，当f⇤62 F时，这对应于模型规格错误的问题。在这种情况下，后悔的界限可能非常差，因为真正的后悔可能与时间成线性关系。为了在我们的案例中清楚地表明这一点，在附录F中，我们构造了一种情况，如果一个人无法对点击反馈中的检查条件进行建模，而简单地将没有点击视为负面反馈，则遗憾不可避免地是线性的。</p>
+<p>关于命题1，我们有以下定理，该定理在对数损失估计量的作用下限制了汤普森采样策略的贝叶斯后悔。</p>
+<p><strong>定理1</strong>：对于所有的 $T \in N, \alpha&gt;0$ 以及 $\delta&lt;\frac{1}{2 T}$，如果 $\pi^{T S}$ 表示从对数损失中派生出的策略估计器和沿时间步的汤普森采样策略，则</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+BayesRegret ( T , \pi ^ { T S } ) \leq 1+\left(\operatorname{dim}_{E}^{\mathcal{A}}\left(\mathcal{F}, T^{-1}\right)+1\right) C+4 \sqrt{\operatorname{dim}_{E}^{\mathcal{A}}\left(\mathcal{F}, T^{-1}\right) \beta_{T}^{*}(\mathcal{F}, \alpha, \delta) T}
+\end{equation}</script><p>其中，$C=\sup _{f \in \mathcal{F}}\{\sup f\}, \operatorname{dim}_{E}^{\mathcal{A}}\left(\mathcal{F}, T^{-1}\right)$ 是 $F$ 对 $A$ 的 eluder 维度（参见 Russo 的定义 3 和 Van Roy [24]）。</p>
+<p><strong>备注2</strong>：由于 $f \in(0,1)$，因此在点击反馈情况下，我们可以选择 $C = 1$。 与Russo和Van Roy [24]中的命题8相比，$C$ 被保留在定理中以显示相同的形式。 实际上，一旦有了命题1，证明就几乎是相同的。因此，我们在论文中省略了证明。 现在，我们基于对数损失估计器下的上述通用贝叶斯遗憾分析，提供E-C老虎机的遗憾上限。 我们添加以下两个假设，这些假设是上下文老虎机设计中的标准假设。</p>
+<p><strong>假设1</strong>：最优参数 $\boldsymbol{\theta}^{*}$ 在集合 $\mathcal{B}_{s}:=\left\{\boldsymbol{\theta} \in \mathcal{R}^{d}:|\boldsymbol{\theta}|_{2} \leq s\right\}$ 之中。</p>
+<p><strong>假设2</strong>：上下文向量范数受到 $x$ 约束从而有界（比如，$\left(\mathbf{x}_{C}, \mathbf{x}_{E}\right) \in \mathcal{B}_{x}$，其中 $\mathcal{B}_{x}:=\left\{\mathbf{x} \in \mathcal{R}^{d}:|\mathbf{x}|_{2} \leq x\right\}$）。</p>
+<p>基于这两个假设，我们很容易验证 $\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right), \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)$ 和 $f_{\boldsymbol{\theta}}(\mathbf{x})$ 也是有界的。</p>
+<p>若选取 $\alpha=1 / t^{2}$ 和 $\delta=1 / t$，有</p>
+<script type="math/tex; mode=display">
+\beta_{t}^{*}\left(\mathcal{F}, 1 / t, 1 / t^{2}\right)=\frac{2}{\lambda_{0}} d \log \left(\gamma t^{3}\right)+\frac{1}{t}\left(4 M_{f}+\frac{1}{m_{f}}\right)</script><p>因此，我们拟议的 E-C 老虎机的贝叶斯遗憾上界采取以下形式</p>
+<script type="math/tex; mode=display">
+\text { BayesRegret }\left(T, \pi^{T S}\right)=O(|\mathcal{A}|+\sqrt{d|\mathcal{A}| T \log T})</script><p>并且，当 $T \gg|\mathcal{A}|$ 和 $T \gg d$ 时（这在实际中是很常见的），它变为 $O(\sqrt{T \log T})$。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>我们在模拟中以及从MOOC平台收集的在线学生点击日志中进行实证评估，以验证所提出算法的有效性。 特别是，我们与那些未能对检查条件建模并直接使用点击作为反馈的模型进行比较。</p>
+<h3 id="用于比较的算法"><a href="#用于比较的算法" class="headerlink" title="用于比较的算法"></a>用于比较的算法</h3><p>我们在下面列出了用于经验比较的模型，并解释了我们如何在评估中进行调整。</p>
+<p><strong>逻辑老虎机</strong>。该模型已广泛用于在线广告点击率优化。在[6，21]中，作者通过正则逻辑回归模型对观察到的上下文特征建模用户点击，并通过对所学模型应用汤普森采样来做出决策。特别是，没有点击被视为负面反馈。按照它们在[6]中的设置，我们使用了拉普拉斯逼近和高斯先验来动态更新模型参数。我们还想强调一点，尽管有大量工作着眼于广义线性老虎机，但大多数都不是真正的在线算法，因为在每次迭代中对其参数的估计必须迭代地涉及所有历史观测。这会导致空间复杂度至少为 $O(T)$，而时间复杂度至少为$O(T^2)$（例如，Filippi等人要求在每一轮的所有历史观测中都需要逻辑回归的精确最佳值）。</p>
+<p><strong>hLinUCB</strong>。这是Wang等人提出的算法：带有潜在变量的老虎机学习。从某种意义上说，这与我们的模型有关，两个模型都估计隐藏特征。特别是，hLinUCB通过包含隐藏特征来扩展线性上下文老虎机，并在类似UCB的策略下运行。但是，它仍然将点击视为直接反馈，但旨在学习更具表现力的功能来描述观察到的点击。</p>
+<p><strong>E-C老虎机</strong>。这是我们在算法1中提出的算法。我们应该注意，在真实世界数据的实验中，上下文向量 $x$ 中检查特征 $x_E$ 和点击特征 $x_C$ 的手动分离提供了一种原则化的方法来整合一个人关于什么的领域知识影响用户检查，以及影响用户结果相关性的因素。我们将在附录G中详细说明为哪个组件选择了哪些功能。由于在第4节中提出的贝叶斯变分推论获得了严格的近似值，因此该算法中真正的在线模型更新是可行的。这提供了计算效率和存储效率。</p>
+<h3 id="模拟器中的实验"><a href="#模拟器中的实验" class="headerlink" title="模拟器中的实验"></a>模拟器中的实验</h3><p>首先，我们通过对模拟数据进行实验来证明我们算法的有效性。 实验如下进行。 上下文向量的维数 $d_{C}$ 和 $d_{E}$ 设置为5，因此 $d=d_{C}+d_{E}=10$。我们设置 $|\mathcal{A}|=100$，每个都与唯一的上下文向量 $\left(\mathbf{x}_{C}, \mathbf{x}_{E}\right)$ 相关联。 实地参数 $\left(\boldsymbol{\theta}_{C}^{<em>}, \boldsymbol{\theta}_{E}^{</em>}\right)$ 和特定值 $\left(\mathbf{x}_{C}, \mathbf{x}_{E}\right)$ 都是从单位球 $\mathcal{B}=\left\{\mathbf{x} \in \mathcal{R}^{d}:|\mathbf{x}|_{2} \leq 1\right\}$ 中随机抽取的。 由于 $\left(\boldsymbol{\theta}_{C}^{<em>}, \boldsymbol{\theta}_{E}^{</em>}\right)$ 和 $\left(\mathbf{x}_{C}, \mathbf{x}_{E}\right)$ 都是从 $\mathcal{B}$ 采样的，因此 $ m_{f}$ 和 $M_{f}$ 可以通过取 $\rho\left(\mathbf{x}_{C}^{\top} \boldsymbol{\theta}_{C}\right) \rho\left(\mathbf{x}_{E}^{\top} \boldsymbol{\theta}_{E}\right)$ 的最小值和最大值来获得 $\mathcal{B}$，分别为 $m_{f}=\frac{1}{(1+e)^{2}}$ 和 $M_{f}=\frac{1}{\left(1+e^{-1}\right)^{2}}$。</p>
+<p>在每个时间 $t$，从 $\mathcal{A}$ 中随机采样一个臂集 $\tilde{\mathcal{A}}_{t}$，使得 $\left|\tilde{\mathcal{A}}_{t}\right|=10$，即每次我们提供10个随机选择的臂，供算法选择。 一种算法从 $\mathcal{A}_{t}$ 中选择一条臂，并观察由伯努利分布 $B\left(\rho\left(\mathbf{x}_{C, t}^{\top} \boldsymbol{\theta}_{C}^{<em>}\right) \rho\left(\mathbf{x}_{E, t}^{\top} \boldsymbol{\theta}_{E}^{</em>}\right)\right)$ 生成的相应奖励 $C_{t}^{\mathrm{alg}}$。 该算法在时间 $t$ 的遗憾由其收到的点击奖励定义，即 $\operatorname{regret}(t)=C_{a_{t}^{<em>}}-C_{a_{t}}$，其中 $a_{t}^{</em>}$ 是根据地面真实老虎机参数 $\left(\boldsymbol{\theta}_{C}^{<em>}, \boldsymbol{\theta}_{E}^{</em>}\right)$。</p>
+<p>我们使用相同的模拟设置重复实验100次，每次包含10,000次迭代。超过100次运行的平均累积遗憾率和相应的标准差（每千次迭代绘制）如图1所示。您可以清楚地注意到Logistic Bandit在时间 $t$ 方面遭受线性遗憾，因为它错误地将无点击视为负面反馈。我们的E-C老虎机实现了快速收敛的次线性遗憾。 hLinUCB表现最差的结果是可以预期的，因为它假设点击和上下文特征向量之间存在线性关系。我们将进一步调查E-C老虎机和Logistic老虎机之间的经验累积差异如何随时间增加。图2说明E-C老虎机的总经验差异受命题1提供的上限很好地界定，而Logistic老虎机的总经验差异呈线性增长。这直接解释了他们在本次实验比较中的累积遗憾。</p>
+<img data-src="/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117190705489.png" class="" title="模拟器中的实验">
+<h3 id="基于MOOC视频观看数据的实验"><a href="#基于MOOC视频观看数据的实验" class="headerlink" title="基于MOOC视频观看数据的实验"></a>基于MOOC视频观看数据的实验</h3><p>我们用于评估的MOOC数据是在4个月内从单个课程中收集的。 该课程总共有503个讲座视频。 人工制作了大约500个高质量的类似测验的问题，并且根据人工判断的相关性为每个视频分配了其中的一个子集。 我们选择了21个视频，这些视频的累计观看时间排在前21位，以进行此次评估。 在选定的视频上，平均为一个视频分配5.5个问题，每个问题与视频中的6个可能的显示位置相关联，平均导致总共33个分支（因为每个问题都可以放置在所有位置）。 具有我们手工制作的功能和模型实现的数据集已在此处公开提供：<a href="https://github.com/qy7171/ec_bandit" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/qy7171/ec_bandit</a>。</p>
+<p>我们以一个视频为例来分析学生的点击行为。拾取9个臂，并通过随机高斯矩阵将其投影到图3中的二维平面上。因此，保持了它们的相对距离。括号中的数字表示相应分支的经验点击率。可以清楚地看到，虽然臂c和臂f具有相同的经验点击率，但它们之间的臂（例如臂a和d）的CTR较低。 Logistic 老虎机永远无法捕获此非单调关系，因为其奖励预测相对于线性预测器单调增加。我们在附录F中构建了一个更一般的案例，以说明未能对检查条件进行建模会导致线性遗憾的情况。将插图映射回MOOC数据集，臂a和臂f是在视频中相同位置显示的两个不同问题，而臂a和臂c是在不同位置处显示的相同问题。这种现象强烈暗示了用户的隐式反馈存在偏见，这再次证明了我们对点击反馈的检查和相关性的分解。</p>
+<img data-src="/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/image-20210117191029193.png" class="" title="基于MOOC视频观看数据的实验">
+<p>我们按照[21]在MOOC平台上开发了在线数据收集政策，从而准备了离线评估数据集。特别是，与视频有关的任何相关问题在该视频的所有位置处都有相等的可能性被选择和显示。我们将此政策称为“相似性”。我们为每个视频创建一个老虎机模型实例，以了解其自身的最佳问题放置策略。有关我们检查功能选择的详细说明，请参见附录G。我们还在此处添加了一个新的基线，即PBMUCB [18]，它假定了在任何排名结果中基于位置的检查概率。为了将其调整为我们的设置，我们假设视频中选择的任何问题的考试概率取决于并且仅取决于其位置。因此，我们的模型与PBMUCB之间的主要区别在于，我们的模型利用可用的上下文信息来估计检查概率，而PBMUCB是无上下文的。然而，另一个重要的区别是，PBMUCB假定已知在不同位置进行检查的概率，并且是根据离线数据估算的。</p>
+<p>Li等提出了一种基于收集的历史数据来计算任何老虎机算法的CTR的近似估计的方法，从而可以进行离线评估和性能比较。我们在这里采用他们的离线评估协议，并在图4中报告估算的点击率，图4的平均运行次数为100。为了避免泄露有关该平台的任何专有信息，所有算法的点击率均由“相似性”策略中的标准化。如图所示，独立估算视频中的E-C老虎机比“相似度”基线平均可提高40.6％的点击率。同时，E-C老虎机始终优于其他三个基准老虎机，即hLinUCB，Logistic老虎机和PBMUCB。与Logistic Bandit相比，我们模型的改进清楚地表明了在用户点击中建模检查条件的必要性，以改善在线推荐性能，而针对PBMUCB的改进提供了有力的证据，证明了在可用上下文信息下进行建模检查的重要性。此外，在100个试验中，E-C Bandit，hLinUCB，Logistic Bandit和PBMUCB的相对CTR性能的误差标准分别为0.032、0.031、0.030、0.041。因此，我们的离线评估的差异很小，并且从我们的解决方案到基准的改进在统计上是显着的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>受到用户点击模型中的检验假设的启发，我们在本文中设计了E-C老虎机，它可以区分用户点击背后的结果检验和内容相关性，并且有效地从这种隐式的反馈中学习。我们基于变分推断设计了一种高效的学习算法，并展示了它同时在模拟和实际环境中都具有效力。</p>
+<p>我们证明了，在潜在的奖励生成假设的复杂度和结果参数估计的过程中，我们提出的学习算法都达到了低于线性的遗憾上界。<strong>目前我们只研究了单件物品的点击反馈，但更重要的是推广到更普遍的形式</strong>——比如，一系列排好序的物品（序列化结果校验和相关性判断引入了更富足的相关性）。</p>
+<p>除此之外，我们现有的遗憾分析并没有纳入变分推断所引入的额外差异。Abeille提出，精确的后验不是汤普森采样策略达到最佳状态的必要条件。研究总体上近似后验的更紧的遗憾上界很重要。</p>
+<h3 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h3><p>我们感谢匿名评论者的深刻见解。这篇论文是基于XuetangX.com和National Science基金会的研究基金支持的工作，根据IIS-1553568和IIS-1618948授予。</p>
+<h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>这篇论文中引出了交叉性的研究课题，把强化学习应用到了推荐系统之中。</p>
+<p>关于上下文老虎机一类模型在推荐系统中的应用，目前来看还较为有限。上下文老虎机是交互式机器学习的一个重要领域，该领域包括新闻推荐，广告，移动健康和数字个人助理等应用。</p>
+<p>这些应用的核心关注点在于，假设算法可以从基于用户特征以上下文相关的方式优化内容，它们会随着时间的推移逐渐学习选择最佳的推荐内容，因此被称为“上下文老虎机”。</p>
+<p>尤其是内容量虽然有限但规模上仍然十分巨大时，需要引入一些适度的结构假设。</p>
+<p>论文中也提出了一些很新的idea。比如，把隐反馈（点击率）考虑进来，并且分析了之前的典型做法——把没有点击、没有用户检查结果的项直接当作负样本。</p>
+<p>这种处理方式跟自然语言处理中所谓的负采样是类似的，但是都是基于一种假设：没有点击，就意味着用户不想点击。这在实际应用场景中是并不正确的。</p>
+<p>在实际应用时，用户并不会认真地对每一个候选项进行仔细甄别，很可能只会较为随机地选择其中的少部分候选项进行互动，因此只有少部分的候选项才能获得真正的结果反馈。</p>
+<p>这导致了直接把没有点击的项当作负样本会引入大量噪声，从而会破坏模型的训练过程，使得上下文老虎机很难收敛到理论最优。</p>
+<p>理论分析比较深入。在论文的问题定义、算法和遗憾分析部分，使用了较为形式化的表达，不仅精确地定义了文中涉及到的上下文老虎机问题、贝叶斯遗憾、变分贝叶斯参数估计等的数学形式，还使用了命题、定理、假设等形式化的描述。</p>
+<p>在遗憾分析部分，还在最后指出了本文中提出的算法的理论效率，当 $T \gg|\mathcal{A}|$ 和 $T \gg d$ 时其复杂度在实际环境中可达到 $O(\sqrt{T \log T})$。这一系列理论分析，体现了作者严谨细致的科研基本功。</p>
+<p>实验部分做得比较全面。首先，用本文中提出的算法“E-C老虎机”，与已有的经典模型进行比较：逻辑老虎机（模型已广泛用于在线广告点击率优化）、hLinUCB（带有潜在变量的老虎机学习）。列出了各自的原理和特点。</p>
+<p>接着，在模拟数据（理想环境）中运行了不同算法，验证了本文所提算法的有效性，并且在实验结果中反应出了各个算法对无点击处理的不同导致的结果差异。最后还在实际环境即MOOC视频观看数据中进行了算法测试，验证了本文算法在实际场景中的有效性。</p>
+<p>最后这篇论文的成果是在在线MOOC平台上进行的实际的测试，这意味着这篇论文并不只是一个理论算法，而是被研究者转化成为了实际可用的产品，也就是说，本论文具有很大的现实意义。</p>
+<p>在当下在线教育越来越普遍的不可逆的趋势之下，我认为，以在线教育上的推荐系统为基础的研究，是比较有机会进一步落地的。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>首先，只是在上下文老虎机上做了有限改进。</p>
+<p>我们已经知道，上下文老虎机，基于可获取的用户的上下文信息来进行有效地选择动作（这也就是其中的强化学习策略）。</p>
+<p>比如，在新闻推荐中，我们可以通过用户的历史活动、内容描述/分类等用户与新闻的上下文信息，来为用户推荐新闻（选取一个用于推荐的新闻子集）。</p>
+<p>而本文中所做的改进，无非是考虑了已有的基于上下文老虎机的算法中所没有考虑的一些细节，然后做了一定的增量改进（也就是加入了新的无点击的结果检验的处理策略）。这从理论上来看，其实改进的程度很有限，并不能算是提出了一种全新的算法。</p>
+<p>其次，隐反馈假设存在一些问题。虽然的确存在很多无点击项可能只是因为用户没有注意或者略过没看，不能完全代表用户对特定的候选项没有兴趣。</p>
+<p>但实事求是地说，绝大部分无点击项确实会比获得了用户点击反馈的项少一些吸引力。也就是说，经典假设对无点击项的处理策略在整体上是符合实际的。</p>
+<p>真正的区别在于，无点击项内部的区别被粗暴地磨平了，一个无点击项和另一个无点击项之间，无法通过点击反馈来区别，就被简单地赋予了相同的吸引程度。因此，或许可以考虑引入更多的边信息来辅助检验。</p>
+<p>实验环境比较有限。本文中所使用的应用场景局限在一个MOOC平台上，并且面向的受众群体是有偏差的，对于在线教育网站来说，访问者的一些特点可能会导致实验结果上的偏差，因为在部署到大规模场景中时，原有的实验结果可能被推翻。</p>
+<p>学堂在线MOOC平台的数据资源实际上是不足以称为大规模数据集的，十几万的总访问流量放到整个实验周期（数月）来看也显得有些捉襟见肘，这导致</p>
+<p>并且，没有除了MOOC平台之外的推广计划。本文的应用虽然实现了从算法到产品的转换，但是没有除MOOC平台之外的进一步延申，这导致这部分的研究成果不能够得到更多的推广。</p>
+<p>论文中没有独立的Discussion部分。只是在相关工作和算法部分进行了简单的文献综述和与以往方法的讨论。但是，对于文中的技术细节的对比，则稍显得有些认识不足。</p>
+<p>作者在结论中提到，目前只研究了单件物品的点击反馈，但更重要的是推广到更普遍的形式：比如，一系列排好序的物品（序列化结果校验和相关性判断引入了更富足的相关性）。</p>
+<p>这就意味着，本文的工作在应用场景上还有调整和改进的空间，可以供进一步研究。</p>
+<h1 id="启发"><a href="#启发" class="headerlink" title="启发"></a>启发</h1><p>推荐系统中有所谓的五大研究热点：</p>
+<ul>
+<li>推荐系统与深度学习：<ul>
+<li>提升表征学习能力，深度协同过滤，特征间的深度交互……</li>
+</ul>
+</li>
+<li>推荐系统与知识图谱：<ul>
+<li>基于特征的知识图谱辅助推荐，基于结构的推荐模型……</li>
+</ul>
+</li>
+<li><strong>推荐系统与强化学习</strong>：<ul>
+<li>静态场景下的强化推荐，动态场景下的强化推荐……</li>
+</ul>
+</li>
+<li>推荐系统中的用户画像：<ul>
+<li>多源异构用户数据，面向用户画像的统一用户表示模型……</li>
+</ul>
+</li>
+<li>推荐系统的可解释性：<ul>
+<li>利用知识图谱增强算法解释能力，模型无关的可解释推荐框架，结合生成模型进行对话式推荐……</li>
+</ul>
+</li>
+</ul>
+<p>不过，把强化学习的技术用到推荐系统中，算是一个我之前并不常见的trick。</p>
+<p>现在的一种趋势是所谓的“兼并”，也就是多领域的融合，包括应用层（例如，NLP和CV的融合），也包括原理层（例如，深度学习、强化学习的融合）。</p>
+<p>跨领域的研究成为越来越多的论文的科研热点，“旧瓶装新酒”成为一种快速得到科研idea的有效手段，只需天马行空地组合炒菜，再配上一些科研经验和直觉，就能动手。这种方式和开创性的研究自然是有区别，但是实际产出的成果却是不容小觑的。</p>
+<p>我觉得这样的研究方法是非常适合于快速迭代，快速产出的。在之前以及最近的一些科研方面的感悟中，都有体会到对某个课题的钻研一定要在短时期内大量投入，而不能把科研工作变得零碎。一个压缩的、短期的高强度脑力活动，往往可以使得研究者的思考更加泛化、更容易获得灵感，而科研的idea无疑是十分需要新洞见的。</p>
+<p>我认同朱松纯老师提出的观点，目前阶段，机器学习、人工智能已经从战国时期走向大一统时期，领域的交融、碰撞，多种理论、通用理论的研究和应用，将成为未来的主流。</p>
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%BC%E8%BF%B0%E6%8E%A2%E7%9F%A5/">可视化综述探知</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ADeep-Learning%E3%80%8B/">阅《Deep Learning》</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ADark-Beyond-Deep-A-Paradigm-Shift-to-Cognitive-AI-with-Humanlike-Common-Sense%E3%80%8B/">阅《Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense》</a></li><li><a href="https://vel.life/%E8%AE%A4%E7%9F%A5%E5%9B%BE%E8%B0%B1%E6%8E%A2%E7%9F%A5/">认知图谱探知</a></li><li><a href="https://vel.life/%E7%8F%A0%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%E6%8E%A2%E7%9F%A5/">珠算学习框架探知</a></li></ul></div>
     </div>
 
     
@@ -376,7 +554,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bandit-老虎机"><span class="nav-number">2.1.</span> <span class="nav-text">Bandit 老虎机</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bandit-老虎机"><span class="nav-number">3.</span> <span class="nav-text">Bandit 老虎机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Contextual-Bandits-上下文老虎机"><span class="nav-number">3.1.</span> <span class="nav-text">Contextual Bandits 上下文老虎机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regret-遗憾"><span class="nav-number">3.2.</span> <span class="nav-text">Regret 遗憾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Completion-矩阵补全"><span class="nav-number">3.3.</span> <span class="nav-text">Matrix Completion 矩阵补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Side-Information-边信息"><span class="nav-number">3.4.</span> <span class="nav-text">Side Information 边信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文翻译"><span class="nav-number">4.</span> <span class="nav-text">正文翻译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">4.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">4.2.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关工作"><span class="nav-number">4.3.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题定义"><span class="nav-number">4.4.</span> <span class="nav-text">问题定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">4.5.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于变分贝叶斯的参数估计"><span class="nav-number">4.5.1.</span> <span class="nav-text">基于变分贝叶斯的参数估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于汤普森采样的近似下界"><span class="nav-number">4.5.2.</span> <span class="nav-text">基于汤普森采样的近似下界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗憾分析"><span class="nav-number">4.6.</span> <span class="nav-text">遗憾分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验"><span class="nav-number">4.7.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用于比较的算法"><span class="nav-number">4.7.1.</span> <span class="nav-text">用于比较的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟器中的实验"><span class="nav-number">4.7.2.</span> <span class="nav-text">模拟器中的实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于MOOC视频观看数据的实验"><span class="nav-number">4.7.3.</span> <span class="nav-text">基于MOOC视频观看数据的实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.8.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#致谢"><span class="nav-number">4.8.1.</span> <span class="nav-text">致谢</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">5.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">5.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">5.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启发"><span class="nav-number">6.</span> <span class="nav-text">启发</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,7 +569,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -404,7 +582,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">72</span>
+        <span class="site-state-item-count">74</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
