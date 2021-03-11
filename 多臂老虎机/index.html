@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://vel.life/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/image-20210310180356459.png">
 <meta property="og:image" content="https://vel.life/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/image-20210310223235103.png">
 <meta property="article:published_time" content="2021-03-09T03:54:12.000Z">
-<meta property="article:modified_time" content="2021-03-11T03:36:03.067Z">
+<meta property="article:modified_time" content="2021-03-11T05:27:29.788Z">
 <meta property="article:author" content="工云">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="强化学习">
@@ -385,7 +385,10 @@ Q_{n+1} &=Q_{n}+\alpha\left[R_{n}-Q_{n}\right] \\
 {\color{blue}{\hat{\mu}_{r} } }+{\color{red}{\sqrt{\frac{2 l_{n}(t)}{ {\color{green} { {N_{t}(r)} } } }  } } }
 \end{equation}</script><p>左边的${\color{blue}{\hat{\mu}_{r} } }$代表着老虎机$r$的历史测量均值，${\color{red}{\sqrt{\cfrac{2 l_{n}(t)}{ {\color{green} {…} } }  } } }$代表当前时间步数的自然对数，${\color{green} { {N_{t}(r)} } }$代表老虎机$r$的已测量次数。该方式可以动态权衡Exploration和Exploitation。</p>
 <blockquote>
-<p>${\color{red}{\sqrt{\frac{2 l_{n}(t)}{ {\color{green} { {N_{t}(r)} } } }  } } }$可由<strong>Hoffding’s Inequality</strong>推导得到。</p>
+<p>${\color{red}{\sqrt{\frac{2 l_{n}(t)}{ {\color{green} { {N_{t}(r)} } } }  } } }$可由<strong>Hoeffding’s Inequality</strong>推导得到。</p>
+<blockquote>
+<p><a href="https://wp.nyu.edu/kexinhuang/2018/08/20/hoeffdings/" target="_blank" rel="noopener external nofollow noreferrer">https://wp.nyu.edu/kexinhuang/2018/08/20/hoeffdings/</a></p>
+</blockquote>
 </blockquote>
 <p>从式中可以看出，测量次数越少的老虎机，其优先级相对更高。</p>
 <hr>
@@ -410,7 +413,7 @@ H_{t+1}(a) & \doteq H_{t}(a)-\alpha\left(R_{t}-\bar{R}_{t}\right) \pi_{t}(a), & 
 </blockquote>
 <h1 id="上下文老虎机-Contextual-Bandits-Associative-Search"><a href="#上下文老虎机-Contextual-Bandits-Associative-Search" class="headerlink" title="上下文老虎机 Contextual Bandits  / Associative Search"></a>上下文老虎机 Contextual Bandits  / Associative Search</h1><p>强化学习中常常面临的是多环境、多策略。想象你面临着多个MAB模型，每次你将面对一个随机的MAB模型（从所有模型中抽取）。你既需要识别是哪个MAB模型，也需要在对应的MAB模型下选择最优的策略。</p>
 <p>这就是Associative Search，即Contextual Bandits。</p>
-
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://vel.life/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%95%B0%E5%AD%A6/">人工智能的数学</a></li><li><a href="https://vel.life/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/">机器学习理论</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ADark-Beyond-Deep-A-Paradigm-Shift-to-Cognitive-AI-with-Humanlike-Common-Sense%E3%80%8B/">阅《Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense》</a></li><li><a href="https://vel.life/%E8%AE%A4%E7%9F%A5%E5%9B%BE%E8%B0%B1%E6%8E%A2%E7%9F%A5/">认知图谱探知</a></li><li><a href="https://vel.life/%E9%98%85%E3%80%8ABandit-Learning-with-Implicit-Feedback%E3%80%8B/">阅《Bandit Learning with Implicit Feedback》</a></li></ul></div>
     </div>
 
     
