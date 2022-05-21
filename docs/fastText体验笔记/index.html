@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 6.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
@@ -14,13 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 
@@ -251,12 +250,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>FastText体验笔记。<a id="more"></a></p>
-<p>TODO: <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">docker</a>，<a href="http://docs.jinkan.org/docs/flask/" target="_blank" rel="noopener external nofollow noreferrer">flask</a>。</p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://github.com/facebookresearch/fastText/" target="_blank" rel="noopener external nofollow noreferrer"><code>fastText</code></a>，<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjADegQIAxAB&amp;url=http%3A%2F%2Ffasttext.apachecn.org%2F&amp;usg=AOvVaw0e_GoEfza9DXuK4-g4DUxG" target="_blank" rel="noopener external nofollow noreferrer">FastText 中文文档 - ApacheCN</a>，<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=8&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjAHegQIBxAB&amp;url=https%3A%2F%2Fblog.xingwudao.me%2F2018%2F04%2F23%2Ffastext%2F&amp;usg=AOvVaw3ck2M2kE5GQXVxciX6IeB-" target="_blank" rel="noopener external nofollow noreferrer">FastText使用指南| 竹园山庄</a></p>
+        <p>FastText体验笔记。<span id="more"></span></p>
+<p>TODO: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">docker</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.jinkan.org/docs/flask/">flask</a>。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/facebookresearch/fastText/"><code>fastText</code></a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjADegQIAxAB&amp;url=http%3A%2F%2Ffasttext.apachecn.org%2F&amp;usg=AOvVaw0e_GoEfza9DXuK4-g4DUxG">FastText 中文文档 - ApacheCN</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=8&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjAHegQIBxAB&amp;url=https%3A%2F%2Fblog.xingwudao.me%2F2018%2F04%2F23%2Ffastext%2F&amp;usg=AOvVaw3ck2M2kE5GQXVxciX6IeB-">FastText使用指南| 竹园山庄</a></p>
 <p>Paper: </p>
 <ul>
-<li><p><a href="https://arxiv.org/pdf/1607.04606v1.pdf" target="_blank" rel="noopener external nofollow noreferrer">Enriching Word Vectors with Subword Information</a></p>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1607.04606v1.pdf">Enriching Word Vectors with Subword Information</a></p>
 <blockquote>
 <p>这篇论文提出了用 word n-gram 的向量之和来代替简单的词向量的方法，以解决简单 word2vec 无法处理同一词的不同形态的问题。fastText 中提供了 maxn 这个参数来确定 word n-gram 的 n 的大小。</p>
 </blockquote>
@@ -264,7 +263,7 @@
 </ul>
 <div class="pdfobject-container" data-target="Enriching_Word_Vectors_with_Subword_Information.pdf" data-height="500px"></div>
 <ul>
-<li><p><a href="https://arxiv.org/pdf/1607.01759v2.pdf" target="_blank" rel="noopener external nofollow noreferrer"><strong>Bag of Tricks for Efficient Text Classification</strong></a></p>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1607.01759v2.pdf"><strong>Bag of Tricks for Efficient Text Classification</strong></a></p>
 <blockquote>
 <p>这篇论文提出了 fastText 算法，该算法实际上是将目前用来算 word2vec 的网络架构做了个小修改，原先使用一个词的上下文的所有词向量之和来预测词本身（CBOW 模型），现在改为用一段短文本的词向量之和来对文本进行分类。</p>
 </blockquote>
@@ -272,7 +271,7 @@
 </ul>
 <div class="pdfobject-container" data-target="Bag_of_Tricks_for_Efficient_Text_Classification.pdf" data-height="500px"></div>
 <ul>
-<li><p><a href="https://arxiv.org/pdf/1612.03651.pdf" target="_blank" rel="noopener external nofollow noreferrer">FastText.zip: Compressing text classification models</a></p>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1612.03651.pdf">FastText.zip: Compressing text classification models</a></p>
 <blockquote>
 <p>这篇论文讲fastText的模型压缩（存储空间）。这样，fastText甚至可以移植到手机端。</p>
 </blockquote>
@@ -280,18 +279,18 @@
 </ul>
 <div class="pdfobject-container" data-target="FastText_compression.pdf" data-height="500px"></div>
 <hr>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjAEegQIBxAB&amp;url=https%3A%2F%2Fwww.jiqizhixin.com%2Farticles%2F2018-06-05-3&amp;usg=AOvVaw39P0L9K-LqK4un-hUivpre" target="_blank" rel="noopener external nofollow noreferrer">fastText，智慧与美貌并重的文本分类及向量化工具| 机器之心</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjAEegQIBxAB&amp;url=https%3A%2F%2Fwww.jiqizhixin.com%2Farticles%2F2018-06-05-3&amp;usg=AOvVaw39P0L9K-LqK4un-hUivpre">fastText，智慧与美貌并重的文本分类及向量化工具| 机器之心</a></p>
 <blockquote>
 <p>fastText能够做到效果好，速度快，主要依靠两个秘密武器：一是利用了词内的n-gram信息(<strong>subword n-gram information</strong>)，二是用到了层次化Softmax回归(<strong>Hierarchical Softmax</strong>)的训练trick。</p>
 </blockquote>
-<p><a href="https://www.jiqizhixin.com/articles/2018-12-03-6" target="_blank" rel="noopener external nofollow noreferrer">fastText原理及实践 - 达观</a></p>
-<p><a href="https://towardsdatascience.com/fasttext-ea9009dba0e8" target="_blank" rel="noopener external nofollow noreferrer">Learning FastText</a></p>
-<p><a href="https://hackernoon.com/text-classification-simplified-with-facebooks-fasttext-b9d3022ac9cb" target="_blank" rel="noopener external nofollow noreferrer">Text Classification Simplified with Facebook’s FastText</a></p>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjADegQIBRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fsinat_26917383%2Farticle%2Fdetails%2F54850933&amp;usg=AOvVaw13-0y3Npvz1tOzbi1zuy97" target="_blank" rel="noopener external nofollow noreferrer">NLP︱高级词向量表达（二）——FastText（简述、学习笔记） - 素质云笔记 …</a></p>
-<p><a href="https://blog.csdn.net/ymaini/article/details/81489599" target="_blank" rel="noopener external nofollow noreferrer">FastText学习笔记</a></p>
-<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
-<p><a href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-faqs.md#常问问题" target="_blank" rel="noopener external nofollow noreferrer">常问问题</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/36872508" target="_blank" rel="noopener external nofollow noreferrer">中文训练好的词向量</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jiqizhixin.com/articles/2018-12-03-6">fastText原理及实践 - 达观</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/fasttext-ea9009dba0e8">Learning FastText</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hackernoon.com/text-classification-simplified-with-facebooks-fasttext-b9d3022ac9cb">Text Classification Simplified with Facebook’s FastText</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjADegQIBRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fsinat_26917383%2Farticle%2Fdetails%2F54850933&amp;usg=AOvVaw13-0y3Npvz1tOzbi1zuy97">NLP︱高级词向量表达（二）——FastText（简述、学习笔记） - 素质云笔记 …</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/ymaini/article/details/81489599">FastText学习笔记</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://heleifz.github.io/14732610572844.html"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-faqs.md#常问问题">常问问题</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/36872508">中文训练好的词向量</a></p>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>FastText可以进行：</p>
 <ul>
 <li><strong>表示学习</strong>（学习词语的embedding向量）<ul>
@@ -304,7 +303,7 @@
 </li>
 </ul>
 <blockquote>
-<p>An author: <a href="https://research.fb.com/people/mikolov-tomas/" target="_blank" rel="noopener external nofollow noreferrer">https://research.fb.com/people/mikolov-tomas/</a></p>
+<p>An author: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://research.fb.com/people/mikolov-tomas/">https://research.fb.com/people/mikolov-tomas/</a></p>
 </blockquote>
 <h2 id="特性表"><a href="#特性表" class="headerlink" title="特性表"></a>特性表</h2><div class="table-container">
 <table>
@@ -362,7 +361,7 @@
 </tbody>
 </table>
 </div>
-<p>传统学习指：<a href="https://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf" target="_blank" rel="noopener external nofollow noreferrer"> LIBLINEAR: A library for large linear classification </a></p>
+<p>传统学习指：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf"> LIBLINEAR: A library for large linear classification </a></p>
 <div class="pdfobject-container" data-target="liblinear.pdf" data-height="500px"></div>
 <div class="pdfobject-container" data-target="newGLMNET_for_L1-regularized_Linear_Classification.pdf" data-height="500px"></div>
 <div class="pdfobject-container" data-target="Trust_region_Newton_method_for_large-scale_logistic_regression.pdf" data-height="500px"></div>
@@ -371,32 +370,32 @@
 <p>FastText源码采用<code>C++</code>实现。</p>
 </blockquote>
 <h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>进入Linux服务器<code>实验目录</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/facebookresearch/fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>make</code> 寻找目录下的<code>Makefile</code>文件，并根据其内容进行项目<strong>编译</strong>。</p>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.cnblogs.com%2Fhazir%2Fp%2Flinux_make_examples.html&amp;usg=AOvVaw1fr6g6jeSa9f9h1oknrMGZ" target="_blank" rel="noopener external nofollow noreferrer">例解Linux 下Make 命令- hazir - 博客园</a></p>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjACegQIBRAB&amp;url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2015%2F02%2Fmake.html&amp;usg=AOvVaw1PwCr52DdvVMV4ZhEFi-E_" target="_blank" rel="noopener external nofollow noreferrer">Make 命令教程- 阮一峰的网络日志</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.cnblogs.com%2Fhazir%2Fp%2Flinux_make_examples.html&amp;usg=AOvVaw1fr6g6jeSa9f9h1oknrMGZ">例解Linux 下Make 命令- hazir - 博客园</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjACegQIBRAB&amp;url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2015%2F02%2Fmake.html&amp;usg=AOvVaw1PwCr52DdvVMV4ZhEFi-E_">Make 命令教程- 阮一峰的网络日志</a></p>
 </blockquote>
 <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><blockquote>
-<p><a href="https://www.cnblogs.com/jkmiao/p/7041106.html" target="_blank" rel="noopener external nofollow noreferrer">fastext 中文文本分类</a></p>
-<p><a href="https://radimrehurek.com/gensim/models/fasttext.html" target="_blank" rel="noopener external nofollow noreferrer">models.fasttext – FastText model</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/jkmiao/p/7041106.html">fastext 中文文本分类</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://radimrehurek.com/gensim/models/fasttext.html">models.fasttext – FastText model</a></p>
 </blockquote>
-<p><code>fasttext</code>也能在python上便捷地使用：<a href="https://github.com/facebookresearch/fastText/tree/master/python" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/facebookresearch/fastText/tree/master/python</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
+<p><code>fasttext</code>也能在python上便捷地使用：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/facebookresearch/fastText/tree/master/python">https://github.com/facebookresearch/fastText/tree/master/python</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/facebookresearch/fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjoxbXny6bhAhW9KqYKHWAXA04QFjACegQIARAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fbbhdeal%2Farticle%2Fdetails%2F81144783&amp;usg=AOvVaw3ThX5JRL3r96KAOqde8TJ0" target="_blank" rel="noopener external nofollow noreferrer">Microsoft Visual C++ Build Tools下载/解决Visual C++ 14.0 is required …</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjoxbXny6bhAhW9KqYKHWAXA04QFjACegQIARAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fbbhdeal%2Farticle%2Fdetails%2F81144783&amp;usg=AOvVaw3ThX5JRL3r96KAOqde8TJ0">Microsoft Visual C++ Build Tools下载/解决Visual C++ 14.0 is required …</a></p>
 </blockquote>
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><blockquote>
-<p><a href="https://blog.csdn.net/weixin_36604953/article/details/78195462" target="_blank" rel="noopener external nofollow noreferrer">文本分类需要CNN？ No！fastText完美解决你的需求（前篇）</a></p>
-<p><a href="https://blog.csdn.net/weixin_36604953/article/details/78324834" target="_blank" rel="noopener external nofollow noreferrer"><strong>文本分类需要CNN？No！fastText完美解决你的需求（后篇）</strong></a></p>
-<p><a href="https://blog.csdn.net/john_bh/article/details/79268850" target="_blank" rel="noopener external nofollow noreferrer"><strong>FastText：快速的文本分类器</strong></a></p>
-<p><a href="https://www.zhihu.com/question/48345431" target="_blank" rel="noopener external nofollow noreferrer">如何评价Word2Vec作者提出的fastText算法？深度学习是否在文本分类等简单任务上没有优势？</a></p>
-<p><a href="https://towardsdatascience.com/fasttext-bag-of-tricks-for-efficient-text-classification-513ba9e302e7" target="_blank" rel="noopener external nofollow noreferrer">How does FastText classifier work under the hood?</a></p>
-<p><a href="https://www.quora.com/Is-FastText-faster-than-Word2vec-Why" target="_blank" rel="noopener external nofollow noreferrer">Is FastText faster than Word2vec? Why?</a></p>
-<p><a href="https://blog.csdn.net/AckClinkz/article/details/81907555" target="_blank" rel="noopener external nofollow noreferrer">fastText入门</a></p>
-<p><a href="https://blog.csdn.net/AckClinkz/article/details/81907695" target="_blank" rel="noopener external nofollow noreferrer">fastText(二)：微博短文本下fastText的应用（一）</a></p>
-<p><a href="https://blog.csdn.net/AckClinkz/article/details/81907903" target="_blank" rel="noopener external nofollow noreferrer">fastText(三)：微博短文本下fastText的应用（二）</a></p>
-<p><a href="https://blog.eson.org/pub/657edf81/" target="_blank" rel="noopener external nofollow noreferrer">词向量 - fastText</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_36604953/article/details/78195462">文本分类需要CNN？ No！fastText完美解决你的需求（前篇）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_36604953/article/details/78324834"><strong>文本分类需要CNN？No！fastText完美解决你的需求（后篇）</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/john_bh/article/details/79268850"><strong>FastText：快速的文本分类器</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/48345431">如何评价Word2Vec作者提出的fastText算法？深度学习是否在文本分类等简单任务上没有优势？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/fasttext-bag-of-tricks-for-efficient-text-classification-513ba9e302e7">How does FastText classifier work under the hood?</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.quora.com/Is-FastText-faster-than-Word2vec-Why">Is FastText faster than Word2vec? Why?</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907555">fastText入门</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907695">fastText(二)：微博短文本下fastText的应用（一）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907903">fastText(三)：微博短文本下fastText的应用（二）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.eson.org/pub/657edf81/">词向量 - fastText</a></p>
 </blockquote>
 <p>fasttext是facebook开源的一个词向量与文本分类工具，在2016年开源，典型应用场景是“带监督的文本分类问题”。提供简单而高效的文本分类和表征学习的方法，性能比肩深度学习而且速度更快。</p>
 <p>fastText结合了自然语言处理和机器学习中最成功的理念。这些包括了使用词袋以及n-gram袋表征语句，还有使用子字(subword)信息，并通过隐藏表征在类别间共享信息。我们另外采用了一个softmax层级(利用了类别不均衡分布的优势)来加速运算过程！</p>
@@ -409,8 +408,8 @@
 <p>fasttext只有1层神经网络，属于所谓的shallow learning，但是fasttext的效果并不差，而且具备学习和预测速度快的优势，在工业界这点非常重要。它比一般的神经网络模型的精确度还要高。</p>
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p><img data-src="https://heleifz.github.io/media/14732610572844/fasttext-model-arch.png" alt="fasttext-model-arch"></p>
 <h3 id="DAN-deep-averaging-network"><a href="#DAN-deep-averaging-network" class="headerlink" title="DAN (deep averaging network)"></a>DAN (deep averaging network)</h3><blockquote>
-<p><a href="https://aclweb.org/anthology/P15-1162" target="_blank" rel="noopener external nofollow noreferrer">Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
-<p><a href="https://github.com/llhthinker/NLP-Papers/blob/master/text%20classification/2017-11/Deep%20Unordered%20Composition%20Rivals%20Syntactic%20Methods%20for%20Text%20Classification/note.md" target="_blank" rel="noopener external nofollow noreferrer">论文笔记：Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://aclweb.org/anthology/P15-1162">Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/llhthinker/NLP-Papers/blob/master/text%20classification/2017-11/Deep%20Unordered%20Composition%20Rivals%20Syntactic%20Methods%20for%20Text%20Classification/note.md">论文笔记：Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
 <p>fastText简而言之，就是把文档中所有词通过lookup table变成向量，取平均后直接用线性分类器得到分类结果。fastText和ACL-15上的deep averaging network (<strong>DAN</strong>，如下图)非常相似，区别就是<u>去掉了中间的隐层</u>。两篇文章的结论也比较类似，也是指出对一些简单的分类任务，没有必要使用太复杂的网络结构就可以取得差不多的结果。</p>
 </blockquote>
 <img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553936021538.png" class="" width="1553936021538">
@@ -419,9 +418,9 @@
 <h3 id="fastText"><a href="#fastText" class="headerlink" title="fastText"></a>fastText</h3><p>下面是fastText的架构：</p>
 <img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553945064441.png" class="" width="1553945064441">
 <h2 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h2><blockquote>
-<p><a href="https://www.cnblogs.com/peghoty/p/3857839.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>word2vec 中的数学原理详解</strong></a></p>
-<p><a href="https://arxiv.org/pdf/1301.3781.pdf" target="_blank" rel="noopener external nofollow noreferrer">Efficient Estimation of Word Representations in Vector Space</a></p>
-<p><a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf" target="_blank" rel="noopener external nofollow noreferrer">Distributed Representations of Words and Phrases and their Compositionality</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/peghoty/p/3857839.html"><strong>word2vec 中的数学原理详解</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1301.3781.pdf">Efficient Estimation of Word Representations in Vector Space</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Distributed Representations of Words and Phrases and their Compositionality</a></p>
 </blockquote>
 <p>fastText 提供了两种用于计算词表示的模型：<code>skipgram</code> 和 <code>cbow</code> (‘<strong>c</strong>ontinuous-<strong>b</strong>ag-<strong>o</strong>f-<strong>w</strong>ords’)。</p>
 <p><strong>上下文</strong>：指在目标词左边和右边的固定单词数和。</p>
@@ -447,13 +446,13 @@
 <img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554292920220.png" class="" width="1554292920220">
 <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>fastText在实现上很考究。源码采用<code>C++</code>实现。</p>
 <blockquote>
-<p><a href="https://heleifz.github.io/14732610572844.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://heleifz.github.io/14732610572844.html"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
 </blockquote>
 <h1 id="Text-Classification-文本分类"><a href="#Text-Classification-文本分类" class="headerlink" title="Text Classification 文本分类"></a>Text Classification 文本分类</h1><p>确认进入实验目录：<code>***/***/fastTest</code>.</p>
 <p>运行以下命令：（不加参数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;fasttext</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./fasttext</span><br></pre></td></tr></table></figure>
 <p>则可以显示功能列表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; .&#x2F;fasttext</span><br><span class="line">usage: fasttext &lt;command&gt; &lt;args&gt;</span><br><span class="line"></span><br><span class="line">The commands supported by fasttext are:</span><br><span class="line"></span><br><span class="line">  supervised              训练一个监督分类器</span><br><span class="line">  quantize                量化模型以减少内存使用量</span><br><span class="line">  test                    评估一个监督分类器</span><br><span class="line">  predict                 预测最有可能的标签</span><br><span class="line">  predict-prob            用概率预测最可能的标签</span><br><span class="line">  skipgram                训练一个 skipgram 模型</span><br><span class="line">  cbow                    训练一个 cbow 模型</span><br><span class="line">  print-word-vectors      给定一个训练好的模型，打印出所有的单词向量</span><br><span class="line">  print-sentence-vectors  给定一个训练好的模型，打印出所有的句子向量</span><br><span class="line">  nn                      查询最近邻居</span><br><span class="line">  analogies               查找所有同类词</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext</span><br><span class="line">usage: fasttext &lt;command&gt; &lt;args&gt;</span><br><span class="line"></span><br><span class="line">The commands supported by fasttext are:</span><br><span class="line"></span><br><span class="line">  supervised              训练一个监督分类器</span><br><span class="line">  quantize                量化模型以减少内存使用量</span><br><span class="line">  test                    评估一个监督分类器</span><br><span class="line">  predict                 预测最有可能的标签</span><br><span class="line">  predict-prob            用概率预测最可能的标签</span><br><span class="line">  skipgram                训练一个 skipgram 模型</span><br><span class="line">  cbow                    训练一个 cbow 模型</span><br><span class="line">  print-word-vectors      给定一个训练好的模型，打印出所有的单词向量</span><br><span class="line">  print-sentence-vectors  给定一个训练好的模型，打印出所有的句子向量</span><br><span class="line">  nn                      查询最近邻居</span><br><span class="line">  analogies               查找所有同类词</span><br></pre></td></tr></table></figure>
 <div class="table-container">
 <table>
 <thead>
@@ -520,34 +519,34 @@
 </div>
 <p>文本分类教程中, we mainly use the <strong><code>supervised</code>, <code>test</code> and <code>predict</code>subcommands</strong>, which corresponds to <strong>learning (and using) text classifier</strong>. </p>
 <blockquote>
-<p>For an introduction to the other functionalities of fastText, please see the <a href="https://fasttext.cc/docs/en/unsupervised-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">tutorial about learning word vectors</a>.</p>
+<p>For an introduction to the other functionalities of fastText, please see the <a target="_blank" rel="noopener external nofollow noreferrer" href="https://fasttext.cc/docs/en/unsupervised-tutorial.html">tutorial about learning word vectors</a>.</p>
 </blockquote>
-<h2 id="Cooking-实验"><a href="#Cooking-实验" class="headerlink" title="Cooking 实验"></a>Cooking 实验</h2><h3 id="获得数据"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wget https:&#x2F;&#x2F;dl.fbaipublicfiles.com&#x2F;fasttext&#x2F;data&#x2F;cooking.stackexchange.tar.gz &amp;&amp; tar xvzf cooking.stackexchange.tar.gz</span><br><span class="line">&gt;&gt; head cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
+<h2 id="Cooking-实验"><a href="#Cooking-实验" class="headerlink" title="Cooking 实验"></a>Cooking 实验</h2><h3 id="获得数据"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wget https://dl.fbaipublicfiles.com/fasttext/data/cooking.stackexchange.tar.gz &amp;&amp; tar xvzf cooking.stackexchange.tar.gz</span><br><span class="line">&gt;&gt; head cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> <strong><font color=red>All the labels start by the <code>__label__</code> prefix</font>, which is how fastText recognize what is a label or what is a word.</strong>（其实后面也可以在训练里通过<code>-label</code>参数改改）</p>
 <p> <code>wget [url]</code>获取云端文件，<code>&amp;&amp;</code>是<strong>短路</strong>写法，<code>tar xvzf</code>解压缩。</p>
-<p> <a href="https://www.cnblogs.com/peida/archive/2012/11/06/2756278.html" target="_blank" rel="noopener external nofollow noreferrer">每天一个linux命令（14）：head 命令</a></p>
+<p> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/peida/archive/2012/11/06/2756278.html">每天一个linux命令（14）：head 命令</a></p>
 <blockquote>
 <p>head 用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。 </p>
 </blockquote>
-<p> <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjvxOSCvqbhAhVmwIsBHc0ADRwQFjAAegQIARAB&amp;url=https%3A%2F%2Fmy.oschina.net%2Fhanzhankang%2Fblog%2F202754&amp;usg=AOvVaw2-ngL-D3pyNY1wVSLao1yo" target="_blank" rel="noopener external nofollow noreferrer">Linux Shell的&amp; 、&amp;&amp; 、 || - 华兹格的个人空间- 开源中国</a></p>
+<p> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjvxOSCvqbhAhVmwIsBHc0ADRwQFjAAegQIARAB&amp;url=https%3A%2F%2Fmy.oschina.net%2Fhanzhankang%2Fblog%2F202754&amp;usg=AOvVaw2-ngL-D3pyNY1wVSLao1yo">Linux Shell的&amp; 、&amp;&amp; 、 || - 华兹格的个人空间- 开源中国</a></p>
 </blockquote>
 <h3 id="数据切分"><a href="#数据切分" class="headerlink" title="数据切分"></a>数据切分</h3><p>观测数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wc cooking.stackexchange.txt</span><br><span class="line">  15404  169582 1401900 cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wc cooking.stackexchange.txt</span><br><span class="line">  15404  169582 1401900 cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>输出说明：</strong>行数 单词数 字节数 文件名</p>
 </blockquote>
 <p>切分：（Our full dataset contains <code>15404</code> examples.）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; head -n 12404 cooking.stackexchange.txt &gt; cooking.train</span><br><span class="line">&gt;&gt; tail -n 3000 cooking.stackexchange.txt &gt; cooking.valid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; head -n 12404 cooking.stackexchange.txt &gt; cooking.train</span><br><span class="line">&gt;&gt; tail -n 3000 cooking.stackexchange.txt &gt; cooking.valid</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-n</code>输入行数，<code>&gt;</code>输出重定向。</p>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjrr_i0yKbhAhUKK6YKHawuDA4QFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.runoob.com%2Flinux%2Flinux-shell-io-redirections.html&amp;usg=AOvVaw0EPa5TYCZV-HZDxp9Ke4eU" target="_blank" rel="noopener external nofollow noreferrer">Shell 输入/输出重定向| 菜鸟教程</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjrr_i0yKbhAhUKK6YKHawuDA4QFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.runoob.com%2Flinux%2Flinux-shell-io-redirections.html&amp;usg=AOvVaw0EPa5TYCZV-HZDxp9Ke4eU">Shell 输入/输出重定向| 菜鸟教程</a></p>
 </blockquote>
-<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; .&#x2F;fasttext supervised -input cooking.train -output model_cooking</span><br><span class="line">Read 0M words</span><br><span class="line">Number of words:  14598</span><br><span class="line">Number of labels: 734</span><br><span class="line">Progress: 100.0%  words&#x2F;sec&#x2F;thread: 75109  lr: 0.000000  loss: 5.708354  eta: 0h0m</span><br></pre></td></tr></table></figure>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext supervised -input cooking.train -output model_cooking</span><br><span class="line">Read 0M words</span><br><span class="line">Number of words:  14598</span><br><span class="line">Number of labels: 734</span><br><span class="line">Progress: 100.0%  words/sec/thread: 75109  lr: 0.000000  loss: 5.708354  eta: 0h0m </span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>The <code>-input</code> command line option indicates the file containing the training examples, while the <code>-output</code> option indicates where to save the model. At the end of training, a file <code>model_cooking.bin</code>, containing the trained classifier, is created in the current directory.</p>
 </blockquote>
-<p>训练参数表：（Or <a href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-options.md" target="_blank" rel="noopener external nofollow noreferrer">here</a>）</p>
+<p>训练参数表：（Or <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-options.md">here</a>）</p>
 <div class="table-container">
 <table>
 <thead>
@@ -700,12 +699,12 @@
 <p>The label predicted by the model is <code>food-safety</code>, which  is not relevant. （实测这里也是<code>baking</code>，而且，该模型似乎对大小写敏感，见下图）Somehow, the model seems to fail on simple examples.</p>
 <img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553827693158.png" class="" width="1553827693158">
 <p>To  get a better sense of its quality, let’s test it on the validation data  by running:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; .&#x2F;fasttext test model_cooking.bin cooking.valid                 </span><br><span class="line">N  3000</span><br><span class="line">P@1  0.124</span><br><span class="line">R@1  0.0541</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext test model_cooking.bin cooking.valid                 </span><br><span class="line">N  3000</span><br><span class="line">P@1  0.124</span><br><span class="line">R@1  0.0541</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
 <p>The output of fastText are <strong><font color=red>the precision at one (<code>P@1</code>) and the recall at one (<code>R@1</code>)</font></strong>. We can also compute the precision at five and recall at five with:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext <span class="built_in">test</span> model_cooking.bin cooking.valid 5 0.1              </span><br><span class="line">N  3000</span><br><span class="line">P@5  0.0668</span><br><span class="line">R@5  0.146</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwitpt3_q6bhAhVuyosBHe2FAw4QFjAAegQIAxAB&amp;url=https%3A%2F%2Fdatascience.stackexchange.com%2Fquestions%2F13327%2Fwhat-does-prec1-in-fasttext-mean&amp;usg=AOvVaw0ndx98AGbKY-PDVy4Gk0dy" target="_blank" rel="noopener external nofollow noreferrer">machine learning - What does Prec@1 in fastText mean? - Data …</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval" target="_blank" rel="noopener external nofollow noreferrer">Evaluation measures (information retrieval) - Wikipedia</a>#Precision_at_K) </p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwitpt3_q6bhAhVuyosBHe2FAw4QFjAAegQIAxAB&amp;url=https%3A%2F%2Fdatascience.stackexchange.com%2Fquestions%2F13327%2Fwhat-does-prec1-in-fasttext-mean&amp;usg=AOvVaw0ndx98AGbKY-PDVy4Gk0dy">machine learning - What does Prec@1 in fastText mean? - Data …</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval">Evaluation measures (information retrieval) - Wikipedia</a>#Precision_at_K) </p>
 </blockquote>
 <h2 id="文本分类实验"><a href="#文本分类实验" class="headerlink" title="文本分类实验"></a>文本分类实验</h2><h3 id="实验记录表"><a href="#实验记录表" class="headerlink" title="实验记录表"></a>实验记录表</h3><div class="table-container">
 <table>
@@ -782,13 +781,13 @@
 <blockquote>
 <p>先修改意图label的形式，与fastText的API进行配对。</p>
 </blockquote>
-<h4 id="分字"><a href="#分字" class="headerlink" title="分字"></a>分字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">df[<span class="string">"raw_query"</span>] = df[<span class="string">"raw_query"</span>].apply(list)	</span><br><span class="line">df[<span class="string">"raw_query"</span>] = df[<span class="string">"raw_query"</span>].apply(<span class="string">" "</span>.join)</span><br></pre></td></tr></table></figure>
+<h4 id="分字"><a href="#分字" class="headerlink" title="分字"></a>分字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="built_in">list</span>)	</span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="string">&quot; &quot;</span>.join)</span><br></pre></td></tr></table></figure>
 <h4 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h4><p>类似的。用<code>jieba</code>。</p>
 <h3 id="输出概率"><a href="#输出概率" class="headerlink" title="输出概率"></a>输出概率</h3><p><code>predict-prob</code> + <code>&gt;</code>输出重定向到文件。</p>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
-<p><a href="http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae" target="_blank" rel="noopener external nofollow noreferrer">http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae</a></p>
-<p><a href="https://www.zhihu.com/question/265357659" target="_blank" rel="noopener external nofollow noreferrer">在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？</a></p>
-<p><a href="https://ver217.github.io/2018/04/23/nlp-text-classification/" target="_blank" rel="noopener external nofollow noreferrer"><strong>NLP 文本分类问题</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae">http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/265357659">在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://ver217.github.io/2018/04/23/nlp-text-classification/"><strong>NLP 文本分类问题</strong></a></p>
 </blockquote>
 <ul>
 <li>预处理数据 ;</li>
@@ -798,14 +797,14 @@
 <li>引入预训练的字向量</li>
 </ul>
 <h2 id="预处理数据"><a href="#预处理数据" class="headerlink" title="预处理数据"></a>预处理数据</h2><blockquote>
-<p><a href="https://blog.csdn.net/spring_willow/article/details/80211243" target="_blank" rel="noopener external nofollow noreferrer">NLP-中文文本去除标点符号</a></p>
-<p><a href="https://blog.csdn.net/qq_35203425/article/details/80830939" target="_blank" rel="noopener external nofollow noreferrer"><strong>NLP文本预处理去除标点符号</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/spring_willow/article/details/80211243">NLP-中文文本去除标点符号</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/qq_35203425/article/details/80830939"><strong>NLP文本预处理去除标点符号</strong></a></p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">punc = punctuation + <span class="string">r" u‘.,;《》？！“”‘’@#￥%…&amp;×（）——+【】&#123;&#125;;；●，。&amp;～、|\s:：‘"</span></span><br><span class="line">df[<span class="string">"raw_query"</span>] = df[<span class="string">"raw_query"</span>].apply(<span class="keyword">lambda</span> line: re.sub(<span class="string">r"[&#123;&#125;]+"</span>.format(punc),<span class="string">" "</span>,line))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">punc = punctuation + <span class="string">r&quot; u‘.,;《》？！“”‘’@#￥%…&amp;×（）——+【】&#123;&#125;;；●，。&amp;～、|\s:：‘&quot;</span></span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="keyword">lambda</span> line: re.sub(<span class="string">r&quot;[&#123;&#125;]+&quot;</span>.<span class="built_in">format</span>(punc),<span class="string">&quot; &quot;</span>,line))</span><br></pre></td></tr></table></figure>
 <p>实测没有明显效果。</p>
 <h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>fasttext存在过拟合问题，在训练集上的精度（98）远高于测试集（90%）。</p>
 <p>但fasttext并没有引入正则化。</p>
-
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">深度学习笔记</a></li><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/">深度学习训练营</a></li><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/">深度学习 by Andrew Ng.</a></li></ul></div>
     </div>
 
     
@@ -911,7 +910,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性表"><span class="nav-number">2.1.</span> <span class="nav-text">特性表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">2.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">2.2.1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">2.2.2.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原理"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型架构"><span class="nav-number">3.1.</span> <span class="nav-text">模型架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">3.1.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAN-deep-averaging-network"><span class="nav-number">3.1.2.</span> <span class="nav-text">DAN (deep averaging network)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastText"><span class="nav-number">3.1.3.</span> <span class="nav-text">fastText</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2vec"><span class="nav-number">3.2.</span> <span class="nav-text">Word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经语言模型"><span class="nav-number">3.2.1.</span> <span class="nav-text">神经语言模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CBOW"><span class="nav-number">3.2.2.</span> <span class="nav-text">CBOW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skip-gram"><span class="nav-number">3.2.3.</span> <span class="nav-text">Skip-gram</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层次softmax"><span class="nav-number">3.3.</span> <span class="nav-text">层次softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N-gram"><span class="nav-number">3.4.</span> <span class="nav-text">N-gram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码"><span class="nav-number">4.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Text-Classification-文本分类"><span class="nav-number">5.</span> <span class="nav-text">Text Classification 文本分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cooking-实验"><span class="nav-number">5.1.</span> <span class="nav-text">Cooking 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获得数据"><span class="nav-number">5.1.1.</span> <span class="nav-text">获得数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据切分"><span class="nav-number">5.1.2.</span> <span class="nav-text">数据切分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练"><span class="nav-number">5.1.3.</span> <span class="nav-text">训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">5.1.4.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接测试"><span class="nav-number">5.1.4.1.</span> <span class="nav-text">直接测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本分类实验"><span class="nav-number">5.2.</span> <span class="nav-text">文本分类实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验记录表"><span class="nav-number">5.2.1.</span> <span class="nav-text">实验记录表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验流程"><span class="nav-number">5.2.2.</span> <span class="nav-text">实验流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分字"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">分字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分词"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">分词</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出概率"><span class="nav-number">5.2.3.</span> <span class="nav-text">输出概率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化"><span class="nav-number">6.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理数据"><span class="nav-number">6.1.</span> <span class="nav-text">预处理数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合问题"><span class="nav-number">6.2.</span> <span class="nav-text">过拟合问题</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text">特性表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">2.2.1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">2.2.2.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">模型架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">3.1.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAN-deep-averaging-network"><span class="nav-number">3.1.2.</span> <span class="nav-text">DAN (deep averaging network)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastText"><span class="nav-number">3.1.3.</span> <span class="nav-text">fastText</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2vec"><span class="nav-number">3.2.</span> <span class="nav-text">Word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.1.</span> <span class="nav-text">神经语言模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CBOW"><span class="nav-number">3.2.2.</span> <span class="nav-text">CBOW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skip-gram"><span class="nav-number">3.2.3.</span> <span class="nav-text">Skip-gram</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1softmax"><span class="nav-number">3.3.</span> <span class="nav-text">层次softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N-gram"><span class="nav-number">3.4.</span> <span class="nav-text">N-gram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Text-Classification-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">Text Classification 文本分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cooking-%E5%AE%9E%E9%AA%8C"><span class="nav-number">5.1.</span> <span class="nav-text">Cooking 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E6%95%B0%E6%8D%AE"><span class="nav-number">5.1.1.</span> <span class="nav-text">获得数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%87%E5%88%86"><span class="nav-number">5.1.2.</span> <span class="nav-text">数据切分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83"><span class="nav-number">5.1.3.</span> <span class="nav-text">训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.1.4.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">5.1.4.1.</span> <span class="nav-text">直接测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%AE%9E%E9%AA%8C"><span class="nav-number">5.2.</span> <span class="nav-text">文本分类实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95%E8%A1%A8"><span class="nav-number">5.2.1.</span> <span class="nav-text">实验记录表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">5.2.2.</span> <span class="nav-text">实验流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%AD%97"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">分字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E8%AF%8D"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">分词</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A6%82%E7%8E%87"><span class="nav-number">5.2.3.</span> <span class="nav-text">输出概率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE"><span class="nav-number">6.1.</span> <span class="nav-text">预处理数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-number">6.2.</span> <span class="nav-text">过拟合问题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1018,7 +1017,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">524k</span>
+    <span title="Symbols count total">538k</span>
 </div>
 
         
@@ -1071,8 +1070,6 @@
   }
   </style>
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
@@ -1225,7 +1222,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
     };
     (function () {
       var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
       script.defer = true;
       document.head.appendChild(script);
     })();
@@ -1239,7 +1236,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
     
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
   <script>
       window.addEventListener('load', () => {
       quicklink({
