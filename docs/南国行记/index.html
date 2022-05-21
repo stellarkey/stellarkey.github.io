@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="本文记载深圳OS项目实习的一些见闻。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="南国行记">
+<meta property="og:url" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="本文记载深圳OS项目实习的一些见闻。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809205806820.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809205842032.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210052524.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211543865.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210030842.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210040962.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211605199.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210716168.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210646859.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210702567.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210753003.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210801369.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210808670.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210727686.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/253a7b1819e2af555ed0a7e0f11a0b59_r.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/structure.svg">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211208300.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211157289.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211427899.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211249364.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211228265.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211634649.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212300425.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212241585.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212201438.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212224773.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212005022.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212027412.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212356319.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212319866.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212406124.png">
+<meta property="article:published_time" content="2020-08-02T15:42:49.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:10:59.635Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809205806820.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>南国行记 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          南国行记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/View/" itemprop="url" rel="index"><span itemprop="name">View</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文记载深圳OS项目实习的一些见闻。<a id="more"></a></p>
+<h1 id="8月2日-向南"><a href="#8月2日-向南" class="headerlink" title="8月2日 向南"></a>8月2日 向南</h1><p>疫情后的湖北（宜昌），还是一种比较严肃的气氛。</p>
+<p>似乎高速公路的通行上仍存在一定问题（这个问题应该存在了几年了），跨省界时需要转小型车，再转为宜昌交运客车。当地的客车似乎更高级一些，设备更新，座位有重力感应，这样与安全带插扣联合在一起，便可以保证安全带的使用——只是，空座位上确实不能放置物品了。</p>
+<p>听说这几天深圳强降水，有些庆幸选择了高铁前往。如果是飞机，可能又要延误（之后发现确实有人延误。。）。我为数不多的飞行体验中，就有一次接近半天的延误。人们常常夸赞航班的超高安全性，但我却不以为然。飞机的安全性是通过全面“规避风险”来获得的，这意味着飞行本身是一件高风险的事。而火车或者汽车则不一样，它们的基础风险是很低的，它们规避风险的需求也更少。</p>
+<p>但，“规避风险”是一件非常强调主观能力的事情。</p>
+<p>窗外突然开始下雨。刮大风。并且能见度变得很低。可以在空中看到明显的风雨轨迹。隧道中的应急车道上停靠了大量避雨的私家车。但过了一段距离，雾渐散了。雨也消了。</p>
+<p>看到崇山峻岭间有些鬼斧式的地貌。公路和车辆在森林中一闪而过。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809205806820.png" class="" title="image-20200809205806820">
+<p>人对自然的改造。也是脉络式的改造。</p>
+<p>崇山峻岭也隐去了，平原，城市的轮廓浮现出来。</p>
+<p>世界太大了。单独的人，单独的建筑，都显得很渺小。思维超出个体时，行为是否能超出个体呢？</p>
+<hr>
+<p>高铁上可以明显感到与之前的交通工具在速度上的差异。出发时还是早晨，天气晴朗，云海只淡淡的一层，并形成起伏的波浪线。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809205842032.png" class="" title="image-20200809205842032">
+<p>没想到中途的站点竟经停武汉。</p>
+<p>病毒的风险，何尝又不是一种主观能力上的风险规避。跟航班也有一些相似性。</p>
+<p>体验了一把在高铁上点外卖的感觉。结论：太贵。</p>
+<p>无论如何舒适的环境，坐久了都会变得不是很舒适。可能还不够舒适?</p>
+<hr>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210052524.png" class="" title="image-20200809210052524">
+<p>深圳的城市从宏观上跟北京之类的大都会没有什么区别。但是，细节之处却相当不同。深圳有专门的出租车集散地，这是我在其他省市所从未见过的，深圳的交通似乎更加严格，也许这是一种“先行区”的表现吧?深圳是一座很有活力的城市，从街景的设计中可以看出，一些蓝色的吉祥物（没有认出来是什么），还有雕塑。深圳的非机动车道和人行道镶嵌粘合在一起，这也是其他城市我所未见的新。深圳也许暂时我没有体味到创造的新，但是标新立异的新，确实令人侧目。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211543865.png" class="" title="image-20200809211543865">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210030842.png" class="" title="image-20200809210030842">
+<p>到了酒店，直观的感受就是，高端的生活方式真是难以想象的舒适。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210040962.png" class="" title="image-20200809210040962">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211605199.png" class="" title="image-20200809211605199">
+<p>室友是来自数学系的大佬，听说为了契合自己的计划，甚至故意挂了科从而可以留校留级。这种认知是反常的，然而在了解之后又立马显得十分自然。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210716168.png" class="" title="image-20200809210716168">
+<h1 id="8月3日-实验室"><a href="#8月3日-实验室" class="headerlink" title="8月3日 实验室"></a>8月3日 实验室</h1><p>六点多醒了。悠哉游哉到鹏程实验室，脚程大约3分钟。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210646859.png" class="" title="image-20200809210646859">
+<p>早餐自助。还是很好吃的。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210702567.png" class="" title="image-20200809210702567">
+<p>安排也大致有了：<a href="https://github.com/rcore-os/zCore/wiki/zcore-summer-of-code。" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/rcore-os/zCore/wiki/zcore-summer-of-code。</a></p>
+<p>今天大概是：rCore 开发历史和选题介绍。</p>
+<blockquote>
+<p>与同学交流选题</p>
+<p>上午11:00 B栋一楼合影，3楼参观</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210753003.png" class="" title="image-20200809210753003">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210801369.png" class="" title="image-20200809210801369">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210808670.png" class="" title="image-20200809210808670">
+<p>中午二楼就餐</p>
+<p>晚上：聚餐和小活动</p>
+</blockquote>
+<p>安排。：）</p>
+<hr>
+<p>中午吃多了。。<del>控制控制</del>。。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809210727686.png" class="" title="image-20200809210727686">
+<hr>
+<p><strong>第二届开源操作系统技术研讨会</strong>。</p>
+<hr>
+<p>没有做完实验的，先把前面六个实验全部做完。</p>
+<p>操作系统的用户态、内核态的转换，在rust设计中得到了优化。通过异步的办法，让操作系统的性能有一个巨大的提升。（用户态中断?）</p>
+<p>对于传统操作系统，异步的编写很麻烦。在rust中，则可以由编译器来负责完成。rust语言有可能对操作系统有一个本质性的影响。</p>
+<p><strong>信号</strong>：比如键盘信号，<strong>用户态</strong>的一个信号。信号处理函数在用户态，平时不激活。很诡异地一个设计，需要把很多东西凑合到一起。</p>
+<p>RISC-V中有一个用户态中断。这件事完成后，那么就可以实现在用户态完成信号机制。</p>
+<hr>
+<p>第二阶段没有什么参考，所以需要自己规划。</p>
+<p>目的：<strong>做开源社区</strong>。</p>
+<p>明天下午国科大本科毕设分享：RISC-V处理器流片背后的故事。</p>
+<p>对于<strong>树莓派</strong>，PCB开源但<strong>GPU不开源</strong>，ucore移植的图形显示很不好搞，图形渲染不好弄，只能弄图形点阵。</p>
+<p>目前有一个对标树莓派的全开源项目，似乎。</p>
+<p>周四去华为参观?</p>
+<p>龙芯杯似乎有点内卷。。QAQ</p>
+<p>我的树莓派4已经吃灰一年了感觉。。未来10年间主流指令集会从x86过渡到arm?</p>
+<hr>
+<p>关于zCore-Tutorial的一些特点。自顶向下。逐步替换底层实现。</p>
+<hr>
+<p>网络集群的特点就是，每个人都很有特点。这其实有点循环论证的问题。</p>
+<p>大二的同学竟然有7位。不禁感叹时光流逝。当年我在大二时，大概才开始学习算法，那年的算法课我也不过是60分飘过。</p>
+<p>开源协议赶紧再记一下：</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/253a7b1819e2af555ed0a7e0f11a0b59_r.jpg" class="" title="preview">
+<hr>
+<p><del>今晚真的要聚餐</del>。</p>
+<h1 id="8月4日-一生一芯"><a href="#8月4日-一生一芯" class="headerlink" title="8月4日 一生一芯"></a>8月4日 一生一芯</h1><p>今天迟到了。不过好像问题不大。匆匆吃完外带的早餐。</p>
+<p>貌似github.io被墙了。</p>
+<p>说实话zCore-Tutorial这个东西，现在想参与还是比较无力的。作者wrj本身也就写了一点点内容。但他把一些大纲拟好。</p>
+<p>hal（硬件抽象层，Hardware Abstraction Layer），与硬件隔离。</p>
+<blockquote>
+<p>目前支持裸机（Bare Metal），和Linux/Mac OS环境。</p>
+</blockquote>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/structure.svg" class="" title="img">
+<p>rust-analyzer听说很好用。clion听说很好用。</p>
+<p>大概了解了一下zCore的结构。</p>
+<hr>
+<p>进度资料：<a href="http://os.cs.tsinghua.edu.cn/oscourse/OsTrain2019/g1" target="_blank" rel="noopener external nofollow noreferrer">2019年操作系统专题训练大实验-Fuchsia OS调研</a>。抽时间了解一下他们都做了些什么，以及进度。</p>
+<p>关于Fuchsia OS：<a href="http://os.cs.tsinghua.edu.cn/oscourse/OsTrain2019/g1?action=AttachFile&amp;do=view&amp;target=%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A.pdf。" rel="external nofollow noreferrer">http://os.cs.tsinghua.edu.cn/oscourse/OsTrain2019/g1?action=AttachFile&amp;do=view&amp;target=%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A.pdf。</a></p>
+<blockquote>
+<p>“非典型”微内核。（勉强算微内核）</p>
+<p>Fuchsia是Google开发的，可能将用于取代Android。</p>
+<p>rCore有实现微内核的潜力，这最终形成了zCore?</p>
+</blockquote>
+<h2 id="国科大本科毕设研讨会——“一生一芯”项目访谈"><a href="#国科大本科毕设研讨会——“一生一芯”项目访谈" class="headerlink" title="国科大本科毕设研讨会——“一生一芯”项目访谈"></a>国科大本科毕设研讨会——“一生一芯”项目访谈</h2><p>今天的研讨会终于给人比较正式的感觉。上午的自由讨论，最终只剩下自由，而没有讨论。</p>
+<p>注意：一生一芯是指，每一个学生设计一个芯片。</p>
+<hr>
+<p>介绍，开发经验，经历分享，未来展望。</p>
+<blockquote>
+<p>余子濠、金越（验证测试）、王华强（前端/DEBUG）、王凯帆（核参数/应用）、张林隽（TLB）、张紫飞（微结构）</p>
+</blockquote>
+<h3 id="第一环节-介绍"><a href="#第一环节-介绍" class="headerlink" title="第一环节 介绍"></a>第一环节 介绍</h3><ol>
+<li>芯片基本情况<ol>
+<li>“果壳”，NutShell</li>
+<li>一款功能完整的RISC-V处理器</li>
+<li>国产110nm工艺完成流片（面积10 mm^2），流片一次二十万???</li>
+<li>有对应的果壳<strong>板卡</strong></li>
+<li>SDRAM大型内存操作系统只能跑200MHz。其他内存占用小的OS可以到350MHz。<ol>
+<li>SDRAM中途还换了颗粒，一开始只能测试小程序最多128K左右</li>
+</ol>
+</li>
+<li>跑分一般</li>
+<li>4个月的前端开发</li>
+<li><del>自产自销QAQ</del></li>
+<li>疫情原因，芯片测试并没有实际参与</li>
+<li>第一版芯片电路（电源线）接错，取指成功，但是会烧掉板子（烧了两块，然后回厂）</li>
+</ol>
+</li>
+<li>现在回过头来看, 流片难吗?<ol>
+<li>五位同学主要接触的是前端设计的工作<ol>
+<li>与流片相关的工作：时序逻辑设计要求比较严格</li>
+</ol>
+</li>
+<li>流片的时间节点的压力比较大<ol>
+<li>如果之后有问题的话，无法修改</li>
+<li>爆肝</li>
+</ol>
+</li>
+<li><del>王凯帆同学中途出国被反复鞭尸QAQ，他的一些软件任务由余博士完成</del></li>
+</ol>
+</li>
+<li>什么时候认识到项目的复杂性? 如何应对?<ol>
+<li>课程中老师常常把一些东西黑盒化，但是在项目中需要接触验证的环境（测试程序的正确性），DEBUG比较艰难——<strong>了解每一行代码的细节</strong></li>
+<li><del>加强版的龙芯杯QAQ</del>，<strong>版本管理</strong>很重要</li>
+<li>前期可以黑盒，但后期必须了解硬件外设的细节，比如几千行的 verilog 代码</li>
+<li>后期开始参与用户态使用时，感觉到复杂性。可能需要引入<strong>编程范式</strong>?<ol>
+<li>一步一步，任务驱动，一层一层慢慢解开黑盒</li>
+<li>阅读大型项目的方法~~~</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="第二环节-开发"><a href="#第二环节-开发" class="headerlink" title="第二环节 开发"></a>第二环节 开发</h3><ol>
+<li><p>使用 <code>Chisel</code> 有什么感想?</p>
+<ol>
+<li><code>Scala</code> （相对于 <code>Rust</code>）更强调函数式编程、面向对象编程</li>
+<li><code>Chisel</code> 就是基于 <code>Scala</code></li>
+<li><code>Chisel</code> 描述硬件的语言方式是非常抽象高级的，<code>Verilog</code> 的抽象层次很低，可以视作“电路设计中的汇编语言”</li>
+<li>在 <code>Chisel</code> 里面 DEBUG 一般直接打印信息<ol>
+<li>传统看波形：通过信号周期（几千几万的那种）跟踪，太难了</li>
+</ol>
+</li>
+<li>有些功能 <code>Chisel</code> 解决不了或者实现会很复杂<ol>
+<li>多时钟可以搞，但是会更复杂一点</li>
+<li>DDR的复杂度很高，Contrler很难搞<ol>
+<li>CPU和SDRAM的时钟频率不一样，需要转换桥?</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>使用chisel如何调试?</p>
+<ol>
+<li>处理器在线<strong>差分</strong>测试仿真验证<ol>
+<li>nemu是一个简版的qemu，在qemu里面自定义DEBUG很麻烦，而且封装过度当需要很小（获取一个寄存器的值）开销很大<ol>
+<li>nemu里面可以直接通过函数调用来获取DEBUG信息</li>
+<li>nemu和qemu可以相互映证</li>
+<li>直接用qemu可能会有一些坑</li>
+</ol>
+</li>
+<li>模拟器作为动态链接库连接到仿真程序</li>
+<li>处理器在指令完成时发出比对信息，<strong>当比对信息不一致时立刻报错</strong>并输出当前处理器状态</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>如何测试验证模块的正确性?</p>
+<ol>
+<li><p>设计对比实验，如果结果相同则认为正确</p>
+</li>
+<li><p>TLB中可以自行设计测例，来验证多种的功能</p>
+</li>
+<li><p>行为是否符合预期?</p>
+</li>
+<li><p>没有BUG的情况下，如果提升性能?</p>
+<ol>
+<li><p>微结构设计?。。</p>
+</li>
+<li><p>写一些比较小的模块/程序，观察一个请求究竟做了什么事情，做<strong>周期级别的时间分析</strong>（打日志）。定位性能倒退的原因。</p>
+</li>
+</ol>
+</li>
+<li><p>（参数化框架）配置的组合数很大，可能需要用到<strong>回归测试</strong>，遍历所有的系统模块的组合</p>
+</li>
+</ol>
+</li>
+<li><p>适配操作系统的过程中遇到哪些困难? 如何克服?</p>
+<ol>
+<li>流片前开发（六个系统软件/OS）<ol>
+<li>Nanas-lite：用户空间和内核空间共用同一个1GB空间，导致PTE覆盖</li>
+<li>FreeRTOS</li>
+<li>RT-thread：Idscript有ALIGN（4），4全部改成8跑通了</li>
+<li><strong>xv6</strong>：不刷TLB（qemu里面没有刷TLB的概念）此时fork的时候Copy on Write机制会出现问题，还有load的时候?<ol>
+<li>只有运行一些很小的程序才会高几率出现此BUG，大程序可能会把TLB刷下去</li>
+</ol>
+</li>
+<li>Linux kernel：编了一份SMP<ol>
+<li>运行的时候随机爆炸</li>
+<li>上周的多核linux刷TLB又重新弄了一下</li>
+<li>其他没有太多的坑</li>
+</ol>
+</li>
+<li>Debian：跨页的4字节指令</li>
+</ol>
+</li>
+<li>流片后测试<ol>
+<li>4字节flash读取会导致一些读写取指相关的错误</li>
+<li>XIP（eXecute In Place）：用flash取指执行，用sdram来读写数据<ol>
+<li>只适合“一个程序”<ol>
+<li>多个独立程序加载时会产生覆盖</li>
+<li>程序段之间有2MB的空洞，如果直接全部加载进来，很浪费（总共只有4MB的内存）</li>
+<li>因此将BBL和linux做成了一个程序</li>
+</ol>
+</li>
+<li>linux数据段默认按页对齐，但XIP要求存储连续<ol>
+<li>修改链接脚本，把所有数据段合并成一个<ol>
+<li>段间空洞改为段内空洞，对XIP透明化</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>内核识别到的内存大小为0<ol>
+<li>实际RAM地址超出了默认内存地址空间的范围（1GB的间隔）</li>
+<li>强行硬编码增加了1GB的空间。。</li>
+</ol>
+</li>
+<li>执行内核线程hello</li>
+<li>执行用户线程hello<ol>
+<li>由于前面设计的锅，sdram中不能直接执行代码，所以分页的时候对进程页面要拦截并进行手动地址映射设置到flash</li>
+<li>对flash读8字节，将ld指令魔改位lw的4字节指令</li>
+</ol>
+</li>
+<li><strong>vDSO</strong>（Virtual dynamic shared object）<ol>
+<li>一个映射到用户空间的so文件，可以在不陷入内核的情况下执行一些简单的系统调用</li>
+</ol>
+</li>
+<li>每次取指都需要从flash中取，需要成千上万个周期，变成了实际意义上的多周期</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="第三环节-经历"><a href="#第三环节-经历" class="headerlink" title="第三环节 经历"></a>第三环节 经历</h3><ol>
+<li>印象最深刻的bug<ol>
+<li>使用测试框架定位复杂BUG<ol>
+<li>模拟器和处理器的行为不太一样，33亿条指令时<strong>捕捉到错误</strong>。。。</li>
+<li><strong>边界测例</strong>：一条指令横跨了两个页面（前半和后半被分开，会产生PAgeFault）</li>
+<li>特殊的Page Fault需要在指令集手册上查找，需要往特定的寄存器中写入值</li>
+</ol>
+</li>
+<li>硬件引脚输出问题<ol>
+<li>换成显式的硬件逻辑，突然就跑通了</li>
+<li>对硬件手册信息（约定）的理解有错，“N”，低位全部接成了高位引脚</li>
+</ol>
+</li>
+<li>TLB取地址<ol>
+<li>TLB转换对了，但取出来的值不对</li>
+<li>看了4天log信息，在x86中打印流程</li>
+<li>最终师兄2小时找出，是x86的软件的一个BUG（没有刷TLB）</li>
+</ol>
+</li>
+<li>Cache（SRAM）黑盒爆炸<ol>
+<li>BUG不断修锅，然后不断出新BUG</li>
+</ol>
+</li>
+<li>去Cache中间层<ol>
+<li>整个核的行为发生很大变化</li>
+<li>握手信号初始化的小问题<ol>
+<li>但是性能显著降低</li>
+<li>分支预测器隐含的条件，去掉Cache后就不满足了</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>有没有坑过队友/被队友坑过?<ol>
+<li>主要还是硬件方面的事情</li>
+<li>Cache流水线（同时访问）有仲裁级相关的问题</li>
+</ol>
+</li>
+<li>和龙芯杯相比有什么不同?<ol>
+<li><strong>验证环境</strong>更好（极大提高DEBUG生产效率）</li>
+<li>代码质量需要一定的水平</li>
+</ol>
+</li>
+<li>第一次对项目进行可配置化, 感觉如何?<ol>
+<li>相比 verilog 好上很多了，要改的东西更少——敏捷开发（3周）</li>
+</ol>
+</li>
+<li>外设的验证工作有什么挑战?<ol>
+<li>多维度的复杂性：设备多样性、场景多样性、扩展多样性。</li>
+</ol>
+</li>
+<li>课堂上没讲过硬件填充的TLB, 你是如何实现正确的?<ol>
+<li>TLB实现需要满足实验手册的约定，但需要自己去实现</li>
+<li>从<strong>状态机</strong>开始，不断扩充、成型（有点搞科研的味道；不确定性）</li>
+</ol>
+</li>
+<li>Nextline预取器听上去很简单, 但你花了两个月才实现正确, 有什么坑?<ol>
+<li>功能：给一个地址，取这个地址+1</li>
+<li>最初实现预取器发现性能倒退：L1 Cache访问比较频繁，如果放到L1前面就会性能下降（每次预取器加倍消耗）。所以又采用了L2 Cache，放到了L2 Cahce的前面，</li>
+</ol>
+</li>
+</ol>
+<h3 id="第四环节-未来"><a href="#第四环节-未来" class="headerlink" title="第四环节 未来"></a>第四环节 未来</h3><ol>
+<li>一生一芯的经验对大家做毕设有什么帮助?<ol>
+<li>假设论证、心态。。</li>
+<li>坚持、走通一条路。</li>
+<li>quick and dirty麻雀原则：先弄出来，再疯狂改进。<ol>
+<li>对前景要有认识，要意识到后续工作的改进瓶颈</li>
+<li>保证良好的可扩展性</li>
+<li>第一次设计推倒重来很正常，多次之后前景逐渐明朗</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>对参加下一届一生一芯项目的学弟学妹有什么建议?<ol>
+<li>基础设施很重要<ol>
+<li>对linux的魔改都是现在nemu中运行<ol>
+<li>其它的硬件环境运行测试起来都很难</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>系统能力很重要<ol>
+<li>不要害怕犯错</li>
+<li>注重代码质量，commit水平，版本管理</li>
+<li>总揽全局，对整个项目有接口性把握</li>
+</ol>
+</li>
+<li>对下一届的期望?<ol>
+<li>看实力水平，改进或者从头来走一遍（试错）?</li>
+<li>水平不够，走一些弯路也是可以的?</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="zCore整体设计"><a href="#zCore整体设计" class="headerlink" title="zCore整体设计"></a>zCore整体设计</h2><p>前面讲的和以前的差不多。</p>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a><code>async</code></h3><p><code>async-await</code> 用同步风格编写异步代码。Rust的一个特性。</p>
+<ul>
+<li>本质：无栈<strong><font color=blue>协程</font></strong>（共享同一个栈，面向任务的轻量级线程），协作式调度（非抢占式）<ul>
+<li><strong><font color=red>语法糖</font></strong>。同步管理被封装透明化了，所以写法上与一般代码差不多。</li>
+<li>协程特点：共享栈，满足每个协程使用栈空间的最大用量（协程运行的中间状态），同时用少量的栈空间来保存每个协程的必要信息。</li>
+</ul>
+</li>
+<li>适用于高并发IO场景<ul>
+<li>可能必须解决响应时间的问题</li>
+</ul>
+</li>
+<li>主流编程语言均以支持：C#，C++，JavaScript，Python</li>
+<li>几乎没有在 bare-metal（裸机）中应用</li>
+</ul>
+<h3 id="工具链"><a href="#工具链" class="headerlink" title="工具链"></a>工具链</h3><ul>
+<li>代码质量控制：<code>cargo fmt</code>，<code>cargo clippy</code></li>
+<li>文档和单元测试：<code>cargo doc + cargo test + grcov</code>（<code>grcov</code> 计算测试覆盖率）<ul>
+<li>（TODO）性能测试：<code>cargo bench</code></li>
+</ul>
+</li>
+<li>carte 的拆分和发布流程：<code>cargo publish</code></li>
+<li>持续集成和自动测试：GitHub Actions</li>
+<li>社区合作开发：GitHub issue + PR</li>
+</ul>
+<hr>
+<p>突然想看看《<strong>设计模式</strong>》。</p>
+<h1 id="8月5日-RIOS实验室"><a href="#8月5日-RIOS实验室" class="headerlink" title="8月5日 RIOS实验室"></a>8月5日 RIOS实验室</h1><p>没想到之前关注的两个：一生一芯、RIOS都被邀请过来作报告。。tql。感觉就是这个活动很高端。</p>
+<p>好的，上午依然是自由活动的性质，所以没什么事。。</p>
+<hr>
+<p>我的博客网址出锅了，想办法看看能不能补救。HSTS策略是真的烦。</p>
+<hr>
+<p><a href="https://raw.githubusercontent.com/wiki/rcore-os/zCore/files/wrj-thesis.pdf。wrj的毕设论文写得确实很详细。" target="_blank" rel="noopener external nofollow noreferrer">https://raw.githubusercontent.com/wiki/rcore-os/zCore/files/wrj-thesis.pdf。wrj的毕设论文写得确实很详细。</a></p>
+<p><a href="https://raw.githubusercontent.com/wiki/rcore-os/zCore/files/pql-thesis.pdf。" target="_blank" rel="noopener external nofollow noreferrer">https://raw.githubusercontent.com/wiki/rcore-os/zCore/files/pql-thesis.pdf。</a></p>
+<p>先把这两个毕设看一看好了。</p>
+<hr>
+<p>TBSI来咯。hhh</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211208300.png" class="" title="image-20200809211208300">
+<h2 id="RIOS实验室研讨会"><a href="#RIOS实验室研讨会" class="headerlink" title="RIOS实验室研讨会"></a>RIOS实验室研讨会</h2><p><strong>RIOS实验室研讨会</strong>。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211157289.png" class="" title="image-20200809211157289">
+<hr>
+<p>张林老师有信息论的MOOC，貌似以前是TBSI的院长。 <del>然而信息论我都还没看完</del>，我太菜辣。</p>
+<p>一开始基本还是一些RISC-V的背景介绍。没啥新鲜的。在经济上和政治上都有一定优势。</p>
+<p>PicoRio：超低成本，成熟的社区。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211427899.png" class="" title="image-20200809211427899">
+<p>TBSI 谭老师的口语实在是有点泛英语化。。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211249364.png" class="" title="image-20200809211249364">
+<hr>
+<p>现在PicoRio有开源地址吗?或者在哪里可以了解到最新进展呢?</p>
+<blockquote>
+<p>目前还没有正式地发布，文档还在慢慢更新。秋季?</p>
+<p>从专门网站上找documentation。</p>
+<p>PicoRio似乎不想用BSD许可证，然后再设计一个license?但是出发点是保护社区。</p>
+</blockquote>
+<p>其它的事情不太了解也不是很感兴趣。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211228265.png" class="" title="image-20200809211228265">
+<h2 id="Sipeed矽速工程师交流会"><a href="#Sipeed矽速工程师交流会" class="headerlink" title="Sipeed矽速工程师交流会"></a>Sipeed矽速工程师交流会</h2><p>听说K210板子是从他们那批发的。。</p>
+<p>矽速科技官网：<a href="https://www.sipeed.com" target="_blank" rel="noopener external nofollow noreferrer">https://www.sipeed.com</a></p>
+<hr>
+<p><a href="https://cn.maixpy.sipeed.com/zh/" target="_blank" rel="noopener external nofollow noreferrer">MaixPy</a>：使用简单的Micropython语法在AI芯片上快速实现有趣的功能的SDK。</p>
+<blockquote>
+<p>SDK组成：</p>
+<ul>
+<li>CMake + Kconfig<ul>
+<li>CMake：自动寻找cmake文件，导入各个模块并注册</li>
+<li>Kconfig：进行组件配置的选择，并生成config文件</li>
+</ul>
+</li>
+<li>组件（驱动、micropython、模块）</li>
+<li>工程（project.py）</li>
+</ul>
+<p>视觉、多媒体、机器流水线、人脸识别……、</p>
+<p>Micropython语法：</p>
+<ul>
+<li>用户代码精简，易于上手，成本低（几十块钱的开发板）</li>
+<li>面向对象语法，封装性好，开发速度高</li>
+<li>解释型语言，快速验证</li>
+</ul>
+</blockquote>
+<p>Micropython语法是从语法上与python不同，还是只是可以调用你们写的一些库函数?</p>
+<blockquote>
+<p>Micropython其实就是一个解释器，大部分时候与python语法上是兼容的。</p>
+</blockquote>
+<p><strong>AI 模型</strong>：</p>
+<p>K210搭载了 AI 芯片吗? 它在什么方向上做了优化，和传统的芯片的不同在哪?</p>
+<blockquote>
+<p>AI芯片就是一个可以部署和运行模型的芯片而已。</p>
+</blockquote>
+<p>所有的算法模型都是提前训练好的? K210 本身支持训练吗?</p>
+<blockquote>
+<p>对。一般要在电脑上训练。</p>
+</blockquote>
+<p>KPU 是什么? 和CPU和GPU有什么不同?</p>
+<blockquote>
+<p>针对的应用场景不同，KPU支持的是通用运算。GPU专门处理图形处理方面的运算。</p>
+<p>KPU的K只是一个命名。KPU实现了GPU功能的一些子集。</p>
+</blockquote>
+<p>模型压缩的方法?</p>
+<blockquote>
+<p>浮点运算精度调低。用一些软件工具来压缩?</p>
+</blockquote>
+<p><strong>MaixPy常见难点</strong>：</p>
+<p>GC（垃圾回收）：GC分配的内存需要标记，内存不足的时候自动回收</p>
+<p>对齐错误：指针、内存、地址对齐的问题</p>
+<p>MaixPy TODO：</p>
+<ul>
+<li>LPU Flash run，PSRAM run：目前只支持6M的模型，如果可以存储到flash里面，需要的时候再读取，就很好</li>
+<li>MaixUI：简单轻量化，减少内存消耗</li>
+<li>MaixHub：分享训练好的模型的Hub网站</li>
+<li>IDE：。。。</li>
+<li>MaixPy on Linux：</li>
+</ul>
+<hr>
+<p>JTAG（Joint Test Action Group，联合测试工作组）。</p>
+<p>一个硬件集成式的调试工具。提供了一系列接口来调试开发板。</p>
+<p>JTAG提供了图形界面化的IDE。</p>
+<h1 id="8月6日-论文研读"><a href="#8月6日-论文研读" class="headerlink" title="8月6日 论文研读"></a>8月6日 论文研读</h1><p>今天主要看rCore和zCore的本科毕业设计论文。</p>
+<p>Rust 的零成本开销抽象意味着，抽象的<strong>运行开销</strong>为0；如果的确要在运行时使用该抽象，也可以保证运行开销最小。</p>
+<hr>
+<p><strong>文档讨论会</strong>。</p>
+<hr>
+<p>可能需要从头开始搭一遍 zCore。（<strong>复现</strong> / <strong>拆解</strong>?）</p>
+<p>然后老师又说把每一部分的代码进行分析。</p>
+<blockquote>
+<p>自己先理解自己的代码部分。</p>
+<p>主线还是需要变化。</p>
+</blockquote>
+<p>操作系统 DEBUG 门槛/难度怎么改变?</p>
+<blockquote>
+<p>有点难度。</p>
+</blockquote>
+<hr>
+<p><strong>华为 openEuler 研讨会</strong>。</p>
+<hr>
+<p>Email：guanyanjie AT huawei.com</p>
+<p>华为基于服务器linux发行版，开源在码云上的一个共享社区。</p>
+<p>网址：openeuler.org。</p>
+<blockquote>
+<p>openEuler是一个开源、免费的Linux发行版平台，将通过开放的社区形式与全球的开发者共同构建一个开放、多元和架构包容的软件生态体系。同时，openEuler也是一个创新的平台，鼓励任何人在该平台上提出新想法、开拓新思路、实践新方案。</p>
+</blockquote>
+<p>openEuler 是为了让华为的芯片（麒麟、鲲鹏……）出厂即可以有配套的开源发行版。建立 openEuler 社区，使能ARM生态，让世界有第二选择。</p>
+<p>全软件堆栈的技术优化，打造高性能、高可靠、高安全、易用的操作系统。</p>
+<hr>
+<p>完全回到了原来的一个状态，自选一个项目：继续写tutorial，或者写代码的测试文档。</p>
+<hr>
+<p><strong>RVM晚间研讨会</strong>。</p>
+<hr>
+<p>Hypervisor： Virtual Machine Monitor（VMM）</p>
+<p>RVM： Rcore Virtual Machine。基于 RVM 实现了 rCore/zCore 的 hypervisor。</p>
+<p>不是很感兴趣。全是实现细节。</p>
+<p>zCore虚拟化的更多工作：</p>
+<ul>
+<li>完善RVM，完成更多的测试（24/28）</li>
+<li>RVM从rCore中独立出来，但有些部分还没搞好</li>
+<li>跑在其它真实的环境中，目前只支持 intel 的 x86</li>
+</ul>
+<hr>
+<p><strong>zCore 内核对象及系统调用</strong>。</p>
+<hr>
+<p>Zircon微内核是Fuchsia的最底层。</p>
+<ul>
+<li>实用主义微内核</li>
+<li>使用 C++ 实现，支持 x86_64 和 ARM64</li>
+<li>面向对象（微内核的传统习惯）：将功能划分到内核对象</li>
+<li>默认隔离：使用 Capability 进行权限管理</li>
+<li>安全考量：强制地址随机化（zCore还没实现），使用 vDSO 隔离系统调用</li>
+</ul>
+<p>所有的东西都可以称为内核对象。</p>
+<ul>
+<li>任务：Job, …</li>
+<li>内存：VMAR, …</li>
+<li>IPC： Channel, …</li>
+<li>信号：Event, …</li>
+<li>驱动：Resource, ….</li>
+</ul>
+<hr>
+<p>Object：</p>
+<ul>
+<li>Object：内核对象</li>
+<li>Rights：对象访问权限</li>
+<li>Handle = Object + Rights：对象句柄（类似 fd）</li>
+</ul>
+<p>IPC：</p>
+<ul>
+<li>Channel：进程间通信基础设施，可以传递数据和handle</li>
+<li>FIFO：报文数据传输</li>
+<li>Socket：流数据传输</li>
+</ul>
+<p>Tasks：</p>
+<ul>
+<li>Job：作业，负责控制权限（类似容器）</li>
+<li>Process：进程，负责管理资源</li>
+<li>Thread：线程，负责调度执行</li>
+</ul>
+<p>一个作业可能有多个进程，一个进程可能有多个线程。进程之间没有父子关系。</p>
+<p>Memory：</p>
+<ul>
+<li>VMO（Virtual Memory Object）<ul>
+<li>Paged：分页物理内存，支持写时复制</li>
+<li>Physical：连续物理内存</li>
+</ul>
+</li>
+<li>VMAR（Virtual Memory Address Region）<ul>
+<li>代表一个进程的虚拟地址空间</li>
+<li>树状结构</li>
+</ul>
+</li>
+<li>Pager：用户态分页机制</li>
+</ul>
+<p>Signaling and Waiting：每个 Object 有 32 个信号位，用户程序可以阻塞等待。</p>
+<ul>
+<li>Event（pair）：事件源/对</li>
+<li>Timer：计时器</li>
+<li>Futex：用户态同步互斥机制（快速）</li>
+<li>Port：事件分发机制（类似epoll）</li>
+</ul>
+<hr>
+<p><strong>zCore硬件移植和驱动开发</strong>。</p>
+<hr>
+<p>UEFI（Unified Extensible Firmware Interface）：增强版 BIOS。类似 Open SBI。</p>
+<ul>
+<li>省去了从古老的实模式进入现代长模式的汇编代码</li>
+<li>丰富的外设驱动支持，快速输入输出</li>
+<li>Rust UEFI 开发环境方便易用（<code>uefi-rs</code> 库）</li>
+</ul>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809211634649.png" class="" title="image-20200809211634649">
+<h1 id="8月8日"><a href="#8月8日" class="headerlink" title="8月8日"></a>8月8日</h1><img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212300425.png" class="" title="image-20200809212300425">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212241585.png" class="" title="image-20200809212241585">
+<p>今天到海南转机，结果航班取消了。被迫在海南呆了半天。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212201438.png" class="" title="image-20200809212201438">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212224773.png" class="" title="image-20200809212224773">
+<p>居然看到了椰树椰汁的厂子。。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212005022.png" class="" title="image-20200809212005022">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212027412.png" class="" title="image-20200809212027412">
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212356319.png" class="" title="image-20200809212356319">
+<p>海南唯一的一家呷哺呷哺。。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212319866.png" class="" title="image-20200809212319866">
+<p>买了晚上的经济舱，结果被升成头等舱了。。</p>
+<img data-src="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/image-20200809212406124.png" class="" title="image-20200809212406124">
+<hr>
+<p>一系列际遇之后到家。完结。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/" title="南国行记">https://stellarkey.github.io/南国行记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/" rel="prev" title="912内容学习计划">
+      <i class="fa fa-chevron-left"></i> 912内容学习计划
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9D%99%E6%80%81%E6%B2%B8%E8%85%BE/" rel="next" title="静态沸腾">
+      静态沸腾 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#8月2日-向南"><span class="nav-number">1.</span> <span class="nav-text">8月2日 向南</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8月3日-实验室"><span class="nav-number">2.</span> <span class="nav-text">8月3日 实验室</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8月4日-一生一芯"><span class="nav-number">3.</span> <span class="nav-text">8月4日 一生一芯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#国科大本科毕设研讨会——“一生一芯”项目访谈"><span class="nav-number">3.1.</span> <span class="nav-text">国科大本科毕设研讨会——“一生一芯”项目访谈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一环节-介绍"><span class="nav-number">3.1.1.</span> <span class="nav-text">第一环节 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二环节-开发"><span class="nav-number">3.1.2.</span> <span class="nav-text">第二环节 开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三环节-经历"><span class="nav-number">3.1.3.</span> <span class="nav-text">第三环节 经历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四环节-未来"><span class="nav-number">3.1.4.</span> <span class="nav-text">第四环节 未来</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zCore整体设计"><span class="nav-number">3.2.</span> <span class="nav-text">zCore整体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async"><span class="nav-number">3.2.1.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具链"><span class="nav-number">3.2.2.</span> <span class="nav-text">工具链</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8月5日-RIOS实验室"><span class="nav-number">4.</span> <span class="nav-text">8月5日 RIOS实验室</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RIOS实验室研讨会"><span class="nav-number">4.1.</span> <span class="nav-text">RIOS实验室研讨会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sipeed矽速工程师交流会"><span class="nav-number">4.2.</span> <span class="nav-text">Sipeed矽速工程师交流会</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8月6日-论文研读"><span class="nav-number">5.</span> <span class="nav-text">8月6日 论文研读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8月8日"><span class="nav-number">6.</span> <span class="nav-text">8月8日</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

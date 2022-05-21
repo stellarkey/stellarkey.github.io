@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="了解人工智能技术的基本内容 现有领域中如何应用（非常规的实现，如数据的深度挖掘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能小讲座简述">
+<meta property="og:url" content="https://stellarkey.github.io/Intro-to-AI-Lecture/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="了解人工智能技术的基本内容 现有领域中如何应用（非常规的实现，如数据的深度挖掘）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/Syyp1b9.png">
+<meta property="og:image" content="https://i.imgur.com/VOW2Qwm.png">
+<meta property="article:published_time" content="2018-12-29T01:07:41.000Z">
+<meta property="article:modified_time" content="2021-01-04T14:40:29.647Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Syyp1b9.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/Intro-to-AI-Lecture/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>人工智能小讲座简述 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/Intro-to-AI-Lecture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          人工智能小讲座简述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>了解人工智能技术的基本内容</li>
+<li>现有领域中如何应用（非常规的实现，如数据的深度挖掘）<a id="more"></a></li>
+<li>共同构建在产品设计、制造优化中的应用</li>
+</ul>
+<h1 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h1><ul>
+<li>决策【增强学习】<ul>
+<li>算法辅助人工决策<ul>
+<li>机器学习+专家系统螺旋式上升</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>知识【知识图谱、贝叶斯网络】<ul>
+<li>推断预测，分析归因<ul>
+<li>多维优化，数据可视化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>信息【自然语言处理】<ul>
+<li>机器阅读文本<ul>
+<li>异常识别</li>
+<li>利用NLP从资讯生成投资报告</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据【机器学习、深度学习】<ul>
+<li>辅助发现关联性（非结构化数据）</li>
+<li>时间序列的模式匹配</li>
+<li>阿里公安大脑（POI的现实版）</li>
+</ul>
+</li>
+<li>物联网【卷积神经网络】<ul>
+<li>混沌效应（关键物体）</li>
+<li>感知智能</li>
+</ul>
+</li>
+</ul>
+<p>More： 游戏AI，个性化3D服装匹配$\longrightarrow$个性化服饰推荐系统，医学辅助诊断，监督学习式AI教育……</p>
+<h1 id="范畴简述"><a href="#范畴简述" class="headerlink" title="范畴简述"></a>范畴简述</h1><ul>
+<li>AI<ul>
+<li>符号主义$\longrightarrow$专家系统$\longrightarrow$知识图谱（保真联想）$\longrightarrow$认知智能$\longrightarrow$感知智能【视听味触嗅等】（潜联想）</li>
+</ul>
+</li>
+<li>软件开发<ul>
+<li>面向对象（初等联想，基础实界生成）</li>
+</ul>
+</li>
+<li>数学$\longleftarrow$物理（宏观、微观）<ul>
+<li>方差$\longrightarrow$贝叶斯$\longrightarrow$马尔可夫（局部性假设）</li>
+</ul>
+</li>
+<li>哲学<ul>
+<li>毕达哥拉斯（数化）$\longrightarrow$苏格拉底$\longrightarrow$柏拉图$\longrightarrow$亚里士多德（形式逻辑）【演绎，保真】</li>
+<li>中式思维【辩证，不定联想】</li>
+</ul>
+</li>
+<li>历史blablablabla……</li>
+<li>佛学<ul>
+<li>空，<code>0</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><ul>
+<li>状态优化【节点图】<ul>
+<li>过程优化</li>
+<li>布局优化</li>
+</ul>
+</li>
+<li>异常检测、预测运维<ul>
+<li>基于分类</li>
+<li>基于预测<ul>
+<li><strong><a href="https://zh.wikipedia.org/zh-hans/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8" target="_blank" rel="noopener external nofollow noreferrer">朴素贝叶斯</a></strong>？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>计算机视觉<ul>
+<li>空间测量</li>
+<li>空间建模</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>多任务的资源最优选择。</p>
+<ul>
+<li>任务$\longrightarrow$画像$\longrightarrow$搜索$\longleftrightarrow$布局$\longleftarrow$模板$\longleftarrow$元素。</li>
+</ul>
+<h1 id="AI赋能企业"><a href="#AI赋能企业" class="headerlink" title="AI赋能企业"></a>AI赋能企业</h1><h2 id="爱智慧简介"><a href="#爱智慧简介" class="headerlink" title="爱智慧简介"></a>爱智慧简介</h2><ul>
+<li>华为$\longrightarrow$爱智慧，金融$\longrightarrow$多行业化</li>
+<li>专注人工智能（计算机、数学）</li>
+<li>深圳市高新技术企业</li>
+</ul>
+<p>人工智能：</p>
+<ul>
+<li>感知（商汤、科大讯飞……）</li>
+<li><strong>认知</strong></li>
+<li>自动驾驶</li>
+</ul>
+<p><strong>——————统一框架——————</strong></p>
+<p><img data-src="https://i.imgur.com/Syyp1b9.png" alt="统一框架"></p>
+<h1 id="具体算法"><a href="#具体算法" class="headerlink" title="具体算法"></a>具体算法</h1><h2 id="Pareto优化"><a href="#Pareto优化" class="headerlink" title="Pareto优化"></a>Pareto优化</h2><p>多目标优化。</p>
+<p>背景：九家物流供应链巨头成立合资公司，需要兼顾九家股东利益。</p>
+<ul>
+<li>海外工厂、仓储，清关，国内工厂、仓储，零售，消费者。</li>
+</ul>
+<p>使用<a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E7%B4%AF%E6%89%98%E6%9C%80%E4%BC%98" target="_blank" rel="noopener external nofollow noreferrer"><strong>帕累托最优</strong></a>。（<strong>资源分配</strong>的一个最基本要求；提高效率）</p>
+<ul>
+<li><p><font color=red><strong>资源分配可视作一个市场</strong></font>（资源：人、资金、货物……）</p>
+</li>
+<li><p>设置多个<strong>目标函数</strong>（九家公司的利益，min、max、不等式……）</p>
+<p>确定多个<strong>约束函数</strong>（一些参数关联，系统中固有的等式、不等式……） </p>
+</li>
+<li><p>在约束一定的情况下，找到一个状态，在这种状态下，增加任何一个目标，都会造成其它目标的损失</p>
+<p>（ 帕累托改进：通过改变而使得某一方的福利提高，而没有任何其他一方的福利受损。）</p>
+</li>
+<li><p>充分利用遗传算法</p>
+</li>
+</ul>
+<hr>
+<p><strong>金融领域的应用</strong></p>
+<p>基金收益率排序：按目标函数（区间收益率）排序$N$</p>
+<p>影响因素排序：根据多因子，生成多个排序序列$S_i$</p>
+<p>——计算序列相似度，选择出最相关、最重要的因子。</p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/zh-hans/PageRank" target="_blank" rel="noopener external nofollow noreferrer">粗糙集</a>将股票间的优劣关系通过每只股票的Si的优势类[Si]体现出来。</p>
+</blockquote>
+<hr>
+<p>利用相关性的离散排序：实质就是搜索算法的<a href="https://zh.wikipedia.org/zh-hans/PageRank" target="_blank" rel="noopener external nofollow noreferrer">PageRank</a>（TF-IDF指标）</p>
+<h2 id="GP算法"><a href="#GP算法" class="headerlink" title="GP算法"></a>GP算法</h2><p><strong>基于单类分类<a href="https://zhuanlan.zhihu.com/p/27555501" target="_blank" rel="noopener external nofollow noreferrer">高斯过程</a>（密度）异常序列检测OCC_GP</strong>。</p>
+<p><strong>目标</strong>：尽可能早地发现数据流的异常$\longrightarrow$尽可能早地预警。</p>
+<p><strong>难度</strong>：</p>
+<ul>
+<li>高维度，<font color=red><strong>小样本</strong></font><ul>
+<li>软件工程，程序调试能力（边界情况的预测）</li>
+</ul>
+</li>
+<li>异常类的样本常常很难获取，缺少负例（失败）样本</li>
+<li>自适应？</li>
+<li>如何利用专业的领域故障分析能力<strong>解释</strong>结果？</li>
+</ul>
+<p>核心：【优化函数】基于4种高斯和函数。（混合高斯：就是叠加的正态函数）</p>
+<ul>
+<li>本质：函数变量f的任意组合，服从均值为0的高斯联合分布$p(f|X)=N(o,K)$。</li>
+</ul>
+<p>高斯过程GP算法【<strong>分类</strong>】：</p>
+<ul>
+<li>高斯过程即正态随机过程，具有灵活的非参数特性，对预测结果进行有效估计。</li>
+<li>基于贝叶斯方法和训练数据来求出高斯和函数的参数（参数估计，同时利用EM算法迭代优化）。</li>
+<li><strong>先验传递</strong>（转移）</li>
+</ul>
+<hr>
+<p>思路：（如图）</p>
+<p><img data-src="https://i.imgur.com/VOW2Qwm.png" alt="时序异常检测"></p>
+<ul>
+<li>参数离散化，构建样本空间</li>
+<li>绘制<strong>时序参数包络线</strong></li>
+<li>分析异常</li>
+</ul>
+<p>一些小问题：</p>
+<ul>
+<li>值的归一化（逻辑回归）$\longrightarrow$导向分类问题</li>
+<li>包络线与时间序列位置相关，可能要利用（隐马尔可夫建模，以及<strong>模式识别</strong>的定位）</li>
+<li>如何度量不确定性（检测的粗糙度）</li>
+</ul>
+<hr>
+<p>发射任务：</p>
+<ul>
+<li>恒定路线预测</li>
+<li>多路径预测</li>
+</ul>
+<h2 id="HTM算法"><a href="#HTM算法" class="headerlink" title="HTM算法"></a>HTM算法</h2><p><a href="https://numenta.org/resources/HTM_CorticalLearningAlgorithms_chn.pdf" target="_blank" rel="noopener external nofollow noreferrer">层级时序存储器算法</a>（Hierarchical Temporal Memory，HTM），皮质算法。</p>
+<ul>
+<li>模拟人体大脑新皮质层（noecortex）</li>
+<li>时空<strong>数据流</strong>建模</li>
+<li>持续学习（Online）幵依赖于储存的大量模式序列</li>
+<li>自调节$\longrightarrow$（新常态？）</li>
+<li>主要是检测<strong>波动式异常</strong></li>
+</ul>
+<p>长期序列高斯分布（基准函数），短期序列高斯分布（异常检测函数）。</p>
+<ul>
+<li>若检测到短期异常，还需要<strong>验证</strong>假阳性</li>
+<li>需要调参：短期窗口大小的选择（颗粒度）</li>
+</ul>
+<h3 id="分布序列预测"><a href="#分布序列预测" class="headerlink" title="分布序列预测"></a>分布序列预测</h3><p>多个分支序列（映射到布隆过滤器？）。</p>
+<ul>
+<li>设置多个分支的<strong>误差函数</strong>（如方差），如果方差过高就异常。</li>
+<li>也可以计算两个序列的<strong>联合概率</strong>异常加权得分。</li>
+<li>多个联合相关性模型（<strong>短期异常压缩</strong>）【高斯协方差核函数】<ul>
+<li>合并在时间上接近但不完全一致的分支异常</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>相似模式识别</strong>？（比如，设置一个短期窗口的<a href="https://blog.csdn.net/Androidlushangderen/article/details/47134393" target="_blank" rel="noopener external nofollow noreferrer">相似哈希</a>队列）</p>
+<ul>
+<li>一个混合的序列可能还需要<strong>基函数分解</strong>（如，Fourier解析。需要专业知识，必须要知道基函数）</li>
+</ul>
+<p>（<font color=red><strong>领域知识的应用</strong></font>）</p>
+<hr>
+<p>两类任务：</p>
+<ul>
+<li>时序$\longrightarrow$匹配、预测</li>
+<li>平面数据（不带时序）$\longrightarrow$数据应用</li>
+</ul>
+<h2 id="模拟退火算法"><a href="#模拟退火算法" class="headerlink" title="模拟退火算法"></a><a href="https://zh.wikipedia.org/zh-hans/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB" target="_blank" rel="noopener external nofollow noreferrer">模拟退火算法</a></h2><p>（嵌套多约束条1件。）</p>
+<p>数学模型：玻尔兹曼目标函数</p>
+<script type="math/tex; mode=display">
+f(\phi)=e^{\beta C(\phi)},\phi为状态空间，C为成本约束函数，\beta为退火温度控制参数</script><p>使用<a href="http://www.picb.ac.cn/~xiaohang/vimwiki/study/course/pattern_recognition/courses/10/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E6%B3%95.pdf" target="_blank" rel="noopener external nofollow noreferrer">Metropolis接受准则</a>。</p>
+<script type="math/tex; mode=display">
+p= \begin{cases} 1, & \text {if 温度高于临界温度} \\ exp (\frac{E(n-1)-E(n)}{T}), & \text{if 温度低于临界温度} \end{cases}</script><blockquote>
+<p>例如：C指代了多个约束——6个约束函数。设计总成本函数。</p>
+</blockquote>
+<h2 id="知识图谱-思维导图"><a href="#知识图谱-思维导图" class="headerlink" title="知识图谱/思维导图"></a>知识图谱/思维导图</h2><p>即（一阶）联想图。</p>
+<blockquote>
+<p>树结构？最常用。</p>
+<ul>
+<li>降低新知识的搜索深度</li>
+<li>保留全面性</li>
+</ul>
+<p>对于非层次的复杂联想图，知识图谱的表达能力相当有限。（SPARQL）</p>
+<ul>
+<li>只保留核心联想（保真联想）</li>
+</ul>
+</blockquote>
+<p>现在没有一个有效的算法来生成<strong>联想</strong>。</p>
+<blockquote>
+<p>当前知识图谱中所有的联想必须人工生成。</p>
+</blockquote>
+<p>但可以基于给定的幻想生成元和一定数量的联想规则，利用NLP基于文献快速生成知识图谱。</p>
+<h3 id="机器学习算法分类系统"><a href="#机器学习算法分类系统" class="headerlink" title="机器学习算法分类系统"></a>机器学习算法分类系统</h3><p>可采用知识图谱+四象限法。</p>
+<ul>
+<li>无监督学习<ul>
+<li>聚类<ul>
+<li>k-means<ul>
+<li>图割</li>
+</ul>
+</li>
+<li>SVM（<a href="https://blog.csdn.net/v_JULY_v/article/details/7624837" target="_blank" rel="noopener external nofollow noreferrer">支持向量机</a>）</li>
+</ul>
+</li>
+<li>降维</li>
+</ul>
+</li>
+<li>监督学习<ul>
+<li>分类</li>
+<li>回归</li>
+</ul>
+</li>
+</ul>
+<h2 id="视觉算法"><a href="#视觉算法" class="headerlink" title="视觉算法"></a>视觉算法</h2><h3 id="单孔相机成像原理"><a href="#单孔相机成像原理" class="headerlink" title="单孔相机成像原理"></a>单孔相机成像原理</h3><p>成像坐标系映射：</p>
+<ul>
+<li>图像物理坐标系$\longrightarrow$像素坐标系$\longrightarrow$相机坐标系$\longrightarrow$世界坐标系。</li>
+</ul>
+<p>考虑因素：径向畸变和切向畸变。</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>测量身体尺寸（$&lt;1cm$）。（采用低成本紧身衣表面印制编码图【特征点】，利用计算机视觉<strong>还原立体</strong>尺寸，利用人体测量学，样条插值，最小二乘法，初期校正系统……）</p>
+<p>数字孪生：游戏<a href="https://zh.wikipedia.org/zh-hans/%E5%8A%A8%E4%BD%9C%E6%8D%95%E6%8D%89" target="_blank" rel="noopener external nofollow noreferrer">动态捕捉技术</a>？</p>
+<hr>
+<p>以上。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/Intro-to-AI-Lecture/" title="人工智能小讲座简述">https://stellarkey.github.io/Intro-to-AI-Lecture/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i> AI</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Beauty-of-Mathmatics/" rel="prev" title="阅《数学之美》">
+      <i class="fa fa-chevron-left"></i> 阅《数学之美》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/" rel="next" title="深度学习 by Andrew Ng.">
+      深度学习 by Andrew Ng. <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识图谱"><span class="nav-number">1.</span> <span class="nav-text">知识图谱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#范畴简述"><span class="nav-number">2.</span> <span class="nav-text">范畴简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用场景"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AI赋能企业"><span class="nav-number">4.</span> <span class="nav-text">AI赋能企业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#爱智慧简介"><span class="nav-number">4.1.</span> <span class="nav-text">爱智慧简介</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体算法"><span class="nav-number">5.</span> <span class="nav-text">具体算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pareto优化"><span class="nav-number">5.1.</span> <span class="nav-text">Pareto优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GP算法"><span class="nav-number">5.2.</span> <span class="nav-text">GP算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTM算法"><span class="nav-number">5.3.</span> <span class="nav-text">HTM算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布序列预测"><span class="nav-number">5.3.1.</span> <span class="nav-text">分布序列预测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟退火算法"><span class="nav-number">5.4.</span> <span class="nav-text">模拟退火算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识图谱-思维导图"><span class="nav-number">5.5.</span> <span class="nav-text">知识图谱&#x2F;思维导图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习算法分类系统"><span class="nav-number">5.5.1.</span> <span class="nav-text">机器学习算法分类系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视觉算法"><span class="nav-number">5.6.</span> <span class="nav-text">视觉算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单孔相机成像原理"><span class="nav-number">5.6.1.</span> <span class="nav-text">单孔相机成像原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">5.6.2.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/Intro-to-AI-Lecture/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

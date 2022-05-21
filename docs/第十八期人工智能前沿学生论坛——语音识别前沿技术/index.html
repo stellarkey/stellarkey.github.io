@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 人工智能前沿学生论坛  主办。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十八期人工智能前沿学生论坛——语音识别前沿技术">
+<meta property="og:url" content="https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 人工智能前沿学生论坛  主办。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-01-20T07:17:26.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:18:38.592Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="语音识别">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>第十八期人工智能前沿学生论坛——语音识别前沿技术 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第十八期人工智能前沿学生论坛——语音识别前沿技术
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/View/" itemprop="url" rel="index"><span itemprop="name">View</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>近年来智能语音进入了快速增长期，语音识别作为语音领域的重要分支获得了广泛的关注，如何提高声学建模能力和如何进行端到端的联合优化是语音识别领域中的重要课题。活动由 <a href="https://mustedu.cn/Hd/" target="_blank" rel="noopener external nofollow noreferrer">人工智能前沿学生论坛 </a> 主办。<a id="more"></a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><strong><a href="./Exploring Neural Transducers for End-to-End Speech Recognition.pdf">Exploring Neural Transducers for End-to-End Speech Recognition</a></strong></p>
+<p><strong><a href="./Query-by-example keyword spotting using long short-term memory networks.pdf">Query-by-example keyword spotting using long short-term memory networks</a></strong></p>
+<p><strong><a href="./Lattice Indexing for Spoken Term Detection.pdf">Lattice Indexing for Spoken Term Detection</a></strong></p>
+<p><strong><a href="./Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer.pdf">Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer</a></strong></p>
+<h1 id="语音关键词检测方法综述"><a href="#语音关键词检测方法综述" class="headerlink" title="语音关键词检测方法综述"></a>语音关键词检测方法综述</h1><blockquote>
+<p><a href="./A Survey on KWS.pdf">PPT</a>。</p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>随着智能音箱、语音助手等应用的出现，普通人也可以像科幻场景一样使用语音与机器进行交流。语音关键词检测是实现人机语音交互的重要技术，被广泛地应用于各类智能设备、语音检索系统当中。语音关键词检测可以分成两种，一种是用于设备唤醒、设备控制keyword spotting；一种是应用于语音文档检索的spoken term detection，二者虽然名字类似，但从功能侧重和技术路线上都有所区别。本次分享介绍语音关键词检测的主要方法与最新进展。</p>
+<h2 id="语音关键词检测介绍"><a href="#语音关键词检测介绍" class="headerlink" title="语音关键词检测介绍"></a>语音关键词检测介绍</h2><p>一个语音的小方向。A survey on keyword spotting.（keyword search, spoken term detection）</p>
+<p>主流：语音识别、增强。关键词检测技术正在变得重要。</p>
+<p>从一段连续语音中检测关键词。（异常检测？）</p>
+<p><strong>Ex</strong>.</p>
+<blockquote>
+<p>语音智能设备：<strong>唤醒词</strong>识别。</p>
+<ul>
+<li>关键词，厂家指定</li>
+<li>低内存</li>
+<li>低计算</li>
+<li>低功耗</li>
+</ul>
+<p><strong>语音检索</strong>keuword search（在长篇audio中检测，利用keyword截取关键信息片段）。</p>
+<ul>
+<li>可变化</li>
+<li>长文本定位</li>
+<li>超出词汇？（OOV，out of vocabulary），新知识往往指向新词汇，棘手</li>
+</ul>
+</blockquote>
+<h2 id="基于HMM的语音关键词检测"><a href="#基于HMM的语音关键词检测" class="headerlink" title="基于HMM的语音关键词检测"></a>基于HMM的语音关键词检测</h2><p><strong><a href="./Exploring Neural Transducers for End-to-End Speech Recognition.pdf">Exploring Neural Transducers for End-to-End Speech Recognition</a></strong></p>
+<blockquote>
+<p>In this work, we perform an empirical comparison among the CTC, RNN-Transducer, and attention-based Seq2Seq models for end-to-end speech recognition. We show that, without any language model, Seq2Seq and RNN-Transducer models both outperform the best reported CTC models with a language model, on the popular Hub5’00 benchmark. On our internal diverse dataset, these trends continue - RNN Transducer models rescored with a language model after beam search outperform our best CTC models. These results simplify the speech recognition pipeline so that decoding can now be expressed purely as neural network operations. We also study how the choice of encoder architecture affects the performance of the three models - when all encoder layers are forward only, and when encoders downsample the input representation aggressively.</p>
+</blockquote>
+<p><strong>Filler Models</strong>：逐帧的<strong>序列标注</strong>问题。非关键词称为garbage段，对非关键词和关键词段进行分别建模。</p>
+<p>1989年，对每一个关键词建立一个HMM。（基于Filler model）</p>
+<p>其概率模型可以利用GMMs or DNNs建模。</p>
+<p>HMM based：</p>
+<blockquote>
+<p>2017，HMM示意图。对于每一个音素进行声学建模。（解码，手工设计）</p>
+<p>类似于KMM算法。图灵自动机？</p>
+</blockquote>
+<p>DNN based：</p>
+<blockquote>
+<p>连续语音分为窗口，利用神经网络进行分类。（预测片段是关键词的概率）</p>
+<p>可能还需要平滑处理。</p>
+<p>无须HMM的解码（动态规划）。</p>
+<p>难度：<strong>很难找到现存的语料</strong>。</p>
+<p>2014</p>
+</blockquote>
+<h2 id="基于Sample查询的语音关键词检测（QBE）"><a href="#基于Sample查询的语音关键词检测（QBE）" class="headerlink" title="基于Sample查询的语音关键词检测（QBE）"></a>基于Sample查询的语音关键词检测（QBE）</h2><p><strong><a href="./Query-by-example keyword spotting using long short-term memory networks.pdf">Query-by-example keyword spotting using long short-term memory networks</a></strong></p>
+<blockquote>
+<p>We present a novel approach to <strong>query-by-example keyword spotting</strong> (KWS) using a <strong>long short-term memory</strong> (LSTM) recurrent neural network-based feature extractor. In our approach, we represent each keyword using a fixed-length feature vector obtained by running the keyword audio through a word-based LSTM acoustic model. We use the activations prior to the softmax layer of the LSTM as our keyword-vector. At runtime, we detect the keyword by extracting the same feature vector from a sliding window and computing a simple similarity score between this test vector and the keyword vector. With clean speech, we achieve 86% relative false rejection rate reduction<br>at 0:5% false alarm rate when compared to a competitive phoneme posteriorgram with dynamic time warping KWS system, while the reduction in the presence of babble noise is 67%. Our system has a small memory footprint, low computational cost, and high precision, making it suitable for on-device applications.</p>
+</blockquote>
+<p>匹配（match）。</p>
+<p>关键词作为一个<strong>模式</strong>（pattern）被存储起来。</p>
+<p>可以个性化定义关键词。</p>
+<p>DTW based：（动态时间弯折，DP算法）</p>
+<blockquote>
+<p>基于语音识别。</p>
+<p>计算两个时间序列的相似度。</p>
+<ul>
+<li>转化为同态序列</li>
+<li>动态规划计算（最长子序列？）<ul>
+<li>每步做归一化处理</li>
+<li>单调、连续</li>
+</ul>
+</li>
+</ul>
+<p>1975、1978</p>
+<p>用在KWS里需要稍作修改。</p>
+<ul>
+<li>分段（2），类似CV的滑动窗口</li>
+<li>不分段（2），先贪心到一个最优窗口，再在窗口内匹配（会不会收敛到local？）</li>
+</ul>
+</blockquote>
+<p>feature representation：</p>
+<ul>
+<li>MFCC，FBANK</li>
+<li>Posteriorgram（GMM，DNN）后验概率图</li>
+<li>DNN，Autoencoder</li>
+</ul>
+<p>DTW的缺点：</p>
+<ul>
+<li>需要多项式时间</li>
+<li>可能影响精度</li>
+</ul>
+<p>Enbedding（嵌入）：（神经网络）</p>
+<p>向量编码，计算相似度。</p>
+<p>2015，陈——预处理词分类器（Softmax），作为特征提取器。（产品：Snowboy）</p>
+<p>Siamese network，孪生网络，卷积network。弱监督。2016</p>
+<h2 id="基于大词汇量语音识别系统的语音关键词检测（ASR）"><a href="#基于大词汇量语音识别系统的语音关键词检测（ASR）" class="headerlink" title="基于大词汇量语音识别系统的语音关键词检测（ASR）"></a>基于大词汇量语音识别系统的语音关键词检测（ASR）</h2><p><strong><a href="./Lattice Indexing for Spoken Term Detection.pdf">Lattice Indexing for Spoken Term Detection</a></strong></p>
+<blockquote>
+<p>This paper considers the problem of constructing an efficient inverted index for the <strong>spoken term detection</strong> (STD) task. More specifically, we construct a deterministic weighted finite-state transducer storing soft-hits in the form of (utterance ID, start time, end time, posterior score) quadruplets.We propose a generalized factor transducer structure which retains the time information necessary for performing STD. The required information is embedded into the path weights of the factor transducer without disrupting the inherent optimality. We also describe how to index all substrings seen in a collection of raw automatic speech recognition lattices using the proposed structure. Our STD indexing/search implementation is built upon the OpenFst Library and is designed to scale well to large problems. Experiments on Turkish and English data sets corroborate our claims.</p>
+</blockquote>
+<p>LVSCR based methods。</p>
+<p>核心：语音识别+文本索引。</p>
+<p>问题：</p>
+<ul>
+<li>语音识别的精度问题，如何解决error<ul>
+<li>次优结果的索引（关键词出现error）</li>
+</ul>
+</li>
+<li>关键词的定位技术<ul>
+<li>Lattice。保存语音识别的最优和次优结果</li>
+</ul>
+</li>
+</ul>
+<p><strong>WFST</strong>：加权有限状态转换器。WFST是一个有向图：</p>
+<ul>
+<li>节点：三个状态起始、普通、终止。</li>
+<li>边：输入、输出、权重。</li>
+</ul>
+<blockquote>
+<p>效果：将一个字符串映射到一个序列。（有点像贝叶斯网络）也可以用来表示一个单个字符串。</p>
+<p>Composition（复合原理）：T1:A to B; T2 B to C; T1* T2: A to C.</p>
+<p>Union（联合）：合并起始节点。</p>
+<p>实现发音-词串转换。</p>
+</blockquote>
+<p><strong>Lattice</strong>：一个复杂WFST网络，作为识别器的representation。（索引）</p>
+<p><strong>Factor Automata</strong>（因子自动机）：v is factor of u if u = xvy.</p>
+<ul>
+<li>获得子串</li>
+</ul>
+<p>Timed Factor Transducer，TFT，时间因子自动机。2011</p>
+<ul>
+<li>查询关键词的匹配自动机</li>
+<li>时间间隔</li>
+<li>概率模型</li>
+</ul>
+<p>构建Lattice Indexing：convert lattice into TFT，union，optimize。从而优化体积，查询概率、时序信息。</p>
+<p>OOV（词汇溢出）问题：KWS中更严重。</p>
+<ul>
+<li>转换为音素，字（细小单元）<ul>
+<li>或许可以利用知识图谱？</li>
+</ul>
+</li>
+<li>Proxy word（代理词），2013，陈<ul>
+<li>用发音相似的集内词代替关键词</li>
+<li>OOV转化为WFST<ul>
+<li>应用最短路算法</li>
+<li>FST加速？（并行计算），相似度评估优势</li>
+</ul>
+</li>
+<li>转化为K”集内词</li>
+</ul>
+</li>
+</ul>
+<h2 id="Advances"><a href="#Advances" class="headerlink" title="Advances"></a>Advances</h2><p>Model Compression：（2017，亚马逊）</p>
+<blockquote>
+<p><strong>TDNN</strong>结构——分层共享，大幅减少计算量。</p>
+<p>矩阵分解：SVD。（压缩）</p>
+</blockquote>
+<p>Computing similarity heterogeneous pattern：（2017，Audhkhasi）</p>
+<blockquote>
+<p>文本和声学分别分类，然后将分类结果相互比较（模型融合）</p>
+</blockquote>
+<p>Similarity Image Classification Query-by-Example KWS：</p>
+<p>不再搞窗口，直接对整个语音图进行分类（模式识别）。CNN分类。</p>
+<ul>
+<li>思路类似音频指纹，长宽特别不一样（某个维度相对有限）</li>
+<li>但语音可能获得弯斜线</li>
+</ul>
+<p>Streaming Seq2Seq Models for KWS：（He Y，2017）</p>
+<ul>
+<li>Blank符号解决长度不匹配问题</li>
+<li>不确定音素映射到blank</li>
+<li>CTC以前没有建立出label之间的关系<ul>
+<li>利用<strong>RNN-Transducer</strong>进行联合网络预测</li>
+</ul>
+</li>
+<li>加入Keyword encoder，Attention（类似一个附加记忆模块）<ul>
+<li>放射变换+内积+Softmax+求和</li>
+<li>现在工业上没有预存的语料，因此HMM还是主流</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> keyword spotting：主要在于下限制条件、复杂度。</p>
+<p>spoken term detection：OOV问题。</p>
+<blockquote>
+<p>哈希？不便于compose，并行化。（相似哈希？）</p>
+</blockquote>
+<h1 id="使用RNN-Transducer进行声学建模"><a href="#使用RNN-Transducer进行声学建模" class="headerlink" title="使用RNN-Transducer进行声学建模"></a>使用RNN-Transducer进行声学建模</h1><blockquote>
+<p><a href="./Neural Transducer for Speech Recognition.pdf">PPT</a>。</p>
+</blockquote>
+<p><strong><a href="./Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer.pdf">Exploring Architectures, Data and Units For Streaming End-to-End Speech Recognition with RNN-Transducer</a></strong></p>
+<blockquote>
+<p>We investigate training end-to-end speech recognition models with the recurrent neural network transducer (RNNT):<br>a streaming, all-neural, sequence-to-sequence architecture which jointly learns acoustic and language model components from transcribed acoustic data. We explore various model architectures and demonstrate how the model can be improved further if additional text or pronunciation data are available. The model consists of an ‘encoder’, which is initialized from a connectionist temporal <strong>classification-based</strong> (CTC) acoustic model, and a ‘decoder’ which is partially initialized from a recurrent neural network language model trained on text data alone. The entire neural network is trained with the RNN-T loss and directly outputs the recognized transcript as a sequence of graphemes, thus performing end-to-end speech recognition. We find that performance can be improved further<br>through the use of sub-word units (‘wordpieces’) which capture longer context and significantly reduce substitution<br>errors. The best RNN-T system, a twelve-layer LSTM encoder with a two-layer LSTM decoder trained with 30,000<br>word pieces as output targets achieves a word error rate of 8.5% on voice-search and 5.2% on voice-dictation tasks and is comparable to a state-of-the-art baseline at 8.3% on voice search and 5.4% voice-dictation.</p>
+<p>难复现？</p>
+</blockquote>
+<h2 id="摘要-1"><a href="#摘要-1" class="headerlink" title="摘要"></a>摘要</h2><p>基于联结时序分类(CTC)的声学模型不再需要对训练的音频序列和文本序列进行强制对齐，实际上已经初步具备了端到端的声学模型建模能力。但是CTC模型进行声学建模存在着两个严重的瓶颈，一是缺乏语言模型建模能力，不能整合语言模型进行联合优化，二是不能建模模型输出之间的依赖关系。RNN-Transducer针对CTC的不足，进行了改进，使得模型具有了端到端联合优化、具有语言建模能力、便于实现Online语音识别等突出的优点,更加适合语音任务，值得引起大家的重视。 </p>
+<h2 id="CTC模型与不足"><a href="#CTC模型与不足" class="headerlink" title="CTC模型与不足"></a>CTC模型与不足</h2><p>Connectionist Temporal Classification，CTC。</p>
+<p>以前都是HMM+Deeplearining混合训练，需要帧级别的标注信息。极其繁琐。</p>
+<p>HMM本身具有序列建模能力，RNN可以胜任。</p>
+<p><strong>帧预测</strong>可以是blank或对应音素。</p>
+<p>综合后，进行梯度反传。（DP，前向+<strong>后向传播</strong>）</p>
+<blockquote>
+<p>设定预测状态转移方程。</p>
+</blockquote>
+<p>Loss Function：倾向于概率更大的路径选择。（对数概率损失函数）</p>
+<p>帧级别预测是准确的“高原”，CTC预测尖峰。</p>
+<ul>
+<li>引入blank（损失较小），使得对于预测进行<strong>信息累计输出</strong></li>
+</ul>
+<p>CTC优点：</p>
+<ul>
+<li>不需要强制对齐</li>
+<li>解码加速</li>
+</ul>
+<h2 id="RNN-Transducer模型"><a href="#RNN-Transducer模型" class="headerlink" title="RNN-Transducer模型"></a>RNN-Transducer模型</h2><p>CTC没有对label之间的关系没有刻画，不能完全做到端到端，要求输入序列大于输出（不是语音识别的问题）。</p>
+<p>联合训练模型。（Pred. Network语言模型，Encoder声学模型）结合后输出标记。</p>
+<p>Joint Net：将两个模型融合。</p>
+<p>曼哈顿模型（可行路径是曼哈顿距离）。</p>
+<p>前向+后向算法。Loss Function。</p>
+<p>比较几个模型结构。（4类，CTC，RNN-Transducer，Attention-based，PNN-Transducer with Attention）</p>
+<ul>
+<li>CTC</li>
+<li>RNN-Transducer（三阶张量，计算复杂，内存容易爆）</li>
+<li>Attention-based</li>
+<li>PNN-Transducer with Attention</li>
+</ul>
+<blockquote>
+<p>CTC在实际应用中，对于start-end time还是差强人意，应用前景仍然有限</p>
+</blockquote>
+<p>RNN-Transducer：</p>
+<ul>
+<li>解决CTC条件独立问题</li>
+<li>整合了两个模型</li>
+<li>流式结构</li>
+</ul>
+<h2 id="RNN-Transducer模型的改进"><a href="#RNN-Transducer模型的改进" class="headerlink" title="RNN-Transducer模型的改进"></a>RNN-Transducer模型的改进</h2><p>高计算代价，存在一些不合理的路径。</p>
+<p>Recurrent Neural Aligner：</p>
+<ul>
+<li>斜化</li>
+<li>期望损失……</li>
+<li>没有什么性能提升</li>
+</ul>
+<p>Multi-stages of Training a Wordpiece RNN-T，多级预训练</p>
+<ul>
+<li>训练模型的结果较好</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>RNNT总体性能较好（Without大规模语言模型）</li>
+<li>训练十分困难，预处理十分重要</li>
+<li>适用于在线的结构（解码）</li>
+</ul>
+<blockquote>
+<p>高性能框架Bert？</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/" title="第十八期人工智能前沿学生论坛——语音识别前沿技术">https://stellarkey.github.io/第十八期人工智能前沿学生论坛——语音识别前沿技术/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" rel="tag"><i class="fa fa-tag"></i> 语音识别</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Byte-Tech-AI-Symposium/" rel="prev" title="2019机器智能前沿论坛">
+      <i class="fa fa-chevron-left"></i> 2019机器智能前沿论坛
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%9F%A5%E8%AF%86%E6%99%BA%E8%83%BD%E8%AE%B2%E5%BA%A7/" rel="next" title="知识智能讲座">
+      知识智能讲座 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语音关键词检测方法综述"><span class="nav-number">2.</span> <span class="nav-text">语音关键词检测方法综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">2.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语音关键词检测介绍"><span class="nav-number">2.2.</span> <span class="nav-text">语音关键词检测介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于HMM的语音关键词检测"><span class="nav-number">2.3.</span> <span class="nav-text">基于HMM的语音关键词检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Sample查询的语音关键词检测（QBE）"><span class="nav-number">2.4.</span> <span class="nav-text">基于Sample查询的语音关键词检测（QBE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于大词汇量语音识别系统的语音关键词检测（ASR）"><span class="nav-number">2.5.</span> <span class="nav-text">基于大词汇量语音识别系统的语音关键词检测（ASR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advances"><span class="nav-number">2.6.</span> <span class="nav-text">Advances</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用RNN-Transducer进行声学建模"><span class="nav-number">3.</span> <span class="nav-text">使用RNN-Transducer进行声学建模</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要-1"><span class="nav-number">3.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTC模型与不足"><span class="nav-number">3.2.</span> <span class="nav-text">CTC模型与不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Transducer模型"><span class="nav-number">3.3.</span> <span class="nav-text">RNN-Transducer模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Transducer模型的改进"><span class="nav-number">3.4.</span> <span class="nav-text">RNN-Transducer模型的改进</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影&#x2F;应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="摊还分析：价格悖论">
+<meta property="og:url" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影&#x2F;应用。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA%E4%B8%8E%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/0.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%E7%A4%BA%E4%BE%8B.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E5%8F%AF%E6%89%A9%E5%85%85%E5%90%91%E9%87%8F.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/1.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%E5%AE%9E%E4%BE%8B.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E6%91%8A%E8%BF%98.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E9%BD%90%E6%AC%A1%E5%8C%96%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2.jpg">
+<meta property="article:published_time" content="2018-07-07T17:02:22.000Z">
+<meta property="article:modified_time" content="2021-01-04T14:46:26.661Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="经济学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA%E4%B8%8E%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90.jpg">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>摊还分析：价格悖论 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          摊还分析：价格悖论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Think/" itemprop="url" rel="index"><span itemprop="name">Think</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">通过经济学的一个案例分析，浅尝辄止地探讨了摊还分析方法论在多个领域可能的思维投影/应用。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img data-src="价格悖论与摊还分析.jpg" alt="价格悖论与摊还分析"></p>
+<p>经济学里可能见到过类似这样的案例：</p>
+<blockquote>
+<p><em>买一本40元的书，为了得到20元的优惠，可能愿意辛辛苦苦跑半个城市去特价书店买；可买一部4000元的手机，同样的20元优惠，往往连下楼的冲动也没有。</em></p>
+</blockquote>
+<p><img data-src="0.jpg" alt="0"></p>
+<p><strong>《经济学原理（第6版）》原书</strong></p>
+<p>基于人们评估相对价格的趋势，或者心理账户理论（行为经济学），再忽略掉互联网的因素……这大概成立的。</p>
+<p>但，究竟是为什么呢？</p>
+<p>这是否就是“短视”的表现呢？</p>
+<p>换句话，贪小便宜究竟理不理性？</p>
+<p>……</p>
+<p>回答是：<strong>这反而是适当的做法</strong>。</p>
+<p>我们从<strong>摊还分析</strong>（又称，<strong>分摊分析</strong>）的角度来看。</p>
+<p>首先，在<strong>算法</strong>中，摊还分析是用来评价程序中的一个操作序列的平均代价，有时可能某个操作的代价特别高，但总体上来看也并非那么糟糕；可以形象的理解为把高代价的操作“分摊”到其他操作上去了，要求的就是均匀分摊后的平均代价。</p>
+<p>当这个操作序列趋向于无穷时，摊还的平均代价往往渐进于一个函数，由此还可以引出摊还复杂度的概念。</p>
+<p>下图为一个摊还分析的简单示例：</p>
+<p><img data-src="摊还分析示例.jpg" alt="摊还分析示例"></p>
+<p><strong>某连续操作f(t)在某区间上的摊还</strong></p>
+<p>面向对象的程序设计中，比较典型的例子是：对于向量（即，数组）溢出时的扩容操作，采用加倍扩容策略而不是追加常量的空间。加倍扩容的平均分摊复杂度远小于常量扩容。下图取自邓神的《数据结构（C++语言版）》。</p>
+<p><img data-src="可扩充向量.png" alt="可扩充向量"></p>
+<p><strong>向量扩充图解</strong></p>
+<p>加倍扩容法的实现及细节可参考书中的P34~36。</p>
+<p><img data-src="1.jpg" alt="1"></p>
+<p><strong>《数据结构（C++语言版）》原书</strong></p>
+<p>好了，我们来分析最开始的问题。</p>
+<p>比如，将“消费40元”当做一个操作，它的代价是“20元优惠”，显然，这可以被视为一种“正”的代价。相对的，对于4000元的手机，对应“消费40元”的100次操作，它的代价仍然是“20元优惠”。</p>
+<p>也就是说，对于长时间的平均分摊代价，同样的20元优惠，买书比买手机高了100倍！而由于优惠是“正”的代价，这导致优惠买书的预期收益非常高。</p>
+<p>可以看出，人们对收益的权衡，会潜意识地使用摊还分析，考虑<strong>长期效应</strong>。即，摊还分析是一种自然的策略。</p>
+<p><strong>进一步，哪些商品适合于摊还分析呢</strong>？</p>
+<p>自然是长期使用品，即“必需品”。</p>
+<p>但怎么区分“必需品”和“非必需品（奢侈品）”呢？</p>
+<p>传统的经济学通常以市场上该商品的需求价格弹性（可视为，价格对需求的偏导数）作为区分的指标。</p>
+<p>但是，仅仅以市场定义的范围来作区分，如冰淇淋市场和香草冰淇淋市场，而不区分面向张三的冰淇淋市场和面向李四的冰淇淋市场，对<strong>个人偏好</strong>的体现是远远不足的。现代由于数据挖掘的深入，这种面向对象的趋势就更为明显。</p>
+<p>比如，假设有一个修过手机屏6次的频繁吃土青年，外屏4次、内屏1次、屏幕总成1次。而且由于对手机不爱护的生活习惯，今后也可能继续修手机233。</p>
+<p>那么，修手机的消费，对该青年来说就更倾向于长期使用品，于是需要摊还分析；而对于粉底、女装一类的商品，则更倾向于奢侈品（需求量小趋于0，加上价格不敏感），可能就用不上摊还分析。</p>
+<p>那么，问题是：在不考虑时间成本的情况下，是否应该购置一台新手机？</p>
+<p>对于普通安卓手机，更换外屏的花费在90元左右，更换内屏/总成的花费在200元左右。假设该青年半年摔一次手机（？），则平均分摊花费可估计为（X<em>1000/3/360 + 90</em>80%/360/2 + 200*20%/360/2=）X+0.15元/天。</p>
+<p>假设此时更换新手机，选择价位Y千元档，生命周期T假设为3年，且前1年不摔（？）。则分摊花费为（Y<em>1000/3/360 + 0.31</em>2/3=）Y+0.20元/天。</p>
+<p>于是结论是：（仅考虑当前摊还分析）若Y比X便宜500元，那么购置新手机就是明（ji）智的选择。</p>
+<p>当然，深入研究分摊费用随时间的变化趋势，综合考虑个人偏好，可以得出更精准的策略。但重点是，要敢于量化指标，而不仅仅停留于对客观事物的定性状态。如下图示例的一个粗略的模拟演算：</p>
+<p><img data-src="摊还分析实例.png" alt="摊还分析实例"></p>
+<p><strong>摊还分析实例：手机问题</strong></p>
+<p>其中，蓝色粗线为标准曲线（X=2，T=3），其它为对照组（Y任取，T=0）。横轴单位为半年，纵轴为摊还费用的对数值。</p>
+<p>可以看出。</p>
+<p><strong>定量，往往能更好地定性</strong>。考虑长期，可能做出不同选择。</p>
+<p>但，不仅仅可以在时间上进行摊还，还可以在空间上进行摊还。</p>
+<p>比如，下面考虑一个<strong>标准正态分布</strong>。</p>
+<p>简单提一下正态分布的历史。正态分布的实质认识源于最小二乘法的发现，最小二乘法源于对自然规律的猜测——最大概然估计。因此，正态分布实际是反映最可能的现实。</p>
+<p>考虑标准正态分布在整个实数轴上的分摊，容易得到分摊值为0。这是一个退化的情况，我们主要考虑非退化（即，具有一般性）的情况。</p>
+<p>比如，取定区间[-δ，δ]，δ为方差，此处显然为1，即[-1,1]。只考虑标准正态分布在[-1,1]内的分摊。</p>
+<p><img data-src="正态分布摊还.jpg" alt="正态分布摊还"></p>
+<p><strong>正态分布在[-1,1]上的摊还</strong></p>
+<p>如上图。此时，将极限定义为：<strong>固定</strong>[-1,1]区间不变，标准差δ不断趋于0，则分摊极限值趋于1/2=0.5。</p>
+<p>注意到，当δ不断趋于0，该正态分布趋于一个“<strong>单位脉冲</strong>”（又称，Dirac函数，当然，这里还需要一个适当的比例放缩变换，放缩系数为2:1），波峰形状变得集中而陡峭。这说明，对于特定点趋于极限的脉冲式效应，有时可以通过区间分摊来获得有限值。</p>
+<p>现在尝试考虑数学物理中著名的<strong>齐次化原理</strong>（Duhamel原理）。它是物理学上的一种简化手段，其作用如下图所示：</p>
+<p><img data-src="齐次化原理示意.jpg" alt="齐次化原理示意"></p>
+<p><strong>齐次化原理图解</strong></p>
+<p>可以看出，齐次化原理的主要目的将原本连续的函数，当成间断的脉冲的无穷叠加（这种无穷叠加表现为脉冲的连续化，最后成为一个积分）。它是将无穷小区间上的一个分摊的量，收束成集中点上的脉冲，类似于<strong>摊还分析的逆过程</strong>。</p>
+<p>再考虑<strong>傅里叶变换</strong>。Fourier变换是将时域信号转换为频域信号，Fourier解析是将频域信号转换为时域信号。对于任意的一个正/余弦周期时域信号基，都对应唯一的频域值。如下图所示（摘自知乎，稍修）：</p>
+<p><img data-src="傅里叶变换.jpg" alt="傅里叶变换"></p>
+<p><strong>从Fourier（离散）级数到（连续）变换</strong></p>
+<p>从频域到时域，正像是摊还分析，将每个脉冲对应分摊到整个时间维度上；从时域到频域，也像是摊还分析的逆过程，将时域上连续的信号收束为频域上的一组脉冲。当时域上的周期性越差（周期越长），频域上的脉冲更加密集，最终得到一般的连续函数。</p>
+<p><strong>它与齐次化原理的本质相异之处，仅仅在于选择的收束基不同而已</strong>。而且，这组基选的非常巧妙，导致部分揭示了周期现象的本质。（相对而言，齐次化原理的基就比较平凡；另外，如果选择有限多个平凡基，再推广，很容易联想到数值积分中经典的手法“插值”；甚至，结合矩阵理论，这些都可看做是一种空间到空间的变换，只不过在某些空间中看同一个问题的形式更加简洁罢了。这里就不展开叙述。）</p>
+<p>下面我们再分析一个湍流的例子。并从时空摊还的角度进一步理解摊还分析。</p>
+<p>考虑（均匀各向同性）<strong>湍流</strong>的长期效应。</p>
+<p>不妨先简单提一下，各向同性湍流的历史。1935年，G.I. Taylor在风洞实验的均匀气流中设置一排或者几排规则的格栅，均匀气流垂直流过格栅时产生不规则扰动。这种不规则扰动向下游运动过程中，由于没有外界干扰，逐渐演化为各项同性湍流。发展了各项同性理论。</p>
+<p>先说湍流，湍流的流动一般分解为时均运动（稳态分量）和脉动运动（随机分量）。其中，任一时刻的时均运动都是该时刻湍流的无规则运动在空间上的摊还。</p>
+<p>由于湍流的耗散作用（含内部和边界），尽管可能存在间歇的波动，一个不受干扰后的湍流最终将趋于稳态（如考虑管道流动，其脉动将衰弱至0，接着时均也将随后衰弱至0）。</p>
+<p>即，一个长期的湍流运动，可以描述为在空间上、时间上的摊还。</p>
+<p>……</p>
+<p>从以上几个简单的实例中，读者应该能够渐渐体会到摊还更深层的意义：<strong>摊还，就是将任意维上短暂的（脉冲）效应尽可能分散到维的全域上，</strong>对任何维度都是成立的；无论时、空，或者更抽象的维度。（进一步，如何考虑非整数的维度，即“分形”对象呢？）</p>
+<p>价格在时间上的摊还分析，指导着消费者的购买行为；成本在空间上的摊还分析，指导着生产者的产业发展（规模效应）；甚至，思考发达国家的污染排放在历史和全球上的摊还（温室效应）；冲量在作用面上的摊还；脉冲星在宇宙空间视差上的摊还……</p>
+<p>当然，重点不是应用，而是，在面对一个问题或处境时，能自然而然地想到摊还的思路。（在面对不同的问题的时候，多数的思路往往是一致的。如何构建新思路，也是一个非常值得探讨的问题。）</p>
+<p>甚至，动态规划，数值逼近……所做的无非就是某种合理的简化。简化到什么程度才叫合适呢？我们究竟需要多少知识才能做出好的决定？那么，<strong>信息论</strong>的雏形就跃然纸上了……所谓触类旁通。</p>
+<p>那，极好了。</p>
+<p>……</p>
+<hr>
+<p>借季羡林先生《留德十年》的一段话做结尾:</p>
+<blockquote>
+<p><em>我只是一个人在夜深人静时，伏在枕上，让逝去的生命一幕一幕地断断续续地在我眼前重演一遍，自己仿佛也成了一个旁观者，顾而乐之。</em></p>
+</blockquote>
+<p><font color=turquoiseblue><strong>愿生命的一分一秒都充满平和与喜悦</strong></font>、</p>
+<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原载于：</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NTU4MjQ0MA==&amp;mid=2247483676&amp;idx=1&amp;sn=8abfa225423ab371d62097bdb9bd5709&amp;chksm=ec502e9bdb27a78d6a1969dcd91bd6a164e35a2ffcc945d7500c759e3c6b854b3b494369fb38#rd" target="_blank" rel="noopener external nofollow noreferrer">思维之海-价格悖论与摊还分析</a>》</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/" title="摊还分析：价格悖论">https://stellarkey.github.io/算法-摊还分析：价格悖论/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/" rel="prev" title="阅《机器人短篇》">
+      <i class="fa fa-chevron-left"></i> 阅《机器人短篇》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%B5%8B%E8%AF%95/" rel="next" title="测试专用">
+      测试专用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="这是关于《大学计算机——计算思维的视角》的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《大学计算机——计算思维的视角》笔记">
+<meta property="og:url" content="https://stellarkey.github.io/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这是关于《大学计算机——计算思维的视角》的笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/vOxBqci.jpg">
+<meta property="article:published_time" content="2019-01-09T12:18:03.000Z">
+<meta property="article:modified_time" content="2021-10-31T04:52:07.763Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/vOxBqci.jpg">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《大学计算机——计算思维的视角》笔记 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《大学计算机——计算思维的视角》笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            <img src="https://i.imgur.com/vOxBqci.jpg" itemprop="contentUrl">
+        </div>
+        <p>这是关于《<a href="https://www.xuetangx.com/courses/SDUx/131000110/2015_T1/about" target="_blank" rel="noopener external nofollow noreferrer">大学计算机——计算思维的视角</a>》的笔记。<a id="more"></a>（<a href="https://vel.life/blog/《大学计算机——计算思维的视角》笔记/大学计算机——计算思维的视角.pdf" target="_blank" rel="noopener external nofollow noreferrer">PDF</a>）</p>
+<p>以下内容仅为<strong>预览</strong>：</p>
+<blockquote>
+<p>下面的内容从onenote版转换而来。要看还是看<a href="./大学计算机——计算思维的视角.pdf">PDF</a>吧。</p>
+</blockquote>
+<hr>
+<h1 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h1><h2 id="1-信息社会与信息素养"><a href="#1-信息社会与信息素养" class="headerlink" title="1.信息社会与信息素养"></a>1.信息社会与信息素养</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>人类社会发展回顾</th>
+<th>农业社会——工业社会（蒸汽时代、电气时代）——信息社会（计算机时代）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>农业社会：体力劳动、手工业。</p>
+<p>工业社会：蒸汽动力——电力——生产关系的改变。</p>
+<p>后工业社会：信息技术的快速发展。</p>
+<p>信息社会：信息的全面流通，从根本上进行了革新。“信息化”。“知识社会”，应用创新增加。</p>
+<p>特征：显现出不同的年代特征。从经济领域，信息、知识成为重要的生产力要素，智能化设备大量应用。</p>
+<p>个人的能力素质：行为习惯、思维方式的内在特质。（价值观、品质、特征）</p>
+<p>信息素养：</p>
+<ul>
+<li><p>信息意识（信息敏感度）</p>
+</li>
+<li><p>信息知识（获取与利用）</p>
+</li>
+<li><p>信息能力（解决与创造）</p>
+</li>
+<li><p>信息道德（现实与伦理）</p>
+</li>
+</ul>
+<h2 id="2-人类思维与逻辑学"><a href="#2-人类思维与逻辑学" class="headerlink" title="2.人类思维与逻辑学"></a>2.人类思维与逻辑学</h2><p>大学教育：</p>
+<p>不局限与知识培养。（哈佛大学学生培养8项标准，通识教育）</p>
+<p>培养终身的思维方式。（哈弗文理学院，批判的态度接受知识，认知、使用、理解）</p>
+<p>人类思维：（与生俱来）</p>
+<p>感觉器官（直接），大脑（记忆、思维）。其中思维是事物的概括和间接反映。</p>
+<p>特性：概括性、间接性、逻辑性（思维规则）。</p>
+<p>分类：形象思维（文学艺术）、逻辑思维（理论抽象）、灵感和顿悟。</p>
+<p>逻辑思维与逻辑学：</p>
+<p>遵循一定的思维规律。</p>
+<p>逻辑学：一门探索、阐述和确立有效推理规则的学问，是关于思维形式及其规律的学说。</p>
+<ul>
+<li><p>概念（抽象概括，词、词组，思维的基本单位）主词、谓词</p>
+</li>
+<li><p>判断（概念之间的联系，语句）量词</p>
+</li>
+<li><p>推理（一定的思维规则，归纳、演绎）</p>
+</li>
+</ul>
+<p>逻辑推理的形式：</p>
+<ul>
+<li><p>三段论（又称直言三段论，大前提、小前提、结论，演绎逻辑）</p>
+</li>
+<li><p>假言推理（充分、必要、充要条件形式，if前件、then后件）</p>
+</li>
+<li><p>选言推理（相容选言推理，p或者q）</p>
+</li>
+</ul>
+<p>逻辑思维规律：同一律、矛盾律、排中律。</p>
+<p>数理逻辑：</p>
+<p>莱布尼茨将思维符号化，称为数理逻辑。（2进制发明者）</p>
+<p>布尔建立布尔代数，创立一套符号系统。</p>
+<p>弗雷格引入量词（全称、特称、单称）。</p>
+<h2 id="3-计算思维"><a href="#3-计算思维" class="headerlink" title="3.计算思维"></a>3.计算思维</h2><ul>
+<li><p>科学研究与科学思维</p>
+</li>
+<li><p>理论思维——理论科学（推理）推理和演绎，如数学</p>
+</li>
+<li><p>实验思维——实验科学（实证）观察和总结，如物理学</p>
+</li>
+<li><p>计算思维（普适性）</p>
+</li>
+</ul>
+<p>工具影响和改变人类的思维。有意和无意与计算机的联系。</p>
+<p>运用计算机科学的基础概念进行问题求解、系统设计、以及人类行为理解等涵盖计算机科学之广度的一系列思维活动。计算思维最根本的内容（本质），是抽象和自动化。</p>
+<p>计算学科已经成为各学科求解问题的基本思想、方法和手段。</p>
+<p>个人观点：借助计算机进行问题求解的思维意识，对计算、算法、数据及其组织、程序、自动化等核心的计算机科学概念的潜意识运用。</p>
+<p>思维是一种潜移默化，是一种下意思、不自觉的行为。（大数据正是基于思维信息的收集）</p>
+<p>问题——数学模型——数据结构、求解算法——程序——问题的解。</p>
+<h2 id="4-计算与计算科学"><a href="#4-计算与计算科学" class="headerlink" title="4.计算与计算科学"></a>4.计算与计算科学</h2><p>计算——数学（数与形的科学）【自然科学中的哲学，思维的训练】。</p>
+<p>算数——工程数学——数值分析——计算科学。</p>
+<p>数学的分类：纯粹数学、应用数学、计算技术（计算数学和计算机）。</p>
+<p>二进制 + 数理逻辑 + 电路 = 最初的电子计算机。</p>
+
+<h2 id="5-学科交叉与融合"><a href="#5-学科交叉与融合" class="headerlink" title="5.学科交叉与融合"></a>5.学科交叉与融合</h2><ul>
+<li>计算机与计算数学</li>
+</ul>
+<p>数学学科：纯粹数学、应用数学、计算技术（计算数学和计算机）。</p>
+<p>计算机：搭起了数学与应用之间的桥梁。利用计算机的高速、高精度运算能力和自动化特性来寻找答案。</p>
+<p>数学应用：传统的数学难题，四色定理、寻找最大的梅森素数、密码学研究……还有数学计算程序（MATLAB、Maple、Mathematic等）。</p>
+<ul>
+<li>计算物理</li>
+</ul>
+<p>计算物理学。</p>
+<p>计算机模拟仿真。</p>
+<ul>
+<li>计算化学</li>
+</ul>
+<p>1998年，2013年诺贝尔化学奖，均颁布给了计算化学领域。</p>
+<ul>
+<li>计算机与生物学、医学</li>
+</ul>
+<p>计算生物学、生物信息学、生物医学。</p>
+<p>计算机应用：霰弹枪算法（Shotgun Algorithm）提高人类基因组测序速度。DNA计算机。</p>
+<ul>
+<li>社会计算</li>
+</ul>
+<p>社会系统是一个比自然系统更加复杂的系统。抽象、建模。</p>
+<ul>
+<li>信息社会的应用创新</li>
+</ul>
+<p>理论创新被应用创新所替代。人人皆可创新。</p>
+<p>————————————————————————————————————————————</p>
+<h1 id="二、计算与计算机"><a href="#二、计算与计算机" class="headerlink" title="二、计算与计算机"></a>二、计算与计算机</h1><h2 id="1-数、计算与计算工具"><a href="#1-数、计算与计算工具" class="headerlink" title="1.数、计算与计算工具"></a>1.数、计算与计算工具</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>数的起源</th>
+<th>语言的产生——“记数”、“计算”。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算工具</td>
+<td>算筹、算盘、纳皮尔筹、计算尺、机械式计算机、电子计算机。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="2-计算机的产生和发展"><a href="#2-计算机的产生和发展" class="headerlink" title="2.计算机的产生和发展"></a>2.计算机的产生和发展</h2><p>—计算的自动化—</p>
+<p>1642年，法国人Pascal发明加法器，历史上的第一步。（Pascal语言的命名就是纪念他）</p>
+<p>巴贝奇与“差分机”</p>
+<ul>
+<li><p>研究动因：18世纪末，人工“数学计算用表”，大规模工程。</p>
+</li>
+<li><p>1822年完成第一台差分机。差分，就是把函数表的复杂算式转化为差分运算，用简单的加法代替平方运算。</p>
+</li>
+<li><p>灵感来源于织布机。</p>
+</li>
+</ul>
+<p>———分析机：通用数学计算机【当时制造水平、工艺使得精度达不到要求，最终宣告失败】</p>
+<p>制表机：现代计算机的雏形</p>
+<p>根据织布机的原理，利用穿孔卡片输入、输出。在1890年的美国人口普查中得到应用。</p>
+<p>———IBM前身。</p>
+<p>—计算机产生前夜—</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>机电式计算机</th>
+<th>Mark-1，by 艾肯【采用机电方法而非机械】</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>—计算机产生的理论基础—</p>
+<ul>
+<li>二进制『莱布尼茨发明』</li>
+</ul>
+<p>算法规则简单，便于数据存储和实现。</p>
+<ul>
+<li>数理逻辑</li>
+</ul>
+<p>莱布尼茨设计了一种演算推论器。</p>
+<ul>
+<li><p>布尔代数</p>
+</li>
+<li><p>计算模型</p>
+</li>
+<li><p>图灵机</p>
+</li>
+</ul>
+<p>—电子计算机产生的诞生—</p>
+<p>ENIAC——UNIVAC【标志计算机时代】——-巨人——ABC</p>
+<p>—计算机的发展—</p>
+<ul>
+<li>分为4代。</li>
+</ul>
+<p>电子管（真空管）——晶体管（半导体）——集成电路——(超)大规模集成电路（微处理器）。</p>
+<p>集成电路的发展规模+++，受到限制。（摩尔定律受到时代局限）</p>
+<p>新型计算机的研制。</p>
+<h2 id="3-数的表示和字符编码"><a href="#3-数的表示和字符编码" class="headerlink" title="3.数的表示和字符编码"></a>3.数的表示和字符编码</h2><p>—数的进制—</p>
+<p>非进位数值、进位数值（值与位置相关）。</p>
+<p>2、8、10、16进制。（8、16进制通常可以简化2进制书写）</p>
+<p>—数的表示—</p>
+<ul>
+<li>机器数：数在计算机内部的表示。最高位为符号位，其表值称真值，这样形式称为数的原码表示。</li>
+</ul>
+<p>反码：各位取反。补码：仅对于负数有效操作，保留符号位，其余各位取反，+1。</p>
+<ul>
+<li>计算机字：若干个二进制位作为整体来处理、保存或传送。分为数据字和指令字。特别的，对于数值数据，分为定点数（整数、纯小数）、浮点数（小数）。浮点数的表示不唯一，规定尾数必须以0.1开头，称为正规化，保证了唯一性 。存在溢出（数据存储）和机器误差（实数精度存储）。</li>
+</ul>
+<p>—字符数据和字符编码—</p>
+<p>输入与输出。ASCII码——&gt;Unicode码。</p>
+<h2 id="4-计算机硬件系统"><a href="#4-计算机硬件系统" class="headerlink" title="4.计算机硬件系统"></a>4.计算机硬件系统</h2><p>计算机体系结构：</p>
+<ul>
+<li><p>冯诺依曼计算机体系结构</p>
+</li>
+<li><p>基于总线的微型计算机体系结构</p>
+</li>
+<li><p>多处理器计算机结构</p>
+</li>
+</ul>
+<p>多核【封装在一个电路里，多个处理器核心，通过CPU内部总线通信】</p>
+<p>多处理器【多个独立CPU，通过主板上的系统总线通信】</p>
+<p>CPU：</p>
+<p>本质——算术逻辑单元。</p>
+<p>结构——运算器（ALU）、控制器、寄存器、内部总线。</p>
+<p>性能指标——主频（电路上信号的变化，决定ALU运行速度）、外频（决定CPU与主板同步速度）、总线频率（CPU与内存数据交换速度），缓存（缓冲内存读取和CPU使用的速度差），CPU指令集，运算速度（每秒所能执行的指令数，一般用主频表示）。</p>
+<p>存储器：</p>
+<p>材料&lt;——&gt;物质。材料是有特殊用途的物质。</p>
+<p>存储介质——磁介质、光盘、半导体元件。按功能可分为内存、外存。</p>
+<p>输入输出（I/O）：</p>
+<p>输入输出系统：CPU与除主存之外的其他部件之间传输数据的软硬件机构的统称。</p>
+<p>指令系统：</p>
+<p>一条计算机指令通常由操作码和地址码两个部分构成。</p>
+<h2 id="5-计算机软件系统"><a href="#5-计算机软件系统" class="headerlink" title="5.计算机软件系统"></a>5.计算机软件系统</h2><p>系统软件——应用软件——用户。</p>
+<p>系统软件：操作系统、编译器、数据库管理系统……与计算机硬件打交道。</p>
+<p>应用软件：为用户需求设计的软件。</p>
+<p>—操作系统的功能：</p>
+<p>处理器、存储器管理，设备管理，文件管理，任务管理，用户管理，用户、计算机交互界面或操作接口。</p>
+<p>文件：</p>
+<ul>
+<li><p>逻辑结构：有结构文件（多个记录构成）、无结构文件（字符流文件）。</p>
+</li>
+<li><p>物理结构：文本文件、二进制文件。</p>
+</li>
+</ul>
+<p>人机界面：命令行CLI，图形界面GUI。</p>
+<p>6.计算机的运行</p>
+<p>启动：（矛盾的过程）</p>
+<p>BIOS ROM(只读)芯片，保存系统的重要信息和设置系统参数的设置程序。</p>
+<ul>
+<li><p>POST加电自检程序</p>
+</li>
+<li><p>BIOS设置程序（设置系统引导顺序等）</p>
+</li>
+<li><p>系统自举装载程序</p>
+</li>
+<li><p>中断服务程序</p>
+</li>
+</ul>
+<p>COMS RAM(可擦写，断电时丢失信息，一般独立电池供微弱电)，存放BIOS中的设置信息。</p>
+<p>读取主引导记录——硬盘启动——加载操作系统——执行用户程序。</p>
+<p>7.计算机应用</p>
+<p>数值计算、数据处理、计算机辅助、过程控制、-人工智能（相对于与生俱来的自然智能）。</p>
+<p>图灵：“与人脑的活动方式极为相似的机器是可以制造出来的。”</p>
+<p>————————————————————————————————————————————</p>
+<h1 id="三、问题求解与算法"><a href="#三、问题求解与算法" class="headerlink" title="三、问题求解与算法"></a>三、问题求解与算法</h1><h2 id="1-问题与问题求解"><a href="#1-问题与问题求解" class="headerlink" title="1.问题与问题求解"></a>1.问题与问题求解</h2><ul>
+<li>人类问题求解的思维过程</li>
+</ul>
+<p>问题：需要解决但尚未解决的事。来源于科学研究、任务发布。</p>
+<p>问题分析：问题归约、问题抽象、数学建模，其结果是问题的形式化、模型化。</p>
+<p>提出假设。</p>
+<p>检验假设：实践检验、理论验证。</p>
+<ul>
+<li>领域问题及形式化描述</li>
+</ul>
+<p>问题的要素：现实 + 目标。</p>
+<p>问题形式化：现实——&gt;目标。</p>
+<p>问题归约：将复杂的问题简化为相对简单的形式。</p>
+<p>三要素：目标、算子集（若干操作）、基元问题集（有可描述解的问题）。</p>
+<p>表示——与或图（通过与、或关系节点描述问题的解题步骤）。</p>
+<p>问题求解策略：</p>
+<ul>
+<li><p>算法式（枚举、递归等）【逻辑方法，费时】</p>
+</li>
+<li><p>启发式（手段目的分析、顺向推理 [数据驱动]、逆向推理）【不保证得到答案】</p>
+</li>
+<li><p>问题抽象与数学建模</p>
+</li>
+</ul>
+<p>抽象：抽取本质特征（共性）。抽象具有层次性。</p>
+<p>—事物抽象的方法：分离、提纯、简略。</p>
+<p>应用知识从实际问题中抽象提取出数学模型。</p>
+<p>—哥德堡七桥问题：有人提出如何一次走完7桥（Euler回路）。【数学抽象】</p>
+<p>欧拉将七桥问题抽象为图的问题（一笔画），证明了7桥无解，同时开创了图论分支。</p>
+<p>模型的分类：</p>
+<ul>
+<li><p>静态模型（代数方程），动态模型（微分、差分方程）。</p>
+</li>
+<li><p>连续时间模型（微分方程），离散事件模型（差分方程）。</p>
+</li>
+</ul>
+<p>…………</p>
+<ul>
+<li>计算机求解问题</li>
+</ul>
+<h2 id="2-算法与算法分析"><a href="#2-算法与算法分析" class="headerlink" title="2.算法与算法分析"></a>2.算法与算法分析</h2><ul>
+<li>算法描述</li>
+</ul>
+<p>算法：为问题求解的精心设计的程序序列。</p>
+<p>特征：确定性、可行性、有穷性。输入、输出。</p>
+<p>描述方法：自然语言、流程图（如N-S图）、伪代码。</p>
+<ul>
+<li>算法分析</li>
+</ul>
+<p>P问题：多项式时间；NP问题：非确定性多项式问题（能够判断已知的答案是否正确）；NP完全问题：所有可能答案都能在多项式时间内验算；NP难度问题：可以用穷举法，但复杂度是指数关系。</p>
+<p>—美国数据加密标准DES采用长度为64位的密钥（实际密钥56位，8位用于奇偶校验），采用穷举搜索密钥，设计算机每秒钟判断一亿个密码是否正确，则要穷举所有的可能密钥需要花费的时间约为22.85年。</p>
+<h2 id="3-算法设计与分类"><a href="#3-算法设计与分类" class="headerlink" title="3.算法设计与分类"></a>3.算法设计与分类</h2><p>—算法设计</p>
+<ul>
+<li>穷举法（枚举法）</li>
+</ul>
+<p>通常为NP-hard问题，即非确定性多项式难解问题。“百钱买百鸡问题”，“0-1背包问题”。</p>
+<ul>
+<li>递推法</li>
+</ul>
+<p>根据递推关系进行问题求解的方法。一般通过已知条件，根据特定的递推关系得出中间结论，直至得到问题的最终结果。</p>
+<p>递推关系可以抽象为一种简单的数学模型。</p>
+<p>顺推法：已知条件——&gt;最终结果。</p>
+<p>逆推法：已知结果——&gt;初始条件。</p>
+<p>“Fibonacci Sequence”、”储油点问题”。</p>
+<ul>
+<li>递归法（编程技术）</li>
+</ul>
+<p>从已知出发，一步步推出未知项。思想上类似于“逆推法”，但它针对的是对待解问题的递归，把复杂的问题递推为简单的易解问题，然后一步步返回去得到解，属于一种编程技术。“Hanoi塔”。</p>
+<ul>
+<li>回溯法</li>
+</ul>
+<p>在解空间中不断地 试探 — 回溯 。“老鼠走迷宫”，“八皇后问题”。</p>
+<p>从本质上讲，回溯法也是一种穷举法，但回溯法每次测试的是解的一部分，而不是完整的解，提高了效率，可以利用递归编程找出问题所有的解。</p>
+<ul>
+<li>迭代法（编程技术）</li>
+</ul>
+<p>“辗转相除法”、“二分法求非线性方程的解”。</p>
+<ul>
+<li>分治法</li>
+</ul>
+<p>各个系统分而治之。“Merge Sort”。</p>
+<ul>
+<li>贪心法</li>
+</ul>
+<p>从当前情况考虑局部最优解，不保证整体最优，可能是次优解。“0-1背包问题”。</p>
+<ul>
+<li>动态规划法</li>
+</ul>
+<p>应用背景：子问题重复+最优子结构。</p>
+<h2 id="4-搜索问题与查找算法"><a href="#4-搜索问题与查找算法" class="headerlink" title="4.搜索问题与查找算法"></a>4.搜索问题与查找算法</h2><p>搜索问题：抽象——主关键字。</p>
+<p>顺序查找、折半查找。</p>
+<p>查找算法性能评价：时间复杂性、查全率、查准率。</p>
+<h2 id="5-排序问题及排序算法"><a href="#5-排序问题及排序算法" class="headerlink" title="5.排序问题及排序算法"></a>5.排序问题及排序算法</h2><p>如：扑克牌、身高、数字的排序。</p>
+<p>稳定排序——已经排好序的任意两个元素，在排序过程中关系不被破坏。相对的是非稳定排序。</p>
+<p>内部排序——被排序的记录较少，整个排序过程可以只在内存中完成。相对的是外部排序，需要外存。</p>
+<p>分类：选择排序、交换排序、插入排序、归并排序、基数排序 [ O(d- n) ]）。</p>
+<p>基数排序：多关键字排序。</p>
+<p>十进制技术分类：被分类的关键字值是十进制整数，每一位数字视为一个关键字。</p>
+<p>—过程：把输出分为10个桶(0至9)，整个分类过程分成d遍(d为被分类数字的最多位数)。</p>
+<ul>
+<li>对最低关键字进行桶排序[堆栈]，再把排序结果作为第二次的排序依据进行循环。</li>
+</ul>
+<h2 id="6-网络搜索问题"><a href="#6-网络搜索问题" class="headerlink" title="6.网络搜索问题"></a>6.网络搜索问题</h2><ul>
+<li>搜索引擎</li>
+</ul>
+<p>鼻祖：Archic（档案检索系统），by Alan Ematage’s Group。</p>
+<p>1代：目录搜索引擎，主题查询，树形结构，手工分类。</p>
+<p>2代：蜘蛛程序，自动完成分类、目录，如Google，Baidu。网页快照，即使网页不再存在，也可能在搜索服务器上保有一定的资料。</p>
+<p>—全文搜索引擎的构成：搜索器——&gt;索引器——&gt;检索器——&gt;用户接口。</p>
+<ul>
+<li>Page Rank排序算法（PR）</li>
+</ul>
+<p>基于接入链接（Vote）的数量、重要性对网页进行评级。</p>
+<p>网页链接关系：正向、反向。</p>
+<p>计算思想：假定初始所有网页的排名相同，基于此进行迭代，可以证明收敛。Google28天才排序一次。</p>
+<p>—可能的问题：可能导致死循环，还有二维矩阵相乘的问题（迭代）。</p>
+<ul>
+<li>启示</li>
+</ul>
+<p>创新永无止尽。链接的价值度。</p>
+<p>————————————————————————————————————————————</p>
+<h1 id="四、数据与数据结构"><a href="#四、数据与数据结构" class="headerlink" title="四、数据与数据结构"></a>四、数据与数据结构</h1><h2 id="1-数、数据及数据结构"><a href="#1-数、数据及数据结构" class="headerlink" title="1.数、数据及数据结构"></a>1.数、数据及数据结构</h2><ul>
+<li>数</li>
+</ul>
+<p>自然数，整数，分数，有理数，无理数，虚数。</p>
+<ul>
+<li>数据</li>
+</ul>
+<p>对客观事物的符号表示。一切能传到计算机里保存的符号都可以称为数据。</p>
+<ul>
+<li>数据结构</li>
+</ul>
+<p>数据之间的关系。</p>
+<p>—数据类型：抽象，决定了在计算机中所占有的存储空间大小，决定了数据的性质。分为简单类和构造类。</p>
+<p>——逻辑结构</p>
+<ul>
+<li><p>集合（数据元素关系十分松散）</p>
+</li>
+<li><p>线性结构（元素间存在先后关系）</p>
+</li>
+<li><p>树形结构（层次关系，元素称为”节点”）</p>
+</li>
+<li><p>图状结构（多对多的关系，复杂、任意）</p>
+</li>
+</ul>
+<p>——存储结构（数据结构在计算机中的表示，又称物理结构）</p>
+<p>​       ——存储数据 + 存储关系</p>
+<ul>
+<li><p>顺序存储（一组连续的地址空间存储元素，借助数据相对位置表示关系）</p>
+</li>
+<li><p>链式存储（指针来存储关系，增加了存储空间要求，灵活）</p>
+</li>
+</ul>
+<h2 id="2-线性结构"><a href="#2-线性结构" class="headerlink" title="2.线性结构"></a>2.线性结构</h2><ul>
+<li>排队问题及抽象</li>
+</ul>
+<p>先到先服务（使用排队机）。</p>
+<ul>
+<li>线性表</li>
+</ul>
+<p>具有n个元素( n &gt; 0 )的有序序列。</p>
+<p>基本操作：求表长度、取元素、定位、前移、后移、插入( 费时 )、删除。</p>
+<p>—顺序存储结构：数组。</p>
+<p>—链式存储：元素 + 指针。</p>
+<ul>
+<li>堆栈</li>
+</ul>
+<p>后进先出表。一般使用顺序存储结构。</p>
+<ul>
+<li>队列</li>
+</ul>
+<p>先进先出表。</p>
+<h2 id="3-树形结构"><a href="#3-树形结构" class="headerlink" title="3.树形结构"></a>3.树形结构</h2><ul>
+<li>层次关系</li>
+</ul>
+<p>族谱、组织机构、问题决策……</p>
+<ul>
+<li><p>博弈与决策：可以利用图形表示，称为博弈树[Game Tree]/决策树。</p>
+</li>
+<li><p>树形结构</p>
+</li>
+</ul>
+<p>表示：图、Venn图……</p>
+<ul>
+<li><p>二叉树</p>
+</li>
+<li><p>常用操作、算法</p>
+</li>
+</ul>
+<p>前序、中序、后序遍历。</p>
+<h2 id="4-图结构"><a href="#4-图结构" class="headerlink" title="4.图结构"></a>4.图结构</h2><p>哥尼斯堡七桥问题——Euler迹——图论。</p>
+<p>存储：邻接矩阵（O(n^2)，密集）、邻接表（O(lgn)或O(n)，稀疏）。对有向图还有逆邻接表(最大流问题中有应用)。</p>
+<p>遍历：广度优先（队列）、深度优先（堆栈）。</p>
+<p>支撑树（生成树）：最小支撑树（生成树）——&gt;Kruskal算法。</p>
+<h2 id="5-应用举例"><a href="#5-应用举例" class="headerlink" title="5.应用举例"></a>5.应用举例</h2><ul>
+<li>网络与最短通路问题</li>
+</ul>
+<p>交通问题：定点代表城市，边代表长度、费用等</p>
+<p>—有通路吗？最短路？</p>
+<ul>
+<li><p>Dijkstra最短路径算法（图的邻接矩阵存储，无通路的边权设为无穷大）</p>
+</li>
+<li><p>工程拓扑排序问题</p>
+</li>
+</ul>
+<p>子工程、加工工序之间受到约束，形成有向图的结果。拓扑排序序列不一定唯一。</p>
+<p>AOV网络（Acitivity on Vertex）：无权有向图，定点代表Acitivity，有向边代表优先顺序。</p>
+<ul>
+<li><p>AOV网络拓扑分类算法（计算每个定点的入度，取出并删去最高者，循环）</p>
+</li>
+<li><p>工程关键路径问题</p>
+</li>
+</ul>
+<p>工程的工期、产品的生产周期。</p>
+<p>AOE（Acitivity on Edge）：有权有向图，定点代表事件，有向边代表活动，有向边的权代表活动的持续时间（时间可以为0）。</p>
+<p>—关键路径：AOE网络中，某些活动可以并行进行，最短时间由最长路的长度限制（木桶效应）。</p>
+<ul>
+<li>计算事件的最早最迟时间，再计算活动的最早最迟时间——&gt;在关键路径上，活动（边）的最早最迟时间的差为0。</li>
+</ul>
+<p>—-通常可以缩短关键活动的工期以缩短整个工程的工期，但并不绝对，因为所有的活动是在AOE网络相互耦合的，可能牵一发而动全身，甚至使关键路径发生变化。</p>
+<p>————————————————————————————————————————————</p>
+<h1 id="五、计算机程序"><a href="#五、计算机程序" class="headerlink" title="五、计算机程序"></a>五、计算机程序</h1><h2 id="1-计算机程序概述"><a href="#1-计算机程序概述" class="headerlink" title="1.计算机程序概述"></a>1.计算机程序概述</h2><ul>
+<li>自然语言与形式语言</li>
+</ul>
+<p>自然语言有歧义（二义性），因此需要形式化的语言。</p>
+<ul>
+<li>计算机程序设计语言</li>
+</ul>
+<p>一组基本符号，和语法规则。</p>
+<p>—机器语言（指令，计算机直接执行，可读性差，可移植性差）</p>
+<p>—汇编语言（机器语言的助记符语言，本质上仍然面向机器，不能直接运行，通用性差）</p>
+<p>—高级语言（可读性好）</p>
+<ul>
+<li><p>50年代：FORTRAN，ALGOL，LISP，COBOL</p>
+</li>
+<li><p>60年代：Basic</p>
+</li>
+<li><p>70年代：（结构化编程）Pascal，C，Smalltalk，Prolog</p>
+</li>
+<li><p>80年代：（面向对象）C++，Ada，Perl</p>
+</li>
+<li><p>90年代：Python，Visual Basic，Java，Delphi，C#</p>
+</li>
+</ul>
+<p>计算机程序Program：有目的地控制计算机的一组指令序列。源程序（解释型、编译型）、可执行程序。</p>
+<p>计算机软件Software：管理文档，技术文档。</p>
+<p>计算机应用Application：软件系统，运行环境。</p>
+<p>—-软件系统开发：需求分析，设计，编码，测试，运行和维护</p>
+<p>———软件的开发环境：编译器，类库/函数库，连接（静态、动态 [ DDL库 ] ），编辑器，调试工具。</p>
+<h2 id="2-C-C-程序设计语言"><a href="#2-C-C-程序设计语言" class="headerlink" title="2.C/C++程序设计语言"></a>2.C/C++程序设计语言</h2><p>程序设计语言：数据和数据类型、运算符和表达式、程序语句和语句块、函数。</p>
+<p>-C语言：ALGOL 60基础上推出CPL——&gt;B——&gt;C——-&gt;Unix.</p>
+<p>程序语句：高级语言书写的指令语句。</p>
+<p>—赋值语句=赋值表达式+分号。</p>
+<p>语句块：若干程序语句，可以看作逻辑上的一个语句。</p>
+<p>—-函数：结构化编程（分治策略）。</p>
+<h2 id="3-类与对象"><a href="#3-类与对象" class="headerlink" title="3.类与对象"></a>3.类与对象</h2><p>面向对象的思想，利于升级和维护。OOP，面向对象编程。</p>
+<ul>
+<li><p>类：包含数据和方法的数据结构。共有、私有、保护型。成员变量、成员函数（构造函数、析构函数）。</p>
+</li>
+<li><p>对象：用类来声明的数据结构，一个类的具象/外延。</p>
+</li>
+</ul>
+<p>-封装与抽象</p>
+<p>-继承和派生</p>
+<p>-多态</p>
+<p>-接口</p>
+<h2 id="4-数据存储与管理"><a href="#4-数据存储与管理" class="headerlink" title="4.数据存储与管理"></a>4.数据存储与管理</h2><ul>
+<li>数据文件及其操作</li>
+</ul>
+<p>文本文件——字符编码 [ 可用记事本打开 ] ；二进制文件——01比特串。</p>
+<p>—用Debug查看文件存储的内容。</p>
+<ul>
+<li>数据库与数据库管理系统</li>
+</ul>
+<p>数据管理：对数据的高效组织。人工管理——&gt;文件集中管理——&gt;数据库管理。</p>
+<p>数据库管理系统：只负责数据库的建立、维护的系统软件。包括数据定义语言、数据操作语言等。</p>
+<p>数据库：在DBMS的支持下以一定组织方式将相关数据组织在一起所形成的能为多个用户共享与应用程序相互独立的数据集合。以文件的形式存储在外存中。分为层次、网状、关系模型。</p>
+<p>—实体、记录和数据项。</p>
+<ul>
+<li>结构化查询语言SQL——               Transact-SQL [ 增加了数据库的编程功能 ]</li>
+</ul>
+<p>关系型数据库管理系统的标准语言。</p>
+<ul>
+<li><p>数据定义语言</p>
+</li>
+<li><p>数据操作语言（查询、插入、删除和 修改/更新 操作）</p>
+</li>
+<li><p>查询（最复杂的一类语句，如SELECT语句 [FROM、WHERE、ORDER BY子句]）</p>
+</li>
+<li><p>插入（INSERT语句）</p>
+</li>
+<li><p>删除（DELETE语句）</p>
+</li>
+<li><p>修改/更新（UPDATE语句）</p>
+</li>
+<li><p>数据控制语言</p>
+</li>
+</ul>
+<h2 id="5-Web应用"><a href="#5-Web应用" class="headerlink" title="5.Web应用"></a>5.Web应用</h2><ul>
+<li>计算机应用模式的演变</li>
+</ul>
+<p>集中 ——&gt; C/S ——&gt; B/S</p>
+<ul>
+<li>集中式计算模式</li>
+</ul>
+<p>设备昂贵，计算机未普及。集中中心负责计算，需要输入和输出。对大数据、高性能计算具有重要意义。</p>
+<ul>
+<li>客户/服务器（C/S）模式</li>
+</ul>
+<p>把计算机应用一分为二，通过网络来进行数据分享，两个主体协同操作 [ 客户端（主动） + 服务器（被动） ] 。是所有网络应用的基础。可实现分布式计算。但必须在每一个客户端安装大量的应用软件，维护和升级困难。</p>
+<ul>
+<li>浏览器/服务器（B/S）模式</li>
+</ul>
+<p>浏览器——&gt;服务器。不再需要在客户端装各种各样的软件，只需要装一个浏览器即可。</p>
+<p>Web浏览——Web服务——数据库。（实质仍采用C/S方式）</p>
+<p>功能：HTML、TXT 和 脚本（客户端运行的程序）。【不含脚本的称静态网页】</p>
+<ul>
+<li><p>Web应用与传统程序的差异</p>
+</li>
+<li><p>程序构成不同</p>
+</li>
+<li><p>运行环境不同（服务端+客户端）</p>
+</li>
+<li><p>用户界面不同（网页型，实质是程序）</p>
+</li>
+</ul>
+<p>————————————————————————————————————————————</p>
+<h1 id="六、计算机网络"><a href="#六、计算机网络" class="headerlink" title="六、计算机网络"></a>六、计算机网络</h1><h2 id="1-计算机网络技术"><a href="#1-计算机网络技术" class="headerlink" title="1.计算机网络技术"></a>1.计算机网络技术</h2><p>—计算机的通信和资源共享。</p>
+<ul>
+<li><p>计算机网络的产生与发展</p>
+</li>
+<li><p>终端连接网络（哑终端，如SAGE）</p>
+</li>
+<li><p>计算机之间的连接（智能终端，具有独立的计算资源）</p>
+</li>
+<li><p>网络互联（主要问题：标准问题）</p>
+</li>
+<li><p>计算机网络分类</p>
+</li>
+<li><p>局域网（物理短距离，总线型、星型与树形，服务一个单位或系统）</p>
+</li>
+<li><p>广域网（更大的地理范围，借助电信运营商构建通信网络，如电话线上网、宽带接入）</p>
+</li>
+<li><p>城域网（介于局域网和广域网之间，目的构建一种通信网，采用宽带局域网，为城市服务）</p>
+</li>
+<li><p>开放系统互联（OSI）参考模型</p>
+</li>
+<li><p>应用层（接入计算机网络的实体称为OSI系统，应用层负责提供接口，使程序能够使用网络服务）</p>
+</li>
+<li><p>表示层（提供通用的数据格式，是不同系统的数据格式能相互识别）</p>
+</li>
+<li><p>会话层（负责在网络中两个节点之间建立、维持和终止通信）</p>
+</li>
+<li><p>传输层（数据分为数据段，负责数据的可靠传输和流量控制）</p>
+</li>
+<li><p>网络层（将传输层的数据分段封装，根据数据包的目标网络地址实现网络间的路由【路径选择】，将数据沿路径传送到目标网络）</p>
+</li>
+<li><p>数据链路层（将网络层的数据包封装成特定的数据帧Frame，通常由网络接口实现）</p>
+</li>
+<li><p>物理层（将数据帧对应的比特流转换为电、光等信号，提供计算机及网络设备的物理接口，并在媒体中传输）</p>
+</li>
+</ul>
+<p>—-数据封装 + 解封装。</p>
+<ul>
+<li>网络协议Protocol（实质是一种程序，也是一种特定的数据格式）</li>
+</ul>
+<p>TCP，IP。</p>
+<ul>
+<li><p>TCP/IP协议模型</p>
+</li>
+<li><p>应用层，传输层，Internet层，网络接入层。</p>
+</li>
+</ul>
+<p>—简化了OSI，将上3层合为应用层，下2层合为网络接入层，传输层和Internet层不变。</p>
+<p>IP地址：网络标识+主机表示。</p>
+<p>-主机位全0的地址为网络地址。</p>
+<p>—广播地址：当一个数据包中的接收方的IP地址为广播地址时，将有多于一台主机接收到相同的数据包。</p>
+<ul>
+<li><p>直接广播：针对某个指定网络的广播。主机位全1的地址。</p>
+</li>
+<li><p>本地广播：针对发送方所在局域网的广播。32位全部为1的地址。（对 Ivp4）</p>
+</li>
+</ul>
+<p>—私有地址（专用地址）。</p>
+<p>—子网掩码：划分广播域，提高网络通信效率。</p>
+<p>地址渐渐不够用——&gt; Ivp6。</p>
+<ul>
+<li><p>网络设备及其功能</p>
+</li>
+<li><p>网卡</p>
+</li>
+</ul>
+<p>—将计算机连接到网络中。一般1、2层设备，严格来说是2层设备。</p>
+<ul>
+<li><p>中继器</p>
+</li>
+<li><p>集线器</p>
+</li>
+<li><p>桥连接器</p>
+</li>
+<li><p>交换机</p>
+</li>
+</ul>
+<p>—能够在通信系统中完成信息交换功能的设备。”网桥“链路层设备。</p>
+<ul>
+<li>路由器</li>
+</ul>
+<p>—网络层互联设备，用于连接多个逻辑上分开的网络。”没有显示器和键盘的计算机“。存储一个路由表。</p>
+<ul>
+<li>宽带路由器（宽带网关）</li>
+</ul>
+<p>—本身没有路由器的功能。多个设备可以共享IP地址。</p>
+<h2 id="2-互联网"><a href="#2-互联网" class="headerlink" title="2.互联网"></a>2.互联网</h2><p>ARPA网——&gt;互联网——&gt;万维网。</p>
+<p>连接到网络：</p>
+<ul>
+<li><p>网络接口（局域网、广域网连接）</p>
+</li>
+<li><p>通过局域网连接</p>
+</li>
+</ul>
+<p>—-配置网络连接的TCP/IP：本地连接，IP地址、子网掩码、默认网关（必要，端口的IP地址）、DNS服务器（把域名变成IP地址）。</p>
+<ul>
+<li><p>调制解调器连接（安装调制解调器、新建网络连接）</p>
+</li>
+<li><p>无线上网卡连接（非无线网卡，属于无线广域网卡，可以在无线电话信号覆盖的任何地方使用，利用SIM卡连接到互联网，有USB接口，要安装自带的程序）</p>
+</li>
+<li><p>宽带接入与Internet连接共享（安装宽带路由器）</p>
+</li>
+</ul>
+<h2 id="3-网络服务"><a href="#3-网络服务" class="headerlink" title="3.网络服务"></a>3.网络服务</h2><p>—-计算机应用：计算机程序的拓扑结构体。</p>
+<p>下为典型的客户/服务器模式。</p>
+<p><img data-src="file:///C:/Users/Administrator/AppData/Local/Packages/Microsoft.Office.OneNote_8wekyb3d8bbwe/TempState/msohtmlclip/clip_image003.png" alt="客 户 机  应 用  (《大学计算机——计算思维的视角》笔记/clip_image003.png )  TCP  I P  网 络 接 口  网 络 1  路 山 器  IP  网 络 接 口  网 络 2  服 务 器  应 用  ( 应 用 层 协 议 )  TCP  网 络 接 口 "></p>
+<p>———-应用程序：具有通信功能的程序，实现特定的应用层协议。如Web浏览器，<a href="http://网址[:端口号]/路径/文件名[参数表" rel="external nofollow noreferrer">http://网址[:端口号]/路径/文件名[参数表</a>]</p>
+<p>———-应用层协议：对用户应用程序进行封装，产生通信数据。如HTTP、FTP、DNS。</p>
+<p>———-客户机：客户机程序[程序层面]、客户机计算机[用户层面]。</p>
+<p>———-服务器：服务器程序，服务器主机（安装服务器程序的主机）。</p>
+<ul>
+<li>域名和DNS域名解析服务</li>
+</ul>
+<p>DNS服务将域名（便于记忆）解析成IP地址。</p>
+<p>—计算机域名：具有层次结构的计算机命名方式，与计算机IP地址相对应。”主机名.域名“。最右为顶级域名（如 .com .net .org .cn .fr[法国] .ay[意大利]……），然后依次称为二级、三级……域名。域名注册可以通过很多服务机构进行注册。</p>
+<p>DNS域名解析：由一系列的DNS服务器计算机共同完成，这些计算机按照域构成层次结构。</p>
+<p>——-具体解析过程：用户往首选DNS服务器发出域名解析请求——启动解析（自顶向下）——将IP地址返回给用户。为了减缓服务器压力，有了DNS缓存（有时服务器临时更换了IP地址，那么需要清除保存的DNS缓存，再重新域名解析）。</p>
+<p>本地域名解析：如windows里的hosts文件，自动将输入的域名更换为hosts里保存的对应IP地址。</p>
+<p>DNS缓存：本地DNS缓存（显示命令：ipconfig/displaydns；清除命令：ipconfig/flushdns），减少互联网访问。</p>
+<p>——使用”ping 某域名”可以测试本地机器是否可以和网络上某域名可以连通。</p>
+<p>———先清除，再ping某域名，再显示，就可以看到某域名的解析IP地址（实际上为了安全，做了数据处理，是看不到的）了。</p>
+<ul>
+<li>Web服务与浏览器/服务器模式</li>
+</ul>
+<p>——网站&lt;——&gt;Web应用系统——</p>
+<p>统一资源定位符URL：</p>
+<p>​           服务器://网址[:端口号][/[文件路径/文件名]][?参数名=参数值&amp;参数名=参数值…]</p>
+<p>—-各部分含义——服务类型（对应TCP/IP的应用层协议，表明要链接的服务器类型，如http，ftp等），网址（服务器的域名或IP地址），端口号（指定一个特定的服务，服务器根据端口号来分配相应的服务器程序，一般有设默认的端口号【可省略】），文件路径（网页相对于主目录的相对路径），文件名（指定要下载的网页文件），参数（给网页文件的脚本程序使用，参数之间用 &amp; 隔开）。</p>
+<p>端口：通信OSI封装，多个服务器通过使用端口来区分（没有程序名）。</p>
+<p>—-分类：知名端口（21端口-FTP服务，25端口-SMTP服务，80端口-HTTP服务，135端口-(远程过程调用)服务等），动态端口（范围从1024到65535）。</p>
+<p>下为浏览器/服务器应用模式。</p>
+<p><img data-src="file:///C:/Users/Administrator/AppData/Local/Packages/Microsoft.Office.OneNote_8wekyb3d8bbwe/TempState/msohtmlclip/clip_image004.png" alt="IITTP 请 求  11111) 请 求  数 据 库  Internet  服 务 器  浏 览 器  服 务 器  HTML 或  HTML 或  XML 文 档  XML 文 档  ． 在 用 户 端 ， 在 浏 览 器 地 址 栏 中 ， 用 户 输 入 要 访 问 的 网 页 网 址 URL&#39;} ． 回 车 确 认 。  ． web 服 务 器 根 据 URL 中 指 定 的 网 址 、 路 径 和 网 页 文 件 ， 调 出 相 应 的 网 页 文 件 。  如 果 用 户 要 浏 览 的 页 面 是 普 通 的 ] 页 面 ， web 服 务  送 给 用 户 。  如 果 是 服 务 器 页 （ jsp,a.sp 等 ） ， web 服 务 器 将 扌 巴 该 r  令  （ 如 Tonicat ） ， 由 应 用 服 务 器 执 行 页 面 中 的 服 务 器  页 面 返 给 web 服 务 器 ， web 服 务 器 再 将 页 面 发 送 到  ． 在 用 户 端 ， 文 档 在 浏 览 器 中 打 开 ， 即 完 成 网 页 浏 览 。 "></p>
+<ul>
+<li><p>电子邮件服务</p>
+</li>
+<li><p>SMTP——管理邮件传输代理之间进行的电子邮件交换</p>
+</li>
+</ul>
+<p>`POP3——即邮局协议，当用户在邮件客户软件中执行接收命令时将邮件发送到客户端</p>
+<p>—-邮件服务器需要安装SMTP和POP3协议。</p>
+<ul>
+<li>邮件客户</li>
+</ul>
+<p>——传统的邮件客户程序，如OutlookExpress：设置邮件账户，设置邮件服务器（SMTP和POP3）地址；</p>
+<p>——基于Web的邮件客户程序，浏览器</p>
+<h2 id="4-网络与信息安全"><a href="#4-网络与信息安全" class="headerlink" title="4.网络与信息安全"></a>4.网络与信息安全</h2><ul>
+<li>信息安全</li>
+</ul>
+<p>包括信息的保密性、真实性、完整性、未授权拷贝和所寄生系统的安全性。</p>
+<p>安全问题分为网络信息安全和网络系统安全。</p>
+<p>安全目标：保密性，完整性，可用性，可控性，不可否认性（发生的信息交换行为不能被否认）。</p>
+<ul>
+<li><p>信息安全的主要威胁</p>
+</li>
+<li><p>非人为因素：自然灾害、意外事故等</p>
+</li>
+<li><p>人为因素：信息泄露，信息窃取（数据窃听，流量分析），冒名顶替，篡改信息，行为否认（抵赖），授权侵犯（内部攻击），恶意攻击（目前最大的信息安全威胁）。</p>
+</li>
+<li><p>信息安全措施</p>
+</li>
+<li><p>信息安全技术</p>
+</li>
+<li><p>技术产品</p>
+</li>
+<li><p>数据加密技术（明文&lt;——&gt;密文）</p>
+</li>
+</ul>
+
+<ul>
+<li><p>密码学（密码编码学、密码分析分）</p>
+</li>
+<li><p>无条件安全的密码体制，计算上安全的密码体制（NP-hard）</p>
+</li>
+</ul>
+<p>—-常规密码密钥体制（对称）</p>
+<p>—-公开密码密钥体制（非对称，加密密匙PK和解密密匙SK不同，通过PK来推导SK在计算上是不可行的，特点：保密通信，数字签名【加密和解密算法可以对调，通过SK加密，其他人用公有密钥PK可以解密，实现对信息X的数字签名，保证通信双方是可信的，避免相互猜疑 &lt;报文核实、不可抵赖、不可篡改&gt; 】）</p>
+<ul>
+<li><p>病毒与木马</p>
+</li>
+<li><p>病毒——寄生性，潜伏性，传染性，破坏性。</p>
+</li>
+<li><p>木马——带有恶意性质的远程控制软件，采用C/S模式。</p>
+</li>
+</ul>
+<h2 id="5-互联网社会效应"><a href="#5-互联网社会效应" class="headerlink" title="5.互联网社会效应"></a>5.互联网社会效应</h2><ul>
+<li><p>新兴的传播媒介（网络媒体）</p>
+</li>
+<li><p>网络通信</p>
+</li>
+</ul>
+<p>网络 = 通信子网 + 资源子网。</p>
+<p>网络社区与论坛。（社区的网络化、信息化）</p>
+<p>即时通信：IM（ICQ[I SEEK YOU]），MSN，腾讯QQ等。</p>
+<ul>
+<li>网络社交</li>
+</ul>
+<p>利用互联网开展的一系列社会交往活动。导致了网络群体的形成。</p>
+<p>工具：即时通信，网络论坛，RSS简易信息聚合【”推”技术，让用户获取网站内容的最新更新，类似于订阅杂志】，Blog博客，社交网站(SNS)【六度分隔理论】，微博【基于用户关系的信息平台】……</p>
+<p>特点：虚拟（道德感的弱化），多元（影响个人的价值取向），自由（没有中心，没有阶层，没有等级关系），异化（使人趋向孤立、冷漠和非社会化）</p>
+<ul>
+<li>电子商务Electronic Business</li>
+</ul>
+<p>阿里巴巴b2b模式，京东商城b2c模式，淘宝c2c模式。（b:商家business；c:消费者consumer）</p>
+<ul>
+<li><p>网络娱乐</p>
+</li>
+<li><p>网络游戏：具有娱乐功能的程序软件。分为客户端（网游）、浏览器（页游）形式。</p>
+</li>
+<li><p>网络文学：以网络为载体的文学。</p>
+</li>
+<li><p>网络视频：以流媒体（将数据包特殊压缩转换，流式传输，实现边下载边播放）为播放格式的，可以在线直播或点播的声像文件。</p>
+</li>
+<li><p>启示</p>
+</li>
+</ul>
+<p><img data-src="file:///C:/Users/Administrator/AppData/Local/Packages/Microsoft.Office.OneNote_8wekyb3d8bbwe/TempState/msohtmlclip/clip_image006.png" alt="． 艾 萨 克 ． 牛 顿 (《大学计算机——计算思维的视角》笔记/clip_image006.png )  ． 约 翰 ． 道 尔 顿 ( 1766 年 、 1844 年 )  ． 迈 克 尔 ． 法 拉 第 ( 1791 年 、 1867 年 )  ． 詹 姆 斯 ． 克 拉 克 ． 麦 克 斯 韦 ( 1831 年 -  1879 年 )  ． 海 因 里 希 ． 鲁 道 夫 ． 赫 兹 ( 1857 年 -  1894 年 )  -  路 易 斯 ． 巴 斯 德 ( 1822 年 、 189S 年 )  ． 阿 尔 弗 雷 德 ． 伯 纳 德 ． 诺 贝 尔 ( 1833 年 -  1896 年 )  -  德 米 特 里 ． 伊 万 诺 维 奇 ． 门 捷 列 夫 ( 1834 年 、 1907 年 )  ． 马 克 斯 ． 普 朗 克 ( 1858 年 、 1947 年 )  ． 阿 尔 伯 特 ， 爱 因 斯 坦 ( 1879 年 、 1955 年 ) "></p>
+<p>20世纪原始理论创新减少，人类的科技发展、工业制造水平已进入相当高的水平。</p>
+<p>我们需要应用创新，只要能想到就能做到。（对比巴贝奇的分析机受限于当时制造水平而失败）</p>
+<hr>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/" title="《大学计算机——计算思维的视角》笔记">https://stellarkey.github.io/《大学计算机——计算思维的视角》笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CS/" rel="tag"><i class="fa fa-tag"></i> CS</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E3%80%8A%E5%BE%AE%E8%BD%AF%E4%BA%9A%E6%B4%B2%E7%A0%94%E7%A9%B6%E9%99%A2%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7%E3%80%8B%E7%AC%94%E8%AE%B0/" rel="prev" title="《微软亚洲研究院大数据系列讲座》笔记">
+      <i class="fa fa-chevron-left"></i> 《微软亚洲研究院大数据系列讲座》笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Notes-of-Intro-to-Computer-System/" rel="next" title="Review of ICS">
+      Review of ICS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、绪论"><span class="nav-number">1.</span> <span class="nav-text">一、绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-信息社会与信息素养"><span class="nav-number">1.1.</span> <span class="nav-text">1.信息社会与信息素养</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-人类思维与逻辑学"><span class="nav-number">1.2.</span> <span class="nav-text">2.人类思维与逻辑学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-计算思维"><span class="nav-number">1.3.</span> <span class="nav-text">3.计算思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-计算与计算科学"><span class="nav-number">1.4.</span> <span class="nav-text">4.计算与计算科学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-学科交叉与融合"><span class="nav-number">1.5.</span> <span class="nav-text">5.学科交叉与融合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、计算与计算机"><span class="nav-number">2.</span> <span class="nav-text">二、计算与计算机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数、计算与计算工具"><span class="nav-number">2.1.</span> <span class="nav-text">1.数、计算与计算工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-计算机的产生和发展"><span class="nav-number">2.2.</span> <span class="nav-text">2.计算机的产生和发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数的表示和字符编码"><span class="nav-number">2.3.</span> <span class="nav-text">3.数的表示和字符编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-计算机硬件系统"><span class="nav-number">2.4.</span> <span class="nav-text">4.计算机硬件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-计算机软件系统"><span class="nav-number">2.5.</span> <span class="nav-text">5.计算机软件系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、问题求解与算法"><span class="nav-number">3.</span> <span class="nav-text">三、问题求解与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-问题与问题求解"><span class="nav-number">3.1.</span> <span class="nav-text">1.问题与问题求解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-算法与算法分析"><span class="nav-number">3.2.</span> <span class="nav-text">2.算法与算法分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-算法设计与分类"><span class="nav-number">3.3.</span> <span class="nav-text">3.算法设计与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-搜索问题与查找算法"><span class="nav-number">3.4.</span> <span class="nav-text">4.搜索问题与查找算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-排序问题及排序算法"><span class="nav-number">3.5.</span> <span class="nav-text">5.排序问题及排序算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-网络搜索问题"><span class="nav-number">3.6.</span> <span class="nav-text">6.网络搜索问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数据与数据结构"><span class="nav-number">4.</span> <span class="nav-text">四、数据与数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数、数据及数据结构"><span class="nav-number">4.1.</span> <span class="nav-text">1.数、数据及数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-线性结构"><span class="nav-number">4.2.</span> <span class="nav-text">2.线性结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-树形结构"><span class="nav-number">4.3.</span> <span class="nav-text">3.树形结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-图结构"><span class="nav-number">4.4.</span> <span class="nav-text">4.图结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-应用举例"><span class="nav-number">4.5.</span> <span class="nav-text">5.应用举例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、计算机程序"><span class="nav-number">5.</span> <span class="nav-text">五、计算机程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-计算机程序概述"><span class="nav-number">5.1.</span> <span class="nav-text">1.计算机程序概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-C-C-程序设计语言"><span class="nav-number">5.2.</span> <span class="nav-text">2.C&#x2F;C++程序设计语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-类与对象"><span class="nav-number">5.3.</span> <span class="nav-text">3.类与对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数据存储与管理"><span class="nav-number">5.4.</span> <span class="nav-text">4.数据存储与管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Web应用"><span class="nav-number">5.5.</span> <span class="nav-text">5.Web应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、计算机网络"><span class="nav-number">6.</span> <span class="nav-text">六、计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-计算机网络技术"><span class="nav-number">6.1.</span> <span class="nav-text">1.计算机网络技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-互联网"><span class="nav-number">6.2.</span> <span class="nav-text">2.互联网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-网络服务"><span class="nav-number">6.3.</span> <span class="nav-text">3.网络服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-网络与信息安全"><span class="nav-number">6.4.</span> <span class="nav-text">4.网络与信息安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-互联网社会效应"><span class="nav-number">6.5.</span> <span class="nav-text">5.互联网社会效应</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4%E7%9A%84%E8%A7%86%E8%A7%92%E3%80%8B%E7%AC%94%E8%AE%B0/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

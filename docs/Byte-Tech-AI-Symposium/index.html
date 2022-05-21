@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="2019 Byte Tech AI Symposium机器智能前沿论坛记录。本文多图，约200M，谨慎阅读。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019机器智能前沿论坛">
+<meta property="og:url" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="2019 Byte Tech AI Symposium机器智能前沿论坛记录。本文多图，约200M，谨慎阅读。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547898072596.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547898987050.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547897522092.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547897994048.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547898072596.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910472703.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547899231619.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547899395535.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547899415915.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908651488.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908680243.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908761493.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908832052.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547917533904.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908872938.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908887626.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547908941409.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909016413.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909099575.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909164994.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909602392.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909875432.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909902008.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547909986308.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910001052.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910059031.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910070683.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910080974.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910091088.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910127200.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910167531.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910185035.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910472703.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910511033.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910566593.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910590416.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910783233.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910799583.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910865006.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910911823.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547910952574.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911003387.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911014827.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911147478.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911224748.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911259141.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911272319.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911285763.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911298245.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911317326.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911325968.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911336697.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911345638.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911354983.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911364945.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911377399.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911393439.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911403121.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911814356.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911825948.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911862094.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911928314.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547911937899.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912036096.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912101775.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912111189.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912145530.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912155121.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912196798.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912229893.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912241854.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912364641.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912389316.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912398208.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912409970.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912417989.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912427051.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912445739.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912454125.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912586910.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912681779.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912790560.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912801729.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912812269.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912825848.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912833506.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912840615.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912848649.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912870540.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912883343.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912902817.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912961107.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912968331.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547912977617.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913049406.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913058549.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913068121.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913077619.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913085358.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913097024.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913113288.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913869429.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913878008.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913885339.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913892997.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913929249.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913938219.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913970591.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547913992116.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914002513.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914009538.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914016702.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914057236.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914068355.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914076480.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914084524.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914092456.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914099951.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914124249.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914179280.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914192234.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914203409.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914212701.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914233972.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914245655.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914280709.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914289609.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914298099.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914306463.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914316244.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914328211.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914340297.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914370113.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914420221.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914429620.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914458715.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914496057.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914512699.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914522188.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914548844.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914561711.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914576202.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914590525.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914610034.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914618642.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914628801.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914637092.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914645433.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914657537.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914667411.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914680598.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914692915.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914705823.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914719214.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914731847.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914745705.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914757787.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914777387.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914787523.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914809266.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914820010.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914833424.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914844320.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914858770.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914870609.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914879016.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914887648.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914897631.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914906772.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914917789.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914930398.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914939916.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547914951781.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915367252.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915378667.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915457088.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915469100.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915477964.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915485483.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915505687.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915512832.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915519790.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915548597.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915565764.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915588118.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915603035.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915615979.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915625756.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915635017.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915651685.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915660760.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915677222.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915711336.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915724273.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915763486.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915774459.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915869467.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915878050.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915886432.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915909305.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915947597.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915956259.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915971674.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547915990329.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916000865.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916014358.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916032481.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916261083.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916272702.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916315941.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916324340.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916356913.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916380228.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916427163.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916456511.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916466597.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916505375.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916517065.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916525636.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916533954.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916551185.png">
+<meta property="og:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547916669280.png">
+<meta property="article:published_time" content="2019-01-19T15:43:02.000Z">
+<meta property="article:modified_time" content="2021-01-04T14:47:53.990Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/Byte-Tech-AI-Symposium/1547898072596.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/Byte-Tech-AI-Symposium/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2019机器智能前沿论坛 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/Byte-Tech-AI-Symposium/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2019机器智能前沿论坛
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/View/" itemprop="url" rel="index"><span itemprop="name">View</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img data-src="/Byte-Tech-AI-Symposium/1547898072596.png" class="" width="1547898072596">
+<p>2019 Byte Tech AI Symposium机器智能前沿论坛记录。<br>本文多图，约200M，谨慎阅读。<br><a id="more"></a>如有需要，建议另存为HTML或者其它格式。</p>
+<h1 id="Info"><a href="#Info" class="headerlink" title="Info"></a>Info</h1><p><a href="http://www.sigai.cn/index.php?r=front/knowledgelist&amp;cata=%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0" target="_blank" rel="noopener external nofollow noreferrer">SIGAI人工智能平台</a> （除技术栏目外需要<strong>付费</strong>），<a href="http://www.sigai.cn/paper_18.html" target="_blank" rel="noopener external nofollow noreferrer">机器学习算法地图</a></p>
+<blockquote>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546926457940115.jpg" target="_blank" rel="noopener external nofollow noreferrer">算法地图背面.jpg</a></p>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546940703391949.jpeg" target="_blank" rel="noopener external nofollow noreferrer">算法地图正面.jpeg</a></p>
+<p><a href="http://www.sigai.cn/upload/files/20190108/1546943320610818.jpg" target="_blank" rel="noopener external nofollow noreferrer">电脑桌面版.jpg</a></p>
+<p>以下为预览：（桌面版）</p>
+</blockquote>
+<img data-src="/Byte-Tech-AI-Symposium/1547898987050.png" class="" width="1547898987050">
+<p><a href="https://biendata.com/competition/icmechallenge2019/" target="_blank" rel="noopener external nofollow noreferrer">短视频内容理解与推荐竞赛</a> （ICME 2019 Grand Chanllenge）</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>天气稍冷。会议在8点半开始入场。门口已经排起了长队，想必对数据科学的向往已经深入人心。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547897522092.png" class="" width="1547897522092">
+<p>时间悠然溜走。然而阳光乍起，暖色调迎面袭来，令人顿生期许。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547897994048.png" class="" width="1547897994048">
+<h1 id="致辞"><a href="#致辞" class="headerlink" title="致辞"></a>致辞</h1><img data-src="/Byte-Tech-AI-Symposium/1547898072596.png" class="" width="1547898072596">
+<p>孙茂松：介绍嘉宾。<br>致辞，致辞，致辞……</p>
+<ul>
+<li><strong>脑科学记忆机制研究进展缓慢</strong>。</li>
+<li>创造算法，算法产生知识，则知识产权如何定义？（legal issues）</li>
+<li><strong>网络安全大有所为</strong>。</li>
+<li>CSranking(CMU,Tsinghua,…:smile:)</li>
+<li>清华人工智能发展历史悠久。</li>
+</ul>
+<p>李航致辞：</p>
+<ul>
+<li>今日头条，抖音</li>
+<li><strong>AIlab与产品线路相结合</strong>（落地型研究所）。ByteCUP</li>
+</ul>
+<h1 id="Dawn-Song-人工智能与安全：经验、挑战与未来方向"><a href="#Dawn-Song-人工智能与安全：经验、挑战与未来方向" class="headerlink" title="Dawn Song-人工智能与安全：经验、挑战与未来方向"></a>Dawn Song-人工智能与安全：经验、挑战与未来方向</h1><p>Dawn Song，加州大学伯克利分校，计算机系教授。清华物理系校友。</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>AI,Security 相互影响。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910472703.png" class="" width="1547910472703">
+<img data-src="/Byte-Tech-AI-Symposium/1547899231619.png" class="" width="1547899231619">
+<p>DDOS attack等网络攻击逐渐严重化。</p>
+<p> 弱点检测，自动检查系统等。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547899395535.png" class="" width="1547899395535">
+<p>人类常常造成基础性弱点 黑客可能利用社会工程学——Chatbot。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547899415915.png" class="" width="1547899415915">
+<p>软件安全验证。例：verify programs 开源项目。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547908651488.png" class="" width="1547908651488">
+<h2 id="Attacker"><a href="#Attacker" class="headerlink" title="Attacker"></a>Attacker</h2><p>讲述网络攻击者对机器学习的影响。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547908680243.png" class="" width="1547908680243">
+<p>总览。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547908761493.png" class="" width="1547908761493">
+<p>下面是一些对抗样本的展示。adversarial examples</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547908832052.png" class="" width="1547908832052">
+<p>left  can lead to wrong classification label！<br>（下面视频中左边的复合成图像可以干扰AI，但人类却容易正确识别，<del>录的效果不好+HTML不支持orz，视频删掉了</del>）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547917533904.png" class="" width="1547917533904">
+<img data-src="/Byte-Tech-AI-Symposium/1547908872938.png" class="" width="1547908872938">
+<p>视觉问答系统中的对抗样本。VQA。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547908887626.png" class="" width="1547908887626">
+<img data-src="/Byte-Tech-AI-Symposium/1547908941409.png" class="" width="1547908941409">
+<img data-src="/Byte-Tech-AI-Symposium/1547909016413.png" class="" width="1547909016413">
+<blockquote>
+<p>我的猜测：容易被fool的根本解释可能是因为计算机识别的特征尺度与人类的直觉是不同的。<br>（也许它们认知到了一些底层特征）</p>
+</blockquote>
+<p>利用对抗样本诱骗强化学习器。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909099575.png" class="" width="1547909099575">
+<h2 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h2><p>利用神经网络生成对抗样本。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909164994.png" class="" width="1547909164994">
+<p>黑盒攻击模式总览。（不知道学习器的内部结构）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909602392.png" class="" width="1547909602392">
+<p>对抗式机器学习总结。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909875432.png" class="" width="1547909875432">
+<p>一个案例。（手段：spacial consistency）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909902008.png" class="" width="1547909902008">
+<p>学习系统的安全级别分为三类：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547909986308.png" class="" width="1547909986308">
+<p>一个对比。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910001052.png" class="" width="1547910001052">
+<p>再来一个对比。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910059031.png" class="" width="1547910059031">
+<p>使用递归（recursion）来生成神经算法，<del>这里指的是减治/分治</del>。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910070683.png" class="" width="1547910070683">
+<img data-src="/Byte-Tech-AI-Symposium/1547910080974.png" class="" width="1547910080974">
+<p>再回security level：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910091088.png" class="" width="1547910091088">
+<p>神经网络是否只是强行记住了数据呢？</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910127200.png" class="" width="1547910127200">
+<p>Looks like it。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910167531.png" class="" width="1547910167531">
+<p>防护方法：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910185035.png" class="" width="1547910185035">
+<p>好啦，回到主题上，今天主要讲了两个方面，AI和security互相的enabler。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910472703.png" class="" width="1547910472703">
+<h2 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h2><p>最后，展望未来：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910511033.png" class="" width="1547910511033">
+<h1 id="ByteCUP比赛颁奖仪式"><a href="#ByteCUP比赛颁奖仪式" class="headerlink" title="ByteCUP比赛颁奖仪式"></a>ByteCUP比赛颁奖仪式</h1><h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547910566593.png" class="" width="1547910566593">
+<h2 id="颁奖"><a href="#颁奖" class="headerlink" title="颁奖~"></a>颁奖~</h2><img data-src="/Byte-Tech-AI-Symposium/1547910590416.png" class="" width="1547910590416">
+<img data-src="/Byte-Tech-AI-Symposium/1547910783233.png" class="" width="1547910783233">
+<img data-src="/Byte-Tech-AI-Symposium/1547910799583.png" class="" width="1547910799583">
+<blockquote>
+<p><del>第一名一个人领666。</del></p>
+</blockquote>
+<h2 id="分享"><a href="#分享" class="headerlink" title="分享~"></a>分享~</h2><h3 id="Team-3th"><a href="#Team-3th" class="headerlink" title="Team 3th"></a>Team 3th</h3><img data-src="/Byte-Tech-AI-Symposium/1547910865006.png" class="" width="1547910865006">
+<h3 id="Team-2nd"><a href="#Team-2nd" class="headerlink" title="Team 2nd"></a>Team 2nd</h3><p>模型融合。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910911823.png" class="" width="1547910911823">
+<h3 id="Team-1st"><a href="#Team-1st" class="headerlink" title="Team 1st"></a>Team 1st</h3><p>有点像debug。。真简洁。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547910952574.png" class="" width="1547910952574">
+<img data-src="/Byte-Tech-AI-Symposium/1547911003387.png" class="" width="1547911003387">
+<img data-src="/Byte-Tech-AI-Symposium/1547911014827.png" class="" width="1547911014827">
+<h1 id="李航-深度学习与NLP"><a href="#李航-深度学习与NLP" class="headerlink" title="李航-深度学习与NLP"></a>李航-深度学习与NLP</h1><h2 id="Overview-2"><a href="#Overview-2" class="headerlink" title="Overview"></a>Overview</h2><p><strong>为什么深度学习的效果如此之好？下一个方法是什么？</strong></p>
+<p>人的语言处理——<strong>认知现象</strong>。神经网络，产生表象(image)<br>但大脑实质在做神经计算（下意识进行），符号在大脑中被编码储存(类似计算机)</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911147478.png" class="" width="1547911147478">
+<img data-src="/Byte-Tech-AI-Symposium/1547911224748.png" class="" width="1547911224748">
+<p>体验模拟假说——大猩猩是否有鼻子？鼻子是否被大猩猩所有？</p>
+<blockquote>
+<p>(鼻子似乎很难有一个image)，会不会造成过于的端到端——机制仍然是一个谜。</p>
+</blockquote>
+<img data-src="/Byte-Tech-AI-Symposium/1547911259141.png" class="" width="1547911259141">
+<h2 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h2><p>一个二层神经网络就被证明为是万能函数近似器。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911272319.png" class="" width="1547911272319">
+<p>样本效率：（深度网络可以充分利用样本？）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911285763.png" class="" width="1547911285763">
+<p>泛化能力考量新进展。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911298245.png" class="" width="1547911298245">
+<img data-src="/Byte-Tech-AI-Symposium/1547911317326.png" class="" width="1547911317326">
+<p>鲁棒性。（<strong>最坏</strong>意义误差控制On）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911325968.png" class="" width="1547911325968">
+<p>合理性。（如何避免bias？）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911336697.png" class="" width="1547911336697">
+<p>可解释性。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911345638.png" class="" width="1547911345638">
+<h2 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h2><img data-src="/Byte-Tech-AI-Symposium/1547911354983.png" class="" width="1547911354983">
+<img data-src="/Byte-Tech-AI-Symposium/1547911364945.png" class="" width="1547911364945">
+<img data-src="/Byte-Tech-AI-Symposium/1547911377399.png" class="" width="1547911377399">
+<img data-src="/Byte-Tech-AI-Symposium/1547911393439.png" class="" width="1547911393439">
+<h3 id="Soft"><a href="#Soft" class="headerlink" title="Soft"></a>Soft</h3><img data-src="/Byte-Tech-AI-Symposium/1547911403121.png" class="" width="1547911403121">
+<h3 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h3><img data-src="/Byte-Tech-AI-Symposium/1547911814356.png" class="" width="1547911814356">
+<img data-src="/Byte-Tech-AI-Symposium/1547911825948.png" class="" width="1547911825948">
+<p>符号和统计这两种类型的结合仍然是一个非常新颖的课题。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547911862094.png" class="" width="1547911862094">
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><img data-src="/Byte-Tech-AI-Symposium/1547911928314.png" class="" width="1547911928314">
+<img data-src="/Byte-Tech-AI-Symposium/1547911937899.png" class="" width="1547911937899">
+<h1 id="朱军-不确定和对抗环境下的机器学习探讨"><a href="#朱军-不确定和对抗环境下的机器学习探讨" class="headerlink" title="朱军-不确定和对抗环境下的机器学习探讨"></a>朱军-不确定和对抗环境下的机器学习探讨</h1><p>清华计算机系教授。</p>
+<h2 id="Overview-3"><a href="#Overview-3" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547912036096.png" class="" width="1547912036096">
+<img data-src="/Byte-Tech-AI-Symposium/1547912101775.png" class="" width="1547912101775">
+<img data-src="/Byte-Tech-AI-Symposium/1547912111189.png" class="" width="1547912111189">
+<img data-src="/Byte-Tech-AI-Symposium/1547912145530.png" class="" width="1547912145530">
+<h2 id="珠算-zhusuan"><a href="#珠算-zhusuan" class="headerlink" title="珠算-zhusuan"></a>珠算-zhusuan</h2><p>珠算系统——概率学习</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547912155121.png" class="" width="1547912155121">
+<p>调包示例：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547912196798.png" class="" width="1547912196798">
+<img data-src="/Byte-Tech-AI-Symposium/1547912229893.png" class="" width="1547912229893">
+<img data-src="/Byte-Tech-AI-Symposium/1547912241854.png" class="" width="1547912241854">
+<p><a href="https://www.zhihu.com/question/59606929" target="_blank" rel="noopener external nofollow noreferrer">如何评价生成模型框架 ZhuSuan?</a></p>
+<p><a href="https://arxiv.org/abs/1709.05870" target="_blank" rel="noopener external nofollow noreferrer">ZhuSuan: A Library for Bayesian Deep Learning</a></p>
+<p><a href="https://zhusuan.readthedocs.io/en/latest/" target="_blank" rel="noopener external nofollow noreferrer">Welcome to ZhuSuan</a></p>
+<h2 id="Triple-GAN"><a href="#Triple-GAN" class="headerlink" title="Triple GAN"></a>Triple GAN</h2><img data-src="/Byte-Tech-AI-Symposium/1547912364641.png" class="" width="1547912364641">
+<img data-src="/Byte-Tech-AI-Symposium/1547912389316.png" class="" width="1547912389316">
+<img data-src="/Byte-Tech-AI-Symposium/1547912398208.png" class="" width="1547912398208">
+<img data-src="/Byte-Tech-AI-Symposium/1547912409970.png" class="" width="1547912409970">
+<h2 id="Attack"><a href="#Attack" class="headerlink" title="Attack"></a>Attack</h2><img data-src="/Byte-Tech-AI-Symposium/1547912417989.png" class="" width="1547912417989">
+<img data-src="/Byte-Tech-AI-Symposium/1547912427051.png" class="" width="1547912427051">
+<img data-src="/Byte-Tech-AI-Symposium/1547912445739.png" class="" width="1547912445739">
+<h2 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h2><blockquote>
+<p>神经网络不怕白噪声，但怕对抗噪声<br>    正则化虽然削弱了收缩能力，却可能导致样本的正确率所对应的成功样本集具有随机性(尽管最后的正确率往往接近)<br>鲁棒性，增加样本距离</p>
+</blockquote>
+<img data-src="/Byte-Tech-AI-Symposium/1547912454125.png" class="" width="1547912454125">
+<hr>
+<p>茶歇（招聘通道）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547912586910.png" class="" width="1547912586910">
+<h1 id="文林福-计算机视觉在移动端相机上的应用"><a href="#文林福-计算机视觉在移动端相机上的应用" class="headerlink" title="文林福-计算机视觉在移动端相机上的应用"></a>文林福-计算机视觉在移动端相机上的应用</h1><img data-src="/Byte-Tech-AI-Symposium/1547912681779.png" class="" width="1547912681779">
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><img data-src="/Byte-Tech-AI-Symposium/1547912790560.png" class="" width="1547912790560">
+<img data-src="/Byte-Tech-AI-Symposium/1547912801729.png" class="" width="1547912801729">
+<img data-src="/Byte-Tech-AI-Symposium/1547912812269.png" class="" width="1547912812269">
+<img data-src="/Byte-Tech-AI-Symposium/1547912825848.png" class="" width="1547912825848">
+<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><img data-src="/Byte-Tech-AI-Symposium/1547912833506.png" class="" width="1547912833506">
+<img data-src="/Byte-Tech-AI-Symposium/1547912840615.png" class="" width="1547912840615">
+<p>稀疏化处理：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547912848649.png" class="" width="1547912848649">
+<p>自动化：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547912870540.png" class="" width="1547912870540">
+<img data-src="/Byte-Tech-AI-Symposium/1547912883343.png" class="" width="1547912883343">
+<h2 id="Machine-Level"><a href="#Machine-Level" class="headerlink" title="Machine Level"></a>Machine Level</h2><img data-src="/Byte-Tech-AI-Symposium/1547912902817.png" class="" width="1547912902817">
+<img data-src="/Byte-Tech-AI-Symposium/1547912961107.png" class="" width="1547912961107">
+<blockquote>
+<p>然后放了一堆抖音视频。。</p>
+</blockquote>
+<h1 id="王长虎-CV在内容审核、理解、推荐与搜索中的应用"><a href="#王长虎-CV在内容审核、理解、推荐与搜索中的应用" class="headerlink" title="王长虎-CV在内容审核、理解、推荐与搜索中的应用"></a>王长虎-CV在内容审核、理解、推荐与搜索中的应用</h1><img data-src="/Byte-Tech-AI-Symposium/1547912968331.png" class="" width="1547912968331">
+<img data-src="/Byte-Tech-AI-Symposium/1547912977617.png" class="" width="1547912977617">
+<img data-src="/Byte-Tech-AI-Symposium/1547913049406.png" class="" width="1547913049406">
+<img data-src="/Byte-Tech-AI-Symposium/1547913058549.png" class="" width="1547913058549">
+<img data-src="/Byte-Tech-AI-Symposium/1547913068121.png" class="" width="1547913068121">
+<img data-src="/Byte-Tech-AI-Symposium/1547913077619.png" class="" width="1547913077619">
+<img data-src="/Byte-Tech-AI-Symposium/1547913085358.png" class="" width="1547913085358">
+<blockquote>
+<p>后面没记。。</p>
+</blockquote>
+<h1 id="王井东-基于交错组卷积的高效神经网络"><a href="#王井东-基于交错组卷积的高效神经网络" class="headerlink" title="王井东-基于交错组卷积的高效神经网络"></a>王井东-基于交错组卷积的高效神经网络</h1><p>微软亚研院高级研究员。</p>
+<p>看他的PPT吧。（<a href="./ANN.pdf">演讲PPT</a>）</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547913097024.png" class="" width="1547913097024">
+<img data-src="/Byte-Tech-AI-Symposium/1547913113288.png" class="" width="1547913113288">
+<h1 id="马泽君-音频理解与语音交互技术的应用"><a href="#马泽君-音频理解与语音交互技术的应用" class="headerlink" title="马泽君-音频理解与语音交互技术的应用"></a>马泽君-音频理解与语音交互技术的应用</h1><img data-src="/Byte-Tech-AI-Symposium/1547913869429.png" class="" width="1547913869429">
+<img data-src="/Byte-Tech-AI-Symposium/1547913878008.png" class="" width="1547913878008">
+<img data-src="/Byte-Tech-AI-Symposium/1547913885339.png" class="" width="1547913885339">
+<img data-src="/Byte-Tech-AI-Symposium/1547913892997.png" class="" width="1547913892997">
+<img data-src="/Byte-Tech-AI-Symposium/1547913929249.png" class="" width="1547913929249">
+<img data-src="/Byte-Tech-AI-Symposium/1547913938219.png" class="" width="1547913938219">
+<h1 id="王雨轩-语音合成的新进展及其应用"><a href="#王雨轩-语音合成的新进展及其应用" class="headerlink" title="王雨轩-语音合成的新进展及其应用"></a>王雨轩-语音合成的新进展及其应用</h1><h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><img data-src="/Byte-Tech-AI-Symposium/1547913970591.png" class="" width="1547913970591">
+<img data-src="/Byte-Tech-AI-Symposium/1547913992116.png" class="" width="1547913992116">
+<img data-src="/Byte-Tech-AI-Symposium/1547914002513.png" class="" width="1547914002513">
+<img data-src="/Byte-Tech-AI-Symposium/1547914009538.png" class="" width="1547914009538">
+<img data-src="/Byte-Tech-AI-Symposium/1547914016702.png" class="" width="1547914016702">
+<h2 id="Tacotron"><a href="#Tacotron" class="headerlink" title="Tacotron"></a>Tacotron</h2><p>Tacotron真厉害。效果拔群。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547914057236.png" class="" width="1547914057236">
+<img data-src="/Byte-Tech-AI-Symposium/1547914068355.png" class="" width="1547914068355">
+<img data-src="/Byte-Tech-AI-Symposium/1547914076480.png" class="" width="1547914076480">
+<img data-src="/Byte-Tech-AI-Symposium/1547914084524.png" class="" width="1547914084524">
+<img data-src="/Byte-Tech-AI-Symposium/1547914092456.png" class="" width="1547914092456">
+<img data-src="/Byte-Tech-AI-Symposium/1547914099951.png" class="" width="1547914099951">
+<h2 id="Final-1"><a href="#Final-1" class="headerlink" title="Final"></a>Final</h2><img data-src="/Byte-Tech-AI-Symposium/1547914124249.png" class="" width="1547914124249">
+<h1 id="谢磊-深度对抗学习在语音处理中的应用"><a href="#谢磊-深度对抗学习在语音处理中的应用" class="headerlink" title="谢磊-深度对抗学习在语音处理中的应用"></a>谢磊-深度对抗学习在语音处理中的应用</h1><p>西北工业大学计算机系教授。</p>
+<p>深度学习+信号处理<br>深度对抗学习<br>对抗样本——数据扩充（数据增强，<em><a href="https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced" target="_blank" rel="noopener external nofollow noreferrer"><strong><font color=red>Data Augmentation</font></strong></a></em>）！</p>
+<blockquote>
+<p>对抗样本的原理很可能跟高维空间的变形有关。添加一个小的全维平衡扰动，将极大地影响距离度量。</p>
+</blockquote>
+<h2 id="Overview-4"><a href="#Overview-4" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547914179280.png" class="" width="1547914179280">
+<img data-src="/Byte-Tech-AI-Symposium/1547914192234.png" class="" width="1547914192234">
+<img data-src="/Byte-Tech-AI-Symposium/1547914203409.png" class="" width="1547914203409">
+<img data-src="/Byte-Tech-AI-Symposium/1547914212701.png" class="" width="1547914212701">
+<img data-src="/Byte-Tech-AI-Symposium/1547914233972.png" class="" width="1547914233972">
+<img data-src="/Byte-Tech-AI-Symposium/1547914245655.png" class="" width="1547914245655">
+<h2 id="Deep-Adversarial-Learning"><a href="#Deep-Adversarial-Learning" class="headerlink" title="Deep Adversarial Learning"></a>Deep Adversarial Learning</h2><img data-src="/Byte-Tech-AI-Symposium/1547914280709.png" class="" width="1547914280709">
+<img data-src="/Byte-Tech-AI-Symposium/1547914289609.png" class="" width="1547914289609">
+<img data-src="/Byte-Tech-AI-Symposium/1547914298099.png" class="" width="1547914298099">
+<img data-src="/Byte-Tech-AI-Symposium/1547914306463.png" class="" width="1547914306463">
+<p>例子。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547914316244.png" class="" width="1547914316244">
+<img data-src="/Byte-Tech-AI-Symposium/1547914328211.png" class="" width="1547914328211">
+<img data-src="/Byte-Tech-AI-Symposium/1547914340297.png" class="" width="1547914340297">
+<p>正则化。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547914370113.png" class="" width="1547914370113">
+<h2 id="Summary-2"><a href="#Summary-2" class="headerlink" title="Summary"></a>Summary</h2><img data-src="/Byte-Tech-AI-Symposium/1547914420221.png" class="" width="1547914420221">
+<img data-src="/Byte-Tech-AI-Symposium/1547914429620.png" class="" width="1547914429620">
+<h1 id="Dan-Roth-附带监督的NLP"><a href="#Dan-Roth-附带监督的NLP" class="headerlink" title="Dan Roth-附带监督的NLP"></a>Dan Roth-附带监督的NLP</h1><p>宾夕法尼亚大学计算与信息科学杰出教授。</p>
+<blockquote>
+<p>跟不上节奏。。老老实实地当摄影师。</p>
+</blockquote>
+<img data-src="/Byte-Tech-AI-Symposium/1547914458715.png" class="" width="1547914458715">
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><img data-src="/Byte-Tech-AI-Symposium/1547914496057.png" class="" width="1547914496057">
+<img data-src="/Byte-Tech-AI-Symposium/1547914512699.png" class="" width="1547914512699">
+<img data-src="/Byte-Tech-AI-Symposium/1547914522188.png" class="" width="1547914522188">
+<img data-src="/Byte-Tech-AI-Symposium/1547914548844.png" class="" width="1547914548844">
+<img data-src="/Byte-Tech-AI-Symposium/1547914561711.png" class="" width="1547914561711">
+<img data-src="/Byte-Tech-AI-Symposium/1547914576202.png" class="" width="1547914576202">
+<img data-src="/Byte-Tech-AI-Symposium/1547914590525.png" class="" width="1547914590525">
+<img data-src="/Byte-Tech-AI-Symposium/1547914610034.png" class="" width="1547914610034">
+<img data-src="/Byte-Tech-AI-Symposium/1547914618642.png" class="" width="1547914618642">
+<img data-src="/Byte-Tech-AI-Symposium/1547914628801.png" class="" width="1547914628801">
+<img data-src="/Byte-Tech-AI-Symposium/1547914637092.png" class="" width="1547914637092">
+<img data-src="/Byte-Tech-AI-Symposium/1547914645433.png" class="" width="1547914645433">
+<img data-src="/Byte-Tech-AI-Symposium/1547914657537.png" class="" width="1547914657537">
+<img data-src="/Byte-Tech-AI-Symposium/1547914667411.png" class="" width="1547914667411">
+<img data-src="/Byte-Tech-AI-Symposium/1547914680598.png" class="" width="1547914680598">
+<img data-src="/Byte-Tech-AI-Symposium/1547914692915.png" class="" width="1547914692915">
+<img data-src="/Byte-Tech-AI-Symposium/1547914705823.png" class="" width="1547914705823">
+<img data-src="/Byte-Tech-AI-Symposium/1547914719214.png" class="" width="1547914719214">
+<img data-src="/Byte-Tech-AI-Symposium/1547914731847.png" class="" width="1547914731847">
+<img data-src="/Byte-Tech-AI-Symposium/1547914745705.png" class="" width="1547914745705">
+<img data-src="/Byte-Tech-AI-Symposium/1547914757787.png" class="" width="1547914757787">
+<img data-src="/Byte-Tech-AI-Symposium/1547914777387.png" class="" width="1547914777387">
+<img data-src="/Byte-Tech-AI-Symposium/1547914787523.png" class="" width="1547914787523">
+<img data-src="/Byte-Tech-AI-Symposium/1547914809266.png" class="" width="1547914809266">
+<img data-src="/Byte-Tech-AI-Symposium/1547914820010.png" class="" width="1547914820010">
+<img data-src="/Byte-Tech-AI-Symposium/1547914833424.png" class="" width="1547914833424">
+<img data-src="/Byte-Tech-AI-Symposium/1547914844320.png" class="" width="1547914844320">
+<img data-src="/Byte-Tech-AI-Symposium/1547914858770.png" class="" width="1547914858770">
+<img data-src="/Byte-Tech-AI-Symposium/1547914870609.png" class="" width="1547914870609">
+<img data-src="/Byte-Tech-AI-Symposium/1547914879016.png" class="" width="1547914879016">
+<img data-src="/Byte-Tech-AI-Symposium/1547914887648.png" class="" width="1547914887648">
+<img data-src="/Byte-Tech-AI-Symposium/1547914897631.png" class="" width="1547914897631">
+<img data-src="/Byte-Tech-AI-Symposium/1547914906772.png" class="" width="1547914906772">
+<img data-src="/Byte-Tech-AI-Symposium/1547914917789.png" class="" width="1547914917789">
+<img data-src="/Byte-Tech-AI-Symposium/1547914930398.png" class="" width="1547914930398">
+<img data-src="/Byte-Tech-AI-Symposium/1547914939916.png" class="" width="1547914939916">
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><img data-src="/Byte-Tech-AI-Symposium/1547914951781.png" class="" width="1547914951781">
+<h1 id="李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement"><a href="#李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement" class="headerlink" title="李磊-Learning to Generate Better News, Translation, and Advertisement"></a>李磊-Learning to Generate Better News, Translation, and Advertisement</h1><img data-src="/Byte-Tech-AI-Symposium/1547915367252.png" class="" width="1547915367252">
+<h2 id="Overview-5"><a href="#Overview-5" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547915378667.png" class="" width="1547915378667">
+<img data-src="/Byte-Tech-AI-Symposium/1547915457088.png" class="" width="1547915457088">
+<img data-src="/Byte-Tech-AI-Symposium/1547915469100.png" class="" width="1547915469100">
+<img data-src="/Byte-Tech-AI-Symposium/1547915477964.png" class="" width="1547915477964">
+<h2 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h2><img data-src="/Byte-Tech-AI-Symposium/1547915485483.png" class="" width="1547915485483">
+<img data-src="/Byte-Tech-AI-Symposium/1547915505687.png" class="" width="1547915505687">
+<img data-src="/Byte-Tech-AI-Symposium/1547915512832.png" class="" width="1547915512832">
+<img data-src="/Byte-Tech-AI-Symposium/1547915519790.png" class="" width="1547915519790">
+<h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><img data-src="/Byte-Tech-AI-Symposium/1547915548597.png" class="" width="1547915548597">
+<img data-src="/Byte-Tech-AI-Symposium/1547915565764.png" class="" width="1547915565764">
+<img data-src="/Byte-Tech-AI-Symposium/1547915588118.png" class="" width="1547915588118">
+<img data-src="/Byte-Tech-AI-Symposium/1547915603035.png" class="" width="1547915603035">
+<img data-src="/Byte-Tech-AI-Symposium/1547915615979.png" class="" width="1547915615979">
+<img data-src="/Byte-Tech-AI-Symposium/1547915625756.png" class="" width="1547915625756">
+<img data-src="/Byte-Tech-AI-Symposium/1547915635017.png" class="" width="1547915635017">
+<img data-src="/Byte-Tech-AI-Symposium/1547915651685.png" class="" width="1547915651685">
+<h2 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h2><img data-src="/Byte-Tech-AI-Symposium/1547915660760.png" class="" width="1547915660760">
+<img data-src="/Byte-Tech-AI-Symposium/1547915677222.png" class="" width="1547915677222">
+<h1 id="张敏-个性化推荐研究新进展"><a href="#张敏-个性化推荐研究新进展" class="headerlink" title="张敏-个性化推荐研究新进展"></a>张敏-个性化推荐研究新进展</h1><p>清华计算机系教授。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547915711336.png" class="" width="1547915711336">
+<h2 id="Overview-6"><a href="#Overview-6" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547915724273.png" class="" width="1547915724273">
+<p>可解释性，鲁棒性，公平性（无偏性）。</p>
+<hr>
+<img data-src="/Byte-Tech-AI-Symposium/1547915763486.png" class="" width="1547915763486">
+<h2 id="Explainability"><a href="#Explainability" class="headerlink" title="Explainability"></a>Explainability</h2><img data-src="/Byte-Tech-AI-Symposium/1547915774459.png" class="" width="1547915774459">
+<img data-src="/Byte-Tech-AI-Symposium/1547915869467.png" class="" width="1547915869467">
+<img data-src="/Byte-Tech-AI-Symposium/1547915878050.png" class="" width="1547915878050">
+<img data-src="/Byte-Tech-AI-Symposium/1547915886432.png" class="" width="1547915886432">
+<h2 id="Robustness"><a href="#Robustness" class="headerlink" title="Robustness"></a>Robustness</h2><img data-src="/Byte-Tech-AI-Symposium/1547915909305.png" class="" width="1547915909305">
+<img data-src="/Byte-Tech-AI-Symposium/1547915947597.png" class="" width="1547915947597">
+<img data-src="/Byte-Tech-AI-Symposium/1547915956259.png" class="" width="1547915956259">
+<h2 id="Fairness"><a href="#Fairness" class="headerlink" title="Fairness"></a>Fairness</h2><img data-src="/Byte-Tech-AI-Symposium/1547915971674.png" class="" width="1547915971674">
+<img data-src="/Byte-Tech-AI-Symposium/1547915990329.png" class="" width="1547915990329">
+<img data-src="/Byte-Tech-AI-Symposium/1547916000865.png" class="" width="1547916000865">
+<img data-src="/Byte-Tech-AI-Symposium/1547916014358.png" class="" width="1547916014358">
+<h2 id="Conclusion-2"><a href="#Conclusion-2" class="headerlink" title="Conclusion"></a>Conclusion</h2><img data-src="/Byte-Tech-AI-Symposium/1547916032481.png" class="" width="1547916032481">
+<h1 id="万小军-自然语言生成-NLG-技术研究进展"><a href="#万小军-自然语言生成-NLG-技术研究进展" class="headerlink" title="万小军-自然语言生成(NLG)技术研究进展"></a>万小军-自然语言生成(NLG)技术研究进展</h1><p>北大计算机系教授。</p>
+<p><strong>NLG的评价指标研究是一个核心的挑战问题</strong>。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916261083.png" class="" width="1547916261083">
+<h2 id="Overview-7"><a href="#Overview-7" class="headerlink" title="Overview"></a>Overview</h2><img data-src="/Byte-Tech-AI-Symposium/1547916272702.png" class="" width="1547916272702">
+<img data-src="/Byte-Tech-AI-Symposium/1547916315941.png" class="" width="1547916315941">
+<h2 id="Apply"><a href="#Apply" class="headerlink" title="Apply"></a>Apply</h2><p>交互，写诗集？</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916324340.png" class="" width="1547916324340">
+<p>未来可能的应用方向：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916356913.png" class="" width="1547916356913">
+<p>NLG方法：</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916380228.png" class="" width="1547916380228">
+<p>目前来说，NLG领域还没有拿得出手的绝活。</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916427163.png" class="" width="1547916427163">
+<img data-src="/Byte-Tech-AI-Symposium/1547916456511.png" class="" width="1547916456511">
+<img data-src="/Byte-Tech-AI-Symposium/1547916466597.png" class="" width="1547916466597">
+<img data-src="/Byte-Tech-AI-Symposium/1547916505375.png" class="" width="1547916505375">
+<img data-src="/Byte-Tech-AI-Symposium/1547916517065.png" class="" width="1547916517065">
+<img data-src="/Byte-Tech-AI-Symposium/1547916525636.png" class="" width="1547916525636">
+<h2 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h2><img data-src="/Byte-Tech-AI-Symposium/1547916533954.png" class="" width="1547916533954">
+<img data-src="/Byte-Tech-AI-Symposium/1547916551185.png" class="" width="1547916551185">
+<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>不知不觉一整天就过去了。获得了多少？消化了多少？</p>
+<p>Ask myself that, and wall into the good night.</p>
+<img data-src="/Byte-Tech-AI-Symposium/1547916669280.png" class="" width="1547916669280">
+<h1 id="Arrangement"><a href="#Arrangement" class="headerlink" title="Arrangement"></a>Arrangement</h1><p><img data-src=Byte-Tech-AI-Symposium/30873302924033539.jpg width=650></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/Byte-Tech-AI-Symposium/" title="2019机器智能前沿论坛">https://stellarkey.github.io/Byte-Tech-AI-Symposium/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E4%B9%98%E6%B3%A2/" rel="prev" title="乘波">
+      <i class="fa fa-chevron-left"></i> 乘波
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/" rel="next" title="第十八期人工智能前沿学生论坛——语音识别前沿技术">
+      第十八期人工智能前沿学生论坛——语音识别前沿技术 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#致辞"><span class="nav-number">3.</span> <span class="nav-text">致辞</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dawn-Song-人工智能与安全：经验、挑战与未来方向"><span class="nav-number">4.</span> <span class="nav-text">Dawn Song-人工智能与安全：经验、挑战与未来方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview"><span class="nav-number">4.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attacker"><span class="nav-number">4.2.</span> <span class="nav-text">Attacker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure"><span class="nav-number">4.3.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final"><span class="nav-number">4.4.</span> <span class="nav-text">Final</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ByteCUP比赛颁奖仪式"><span class="nav-number">5.</span> <span class="nav-text">ByteCUP比赛颁奖仪式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">5.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颁奖"><span class="nav-number">5.2.</span> <span class="nav-text">颁奖~</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分享"><span class="nav-number">5.3.</span> <span class="nav-text">分享~</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-3th"><span class="nav-number">5.3.1.</span> <span class="nav-text">Team 3th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-2nd"><span class="nav-number">5.3.2.</span> <span class="nav-text">Team 2nd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Team-1st"><span class="nav-number">5.3.3.</span> <span class="nav-text">Team 1st</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#李航-深度学习与NLP"><span class="nav-number">6.</span> <span class="nav-text">李航-深度学习与NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-2"><span class="nav-number">6.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Findings"><span class="nav-number">6.2.</span> <span class="nav-text">Findings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP"><span class="nav-number">6.3.</span> <span class="nav-text">NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Soft"><span class="nav-number">6.3.1.</span> <span class="nav-text">Soft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Future"><span class="nav-number">6.3.2.</span> <span class="nav-text">Future</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">6.4.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#朱军-不确定和对抗环境下的机器学习探讨"><span class="nav-number">7.</span> <span class="nav-text">朱军-不确定和对抗环境下的机器学习探讨</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-3"><span class="nav-number">7.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#珠算-zhusuan"><span class="nav-number">7.2.</span> <span class="nav-text">珠算-zhusuan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triple-GAN"><span class="nav-number">7.3.</span> <span class="nav-text">Triple GAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attack"><span class="nav-number">7.4.</span> <span class="nav-text">Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-1"><span class="nav-number">7.5.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文林福-计算机视觉在移动端相机上的应用"><span class="nav-number">8.</span> <span class="nav-text">文林福-计算机视觉在移动端相机上的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">8.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithms"><span class="nav-number">8.2.</span> <span class="nav-text">Algorithms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Machine-Level"><span class="nav-number">8.3.</span> <span class="nav-text">Machine Level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王长虎-CV在内容审核、理解、推荐与搜索中的应用"><span class="nav-number">9.</span> <span class="nav-text">王长虎-CV在内容审核、理解、推荐与搜索中的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王井东-基于交错组卷积的高效神经网络"><span class="nav-number">10.</span> <span class="nav-text">王井东-基于交错组卷积的高效神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#马泽君-音频理解与语音交互技术的应用"><span class="nav-number">11.</span> <span class="nav-text">马泽君-音频理解与语音交互技术的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#王雨轩-语音合成的新进展及其应用"><span class="nav-number">12.</span> <span class="nav-text">王雨轩-语音合成的新进展及其应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General"><span class="nav-number">12.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tacotron"><span class="nav-number">12.2.</span> <span class="nav-text">Tacotron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-1"><span class="nav-number">12.3.</span> <span class="nav-text">Final</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谢磊-深度对抗学习在语音处理中的应用"><span class="nav-number">13.</span> <span class="nav-text">谢磊-深度对抗学习在语音处理中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-4"><span class="nav-number">13.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Adversarial-Learning"><span class="nav-number">13.2.</span> <span class="nav-text">Deep Adversarial Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-2"><span class="nav-number">13.3.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dan-Roth-附带监督的NLP"><span class="nav-number">14.</span> <span class="nav-text">Dan Roth-附带监督的NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Start"><span class="nav-number">14.1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">14.2.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#李磊-Learning-to-Generate-Better-News-Translation-and-Advertisement"><span class="nav-number">15.</span> <span class="nav-text">李磊-Learning to Generate Better News, Translation, and Advertisement</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-5"><span class="nav-number">15.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications"><span class="nav-number">15.2.</span> <span class="nav-text">Applications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Technologies"><span class="nav-number">15.3.</span> <span class="nav-text">Technologies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">15.4.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#张敏-个性化推荐研究新进展"><span class="nav-number">16.</span> <span class="nav-text">张敏-个性化推荐研究新进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-6"><span class="nav-number">16.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Explainability"><span class="nav-number">16.2.</span> <span class="nav-text">Explainability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness"><span class="nav-number">16.3.</span> <span class="nav-text">Robustness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fairness"><span class="nav-number">16.4.</span> <span class="nav-text">Fairness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-2"><span class="nav-number">16.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万小军-自然语言生成-NLG-技术研究进展"><span class="nav-number">17.</span> <span class="nav-text">万小军-自然语言生成(NLG)技术研究进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-7"><span class="nav-number">17.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apply"><span class="nav-number">17.2.</span> <span class="nav-text">Apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenges"><span class="nav-number">17.3.</span> <span class="nav-text">Challenges</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尾声"><span class="nav-number">18.</span> <span class="nav-text">尾声</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arrangement"><span class="nav-number">19.</span> <span class="nav-text">Arrangement</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/Byte-Tech-AI-Symposium/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="本文为《 赛博智能经济与区块链》的公众号文章撰写任务。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零知识证明简记">
+<meta property="og:url" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="本文为《 赛博智能经济与区块链》的公众号文章撰写任务。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/0fef5f44a0e04f4ab3dc483a3ee09ffe.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/5d61c2e3ece8426286dd72849870b0ed.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/24752ee4c4784447bef63b46d72fd8ea.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/9311e39bb1084bc5ac0bb33dc9cdac51.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111192128550.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111194210629.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111200941691.png">
+<meta property="article:published_time" content="2020-11-02T07:42:05.000Z">
+<meta property="article:modified_time" content="2021-01-04T16:14:16.631Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="区块链">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/0fef5f44a0e04f4ab3dc483a3ee09ffe.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>零知识证明简记 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          零知识证明简记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Think/" itemprop="url" rel="index"><span itemprop="name">Think</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文为《 赛博智能经济与区块链》的公众号文章撰写任务。<a id="more"></a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://zhuanlan.zhihu.com/p/90711138" target="_blank" rel="noopener external nofollow noreferrer">零知识证明学习资源汇总</a></p>
+<p><a href="https://www2.kenyon.edu/Depts/Math/Aydin/Teach/Sp14/328/AliBabaCave.pdf" target="_blank" rel="noopener external nofollow noreferrer">How to Explain Zero-Knowledge Protocols to Your Children</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/31651393" target="_blank" rel="noopener external nofollow noreferrer">区块链学习笔记 (1)：零知识证明的江湖</a></p>
+<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>什么是零知识证明？</p>
+<p>零知识证明看上去字面上好像是“<strong>不用任何知识就证明了某件事情</strong>”的意思。。但是事情并非如此简单……</p>
+<p>首先我们一定明白，零知识证明<strong><font  color=red>不可能等于</font></strong><strong><font color=blue>没有利用任何信息而完成证明</font></strong>。如果有人宣称他证明了哥德巴赫猜想，那么他也至少需要给各位发送这样一条“声明”：“兄弟们，快来看看！新鲜的哥德巴赫猜想证明。俺完成的。”这本身就是一种信息的传递。</p>
+<p>事实上大家也注意到，证明是一个信息交互的过程。</p>
+<p>那么，我们不由得疑惑：</p>
+<blockquote>
+<p><em>零知识证明，究竟“零知识”到什么程度？</em></p>
+</blockquote>
+<p>我们可以把缜密的逻辑推理看作是<strong>强证明</strong>。因为没有什么比详细的证明步骤更有说服力了。</p>
+<p>但是，想像一下，现实生活里面，如果不通过缜密的逻辑推理（<del>To be fair，不是所有人都适合这个方式</del>），我们平时是怎么作证明？</p>
+<p>古人云：“<strong>论迹不论心</strong>。”假如我们没有条件以理服人，那么用行动证明自己也是不错的选择。</p>
+<blockquote>
+<p>和缜密逻辑所代表的非交互式证明不同，行动代表了一类交互式证明的模式。</p>
+</blockquote>
+<h1 id="三色问题"><a href="#三色问题" class="headerlink" title="三色问题"></a>三色问题</h1><p>看来我们可以尝试认为<strong>足够数量的行为</strong>可以揭露事物背后隐藏的真实。所谓实践是检验真理的唯一标准。</p>
+<p>想像我们要进行一项三种颜色的涂色问题（三色问题），同样保证相邻不同色：</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/0fef5f44a0e04f4ab3dc483a3ee09ffe.png" class="" title="三色问题">
+<p>一种可能的解决方案如下：</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/5d61c2e3ece8426286dd72849870b0ed.png" class="" title="解决方案">
+<p>三色问题实际上是一个NP完全问题，这意味着为了寻找一个有效的解，将花费巨额的时间成本。如果提问者给出了一个三色问题，回答者找到了相应的解，他肯定倾向于在得到报酬之前对解进行保密。那么，回答者要怎么证明他获得了这个解，并且不透露其它的任何多余信息呢？</p>
+<p>首先我们把得到的解决方案上的涂色全部掩盖住：</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/24752ee4c4784447bef63b46d72fd8ea.png" class="" title="mask">
+<p>提问者每次可以揭示一组相邻节点的涂色，验证是否满足不同色条件：</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/9311e39bb1084bc5ac0bb33dc9cdac51.png" class="" title="reveal">
+<blockquote>
+<p>为了揭示时不透露方案真正的涂色，这里应该引入一种随机化的动态映射，每次揭示前，将图中的颜色按随机生成的置换群映射成另外的某种颜色。这样，尽管提问者知道解的性质，但无法推测出具体的解。</p>
+</blockquote>
+<p>这样的揭示次数足够多，那么回答者拥有正确解的概率就会急剧增加。</p>
+<p>当这个概率足够大以后，提问者将可以信任回答者——他确实找到了一个合法的涂色方案。</p>
+<p>尽管三色问题只是一个案例，但是作为一个NP完全问题，任何其他的NP问题都可以转化为三色问题的实例。</p>
+<h1 id="零知识"><a href="#零知识" class="headerlink" title="零知识"></a>零知识</h1><p>Goldwasser, Micali 和 Rackoff 提出三个零知识证明的特性，任何零知识都必须满足。简单来说：</p>
+<ol>
+<li>完整性(<em>Completeness</em>)。如果证明方和验证方都是诚实的，并遵循证明过程的每一步，进行正确的计算，那么这个证明一定是成功的，验证方一定能够接受证明方。</li>
+<li>安全性(<em>Soundness</em>)。没有人能够假冒证明方，使这个证明成功。</li>
+<li><font color=red>零知识性</font>(<em>Zero-knowledgeness</em>)。证明过程执行完之后，验证方只获得了“证明方拥有这个知识”这条信息，而没有获得关于这个知识本身的任何一点信息。</li>
+</ol>
+<p>零知识，指的就是具有第三条特性的信息。其实，这个术语更适合称之为<strong>零额外知识</strong>。</p>
+<p>如果这个信息还同时具有完整、安全性，则称之为零知识证明。</p>
+<p>零知识，本质上是<strong><font color=blue>对解的一无所知</font></strong>。</p>
+<p>这种一无所知表现在：尽管你获得了零知识，但是你求解这个问题的难度不变，你想要获得问题的解的期望计算量不变。</p>
+<blockquote>
+<p><em><strong><font color=deepskyblue>你看到了梦中的海市蜃楼，但却无人指出通向彼岸的路。</font></strong></em></p>
+</blockquote>
+<h1 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h1><p>你甚至可以把三色问题的一连串揭示看成该领域内的“图灵测试”。</p>
+<p>通过足够的测试，那么一个黑箱模型可以被认为具有人类智能；通过足够多的揭示，那么一个黑箱涂色方案可以被认为是给定三色问题的解。</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111192128550.png" class="" title="图灵测试">
+<p>但是，我们知道，在图灵测试中你再怎么测试黑箱是否具有人类智能，也无法从中得知任何构造这样一个具有人类智能的机器的信息——如果可以得到的话，那么人们早就造出强人工智能了。因为用一个真人也是可以在黑箱中假装一个人工智能的。</p>
+<p>这意味着图灵测试本身只能提供一个可信的判断，但是黑箱内部的机制究竟是什么样的？</p>
+<p>事实是，你完全可以伪造。</p>
+<h1 id="时光倒流"><a href="#时光倒流" class="headerlink" title="时光倒流"></a>时光倒流</h1><p>想像我们有一台时光机。这台时光机允许你每次测试失败后，回到过去一段时间，针对每一个特定的测试设计一个伪造的信息，从而重新通过该测试。</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111194210629.png" class="" title="时光机">
+<p>这意味着一个伪造者可以在不知道任何解的信息的情况下，通过所有的测试。其代价无非是在他自己的时间线<strong>多花一点时间而已</strong>。</p>
+<p>看到这里你可能会想：时光机这东西真的存在吗？你说了这么多有什么实际意义？</p>
+<p>事实上，时间只不过是一种虚拟的概念，时间的本质是一种有序的链。（<del>是不是想到了区块链？</del>）</p>
+<p>在计算机的程序运行过程中，“时光倒流”是司空见惯的，程序回滚、回退并不是遥不可及的手段。比如，某大型程序员线上交友网站所使用的git快照管理技术，就是典型支持时间意义上的版本管理的工具。</p>
+<p>任何的验证者计算机(Verifier)程序都可以构造一棵如下图所示的伪造者决策树：</p>
+<img data-src="/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/image-20201111200941691.png" class="" title="伪造者决策树">
+<p>每一次测试都是一个分支点，只需要在分支点处进行有限次的回滚，就一定能够通过测试。</p>
+<hr>
+<p>既然一个对解一无所知的伪造者都能通过测试，那么提问者想要从测试中获得关于解的有用信息，看上去就不太可能了……在这种情况下，这样的测试就完成了零知识级的信息传递。</p>
+<h2 id="永不坍缩的观测"><a href="#永不坍缩的观测" class="headerlink" title="永不坍缩的观测"></a>永不坍缩的观测</h2><p>时光机作弊的特点在于，无论观察多少次，提问者永远无法区分一个有解和另一个对解一无所知的人的区别。</p>
+<blockquote>
+<p>想想，时光倒流，你可以预知你的一切已有经历，但是除此之外你仍然一无所知，从前你不知道的东西现在你依然不知道。</p>
+</blockquote>
+<p>这和量子效应正好相反：只要观测，立刻坍缩。</p>
+<p>时光机作弊，达成了永不坍缩的观测。</p>
+<h1 id="零知识证明"><a href="#零知识证明" class="headerlink" title="零知识证明"></a>零知识证明</h1><p>如果我们要完成一个证明，如果不能区分到底有没有解，那么证明就没有意义了。所以，要形成零知识证明，除了给出了一个满足零知识性的交互方法以外，我们还需要加上一些其它的约束。</p>
+<p>即，把时光倒流这种超能力<strong>ban</strong>掉。</p>
+<p>如果限制了时光倒流，强迫整个证明过程在线完成，那么便形成了真正的零知识证明。</p>
+<p>但是，交互式的证明是一对一的，在一个区块链里面，发交易的人要向所有矿工证明交易是合法的，双方需要实时交互，交流信息。一个一个证明效率太低太低了。</p>
+<blockquote>
+<p>我们还可以看到，要实现零知识，一个解必须要存在一种与解的结构无关的特征，这种特征是解空间内其它元素所不具有的。我们在测试中，实际测试的就是黑箱是否具有这些特征。</p>
+</blockquote>
+<p>因此，零知识证明协议经历了一段长时期的发展，直到它可以真正被应用到实际工程中去。零知识证明协议变成了一个大家族，这些协议之间具有不同的特点，它们所采用的底层密码学技术也有极大差别。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">协议特点</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">通用性</td>
+<td style="text-align:center">全能型</td>
+<td style="text-align:center">专用型<br />（只能证明某些特定的事）</td>
+</tr>
+<tr>
+<td style="text-align:center">交互性</td>
+<td style="text-align:center">非交互式</td>
+<td style="text-align:center">交互式</td>
+</tr>
+<tr>
+<td style="text-align:center">证明规模</td>
+<td style="text-align:center">$O(1)$</td>
+<td style="text-align:center">$O(n)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>为了获得非交互式的证明，计算机科学家尝试<strong>把原始问题映射到NP问题</strong>。NP问题天然存在验证、求解两个子问题，验证通常十分简单，而求解通常十分繁琐。对于验证者来说，消耗自然很小；对于掌握秘密的人，求解NP问题只需要将秘密映射到相应的NP问题空间；而对于没有掌握秘密的人来说，绕过原始问题直接暴力求解NP问题，是计算上不可行的。</p>
+<p>当然，为了保证非交互证明的公平性，通常系统会给出一个公共中立的随机序列（第三方），在证明时加入随机因子。我们考虑“两人分粥”问题，一种常用的公平策略是 Cut and Choose，即一个人分粥，另一个人选粥。这样便避免了证明者自身的偏好。但是，还有一种方法是，引入一个随机选择器，在一个人分粥完成以后，两个人随机地获取其中一份——这样在统计意义上便实现了公平。只不过，这需要一个可信、中立的第三方。</p>
+<blockquote>
+<p>你可以认为非交互式证明是把交互过程打包给了第三方。</p>
+</blockquote>
+<hr>
+<p>2010年，Groth实现了基于椭圆曲线双线性映射的首个全能、非交互、常数大小的零知识证明协议；基于此又发展出了SNARKs协议，并经过不断优化后最终被应用到Zcash数字货币中。Zcash 使用的 NP 问题是 <strong>QAP</strong>（Quadratic Arithmetic Program），Zcash亦引入了可信的第三方。</p>
+<p>对于Zcash数字货币的转账交易而来，零知识证明只需要证明三件事：</p>
+<ol>
+<li>发送的钱属于发送交易的人</li>
+<li>发送者发送的金额等于接收者收到金额</li>
+<li>发送者的钱确实被销毁了</li>
+</ol>
+<p>整个过程中矿工并不关心具体花了多少钱，以及参与交易的双方是谁；矿工只关心整个系统的货币是否守恒。</p>
+<h1 id="延伸思考1-零知识证明的隐藏前提"><a href="#延伸思考1-零知识证明的隐藏前提" class="headerlink" title="延伸思考1-零知识证明的隐藏前提"></a>延伸思考1-零知识证明的隐藏前提</h1><blockquote>
+<p>零知识的正式内容介绍已经结束了。这一部分的正确性无法保证，只是一种简单的思考。</p>
+</blockquote>
+<p>我的观点是，零知识证明需要一个问题是离线可解的。也就是在获得的相关信息不变的约束下，某个问题单纯通过计算就可以获得解答。</p>
+<blockquote>
+<p>在幻想学中这对应着想界不变。</p>
+<p>如果一个问题是想界内不可解的，那么它无法变成一个零知识证明。</p>
+</blockquote>
+<p>如果一个问题，是无法单纯通过计算就可以获得解答，那么在不给出新的信息时，就无法构造出零知识证明。</p>
+<p>从另一个角度，零知识证明的前提，应该是对于验证者来说：</p>
+<ul>
+<li>问题的解是藏在他已知的一个解空间之中的（<strong>可知性</strong>）</li>
+<li>对于任意一个解空间中的位置，都可以进行离线的验证（<strong>可解性</strong>）</li>
+</ul>
+<p>也就是说，不是所有的问题和场景都可以构造零知识证明。</p>
+<h1 id="延伸思考2-模拟器-时光机佯谬"><a href="#延伸思考2-模拟器-时光机佯谬" class="headerlink" title="延伸思考2-模拟器/时光机佯谬"></a>延伸思考2-模拟器/时光机佯谬</h1><blockquote>
+<p><em>以下是对证明模拟器/时光机零知识的一个反驳。</em></p>
+</blockquote>
+<p>虽然我无法区分究竟是在哪个世界、哪个角色，或者有没有使用时光机作弊。</p>
+<p>但是，simulator的确从真实世界获得了所有的必要的交互验证信息。</p>
+<p>也就是说，如果simulator可以一直保持这样的超能力——那么无论simulator知不知道证明，它对我来说都具有有效的证明力。</p>
+<p>也就是，当模拟器具有证明力的时候，它必须与真实世界有连接。一旦它失去连接，它就失去了证明力。也就是说，模拟器相当于真实世界的一个<strong>接口</strong> / <strong>Interface</strong>（<strong>它们是一体的不可分的</strong>）。模拟器不知道，但是模拟器和真实世界的联合体是知道证明的。</p>
+<blockquote>
+<p>说模拟器不知道证明，就好像在说，<strong>我的手不知道我脑袋的想法</strong>一样。</p>
+<blockquote>
+<p>就算对于真实世界来说，也不是真实角色的所有的“部分”都拥有零知识证明的信息。</p>
+</blockquote>
+</blockquote>
+<p>也就是这样的证明方法是不足的。</p>
+<p>应该用多重宇宙的方法，在无穷多的平行空间中，存在一个随机宇宙，它不能作弊，但是它也能做出跟真实世界一样的证明。这时，双方就没有连接了。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/" title="零知识证明简记">https://stellarkey.github.io/零知识证明简记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E8%BF%BD%E9%80%90%E6%98%9F%E6%98%9F/" rel="prev" title="追逐星星">
+      <i class="fa fa-chevron-left"></i> 追逐星星
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%A7%91%E6%8A%80%E4%B8%8E%E4%BA%BA%E6%96%87%E6%B5%85%E8%AE%A8/" rel="next" title="科技与人文浅讨">
+      科技与人文浅讨 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引子"><span class="nav-number">2.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三色问题"><span class="nav-number">3.</span> <span class="nav-text">三色问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识"><span class="nav-number">4.</span> <span class="nav-text">零知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图灵测试"><span class="nav-number">5.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时光倒流"><span class="nav-number">6.</span> <span class="nav-text">时光倒流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永不坍缩的观测"><span class="nav-number">6.1.</span> <span class="nav-text">永不坍缩的观测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零知识证明"><span class="nav-number">7.</span> <span class="nav-text">零知识证明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸思考1-零知识证明的隐藏前提"><span class="nav-number">8.</span> <span class="nav-text">延伸思考1-零知识证明的隐藏前提</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸思考2-模拟器-时光机佯谬"><span class="nav-number">9.</span> <span class="nav-text">延伸思考2-模拟器&#x2F;时光机佯谬</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

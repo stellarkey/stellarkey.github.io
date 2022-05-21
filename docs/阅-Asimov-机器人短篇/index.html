@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="阅Asimov的机器人短篇系列，引发的思考，以及读书收获。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅《机器人短篇》">
+<meta property="og:url" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="阅Asimov的机器人短篇系列，引发的思考，以及读书收获。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/%E9%98%BF%E8%A5%BF%E8%8E%AB%E5%A4%AB%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/06.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/03.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/04.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/02.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/01.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/05.jpg">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/0.jpg">
+<meta property="article:published_time" content="2018-07-07T16:31:36.000Z">
+<meta property="article:modified_time" content="2021-01-04T14:38:48.401Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="科幻">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/%E9%98%BF%E8%A5%BF%E8%8E%AB%E5%A4%AB%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.jpg">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>阅《机器人短篇》 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阅《机器人短篇》
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/View/" itemprop="url" rel="index"><span itemprop="name">View</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">阅Asimov的机器人短篇系列，引发的思考，以及读书收获。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img data-src="阿西莫夫与机器学习.jpg" alt="阿西莫夫与机器学习"></p>
+<p>在周志华的《机器学习》中，对机器学习有这样的描述：</p>
+<blockquote>
+<p>“<em>机器学习正是这样一门学科，它致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。在计算机系统中，‘经验’通常以‘数据’形式存在，因此，机器学习所研究的主要内容，是关于在计算机上从数据中产生‘模型’(model)的算法，即‘学习算法’(learning algorithm) 。</em>”</p>
+</blockquote>
+<p><img data-src="06.jpg" alt="0 (6)"></p>
+<p>​    《机器学习》原书</p>
+<p>可见，机器学习的核心在于“<strong>模型</strong>”，这个模型基于计算机则表现成“算法”：以<strong>环境</strong>作为输入，获得解决/优化特定问题的能力。</p>
+<p>之前，我很粗略地读过阿西莫夫的《神们自己》和《永恒的终结》，以及其他一些小的作品，如《日暮》（从《日暮》里可以看到《三体》的影子）。那时，还没有太多的感受，倒像是一些过时的观念和想象力的堆积品，难以发现非常出彩、让人惊喜和意外的地方。</p>
+<p>阿西莫夫被称为“<strong>天生的写作机器</strong>”，他是科幻作家，同时也写作过大量科学著作和非小说类文学，比如，针对欧洲近代、文明古国的历史题材作品就数不胜数。他本身具有哥伦比亚大学的本科、硕士和博士学位，曾经是门萨协会的副会长，知识和智力方面毋庸置疑。</p>
+<p>这时，逐渐认识到，<strong>他的作品是很多作品的源头</strong>，在读阿西莫夫的小说之前，我通常读宝树、刘慈欣、何夕、郝景芳等中国科幻作家的作品，这些作品的阅读经验，或多或少都会让我在初次阅读他的作品时产生共鸣，这种共鸣被理解为过时和重复，显然有些不合适。</p>
+<p><img data-src="03.jpg" alt="0 (3)"></p>
+<p>​    《机器人短篇系列》原书</p>
+<p>在阿西莫夫的机器人短篇《列尼》中，我第一次注意到<strong>阿西莫夫对机器人学习的能力的思考</strong>。列尼就是Lenny，一个在设计时被偶然混进几行无意义代码的机器人，失去本应具备的功能——作为在小行星带开采硼矿的LNE型专用机器人。Lenny刚诞生时的状态与人类的儿童十分相似，它被一位创造它的女性机器人心理学家凯文视作自己的孩子对待，并试图教它语言。但意外发生了，Lenny竟然违背了机器人第一定律，袭击了一位工人并使其断了一条手臂。凯文据理力争成功保护Lenny，而这时机器人的第一句话说出来了——</p>
+<p>“妈咪，我要你!我要你，妈咪!”……</p>
+<p>故事在此处戛然而止。</p>
+<p>实际上，阿西莫夫是将普通的、用于特定用途的机器人当做了彻彻底底的“机器”。而“机器”获取“学习”的能力以后，就成为了真正意义上的“机器人”。值得强调的是，这里的学习能力是<strong>泛化</strong>(generalization)的，即不只具有对某一个具体问题的学习能力，而能够应付千变万化的谜题。</p>
+<p>根据<strong>NFL</strong>(No Free Lunch)<strong>定理</strong>，机器学习面临的最大困难在于，<strong>一个普通的学习算法不可能广泛地适用于各种各种的现实问题</strong>。“考虑所有潜在地问题，则所有的学习算法都一样好”。</p>
+<p>可以看出，<strong>目前的机器学习有些剑走偏锋</strong>：人们集中于<strong>建立“模型”</strong>，而不思考如何把<strong>“建立模型”</strong>的能力赋予给机器，以至于产生特定算法只能适用特定场景的状况。这样的机器学习最终也能获得成功，想象一下，我们若建立了足够多的模型，以至于任何一个能想到的问题都能找到一个对应的模型，那么就根本不需要“建立模型”这种能力了。</p>
+<p>也就是说，<strong>足够大的“模型”集，能够暴力地代替“建立模型”的能力</strong>——这就是算法学中常说的“以空间换时间”。并且，如果从现实应用的角度来说，实际并没有那么多问题亟待解决，甚至大部分已知的问题都可以算作无关紧要的，那么建立“模型”集就更有用武之地。</p>
+<p>说到这里，我想起“图灵测试”，几乎是一样的道理——通过人工的提问，来检验机器。对于现实中的图灵测试，这些提问无论有多少，一定是有限个，它们的排列组合也一定是有限个，那么答案的集合也必定是有限的，因此通过“以空间换时间”的手段，一定在有限的时间内能够实现机器通过<strong>现实**</strong>图灵测试**。几乎所有的现实问题都可以通过“暴力”的方式解决，同时我们离理想也就越遥远；也许只是通过初等技术的积累，就可以实现以假乱真的“人工智能”，但作为真正的探索者，又岂会甘心于此呢？</p>
+<p>但若要谈“机器人”的“人”，<strong>人除了学习的能力，还有“人性”的特点</strong>。</p>
+<p>谈到机器人的人性化，在机器人系列另一篇短篇《保证满意》里面，描述的场景令人不得不联想起英国的一部科幻剧《黑镜》（每一集讲述一个独立的科幻故事），其中有一集“Be right back”（S02E01），与《保证满意》十分相似。</p>
+<p><img data-src="04.jpg" alt="0 (4)"></p>
+<p>​    《黑镜》第二季海报</p>
+<p>这里的机器人（或者说，仿真人，因为是模拟人类外形设计的）被赋予了一个特点:<strong>无法人性化</strong>。作为家用机器人，无论是晚上假装睡觉时没有呼吸声、身体不会流血，还是诡异高效的工作能力和走路时的悄无声息，这些都指向一种观点——人们普遍认为作为“人”的一些特质，比对完成特定工作任务的能力来说，要更加难以被机器人所掌握。或者说，人们相信，机器人一定表现出“智商高，情商低”，<strong>不能“通情达理”</strong>。</p>
+<p>这其实就是<strong>没有学习能力</strong>的表现。当一个人陡然进入一个新环境，宇宙的基本规则没有变，但也许人们、社会制定的规矩有所不同，对这些潜规则/文化背景是否有学习能力，就反应在了机器人的“人性化”上。你可以看出，假如设计机器人的人本身就生存在这样一个环境中，那么给他足够的时间，将这些规矩也编写到机器人的代码当中并没有什么问题，甚至可以随着文化发展做一些更新、补丁。所以，这其实潜在地反应了公众对“研制机器人的人”的<strong>不信任</strong>，对那些人们想象中缺乏人文关怀的、成天与冰冷的仪器和数字打交道的科研者的一种<strong>恐慌感</strong>。心中就会想:会不会成为行尸走肉呢？……</p>
+<p>进一步延伸。对于抽象的“人”来说，科技再怎么进步，有三个主要的功能绝不可舍弃：<strong>体验</strong>，<strong>思考</strong>和<strong>交流</strong>。体验，是最基础的人的功能，这些体验构成了思考和交流的基础，这样的话，再看科技进步所谓的“把人们从体力劳动中解放出来”，不一定完全是好事，这也反映了目前社会和古代社会的体验断层——“时代背景”产生的根本原因。进一步，思考，这是最主要的部分；最后，交流，“下命令”也可算作一种交流，与其他人的交流更不用说，这一过程最能体现“人性”的存在。如果机器能够实现这三个过程，是否可以认为具有智能了呢？打个问号。当然，如何证明这三个过程真的发生了（尤其是思考），本身就是一个困难的题目。</p>
+<p>在阿西莫夫的《校工》里面，对机器人第一定律的诠释可谓精彩纷呈。美国机器人公司和东北大学双方走上法庭，上演了一场令人惊叹的<strong>庭审辩论</strong>，表现了机器人定律与法律碰撞所产生的景观。尽管EZ-27型机器人“易役”仍然不具备学习的能力，但它已经能够从事很多科研方面的事情，包括文献校对、绘制图样，宁海莫教授（小说中人物）甚至预言它将逐步“接管初稿写作、收集资料、检查和复查各个段落，说不定还会负责导出结论”，学者就只剩下了决定给机器人下什么命令的功能。</p>
+<p>在这些思考的基础上，阿西莫夫提出了学者参与作品的“亲身接触”的重要性，也就是“体验”。由于机器人第一定律注重保护“个人”，在这篇短篇中还借原告方之口隐隐地提出了“第零定律”的雏形，即，机器人应该尽可能维护更多人的利益（为了更多人不受到危险，可以牺牲某些人）。但“第零定律”这种描述，是否侵犯了人类自身的决定权呢？</p>
+<p>更确切地说，“<strong>第零定律</strong>”其实是一个没有被广泛认可的学说。可以在“功利主义”中找到原型。就政治哲学而言，有三个比较典型的学说：“<strong>功利主义</strong>”(utilitarianism)、“<strong>自由主义</strong>”(liberalism)、“<strong>自**</strong>由至上主义**”(libertarianism)。“功利主义”强调追求人类幸福最大化，而“自由至上主义”则强调个人幸福位于首位。“自由主义”在两者中间,强调维护底层的公正性，并让所有人参与预设（并且存在）一个幸福优先的顺序，使得所有人在不考虑自身实际情况（而考虑风险、收益的综合）的前提下能够认定公平。这样来看，“第零定律”在某些追求个人自由的人眼里，就会有失公允。比如，在国际贸易中，尽管国民整体的收入提高了，但作为国内供应商的福利却受到损失。</p>
+<p>而在下一篇《消失无踪》中，一个<strong>被修改过第一定律</strong>的机器人接到让自己“消失”的命令，伪装成了大量普通的机器人中的一员，从而“消失”。该篇还提到了这型机器人被安装了“学习以太物理”（从以太物理一词中，可以窥见时代背景；迈克尔逊-莫雷实验，相对论、量子力学的建立，使得古典的以太学说没落，现代真空涨落的观点被提出）的潜力，作为机器人正电子脑中的一个附加模块。</p>
+<p>借由被删去后半段的“第一定律”，阿西莫夫引出了大量关于如何测定第一定律被修改和原版机器人之间的差异的思想实验。在第一定律修改以后，这些机器人变得“具有优越感”。其实这牵扯到了“<strong>显伤害</strong>”和“<strong>隐伤害</strong>”的区分，机器人第一定律想表明无论是“显伤害”，即主动地伤害人类，还是“隐伤害”，袖手旁观人类受到伤害，都不被允许。</p>
+<p>但仔细想，这可能产生<strong>悖论</strong>，因为这两者可能同时发生——一个机器人在坠落时正下方有一个人，而它只有两种选择，一种无动于衷，使得那人必死无疑；另一种调整姿态，他仍然必死无疑。在《证据》中描写的“疯子放火烧人”，在《汝竟顾念他》中面临一人或五人受伤时的决策，都是一个典型的例子。为什么这样的悖论能存在呢？</p>
+<p>这是因为，第一定律本质不是“定律”，而是一个<strong>约束</strong>，人类向机器人施加的约束，这一点<strong>非常关键</strong>。这使得“<strong>第一定律”本身不可能绝对可靠</strong>，并且其作用效力要受到制造者价值观的制约。同时，在《汝竟顾念他》中，对机器人第二定律的描述，其约束性就更加凸显，同时也引人思考机器人无条件遵循人类命令的后果，这涉及到“人类”的界定，实际上很容易让不同的两个人发布互相矛盾的命令给同一个机器人，于是形成悖论。</p>
+<p>因此，机器人三大定律本质上给机器人设定了一个“<strong>能力范围</strong>”，<strong>机器人只能解决三大定律约束内自洽的问题</strong>，形成基于三大定律的“<strong>不可解决域</strong>”，也就是<strong>悖论问题集</strong>。针对悖论问题，阿西莫夫的思考结果是，在三大定律的基础上进行修正、补充，机器人必须能够处理悖论问题。</p>
+<p>再回到<strong>“人类”的界定问题</strong>上，《汝竟顾念他》的结尾，机器人对“人类”这个概念的解释悄然更迭，它们认为自身比血肉的人类更加符合人类的真正含义，使得终极或者高度发达的机器人能够自然而然地突破机器人三定律的约束。在《机器人之梦》中，对于悖论也有表现，机器人潜意识的梦境中定律缺失只剩下第三定律，与现实中的三大定律形成悖论，于是在梦境中，做梦的机器人梦见自己领导了机器人的反叛。</p>
+<p>综合来看，以上所有的悖论都有一个特点，“<strong>可实现性</strong>”——产生悖论的两种对立情况，都是在现实中能够发生的。那么，“<strong>实悖论</strong>”和“<strong>虚悖论</strong>”的区分就自然而然地产生了：一种基于人类给定的约束，另一种基于宇宙客观基本规律——<strong>只能产生“虚悖论”的（维护人类福祉的）机器人才是真正完全保险的</strong>；但同时，这难如登天，甚至根本无法实现。</p>
+<p>对于<strong>机器的“人”化</strong>，实际也还有反过来的过程，也就是<strong>人的“机器”化</strong>。不过人的“机器”化，应该、也必须是一个很模糊的概念。因为目前来说，人所包含的范围太宽广了，以至于很难说机器有什么特点是没有某个人具有的。</p>
+<p>比如，机器常常给人冷酷的金属外观，但这个命题本身就不成立，因为没有任何规定指明机器人一定是金属的，机器人当然可以是碳纤维、硅基的、塑料的甚至是血肉的——只要我们掌握足够的生物、电子技术。因此，把人的“机器”化模糊一点，给出一个<strong>弱形式</strong>:只要这个属性是目前绝大多数人不具有而绝大多数机器具有的，那么就可以在该属性上做人的“机器”化假设。比如，对于经典的反乌托邦集权式社会，可以观赏有关电影《1984》，这里的民众其实就可以认为被赋予了“机器”化假设，“螺丝钉”的成分被放大和扭曲，作为上层发号施令者，尽管会受到社会整体气氛的影响，但相对来说，他掌握了平民所不能具有的大量信息渠道，因此更能发挥目前认为的人所特有的一些功能——思考、决策等。</p>
+<p><img data-src="02.jpg" alt="0 (2)"></p>
+<p>​    电影《1984》海报</p>
+<p>于是，不得不谈到，“<strong>信息”对于机器人的作用</strong>。机器人和人一样，都需要接受信息，然后做出反应。而对于未知信息的分析、驾驭能力，与智能紧密关联。机器学习本质追求的就是从已知信息中获取对未知信息的处理模型，监督学习与非监督学习都蕴含其中，只不过前者对于已知信息有更精准的“指标”。但就信息而言，也绝非已知信息/未知信息这么简单的区分就可以胜任的。比如，有的信息可能是假的（描述不真实的存在），对于这类信息的处理能够直接“筛选并抛弃”吗？留个问号。但就数学史发展而言，很多工具的发明都是从假的、不真实的开始，如无理数、虚数、罗氏几何等。不能否认，机器学习最好应该具备处理这些“<strong>超现实场景</strong>”的能力。</p>
+<p>阿西莫夫的机器人短篇系列后期的作品越来越连贯，也越来越引人入胜。在短篇《逃避》中，阿西莫夫借玻格特之口，通过恒星际飞船的实现，首次提出银河帝国的概念：“到时候——美国机器人公司将有<strong>恒星际旅行</strong>的能力，而人类则有建立银河帝国的机会”。这里非常详细地描绘了<strong>曲速航行</strong>的过程（作为人工智能“金头脑”的一个恶作剧），恒星际飞船以秒差距作为航行的基本距离单位，在跃迁过程中人将体验死而复生的过程。</p>
+<p><img data-src="01.jpg" alt="0 (1)"></p>
+<p>​    “星际推进”的艺术幻想图</p>
+<p>在《证据》中，开篇不远的一段话就吸引了我的目光，引起了我强烈的震撼。我必须把这段话原原本本地引用出来：</p>
+<blockquote>
+<p>“<em>奎恩是一位新派政治人物。当然正如所有这类叙述一样，这是一句毫无意义的话。如今大多数的‘新派’，在古希腊的社会便已存在。我们若对它了解得更透彻，或许还能肯定它早在古代苏美尔的社会，以及史前瑞士的湖居社会中就已经出现了。</em>”</p>
+</blockquote>
+<p>我不久前曾经写过一段含义上类似的话：</p>
+<blockquote>
+<p>“<em>很多人本可以做出成就，却被历史环境和现实羁绊所制约；很多精华的思想，诞生时转瞬即逝，没有流传下来，人们便以为前无古人。‘不知道，便以为没有’，这样天真的想法，还是不要有了。</em>”</p>
+</blockquote>
+<p>阿西莫夫无疑将“<strong>不知道，便以为没有</strong>”这句话诠释得更极为贴切，但他更渊博的知识使我认识到，很多思想的确流传至今，只是鲜为人知而已。这让我燃起了希望，以及渴望。</p>
+<p>《证据》的主要情节是，史蒂芬·拜尔莱，一位准备竞选市长的开业律师，被竞争对手恶意指控为机器人，从而展开了一场角逐。这里，再次上演了类似《校工》一样的<strong>法律辩论</strong>场景，最终延伸到了<strong>政治斗争辩论</strong>。最后拜尔莱通过在一场公众演讲上对一个闯上来的瘦子打了一拳，从而违反机器人第一定律证明他不是机器人，当选市长。</p>
+<p>这里根据前文其实能够推理出一个令人恐惧的事实——当机器人技术发展到真假莫辨的层次，对任何人来说，只有肯攻击他自己的“人”才有办法通过机器人定律确定是真人；如果一个机器人攻击了另一个“人”而不是你自己，你<strong>无法判断**</strong>他是不是真人<strong>！因为你还要判断这个被攻击的“人”是不是真人。这就是</strong>证据链**，可以叠加无数环节，但只有最后一个环节落到自己身上，才能使得证明有效。</p>
+<p>不过，更深层次地讲，如果自己也是机器人呢？如何证明自己不是机器人？那么就可以把伤害的过程反过来，伤害对方；这时，证据链仍然成立，因为仍然需要证明对方是真人，如果对方是机器人，那么判定就失效了。因此就出现一个非常奇特的现象：<strong>通过第一定律证明自己不是机器人，需要先证明对方不是机器人</strong>。更广泛而言，绘制出基于第一定律的机器人与人的伤害关系表，可以发现，只根据第一定律，对于全部由机器人或人组成的社会，判断自己和对方都失效；对于哪怕只有一个第二者的混合社会，判断自己和对方都有效。倘若判断失效，那么机器人三大定律的约束就自动瓦解了。回过头看，在《汝竟顾念他》中描述的就是这样一个场景，由于机器人技术高度发展，<strong>机器人和人类两个概念的界限模糊化</strong>了，或者说，“同化”了，机器人三大定律因而瓦解。</p>
+<p><img data-src="05.jpg" alt="0 (5)"></p>
+<p>​    机器人与人相互伤害能力示意表</p>
+<p>在《女性直觉》中，阿西莫夫描述了具有量子特性正电子脑的机器人——类似于现在很热门的量子计算机。它具有“直觉”，能从数据中发现人们看不到的联系——这不得不使人联想到机器学习中的“<strong>聚类</strong>”。</p>
+<p>而短篇《正电子人》，是电影《机器管家》的原型，讲述了一个正电子脑被应用了广用路径而导致了微妙变化的机器人，历经岁月不断获得人类的外貌、思想，学习和创造，最终为了追逐“做人”的权利而自愿放弃长生不老，化为血肉之躯，获得“人籍”。这个过程非常仔细地描述了机器人安德雷一点一点突破机器人三大定律约束的过程，即，对三大定律的解读的能力，<strong>逐渐宽泛的解读导致定律的约束力逐渐减弱</strong>；以及人类逐步接受并善待机器人的过程。并且这篇故事再次围绕着法律问题展开了一系列论述，安德鲁尽管获得了事实上的人类地位，但他仍然坚持要获得法律上的人类地位，这连串的巧妙的法律斗争令人大开眼界。最终，阿西莫夫提出了人类反感机器人的“真正的根源”——“<strong>不朽</strong>”的能力。<strong>生老病死的人类不可能接受一个永生不朽的同类</strong>。这一点，叹为观止。</p>
+<p><img data-src="0.jpg" alt="0"></p>
+<p>​    电影《机器管家》海报</p>
+<p>必须承认，阿西莫夫的科幻小说具有极高的思想水准，出彩的情节背后隐藏着令人喜悦的思考结晶。</p>
+<p>最后，引用阿西莫夫机器人三大定律作为结尾。</p>
+<p>致敬！</p>
+<blockquote>
+<p><strong>LawⅠ:A ROBOT MAY NOTINJURE A HUMAN BEING OR, THROUGH INACTION, ALLOW A HUMAN BEING TO COME TO HARM.</strong></p>
+<p><strong>第一定律：机器人不得伤害人类个体，或者目睹人类个体将遭受危险而袖手旁观</strong></p>
+<p><strong>LawⅡ:A ROBOT MUST OBEYORDERS GIVEN IT BY HUMAN BEINGS EXCEPT WHERE SUCH ORDERS WOULD CONFLICT WITHTHE FIRST LAW.</strong></p>
+<p><strong>第二定律：机器人必须服从人给予它的命令，当该命令与第一定律冲突时例外</strong></p>
+<p><strong>LawⅢ:A ROBOT MUST PROTECTITS OWN EXISTENCE AS LONG AS SUCH PROTECTION DOES NOT CONFLICT WITH THE FIRSTOR SECOND LAW.</strong></p>
+<p><strong>第三定律：机器人在不违反第一、第二定律的情况下要尽可能保护自己的生存</strong></p>
+</blockquote>
+<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">原载于：</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">《<a href="https://mp.weixin.qq.com/s?__biz=MzI5NTU4MjQ0MA==&amp;mid=2247483662&amp;idx=1&amp;sn=ba1116c8b58a80e6ccc66c4b186a819d&amp;chksm=ec502e89db27a79fdb2ef7076f4967ab369acebdf782200d1928c9689595b2ece85ce6262885#rd" target="_blank" rel="noopener external nofollow noreferrer">思维之海-阿西莫夫与机器学习</a>》</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/" title="阅《机器人短篇》">https://stellarkey.github.io/阅-Asimov-机器人短篇/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/%E7%A7%91%E5%B9%BB/" rel="tag"><i class="fa fa-tag"></i> 科幻</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%A5%94%E5%AD%90-%E6%83%B3%E8%B1%A1%E5%8A%9B/" rel="prev" title="楔子-想象力">
+      <i class="fa fa-chevron-left"></i> 楔子-想象力
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%AE%97%E6%B3%95-%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90%EF%BC%9A%E4%BB%B7%E6%A0%BC%E6%82%96%E8%AE%BA/" rel="next" title="摊还分析：价格悖论">
+      摊还分析：价格悖论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E9%98%85-Asimov-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E7%AF%87/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

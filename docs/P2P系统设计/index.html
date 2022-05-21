@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="description" content="P2P系统设计项目 - 服务器后端。使用JavaScript + MySQL搭建后端接口，提供数据交互功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P2P系统后端设计">
+<meta property="og:url" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="P2P系统设计项目 - 服务器后端。使用JavaScript + MySQL搭建后端接口，提供数据交互功能。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201216192812552.png">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213175204709.png">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213165255976.png">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213212736992.png">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213220909171.png">
+<meta property="og:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201216192812552.png">
+<meta property="article:published_time" content="2020-11-30T01:52:58.000Z">
+<meta property="article:modified_time" content="2021-09-22T07:38:03.122Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="全栈">
+<meta property="article:tag" content="后端">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201216192812552.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>P2P系统后端设计 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P2P系统后端设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>P2P系统设计项目 - 服务器后端。使用JavaScript + MySQL搭建后端接口，提供数据交互功能。</p>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201216192812552.png" class="" title="仪表盘">
+<a id="more"></a>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://www.bilibili.com/video/BV1R4411w7f3" target="_blank" rel="noopener external nofollow noreferrer">【回形针PaperClip】别再问我什么是 BT 种子</a></p>
+<p><a href="https://www.bilibili.com/video/av34370450" target="_blank" rel="noopener external nofollow noreferrer">【万物4分钟】磁力下载是什么原理？跟用种子下载的区别大不大？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/85652893" target="_blank" rel="noopener external nofollow noreferrer">求求你，别再问你的种子磁力为什么下不动了！</a></p>
+<h1 id="种子文件-torrent"><a href="#种子文件-torrent" class="headerlink" title="种子文件 .torrent"></a>种子文件 <code>.torrent</code></h1><h2 id="BEncoding-编码格式"><a href="#BEncoding-编码格式" class="headerlink" title="BEncoding 编码格式"></a>BEncoding 编码格式</h2><blockquote>
+<p><a href="https://fenying.gitbooks.io/bittorrent-specification-chinese-edition/content/chapter2.html" target="_blank" rel="noopener external nofollow noreferrer">第二篇：BEncoding</a></p>
+<p><a href="https://www.cnblogs.com/hnrainll/archive/2011/07/26/2117423.html" target="_blank" rel="noopener external nofollow noreferrer">BT种子文件格式</a></p>
+</blockquote>
+<p><strong>BEncoding</strong> 是一种用于组织、描述数据的简洁编码格式，它支持 4 种数据类型 / 元素：</p>
+<ul>
+<li>字节串（Byte String）</li>
+<li>整数（Integer）</li>
+<li>列表（List, 线性表）</li>
+<li>字典（Dictionary）</li>
+</ul>
+<h3 id="字节串"><a href="#字节串" class="headerlink" title="字节串"></a>字节串</h3><p>格式为 <code>长度:内容</code>。</p>
+<p>例如：</p>
+<ul>
+<li><code>4:abcd</code>：”abcd”</li>
+<li><code>0:</code>：空串</li>
+</ul>
+<blockquote>
+<p> <strong>BE字节串</strong>，不是字符串，因此在字典中 <strong>key</strong> 的比较是二进制比较而不是字符串比较。</p>
+</blockquote>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>格式为 <code>i + 整数 + e</code>。</p>
+<p>例如：</p>
+<ul>
+<li><code>i1234e</code>：1234</li>
+<li><code>i-1e</code>：-1</li>
+<li><code>i0e</code>：0</li>
+</ul>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>格式为 <code>l + 元素:元素:...:元素 + e</code>。</p>
+<p>例如：</p>
+<ul>
+<li><code>l4:spam4:eggse</code>：[ “spam”, “eggs” ]</li>
+<li><code>li123e5:helloi111ee</code>：[ 123, “hello”, 111 ]</li>
+<li><code>le</code>：空列表</li>
+</ul>
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>格式为 <code>d + 字节串:元素:...:字节串:元素 + e</code>。</p>
+<p>例如：</p>
+<ul>
+<li><code>d3:cow3:moo4:spam4:eggse</code>：{ “cow” =&gt; “moo”, “spam” =&gt; “eggs” }</li>
+<li><code>d4:name5:Angus3:agei23ee</code>：{ “name” =&gt; “Angus”, “age” =&gt; 23 }</li>
+<li><code>d4:spaml1:a1:bee</code>：{ “spam” =&gt; [ “a”, “b” ] }</li>
+<li><code>de</code>：空列表</li>
+</ul>
+<h2 id="Torrent文件结构"><a href="#Torrent文件结构" class="headerlink" title="Torrent文件结构"></a>Torrent文件结构</h2><blockquote>
+<p><strong><a href="https://www.cnblogs.com/rekent/p/13970413.html" target="_blank" rel="noopener external nofollow noreferrer">Torrent文件的解析与转换</a></strong></p>
+</blockquote>
+<p>Torrent整体是一个Bencoding编码的字典，其中有以下的属性名。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>键名称</th>
+<th>数据类型</th>
+<th>可选项</th>
+<th>键值含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>announce</td>
+<td>string</td>
+<td>required</td>
+<td>Tracker的Url</td>
+</tr>
+<tr>
+<td>info</td>
+<td>dictionary</td>
+<td>required</td>
+<td>该条映射到一个字典，该字典的键将取决于共享的一个或多个文件</td>
+</tr>
+<tr>
+<td>announce-list</td>
+<td>array[]</td>
+<td>optional</td>
+<td>备用Tracker的Url，以列表形式存在</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>optional</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>created by</td>
+<td>string</td>
+<td>optional</td>
+<td>创建人或创建程序的信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Info字段"><a href="#Info字段" class="headerlink" title="Info字段"></a>Info字段</h3><p>在总体结构中有个info，其为字典格式。</p>
+<blockquote>
+<p>单文件、多文件的有不同的info属性。</p>
+</blockquote>
+<h4 id="单文件Info结构"><a href="#单文件Info结构" class="headerlink" title="单文件Info结构"></a>单文件Info结构</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>键名称</th>
+<th>数据类型</th>
+<th>可选项</th>
+<th>键值含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+<td>建议保存到的文件名称</td>
+</tr>
+<tr>
+<td>piceces</td>
+<td>byte[]</td>
+<td>required</td>
+<td>每个文件块的SHA-1的集成Hash。</td>
+</tr>
+<tr>
+<td>piece length</td>
+<td>long</td>
+<td>required</td>
+<td>每个文件块的字节数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="多文件Info结构"><a href="#多文件Info结构" class="headerlink" title="多文件Info结构"></a>多文件Info结构</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>键名称</th>
+<th>数据类型</th>
+<th>可选项</th>
+<th>键值含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+<td>建议保存到的目录名称</td>
+</tr>
+<tr>
+<td>piceces</td>
+<td>byte[]</td>
+<td>required</td>
+<td>每个文件块的SHA-1的集成Hash。</td>
+</tr>
+<tr>
+<td>piece length</td>
+<td>long</td>
+<td>required</td>
+<td>每个文件块的字节数</td>
+</tr>
+<tr>
+<td>files</td>
+<td>array[]</td>
+<td>required</td>
+<td>文件列表，列表存储的内容是字典结构</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>files字典结构：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>键名称</th>
+<th>数据类型</th>
+<th>可选项</th>
+<th>键值含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>array[]</td>
+<td>required</td>
+<td>一个对应子目录名的字符串列表，最后一项是实际的文件名称</td>
+</tr>
+<tr>
+<td>length</td>
+<td>long</td>
+<td>required</td>
+<td>文件的大小（以字节为单位）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Torrent解析"><a href="#Torrent解析" class="headerlink" title="Torrent解析"></a>Torrent解析</h2><blockquote>
+<p><a href="https://github.com/ndroi/pytorrent" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/ndroi/pytorrent</a> 不太好用</p>
+<p><a href="https://www.npmjs.com/package/parse-torrent" target="_blank" rel="noopener external nofollow noreferrer"><strong>parse-torrent</strong></a> 这个是JS版本的</p>
+<p><a href="https://github.com/7sDream/torrent_parser" target="_blank" rel="noopener external nofollow noreferrer">torrent_parser</a> python版本</p>
+</blockquote>
+<p>既可以解析磁力链接，也可以解析种子文件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parseTorrent = <span class="built_in">require</span>(<span class="string">'parse-torrent'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(parseTorrent(<span class="string">'magnet:?xt=urn:btih:d2474e86c95b19b8bcfdb92bc12c9d44667cfa36&amp;tr=http%3A%2F%2Ftracker.example.com%2Fannounce'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------------------------------------------------------"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(parseTorrent(fs.readFileSync(__dirname + <span class="string">'/example.torrent'</span>)))</span><br></pre></td></tr></table></figure>
+<h2 id="开源torrent"><a href="#开源torrent" class="headerlink" title="开源torrent"></a>开源torrent</h2><h3 id="libtorrent-开源P2P"><a href="#libtorrent-开源P2P" class="headerlink" title="libtorrent 开源P2P"></a>libtorrent 开源P2P</h3><blockquote>
+<p><a href="https://www.cnblogs.com/iczelion/p/13622602.html" target="_blank" rel="noopener external nofollow noreferrer">libtorrent-开源代码P2P协议库(BitTorrent)-linux下编译，测试</a></p>
+<p><a href="https://erdgeist.org/arts/software/opentracker/" target="_blank" rel="noopener external nofollow noreferrer">opentracker – An open and free bittorrent tracker</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-libtorrent</span><br></pre></td></tr></table></figure>
+<p>运行示例：<a href="https://github.com/arvidn/libtorrent/blob/libtorrent-1_0_7/bindings/python/client.py" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/arvidn/libtorrent/blob/libtorrent-1_0_7/bindings/python/client.py</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 client.py demo.torrent</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>demo.torrent</code>为一个测试种子文件。</p>
+</blockquote>
+<h3 id="WebTorrent-开源P2P"><a href="#WebTorrent-开源P2P" class="headerlink" title="WebTorrent  开源P2P"></a>WebTorrent  开源P2P</h3><blockquote>
+<p><a href="https://webtorrent.io/" target="_blank" rel="noopener external nofollow noreferrer">https://webtorrent.io/</a></p>
+<p><a href="https://github.com/webtorrent/webtorrent" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/webtorrent/webtorrent</a></p>
+</blockquote>
+<p>WebTorrent is a streaming torrent client for <strong>Node.js</strong> and the <strong>web</strong>. WebTorrent provides the same API in both environments.</p>
+<blockquote>
+<p>The WebTorrent protocol works just like <a href="https://wiki.theory.org/BitTorrentSpecification" target="_blank" rel="noopener external nofollow noreferrer">BitTorrent protocol</a>, except it uses <a href="https://en.wikipedia.org/wiki/WebRTC" target="_blank" rel="noopener external nofollow noreferrer">WebRTC</a> instead of <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank" rel="noopener external nofollow noreferrer">TCP</a>/<a href="https://en.wikipedia.org/wiki/Micro_Transport_Protocol" target="_blank" rel="noopener external nofollow noreferrer">uTP</a> as the transport protocol.</p>
+</blockquote>
+<p>在<a href="https://webtorrent.io/docs" target="_blank" rel="noopener external nofollow noreferrer">Webtorrent的API</a>中支持直接访问种子中的各个字段：</p>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213175204709.png" class="" title="comment">
+<h1 id="JSON文件-json"><a href="#JSON文件-json" class="headerlink" title="JSON文件 .json"></a>JSON文件 <code>.json</code></h1><blockquote>
+<p><a href="https://www.w3school.com.cn/json/json_syntax.asp" target="_blank" rel="noopener external nofollow noreferrer">JSON 语法</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/JSON" target="_blank" rel="noopener external nofollow noreferrer">使用JSON</a></p>
+<p><a href="https://www.cnblogs.com/hwtblog/p/8483573.html" target="_blank" rel="noopener external nofollow noreferrer">json文件格式详解</a></p>
+<p><a href="http://www.json.cn/" target="_blank" rel="noopener external nofollow noreferrer">JSON在线解析及格式化验证 - JSON.cn</a></p>
+</blockquote>
+<p>JSON（<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation）是一个数据交换协议规范。它的设计简约，从而在Web开发中得到大量的应用。JSON文件后缀为<code>.json</code>。不同的语言中存在不同的对JSON文件的解析器，如JavaScript中的<code>eval()</code>函数。</p>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/27487096" target="_blank" rel="noopener external nofollow noreferrer">什么是数据交换语言?</a></p>
+<blockquote>
+<p><strong>在不同的系统不同的语言间交换数据时，我们一般倾向于使用无关于平台及语言的数据交换语言。此类语言主要包括XML，JSON，YAML，Protobuf等，常用于接口调用，配置文件，数据存储等场景。</strong></p>
+</blockquote>
+</blockquote>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>JSON允许以下基本元素 / 值（value）：</p>
+<ul>
+<li><strong>字符串</strong>（string）</li>
+<li><strong>数值</strong>（number）</li>
+<li><strong>布尔值</strong>（true、false）</li>
+<li><strong>空值</strong>（null）</li>
+</ul>
+<p>以及嵌套元素：</p>
+<ul>
+<li><strong><font color=blue>对象</font></strong>（object）</li>
+<li><strong><font color=blue>数组</font></strong>（array）</li>
+</ul>
+<blockquote>
+<p><strong><font color=red>一个JSON文件就是一个元素（具有任意的复杂度）。</font></strong></p>
+</blockquote>
+<hr>
+<p>在JavaScript中可以直接创建JSON格式的变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employees = [</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Bill"</span> , <span class="string">"lastName"</span>:<span class="string">"Gates"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"George"</span> , <span class="string">"lastName"</span>:<span class="string">"Bush"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Thomas"</span> , <span class="string">"lastName"</span>: <span class="string">"Carter"</span> &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>可以像这样访问 JavaScript 对象数组中的第一项：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employees[<span class="number">0</span>].lastName;</span><br></pre></td></tr></table></figure>
+<p>返回的内容是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gates</span><br></pre></td></tr></table></figure>
+<p>可以像这样修改数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employees[<span class="number">0</span>].lastName = <span class="string">"Jobs"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象 {}"></a>对象 <code>{}</code></h2><p>一个JSON对象就是一个字典，即，“键-值对”（<code>key: value</code>）。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"firstName"</span>:<span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"lastName"</span>:<span class="string">"Doe"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组 []"></a>数组 <code>[]</code></h2><p>JSON 数组在方括号中书写。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"employees"</span>: [</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"John"</span> , <span class="attr">"lastName"</span>:<span class="string">"Doe"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"Anna"</span> , <span class="attr">"lastName"</span>:<span class="string">"Smith"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">"firstName"</span>:<span class="string">"Peter"</span> , <span class="attr">"lastName"</span>:<span class="string">"Jones"</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="NPM-前端套件管理器"><a href="#NPM-前端套件管理器" class="headerlink" title="NPM 前端套件管理器"></a>NPM 前端套件管理器</h1><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/24357770" target="_blank" rel="noopener external nofollow noreferrer">npm 是干什么的？（非教程）</a></p>
+<p><a href="https://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="noopener external nofollow noreferrer">NPM 使用介绍</a></p>
+<p><a href="https://tw.alphacamp.co/blog/npm-node-package-manager" target="_blank" rel="noopener external nofollow noreferrer">NPM是什么？了解Node Package Manager套件管理机制</a></p>
+</blockquote>
+<p><strong>NPM</strong>（<strong>N</strong>ode <strong>P</strong>ackage <strong>M</strong>anager），前端套件管理工具。除此之外还有类似的<strong>Yarn</strong>。</p>
+<blockquote>
+<p>Node.js：一种javascript的运行环境，能够使得javascript脱离浏览器运行。它是一种提供给后端服务器的技术。</p>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/33578075/answer/57099264" target="_blank" rel="noopener external nofollow noreferrer">Node.js是用来做什么的？ - Gavin的回答 - 知乎</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener external nofollow noreferrer">Node.js - 廖雪峰</a></p>
+</blockquote>
+</blockquote>
+<h2 id="Package-json"><a href="#Package-json" class="headerlink" title="Package.json"></a><code>Package.json</code></h2><blockquote>
+<p><a href="https://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener external nofollow noreferrer">package.json文件— JavaScript 标准参考教程（alpha）</a></p>
+</blockquote>
+<ul>
+<li><strong>name</strong> - 包名。</li>
+<li><strong>version</strong> - 包的版本号。</li>
+<li><strong>description</strong> - 包的描述。</li>
+<li><strong>homepage</strong> - 包的官网 url 。</li>
+<li><strong>author</strong> - 包的作者姓名。</li>
+<li><strong>contributors</strong> - 包的其他贡献者姓名。</li>
+<li><strong>scripts</strong> - 指定了运行脚本命令的npm命令行缩写。比如start指定了运行<code>npm run start</code>时，所要执行的命令。</li>
+<li><strong>dependencies</strong> - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
+<li><strong>repository</strong> - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
+<li><strong>main</strong> - main 字段指定了程序的主入口文件，require(‘moduleName’) 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。</li>
+<li><strong>keywords</strong> - 关键字</li>
+</ul>
+<h2 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a><code>npm init</code></h2><p>NPM通过初始化项目来填写基本信息，并创建<code>Package.json</code>文件。</p>
+<h2 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a><code>npm install</code></h2><blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener external nofollow noreferrer">npm 模块安装机制简介</a></p>
+</blockquote>
+<p><code>npm install</code> 检查当前位置下的<code>package.json</code>，并根据该文件计算缺少的套件，自动更新相关的依赖。并且生成<code>node_modules</code>文件夹用于保存下载的依赖包。</p>
+<p>安装指定模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;Module Name&gt;</span><br></pre></td></tr></table></figure>
+<p>安装并记录到<code>Package.json</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save	 # 将该模块写入dependencies属性</span><br><span class="line">npm install express --save-dev # 将该模块写入devDependencies属性</span><br></pre></td></tr></table></figure>
+<p>全局安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g   # 全局安装</span><br></pre></td></tr></table></figure>
+<p>卸载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall &lt;Module Name&gt;</span><br></pre></td></tr></table></figure>
+<p>查看依赖树：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls</span><br></pre></td></tr></table></figure>
+<p>版本检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>升级：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
+<h2 id="npm-run-lt-scripts-gt"><a href="#npm-run-lt-scripts-gt" class="headerlink" title="npm run &lt;scripts&gt;"></a><code>npm run &lt;scripts&gt;</code></h2><p>运行<code>Package.json</code>中”scripts”属性所设置的脚本。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+<h1 id="Qingqing-Share-前端"><a href="#Qingqing-Share-前端" class="headerlink" title="Qingqing Share 前端"></a>Qingqing Share 前端</h1><blockquote>
+<p><a href="https://github.com/zouyansong/qingqingshare" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/zouyansong/qingqingshare</a> 清清共享</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zouyansong&#x2F;qingqingshare</span><br></pre></td></tr></table></figure>
+<h2 id="试运行"><a href="#试运行" class="headerlink" title="试运行"></a>试运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line"></span><br><span class="line">cd qingqingshare&#x2F;</span><br><span class="line">git checkout dev</span><br><span class="line"></span><br><span class="line">cd qqshare&#x2F;</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/39311147/cannot-run-npm-commands" target="_blank" rel="noopener external nofollow noreferrer">Cannot run NPM Commands</a></p>
+<blockquote>
+<p>将 <code>PATH=$(echo &quot;$PATH&quot; | sed -e &#39;s/:\/mnt.*//g&#39;) # strip out problematic Windows %PATH%</code> 添加到 <code>~/.bashrc</code>.</p>
+</blockquote>
+</blockquote>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213165255976.png" class="" title="try">
+<h1 id="Tracker服务器"><a href="#Tracker服务器" class="headerlink" title="Tracker服务器"></a>Tracker服务器</h1><blockquote>
+<p><a href="https://lala.im/4049.html" target="_blank" rel="noopener external nofollow noreferrer">使用OpenTracker自建高性能Tracker服务器</a></p>
+<p><a href="http://erdgeist.org/arts/software/opentracker/" target="_blank" rel="noopener external nofollow noreferrer">OpenTracker</a></p>
+</blockquote>
+<h1 id="资源服务器"><a href="#资源服务器" class="headerlink" title="资源服务器"></a>资源服务器</h1><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/35318041" target="_blank" rel="noopener external nofollow noreferrer">Python实现简单的web服务器</a></p>
+<p><a href="https://www.mkshell.com/how-to-build-web-server-python/" target="_blank" rel="noopener external nofollow noreferrer"><strong>由浅入深 | 如何一步步地搭建一个Web服务器</strong></a></p>
+</blockquote>
+<h1 id="数据库服务器"><a href="#数据库服务器" class="headerlink" title="数据库服务器"></a>数据库服务器</h1><blockquote>
+<p><a href="https://luoxin1992.github.io/2017/01/01/install-mysql-server/" target="_blank" rel="noopener external nofollow noreferrer"><strong>搭建MySQL服务器</strong></a></p>
+<p><a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener external nofollow noreferrer">MySQL 教程</a></p>
+</blockquote>
+<h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>检查本地环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br><span class="line"><span class="comment"># sudo apt install rpm</span></span><br></pre></td></tr></table></figure>
+<p>获取Mysql：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http://dev.mysql.com/get/mysql-apt-config_0.8.1-1_all.deb</span><br></pre></td></tr></table></figure>
+<p>安装软件包：（<a href="https://man.linuxde.net/dpkg" target="_blank" rel="noopener external nofollow noreferrer">dpkg « Linux命令大全</a>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mysql-apt-config_0.8.1-1_all.deb</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装mysql-server，选择5.7的稳定版本</p>
+</blockquote>
+<p>更新软件源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>安装mysql-server：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置数据库root用户的密码</p>
+</blockquote>
+<h2 id="MySQL服务管理"><a href="#MySQL服务管理" class="headerlink" title="MySQL服务管理"></a>MySQL服务管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动mysql服务</span></span><br><span class="line">service mysql start</span><br><span class="line"><span class="comment"># 停止mysql服务</span></span><br><span class="line">service mysql stop</span><br><span class="line"><span class="comment"># 查看mysql服务当前状态</span></span><br><span class="line">service mysql status</span><br></pre></td></tr></table></figure>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213212736992.png" class="" title="MySQL status">
+<blockquote>
+<p>mysql默认监听3306端口</p>
+</blockquote>
+<h2 id="MySQL登录"><a href="#MySQL登录" class="headerlink" title="MySQL登录"></a>MySQL登录</h2><p>以root用户进行登录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后输入密码</p>
+</blockquote>
+<p>查看用户列表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> mysql;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">User</span>, Host, <span class="keyword">plugin</span> <span class="keyword">FROM</span> mysql.user;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost" target="_blank" rel="noopener external nofollow noreferrer">https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost</a> 初次安装后无法登录的处理</p>
+</blockquote>
+<p>管理员强制登陆：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root <span class="comment"># I had to use "sudo" since is new installation</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server" target="_blank" rel="noopener external nofollow noreferrer">https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server</a> JavaSccript mysql连接数据库失败的处理</p>
+</blockquote>
+<h3 id="用户生成"><a href="#用户生成" class="headerlink" title="用户生成"></a>用户生成</h3><blockquote>
+<p><a href="https://www.runoob.com/mysql/mysql-administration.html" target="_blank" rel="noopener external nofollow noreferrer">MySQL 管理 </a> 新版MySQL不再支持直接向user表中添加用户。需要使用<code>CREATE USER</code>声明。</p>
+<p><a href="https://www.yiibai.com/mysql/create-user.html" target="_blank" rel="noopener external nofollow noreferrer"><strong>MySQL中的用户帐户简介</strong></a></p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> username@hostname <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="keyword">password</span>;</span><br></pre></td></tr></table></figure>
+<p>例如：下面这个用户只允许从<code>localhost</code>主机并使用密码为<code>guest233</code>连接到MySQL数据库服务器。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> guest@localhost <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'guest233'</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>@localhost</code>相当于访问地址的约束。</p>
+<p><a href="https://stackoverflow.com/questions/30692812/mysql-user-db-does-not-have-password-columns-installing-mysql-on-osx" target="_blank" rel="noopener external nofollow noreferrer">MySQL user DB does not have password columns - Installing MySQL on OSX </a><code>mysql&gt; describe user;</code></p>
+</blockquote>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><blockquote>
+<p><a href="https://www.yiibai.com/mysql/grant.html" target="_blank" rel="noopener external nofollow noreferrer">MySQL GRANT语句简介</a></p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> privilege,[privilege],.. <span class="keyword">ON</span> privilege_level </span><br><span class="line"><span class="keyword">TO</span> <span class="keyword">user</span> [<span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="keyword">password</span>]</span><br><span class="line">[REQUIRE tsl_option]</span><br><span class="line">[<span class="keyword">WITH</span> [GRANT_OPTION | resource_option]];</span><br></pre></td></tr></table></figure>
+<p>赋予<code>auditor</code>在某个数据库上的所有权限：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">ON</span> somedb.* <span class="keyword">TO</span> auditor@localhost;</span><br></pre></td></tr></table></figure>
+<h2 id="创建数据库和表单"><a href="#创建数据库和表单" class="headerlink" title="创建数据库和表单"></a>创建数据库和表单</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE qqshare;</span><br><span class="line">use qqshare;</span><br></pre></td></tr></table></figure>
+<p>创建<code>qqshare_info</code>数据表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> qqshare_info(</span><br><span class="line">   filename <span class="built_in">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   course <span class="built_in">VARCHAR</span>(<span class="number">60</span>),</span><br><span class="line">   teacher <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   downloadtime <span class="built_in">INT</span>,</span><br><span class="line">   filesize <span class="built_in">INT</span>,</span><br><span class="line">   uploadtime <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   fileformat <span class="built_in">VARCHAR</span>(<span class="number">25</span>),</span><br><span class="line">   magnetURI <span class="built_in">VARCHAR</span>(<span class="number">700</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   description <span class="built_in">VARCHAR</span>(<span class="number">200</span>),</span><br><span class="line">   PRIMARY <span class="keyword">KEY</span> ( magnetURI )</span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
+<p>创建<code>user_info</code>数据表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> user_info(</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   <span class="keyword">password</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">DEFAULT</span> <span class="string">'Anonymous'</span>,</span><br><span class="line">   downloadrecord <span class="built_in">VARCHAR</span>(<span class="number">10000</span>),</span><br><span class="line">   uploadrecord <span class="built_in">VARCHAR</span>(<span class="number">10000</span>),</span><br><span class="line">   PRIMARY <span class="keyword">KEY</span> ( <span class="keyword">id</span> )</span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> qqshare_info;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> user_info;</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br><span class="line"></span><br><span class="line">desc qqshare_info;</span><br><span class="line">desc user_info;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+-------------------+</span><br><span class="line">| Tables_in_qqshare |</span><br><span class="line">+-------------------+</span><br><span class="line">| qqshare_info      |</span><br><span class="line">+-------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( field1, field2,...fieldN )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( value1, value2,...valueN );</span><br></pre></td></tr></table></figure>
+<p>清洗测试：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> qqshare;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> qqshare_info;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> user_info;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> qqshare_info(</span><br><span class="line">   filename <span class="built_in">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   course <span class="built_in">VARCHAR</span>(<span class="number">60</span>),</span><br><span class="line">   teacher <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   downloadtime <span class="built_in">INT</span>,</span><br><span class="line">   filesize <span class="built_in">INT</span>,</span><br><span class="line">   uploadtime <span class="built_in">VARCHAR</span>(<span class="number">40</span>),</span><br><span class="line">   fileformat <span class="built_in">VARCHAR</span>(<span class="number">25</span>),</span><br><span class="line">   magnetURI <span class="built_in">VARCHAR</span>(<span class="number">700</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   description <span class="built_in">VARCHAR</span>(<span class="number">200</span>),</span><br><span class="line">   PRIMARY <span class="keyword">KEY</span> ( magnetURI )</span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> user_info(</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   <span class="keyword">password</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">DEFAULT</span> <span class="string">'Anonymous'</span>,</span><br><span class="line">   downloadrecord <span class="built_in">VARCHAR</span>(<span class="number">10000</span>) <span class="keyword">DEFAULT</span> <span class="string">','</span>,</span><br><span class="line">   uploadrecord <span class="built_in">VARCHAR</span>(<span class="number">10000</span>) <span class="keyword">DEFAULT</span> <span class="string">','</span>,</span><br><span class="line">   PRIMARY <span class="keyword">KEY</span> ( <span class="keyword">id</span> )</span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime,filesize)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"Sintel"</span>, <span class="string">"组合数学"</span>, <span class="string">"马昱春"</span>, <span class="string">".docx"</span>, <span class="string">"magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&amp;dn=Sintel&amp;tr=udp%3A%2F%2Fexplodie.org%3A6969&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=wss%3A%2F%2Ftracker.btorrent.xyz&amp;tr=wss%3A%2F%2Ftracker.fastcast.nz&amp;tr=wss%3A%2F%2Ftracker.openwebtorrent.com&amp;ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&amp;xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent"</span>,<span class="number">3</span>,<span class="string">"这课真的难"</span>,<span class="string">"2020-12-01"</span>,<span class="number">124923</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime,filesize)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"组合数学2017期末A2我觉得很无聊"</span>, <span class="string">"组合数学"</span>, <span class="string">"马昱春"</span>, <span class="string">".pdf"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1367a88a"</span>,<span class="number">10</span>,<span class="string">"太难了~~"</span>,<span class="string">"2020-10-01"</span>,<span class="number">845634</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"微积分A2020期末答案"</span>, <span class="string">"微积分A"</span>, <span class="string">"苏爷爷"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1361288a"</span>,<span class="number">17</span>,<span class="string">"平均分90分"</span>,<span class="string">"2019-12-01"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"毛概展示PPT"</span>, <span class="string">"毛概"</span>, <span class="string">"Unknown"</span>, <span class="string">".ppt"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f515a345aa7c1367a88a"</span>,<span class="number">103</span>,<span class="string">"参考看看吧"</span>,<span class="string">"2020-11-09"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络项目3"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".pdf"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1361188a"</span>,<span class="number">10</span>,<span class="string">"zys永远滴神"</span>,<span class="string">"2020-12-01"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络项目1"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".pdf"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1362188a"</span>,<span class="number">10</span>,<span class="string">"wxh永远滴神"</span>,<span class="string">"2020-12-03"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络项目2"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa7c1362180a"</span>,<span class="number">11</span>,<span class="string">"tql"</span>,<span class="string">"2020-12-02"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"复变函数期末总结"</span>, <span class="string">"复变函数"</span>, <span class="string">"YY"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa7c1362187a"</span>,<span class="number">111</span>,<span class="string">"背出来你就不会挂了，拜杨幂是没用的"</span>,<span class="string">"2020-12-04"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"硕士生英语Schedule"</span>, <span class="string">"硕士生英语"</span>, <span class="string">"Kam"</span>, <span class="string">".pdf"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe8c06bga25559dc9f519b345aa7c1362182a"</span>,<span class="number">1</span>,<span class="string">"学英语~~"</span>,<span class="string">"2020-12-02"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime,filesize)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"离散数学A课件"</span>, <span class="string">"离散数学"</span>, <span class="string">"ZYSyyds!"</span>, <span class="string">".ppt"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa1c1362182a"</span>,<span class="number">121</span>,<span class="string">"数理逻辑与集合论"</span>,<span class="string">"2020-12-09"</span>,<span class="number">3145134</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"操作系统2020年期中A卷"</span>, <span class="string">"操作系统"</span>, <span class="string">"ABC"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa7c1362982a"</span>,<span class="number">61</span>,<span class="string">"送分题"</span>,<span class="string">"2020-10-01"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"人工智能导论大作业"</span>, <span class="string">"人工智能"</span>, <span class="string">"马少平"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:a12fe1c06bga25553dc9f519b345aa7c1362182a"</span>,<span class="number">51</span>,<span class="string">"四子棋的AI算法"</span>,<span class="string">"2020-12-14"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"线性代数2018年秋"</span>, <span class="string">"线性代数"</span>, <span class="string">"XD"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:c32fe1c06bga25559dc9f519b345aa7c1362182a"</span>,<span class="number">81</span>,<span class="string">"好多人挂科"</span>,<span class="string">"2020-12-16"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络项目5"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:a12fe1c06bba2g559dc9f519b345aa7c1362180a"</span>,<span class="number">11</span>,<span class="string">"永远滴神"</span>,<span class="string">"2020-12-06"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"数电A4小抄"</span>, <span class="string">"数字电路"</span>, <span class="string">"XX"</span>, <span class="string">".pdf"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba25559dc9f519b345aa7c1362180a"</span>,<span class="number">71</span>,<span class="string">"要带放大镜去看"</span>,<span class="string">"2020-12-05"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络课件"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".pptx"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba15559dc9f519b345aa7c1362180a"</span>,<span class="number">9</span>,<span class="string">"看不懂又能怎么办呢QAQ"</span>,<span class="string">"2020-12-11"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"自然辨证法作业"</span>, <span class="string">"自然辨证法"</span>, <span class="string">"XX"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba25559dc9f549b345aa7c1362180a"</span>,<span class="number">23</span>,<span class="string">"4000字以上，太卷了吧"</span>,<span class="string">"2020-11-05"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"高等计算机网络报告"</span>, <span class="string">"高等计算机网络"</span>, <span class="string">"徐恪"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba25559dd9f519b345aa7c1362180a"</span>,<span class="number">14</span>,<span class="string">"做一个项目花挺多时间"</span>,<span class="string">"2020-12-08"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"深入浅出统计学"</span>, <span class="string">"统计学原理"</span>, <span class="string">"Mr.H"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba25559dc9f619b345aa2c1362180a"</span>,<span class="number">7</span>,<span class="string">"统计学是AI的基础啊"</span>,<span class="string">"2020-12-09"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"疯狂学英语"</span>, <span class="string">"大学英语"</span>, <span class="string">"超神"</span>, <span class="string">".zip"</span>, <span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba255594c9f119b345aa7c1362190a"</span>,<span class="number">8</span>,<span class="string">"英语咋学"</span>,<span class="string">"2020-12-10"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"测试文件"</span>, <span class="string">"测试"</span>, <span class="string">"测"</span>, <span class="string">".test"</span>, <span class="string">"magnet:?fake"</span>,<span class="number">7</span>,<span class="string">"测试~~~"</span>,<span class="string">"2020-12-01"</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> qqshare_info ( filename,course,teacher,fileformat,magnetURI,downloadtime ,description,uploadtime)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"测试文件2"</span>, <span class="string">"测试2"</span>, <span class="string">"测2"</span>, <span class="string">".test2"</span>, <span class="string">"magnet:?fake2"</span>,<span class="number">5</span>,<span class="string">"测试2~~~"</span>,<span class="string">"2020-12-02"</span> );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span> )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"2020210942"</span>,<span class="string">"123456"</span>,<span class="string">"zouyansong"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span>,downloadrecord )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"2020210041"</span>,<span class="string">"654321"</span>,<span class="string">"shenxi"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa7c1362180a"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span>,downloadrecord,uploadrecord )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"2020000000"</span>,<span class="string">"123456"</span>,<span class="string">"robot"</span>, <span class="string">",magnet:?xt=urn:btih:c12fe1c06bga25559dc9f519b345aa7c1362180a,magnet:?xt=urn:btih:cg2fe1c06bba25559dc9f549b345aa7c1362180a,magnet:?xt=urn:btih:c32fe1c06bga25559dc9f519b345aa7c1362182a"</span>, <span class="string">"magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1361288a"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span>,downloadrecord,uploadrecord )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"123"</span>,<span class="string">"123"</span>,<span class="string">"test123"</span>,<span class="string">"magnet:?xt=urn:btih:cg2fe1c06bba255594c9f119b345aa7c1362190a"</span>, <span class="string">",magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b345aa7c1367a88a,magnet:?xt=urn:btih:c12fe1c06bba25559dc9f519b335aa7c1367a88a"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span>,downloadrecord,uploadrecord )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"321"</span>,<span class="string">"321"</span>,<span class="string">"test321"</span>,<span class="string">"magnet:?fake,magnet:?fake2"</span>, <span class="string">""</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_info ( <span class="keyword">id</span>,<span class="keyword">password</span>,<span class="keyword">name</span>,downloadrecord,uploadrecord )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">( <span class="string">"912"</span>,<span class="string">"912"</span>,<span class="string">"test912"</span>,<span class="string">"magnet:?fake2"</span>, <span class="string">"magnet:?fake2,magnet:?fake"</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_info;</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据项"><a href="#查看数据项" class="headerlink" title="查看数据项"></a>查看数据项</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> qqshare_info;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info;</span><br></pre></td></tr></table></figure>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201213220909171.png" class="" title="查看数据项">
+<h1 id="搜索初探"><a href="#搜索初探" class="headerlink" title="搜索初探"></a>搜索初探</h1><blockquote>
+<p><a href="https://blog.csdn.net/geerniya/article/details/79025405" target="_blank" rel="noopener external nofollow noreferrer">django学习——如何实现简单的搜索功能</a></p>
+</blockquote>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>用SQL查询代替搜索。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> qqshare_info</span><br><span class="line"><span class="keyword">WHERE</span> filename REGEXP <span class="string">"组合数学"</span> <span class="keyword">OR</span> course REGEXP <span class="string">"组合数学"</span> <span class="keyword">OR</span> teacher REGEXP <span class="string">"马昱春"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> filename, course, teacher</span><br><span class="line"><span class="keyword">FROM</span> qqshare_info</span><br><span class="line"><span class="keyword">WHERE</span> filename REGEXP <span class="string">"组合数学"</span> <span class="keyword">OR</span> course REGEXP <span class="string">"组合数学"</span> <span class="keyword">OR</span> teacher REGEXP <span class="string">"马昱春"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Local种子匹配"><a href="#Local种子匹配" class="headerlink" title="Local种子匹配"></a>Local种子匹配</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> torrent_parser</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    HOST, PORT = <span class="string">''</span>, <span class="number">8888</span></span><br><span class="line"></span><br><span class="line">    listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">    listen_socket.bind((HOST, PORT))</span><br><span class="line">    listen_socket.listen(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">'Serving HTTP on port %s ...'</span> % PORT)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        client_connection, client_address = listen_socket.accept()</span><br><span class="line">        request = client_connection.recv(<span class="number">1024</span>)</span><br><span class="line">        <span class="comment">#print(request.decode("utf-8"))</span></span><br><span class="line"></span><br><span class="line">        http_response = <span class="string">"""\</span></span><br><span class="line"><span class="string">    HTTP/1.1 200 OK</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">        http_response += json_search_result_file</span><br><span class="line">        client_connection.sendall(http_response.encode(<span class="string">"utf-8"</span>))</span><br><span class="line">        client_connection.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(keyword)</span>:</span></span><br><span class="line">    torrent_path = <span class="string">"./torrents/"</span></span><br><span class="line">    <span class="keyword">import</span> os</span><br><span class="line">    torrent_list = os.listdir(torrent_path)</span><br><span class="line">    <span class="keyword">for</span> torrent_file_name <span class="keyword">in</span> torrent_list:</span><br><span class="line">        torrent_parser.parse_torrent_file(torrent_file_name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h1 id="Node-Express-后端"><a href="#Node-Express-后端" class="headerlink" title="Node Express 后端"></a>Node Express 后端</h1><blockquote>
+<p><a href="https://www.runoob.com/nodejs/nodejs-express-framework.html" target="_blank" rel="noopener external nofollow noreferrer">Node.js Express 框架</a></p>
+<p><a href="https://www.npmjs.com/package/express" target="_blank" rel="noopener external nofollow noreferrer">https://www.npmjs.com/package/express</a></p>
+<p><a href="https://expressjs.com/en/5x/api.html#req" target="_blank" rel="noopener external nofollow noreferrer">https://expressjs.com/en/5x/api.html#req</a></p>
+</blockquote>
+<h2 id="Node项目配置"><a href="#Node项目配置" class="headerlink" title="Node项目配置"></a>Node项目配置</h2><p>检查Node版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>测试JS程序<code>server.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;).listen(<span class="number">8880</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 终端打印如下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://localhost:8880/'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>运行测试程序</strong><code>server.js</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
+<p>访问<code>http://localhost:8880/</code>即可得到结果。页面返回<code>&#39;Hello World\n&#39;</code>。</p>
+<p>在测试完成之后按<code>Ctrl C</code>退出程序，<code>Ctrl Z</code>只是退出界面，会导致程序继续运行，端口号被占用。</p>
+<blockquote>
+<p><a href="http://nodejs.cn/learn/nodejs-accept-arguments-from-the-command-line" target="_blank" rel="noopener external nofollow noreferrer">Node.js 从命令行接收参数</a></p>
+</blockquote>
+<h3 id="Express风格"><a href="#Express风格" class="headerlink" title="Express风格"></a>Express风格</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//express_demo.js 文件</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"> </span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.send(<span class="string">'Hello World'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"> </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>访问<code>http://localhost:8081/</code>得到结果。页面返回<code>&#39;Hello World&#39;</code>。</p>
+<h2 id="服务器设计"><a href="#服务器设计" class="headerlink" title="服务器设计"></a>服务器设计</h2><blockquote>
+<p><a href="https://github.com/stellarkey/server_engine" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/stellarkey/server_engine</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试查询链接：</span></span><br><span class="line"><span class="comment">// http://localhost:8081/api/search?filename=%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6&amp;course=%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6&amp;teacher=%E9%A9%AC%E6%98%B1%E6%98%A5</span></span><br><span class="line"><span class="comment">// 测试插入链接：（自行）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 命令行：node server.js --port=8023  可自定义端口</span></span><br><span class="line"><span class="keyword">const</span> args = <span class="built_in">require</span>(<span class="string">'minimist'</span>)(process.argv.slice(<span class="number">2</span>));</span><br><span class="line"><span class="keyword">var</span> port_number= args[<span class="string">'port'</span>] ? args[<span class="string">'port'</span>] : <span class="number">8081</span>; <span class="comment">// 端口号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/api/uservalid'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/uservalid'</span>);</span><br><span class="line">  <span class="keyword">var</span> postData = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">  req.on(<span class="string">"data"</span>, (chunk) =&gt; &#123;</span><br><span class="line">    postData = postData + chunk;</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  req.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    postData = querystring.parse(postData);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'postData:'</span>, postData);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> post_id = postData.id;</span><br><span class="line">    <span class="keyword">var</span> post_pwd = postData.pwd;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    connection.connect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> SQL_query = <span class="string">'SELECT id,password,name FROM user_info WHERE id=\''</span> + post_id + <span class="string">'\';'</span>;</span><br><span class="line"></span><br><span class="line">    connection.query(SQL_query,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'----------------------SELECT------------------------'</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"SQL_query:"</span>, SQL_query);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"result:"</span>, result);</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>(result.length)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"用户存在"</span>);</span><br><span class="line">        <span class="keyword">if</span> (result[<span class="number">0</span>][<span class="string">'password'</span>] == <span class="built_in">Number</span>(postData[<span class="string">'pwd'</span>]))&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"密码正确"</span>);</span><br><span class="line">          resData = &#123;<span class="attr">flag</span>:<span class="number">1</span>,<span class="attr">name</span>:result[<span class="number">0</span>][<span class="string">'name'</span>]&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"密码错误"</span>);</span><br><span class="line">          resData = &#123;<span class="attr">flag</span>:<span class="number">2</span>&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"resData:"</span>, resData);</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"用户不存在"</span>);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>:<span class="number">3</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    connection.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/hotfile'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/hotfile'</span>);</span><br><span class="line">  <span class="comment">// 暂时设计为选择【所有时间中下载量最高的10个文件】</span></span><br><span class="line">  <span class="comment">// 如果需要获得近期的热门文件，可能需要维护一个定期更新的下载量数组，然后循环更新，暂时搁置</span></span><br><span class="line">  <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">  <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">    host     : <span class="string">'localhost'</span>,</span><br><span class="line">    user     : <span class="string">'root'</span>,</span><br><span class="line">    password : <span class="string">'123456'</span>,</span><br><span class="line">    database : <span class="string">'qqshare'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection.connect();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> SQL_query = <span class="string">'SELECT filename,description FROM qqshare_info ORDER BY downloadtime DESC LIMIT 10;'</span>;</span><br><span class="line"></span><br><span class="line">  connection.query(SQL_query, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection.end();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/search'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/search'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"req.query: "</span>, req.query);</span><br><span class="line">  <span class="comment">//console.log(req.query.filename);</span></span><br><span class="line">  <span class="comment">//res.send(req.query.filename);</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">  <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">    host     : <span class="string">'localhost'</span>,</span><br><span class="line">    user     : <span class="string">'root'</span>,</span><br><span class="line">    password : <span class="string">'123456'</span>,</span><br><span class="line">    database : <span class="string">'qqshare'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection.connect();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> filename_filter = req.query.filename ? req.query.filename : <span class="string">" "</span>;</span><br><span class="line">  <span class="keyword">var</span> course_filter = req.query.course ? req.query.course : <span class="string">" "</span>;</span><br><span class="line">  <span class="keyword">var</span> teacher_filter = req.query.teacher ? req.query.teacher : <span class="string">" "</span>;</span><br><span class="line">  <span class="comment">// if it's empty, then use: " " (with a space)</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> SQL_query = <span class="string">'SELECT * FROM qqshare_info WHERE filename REGEXP "'</span></span><br><span class="line">              + filename_filter </span><br><span class="line">              + <span class="string">'" OR course REGEXP "'</span> </span><br><span class="line">              + course_filter </span><br><span class="line">              + <span class="string">'" OR teacher REGEXP "'</span></span><br><span class="line">              + teacher_filter</span><br><span class="line">              + <span class="string">'";'</span>;</span><br><span class="line"></span><br><span class="line">  connection.query(SQL_query, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//console.log(results);</span></span><br><span class="line">    <span class="comment">//console.log('The solution is: ', results[0].filename);</span></span><br><span class="line">    </span><br><span class="line">    res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection.end();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/api/upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/upload'</span>);</span><br><span class="line">  <span class="comment">// magnetURI中有特殊字符，可能需要转义：</span></span><br><span class="line">  <span class="comment">// https://segmentfault.com/a/1190000009492789</span></span><br><span class="line">  <span class="keyword">var</span> postData = <span class="string">""</span>;</span><br><span class="line">  req.on(<span class="string">"data"</span>, (chunk) =&gt; &#123;</span><br><span class="line">    postData = postData + chunk;</span><br><span class="line">  &#125;);</span><br><span class="line">  req.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    postData = querystring.parse(postData);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'postData:'</span>,postData);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在文件数据表中加入该文件</span></span><br><span class="line">    <span class="keyword">var</span> filename = postData.filename;</span><br><span class="line">    <span class="keyword">var</span> course = postData.course;</span><br><span class="line">    <span class="keyword">var</span> teacher = postData.teacher;</span><br><span class="line">    <span class="keyword">var</span> downloadtime = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> filesize = postData.filesize;</span><br><span class="line">    <span class="keyword">var</span> uploadtime = getCurrDate();</span><br><span class="line">    <span class="keyword">var</span> fileformat = postData.fileformat;</span><br><span class="line">    <span class="keyword">var</span> description = postData.description;</span><br><span class="line">    <span class="keyword">var</span> magnetURI = postData.magnetURI;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"---------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"magnetURI.length"</span>, magnetURI.length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    connection.connect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> addSql = <span class="string">'INSERT INTO qqshare_info (filename,course,teacher,downloadtime,filesize,uploadtime,fileformat,description,magnetURI) VALUES(?,?,?,?,?,?,?,?,\''</span></span><br><span class="line">            + magnetURI +<span class="string">'\')'</span>;</span><br><span class="line">    <span class="keyword">var</span> addSqlParams = [filename,course,teacher,downloadtime,filesize,uploadtime,fileformat,description];</span><br><span class="line"></span><br><span class="line">    connection.query(addSql,addSqlParams,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[INSERT ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'--------------INSERT----------------'</span>);</span><br><span class="line">      <span class="comment">//console.log('INSERT ID:',result.insertId);        </span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'INSERT ID:'</span>,result);        </span><br><span class="line">      </span><br><span class="line">      <span class="comment">// resData = &#123;flag: 1&#125;;</span></span><br><span class="line">      <span class="comment">// res.setHeader("Content-Type", "application/json");</span></span><br><span class="line">      <span class="comment">// res.end(JSON.stringify(resData));</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// connection.query("SELECT * FROM qqshare_info;",function (err, result) &#123;</span></span><br><span class="line">    <span class="comment">//   if(err)&#123;</span></span><br><span class="line">    <span class="comment">//     console.log('[SELECT ERROR] - ',err.message);</span></span><br><span class="line">    <span class="comment">//     return;</span></span><br><span class="line">    <span class="comment">//   &#125;</span></span><br><span class="line">    <span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在用户数据表中更新用户的历史上传记录</span></span><br><span class="line">    <span class="comment">// 为避免多次重传，这部分放在后，只有在成功插入文件数据库后才可能执行</span></span><br><span class="line">    <span class="keyword">var</span> id = postData.id;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// UPDATE user_info SET uploadrecord=concat(uploadrecord,',magnet:?fake') WHERE id='123';</span></span><br><span class="line">    <span class="keyword">var</span> SQL_query = <span class="string">'UPDATE user_info SET uploadrecord=concat(uploadrecord,\','</span></span><br><span class="line">              + magnetURI</span><br><span class="line">              + <span class="string">'\') WHERE id=\''</span></span><br><span class="line">              + id</span><br><span class="line">              + <span class="string">'\';'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    connection.query(SQL_query,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[UPDATE ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'--------------------------UPDATE----------------------------'</span>);    </span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">1</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    connection.end();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/uploadrecord'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/uploadrecord'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"req.query: "</span>, req.query);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(req.query.id == <span class="string">''</span>)&#123;   <span class="comment">// 空查询处理</span></span><br><span class="line">    resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"查询为空，失败。"</span>);</span><br><span class="line">    res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">  <span class="keyword">var</span> connection1 = mysql.createConnection(&#123;</span><br><span class="line">    host     : <span class="string">'localhost'</span>,</span><br><span class="line">    user     : <span class="string">'root'</span>,</span><br><span class="line">    password : <span class="string">'123456'</span>,</span><br><span class="line">    database : <span class="string">'qqshare'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection1.connect();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> SQL_query1 = <span class="string">'SELECT uploadrecord FROM user_info WHERE id=\''</span></span><br><span class="line">              + req.query.id + <span class="string">'\';'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"SQL_query1:"</span>, SQL_query1);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> uploadrecord = <span class="string">""</span>;</span><br><span class="line">  connection1.query(SQL_query1, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"results: "</span>, results);</span><br><span class="line">    </span><br><span class="line">    uploadrecord = results[<span class="number">0</span>].uploadrecord;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"uploadrecord: "</span>, uploadrecord);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="keyword">if</span>(uploadrecord == <span class="string">""</span>)&#123;</span><br><span class="line">      <span class="comment">// 当没有下载过文件时返回[]</span></span><br><span class="line">      resData = [];</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> connection2 = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    connection2.connect();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> upload_magnet_list = uploadrecord.split(<span class="string">','</span>).filter(<span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123; <span class="keyword">return</span> el != <span class="string">''</span>; &#125;);    <span class="comment">// 清洗</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"upload_magnet_list: "</span>, upload_magnet_list);</span><br><span class="line"></span><br><span class="line">    upload_magnet_list = <span class="built_in">JSON</span>.stringify(upload_magnet_list).replace(<span class="string">'['</span>,<span class="string">'('</span>).replace(<span class="string">']'</span>,<span class="string">')'</span>).replace(<span class="regexp">/\"/g</span>,<span class="string">'\''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"upload_magnet_list(after modify): "</span>, upload_magnet_list);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> SQL_query2 = <span class="string">'SELECT filename,downloadtime,uploadtime FROM qqshare_info WHERE magnetURI IN '</span></span><br><span class="line">                    + upload_magnet_list + <span class="string">';'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"SQL_query2:"</span>, SQL_query2);</span><br><span class="line"></span><br><span class="line">    connection2.query(SQL_query2, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123; </span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    connection2.end();</span><br><span class="line">    </span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection1.end();</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/api/download'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/download'</span>);</span><br><span class="line">  <span class="keyword">var</span> postData = <span class="string">""</span>;</span><br><span class="line">  req.on(<span class="string">"data"</span>, (chunk) =&gt; &#123;</span><br><span class="line">    postData = postData + chunk;</span><br><span class="line">  &#125;);</span><br><span class="line">  req.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    postData = querystring.parse(postData);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'postData:'</span>, postData);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在文件数据表给该文件的downloadtime加一</span></span><br><span class="line">    <span class="keyword">var</span> magnetURI = postData.magnetURI;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"magnetURI:"</span>, magnetURI);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    connection.connect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> SQL_query = <span class="string">'UPDATE qqshare_info SET downloadtime=downloadtime+1 WHERE magnetURI=\''</span></span><br><span class="line">                + magnetURI + <span class="string">'\';'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line"></span><br><span class="line">    connection.query(SQL_query,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[UPDATE ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'----------------UPDATE1----------------'</span>);</span><br><span class="line">      </span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line">      <span class="comment">// resData = &#123;flag: 1&#125;;</span></span><br><span class="line">      <span class="comment">// res.setHeader("Content-Type", "application/json");</span></span><br><span class="line">      <span class="comment">// res.end(JSON.stringify(resData));</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在用户数据表中把该文件的加入到用户的历史下载记录中</span></span><br><span class="line">    <span class="keyword">var</span> id = postData.id;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"id:"</span>, id);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// UPDATE user_info SET downloadrecord=concat(downloadrecord,',magnet:?fake') WHERE id='123';</span></span><br><span class="line">    <span class="keyword">var</span> SQL_query = <span class="string">'UPDATE user_info SET downloadrecord=concat(downloadrecord,\','</span></span><br><span class="line">              + magnetURI</span><br><span class="line">              + <span class="string">'\') WHERE id=\''</span></span><br><span class="line">              + id</span><br><span class="line">              + <span class="string">'\';'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line"></span><br><span class="line">    connection.query(SQL_query,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[UPDATE ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'----------------UPDATE2----------------'</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'SQL:'</span>, SQL_query);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">1</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    connection.end();</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/downloadrecord'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/downloadrecord'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"req.query: "</span>, req.query);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(req.query.id == <span class="string">''</span>)&#123;   <span class="comment">// 空查询处理</span></span><br><span class="line">    resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"查询为空，失败。"</span>);</span><br><span class="line">    res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">    res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">  <span class="keyword">var</span> connection1 = mysql.createConnection(&#123;</span><br><span class="line">    host     : <span class="string">'localhost'</span>,</span><br><span class="line">    user     : <span class="string">'root'</span>,</span><br><span class="line">    password : <span class="string">'123456'</span>,</span><br><span class="line">    database : <span class="string">'qqshare'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection1.connect();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> SQL_query1 = <span class="string">'SELECT downloadrecord FROM user_info WHERE id=\''</span></span><br><span class="line">              + req.query.id + <span class="string">'\';'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"SQL_query1:"</span>, SQL_query1);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> downloadrecord = <span class="string">""</span>;</span><br><span class="line">  connection1.query(SQL_query1, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"results: "</span>, results);</span><br><span class="line">    </span><br><span class="line">    downloadrecord = results[<span class="number">0</span>].downloadrecord;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"downloadrecord: "</span>, downloadrecord);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">    <span class="keyword">if</span>(downloadrecord == <span class="string">""</span>)&#123;</span><br><span class="line">      <span class="comment">// 当没有下载过文件时返回[]</span></span><br><span class="line">      resData = [];</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> connection2 = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    connection2.connect();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> download_magnet_list = downloadrecord.split(<span class="string">','</span>).filter(<span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123; <span class="keyword">return</span> el != <span class="string">''</span>; &#125;);    <span class="comment">// 清洗</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"download_magnet_list: "</span>, download_magnet_list);</span><br><span class="line"></span><br><span class="line">    download_magnet_list = <span class="built_in">JSON</span>.stringify(download_magnet_list).replace(<span class="string">'['</span>,<span class="string">'('</span>).replace(<span class="string">']'</span>,<span class="string">')'</span>).replace(<span class="regexp">/\"/g</span>,<span class="string">'\''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"download_magnet_list(after modify): "</span>, download_magnet_list);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> SQL_query2 = <span class="string">'SELECT filename,downloadtime,uploadtime FROM qqshare_info WHERE magnetURI IN '</span></span><br><span class="line">                    + download_magnet_list + <span class="string">';'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"SQL_query2:"</span>, SQL_query2);</span><br><span class="line"></span><br><span class="line">    connection2.query(SQL_query2, <span class="function"><span class="keyword">function</span> (<span class="params">err, results, fields</span>) </span>&#123; </span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[SELECT ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(results));</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    connection2.end();</span><br><span class="line">    </span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  connection1.end();</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/api/changename'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/changename'</span>);</span><br><span class="line">  <span class="keyword">var</span> postData = <span class="string">""</span>;</span><br><span class="line">  req.on(<span class="string">"data"</span>, (chunk) =&gt; &#123;</span><br><span class="line">    postData = postData + chunk;</span><br><span class="line">  &#125;);</span><br><span class="line">  req.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">    postData = querystring.parse(postData);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> id = postData.id;</span><br><span class="line">    <span class="keyword">var</span> newname = postData.newname;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> mysql      = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line">    <span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">      host     : <span class="string">'localhost'</span>,</span><br><span class="line">      user     : <span class="string">'root'</span>,</span><br><span class="line">      password : <span class="string">'123456'</span>,</span><br><span class="line">      database : <span class="string">'qqshare'</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    connection.connect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> SQL_query = <span class="string">'UPDATE user_info SET name=\''</span>+newname+<span class="string">'\' WHERE id=\''</span>+id+<span class="string">'\';'</span>;</span><br><span class="line"></span><br><span class="line">    connection.query(SQL_query,<span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'[UPDATE ERROR] - '</span>,err.message);</span><br><span class="line">        resData = &#123;<span class="attr">flag</span>: <span class="number">0</span>&#125;;</span><br><span class="line">        res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'--------------------------UPDATE----------------------------'</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"SQL_query:"</span>, SQL_query);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"newname:"</span>, postData.newname);</span><br><span class="line">      </span><br><span class="line">      resData = &#123;<span class="attr">flag</span>: <span class="number">1</span>&#125;;</span><br><span class="line">      res.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    connection.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/test_getCurrDate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"----------------------------------------"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'/api/test_getCurrDate'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(getCurrDate());</span><br><span class="line">  res.send(getCurrDate());</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(port_number, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"QQShare is running at http://%s:%s"</span>, host, port)</span><br><span class="line"> </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://blog.csdn.net/itmyhome1990/article/details/89372292</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCurrDate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">	<span class="keyword">var</span> sep = <span class="string">"-"</span>;</span><br><span class="line">	<span class="keyword">var</span> year = date.getFullYear(); <span class="comment">//获取完整的年份(4位)</span></span><br><span class="line">	<span class="keyword">var</span> month = date.getMonth() + <span class="number">1</span>; <span class="comment">//获取当前月份(0-11,0代表1月)</span></span><br><span class="line">	<span class="keyword">var</span> day = date.getDate(); <span class="comment">//获取当前日</span></span><br><span class="line">	<span class="keyword">if</span> (month &lt;= <span class="number">9</span>) &#123;</span><br><span class="line">		month = <span class="string">"0"</span> + month;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (day &lt;= <span class="number">9</span>) &#123;</span><br><span class="line">		day = <span class="string">"0"</span> + day;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> currentdate = year + sep + month + sep + day;</span><br><span class="line">	<span class="keyword">return</span> currentdate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="服务器持续运行"><a href="#服务器持续运行" class="headerlink" title="服务器持续运行"></a>服务器持续运行</h2><blockquote>
+<p><a href="https://blog.csdn.net/zzpzheng/article/details/54427582" target="_blank" rel="noopener external nofollow noreferrer">关闭shell后如何保持程序继续运行</a></p>
+<blockquote>
+<p>在执行的命令之前增加nohup，在命令后增加&amp;。然后点任意键退回到shell，再exit，node.js程序仍然会在后台运行。</p>
+<p>如；nohup npm start &amp;</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/calvinpaean/article/details/91349024" target="_blank" rel="noopener external nofollow noreferrer">Linux下SSH远程连接断开后让程序继续运行解决办法、在后台运行</a></p>
+<p><a href="https://www.zhihu.com/question/20709809" target="_blank" rel="noopener external nofollow noreferrer">Linux ssh状态下如何后台运行程序？</a></p>
+<p><a href="https://huanghailiang.github.io/2017/09/08/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%96%AD%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%A9%E5%91%BD%E4%BB%A4%E7%BB%A7%E7%BB%AD%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%A7%E8%A1%8C/" target="_blank" rel="noopener external nofollow noreferrer"><strong>ssh连接服务器中断，如何让命令继续在服务器执行</strong></a></p>
+<p><a href="https://blog.csdn.net/gatieme/article/details/52777721" target="_blank" rel="noopener external nofollow noreferrer">解决Linux关闭终端(关闭SSH等)后运行的程序自动停止</a></p>
+</blockquote>
+<h3 id="nohup命令"><a href="#nohup命令" class="headerlink" title="nohup命令"></a>nohup命令</h3><p>不挂断地运行命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup Command [ Arg … ] [　&amp; ]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>nohup命令将当前指令的所有输出都输出到了当前文件夹下的nohup.out文件。加不加&amp;并不会影响这个命令。只是让程序前台或者后台运行而已。</p>
+<p>使用 jobs 查看任务。<br>使用 fg %n　关闭。</p>
+</blockquote>
+<h3 id="screen命令"><a href="#screen命令" class="headerlink" title="screen命令"></a>screen命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen</span><br></pre></td></tr></table></figure>
+<p>Screen将创建一个执行shell的全屏窗口。你可以执行任意shell程序，就像在ssh窗口中那样。在该窗口中键入exit退出该窗口，如果这是该screen会话的唯一窗口，该screen会话退出，否则screen自动切换到前一个窗口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen vi test.c</span><br></pre></td></tr></table></figure>
+<p>Screen创建一个执行vi test.c的单窗口会话，退出vi将退出该窗口/会话。</p>
+<h3 id="byobu命令"><a href="#byobu命令" class="headerlink" title="byobu命令"></a>byobu命令</h3><p>Unbuntu图形界面可以使用，更加集成化，且可以使用快捷键。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install byobu</span><br></pre></td></tr></table></figure>
+<h3 id="【pm2】"><a href="#【pm2】" class="headerlink" title="【pm2】"></a>【pm2】</h3><blockquote>
+<p><a href="https://blog.csdn.net/qq_36938617/article/details/95679412" target="_blank" rel="noopener external nofollow noreferrer">pm2的基本使用</a></p>
+</blockquote>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -y pm2 -g</span><br></pre></td></tr></table></figure>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>如有必要，修改<code>Package.json</code>中的<code>start</code>接口：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"start": "node server.js"</span><br></pre></td></tr></table></figure>
+<p>通过pm2运行项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 start server.js</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不要忘记添加项目启动脚本<code>server.js</code>。</p>
+<p>这个可以用~</p>
+</blockquote>
+<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><p>查看当前运行的项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 ls  <span class="comment"># 或: sudo pm2 list</span></span><br></pre></td></tr></table></figure>
+<h5 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h5><p>pm2生成的日志文件的默认路径在$ HOME /.pm2/logs /下面。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.pm2/logs/</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
+<p>查看历史日志：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 logs --lines 200         <span class="comment"># 查看历史日志</span></span><br></pre></td></tr></table></figure>
+<p>查看实时日志：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 logs             <span class="comment"># 实时显示日志</span></span><br></pre></td></tr></table></figure>
+<p>其他日志操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 logs --raw			<span class="comment"># 显示流中的所有进程日志</span></span><br><span class="line">sudo pm2 flush			<span class="comment"># 清空所有日志文件</span></span><br><span class="line">sudo pm2 reloadLogs		<span class="comment"># 重新加载所有日志</span></span><br></pre></td></tr></table></figure>
+<h5 id="仪表盘"><a href="#仪表盘" class="headerlink" title="仪表盘"></a>仪表盘</h5><p>仪表盘可以显示实时监控的动态数据，退出Ctrl+C</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 monit          <span class="comment"># 查看仪表盘</span></span><br></pre></td></tr></table></figure>
+<img data-src="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/image-20201216192812552.png" class="" title="仪表盘">
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><p>停止当前运行的项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 stop server       <span class="comment"># 停止项目名为server的应用程序</span></span><br><span class="line"></span><br><span class="line">sudo pm2 stop 0            <span class="comment"># 停止项目id为0的应用程序</span></span><br><span class="line"></span><br><span class="line">sudo pm2 stop all          <span class="comment"># 停止pm2管理的所有应用程序</span></span><br></pre></td></tr></table></figure>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 restart all      <span class="comment"># 重启pm2管理的所有应用程序</span></span><br><span class="line"></span><br><span class="line">sudo pm2 reload all       <span class="comment"># 重载pm2管理的所有应用程序</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 delete server     <span class="comment"># 删除项目名为sever的应用程序的进程</span></span><br><span class="line"></span><br><span class="line">sudo pm2 delete 0          <span class="comment"># 删除项目id为0的应用程序的进程</span></span><br><span class="line"></span><br><span class="line">sudo pm2 delete all        <span class="comment"># 删除pm2管理的所有应用程序的进程</span></span><br></pre></td></tr></table></figure>
+<h4 id="自启动"><a href="#自启动" class="headerlink" title="自启动"></a>自启动</h4><p>服务器开机自启动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 startup</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" title="P2P系统后端设计">https://stellarkey.github.io/P2P系统设计/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%85%A8%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 全栈</a>
+              <a href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 后端</a>
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/SQL/" rel="tag"><i class="fa fa-tag"></i> SQL</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="prev" title="区块链课程实验">
+      <i class="fa fa-chevron-left"></i> 区块链课程实验
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%AC%AC%E4%BA%8C%E5%B1%8AAI%E4%B8%8E%E5%AE%89%E5%85%A8%E7%A0%94%E8%AE%A8%E4%BC%9A/" rel="next" title="第二届AI与安全研讨会">
+      第二届AI与安全研讨会 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#种子文件-torrent"><span class="nav-number">2.</span> <span class="nav-text">种子文件 .torrent</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BEncoding-编码格式"><span class="nav-number">2.1.</span> <span class="nav-text">BEncoding 编码格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字节串"><span class="nav-number">2.1.1.</span> <span class="nav-text">字节串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.2.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.1.3.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">2.1.4.</span> <span class="nav-text">字典</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Torrent文件结构"><span class="nav-number">2.2.</span> <span class="nav-text">Torrent文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Info字段"><span class="nav-number">2.2.1.</span> <span class="nav-text">Info字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单文件Info结构"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">单文件Info结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多文件Info结构"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">多文件Info结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Torrent解析"><span class="nav-number">2.3.</span> <span class="nav-text">Torrent解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源torrent"><span class="nav-number">2.4.</span> <span class="nav-text">开源torrent</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#libtorrent-开源P2P"><span class="nav-number">2.4.1.</span> <span class="nav-text">libtorrent 开源P2P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebTorrent-开源P2P"><span class="nav-number">2.4.2.</span> <span class="nav-text">WebTorrent  开源P2P</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON文件-json"><span class="nav-number">3.</span> <span class="nav-text">JSON文件 .json</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素"><span class="nav-number">3.1.</span> <span class="nav-text">元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">3.2.</span> <span class="nav-text">对象 {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">3.3.</span> <span class="nav-text">数组 []</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NPM-前端套件管理器"><span class="nav-number">4.</span> <span class="nav-text">NPM 前端套件管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Package-json"><span class="nav-number">4.1.</span> <span class="nav-text">Package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init"><span class="nav-number">4.2.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install"><span class="nav-number">4.3.</span> <span class="nav-text">npm install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-run-lt-scripts-gt"><span class="nav-number">4.4.</span> <span class="nav-text">npm run &lt;scripts&gt;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Qingqing-Share-前端"><span class="nav-number">5.</span> <span class="nav-text">Qingqing Share 前端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">5.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#试运行"><span class="nav-number">5.2.</span> <span class="nav-text">试运行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tracker服务器"><span class="nav-number">6.</span> <span class="nav-text">Tracker服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源服务器"><span class="nav-number">7.</span> <span class="nav-text">资源服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库服务器"><span class="nav-number">8.</span> <span class="nav-text">数据库服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL安装"><span class="nav-number">8.1.</span> <span class="nav-text">MySQL安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL服务管理"><span class="nav-number">8.2.</span> <span class="nav-text">MySQL服务管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL登录"><span class="nav-number">8.3.</span> <span class="nav-text">MySQL登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户生成"><span class="nav-number">8.3.1.</span> <span class="nav-text">用户生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限管理"><span class="nav-number">8.3.2.</span> <span class="nav-text">权限管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库和表单"><span class="nav-number">8.4.</span> <span class="nav-text">创建数据库和表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表"><span class="nav-number">8.4.1.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据表"><span class="nav-number">8.4.2.</span> <span class="nav-text">查看数据表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入数据"><span class="nav-number">8.5.</span> <span class="nav-text">插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据项"><span class="nav-number">8.5.1.</span> <span class="nav-text">查看数据项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜索初探"><span class="nav-number">9.</span> <span class="nav-text">搜索初探</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">9.1.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local种子匹配"><span class="nav-number">9.2.</span> <span class="nav-text">Local种子匹配</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-Express-后端"><span class="nav-number">10.</span> <span class="nav-text">Node Express 后端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node项目配置"><span class="nav-number">10.1.</span> <span class="nav-text">Node项目配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Express风格"><span class="nav-number">10.1.1.</span> <span class="nav-text">Express风格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器设计"><span class="nav-number">10.2.</span> <span class="nav-text">服务器设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器持续运行"><span class="nav-number">10.3.</span> <span class="nav-text">服务器持续运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nohup命令"><span class="nav-number">10.3.1.</span> <span class="nav-text">nohup命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen命令"><span class="nav-number">10.3.2.</span> <span class="nav-text">screen命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#byobu命令"><span class="nav-number">10.3.3.</span> <span class="nav-text">byobu命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【pm2】"><span class="nav-number">10.3.4.</span> <span class="nav-text">【pm2】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-1"><span class="nav-number">10.3.4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">10.3.4.2.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看"><span class="nav-number">10.3.4.3.</span> <span class="nav-text">查看</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#日志"><span class="nav-number">10.3.4.3.1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#仪表盘"><span class="nav-number">10.3.4.3.2.</span> <span class="nav-text">仪表盘</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#停止"><span class="nav-number">10.3.4.4.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启"><span class="nav-number">10.3.4.5.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">10.3.4.6.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自启动"><span class="nav-number">10.3.4.7.</span> <span class="nav-text">自启动</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">524k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  
+  <style>
+  
+  button.darkmode-toggle 
+{
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+<script>
+var options = {
+  bottom: '32px', // default: '32px'
+  right: '64px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
