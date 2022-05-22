@@ -443,6 +443,8 @@
     
     <category term="912" scheme="https://stellarkey.github.io/tags/912/"/>
     
+    <category term="算法" scheme="https://stellarkey.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
     <category term="数据结构" scheme="https://stellarkey.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="操作系统" scheme="https://stellarkey.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
@@ -450,8 +452,6 @@
     <category term="计算机组成" scheme="https://stellarkey.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
     
     <category term="计算机网络" scheme="https://stellarkey.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="算法" scheme="https://stellarkey.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
