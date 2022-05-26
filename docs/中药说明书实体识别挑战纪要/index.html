@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="中药说明书实体识别挑战是天池大数据竞赛，主要任务是对药品的说明书中的实体进行提取和分类。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中药说明书实体识别挑战纪要">
+<meta property="og:url" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="中药说明书实体识别挑战是天池大数据竞赛，主要任务是对药品的说明书中的实体进行提取和分类。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926123214018.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926124051196.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926130704988.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132249986.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132417992.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926151702490.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926152815244.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926154923374.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926191745058.png">
+<meta property="article:published_time" content="2020-09-20T10:42:41.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:24:46.932Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="NLP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926123214018.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>中药说明书实体识别挑战纪要 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          中药说明书实体识别挑战纪要
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>中药说明书实体识别挑战是天池大数据竞赛，主要任务是对药品的说明书中的实体进行提取和分类。<span id="more"></span>这个比赛进度我一直在拖，再过十几天就结束了，感觉时间还是很紧张的。得抓紧抽时间把baseline至少先写出来。</p>
+<blockquote>
+<p>告一段落，确实没有什么时间参与。。倒是可以作为一个关于时间管理的思考。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><em>Speech and Language Processing - 3rd</em> / Information Extraction / Named Entity Recognition</p>
+<p>比赛地址：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://tianchi.aliyun.com/competition/entrance/531824/introduction">中医药天池大数据竞赛——中药说明书实体识别挑战</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://tianchi.aliyun.com/notebook-ai/?spm=5176.12281976.J_9711814210.13.3d593f79k2QqEm">天池实验室</a></p>
+</blockquote>
+<p>(BERT+CRF) NER：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://tianchi.aliyun.com/forum/postDetail?postId=126542">https://tianchi.aliyun.com/forum/postDetail?postId=126542</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://easyai.tech/ai-definition/ner/">命名实体识别 – Named-entity recognition | NER</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/90133637">基于深度学习的NER综述</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/88545206">【NLP-NER】命名实体识别中最常用的两种深度学习模型</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/macanv/BERT-BiLSTM-CRF-NER">BERT-BiLSTM-CRF-NER</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://mp.weixin.qq.com/s/SgkQB7t0j2_kqHeotspHBQ">一等奖团队分享 | 2019 CCF BDCI 《互联网金融新实体发现》</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/lhy2014/article/details/84582145">中文电子病例命名实体识别项目</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://raw.githubusercontent.com/alibaba-research/ChineseBLUE/master/data/cMedQANER/train.txt">训练标注集</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/alibaba-research/ChineseBLUE">ChineseBLUE, the Chinese Biomedical Language Understanding Evaluation benchmark</a>，跑跑试试</p>
+<h1 id="探知-命名实体识别-NER"><a href="#探知-命名实体识别-NER" class="headerlink" title="探知-命名实体识别(NER)"></a>探知-命名实体识别(NER)</h1><h2 id="信息抽取"><a href="#信息抽取" class="headerlink" title="信息抽取"></a>信息抽取</h2><p>NER（Named Entity Recognition）技术是一种NLP中的<strong>信息抽取</strong>（Information Extration）技术。</p>
+<p>信息抽取将非结构化的文本信息嵌入到结构化的数据结构（如，关系型数据库）之中。</p>
+<p>信息抽取包括：</p>
+<ul>
+<li><strong>命名实体识别</strong>（Named Entity Recognition，NER）<ul>
+<li>找到并标记（label）分类所有的提及“命名实体”的文本</li>
+</ul>
+</li>
+<li><strong>关系抽取</strong>（Relation Extraction）<ul>
+<li>找到并分类所有文本中实体间的语义关系<ul>
+<li>ex: child-of, employment, part-whole, and geospatial relations…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>事件抽取</strong>（Event Extraction）<ul>
+<li>找到实体们参与的事件</li>
+<li>Event coreference：确定同一事件的不同指代，并归类为同一事件</li>
+<li>temporal expression：确定事件发生的时间表达，并normalize成准确的格式化时间</li>
+<li>template filling：许多文本描述的是非常标准的结构化事件，因此变成“槽值填充”类似的东西了</li>
+</ul>
+</li>
+</ul>
+<h2 id="命名实体"><a href="#命名实体" class="headerlink" title="命名实体"></a>命名实体</h2><p>实体抽取通常作为作为信息抽取的第一步。在此基础上可以实现其它很多NLP任务，如情感分析、知识问答、信息结构化……</p>
+<p><strong><font color=red>命名实体</font></strong>：任何指代着一个<strong>适定名称</strong>的事物。（例：某个人物、地点、组织……）</p>
+<blockquote>
+<p>适定名称就是<strong>确定无歧义</strong>的指代名。</p>
+<p>这个术语也常常扩展到非实体的领域，如：日期、事件等temporal expression，价格等numerical expression。下图是一个NER的示例：</p>
+</blockquote>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926123214018.png" class="" title="NER的示例">
+<blockquote>
+<p>上图中有13个命名实体，包括5个organization，4个location，2个time，1个person和1个money。</p>
+</blockquote>
+<h3 id="命名实体类"><a href="#命名实体类" class="headerlink" title="命名实体类"></a>命名实体类</h3><p>下图给出了常见的命名实体种类，当然这种形式的分类是面向通用任务的。中医药比赛或者说自定义的人物场景，可以根据需求来设计更细致、面向领域的分类。比如，蛋白质分类、基因、商品、艺术品、药品……</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926124051196.png" class="" title="常见的命名实体种类">
+<h2 id="命名实体识别"><a href="#命名实体识别" class="headerlink" title="命名实体识别"></a>命名实体识别</h2><p><strong><font color=red>命名实体识别</font></strong>：寻找包含适定名称的文本段，并分类对应实体。</p>
+<blockquote>
+<p>识别任务的难度部分在于分词（准确地界定实体边界），另一部分在于分类时的歧义（Type Ambiguity）。</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926130704988.png" class="" title="分类时的歧义">
+</blockquote>
+<h2 id="序列标注-Sequence-Labeling"><a href="#序列标注-Sequence-Labeling" class="headerlink" title="序列标注 Sequence Labeling"></a>序列标注 Sequence Labeling</h2><p>NER的基本算法是（word by word）序列标注任务。</p>
+<p>常见的序列标注模型：<strong>HMM</strong>，<strong>MEMM</strong>，<strong>CRF</strong>，<strong>bi-LSTM</strong>……</p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/33397147">概率图模型体系：HMM、MEMM、CRF</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.dazhuanlan.com/2019/12/20/5dfc5febcda93/">谈谈序列标注三大模型HMM、MEMM、CRF</a></p>
+<p>因为bi-LSTM深度学习可以更好地抽取特征，CRF机器学习则需要好的特征来发挥效果，所以这两个模型常常结合起来使用。（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/c7c3ace12044">Here</a>）</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/shona/p/12121473.html">NLP | 序列标注 总结</a></p>
+</blockquote>
+<p>序列标注的应用场景非常广泛，可以解决一系列对字符进行分类的问题，比如：分词、词性标注、命名实体识别、关系抽取……</p>
+<p>序列标注一般可以分为两类：</p>
+<ul>
+<li><strong>原始标注</strong>（Raw labeling）：每个元素都需要被标注为一个标签。</li>
+<li><strong>联合标注</strong>（Joint segmentation and labeling）：多个连续分段被标注为同一个标签。</li>
+</ul>
+<p>其中，通过使用BIO标注可以将联合标注转化为原始标注问题。</p>
+<h3 id="标注法：IO-BIO-BIEO…"><a href="#标注法：IO-BIO-BIEO…" class="headerlink" title="标注法：IO / BIO / BIEO…"></a>标注法：IO / BIO / BIEO…</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/147537898">序列标注方法BIO、BIOSE、IOB、BILOU、BMEWO、BMEWO+的异同</a></p>
+</blockquote>
+<ul>
+<li><strong>B</strong> stands for ‘<strong>beginning</strong>‘ (signifies beginning of an NE)</li>
+<li><strong>I</strong> stands for ‘<strong>inside</strong>‘ (signifies that the word is inside an NE)</li>
+<li><strong>O</strong> stands for ‘<strong>outside</strong>‘ (signifies that the word is just a regular word outside of an NE)</li>
+<li><strong>E</strong> stands for ‘<strong>end</strong>‘ (signifies that the word is the end of an NE)</li>
+<li><strong>S</strong> stands for ‘<strong>singleton</strong>‘(signifies that the single word is an NE )</li>
+</ul>
+<p>各种序列标注法的差异大多集中于对边界和特殊情况的处理，但是总的来说 <strong>IO</strong> 标注是最基础的序列标注单元。</p>
+<p>如下面的一个例子：</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132249986.png" class="" title="example">
+<p>使用了 IO 和 IOB(-2) 即 IBO 方法给出序列标注的结果：</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926132417992.png" class="" title="IO and IOB">
+<p>可以看到 IOB(-2) 即 IBO 在命名实体相邻的情况下会产生区分效果，但是这种情况在英文场景中较少出现。</p>
+<p>一般来说在不追求极致性能的场景下，BIO标注方法的效果就足够好了。当然如果有精力，测试一下BIOES的效果也是可以的。</p>
+<h2 id="基于特征的NER算法"><a href="#基于特征的NER算法" class="headerlink" title="基于特征的NER算法"></a>基于特征的NER算法</h2><p>基于特征的NER算法首先要做的事就是提取特征。然后用这些特征来train一个MEMM或者CRF之类的序列模型。</p>
+<p>下面具体介绍一种用于英文的特征：</p>
+<p><strong>word shape</strong>：文本的一种抽象的模式表示方法，将小写字母表示为<code>x</code>，大写字母表示为<code>X</code>，数字表示为<code>d</code>，并保留标点。例如<code>DC10-30a</code>会被映成<code>XXdd-ddx</code>。如果考虑压缩映射，把连续的同类字符合并，那么<code>DC10-30a</code>会被映成<code>Xd-dx</code>。这种特征，在基于特征的（English new text）NER任务中被证明非常成功。Shape features在诸如蛋白质名、基因等规范命名领域也很重要。</p>
+<p>加上其它的特征，一个named entity token例如<code>L&#39;Occitane</code>将初步生成以下非零值的特征值：</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926151702490.png" class="" title="L" alt="Occitane生成非零值的特征值">
+<blockquote>
+<p>token：什么是token?（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/64984731">Here</a>）</p>
+<ul>
+<li><strong>token</strong> (<strong>符号</strong> / <strong>元素</strong>):包括单词和标点、<ul>
+<li>广义的token就是一串有意义的符号</li>
+</ul>
+</li>
+<li><strong>tokenization</strong> (<strong>分词</strong>)：我是中国人-&gt;[‘我’, ‘是’, ‘中国人’]<ul>
+<li>一个token就是分词后列表中的一个元素</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>下图是在序列标注的结果上加入了<em><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/60531442">part of speech tags</a></em>，<em>syntactic base-phrase chunk tags</em>，和一些shape的信息：</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926152815244.png" class="" title="加入特征">
+<p>下图展示了一个基于特征的序列标注模型的运行方式。所有的箭头都是特征。在这里我们只考虑前后两个单词作为我们的上下文。这些所有的特征联合起来共同提供给classifier，并实现预测。</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926154923374.png" class="" title="运行示意">
+<h2 id="基于神经网络的NER算法"><a href="#基于神经网络的NER算法" class="headerlink" title="基于神经网络的NER算法"></a>基于神经网络的NER算法</h2><p>标准的基于神经网络的NER算法，使用<strong>bi-LSTM</strong>作为模型。</p>
+<blockquote>
+<p>bi-LSTM是单独的一章，<em>Speech and Language Processing - 3rd</em>。</p>
+</blockquote>
+<p>注意到最上层仍然有CRF层，这是因为CRF对特征的处理更好，从而形成更好的输出序列。</p>
+<img data-src="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/image-20200926191745058.png" class="" title="bi-LSTM">
+<h2 id="基于规则的NER算法"><a href="#基于规则的NER算法" class="headerlink" title="基于规则的NER算法"></a>基于规则的NER算法</h2><h1 id="CRF模型"><a href="#CRF模型" class="headerlink" title="CRF模型"></a>CRF模型</h1><h1 id="bi-LSTM模型"><a href="#bi-LSTM模型" class="headerlink" title="bi-LSTM模型"></a>bi-LSTM模型</h1><h1 id="BERT模型"><a href="#BERT模型" class="headerlink" title="BERT模型"></a>BERT模型</h1><h1 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h1><h1 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/AI%E6%9C%AA%E6%9D%A5%E8%AF%B4-%E9%9D%92%E5%B9%B4%E5%AD%A6%E6%9C%AF%E8%AE%BA%E5%9D%9B-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E4%B8%93%E5%9C%BA/">AI未来说-青年学术论坛（自然语言专场）</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/" title="中药说明书实体识别挑战纪要">https://stellarkey.github.io/中药说明书实体识别挑战纪要/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="prev" title="高等计算机网络">
+      <i class="fa fa-chevron-left"></i> 高等计算机网络
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%8C%97%E6%96%97UMA%E4%B8%93%E9%A1%B9/" rel="next" title="北斗UMA专项">
+      北斗UMA专项 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A2%E7%9F%A5-%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB-NER"><span class="nav-number">2.</span> <span class="nav-text">探知-命名实体识别(NER)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96"><span class="nav-number">2.1.</span> <span class="nav-text">信息抽取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">命名实体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="nav-number">2.2.1.</span> <span class="nav-text">命名实体类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB"><span class="nav-number">2.3.</span> <span class="nav-text">命名实体识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8-Sequence-Labeling"><span class="nav-number">2.4.</span> <span class="nav-text">序列标注 Sequence Labeling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E6%B3%A8%E6%B3%95%EF%BC%9AIO-BIO-BIEO%E2%80%A6"><span class="nav-number">2.4.1.</span> <span class="nav-text">标注法：IO &#x2F; BIO &#x2F; BIEO…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%89%B9%E5%BE%81%E7%9A%84NER%E7%AE%97%E6%B3%95"><span class="nav-number">2.5.</span> <span class="nav-text">基于特征的NER算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84NER%E7%AE%97%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">基于神经网络的NER算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%99%E7%9A%84NER%E7%AE%97%E6%B3%95"><span class="nav-number">2.7.</span> <span class="nav-text">基于规则的NER算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CRF%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">CRF模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bi-LSTM%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">bi-LSTM模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BERT%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">BERT模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Baseline"><span class="nav-number">6.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="nav-number">7.</span> <span class="nav-text">数据增强</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

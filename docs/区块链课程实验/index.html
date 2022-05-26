@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="区块链课程实验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链课程实验">
+<meta property="og:url" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="区块链课程实验。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150404761.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150556212.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150954032.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126151055801.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126155355464.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126170358786.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126171254941.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127120127580.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127122912427.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127123733568.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127123939641.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127124229893.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127130236069.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127130158832.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127152504939.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127181420668.png">
+<meta property="article:published_time" content="2020-11-25T13:28:25.000Z">
+<meta property="article:modified_time" content="2021-01-04T16:14:58.677Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="区块链">
+<meta property="article:tag" content="以太坊">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150404761.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>区块链课程实验 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          区块链课程实验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>区块链课程实验。<span id="more"></span></p>
+<h1 id="数字货币交易"><a href="#数字货币交易" class="headerlink" title="数字货币交易"></a>数字货币交易</h1><p>利⽤以太坊体验数字货币转账功能，在以太坊测试链Ropsten上进⾏操作。可以利⽤Google插件Metamask⽣成以太坊地址和私钥（保存下来）。向⽔龙头领取测试代币<a target="_blank" rel="noopener external nofollow noreferrer" href="https://faucet.metamask.io/">https://faucet.metamask.io/</a>，⼀次会发送1ETH，编写脚本（如python），向附件txt⽂件的100个地址每个地址转账⼀些eth（⽐如0.01eth）</p>
+<hr>
+<h2 id="创建钱包"><a href="#创建钱包" class="headerlink" title="创建钱包"></a>创建钱包</h2><p><strong>Ropsten</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/">https://ropsten.etherscan.io/</a></p>
+<p><strong>Metamask</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://metamask.io/">https://metamask.io/</a>，Conflux钱包界面跟这个差不多</p>
+<p>按照步骤创建钱包即可。</p>
+<p>切换到测试网。</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150404761.png" class="" title="切换到测试网">
+<h2 id="注水"><a href="#注水" class="headerlink" title="注水"></a>注水</h2><p><strong>水管</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://faucet.ropsten.be/">https://faucet.ropsten.be/</a></p>
+<p>在水管上输入自己钱包的地址，开始注水：<code>0x75a669A413Cc3640C52F5E3FBc82836f18497407</code></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150556212.png" class="" title="注水成功">
+<blockquote>
+<p><del>没有起到效果</del></p>
+</blockquote>
+<p>尝试直接从<strong>METAMASK</strong>水管上注水：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://faucet.metamask.io/">https://faucet.metamask.io/</a></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126150954032.png" class="" title="Buy相关界面">
+<p>注水成功：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/tx/0xa9c12ce15386998acd0e29bac842509b1a57793cac13a1320bbb537e05d116ad">0xa9c12ce15386998acd0e29bac842509b1a57793cac13a1320bbb537e05d116ad</a></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126151055801.png" class="" title="MetaMask Ether Faucet">
+<p>但是上述操作完成以后，并没有看到相应的ETH余额增长，点击transaction也是查无所获。</p>
+<p>又提交了一个注水交易：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/tx/0x540c617e4df428f3175189902419f5ef58822c9cb84e3e7584fe90aa8030e1d0">0x540c617e4df428f3175189902419f5ef58822c9cb84e3e7584fe90aa8030e1d0</a></p>
+<p>……全部都失败了。。最后找助教给我转了1个ETH~</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126155355464.png" class="" title="transaction">
+<h2 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://learnblockchain.cn/docs/web3js-0.2x/index.html#"> Web3.js 中文文档</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://web3py.readthedocs.io/en/latest/"><strong>Web3.py</strong></a>：用于以太坊交互的Python库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install web3</span><br></pre></td></tr></table></figure>
+<p>一开始安装的时候遇到一个棘手的BUG，是某个安装包找不到特特定版本的依赖。搞了好久，最后大概了解到可能是跟python版本有关，所以直接重装了python3.9。。这回安装web3就顺利多了。</p>
+<h3 id="网络交互代理设置"><a href="#网络交互代理设置" class="headerlink" title="网络交互代理设置"></a>网络交互代理设置</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.btcfans.com/article/31719">Web3.py教程：如何使用Python转账</a></p>
+</blockquote>
+<p>如果要跟以太网交互，必须连接到某个节点。（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://web3py.readthedocs.io/en/latest/node.html">Here</a>）</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126170358786.png" class="" title="Why do I need to connect to a node?">
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://infura.io/"><strong>Infura</strong></a>：一个以太网的代理节点服务。需要注册。</p>
+<p>注册完成后，创建一个project，并获取项目ID。然后填入以下代码的<code>&lt;infura-project-id&gt;</code>处，即可建立代理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> web3 <span class="keyword">import</span> Web3</span><br><span class="line">w3 = Web3(Web3.HTTPProvider(<span class="string">&#x27;https://mainnet.infura.io/v3/&lt;infura-project-id&gt;&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>你也可以把项目ID保存到环境变量<code>WEB3_INFURA_PROJECT_ID</code>中，从而避免硬编码。</p>
+<p><code>mainnet</code>代表以太网主网。</p>
+</blockquote>
+<h3 id="基本功能测试"><a href="#基本功能测试" class="headerlink" title="基本功能测试"></a>基本功能测试</h3><p>我们试着运行一下接口：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(w3.isConnected())</span><br><span class="line"><span class="built_in">print</span>(w3.eth.blockNumber)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"><span class="comment"># 11333063</span></span><br></pre></td></tr></table></figure>
+<p>查看之前钱包账户的余额：<code>0x75a669A413Cc3640C52F5E3FBc82836f18497407</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w3.eth.getBalance(<span class="string">&#x27;0x75a669A413Cc3640C52F5E3FBc82836f18497407&#x27;</span>)</span><br><span class="line"><span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改连接到的网络"><a href="#修改连接到的网络" class="headerlink" title="修改连接到的网络"></a>修改连接到的网络</h3><p>余额为0是因为现在默认在主网上（Infura Mainnet）。我们先切换到Ropsten测试网。</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201126171254941.png" class="" title="切换测试网">
+<p>获得相应的链接，修改连接代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w3 = Web3(Web3.HTTPProvider(<span class="string">&#x27;https://ropsten.infura.io/v3/d3fb182b32bd49fe9eb36693d470ed88&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>再次查看钱包账户的余额：<code>0x75a669A413Cc3640C52F5E3FBc82836f18497407</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w3.eth.getBalance(<span class="string">&#x27;0x75a669A413Cc3640C52F5E3FBc82836f18497407&#x27;</span>)</span><br><span class="line"><span class="comment"># 1000000000000000000</span></span><br></pre></td></tr></table></figure>
+<p>成功。跟CFX的$10^{18}$单位转换一样，代表1ETH。</p>
+<h2 id="转账实验"><a href="#转账实验" class="headerlink" title="转账实验"></a>转账实验</h2><h3 id="单次转账测试"><a href="#单次转账测试" class="headerlink" title="单次转账测试"></a>单次转账测试</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://web3py.readthedocs.io/en/latest/web3.eth.html#web3.eth.Eth.sendTransaction"><code>Eth.sendTransaction</code>(<strong><em>transaction</em></strong>)</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_34413802/article/details/91910789">以太坊 web3.py 签名转账</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/5866a9432c93">web3.py 脚本转账</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://web3py.readthedocs.io/en/latest/ethpm.html?highlight=Ropsten#registry-uris"><code>chain_id</code></a></p>
+</blockquote>
+<p>感觉相当棘手。报了一个错，似乎Infura在Ropsten测试网不支持eth_sendTransaction这些方法。在主网上则是报的余额不足的错。这样就不是很友好了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: &#123;&#x27;code&#x27;: -32601, &#x27;message&#x27;: &#x27;The method eth_sendTransaction does not exist/is not available&#x27;&#125;</span><br></pre></td></tr></table></figure>
+<p>询问助教后发现是<strong>参数不匹配</strong>的问题，在增加了一些参数以后，成功执行了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> web3 <span class="keyword">import</span> Web3</span><br><span class="line"></span><br><span class="line">sender_address = <span class="string">&#x27;0x75a669A413Cc3640C52F5E3FBc82836f18497407&#x27;</span></span><br><span class="line">private_key = <span class="built_in">open</span>(<span class="string">&#x27;private_key.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>).read()</span><br><span class="line"></span><br><span class="line">receiver_address = <span class="string">&#x27;0x2a9d0B6fd9fF3C854130Af05529B2e40FBADa38c&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># w3 = Web3(Web3.HTTPProvider(&#x27;https://mainnet.infura.io/v3/d3fb182b32bd49fe9eb36693d470ed88&#x27;))</span></span><br><span class="line">w3 = Web3(Web3.HTTPProvider(<span class="string">&#x27;https://ropsten.infura.io/v3/d3fb182b32bd49fe9eb36693d470ed88&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;isConnected:&quot;</span>, w3.isConnected())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;sender:&quot;</span>, w3.eth.getBalance(sender_address))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;receiver:&quot;</span>, w3.eth.getBalance(receiver_address))</span><br><span class="line"></span><br><span class="line">transaction = &#123;</span><br><span class="line">    <span class="string">&#x27;chainId&#x27;</span>: <span class="number">3</span>,    <span class="comment"># Ropsten的网络标识号</span></span><br><span class="line">    <span class="string">&#x27;from&#x27;</span>: sender_address,</span><br><span class="line">    <span class="string">&#x27;to&#x27;</span>: receiver_address,</span><br><span class="line">    <span class="string">&#x27;value&#x27;</span>: <span class="number">2333</span>,</span><br><span class="line">    <span class="string">&#x27;gas&#x27;</span>: <span class="number">90000</span>,</span><br><span class="line">    <span class="string">&#x27;gasPrice&#x27;</span>: w3.eth.gasPrice,</span><br><span class="line">    <span class="string">&#x27;nonce&#x27;</span>: w3.eth.getTransactionCount(sender_address)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">signed_txn = w3.eth.account.signTransaction(transaction, private_key=private_key)</span><br><span class="line"></span><br><span class="line">txn_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction)</span><br><span class="line"><span class="built_in">print</span>(txn_hash.<span class="built_in">hex</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.sleep(<span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;sender:&quot;</span>, w3.eth.getBalance(sender_address))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;receiver:&quot;</span>, w3.eth.getBalance(receiver_address))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">isConnected: True</span><br><span class="line">sender: 999658962292322667</span><br><span class="line">receiver: 16331</span><br><span class="line">0x1e7785b8aca445c2e6c9880378ae4cea701c7113b23303c85e0cf76cec8b9e5e</span><br><span class="line">sender: 999616332562233334</span><br><span class="line">receiver: 18664</span><br><span class="line">[Finished <span class="keyword">in</span> 29.9s]</span><br></pre></td></tr></table></figure>
+<p>以太网上查看：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/tx/0x1e7785b8aca445c2e6c9880378ae4cea701c7113b23303c85e0cf76cec8b9e5e"><code>0x1e7785b8aca445c2e6c9880378ae4cea701c7113b23303c85e0cf76cec8b9e5e</code></a></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127120127580.png" class="" title="Transaction Details">
+<h3 id="批量转账"><a href="#批量转账" class="headerlink" title="批量转账"></a>批量转账</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/xiaohaigary/article/details/88955667">python 读取txt列表到列表中</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/qq_37828488/article/details/100024924">python读取、写入txt文本内容</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/wahaha13168/article/details/82917911">解决replacement transaction underpriced以太坊交易异常</a></p>
+<blockquote>
+<p>简单来说就是以太网交易有时延，高频批量处理的时候，要<strong>自定义交易中的nonce标识</strong></p>
+</blockquote>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> web3 <span class="keyword">import</span> Web3</span><br><span class="line"></span><br><span class="line">sender_address = <span class="string">&#x27;0x75a669A413Cc3640C52F5E3FBc82836f18497407&#x27;</span></span><br><span class="line">private_key = <span class="built_in">open</span>(<span class="string">&#x27;private_key.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>).read()</span><br><span class="line"></span><br><span class="line">receiver_address_list = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: Web3.toChecksumAddress(x.strip(<span class="string">&#x27;\n&#x27;</span>)), <span class="built_in">open</span>(<span class="string">&#x27;以太坊100个地址.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>).readlines()))</span><br><span class="line">txn_hash_list = []</span><br><span class="line"></span><br><span class="line">w3 = Web3(Web3.HTTPProvider(<span class="string">&#x27;https://ropsten.infura.io/v3/d3fb182b32bd49fe9eb36693d470ed88&#x27;</span>))</span><br><span class="line">local_nonce = w3.eth.getTransactionCount(sender_address)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> receiver_address <span class="keyword">in</span> receiver_address_list:</span><br><span class="line">    <span class="built_in">print</span>(receiver_address)</span><br><span class="line">    transaction = &#123;</span><br><span class="line">        <span class="string">&#x27;chainId&#x27;</span>: <span class="number">3</span>,    <span class="comment"># Ropsten的网络标识号</span></span><br><span class="line">        <span class="string">&#x27;from&#x27;</span>: sender_address,</span><br><span class="line">        <span class="string">&#x27;to&#x27;</span>: receiver_address,</span><br><span class="line">        <span class="string">&#x27;value&#x27;</span>: <span class="number">2333</span>,</span><br><span class="line">        <span class="string">&#x27;gas&#x27;</span>: <span class="number">90000</span>,</span><br><span class="line">        <span class="string">&#x27;gasPrice&#x27;</span>: w3.eth.gasPrice*<span class="number">2</span>,</span><br><span class="line">        <span class="string">&#x27;nonce&#x27;</span>: local_nonce</span><br><span class="line">    &#125;</span><br><span class="line">    signed_txn = w3.eth.account.signTransaction(transaction, private_key=private_key)</span><br><span class="line">    txn_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction)</span><br><span class="line">    txn_hash_list.append(txn_hash.<span class="built_in">hex</span>())</span><br><span class="line"></span><br><span class="line">    local_nonce = local_nonce + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;txn_hash_list.txt&quot;</span>,<span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">&quot;receiver_address,transaction_hash\n&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(receiver_address_list)):</span><br><span class="line">        f.write(receiver_address_list[idx] + <span class="string">&#x27;,&#x27;</span> + txn_hash_list[idx] + <span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果保存到<code>txn_hash_list.txt</code>：（100个转账交易的receiver地址和transaction地址）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">receiver_address,transaction_hash</span><br><span class="line"><span class="number">0xF5038fbAfbC0d08629EF7890D0437Ec135A05338</span>,<span class="number">0xce48d4c7daa046c413b6a13692bb41137f72a557fd3d723938ad868e127e3833</span></span><br><span class="line"><span class="number">0x2Ad318738C4b35547F60C20E884ed8279d74a1Be</span>,<span class="number">0x76540a97452352745afcd5ad9be9f16967753ddfcb999f5d7b43394f82253d67</span></span><br><span class="line"><span class="number">0xE63cAE40d63791467cb111DC8eAb32e55c27921C</span>,<span class="number">0x1eb25169dded0f811d5034632357ba7e7c678731c28d831b8f575bf3c3fa74a8</span></span><br><span class="line"><span class="number">0x7208DC3f8A279f0b3B287a7a253953cCA1A06db9</span>,<span class="number">0x1495b14b1f99f607c576a0aeeab1836454c2f81f0213e149b3a0312770d2307d</span></span><br><span class="line"><span class="number">0x743e6861AC9E3582DDCc5De3f8B893C9239AFb65</span>,<span class="number">0x916f252e912a8806a21dc152f8a6807419af75887c0549d3b980807b461faee6</span></span><br><span class="line"><span class="number">0xC6c4a7E78EEbE24EEEA0E306aAc14D0318B573Bf</span>,<span class="number">0xbfac50d11323b7e668b94c0c67c6d235b962d5dc84e26addda0cad1f5c1e57ec</span></span><br><span class="line"><span class="number">0xf0Ed2D4823617f4fefdcebBCDBe684Ef60556ff2</span>,<span class="number">0x952dfa6b23d7ac0f56e3213dc02600cefd368ecfa93f6129dfdece2a42b0deb7</span></span><br><span class="line"><span class="number">0x597C52bbe09991e6f39eb0da0393722C32b89536</span>,<span class="number">0x3bf586007fdaaec1334d57c45abea44729d87d2c589a69d46f2c03a4830c614a</span></span><br><span class="line"><span class="number">0x41aa8Fa01023B3eEf4176899f9Fd27952aEBcB37</span>,<span class="number">0x4b6b8444957549e8d9366e96a95b98d4162323cacf8d53e5e19973931e72c0f2</span></span><br><span class="line"><span class="number">0xF0A1959236D2A84bF0788deDE9D20c4897ef2082</span>,<span class="number">0x48fd0644e911e00e70812ca6dcef016ad6d04bb5b9f15c86ba3d345d2d580ec1</span></span><br><span class="line"><span class="number">0x6f4B8c46eB55E01f9076363Ce9A60D2c10D32465</span>,<span class="number">0x34e6f65c47123f501dab0a4be40fad231de11a85a8d01de631a50ee438b5ac0f</span></span><br><span class="line"><span class="number">0xFA3728689dBe43C1d2707AC486D426d6497C9F47</span>,<span class="number">0x779f3aecad25a480fafe02b67a5c7405e138870b77366ddaff7d1b8607f4b2ec</span></span><br><span class="line"><span class="number">0x74C112FB8B87586BF1315eD80a79227fF437bc4b</span>,<span class="number">0x0aafa84e36950c495da47e012fcdcaf2159f71e686c4b687a5e808c6d0031f79</span></span><br><span class="line"><span class="number">0x0be1f2Aa333Cec14AdeAbeBcB7Db22e4D8077b13</span>,<span class="number">0x26741d3a81727f39932dab3d5e75c0feed840d0b82bc6fe6185847b4ce8087e6</span></span><br><span class="line"><span class="number">0x17F3B9bDbB31FC96baf85Fe89B9f82d216449cA3</span>,<span class="number">0x8fce8d78dbfcbcf666ffa18c9a1595a667fdb6277eb6826ff3dcdf20c03be0d2</span></span><br><span class="line"><span class="number">0x3C37A1C6C817E9149751c9162Dda2D59Ad2D254e</span>,<span class="number">0x706073665fbb42d9dd4a664af999ee277c057494a864c3d0f5884582fa0157b2</span></span><br><span class="line"><span class="number">0x49755db1Ac06075E3e66270f05Fe32f02c1F5A2f</span>,<span class="number">0x9ed1dde26f27ec8f521a391674f780cb4130ae9a1fd047066b4d7ac778099020</span></span><br><span class="line"><span class="number">0x5f3bBfcA0561Aa4A66DCB5314aF1c05a35D9D0B1</span>,<span class="number">0x4eedbf34146a8032cfcf39b5538e471b59abed7b5c17623e6dbe9cd284ba20c0</span></span><br><span class="line"><span class="number">0x410b2bE29E217c617329627eB789318272f1f294</span>,<span class="number">0xf65c8ea23ff06dc69ce52e27e073e04bb84c920342a905e837aa2e4a1a0807fd</span></span><br><span class="line"><span class="number">0x6330F9bbe5c29Fa4ad7a786a3B399B5886DA2303</span>,<span class="number">0xe375e45801ecc1102a96e53d8f98e0fcd455bbc7b77612fec5d966e9a09d1658</span></span><br><span class="line"><span class="number">0xa97f63427599A4C7cE6D61347fAED4196c6B84A3</span>,<span class="number">0x012280a8ec9ac84645704de86785f1297349b55fd2f4ca315c6a164f5cba6062</span></span><br><span class="line"><span class="number">0x204628AC17c05c0F47FA1Aa991f2CD6aA76eA8Cf</span>,<span class="number">0x9ca958c32613ccff5f7a5c6a39aab3c5a08863e2e77662bd260ed98ddc73ca7e</span></span><br><span class="line"><span class="number">0x34221e0097e4F512F93FcC960247D95785524BaF</span>,<span class="number">0xd8f051b7f50c9a468a6a2d636693346d2247fe253446ae76dca67d4c087586cb</span></span><br><span class="line"><span class="number">0x6603680d11B601317A89E1B5c5F932D9066Bda6e</span>,<span class="number">0x13f22aca9be21e2db9e7ee6f8a22a8c0e84429a41e17a687f4bd027ae8b07bbe</span></span><br><span class="line"><span class="number">0x9956fBB19c3C9EaF2Ff66bE0817Cb1fa5b4E7fDc</span>,<span class="number">0xac83dd89b467d31a9b33b9362916eb8c196b9880e39606ff7aa6d5762f825ba0</span></span><br><span class="line"><span class="number">0x59533e7Bbe9d68826Ac4AF8a83cc1743637918DF</span>,<span class="number">0x62708dcd41ddf845c2a4121727c8bba18a63e2f453d3ce8691d383bf0b812ca7</span></span><br><span class="line"><span class="number">0x5A945352a53035546aC341887eB7C9e591E3D3af</span>,<span class="number">0xd4e6b2aa4426b3e14873c245dc0ff724d0c240ca4a7dc94ff6b602c5dbd0fd5d</span></span><br><span class="line"><span class="number">0xCb5e1Dc921d13B3db04853735477F4bFd730Abea</span>,<span class="number">0xbd5edb4b282587623745050edadd7ba58571235ad9e6b35b876cd86703c3a0ce</span></span><br><span class="line"><span class="number">0x2852CD4e1AB6924B57D2A073F04E02cC5AfF71E7</span>,<span class="number">0x48395332f448fb84ecd44a15f4a7615414bc489e2660f608c6da04fdbe8b3fbc</span></span><br><span class="line"><span class="number">0xBb411F489434BF96546DBB274f9fd3f5a1502a92</span>,<span class="number">0x379a4dab65f5ac83e009fa3efe418495e87b9aec29fd77c8ff108b0ad89d545b</span></span><br><span class="line"><span class="number">0x9d2a1c9217EA36137742FD7EAAEabe3fcB56AEF8</span>,<span class="number">0x3ae9bf355013e3acd939c890efd2061b49b6bb6d66c1c14b332596823315b21e</span></span><br><span class="line"><span class="number">0x43eB2A45f92558f2Ccce8BCa7717F1C4740FC5fA</span>,<span class="number">0x4a91ce10876f1d9c41fd0ed7f622b152dde339f39ecf429563f204e72c38dd90</span></span><br><span class="line"><span class="number">0xdf6FbfC8A5CF9B76716483b9f64bF0589931a5A5</span>,<span class="number">0xd5e2c3f2aad77ae6febc61e6299452ca6177287607f3e85fec700616ddb3c4b9</span></span><br><span class="line"><span class="number">0x906C650973991a08B9E2B2d202F82879Fd79F2Ef</span>,<span class="number">0x7f9fef0f49ba7ad6b3fd9f83f2f4696840a055ce59c45e080d8ad1be0b84dedc</span></span><br><span class="line"><span class="number">0xE9F3F08ae08FDf92acA5342280Fd133a893eE527</span>,<span class="number">0x972f8be9a8fb7f8ab654eac441dc1cd08f84c23b48e76982f901ab73d3cc7c3c</span></span><br><span class="line"><span class="number">0x258f82fFc5ebC019a70e6B589E125abF00Cf0C70</span>,<span class="number">0x073a97c76ede43e4defd0dd905e909e30e84e34a94521f067cee09c46ff138cb</span></span><br><span class="line"><span class="number">0x56c57c57e9d4553E0F69C8b0eb2c9080A29b4617</span>,<span class="number">0x98f1094f7827a84e0c17d7396689d71e94a9de5e7156122daa81d5deae314d8e</span></span><br><span class="line"><span class="number">0xA50B2ceab00703745d8105383f90537A3f6A6ea9</span>,<span class="number">0x9ea5224e7bf3d2c1137bf31f1d9c03e16dec4b8a08a1a553fe98039b1044d5d7</span></span><br><span class="line"><span class="number">0x0f5c60e699751B87f2b8e6E5C777A8B823Ed1e32</span>,<span class="number">0xcdadbc8c0a04f32321f744fcba02045fb6db59e9dc0b727d9f6ee470850b020e</span></span><br><span class="line"><span class="number">0x9AE7F9526D0ba93e8770c3C8F91ABE06E00C3546</span>,<span class="number">0x555b025736dbfac7bd4c5a0b5ccbcf4043465b4f3362a024607986e1cc7642ea</span></span><br><span class="line"><span class="number">0x33A93f0156BFC2EacfaB72581cC65D1c4aa4134d</span>,<span class="number">0x79f77e769b1bd02184dc76cc3068efb940b86ee30b4ac29bc6f1b1bbd0508887</span></span><br><span class="line"><span class="number">0x82647DbD911243318A98388274bD01e7722ac196</span>,<span class="number">0xe4e81645c6318fd5b6d88f1fe1139b15e96cf238a8d2c2a3c5885e9eac218016</span></span><br><span class="line"><span class="number">0xDB42179E665C74FDBDdDd358CaA13Ce2D2cBF8Ca</span>,<span class="number">0x2216b36eaf9c6b9b88f87cdf81f4470142e18fab833ffa5cd81a2556758c5182</span></span><br><span class="line"><span class="number">0x634F06362109c4c6909daFAeAeC54a7C48fED6b9</span>,<span class="number">0xe0b08c5e34f0fd230549af47d61d70b0907bc322626748f6fe62c4581cac986f</span></span><br><span class="line"><span class="number">0x18f36BD1ecd5129eEd69E8336A639A958a2c0B6c</span>,<span class="number">0xc96c30e6d2fc15f52a3bd4c6988e0c1a4084389c12dfafe42507358b7a2ba046</span></span><br><span class="line"><span class="number">0x48991e0107B60e59a10CF6ea4C98413bc8707965</span>,<span class="number">0x417b64ae3109cb805fcbc241702708e0a732fbaffb8d56c27022c5cbe83eb919</span></span><br><span class="line"><span class="number">0x5acCBB66f98C9dfE970923F4fF6BB78F4684DE5b</span>,<span class="number">0x6ef116bbad22452b39429876f69cc89651195367c3ce7dc8c70e84e4adc14b1e</span></span><br><span class="line"><span class="number">0x6C32130c0cbCc02D7209d7ddDF75AB686C8CAbD4</span>,<span class="number">0xab123626e8e0c6d240547fbeb73812cc3758e1efd40c102d7c5e4779ad84e263</span></span><br><span class="line"><span class="number">0xbC5436a2FE868f8156fC0E407889C8357A3786D9</span>,<span class="number">0xfbdc6f4e818b1666672f91d95e2646a2dd1e21e12a40c49c3e38b86ede4b681f</span></span><br><span class="line"><span class="number">0x0e6009CAD7972b81AB65c7A16051DF35197a440F</span>,<span class="number">0xd53ba8592f02ceaf749f110e531bd4256f719e3bc0806dcc8d464f592691c3fe</span></span><br><span class="line"><span class="number">0xE1A926A6F13CDfD963fCBE9Edf45A941DdFD029a</span>,<span class="number">0x11b744467f201db0a2537db39618ca192239ecc75cb2f05f8d213d05b7045281</span></span><br><span class="line"><span class="number">0x783Ef0F1ccbd9f2Db675499aF1695d5952AA8b15</span>,<span class="number">0xe75288128cd120be182c290f463cc3d46eeb0806cda430cd891e9f437b77a2a1</span></span><br><span class="line"><span class="number">0x0D09B0744b15988F55AC40a03E825E8A7B746305</span>,<span class="number">0x23eb6b82be46284cfa0ffccc8b1a85371fec6b085eaf0af61f61c3209d0d20f4</span></span><br><span class="line"><span class="number">0xb65a46cBC43D8dd08Cf79eDE6f4888FBF6c80838</span>,<span class="number">0xca80a5defe0e2472dc27ded1ca634e1b91008928d8b1e29878a0d09054771cf7</span></span><br><span class="line"><span class="number">0xEeDf45908eb260a928e23DcB8E29834bE114A51A</span>,<span class="number">0x21da569dfeded8769a229e7495821e5e3069f274f6a728d52cd996e0c1fc21f1</span></span><br><span class="line"><span class="number">0x277e20fDd65Cd475d0cCfEc4504e232a5Bb0Ae66</span>,<span class="number">0xc773ddb8217483689bcce8ac20fa58707227373831853995965d17e1067d4301</span></span><br><span class="line"><span class="number">0xA744729DcF3CABEA6D736C3Bf063603295A1A4A9</span>,<span class="number">0xd2876cd6471ae28a0c3c4294cc3c3554a0a9e06be42b04e7beb90ce47f909076</span></span><br><span class="line"><span class="number">0x26994067D27e956f37F977eac2fE558183083Eae</span>,<span class="number">0xa3b529a4cd52dec9abe6013bc164c256f60bccddebae8af4797456ae76471583</span></span><br><span class="line"><span class="number">0x34B1dCa251403C1E8e060E297D60E0b5b56eF2ca</span>,<span class="number">0x3d187a3443ee1523e9ddb99317440759d50a42a9d9bc05aa9143a4749013b22c</span></span><br><span class="line"><span class="number">0xb32392B690AC08cDFF63E9F825c6aa0085d32980</span>,<span class="number">0x942ab093895c55ac797a371b156a2df9f6221e5259bb7e4a26b0c0d73088b8ae</span></span><br><span class="line"><span class="number">0xF0248a6Dc89347B83AC538Ad8f9D21C7407526C8</span>,<span class="number">0xa1ff6c93ef65fec2a617bfbd6ded9740fed5b55a8849998c3120c7a12965db48</span></span><br><span class="line"><span class="number">0x6d1EE1Cc2a5035B7b027d17ae886b2dfd64ca9dF</span>,<span class="number">0xbb66205552e145b555663a02e7cf826d00d06cb246a7292cc362a6dee771714d</span></span><br><span class="line"><span class="number">0x5200e4896063265e30Cb1F003b0428242750D643</span>,<span class="number">0x90768a96826f36bf97c7db8583806dd31c94b3dae1c7ead617d24ef76d3a7d5d</span></span><br><span class="line"><span class="number">0xe7c62457fCFe75A162d4d39d75fb65c2bA81CB12</span>,<span class="number">0x78ac189e0dc13b73927750adf3bfdb9965301e4d4b11f80f1b036cd55d259fec</span></span><br><span class="line"><span class="number">0x854ED15dCB081a0EEbfA5Ec41e5e73b71108798B</span>,<span class="number">0x6d05198e107f9c91bcc95da379fe46ba8b626eac54bf50bc89399379f117b8a3</span></span><br><span class="line"><span class="number">0xfE3B05538d342dC6689f82f24eCC72eFfC5eb353</span>,<span class="number">0xa4c740b7374e5b624fb5b3866368f30e5d2487d24c380d9689cc07c741098d34</span></span><br><span class="line"><span class="number">0x81CBBF3e9B6821B9A418E890e6F685aD7F349d18</span>,<span class="number">0x2346d5850fbf5a0a88391ff3393f002590d1b2053a5e4d993fd4ee8c51cba1be</span></span><br><span class="line"><span class="number">0xEdD6225aF424470730789f9E8f6cB1F6855Bfb6e</span>,<span class="number">0xe1ec3affa7ae2da1a420fc7b6489013772429b038f274627193a11ff63ec505a</span></span><br><span class="line"><span class="number">0x1418abDdc3d3f323D126988D835367AB8c80fb4A</span>,<span class="number">0xf40021cf3ba6f23d0a308b15ab3eff9c8f0759251085efab493d1e89a3733770</span></span><br><span class="line"><span class="number">0x4dE0a71Ca317628B5F577da9d4f87517306F64B8</span>,<span class="number">0x2f9eaa0fea8722da5a427d4c8763ff1b8f4620bbe4ed2889647f669e928f01f6</span></span><br><span class="line"><span class="number">0x1DC21C3C7C953C8479f052BFb6a287a9c0AbDEFa</span>,<span class="number">0xe9bd3a30425b5ae1074ea35d750b6042c1866952c7e8763b5f1495b45361988f</span></span><br><span class="line"><span class="number">0xf666d19AD3a8E5fD1c1067a4afD64cA17140c49b</span>,<span class="number">0x47201b811198ccd5f0c38e6e9499eb646fe2a0dd515a1bdf258fb7e5a55bbd25</span></span><br><span class="line"><span class="number">0xA9EA631ebd06Ac20a92dBcbC5f0d9d5067BB6AFa</span>,<span class="number">0xe12dd92bef2282a3dbab63d04b60927bc143f13672ab47fecc0bce16b270bf13</span></span><br><span class="line"><span class="number">0xD19e1B8215fdfFa2BD14217A0d20484596b1EF3c</span>,<span class="number">0x4eecbc1bc2cac43d86a6aa7dba02c5c8dcba0d23f4242ab504e452db5320e117</span></span><br><span class="line"><span class="number">0x3036b9f146a7d107B17E506DA19a86bBB6BF4c14</span>,<span class="number">0xa453d0bd4d7adc6195f0568a00b2dc300b97fe2a3a7033db0ea7c4c2a3afffc6</span></span><br><span class="line"><span class="number">0xbAF0873DB0874717680298EedE4DcAb71829d24b</span>,<span class="number">0xe151cbb6ae808e3f17e584debc8d344a35620f2417e66ccca40d05f1b583b091</span></span><br><span class="line"><span class="number">0xB2AD5422767e003aE18D1C183Fc1f655c83f47be</span>,<span class="number">0x7a2345fa52828463f66225cbdc4ddd34a1da64b47b04d0f74174e0d34fa81632</span></span><br><span class="line"><span class="number">0x3875934878c9F3217235F4817a109d558dB86458</span>,<span class="number">0xfeea2993a9beee5f7ebf14831d91565b9ea293a785d60188ec7665f13c05107b</span></span><br><span class="line"><span class="number">0xb00aB9f855eCfF24f4ac25c8402AaC75affd14e4</span>,<span class="number">0x4154abc948e95f896e7da50addba4e417e27e910dfd25d5088d61990cf93427a</span></span><br><span class="line"><span class="number">0x832c405a14e364728401953f1A96652d481e4b54</span>,<span class="number">0xd5d6e7936db55bc120a548afc8f69c3fdcf6bd2956d1cc4891cd4401e19bad95</span></span><br><span class="line"><span class="number">0xD47dAf5047a3931A947762D34794d4D62fA024E3</span>,<span class="number">0xdb7066aa499d922febcbb07979fd8011e4ab9a184a3041560c1add5639b1c6b5</span></span><br><span class="line"><span class="number">0x14c0C3E5F6F6d8bd1030E161577f3A70563B3F5a</span>,<span class="number">0x18aa76b0e2adf5833514c62e9172adad36e0be9fd8d0cce4e6327f500e92b8a2</span></span><br><span class="line"><span class="number">0x14B786EfC953336A7DEEe955C0d7FDEBB668233F</span>,<span class="number">0x53fac254fd7f9deccff26aebd37748011af31300697662b000171c50bf180c05</span></span><br><span class="line"><span class="number">0x4184733688457eB0C06fB33C241d5c2Cabb1F332</span>,<span class="number">0x1d98543e8e36206a35e9e445e851ff4db5f32a5a18d79033aff6de7ea9078e95</span></span><br><span class="line"><span class="number">0xb5bbAE1742cC280dFB3b77F3Da4b9d5d6De0F206</span>,<span class="number">0x17155346756409e20f93ad9a044f2359ee3ace08bc7c0e73da3dc34d11ba0d4b</span></span><br><span class="line"><span class="number">0x16fc9087dAb4ABeCB154f1ADE296aDa287F4740e</span>,<span class="number">0x9ebb3bd060e1dc1a7979e1829f3d26979988e33d30a6c2b452cabc9cfffb0326</span></span><br><span class="line"><span class="number">0x7761A9072bfB49CfA629403AaBe1DD3881D2c37C</span>,<span class="number">0x2003ffd30af70c444cc69eec22f19b7a444bd95e6572404aeea56da368ebf0b4</span></span><br><span class="line"><span class="number">0x82788f0Ad056Fa7B2D960ed32D451D2F3B49555A</span>,<span class="number">0xa32008a0be2a5536c539faf4a9964e13714f6d5d4ce4ed5af5cb0bc2d0f8fd8f</span></span><br><span class="line"><span class="number">0x2e30924F89969675E168014FD957a5f5e782619d</span>,<span class="number">0xb212e2a507fbb169fadbf94812c77751e03c79086c6b7c52aae49fbc8e6aff3d</span></span><br><span class="line"><span class="number">0x921DBBDeb89d0b0aa70F34f94eb0f85FCB8adC42</span>,<span class="number">0x4905a8760571053cf074644919659d0bb0d914b366bc102e489065b23a99c4c5</span></span><br><span class="line"><span class="number">0x4dd86Ec972e34F0C75437fE7393d530F77054263</span>,<span class="number">0x3db0c74ec54f327e5f6ad70a42ca6ea6ff04c64ea5ef07b4b36ca28d8e0d3894</span></span><br><span class="line"><span class="number">0x9Af66A51f824FF6f3Bb748DccD85e39C7836d656</span>,<span class="number">0xf9498db48c3cf9cf81c3978c4351bb49e13cad56c0587bb1568b6798aa5b3458</span></span><br><span class="line"><span class="number">0x216F1562c6B74D90dDe7111BA64ed8C2259328aC</span>,<span class="number">0xf77e6a27e371876292c9ce2f5a391fbc32f889388c94034daaaf4c98b4b4f95c</span></span><br><span class="line"><span class="number">0x45EAb4237188fcD565882bb1d1995EdfA114F345</span>,<span class="number">0xcb54347277cf8d053ba9d8f84dd45ef1dfb43330d1af62cd93c99615167cc03b</span></span><br><span class="line"><span class="number">0xfBB451aA60D83C1E7b9606fD3Df774EE4D5d7133</span>,<span class="number">0x171a7e0786f43921b126398868f56193ae81fe10058d97999944c02479fbb294</span></span><br><span class="line"><span class="number">0xF3528dCbbb2006aDa8de5D094E84a6561aFE5f90</span>,<span class="number">0x86ad24d9104b1884e4a5d439418dbae58732c4746359a00009621881266488ea</span></span><br><span class="line"><span class="number">0x2898B60ab33F4d6985379B80FadF38FfEE4ec5C9</span>,<span class="number">0x502ea4563931fba029f4ece571085c553a80a480bab047add5a2389e2d42284a</span></span><br><span class="line"><span class="number">0x3868BCdb212e465936FEb1906C1bA8Ff66d21730</span>,<span class="number">0x2a0f22876c884fb1dd25fb27f188417a1496a2cec32933b2210df61a7dd0c5a5</span></span><br><span class="line"><span class="number">0x17075CEcA61CcCB1813203A66A8a8260a37A192b</span>,<span class="number">0x15e4372e115c66287cca0648aea7f5af4d359ec10b41ab35dd2d085496c21c1b</span></span><br><span class="line"><span class="number">0xd3fE6E3E6fA461A56366dF3FBC64f424995A1839</span>,<span class="number">0x1814e22abd31057df40685d34759c28a2c0aad100f5548ad2b521510d9679c8b</span></span><br></pre></td></tr></table></figure>
+<p>在以太网上查看：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/address/0x75a669a413cc3640c52f5e3fbc82836f18497407"><code>0x75a669a413cc3640c52f5e3fbc82836f18497407</code></a></p>
+<h1 id="智能合约实验"><a href="#智能合约实验" class="headerlink" title="智能合约实验"></a>智能合约实验</h1><p>编写⼀个简单的以太坊智能合约，⽤Solidity语⾔编写，实现⼀个简单的计算器功能，四个函数，能实现两个变量的加减乘除，并部署到以太坊测试⽹上和调⽤测试。</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://remix.ethereum.org/#optimize=true&amp;version=soljson-v0.4.23+commit.124ca40d.js&amp;evmVersion=null&amp;appVersion=0.7.7">https://remix.ethereum.org/#optimize=true&amp;version=soljson-v0.4.23+commit.124ca40d.js&amp;evmVersion=null&amp;appVersion=0.7.7</a> 在线智能合约编辑器</p>
+<hr>
+<h2 id="编写四则运算器合约"><a href="#编写四则运算器合约" class="headerlink" title="编写四则运算器合约"></a>编写四则运算器合约</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.23</span>;</span><br><span class="line">import <span class="string">&quot;remix_tests.sol&quot;</span>; <span class="comment">// this import is automatically injected by Remix.</span></span><br><span class="line"></span><br><span class="line">contract calculator &#123;</span><br><span class="line">    </span><br><span class="line">    function <span class="title function_">add</span> <span class="params">(uint256 a, uint256 b)</span> public pure <span class="title function_">returns</span> <span class="params">(uint256 ret)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function <span class="title function_">minus</span> <span class="params">(uint256 a, uint256 b)</span> public pure <span class="title function_">returns</span> <span class="params">(uint256 ret)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a - b;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function <span class="title function_">multiply</span> <span class="params">(uint256 a, uint256 b)</span> public pure <span class="title function_">returns</span> <span class="params">(uint256 ret)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a * b;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function <span class="title function_">divide</span> <span class="params">(uint256 a, uint256 b)</span> public pure <span class="title function_">returns</span> <span class="params">(uint256 ret)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a / b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="合约测试"><a href="#合约测试" class="headerlink" title="合约测试"></a>合约测试</h2><p>在虚拟的环境中进行合约测试，效果如常：</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127122912427.png" class="" title="合约测试">
+<h2 id="部署合约"><a href="#部署合约" class="headerlink" title="部署合约"></a>部署合约</h2><p>把环境换成<code>Injected Web3</code>，部署到Ropsten network：</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127123733568.png" class="" title="签署合约">
+<p>部署完成：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ropsten.etherscan.io/address/0x081a95329b24CEE9661168440551D8bBa10B70Ff"><code>0x081a95329b24CEE9661168440551D8bBa10B70Ff</code></a></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127123939641.png" class="" title="部署完成">
+<p>部署后合约测试：</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127124229893.png" class="" title="test">
+<h1 id="PoW共识体验"><a href="#PoW共识体验" class="headerlink" title="PoW共识体验"></a>PoW共识体验</h1><p>⾃⾏选择⼀个PoW币种（BTC、ETH、LTC、ZEC、DASH、Grin等），计算该PoW算法哈希，提交⼯作量证明，可以加⼊矿池。时间不需要太长，⼏分钟即可，体验“挖矿”过程。截图证明。</p>
+<p>可以使⽤的参考⼯具：轻松矿⼯、AIminer等<br>可以加⼊的矿池参考：蚂蚁矿池、F2pool、币印矿池等</p>
+<hr>
+<p><strong>轻松矿工</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.qskg.top/">http://www.qskg.top/</a></p>
+<p>挖矿界面：</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127130236069.png" class="" title="轻松矿工">
+<p>矿池界面：</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127130158832.png" class="" title="矿池界面">
+<h1 id="PoS节点搭建"><a href="#PoS节点搭建" class="headerlink" title="*PoS节点搭建"></a>*PoS节点搭建</h1><p>⾃⾏选择⼀个PoS项⽬（Eth2.0、Nebulas、Polkadot、Cosmos、Irisnet、Oasis、Nucypher、Algorand、Solana、Near等），运⾏其验证者测试节点。</p>
+<p>参考⽂档：</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://wiki.nebulas.io/zh_CN/latest/go-nebulas/blockchain/testnet.html">https://wiki.nebulas.io/zh_CN/latest/go-nebulas/blockchain/testnet.html</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.irisnet.org/docs/get-started/testnet.html">https://www.irisnet.org/docs/get-started/testnet.html</a></li>
+</ul>
+<hr>
+<p><strong>Nebulas</strong>（星云）。</p>
+<p>测试网：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/nebulasio/go-nebulas/tree/testnet">https://github.com/nebulasio/go-nebulas/tree/testnet</a></p>
+<p><del>下载这个项目比我想象的要大很多。。。</del></p>
+<p>算了暂时没空搞了。</p>
+<h1 id="去中心化交易协议"><a href="#去中心化交易协议" class="headerlink" title="*去中心化交易协议"></a>*去中心化交易协议</h1><p>了解AMM (Automated Market Maker)和闪兑协议，统计⽬前区块链上去中⼼化交易协议上质押的不同交易对的资产总量，⽐如Uniswap和Balancer，分析其对中⼼化交易的冲击和影响。</p>
+<p>参考⽂档：</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://app.uniswap.org/#/swaphttps://uniswap.info/home">https://app.uniswap.org/#/swaphttps://uniswap.info/home</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://balancer.exchange/#/swap">https://balancer.exchange/#/swap</a></li>
+</ul>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://academy.binance.com/en/articles/what-is-an-automated-market-maker-amm">What Is an Automated Market Maker (AMM)?</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.blocktempo.com/automated-market-maker-101/">DeFi 科普｜去中心化金融窜起，什么是「自动做市商AMM」？</a></p>
+</blockquote>
+<p><strong><font color=blue>自动做市商 AMM (Automated Market Maker)</font></strong>：去中心化的交易中心。用户登记数字资产，并提供兑换和赚取手续费。</p>
+<p><strong><font color=blue>闪兑</font></strong>：闪兑就是快速的货币兑换。这里提到的<strong>闪兑协议</strong>助教说理解为uniswap就可以了。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cailu.net/article/12993269509803396.html">最近比较火热的Uniswap协议，听说过吗？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://learnblockchain.cn/article/274">新手指南 | Uniswap 是什么？</a></p>
+</blockquote>
+<p><strong>Uniswap</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://info.uniswap.org/pairs">https://info.uniswap.org/pairs</a></p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127152504939.png" class="" title="Uniswap资产总量">
+<p><strong>Balancer</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://balancer.finance/">https://balancer.finance/</a></p>
+<p>没有找到Balancer的资产界面。。（只找到了：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pools.balancer.exchange/#/explore">https://pools.balancer.exchange/#/explore</a>）</p>
+<img data-src="/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/image-20201127181420668.png" class="" title="pools liquidity">
+<p><del>去中心化交易市场当然会对中心化交易市场造成冲击辣</del>。目前的去中心化市场只是提供了数字资产的交易，实际资产的交易很难保真地数字化，也就很难通过密码学或者区块链的方式来保证去中心化以后的可信度。所以，在实体交易方面，中心化交易市场仍然是无法被取代的。</p>
+<p>但是这对于中心化的数字货币交易所来说不是一个好消息，因为去中心化的AMM可以很容易地取代它们并且为用户提供更高的效率和更低的手续费。</p>
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E6%8C%96%E7%9F%BF%E5%85%A5%E9%97%A8/">挖矿入门</a></li><li><a href="https://stellarkey.github.io/%E8%AE%BA%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">论学习方法</a></li><li><a href="https://stellarkey.github.io/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%E7%AE%80%E8%AE%B0/">零知识证明简记</a></li><li><a href="https://stellarkey.github.io/%E5%8C%97%E6%96%97UMA%E4%B8%93%E9%A1%B9/">北斗UMA专项</a></li><li><a href="https://stellarkey.github.io/CS%E6%8C%91%E6%88%98%E8%90%A5/">CS挑战营</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" title="区块链课程实验">https://stellarkey.github.io/区块链课程实验/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CS/" rel="tag"><i class="fa fa-tag"></i> CS</a>
+              <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+              <a href="/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%A7%91%E6%8A%80%E4%B8%8E%E4%BA%BA%E6%96%87%E6%B5%85%E8%AE%A8/" rel="prev" title="科技与人文浅讨">
+      <i class="fa fa-chevron-left"></i> 科技与人文浅讨
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/P2P%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="next" title="P2P系统后端设计">
+      P2P系统后端设计 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%BA%A4%E6%98%93"><span class="nav-number">1.</span> <span class="nav-text">数字货币交易</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85"><span class="nav-number">1.1.</span> <span class="nav-text">创建钱包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%B0%B4"><span class="nav-number">1.2.</span> <span class="nav-text">注水</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC"><span class="nav-number">1.3.</span> <span class="nav-text">编写脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BA%A4%E4%BA%92%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">网络交互代理设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">基本功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E8%BF%9E%E6%8E%A5%E5%88%B0%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">1.3.3.</span> <span class="nav-text">修改连接到的网络</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E8%B4%A6%E5%AE%9E%E9%AA%8C"><span class="nav-number">1.4.</span> <span class="nav-text">转账实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E6%AC%A1%E8%BD%AC%E8%B4%A6%E6%B5%8B%E8%AF%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">单次转账测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E8%BD%AC%E8%B4%A6"><span class="nav-number">1.4.2.</span> <span class="nav-text">批量转账</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.</span> <span class="nav-text">智能合约实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E5%99%A8%E5%90%88%E7%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">编写四则运算器合约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E7%BA%A6%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.</span> <span class="nav-text">合约测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6"><span class="nav-number">2.3.</span> <span class="nav-text">部署合约</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PoW%E5%85%B1%E8%AF%86%E4%BD%93%E9%AA%8C"><span class="nav-number">3.</span> <span class="nav-text">PoW共识体验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PoS%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">*PoS节点搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E5%8D%8F%E8%AE%AE"><span class="nav-number">5.</span> <span class="nav-text">*去中心化交易协议</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

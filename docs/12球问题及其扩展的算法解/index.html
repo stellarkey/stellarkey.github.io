@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="问题描述12球问题：12个乒乓球，有一个次品，不知轻重，用一台无砝码天平称三次，找出次品，同时告知轻重？ 一种基本解法  12球问题可以用信息论来保证有解。整个解空间为24，由于天平每次可以三分，所以 12 球问题相对于天平的信息量为 $\log_3 24 &lt;\log_3 27&#x3D;3$，因此在 3 步内有解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12球问题及其扩展的算法解">
+<meta property="og:url" content="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="问题描述12球问题：12个乒乓球，有一个次品，不知轻重，用一台无砝码天平称三次，找出次品，同时告知轻重？ 一种基本解法  12球问题可以用信息论来保证有解。整个解空间为24，由于天平每次可以三分，所以 12 球问题相对于天平的信息量为 $\log_3 24 &lt;\log_3 27&#x3D;3$，因此在 3 步内有解。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/12%E7%90%83%E9%97%AE%E9%A2%98.jpg">
+<meta property="article:published_time" content="2022-05-25T16:43:02.000Z">
+<meta property="article:modified_time" content="2022-05-25T17:00:25.617Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/12%E7%90%83%E9%97%AE%E9%A2%98.jpg">
+
+<link rel="canonical" href="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>12球问题及其扩展的算法解 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          12球问题及其扩展的算法解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Think/" itemprop="url" rel="index"><span itemprop="name">Think</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><font style='color:red;font-weight:bold;'>12球问题</font>：12个乒乓球，有一个次品，不知轻重，用一台无砝码天平称三次，找出次品，<strong>同时</strong>告知轻重？</p>
+<h2 id="一种基本解法"><a href="#一种基本解法" class="headerlink" title="一种基本解法"></a>一种基本解法</h2><img data-src="/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/12%E7%90%83%E9%97%AE%E9%A2%98.jpg" class="" title="12球问题">
+<blockquote>
+<p>12球问题可以用信息论来保证有解。整个解空间为24，由于天平每次可以三分，所以 12 球问题相对于天平的信息量为 $\log_3 24 &lt;\log_3 27=3$，因此在 3 步内有解。<span id="more"></span></p>
+<p>同时，必须保证第三步时，剩下的解空间 $\leq$ 3。</p>
+<p><font style='color:blue;font-weight:bold;'>推论</font>：<font style='color:red;'>若有 1 个辅助球，则对于任意含次品的 4 组球（每组相同数量）可以通过 2 次称重，确定次品的轻重和组号</font>。（辅助球，即一个已知的不是次品的标准球）</p>
+<ul>
+<li>设组号为 <code>[1, 2, 3, 4]</code>，辅助球为 <code>F</code><ul>
+<li>第 1 次测量：分为 3 + 1两份，称完之后解空间分别为3 + 1*2，均 &lt;= 3，信息论可解。<ul>
+<li>A=<code>[1, 2]</code> vs. B=<code>[3, F]</code></li>
+</ul>
+</li>
+<li>第 2 次测量：<ul>
+<li>A = B<ul>
+<li>C=<code>[4]</code> vs. D=<code>[F]</code></li>
+</ul>
+</li>
+<li>A &lt; B || A &gt; B<ul>
+<li>C=<code>[1]</code> vs. D=<code>[2]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="13-球问题"><a href="#13-球问题" class="headerlink" title="13 球问题"></a>13 球问题</h1><p>对于 13 球问题，可以证明，必须添加一个标准的辅助球才有解。</p>
+<p>首先信息量为 $\log_3 26 &lt;\log_3 27=3$，因此理论可解。</p>
+<p><font style='color:blue;font-weight:bold;'>引理1</font>：<font style='color:red;'>$n$ 个球取 $m$ 个称 1 次后的两种情况的剩余解空间规模 $S$ 为 $m$ 和 $2(n-m)$</font>。</p>
+<blockquote>
+<p>证明：</p>
+<ul>
+<li>对于第一种情况，天平不平衡<ul>
+<li>次品必然在取出的在 $m$ 个球中，且每个球的轻重已知。故解空间为球数：$m$。</li>
+</ul>
+</li>
+<li>对于第二种情况，天平平衡<ul>
+<li>次品必然在没有取出的在 $n-m$ 个球中，且每个球的轻重未知。故解空间为两倍球数：$2(n-m)$。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><font style='color:blue;font-weight:bold;'>引理2</font>：<font style='color:red;'>若剩余 $k$ 步，未确定的解空间规模 $S$ 必须不大于 $3^k$</font>。</p>
+<blockquote>
+<p>证明：</p>
+<ul>
+<li>根据信息论约束， $S$ 的规模必须满足 $\log_3 S \leq k$ 才可能有解。</li>
+<li>于是得到 $S \leq 3^k$。</li>
+</ul>
+</blockquote>
+<p>根据引理 1 可知，第 1 步结束后的两个解空间 $S$ 大小分别为 $m$ 和 $2(13-m)$。</p>
+<p>根据引理 2 可知，第 1 步结束后还剩 2 步，则 $S\leq 3^2=9$。</p>
+<p>故得到：</p>
+<script type="math/tex; mode=display">
+m\leq 9\\
+2(13-m)\leq9</script><p>$m$ 有唯一解： $m=9$。即，第 1 步的分配必须取出 <font style='color:red;font-weight:bold;'>9</font> 个球进行称量。然而，<font style='color:red;font-weight:bold;'>奇数个球无法直接进行称重</font>。</p>
+<p>故，13 球问题必须添加一个标准的辅助球才有解。</p>
+<blockquote>
+<p>注：12 球问题中 $m={8,9}$，但是 $m=9$ 的情况也一样需要辅助球。</p>
+</blockquote>
+<h1 id="n-球问题"><a href="#n-球问题" class="headerlink" title="$n$ 球问题"></a>$n$ 球问题</h1><p>实际上以上的证明过程使得我们可以对 $n$ 球问题进行程序化的求解。</p>
+<p>首先根据引理 1 和 引理 2 确定 $m$ 的取值范围，如果 $m$ 是奇数，则需要辅助球，否则可以递归求解 $n-m$ 和 $m$ 两堆球。</p>
+<script type="math/tex; mode=display">
+f(n)=f(n-m)+g(m)</script><p><font style='color:blue;font-weight:bold;'>引理3</font>：<font style='color:red;'>$n$ 个<strong>已知轻重</strong>的球取 $m$ 个称 1 次后的两种情况的剩余的最小解空间规模 $S$ 分别为 $\lceil m/2 \rceil$ 和 $n-m$</font>。</p>
+<blockquote>
+<p>证明：$m$ 个已称重的球可以通过天平上的<strong>两组内部交换部分的球</strong>来进行递归求解。其中，交换其中的一半 $\lceil m/2 \rceil$ 可以降低最多的解空间。</p>
+<script type="math/tex; mode=display">
+g(n)=g(n-m)+g( \lfloor m/2 \rfloor)+g( \lceil m/2 \rceil)</script></blockquote>
+<p>根据引理3，可得信息论约束</p>
+<script type="math/tex; mode=display">
+\lceil m/2 \rceil\leq3^{S-1}\\
+n-m \leq3^{S-1}</script><h2 id="递归求解程序"><a href="#递归求解程序" class="headerlink" title="递归求解程序"></a>递归求解程序</h2><p>$n$ 球问题每一步递归分治，要么退化成引理1的情况（$f(n)=f(m)+g(n-m)$），要么退化成引理3的情况 $g(n)=g(m)+g( \lfloor (n-m)/2 \rfloor)+g( \lceil (n-m)/2 \rceil)$。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">g</span>(<span class="params">n: <span class="built_in">int</span>, max_steps: <span class="built_in">int</span> = <span class="number">3</span>, step: <span class="built_in">int</span> = <span class="number">1</span></span>):</span><br><span class="line">  <span class="keyword">if</span> n &lt;= <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  m = <span class="built_in">max</span>(<span class="number">1</span>, n - <span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step))</span><br><span class="line">  <span class="keyword">while</span> math.ceil(m/<span class="number">2</span>) &lt;= <span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step) <span class="keyword">and</span> m &lt;= n:</span><br><span class="line">    <span class="built_in">print</span>(</span><br><span class="line">      <span class="string">&quot;&#123;indent&#125;[step &#123;step&#125;] g(n=&#123;n&#125;)\t\t[&#123;remains&#125;, &#123;left&#125; - &#123;right&#125;];&quot;</span><span class="comment">#+&quot;\tremain=&#123;remains&#125;\tleft=&#123;left&#125;\tright=&#123;right&#125;&quot;</span></span><br><span class="line">      .<span class="built_in">format</span>(</span><br><span class="line">        indent = <span class="string">&quot;    &quot;</span> * (step - <span class="number">1</span>),</span><br><span class="line">        n       = n,</span><br><span class="line">        step    = step,</span><br><span class="line">        remains = n - m,</span><br><span class="line">        left    = m // <span class="number">2</span> <span class="keyword">if</span> m % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> m // <span class="number">2</span> + <span class="number">1</span>,</span><br><span class="line">        right   = m // <span class="number">2</span> <span class="keyword">if</span> m % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="built_in">str</span>(m // <span class="number">2</span>) + <span class="string">&quot;(+)&quot;</span></span><br><span class="line">      )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> step &lt; max_steps:</span><br><span class="line">      g(n-m, max_steps, step + <span class="number">1</span>)</span><br><span class="line">      g(m // <span class="number">2</span> <span class="keyword">if</span> m % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> m // <span class="number">2</span> + <span class="number">1</span>, max_steps, step + <span class="number">1</span>)</span><br><span class="line">      g(m // <span class="number">2</span>, max_steps, step + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">    m += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">n: <span class="built_in">int</span>, max_steps: <span class="built_in">int</span> = <span class="number">3</span>, step: <span class="built_in">int</span> = <span class="number">1</span></span>):</span><br><span class="line">  <span class="keyword">if</span> n &lt;= <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span> step == <span class="number">1</span> <span class="keyword">and</span> max_steps &gt; math.ceil(math.log(n, <span class="number">3</span>)):</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;[Warning] Extra steps, you only need [&#123;steps_required&#125;] steps to solve [&#123;n&#125;] ball game. Auto relacing max_steps...&quot;</span></span><br><span class="line">        .<span class="built_in">format</span>(</span><br><span class="line">          n = n,</span><br><span class="line">          steps_required = math.ceil(math.log(n, <span class="number">3</span>))</span><br><span class="line">        )</span><br><span class="line">      )</span><br><span class="line">      max_steps = math.ceil(math.log(n, <span class="number">3</span>))</span><br><span class="line">      <span class="comment"># return</span></span><br><span class="line">  m = <span class="built_in">max</span>(<span class="number">1</span>, n - <span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step) // <span class="number">2</span>)</span><br><span class="line">  <span class="keyword">if</span> m &gt; <span class="built_in">min</span>(n, <span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step)):</span><br><span class="line">    steps_required = max_steps</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">max</span>(<span class="number">1</span>, n - <span class="built_in">pow</span>(<span class="number">3</span>, steps_required - step) // <span class="number">2</span>) &gt; <span class="built_in">min</span>(n, <span class="built_in">pow</span>(<span class="number">3</span>, steps_required - step)): steps_required += <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No solution!\nTO solve [&#123;n&#125;] ball game max_steps must be at least [&#123;steps_required&#125;].\nAnd [&#123;max_steps&#125;] steps can solve at most [&#123;n_required&#125;] ball game.&quot;</span></span><br><span class="line">      .<span class="built_in">format</span>(</span><br><span class="line">        n = n,</span><br><span class="line">        steps_required = steps_required,</span><br><span class="line">        max_steps = max_steps,</span><br><span class="line">        n_required = math.floor(<span class="number">3</span>/<span class="number">2</span>*<span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step))</span><br><span class="line">      )</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">while</span> m &lt;= <span class="built_in">min</span>(n, <span class="built_in">pow</span>(<span class="number">3</span>, max_steps - step)):</span><br><span class="line">    <span class="built_in">print</span>(</span><br><span class="line">      <span class="string">&quot;&#123;indent&#125;[step &#123;step&#125;] f(n=&#123;n&#125;)\t\t[&#123;remains&#125;, &#123;left&#125; - &#123;right&#125;];&quot;</span><span class="comment">#+&quot;\tremain=&#123;remains&#125;\tleft=&#123;left&#125;\tright=&#123;right&#125;&quot;</span></span><br><span class="line">      .<span class="built_in">format</span>(</span><br><span class="line">        indent = <span class="string">&quot;    &quot;</span> * (step - <span class="number">1</span>),</span><br><span class="line">        n       = n,</span><br><span class="line">        step    = step,</span><br><span class="line">        remains = n - m,</span><br><span class="line">        left    = m // <span class="number">2</span> <span class="keyword">if</span> m % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> m // <span class="number">2</span> + <span class="number">1</span>,</span><br><span class="line">        right   = m // <span class="number">2</span> <span class="keyword">if</span> m % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="built_in">str</span>(m // <span class="number">2</span>) + <span class="string">&quot;(+)&quot;</span></span><br><span class="line">      )</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">if</span> step &lt; max_steps:</span><br><span class="line">      g(    m, max_steps, step + <span class="number">1</span>)</span><br><span class="line">      f(n - m, max_steps, step + <span class="number">1</span>)</span><br><span class="line">    m += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># f(8, 2)</span></span><br><span class="line"><span class="comment"># f(4, 5)</span></span><br><span class="line"><span class="comment"># f(13, 3)</span></span><br><span class="line"><span class="comment"># f(14, 3)</span></span><br><span class="line">f(<span class="number">999</span>, <span class="number">6</span>)</span><br><span class="line"><span class="comment"># f(4, 10)</span></span><br></pre></td></tr></table></figure>
+<h2 id="程序测试"><a href="#程序测试" class="headerlink" title="程序测试"></a>程序测试</h2><p>从程序中我们可以发现 12 球存在辅助球解法（输出中，“<code>(+)</code>” 号表示辅助球），13 球只有辅助球解法，14球不存在 3 步内解法。4 步最多可以求解40球。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">输入：f(12, 3)</span><br><span class="line">输出：</span><br><span class="line">[step 1] f(n=12)                [4, 4 - 4];</span><br><span class="line">    [step 2] g(n=8)             [3, 3 - 2(+)];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=2)         [1, 1 - 0(+)];</span><br><span class="line">    [step 2] f(n=4)             [1, 2 - 1(+)];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] f(n=1)         [0, 1 - 0(+)];</span><br><span class="line">[step 1] f(n=12)                [3, 5 - 4(+)];</span><br><span class="line">    [step 2] g(n=9)             [3, 3 - 3];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">    [step 2] f(n=3)             [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=2)         [1, 1 - 0(+)];</span><br><span class="line">        [step 3] f(n=1)         [0, 1 - 0(+)];</span><br><span class="line">    [step 2] f(n=3)             [0, 2 - 1(+)];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入：f(13, 3)</span><br><span class="line">输出：</span><br><span class="line">[step 1] f(n=13)                [4, 5 - 4(+)];</span><br><span class="line">    [step 2] g(n=9)             [3, 3 - 3];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">    [step 2] f(n=4)             [1, 2 - 1(+)];</span><br><span class="line">        [step 3] g(n=3)         [1, 1 - 1];</span><br><span class="line">        [step 3] f(n=1)         [0, 1 - 0(+)];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：f(14, 3)</span><br><span class="line">输出：</span><br><span class="line">No solution!</span><br><span class="line">TO solve [14] ball game max_steps must be at least [4].</span><br><span class="line">And [3] steps can solve at most [13] ball game.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：f(41, 4)</span><br><span class="line">输出：</span><br><span class="line">No solution!</span><br><span class="line">TO solve [41] ball game max_steps must be at least [5].</span><br><span class="line">And [4] steps can solve at most [40] ball game.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：f(4, 10)</span><br><span class="line">输出：</span><br><span class="line">[Warning] Extra steps, you only need [2] steps to solve [4] ball game. Auto relacing max_steps...</span><br><span class="line">[step 1] f(n=4)         [1, 2 - 1(+)];</span><br><span class="line">    [step 2] g(n=3)             [1, 1 - 1];</span><br><span class="line">    [step 2] f(n=1)             [0, 1 - 0(+)];</span><br></pre></td></tr></table></figure>
+<p>彩蛋：999 个球问题最少需要 7 步解决。（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/20854512/answer/16411345）">https://www.zhihu.com/question/20854512/answer/16411345）</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：f(999, 6)</span><br><span class="line">输出：</span><br><span class="line">No solution!</span><br><span class="line">TO solve [999] ball game max_steps must be at least [7].</span><br><span class="line">And [6] steps can solve at most [364] ball game.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>进一步，这个问题还可以求解方案数，此处不再进一步讨论。</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://juejin.cn/post/6844903630147944462">谷歌面试题之-12球称重问题- 掘金</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/wiki/秤球問題">秤球问题- 维基百科，自由的百科全书</a><ul>
+<li>Wikipedia 中的结论是不考虑辅助球的。本文中则默认可以使用 1 个辅助球。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/348811511/answer/852591656">知乎上的某个回答……</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/516425776">12球问题到n球问题的算法解</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/368050985">「小球称重问题」完整版解答汇总</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.acfun.cn/a/ac30241454">12枚硬币称量问题 底层逻辑完美分析 一亿个球你也行</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/" title="12球问题及其扩展的算法解">https://stellarkey.github.io/12球问题及其扩展的算法解/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%81%9A%E4%B8%AA%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="prev" title="做个随想录">
+      <i class="fa fa-chevron-left"></i> 做个随想录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA/" rel="next" title="辛普森悖论">
+      辛普森悖论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%A7%8D%E5%9F%BA%E6%9C%AC%E8%A7%A3%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">一种基本解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%E7%90%83%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">13 球问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#n-%E7%90%83%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">$n$ 球问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%B1%82%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">递归求解程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95"><span class="nav-number">3.2.</span> <span class="nav-text">程序测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/12%E7%90%83%E9%97%AE%E9%A2%98%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%97%E6%B3%95%E8%A7%A3/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

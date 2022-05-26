@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="深度学习训练营课程笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习训练营">
+<meta property="og:url" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="深度学习训练营课程笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1549954237865.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1549956520039.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550014524166.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550015036266.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550015239822.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550013924570.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550024164080.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550045365465.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550046740424.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550046862286.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550051038255.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550053048679.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/v2-a5b5870ab0a4030684c7f5796e3b83a6_b.gif">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bb4c6ce26f.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bb64e34dd7.gif">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bba459d2e1.gif">
+<meta property="og:image" content="https://static.leiphone.com/uploads/new/images/20190219/5c6bbc17a3cb9.png?imageView2/2/w/740">
+<meta property="og:image" content="https://static.leiphone.com/uploads/new/images/20190219/5c6bc3949d069.jpeg?imageView2/2/w/740">
+<meta property="og:image" content="https://static.leiphone.com/uploads/new/images/20190219/5c6bc394991e7.png?imageView2/2/w/740">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/block.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/table.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/VGG16.png">
+<meta property="og:image" content="http://deanhan.com/2018/07/26/vgg16/ppt.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553319814542.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553320192995.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553320223350.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553327994360.png">
+<meta property="article:published_time" content="2019-02-15T14:55:24.000Z">
+<meta property="article:modified_time" content="2022-05-26T07:48:15.027Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1549954237865.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>深度学习训练营 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深度学习训练营
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.xuetangx.com/courses/course-v1:xuetangx+deeplearningxly+2018_T1/about">深度学习训练营</a>课程笔记。<span id="more"></span></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1/">机器学习初等指南(1)</a></p>
+<p><a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2/">机器学习初等指南(2)</a></p>
+<p><a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part3/">机器学习初等指南(3)</a></p>
+<p><a href="./参考课件.zip">参考课件.zip</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://ai.yanxishe.com/">AI研习社</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/a8c0266a7ba4">深度学习Tensorflow相关书籍推荐和PDF下载</a></p>
+<p><a href="./《深度学习入门：基于Python的理论与实现》高清中文版.pdf">深度学习入门：基于Python的理论与实现</a></p>
+<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>逻辑回归的内容可以回顾这里：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1/#Logistic回归">机器学习初等指南(1)-逻辑回归</a>。</p>
+<p><strong>Ex</strong>：利用年龄和收入预测是否买车。</p>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1549954237865.png" class="" width="1549954237865">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model <span class="comment">#引入sklearn线性模型</span></span><br><span class="line"></span><br><span class="line">X = [[<span class="number">20</span>, <span class="number">3</span>],</span><br><span class="line">	[<span class="number">23</span>, <span class="number">7</span>],</span><br><span class="line">	[<span class="number">31</span>, <span class="number">10</span>],</span><br><span class="line">	[<span class="number">42</span>, <span class="number">13</span>],</span><br><span class="line">	[<span class="number">50</span>, <span class="number">7</span>],</span><br><span class="line">	[<span class="number">60</span>, <span class="number">5</span>]]  <span class="comment">#年龄-收入矩阵</span></span><br><span class="line">y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> ,<span class="number">0</span> , <span class="number">0</span>] <span class="comment">#观测向量</span></span><br><span class="line"></span><br><span class="line">lr = linear_model.LogisticRegression() <span class="comment">#创建对象</span></span><br><span class="line">lr.fit(X,y) <span class="comment">#获得拟合参数</span></span><br><span class="line"></span><br><span class="line">testX = [[<span class="number">28</span>, <span class="number">8</span>]] <span class="comment">#测试集（矩阵）</span></span><br><span class="line"></span><br><span class="line">label = lr.predict(testX) <span class="comment">#预测</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;predicted Label = &quot;</span>, label)</span><br><span class="line">prob = lr.predict_proba(testX) <span class="comment">#预测概率</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;probability = &quot;</span>, prob)</span><br></pre></td></tr></table></figure>
+<h2 id="拟合系数的含义"><a href="#拟合系数的含义" class="headerlink" title="拟合系数的含义"></a>拟合系数的含义</h2><script type="math/tex; mode=display">
+P(Y=1|x;\theta)=f(x;\theta)=\cfrac{1}{1+e^{-\theta^Tx} }</script><blockquote>
+<p>则<strong>概率比值</strong>$odds=\frac{p}{1-p}=e^{\theta^Tx}$。</p>
+<p>$系数\theta_j意味着，假设odds为\lambda_1(原),\lambda_2(新)，若x_j增加1，有\cfrac{\lambda_2}{\lambda_1}=e^{\theta_j}$。</p>
+<p>以下是验证程序：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model <span class="comment">#引入sklearn线性模型</span></span><br><span class="line"></span><br><span class="line">X = [[<span class="number">20</span>, <span class="number">3</span>],</span><br><span class="line">	[<span class="number">23</span>, <span class="number">7</span>],</span><br><span class="line">	[<span class="number">31</span>, <span class="number">10</span>],</span><br><span class="line">	[<span class="number">42</span>, <span class="number">13</span>],</span><br><span class="line">	[<span class="number">50</span>, <span class="number">7</span>],</span><br><span class="line">	[<span class="number">60</span>, <span class="number">5</span>]]  <span class="comment">#年龄-收入矩阵</span></span><br><span class="line">y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> ,<span class="number">0</span> , <span class="number">0</span>] <span class="comment">#观测向量</span></span><br><span class="line">lr = linear_model.LogisticRegression()</span><br><span class="line">lr.fit(X,y) <span class="comment">#获得拟合参数</span></span><br><span class="line"></span><br><span class="line">testX = [[<span class="number">28</span>, <span class="number">8</span>]] <span class="comment">#测试集（矩阵）</span></span><br><span class="line"></span><br><span class="line">label = lr.predict(testX) <span class="comment">#预测</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;predicted Label = &quot;</span>, label)</span><br><span class="line"></span><br><span class="line">prob = lr.predict_proba(testX) <span class="comment">#预测概率</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;probability = &quot;</span>, prob)</span><br><span class="line"><span class="comment">#-----------------------------------------以下是新增部分</span></span><br><span class="line">theta_0 = lr.intercept_</span><br><span class="line">theta_1 = lr.coef_[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">theta_2 = lr.coef_[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;theta_0 = &quot;</span>, theta_0)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;theta_1 = &quot;</span>, theta_1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;theta_2 = &quot;</span>, theta_2)</span><br><span class="line"></span><br><span class="line">ratio = prob[<span class="number">0</span>][<span class="number">1</span>]/prob[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">testX = [[<span class="number">28</span>, <span class="number">9</span>]]</span><br><span class="line">prob_new = lr.predict_proba(testX)</span><br><span class="line">ratio_new = prob_new[<span class="number">0</span>][<span class="number">1</span>]/prob_new[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">ratio_of_ratio = ratio_new / ratio</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;ratio_of_ratio = &quot;</span>, ratio_of_ratio)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">theta_2_exp = math.exp(theta_2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;theta_2_exp = &quot;</span>, theta_2_exp)</span><br></pre></td></tr></table></figure>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1549956520039.png" class="" width="1549956520039">
+<h2 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h2><p>参考程序：<a href="./spam_detection.ipynb">spam_detection.ipynb</a>， <a href="./垃圾短信检测数据集.zip">垃圾短信检测数据集.zip</a></p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://huanyouchen.github.io/2018/05/30/hexo-support-jupyter-notebook-in-blog/">在hexo中写的文章支持jupyter-notebook显示| 幻悠尘的小窝</a></p>
+<blockquote>
+<p>注意需要<code>npm install co</code>。</p>
+<p>太偏右修正：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/qiliux/hexo-jupyter-notebook/issues/3。">https://github.com/qiliux/hexo-jupyter-notebook/issues/3。</a></p>
+<blockquote>
+<p>核心代码：<code>document.getElementById(&#39;ipynb&#39;).style[&#39;margin-left&#39;] = &#39;-60px&#39;;</code></p>
+</blockquote>
+</blockquote>
+<h3 id="简单代码"><a href="#简单代码" class="headerlink" title="简单代码"></a>简单代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;spam.csv&#x27;</span>, delimiter=<span class="string">&#x27;,&#x27;</span>, header=<span class="literal">None</span>, encoding=<span class="string">&#x27;latin-1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.head(<span class="number">5</span>))</span><br><span class="line">y, X_train = df[<span class="number">0</span>], df[<span class="number">1</span>] </span><br><span class="line"><span class="comment"># df = pd.read_csv(&#x27;spam.csv&#x27;, delimiter=&#x27;,&#x27;, encoding=&#x27;latin-1&#x27;)</span></span><br><span class="line"><span class="comment"># y, X_train = df.iloc[:,0], df.iloc[:,1]</span></span><br><span class="line"></span><br><span class="line">vectorizer = TfidfVectorizer()</span><br><span class="line">X = vectorizer.fit_transform(X_train)</span><br><span class="line"></span><br><span class="line">lr = linear_model.LogisticRegression()</span><br><span class="line">lr.fit(X, y)</span><br><span class="line"></span><br><span class="line">testX = vectorizer.transform([<span class="string">&#x27;URGENT! Your mobile No. 1234 was awarded a prize.&#x27;</span>,</span><br><span class="line">							  <span class="string">&#x27;Hey honey, whats up?&#x27;</span>])</span><br><span class="line">predictions = lr.predict(testX)</span><br><span class="line"><span class="built_in">print</span>(predictions)</span><br></pre></td></tr></table></figure>
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>神经网络的内容可以回顾这里：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part2/#神经网络">机器学习初等指南(2)</a>。</p>
+<h2 id="鸢尾花分类"><a href="#鸢尾花分类" class="headerlink" title="鸢尾花分类"></a>鸢尾花分类</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/6ada344f91ce">鸢尾花数据集</a>， <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.wikiwand.com/en/Iris_flower_data_set">Iris flower data set</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv">https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/meelo/p/4272036.html"><strong>探索sklearn | 鸢尾花数据集</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/caojianhua2018/article/details/78658180">机器学习iris数据集导入</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/Eastmount/article/details/78692227">【python数据挖掘课程】十九.鸢尾花数据集可视化、线性回归、决策树花样分析</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/eff2df3984e1">Iris鸢尾花数据集可视化、线性回归、决策树分析、KMeans聚类分析</a></p>
+<blockquote>
+<p>Iris plants 数据集可以从<code>KEEL dataset</code>数据集网站获取，也可以直接从<code>Sklearn.datasets</code>机器学习包得到。数据集共包含4个特征变量、1个类别变量，共有150个样本。类别变量分别对应鸢尾花的三个亚属，分别是<code>山鸢尾 (Iris-setosa)</code>、<code>变色鸢尾(Iris-versicolor)</code>和<code>维吉尼亚鸢尾(Iris-virginica)</code> 分别用<code>[0,1,2]</code>来做映射。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/735e5de6bb6d">小蛇学python（14）K-means预测花朵种类</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential <span class="comment">#序列串行类</span></span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense <span class="comment">#密集层（全连接神经网络）</span></span><br><span class="line"><span class="keyword">from</span> keras.wrappers.scikit_learn <span class="keyword">import</span> KerasClassifier <span class="comment">#与sklearn的包装接口</span></span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils <span class="comment">#</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score <span class="comment"># 交叉验证准确度得分</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold <span class="comment"># k折交叉验证</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder <span class="comment"># 标签编码（转化为数值，类似向量化）</span></span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> model_from_json <span class="comment"># 训练模型的储存</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reproducibility</span></span><br><span class="line">seed = <span class="number">13</span> <span class="comment"># 伪随机数种子</span></span><br><span class="line">np.random.seed(seed)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load data</span></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;iris.csv&#x27;</span>)</span><br><span class="line"><span class="comment"># from sklearn.datasets import load_iris</span></span><br><span class="line"><span class="comment"># df = load_iris()</span></span><br><span class="line">X = df.values[:,<span class="number">0</span>:<span class="number">4</span>].astype(<span class="built_in">float</span>) <span class="comment">#设定为单精度浮点类型</span></span><br><span class="line">Y = df.values[:,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">encoder = LabelEncoder() <span class="comment">#新建编码器</span></span><br><span class="line">Y_encoded = encoder.fit_transform(Y) <span class="comment">#进行数值转换</span></span><br><span class="line">Y_onehot = np_utils.to_categorical(Y_encoded) <span class="comment">#转化为向量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define a network</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">baseline_model</span>():</span><br><span class="line">	model = Sequential()</span><br><span class="line">	model.add(Dense(<span class="number">7</span>, input_dim=<span class="number">4</span>, activation=<span class="string">&#x27;tanh&#x27;</span>)) <span class="comment">#新建(隐藏)层：Dense全连接，7个神经元，输入维度为4，激活函数为tanh双曲正切</span></span><br><span class="line">	model.add(Dense(<span class="number">3</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)) <span class="comment">#新建输出层，3个输出，激活函数为softmax</span></span><br><span class="line">	model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;mean_squared_error&#x27;</span>, optimizer=<span class="string">&#x27;sgd&#x27;</span>, metrics=[<span class="string">&#x27;accuracy&#x27;</span>]) <span class="comment">#损失函数：最小均方。优化方法：随机梯度下降。评估指标：准确度</span></span><br><span class="line">	<span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line">estimator = KerasClassifier(build_fn=baseline_model, epochs=<span class="number">20</span>, batch_size=<span class="number">1</span>, verbose=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 交叉验证。 build_fn：模型生成方法。epochs：训练次数。batchsize：批处理容量。verbose：输出信息详细度。</span></span><br><span class="line"><span class="comment"># epchs如果增加到200，准确率可达97%。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#evalute</span></span><br><span class="line">kfold = KFold(n_splits=<span class="number">10</span>, shuffle=<span class="literal">True</span>, random_state=seed)</span><br><span class="line"><span class="comment"># n_split：将数据集分成10份。shuffle：乱序预处理。</span></span><br><span class="line">result = cross_val_score(estimator, X, Y_onehot, cv=kfold)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Accuray of cross validation, mean %.2f,std %.2f&quot;</span> % (result.mean(), result.std())) <span class="comment">#均值、方差</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#save model</span></span><br><span class="line">estimator.fit(X, Y_onehot)</span><br><span class="line">model_json = estimator.model.to_json()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;model.json&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> json_file:  <span class="comment"># 保存结构</span></span><br><span class="line">	json_file.write(model_json)</span><br><span class="line"></span><br><span class="line">estimator.model.save_weights(<span class="string">&quot;model.h5&quot;</span>) <span class="comment"># 保存数值</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;save model to disk&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load model and use it for prediction</span></span><br><span class="line">json_file = <span class="built_in">open</span>(<span class="string">&quot;model.json&quot;</span>, <span class="string">&quot;r&quot;</span>)</span><br><span class="line">loaded_model_json = json_file.read()</span><br><span class="line">json_file.close()</span><br><span class="line">loaded_model = model_from_json(loaded_model_json)</span><br><span class="line">loaded_model.load_weights(<span class="string">&quot;model.h5&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;loaded model from dish&quot;</span>)</span><br><span class="line"></span><br><span class="line">predicted = loaded_model.predict(X)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;predicted probability:&quot;</span> + <span class="built_in">str</span>(predicted))</span><br><span class="line"></span><br><span class="line">predicted_label = loaded_model.predict_classes(X)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;predicted label:&quot;</span> + <span class="built_in">str</span>(predicted_label))</span><br></pre></td></tr></table></figure>
+<h3 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h3><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.wikiwand.com/zh-hans/Softmax%E5%87%BD%E6%95%B0">softmax函数</a>：</p>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550014524166.png" class="" width="1550014524166">
+<blockquote>
+<p><code>softmax</code>存在数值问题。（中间有<strong>指数膨胀</strong>）</p>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550015036266.png" class="" width="1550015036266">
+<p>可以利用最大值偏置进行修正。避免溢出。</p>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550015239822.png" class="" width="1550015239822">
+<p><code>tanh</code>函数：</p>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550013924570.png" class="" width="1550013924570">
+<h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><p>深度神经网络的两大挑战：</p>
+<ul>
+<li><p><strong>梯度消亡</strong>（Gradient Vanishing）：<strong>训练过程非常慢</strong>。</p>
+</li>
+<li><p><strong>过拟合</strong>（Overfitting）：在训练数据上效果好，在测试数据集上效果差。</p>
+</li>
+</ul>
+<h3 id="梯度消亡"><a href="#梯度消亡" class="headerlink" title="梯度消亡"></a>梯度消亡</h3><p>神经网络<strong>靠近输入端</strong>的网络层<strong>系数变化不敏感</strong>。当网络层数增加时，现象更明显。</p>
+<p>梯度消亡的前提：</p>
+<ul>
+<li>使用<strong>基于梯度</strong>的训练方法</li>
+<li>激活函数的输出值范围<strong>远小于</strong>输入值范围（<code>sigmoid</code>、<code>tanh</code>、<code>softmax</code>）</li>
+</ul>
+<blockquote>
+<p>实际上，对于这样的激活函数，100、10000和10005三者的激活值几乎一致。</p>
+</blockquote>
+<p>如果一个（大）系数的微小变化对网络的影响很小，那么就很难进行优化（优化特别慢）。训练起来就很困难了。</p>
+<p>可以想象的是，损失函数是一个非常平坦的凹面。</p>
+<h4 id="ReLU激活"><a href="#ReLU激活" class="headerlink" title="ReLU激活"></a>ReLU激活</h4><ul>
+<li><code>ReLU</code>:$f(x)=max(0,x)$。<ul>
+<li>正值梯度。</li>
+</ul>
+</li>
+<li><code>LeakyReLU</code>:$f(x)=max(ax,x)$。<ul>
+<li>优化了负值梯度。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>为什么不直接选择激活函数$f(x)=x$（恒同映射）？</p>
+<p>激活函数一定要是非线性的。如果激活函数是线性函数，那么最后得到的就是一个线性分类器。<br>激活函数的非线性越强，那么分类能力也就越强。</p>
+</blockquote>
+<h4 id="非梯度训练方法"><a href="#非梯度训练方法" class="headerlink" title="非梯度训练方法"></a>非梯度训练方法</h4><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550024164080.png" class="" width="1550024164080">
+<h3 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h3><p>解决方案：</p>
+<ul>
+<li><code>Dropout</code></li>
+<li><code>L2</code>正则化</li>
+<li><code>L1</code>正则化</li>
+<li><code>MaxNorm</code></li>
+</ul>
+<h4 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a><code>Dropout</code></h4><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://jmlr.org/papers/volume15/srivastava14a.old/srivastava14a.pdf">Dropout: A Simple Way to Prevent Neural Networks from Overfitting</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;ved=2ahUKEwjP1J7cobjgAhUEPXAKHRUMAzIQFjAFegQICRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fqq_25011449%2Farticle%2Fdetails%2F81168369&amp;usg=AOvVaw3UXvWzAcK7FJEFgAuU-k9j">【论文精读】Dropout: A Simple Way to Prevent Neural Networks from …</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://me.csdn.net/qq_25011449">Atlas8346</a></p>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550045365465.png" class="" width="1550045365465">
+<p>Dropout可以被解释为一种通过在隐藏的单元中添加噪声来调节神经网络的方法。</p>
+<p>大概意思就是引入神经元的<strong>休息状态</strong>。神经元有一定概率被<code>Dropout</code>，也就完全不能被激活，从而输出全为<code>0</code>。</p>
+<h4 id="L2正则化"><a href="#L2正则化" class="headerlink" title="L2正则化"></a><code>L2</code>正则化</h4><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550046740424.png" class="" width="1550046740424">
+<h4 id="L1正则化"><a href="#L1正则化" class="headerlink" title="L1正则化"></a><code>L1</code>正则化</h4><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550046862286.png" class="" width="1550046862286">
+<h4 id="MaxNorm"><a href="#MaxNorm" class="headerlink" title="MaxNorm"></a><code>MaxNorm</code></h4><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550051038255.png" class="" width="1550051038255">
+<h3 id="神经网络系数的初始化"><a href="#神经网络系数的初始化" class="headerlink" title="神经网络系数的初始化"></a>神经网络系数的初始化</h3><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1550053048679.png" class="" width="1550053048679">
+<h1 id="实战项目1-自动为图片生成描述-Image-Captioning"><a href="#实战项目1-自动为图片生成描述-Image-Captioning" class="headerlink" title="实战项目1: 自动为图片生成描述 Image Captioning"></a>实战项目1: 自动为图片生成描述 Image Captioning</h1><blockquote>
+<p>环境安装参考：<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1/#环境安装与使用">机器学习初等指南(1)-环境安装与使用</a></p>
+</blockquote>
+<h2 id="Task1-构建VGG16"><a href="#Task1-构建VGG16" class="headerlink" title="Task1 构建VGG16"></a>Task1 构建VGG16</h2><p>经典的网络有：<code>VGG</code>, <code>ResNet</code>, <code>DenseNet</code>。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/loveliuzz/article/details/79135546">深度学习卷积神经网络——经典网络VGG-16网络的搭建与实现 …</a></p>
+<blockquote>
+<p>VGGNet探索了<strong>卷积神经网络</strong>的<strong>深度与其性能</strong>之间的关系，通过反复堆叠3 <em> 3的小型卷积核和2 </em> 2的<strong>最大池化层</strong>，VGGNet成功地构筑了16~19层深的卷积神经网络。VGGNet相比之前state-of-the-art的网络结构，错误率大幅下降， VGGNet论文中全部使用了3 <em> 3的小型卷积核和2 </em> 2的最大池化核，通过不断加深网络结构来提升性能。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/41423739">一文读懂VGG网络- 知乎</a></p>
+<blockquote>
+<p>简单来说，在VGG中，使用了3个3x3卷积核来代替7x7卷积核，使用了2个3x3卷积核来代替5x5卷积核，这样做的主要目的是在保证具有相同感知野的条件下，提升了网络的深度，在一定程度上提升了神经网络的效果。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.deanhan.com/2018/07/26/vgg16/"><strong>VGG16学习笔记| 韩鼎の个人网站</strong></a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/handsomeboy/vgg16">https://github.com/handsomeboy/vgg16</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/keras/vgg16/home">Kaggle-VGG16</a></p>
+</blockquote>
+<h3 id="Pre-卷积"><a href="#Pre-卷积" class="headerlink" title="Pre-卷积"></a>Pre-卷积</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.leiphone.com/news/201902/D2Mkv61w9IPq9qGh.html"><strong>万字长文带你看尽深度学习中的各种卷积网络（上篇）</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.leiphone.com/news/201902/biIqSBpehsaXFwpN.html">万字长文带你看尽深度学习中的各种卷积网络（下篇）</a> </p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/a-comprehensive-introduction-to-different-types-of-convolutions-in-deep-learning-669281e58215"><strong>A Comprehensive Introduction to Different Types of Convolutions in Deep Learning</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/22298352">如何通俗易懂地解释卷积？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/54504471">如何理解 Graph Convolutional Network（<strong>GCN</strong>）？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/l691899397/article/details/52250190">深度学习笔记5：池化层的实现</a> <code>max-pooling</code>和<code>mean-pooling</code></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/41696749">卷积层与池化层</a> <strong>卷积向下取整，池化向上取整</strong>。</p>
+<blockquote>
+<p>例题：（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.nowcoder.com/questionTerminal/b831a67809fa4ba19d8cf9ed98ff6a21">Here</a>）</p>
+<ul>
+<li>输入图片大小为200×200，依次经过一层卷积（<strong>kernel size 5×5，padding 1，stride 2</strong>），pooling（<strong>kernel size 3×3，padding 0，stride 1</strong>），又一层卷积（<strong>kernel size 3×3，padding 1，stride 1</strong>）之后，输出特征图大小为？</li>
+</ul>
+<p>答案：<strong>97</strong>。</p>
+<p>公式：</p>
+<script type="math/tex; mode=display">
+f=\cfrac{(map_{size}-kernel_{size}+2\times padding)}{stride}+1</script><blockquote>
+<p>卷积层1：<code>(input_size - kernel_size + 2*padding)/stride + 1</code>=<code>(200-5+2*1)/2+1 $$\longrightarrow$$floor(99.5)</code>=<code>99</code></p>
+<p>池化层：<code>(99-3)/1+1 $$\longrightarrow$$ceil(97)</code>=<code>97</code></p>
+<p>卷积层2：<code>(97-3+2*1)/1+1 $$\longrightarrow$$floor(97)</code>=<code>97</code></p>
+</blockquote>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/41037974/answer/150522307">全连接层的作用是什么？</a></p>
+<blockquote>
+<p>全连接层（fully connected layers，<strong>FC</strong>）在整个卷积神经网络中起到“分类器”的作用。<strong>在实际使用中，全连接层可由卷积操作实现</strong>：对前层是全连接的全连接层可以转化为卷积核为<code>1x1</code>的卷积；而前层是卷积层的全连接层可以转化为卷积核为<code>hxw</code>的全局卷积，h和w分别为前层卷积结果的高和宽。</p>
+<blockquote>
+<p>以VGG-16为例，对224x224x3的输入，最后一层卷积可得输出为7x7x512，如后层是一层含4096个神经元的FC，则可用卷积核为7x7x512x4096的全局卷积来实现这一全连接运算过程，其中该卷积核参数如下：</p>
+<p>“filter size = 7, padding = 0, stride = 1, D_in = 512, D_out = 4096”</p>
+<p>经过此卷积操作后可得输出为1x1x4096。</p>
+<p>如需再次叠加一个2048的FC，则可设定参数为“filter size = 1, padding = 0, stride = 1, D_in = 4096, D_out = 2048”的卷积层操作。</p>
+</blockquote>
+<p>目前由于全连接层参数冗余（仅全连接层参数就可占整个网络参数80%左右），近期一些性能优异的网络模型如ResNet和GoogLeNet等均用全局平均池化（global average pooling，GAP）取代FC来融合学到的深度特征，最后仍用softmax等损失函数作为网络目标函数来指导学习过程。需要指出的是，用GAP替代FC的网络通常有较好的预测性能。</p>
+<p>微调（fine tuning）是深度学习领域最常用的迁移学习技术。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/29119239">CNN中卷积层的计算细节</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/40050371">一文读懂卷积神经网络中的1x1卷积核</a></p>
+<blockquote>
+<p>1x1卷积一般只改变输出通道数（channels），而不改变输出的宽度和高度。</p>
+</blockquote>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/v2-a5b5870ab0a4030684c7f5796e3b83a6_b.gif" class="" title="img">
+<p><strong>卷积</strong>：一个函数经过<strong>区间镜像翻转</strong>和<strong>平移</strong>后与另一个函数的乘积的积分。</p>
+<script type="math/tex; mode=display">
+(f*g)(t)=\int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau</script><blockquote>
+<p>Source: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://fourier.eng.hmc.edu/e161/lectures/convolution/index.html">http://fourier.eng.hmc.edu/e161/lectures/convolution/index.html</a></p>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bb4c6ce26f.png" class="">
+<blockquote>
+<p>在深度学习中，卷积中的过滤函数是<strong>不经过翻转</strong>的。</p>
+</blockquote>
+<p><strong><font color=red>深度卷积</font></strong>：一个函数<code>f</code>经过<strong>平移</strong>后与另一个函数<code>g</code>的乘积的积分。深度卷积即互关联（Cross-correlation）。</p>
+<p><strong>过滤函数</strong>：函数 <code>g</code> 称为一个过滤函数。</p>
+<blockquote>
+<p>执行卷积的目的就是从输入中提取有用的特征。</p>
+</blockquote>
+<p><strong>真子空间</strong>：一个空间若<code>真包含于</code>另一个空间，那么它就是另一个空间的子空间。</p>
+<p><strong>张量空间</strong>：一个空间如果是以张量（多维离散立方体）的形式定义的，就叫张量空间。</p>
+<blockquote>
+<p>一张图像就是张量空间（矩阵空间）上的一个点，也就是张量。</p>
+</blockquote>
+<p><strong>窗口</strong>：一个真子空间称为原空间的一个窗口。</p>
+<p><strong><font color=red>通道</font></strong>（channel）：如果过滤函数<code>g</code>在张量空间中有一个窗口，<strong>在这个窗口外<code>g</code>恒零</strong>，那么称这个窗口叫<code>g</code>的通道。</p>
+<p><strong><font color=red>卷积核</font></strong>（kernel）：给定张量空间，一个存在通道的过滤函数<code>g</code>，称为张量空间上的一个卷积核。</p>
+<blockquote>
+<p>卷积核本身就是张量。一般而言，定义卷积核同时就应该明确指定所使用的通道。</p>
+<p>在深度学习中，卷积就是元素级别（ element-wise） 的乘法和加法。</p>
+<p>对于一张具有单通道（单卷积核）的图像，卷积过程如上图所示，<strong>过滤函数</strong>是一个组成部分为<code>[[0, 1, 2], [2, 2, 0], [0, 1, 2]]</code>的 3 x 3 矩阵，它<strong>滑动穿过</strong>整个输入。在每一个位置，它都执行了元素级别的乘法和加法，而每个滑过的位置都得出一个数字，最终的输出就是一个 3 x 3 矩阵。（注意：在这个示例中，<code>卷积步长=1</code>；<code>填充=0</code>。）</p>
+<p>Source: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Convolution">https://en.wikipedia.org/wiki/Convolution</a></p>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bb64e34dd7.gif" class="">
+<p><strong>滑动卷积</strong>：过滤函数不变，卷积核遍历所有相同规模的窗口，上图所示的过程就是滑动卷积。</p>
+<blockquote>
+<p>如果按照一定步长迭代，并非遍历的话，也可以有类似的讨论。叫做<strong>广义滑动卷积</strong>。</p>
+</blockquote>
+<p><strong>覆盖卷积</strong>：如果张量上定义若干个卷积核，这些卷积核的通道<strong>构成张量空间的一个<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.wikiwand.com/zh-hans/%E8%A6%86%E7%9B%96_(%E6%8B%93%E6%89%91%E5%AD%A6">覆盖</a>)</strong>，则这些卷积核可覆盖卷积。</p>
+<blockquote>
+<p>滑动卷积是覆盖卷积的特例。</p>
+<p>插一句，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/26376319">有限覆盖定理</a>。（虽然没什么关系~）</p>
+</blockquote>
+<p><strong>卷积映射</strong>（卷积层）：一个张量被若干卷积核覆盖卷积，获得新张量，则称为卷积映射。</p>
+<blockquote>
+<p>卷积映射函数即<strong>过滤器</strong>（filter）。有时过滤器也指<u>若干卷积核堆积形成的张量</u>。</p>
+<p><strong>一个卷积映射就对应一个卷积层</strong>。</p>
+<p>通过卷积映射，原张量被嵌入到一个<strong>相对规模更小的张量空间中</strong>。</p>
+<p>卷积核可以不一样哦。不一定等效于滑动卷积了。</p>
+</blockquote>
+<p><strong>卷积核大小</strong>（Kernel size）：卷积核的窗口的大小。</p>
+<p><strong>卷积步长</strong>（Stride）：卷积核滑动通过图像的步长。</p>
+<p><strong>填充</strong>（Padding）：填充定义如何处理图像的边界。</p>
+<ul>
+<li>空填充（将<u>输入边界周围</u>的填充设置为 0，<code>padding=&#39;same&#39;</code>）</li>
+</ul>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bc30241434.gif?imageView2/2/w/740 width=180></p>
+<ul>
+<li>不填充（映射后张量变小，<code>padding=&#39;valid&#39;</code>）</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/jasonzzj/article/details/53930074">Tensorflow中padding的两种类型SAME和VALID</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1603.07285.pdf">A guide to convolution arithmetic for deep learning</a> （《深度学习的卷积算法指南》，详细介绍各种卷积核操作）</p>
+</blockquote>
+<p><strong>多通道卷积</strong>：如果覆盖卷积中任意一个卷积核都构成滑动卷积，那么称为多通道卷积。</p>
+<blockquote>
+<p>下面是一个3个卷积核的滑动卷积（<strong><font color=red>R</font><font color=green>G</font><font color=blue>B</font></strong>位图）。一个图像可以是多层的，<u>滑动卷积只需要在某一层上滑动</u>。</p>
+<p>Source: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1">https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1</a></p>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/5c6bba459d2e1.gif" class="" title="卷积映射">
+<blockquote>
+<p>之后，这 <strong>3 个通道都合并到一起</strong>（元素级别的加法）组成了一个大小为 <code>3 x 3 x 1</code> 的单通道。<br>这个通道是<strong>输入层</strong>（5 x 5 x 3 矩阵）使用了<strong>过滤器</strong>（<code>3 x 3 x 3</code> 矩阵）后得到的结果。</p>
+</blockquote>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bba4ac0bfb.gif?imageView2/2/w/740 width=350></p>
+<blockquote>
+<p>更广义的如下图：（紫色部分的长度就是通道数目，<strong>全部合并</strong>）</p>
+</blockquote>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bba50054a1.png?imageView2/2/w/740 width=300></p>
+<blockquote>
+<p>这其实就是<strong>高维卷积核</strong>（过滤器）。</p>
+<p>如果通道不发生合并：（<code>Din=Dout</code>）</p>
+</blockquote>
+<p><img data-src="https://static.leiphone.com/uploads/new/images/20190219/5c6bbc17a3cb9.png?imageView2/2/w/740" alt="img"></p>
+<blockquote>
+<p>以及推广的高维卷积核，窗口可以在多个维上滑动：（<code>Din&gt;Dout</code>）</p>
+</blockquote>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bbc1e7476d.png?imageView2/2/w/740 width=350></p>
+<blockquote>
+<p>在执行计算昂贵的 3 x 3 卷积和 5 x 5 卷积前，往往会使用 1 x 1 卷积来减少计算量。</p>
+<p><strong>1 x 1 卷积</strong>最初是在 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/abs/1312.4400">Network-in-network 的论文</a>中被提出的，之后在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/abs/1409.4842">谷歌的 Inception 论文</a>中被大量使用。</p>
+</blockquote>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bbc23df89f.png?imageView2/2/w/740 width=350></p>
+<p><strong>转置卷积</strong>：卷积映射的对应的<u>张量膨胀</u>的卷积称为一个转置卷积。</p>
+<blockquote>
+<p>如果转置卷积映射存在逆映射，则称为逆卷积。</p>
+</blockquote>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bc28a260ef.gif?imageView2/2/w/740 width=150></p>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bc32c58088.gif?imageView2/2/w/740 width=150></p>
+<p>转置卷积的原理如下图所示：</p>
+<p><img data-src="https://static.leiphone.com/uploads/new/images/20190219/5c6bc3949d069.jpeg?imageView2/2/w/740" alt="1"></p>
+<p><img data-src="https://static.leiphone.com/uploads/new/images/20190219/5c6bc394991e7.png?imageView2/2/w/740" alt="2"></p>
+<blockquote>
+<p>转置的含义来自上述原理中的矩阵的转置。而逆来自逆映射。</p>
+</blockquote>
+<p><strong>空洞卷积</strong>（Dilated Convolution）：在卷积核部分之间插入空间让卷积核膨胀。即扩张卷积。</p>
+<p><img data-src=https://static.leiphone.com/uploads/new/images/20190219/5c6bc939c515b.gif?imageView2/2/w/740 width=200></p>
+<blockquote>
+<p>类似海绵。本质上是在<u>不增加额外的计算成本</u>的情况下<strong>增加感受野</strong>。</p>
+<p>《使用深度卷积网络和全连接 CRF 做语义图像分割》（Semantic Image Segmentation with Deep Convolutional Nets and Fully Connected CRFs，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/abs/1412.7062">https://arxiv.org/abs/1412.7062</a>）</p>
+<p>《通过空洞卷积做多规模的上下文聚合》（Multi-scale context aggregation by dilated convolutions，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/abs/1511.07122">https://arxiv.org/abs/1511.07122</a>）</p>
+</blockquote>
+<p>还有可分离卷积、扁平化卷积、分组卷积等。（详见<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.leiphone.com/news/201902/biIqSBpehsaXFwpN.html">Here</a>）</p>
+<h3 id="VGG引述"><a href="#VGG引述" class="headerlink" title="VGG引述"></a>VGG引述</h3><p>VGG是由Simonyan 和Zisserman在文献《<a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/abs/1409.1556"><em>Very Deep Convolutional Networks for Large Scale Image Recognition</em></a>》（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1409.1556.pdf">PDF</a>）中提出卷积神经网络模型，其名称来源于作者所在的牛津大学视觉几何组(<strong>V</strong>isual <strong>G</strong>eometry <strong>G</strong>roup)的缩写。</p>
+<blockquote>
+<p>该模型参加2014年的 ImageNet图像分类与定位挑战赛，取得了优异成绩：</p>
+<ul>
+<li>在分类任务上排名第二，在定位任务上排名第一。</li>
+</ul>
+</blockquote>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/block.png" class="" title="VGG">
+<h3 id="VGG分类"><a href="#VGG分类" class="headerlink" title="VGG分类"></a>VGG分类</h3><p>VGG中根据<strong>卷积核大小</strong>和<strong>卷积层数目</strong>的不同，可分为<code>A</code>，<code>A-LRN</code>,<code>B</code>,<code>C</code>,<code>D</code>,<code>E</code>共6个配置(ConvNet Configuration)，其中以<code>D</code>,<code>E</code>两种配置较为常用，分别称为<code>VGG16</code>和<code>VGG19</code>。</p>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/table.png" class="" title="VGG16">
+<blockquote>
+<p>对VGG16进行具体分析发现，<code>VGG16</code>共包含：</p>
+<ul>
+<li><strong>13个卷积层</strong>（Convolutional Layer），分别用<code>conv3-XXX</code>表示</li>
+<li><strong>3个全连接层</strong>（Fully connected Layer）,分别用<code>FC-XXXX</code>表示</li>
+<li><strong>5个池化层</strong>（Pool layer）,分别用<code>maxpool</code>表示</li>
+</ul>
+<p>其中，<u>卷积层和全连接层具有权重系数</u>，因此也被称为<code>权重层</code>，总数目为<code>13+3=16</code>，这即是VGG16中16的来源。(池化层不涉及权重，因此不属于权重层，不被计数)。</p>
+</blockquote>
+<h4 id="VGG的优点"><a href="#VGG的优点" class="headerlink" title="VGG的优点"></a>VGG的优点</h4><p>VGG16的突出特点是<strong>简单</strong>，体现在：</p>
+<ul>
+<li>卷积层均采用相同的卷积核参数：<ul>
+<li>卷积层均表示为<code>conv3-XXX</code>，其中<code>conv3</code>说明该卷积层采用的卷积核的尺寸(kernel size)是3，即宽（width）和高（height）均为3，<code>3*3</code>是<strong>很小的卷积核尺寸</strong>，结合其它参数（步幅<code>stride=1</code>，填充方式<code>padding=same</code>），这样就能够使得<u>每一个卷积层(张量)与前一层（张量）保持相同的宽和高</u>。<code>XXX</code>代表卷积层的通道数。</li>
+</ul>
+</li>
+<li>池化层均采用相同的池化核参数池化层的参数均为2×2，步幅<code>stride=2</code>，max的池化方式，这样就能够使得<strong>每一个池化层（张量）的宽和高是前一层（张量）的1/2</strong>。</li>
+<li>模型是由若干卷积层和池化层堆叠（stack）的方式构成，比较容易形成较深的网络结构（<strong>在2014年，16层已经被认为很深了</strong>）。</li>
+</ul>
+<p>综合上述分析，可以概括VGG的优点为: <strong>Small filters, Deeper networks</strong> </p>
+<h4 id="VGG的缺点"><a href="#VGG的缺点" class="headerlink" title="VGG的缺点"></a>VGG的缺点</h4><p>训练时间过长，调参难度大。</p>
+<p>存储容量大，不利于部署。（存储VGG16权重值文件的大小为500多MB）</p>
+<h3 id="块（Block）"><a href="#块（Block）" class="headerlink" title="块（Block）"></a>块（Block）</h3><p>VGG16的卷积层和池化层可以划分为不同的块（Block），从前到后依次编号为Block1~block5。</p>
+<ul>
+<li>每一个块内包含<strong><font color=red>若干</font>卷积层</strong>和<strong>一个池化层</strong>。</li>
+<li>同一块内，卷积层的<strong>通道（channel）数</strong>是相同的。<ul>
+<li><strong><font color=purple><code>block3</code></font></strong>: 3个卷积层，卷积核尺寸为<code>3*3</code>，通道数都是<code>256</code></li>
+</ul>
+</li>
+</ul>
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/VGG16.png" class="" title="VGG16_Step">
+<p>随着层数的增加：</p>
+<ul>
+<li><strong>卷积通道数翻倍</strong>：64→128→256→512（到512不再增加了）</li>
+<li><strong>张量尺寸减半</strong>：224→ 112→ 56→28→ 14→ 7（池化层）</li>
+</ul>
+<h3 id="VGG参数"><a href="#VGG参数" class="headerlink" title="VGG参数"></a>VGG参数</h3><p>VGG参数包括<strong>卷积核参数</strong>和<strong>全连接层参数</strong>。<strong><font color=red>两者都需要学习得到</font></strong>。</p>
+<ul>
+<li><strong>卷积核参数</strong><ul>
+<li>对于第一层卷积，由于输入图的通道数是3（<strong><font color=red>R</font><font color=green>G</font><font color=blue>B</font></strong>），网络必须学习大小为3×3，通道数为3的的卷积核，这样的卷积核有64个，因此总共有（3×3 × 3）× 64 = 1728个参数。</li>
+</ul>
+</li>
+<li><strong>全连接层参数</strong><ul>
+<li>=<code>前一层节点数</code>×<code>本层的节点数</code>。</li>
+</ul>
+</li>
+<li>最大池化层没有参数</li>
+</ul>
+<blockquote>
+<p>FeiFei Li在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av13260183">CS231</a>的课件中给出了整个网络的全部参数（<strong>138 357 544</strong> 个参数）的计算过程（<em>不考虑偏置</em>），如下图所示，图中<strong><font color=red>红色</font></strong>是计算所需存储容量的部分；<strong><font color=blue>蓝色</font></strong>是计算权重参数数量的部分：（<a target="_blank" rel="noopener external nofollow noreferrer" href="http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture9.pdf">Lecture 9: CNN Architectures</a>）</p>
+<p><img data-src="http://deanhan.com/2018/07/26/vgg16/ppt.png" alt="VGG16"></p>
+</blockquote>
+<h3 id="VGG16构建代码"><a href="#VGG16构建代码" class="headerlink" title="VGG16构建代码"></a>VGG16构建代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> MaxPooling2D</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_vgg16</span>():</span><br><span class="line">    input_shape = (<span class="number">224</span>, <span class="number">224</span>, <span class="number">3</span>) <span class="comment"># 输入: 224*244，RGB三位图</span></span><br><span class="line">    model = Sequential([</span><br><span class="line">    	Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), input_shape=input_shape, padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	<span class="comment"># 卷积层，64个滤波器（卷积核），尺寸3*3，参数：输入规格，填充，激活函数</span></span><br><span class="line">    	Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	<span class="comment"># 非首层无需指定输入规格</span></span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line"></span><br><span class="line">    	<span class="comment"># Block 2</span></span><br><span class="line">    	Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	</span><br><span class="line">    	<span class="comment"># 3</span></span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 4</span></span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 5</span></span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 全连接层</span></span><br><span class="line">    	Flatten(),</span><br><span class="line">    	Dense(<span class="number">4096</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Dense(<span class="number">4096</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Dense(<span class="number">1000</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)</span><br><span class="line">    	<span class="comment"># 最后要做一个softmax，输出概率归一化</span></span><br><span class="line">    	])</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	<span class="comment"># 主函数，调用</span></span><br><span class="line">    model = generate_vgg16()</span><br><span class="line">    model.summary()</span><br></pre></td></tr></table></figure>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">Using TensorFlow backend.</span><br><span class="line">_________________________________________________________________</span><br><span class="line">Layer (type)                 Output Shape              Param #   </span><br><span class="line">=================================================================</span><br><span class="line">conv2d_1 (Conv2D)            (None, 224, 224, 64)      1792      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_2 (Conv2D)            (None, 224, 224, 64)      36928     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_1 (MaxPooling2 (None, 112, 112, 64)      0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_3 (Conv2D)            (None, 112, 112, 128)     73856     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_4 (Conv2D)            (None, 112, 112, 128)     147584    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_2 (MaxPooling2 (None, 56, 56, 128)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_5 (Conv2D)            (None, 56, 56, 256)       295168    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_6 (Conv2D)            (None, 56, 56, 256)       590080    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_7 (Conv2D)            (None, 56, 56, 256)       590080    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_3 (MaxPooling2 (None, 28, 28, 256)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_8 (Conv2D)            (None, 28, 28, 512)       1180160   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_9 (Conv2D)            (None, 28, 28, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_10 (Conv2D)           (None, 28, 28, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_4 (MaxPooling2 (None, 14, 14, 512)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_11 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_12 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_13 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_5 (MaxPooling2 (None, 7, 7, 512)         0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">flatten_1 (Flatten)          (None, 25088)             0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_1 (Dense)              (None, 4096)              102764544 </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_2 (Dense)              (None, 4096)              16781312  </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_3 (Dense)              (None, 1000)              4097000   </span><br><span class="line">=================================================================</span><br><span class="line">Total params: 138,357,544</span><br><span class="line">Trainable params: 138,357,544</span><br><span class="line">Non-trainable params: 0</span><br></pre></td></tr></table></figure>
+<p>可以看到参数是<code>138,357,544</code>个，基本可以认为构建无误。</p>
+<h3 id="VGG19构建代码"><a href="#VGG19构建代码" class="headerlink" title="VGG19构建代码"></a>VGG19构建代码</h3><p>不妨再模拟一个常用的<code>VGG19</code>。</p>
+<p><code>VGG19</code>只是在第3、4、5块（Block）各增加一个卷积层。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> MaxPooling2D</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_vgg16</span>():</span><br><span class="line">    input_shape = (<span class="number">224</span>, <span class="number">224</span>, <span class="number">3</span>) <span class="comment"># 输入: 224*244，RGB三位图</span></span><br><span class="line">    model = Sequential([</span><br><span class="line">    	Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), input_shape=input_shape, padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	<span class="comment"># 卷积层，64个滤波器（卷积核），尺寸3*3，参数：输入规格，填充，激活函数</span></span><br><span class="line">    	Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	<span class="comment"># 非首层无需指定输入规格</span></span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line"></span><br><span class="line">    	<span class="comment"># 2</span></span><br><span class="line">    	Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	</span><br><span class="line">    	<span class="comment"># 3</span></span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">256</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 4</span></span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 5</span></span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Conv2D(<span class="number">512</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">&#x27;same&#x27;</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=(<span class="number">2</span>, <span class="number">2</span>)),</span><br><span class="line">    	<span class="comment"># 全连接层</span></span><br><span class="line">    	Flatten(),</span><br><span class="line">    	Dense(<span class="number">4096</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Dense(<span class="number">4096</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    	Dense(<span class="number">1000</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)</span><br><span class="line">    	<span class="comment"># 最后要做一个softmax，输出概率归一化</span></span><br><span class="line">    	])</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	<span class="comment"># 主函数，调用</span></span><br><span class="line">    model = generate_vgg16()</span><br><span class="line">    model.summary()</span><br></pre></td></tr></table></figure>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">Using TensorFlow backend.</span><br><span class="line">_________________________________________________________________</span><br><span class="line">Layer (type)                 Output Shape              Param #   </span><br><span class="line">=================================================================</span><br><span class="line">conv2d_1 (Conv2D)            (None, 224, 224, 64)      1792      </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_2 (Conv2D)            (None, 224, 224, 64)      36928     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_1 (MaxPooling2 (None, 112, 112, 64)      0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_3 (Conv2D)            (None, 112, 112, 128)     73856     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_4 (Conv2D)            (None, 112, 112, 128)     147584    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_2 (MaxPooling2 (None, 56, 56, 128)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_5 (Conv2D)            (None, 56, 56, 256)       295168    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_6 (Conv2D)            (None, 56, 56, 256)       590080    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_7 (Conv2D)            (None, 56, 56, 256)       590080    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_8 (Conv2D)            (None, 56, 56, 256)       590080    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_3 (MaxPooling2 (None, 28, 28, 256)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_9 (Conv2D)            (None, 28, 28, 512)       1180160   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_10 (Conv2D)           (None, 28, 28, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_11 (Conv2D)           (None, 28, 28, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_12 (Conv2D)           (None, 28, 28, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_4 (MaxPooling2 (None, 14, 14, 512)       0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_13 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_14 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_15 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">conv2d_16 (Conv2D)           (None, 14, 14, 512)       2359808   </span><br><span class="line">_________________________________________________________________</span><br><span class="line">max_pooling2d_5 (MaxPooling2 (None, 7, 7, 512)         0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">flatten_1 (Flatten)          (None, 25088)             0         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_1 (Dense)              (None, 4096)              102764544 </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_2 (Dense)              (None, 4096)              16781312  </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_3 (Dense)              (None, 1000)              4097000   </span><br><span class="line">=================================================================</span><br><span class="line">Total params: 143,667,240</span><br><span class="line">Trainable params: 143,667,240</span><br><span class="line">Non-trainable params: 0</span><br></pre></td></tr></table></figure>
+<h3 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h3><ol>
+<li><p>提交作业时，所有文件都需要上传吗？还是只需要上传修改后的.py文件？</p>
+<p>未回答。（<strong><font color=red>Remain</font></strong>）</p>
+<p>是的。</p>
+</li>
+<li><p>代码中卷积核只指定了窗口的大小3*3，那么卷积核的过滤函数是怎么确定的呢？</p>
+<p><del>参数通过通过反向传播训练的</del>。Check！</p>
+</li>
+<li><p>图像是RGB三位（层）的，为什么不是指定3个卷积核形成过滤器（滑动窗口），而是64、128……？步长是keras自行确定的吗？指定的卷积核个数是在图像上默认均匀分布吗？而且64个3*3窗口根本没法覆盖224x224的图像啊。。orz</p>
+<p>64代表卷积核的个数，步长自己设，keras默认步长应该是1。卷积通过滑动覆盖整个图片。</p>
+<p>RGB只有3个通道，64个卷积核不应该对应64个通道吗，怎么滑动？</p>
+<p>64个卷积核是指单个图像被64个过滤器<strong>分别过滤</strong>了。64通道是处理后的通道，224 <em> 224 </em> 3<strong>处理</strong>后可以变成224 <em> 224 </em> 64。</p>
+<p>“处理”具体对应的是哪一步？什么操作？</p>
+<p>处理代表卷积层；通过卷积层之后通道数就变了。</p>
+</li>
+<li><p>Conv2D的filters和strides参数不会互相冲突吗？它们指定的对象有什么区别？</p>
+<p><del>filters代表卷积核个数，stride代表步长，没有冲突</del>。Check！</p>
+</li>
+<li><p>多个卷积层堆积到一起究竟有多大意义？我看padding都是从输入图像最边缘的一层像素开始的，就算迭代3次，外部的padding也只能向内传播3个像素深度，除了增加算力以外有什么好处吗？我难道不可以直接设置一个具有新的过滤[复合函数]的卷积核来完成这样的工作吗？</p>
+<p>多个卷积核，每个卷积核的参数都是不一样的，相当于你说的复合函数。</p>
+<p>有什么好处？如果相当于复合函数为什么不直接用复合函数？</p>
+<p><del>是因为神经网络其实本身就是通过不断训练，梯度下降，达到某一个复杂函数的效果</del>。（<strong><font color=red>Remain</font></strong>）</p>
+<p>（深层次）训练效果更好。</p>
+</li>
+<li><p>我看VGG模型的C配置里有conv1-512，能讲讲1 <em> 1卷积核的作用吗？这里的图像也就三层，为什么要反复用1 </em> 1卷积呢？类似于一个像素级的激活函数吗？（那么还要ReLU干啥呢。。）另外1 <em> 1为什么要放在3</em>3卷积核的[后面]？</p>
+<p><strong>1 * 1卷积核用于改变通道个数</strong>，比如从12 <em> 12 </em> 256变成12<em> 12 </em> 512就可以用1 * 1卷积层。</p>
+<p><del>那不同配置卷积层数不同不影响通道吗？</del>Check！</p>
+</li>
+<li><p>池化层到底干了个啥？为啥每次池化了以后通道数翻倍呢？</p>
+<p>池化层用于<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/majinlei121/article/details/46742339">下采样</a>。通道变多是为了组合不同的特征。</p>
+<p>我想问的是通道为什么会变多？（不是问“为了什么而变多”orrrrz）</p>
+<p>因为卷积核个数多了，处理代表卷积层；通过卷积层之后通道数就变了。</p>
+<p><del>卷积可以改变通道数？？？池化也可以改变通道数？</del>Check！</p>
+<p>我还是不太理解卷积核数大于通道数是如何过滤的？神奇的操作？？</p>
+<p>嗯嗯，<strong>一个卷积核就可以把之前的所有通道都进行一遍卷积操作</strong>，输出为n <em> m </em> 1，x个卷积层就是n <em> m </em> x，所以x跟之前的层有多少通道没关系。</p>
+</li>
+</ol>
+<h2 id="Task2-特征提取"><a href="#Task2-特征提取" class="headerlink" title="Task2 特征提取"></a>Task2 特征提取</h2><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553319814542.png" class="" width="1553319814542">
+<h3 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h3><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553320192995.png" class="" width="1553320192995">
+<img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553320223350.png" class="" width="1553320223350">
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> model_from_json</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image <span class="keyword">as</span> pil_image</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> pickle <span class="keyword">import</span> dump</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Model</span><br><span class="line"><span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_img_as_np_array</span>(<span class="params">path, target_size</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;从给定文件[加载]图像,[缩放]图像大小为给定target_size,返回[Keras支持]的浮点数numpy数组.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # Arguments</span></span><br><span class="line"><span class="string">        path: 图像文件路径</span></span><br><span class="line"><span class="string">        target_size: 元组(图像高度, 图像宽度).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # Returns</span></span><br><span class="line"><span class="string">        numpy 数组.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    img = pil_image.<span class="built_in">open</span>(path) <span class="comment"># 打开文件</span></span><br><span class="line">    img = img.resize(target_size,pil_image.NEAREST) <span class="comment"># NEARSET 是一种插值方法</span></span><br><span class="line">    <span class="keyword">return</span> np.asarray(img, dtype=K.floatx()) <span class="comment">#转化为向量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess_input</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;预处理图像用于网络输入, 将图像由RGB格式转为BGR格式.</span></span><br><span class="line"><span class="string">       将图像的每一个图像通道减去其均值</span></span><br><span class="line"><span class="string">       均值BGR三个通道的均值分别为 103.939, 116.779, 123.68</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # Arguments</span></span><br><span class="line"><span class="string">        x: numpy 数组, 4维.</span></span><br><span class="line"><span class="string">        data_format: Data format of the image array.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    # Returns</span></span><br><span class="line"><span class="string">        Preprocessed Numpy array.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># &#x27;RGB&#x27;-&gt;&#x27;BGR&#x27;, https://www.scivision.co/numpy-image-bgr-to-rgb/</span></span><br><span class="line">    x = x[..., ::-<span class="number">1</span>]</span><br><span class="line">    mean = [<span class="number">103.939</span>, <span class="number">116.779</span>, <span class="number">123.68</span>]</span><br><span class="line"></span><br><span class="line">    x[..., <span class="number">0</span>] -= mean[<span class="number">0</span>]</span><br><span class="line">    x[..., <span class="number">1</span>] -= mean[<span class="number">1</span>]</span><br><span class="line">    x[..., <span class="number">2</span>] -= mean[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_vgg16_model</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;从当前目录下面的 vgg16_exported.json 和 vgg16_exported.h5 两个文件中导入 VGG16 网络并返回创建的网络模型</span></span><br><span class="line"><span class="string">       vgg16_exported.json 下载链接：链接: https://pan.baidu.com/s/13WQBRb4sr3umP7xbUCxmCg 提取码: ycb5 </span></span><br><span class="line"><span class="string">       vgg16_exported.h5 下载链接: https://pan.baidu.com/s/1yF8wybHuzGoTzwSkqTPzzQ 提取码: ub75</span></span><br><span class="line"><span class="string">       注意上传完成的作业时不要上传这两个文件</span></span><br><span class="line"><span class="string">    # Returns</span></span><br><span class="line"><span class="string">        创建的网络模型 model</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    json_file = <span class="built_in">open</span>(<span class="string">&quot;vgg16_exported.json&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">    loaded_model_json = json_file.read()</span><br><span class="line">    json_file.close()</span><br><span class="line"></span><br><span class="line">    model = model_from_json(loaded_model_json)</span><br><span class="line">    model.load_weights(<span class="string">&quot;vgg16_exported.h5&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extract_features</span>(<span class="params">directory</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;提取给定文件夹中所有图像的特征, 将提取的特征保存在文件features.pkl中,</span></span><br><span class="line"><span class="string">       提取的特征保存在一个dict中, key为文件名(不带.jpg后缀), value为特征值[np.array]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        directory: 包含jpg文件的文件夹</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        None</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    model = load_vgg16_model()</span><br><span class="line">    <span class="comment"># 去除模型最后一层</span></span><br><span class="line">    model.layers.pop()</span><br><span class="line">    model = Model(inputs=model.inputs, outputs=model.layers[-<span class="number">1</span>].output)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Extracting...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    features = <span class="built_in">dict</span>()</span><br><span class="line">    pbar = tqdm(total=<span class="built_in">len</span>(listdir(directory)), desc=<span class="string">&quot;进度&quot;</span>, ncols=<span class="number">100</span>)</span><br><span class="line">    <span class="keyword">for</span> fn <span class="keyword">in</span> listdir(directory):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\tRead file:&quot;</span>, fn)</span><br><span class="line">        fn_path = directory + <span class="string">&#x27;/&#x27;</span> + fn</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 返回长、宽、通道的三维张量</span></span><br><span class="line">        arr = load_img_as_np_array(fn_path, target_size=(<span class="number">224</span>,<span class="number">224</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 改变数组的形态，增加一个维度（批处理）—— 4维</span></span><br><span class="line">        arr = arr.reshape((<span class="number">1</span>, arr.shape[<span class="number">0</span>], arr.shape[<span class="number">1</span>], arr.shape[<span class="number">2</span>]))</span><br><span class="line">        <span class="comment"># 预处理图像为VGG模型的输入</span></span><br><span class="line">        arr = preprocess_input(arr)</span><br><span class="line">        <span class="comment"># 计算特征</span></span><br><span class="line">        feature = model.predict(arr, verbose=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\tprocessed...&quot;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        <span class="built_in">id</span> = os.path.splitext(fn)[<span class="number">0</span>]</span><br><span class="line">        features[<span class="built_in">id</span>] = feature</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Saved. &quot;</span>, <span class="built_in">id</span>)</span><br><span class="line">        pbar.update(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Complete extracting.&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> features</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 提取Flicker8k数据集中所有图像的特征，保存在一个文件中, 大约一小时的时间，最后的文件大小为127M</span></span><br><span class="line">    <span class="comment"># Flickr8k数据集的下载链接: https://pan.baidu.com/s/1bQcQAz0pxPix9q9kCoZ1aw 提取码: 6gpd </span></span><br><span class="line">    <span class="comment"># 下载zip文件，解压缩到当前目录的子文件夹Flicker8k_Dataset， 注意上传完成的作业时不要上传这个数据集文件</span></span><br><span class="line">    directory = <span class="string">&#x27;./Flicker8k_Dataset&#x27;</span></span><br><span class="line">    features = extract_features(directory)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;提取特征的文件个数：%d&#x27;</span> % <span class="built_in">len</span>(features))</span><br><span class="line">    <span class="built_in">print</span>(keras.backend.image_data_format())</span><br><span class="line">    <span class="comment">#保存特征到文件</span></span><br><span class="line">    dump(features, <span class="built_in">open</span>(<span class="string">&#x27;features.pkl&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="Task3-数据生成"><a href="#Task3-数据生成" class="headerlink" title="Task3 数据生成"></a>Task3 数据生成</h2><img data-src="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/1553327994360.png" class="" width="1553327994360">
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Task4-训练网络"><a href="#Task4-训练网络" class="headerlink" title="Task4 训练网络"></a>Task4 训练网络</h2><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Task5-模型评估"><a href="#Task5-模型评估" class="headerlink" title="Task5 模型评估"></a>Task5 模型评估</h2><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="实战项目2：自动驾驶之交通牌识别"><a href="#实战项目2：自动驾驶之交通牌识别" class="headerlink" title="实战项目2：自动驾驶之交通牌识别"></a>实战项目2：自动驾驶之交通牌识别</h1><h1 id="实战项目3：-（开放式）自动驾驶之方向盘操纵"><a href="#实战项目3：-（开放式）自动驾驶之方向盘操纵" class="headerlink" title="实战项目3： （开放式）自动驾驶之方向盘操纵"></a>实战项目3： （开放式）自动驾驶之方向盘操纵</h1><div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%AD%E7%9A%84%E6%96%B0%E6%95%B0%E5%AD%A6/">人工智能中的“新”数学</a></li><li><a href="https://stellarkey.github.io/%E7%AC%AC%E4%BA%8C%E5%B1%8AAI%E4%B8%8E%E5%AE%89%E5%85%A8%E7%A0%94%E8%AE%A8%E4%BC%9A/">第二届AI与安全研讨会</a></li><li><a href="https://stellarkey.github.io/%E5%8D%95%E5%88%86%E7%B1%BB/">单分类（one-class classification）</a></li><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">深度学习笔记</a></li><li><a href="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/">FastText体验笔记</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/" title="深度学习训练营">https://stellarkey.github.io/深度学习训练营/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+              <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i> AI</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/" rel="prev" title="关于对抗样本的思考">
+      <i class="fa fa-chevron-left"></i> 关于对抗样本的思考
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/" rel="next" title="时间序列异常检测">
+      时间序列异常检测 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E7%B3%BB%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">拟合系数的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">应用案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.1.</span> <span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.2.</span> <span class="nav-text">简单代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%88%86%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">鸢尾花分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.1.</span> <span class="nav-text">一些知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">3.2.</span> <span class="nav-text">深度神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%B6%88%E4%BA%A1"><span class="nav-number">3.2.1.</span> <span class="nav-text">梯度消亡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU%E6%BF%80%E6%B4%BB"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">ReLU激活</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E6%A2%AF%E5%BA%A6%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">非梯度训练方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88"><span class="nav-number">3.2.2.</span> <span class="nav-text">过拟合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dropout"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Dropout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#L2%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">L2正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#L1%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">L1正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MaxNorm"><span class="nav-number">3.2.2.4.</span> <span class="nav-text">MaxNorm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%B3%BB%E6%95%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.2.3.</span> <span class="nav-text">神经网络系数的初始化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE1-%E8%87%AA%E5%8A%A8%E4%B8%BA%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90%E6%8F%8F%E8%BF%B0-Image-Captioning"><span class="nav-number">4.</span> <span class="nav-text">实战项目1: 自动为图片生成描述 Image Captioning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Task1-%E6%9E%84%E5%BB%BAVGG16"><span class="nav-number">4.1.</span> <span class="nav-text">Task1 构建VGG16</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-%E5%8D%B7%E7%A7%AF"><span class="nav-number">4.1.1.</span> <span class="nav-text">Pre-卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG%E5%BC%95%E8%BF%B0"><span class="nav-number">4.1.2.</span> <span class="nav-text">VGG引述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG%E5%88%86%E7%B1%BB"><span class="nav-number">4.1.3.</span> <span class="nav-text">VGG分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VGG%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">VGG的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VGG%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">VGG的缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97%EF%BC%88Block%EF%BC%89"><span class="nav-number">4.1.4.</span> <span class="nav-text">块（Block）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.5.</span> <span class="nav-text">VGG参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG16%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81"><span class="nav-number">4.1.6.</span> <span class="nav-text">VGG16构建代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">4.1.6.1.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG19%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81"><span class="nav-number">4.1.7.</span> <span class="nav-text">VGG19构建代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">4.1.7.1.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QA"><span class="nav-number">4.1.8.</span> <span class="nav-text">QA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task2-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="nav-number">4.2.</span> <span class="nav-text">Task2 特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.2.1.</span> <span class="nav-text">迁移学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">4.2.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task3-%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90"><span class="nav-number">4.3.</span> <span class="nav-text">Task3 数据生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task4-%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C"><span class="nav-number">4.4.</span> <span class="nav-text">Task4 训练网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task5-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">4.5.</span> <span class="nav-text">Task5 模型评估</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">4.5.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE2%EF%BC%9A%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%B9%8B%E4%BA%A4%E9%80%9A%E7%89%8C%E8%AF%86%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">实战项目2：自动驾驶之交通牌识别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE3%EF%BC%9A-%EF%BC%88%E5%BC%80%E6%94%BE%E5%BC%8F%EF%BC%89%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%96%B9%E5%90%91%E7%9B%98%E6%93%8D%E7%BA%B5"><span class="nav-number">6.</span> <span class="nav-text">实战项目3： （开放式）自动驾驶之方向盘操纵</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="FastText体验笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FastText体验笔记">
+<meta property="og:url" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="FastText体验笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/fasttext-arch.png">
+<meta property="og:image" content="https://heleifz.github.io/media/14732610572844/fasttext-model-arch.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553936021538.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553945064441.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/cbo_vs_skipgram.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273776416.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273816475.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273658779.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554275902231.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/20180206115602122.jpg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*tufb2Ea4ZBVydTuvrIUT5A.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554292920220.png">
+<meta property="og:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553827693158.png">
+<meta property="article:published_time" content="2019-03-28T08:39:55.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:05:21.358Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/fasttext-arch.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>FastText体验笔记 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          FastText体验笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>FastText体验笔记。<span id="more"></span></p>
+<p>TODO: <a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">docker</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.jinkan.org/docs/flask/">flask</a>。</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/facebookresearch/fastText/"><code>fastText</code></a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjADegQIAxAB&amp;url=http%3A%2F%2Ffasttext.apachecn.org%2F&amp;usg=AOvVaw0e_GoEfza9DXuK4-g4DUxG">FastText 中文文档 - ApacheCN</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=8&amp;ved=2ahUKEwiVw8L7r6bhAhUwEqYKHTHhAfkQFjAHegQIBxAB&amp;url=https%3A%2F%2Fblog.xingwudao.me%2F2018%2F04%2F23%2Ffastext%2F&amp;usg=AOvVaw3ck2M2kE5GQXVxciX6IeB-">FastText使用指南| 竹园山庄</a></p>
+<p>Paper: </p>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1607.04606v1.pdf">Enriching Word Vectors with Subword Information</a></p>
+<blockquote>
+<p>这篇论文提出了用 word n-gram 的向量之和来代替简单的词向量的方法，以解决简单 word2vec 无法处理同一词的不同形态的问题。fastText 中提供了 maxn 这个参数来确定 word n-gram 的 n 的大小。</p>
+</blockquote>
+</li>
+</ul>
+<div class="pdfobject-container" data-target="Enriching_Word_Vectors_with_Subword_Information.pdf" data-height="500px"></div>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1607.01759v2.pdf"><strong>Bag of Tricks for Efficient Text Classification</strong></a></p>
+<blockquote>
+<p>这篇论文提出了 fastText 算法，该算法实际上是将目前用来算 word2vec 的网络架构做了个小修改，原先使用一个词的上下文的所有词向量之和来预测词本身（CBOW 模型），现在改为用一段短文本的词向量之和来对文本进行分类。</p>
+</blockquote>
+</li>
+</ul>
+<div class="pdfobject-container" data-target="Bag_of_Tricks_for_Efficient_Text_Classification.pdf" data-height="500px"></div>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1612.03651.pdf">FastText.zip: Compressing text classification models</a></p>
+<blockquote>
+<p>这篇论文讲fastText的模型压缩（存储空间）。这样，fastText甚至可以移植到手机端。</p>
+</blockquote>
+</li>
+</ul>
+<div class="pdfobject-container" data-target="FastText_compression.pdf" data-height="500px"></div>
+<hr>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjAEegQIBxAB&amp;url=https%3A%2F%2Fwww.jiqizhixin.com%2Farticles%2F2018-06-05-3&amp;usg=AOvVaw39P0L9K-LqK4un-hUivpre">fastText，智慧与美貌并重的文本分类及向量化工具| 机器之心</a></p>
+<blockquote>
+<p>fastText能够做到效果好，速度快，主要依靠两个秘密武器：一是利用了词内的n-gram信息(<strong>subword n-gram information</strong>)，二是用到了层次化Softmax回归(<strong>Hierarchical Softmax</strong>)的训练trick。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jiqizhixin.com/articles/2018-12-03-6">fastText原理及实践 - 达观</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/fasttext-ea9009dba0e8">Learning FastText</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hackernoon.com/text-classification-simplified-with-facebooks-fasttext-b9d3022ac9cb">Text Classification Simplified with Facebook’s FastText</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=2ahUKEwik1eKdrKbhAhWDHqYKHW-NAWsQFjADegQIBRAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fsinat_26917383%2Farticle%2Fdetails%2F54850933&amp;usg=AOvVaw13-0y3Npvz1tOzbi1zuy97">NLP︱高级词向量表达（二）——FastText（简述、学习笔记） - 素质云笔记 …</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/ymaini/article/details/81489599">FastText学习笔记</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://heleifz.github.io/14732610572844.html"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-faqs.md#常问问题">常问问题</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/36872508">中文训练好的词向量</a></p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>FastText可以进行：</p>
+<ul>
+<li><strong>表示学习</strong>（学习词语的embedding向量）<ul>
+<li>word2vec优化版，用了Subword的信息，速度是不会提升的，只是效果方面的改进，对于中文貌似完全没用</li>
+</ul>
+</li>
+<li><strong>文本分类</strong>（尤其是句子分类）<ul>
+<li>把句子每个word的vec求平均，然后直接用简单的LR分类就行（单层神经网络）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>An author: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://research.fb.com/people/mikolov-tomas/">https://research.fb.com/people/mikolov-tomas/</a></p>
+</blockquote>
+<h2 id="特性表"><a href="#特性表" class="headerlink" title="特性表"></a>特性表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特性</th>
+<th style="text-align:center">Liblinear</th>
+<th style="text-align:center">深度学习</th>
+<th style="text-align:center">fastText</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">梯度下降方法</td>
+<td style="text-align:center">newGLMNET</td>
+<td style="text-align:center">BGD*depth</td>
+<td style="text-align:center"><strong>SGD</strong>+线衰<code>lr</code></td>
+</tr>
+<tr>
+<td style="text-align:center">NGram</td>
+<td style="text-align:center">训练</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">训练+<strong>Hash</strong>存储</td>
+</tr>
+<tr>
+<td style="text-align:center">Softmax</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center"><strong>HS</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">深度</td>
+<td style="text-align:center">单层</td>
+<td style="text-align:center">多层</td>
+<td style="text-align:center"><strong>单层</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">架构</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">全连接</td>
+<td style="text-align:center"><strong>平均</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">词向量</td>
+<td style="text-align:center">可选</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">可选</td>
+</tr>
+<tr>
+<td style="text-align:center">Thread</td>
+<td style="text-align:center">单线程</td>
+<td style="text-align:center">多线程</td>
+<td style="text-align:center">多线程</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>传统学习指：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf"> LIBLINEAR: A library for large linear classification </a></p>
+<div class="pdfobject-container" data-target="liblinear.pdf" data-height="500px"></div>
+<div class="pdfobject-container" data-target="newGLMNET_for_L1-regularized_Linear_Classification.pdf" data-height="500px"></div>
+<div class="pdfobject-container" data-target="Trust_region_Newton_method_for_large-scale_logistic_regression.pdf" data-height="500px"></div>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>第一步当然是安装环境辣。</p>
+<blockquote>
+<p>FastText源码采用<code>C++</code>实现。</p>
+</blockquote>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>进入Linux服务器<code>实验目录</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/facebookresearch/fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>make</code> 寻找目录下的<code>Makefile</code>文件，并根据其内容进行项目<strong>编译</strong>。</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.cnblogs.com%2Fhazir%2Fp%2Flinux_make_examples.html&amp;usg=AOvVaw1fr6g6jeSa9f9h1oknrMGZ">例解Linux 下Make 命令- hazir - 博客园</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjD8aiEu6bhAhXhIqYKHfT6A7YQFjACegQIBRAB&amp;url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2015%2F02%2Fmake.html&amp;usg=AOvVaw1PwCr52DdvVMV4ZhEFi-E_">Make 命令教程- 阮一峰的网络日志</a></p>
+</blockquote>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/jkmiao/p/7041106.html">fastext 中文文本分类</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://radimrehurek.com/gensim/models/fasttext.html">models.fasttext – FastText model</a></p>
+</blockquote>
+<p><code>fasttext</code>也能在python上便捷地使用：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/facebookresearch/fastText/tree/master/python">https://github.com/facebookresearch/fastText/tree/master/python</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/facebookresearch/fastText.git</span><br><span class="line">$ cd fastText</span><br><span class="line">$ python setup.py install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwjoxbXny6bhAhW9KqYKHWAXA04QFjACegQIARAB&amp;url=https%3A%2F%2Fblog.csdn.net%2Fbbhdeal%2Farticle%2Fdetails%2F81144783&amp;usg=AOvVaw3ThX5JRL3r96KAOqde8TJ0">Microsoft Visual C++ Build Tools下载/解决Visual C++ 14.0 is required …</a></p>
+</blockquote>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_36604953/article/details/78195462">文本分类需要CNN？ No！fastText完美解决你的需求（前篇）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_36604953/article/details/78324834"><strong>文本分类需要CNN？No！fastText完美解决你的需求（后篇）</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/john_bh/article/details/79268850"><strong>FastText：快速的文本分类器</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/48345431">如何评价Word2Vec作者提出的fastText算法？深度学习是否在文本分类等简单任务上没有优势？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://towardsdatascience.com/fasttext-bag-of-tricks-for-efficient-text-classification-513ba9e302e7">How does FastText classifier work under the hood?</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.quora.com/Is-FastText-faster-than-Word2vec-Why">Is FastText faster than Word2vec? Why?</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907555">fastText入门</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907695">fastText(二)：微博短文本下fastText的应用（一）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/AckClinkz/article/details/81907903">fastText(三)：微博短文本下fastText的应用（二）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.eson.org/pub/657edf81/">词向量 - fastText</a></p>
+</blockquote>
+<p>fasttext是facebook开源的一个词向量与文本分类工具，在2016年开源，典型应用场景是“带监督的文本分类问题”。提供简单而高效的文本分类和表征学习的方法，性能比肩深度学习而且速度更快。</p>
+<p>fastText结合了自然语言处理和机器学习中最成功的理念。这些包括了使用词袋以及n-gram袋表征语句，还有使用子字(subword)信息，并通过隐藏表征在类别间共享信息。我们另外采用了一个softmax层级(利用了类别不均衡分布的优势)来加速运算过程！</p>
+<p>fastText方法包含三部分，<strong>模型架构，层次SoftMax和N-gram特征。</strong></p>
+<h2 id="模型架构"><a href="#模型架构" class="headerlink" title="模型架构"></a>模型架构</h2><p>fasttext是一个<strong>单层网络</strong>。</p>
+<blockquote>
+<p>fasttext将Ngrams也当做词训练word2vec模型；用CBOW的思路来做分类。（fasttext有一个有监督的模式，但是模型等同于<code>cbow</code>，只是target变成了label而不是word）</p>
+</blockquote>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/fasttext-arch.png" class="" title="fasttext-arch">
+<p>fasttext只有1层神经网络，属于所谓的shallow learning，但是fasttext的效果并不差，而且具备学习和预测速度快的优势，在工业界这点非常重要。它比一般的神经网络模型的精确度还要高。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p><img data-src="https://heleifz.github.io/media/14732610572844/fasttext-model-arch.png" alt="fasttext-model-arch"></p>
+<h3 id="DAN-deep-averaging-network"><a href="#DAN-deep-averaging-network" class="headerlink" title="DAN (deep averaging network)"></a>DAN (deep averaging network)</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://aclweb.org/anthology/P15-1162">Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/llhthinker/NLP-Papers/blob/master/text%20classification/2017-11/Deep%20Unordered%20Composition%20Rivals%20Syntactic%20Methods%20for%20Text%20Classification/note.md">论文笔记：Deep Unordered Composition Rivals Syntactic Methods for Text Classification</a></p>
+<p>fastText简而言之，就是把文档中所有词通过lookup table变成向量，取平均后直接用线性分类器得到分类结果。fastText和ACL-15上的deep averaging network (<strong>DAN</strong>，如下图)非常相似，区别就是<u>去掉了中间的隐层</u>。两篇文章的结论也比较类似，也是指出对一些简单的分类任务，没有必要使用太复杂的网络结构就可以取得差不多的结果。</p>
+</blockquote>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553936021538.png" class="" width="1553936021538">
+<p><strong>RecNN</strong>: Recursive Neural Nets（递归神经网络）。</p>
+<p>对于任意数量的词语（n），DAN计算<code>2</code>层非线性层，而RecNN需要计算<code>n-1</code>层。</p>
+<h3 id="fastText"><a href="#fastText" class="headerlink" title="fastText"></a>fastText</h3><p>下面是fastText的架构：</p>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553945064441.png" class="" width="1553945064441">
+<h2 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/peghoty/p/3857839.html"><strong>word2vec 中的数学原理详解</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://arxiv.org/pdf/1301.3781.pdf">Efficient Estimation of Word Representations in Vector Space</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Distributed Representations of Words and Phrases and their Compositionality</a></p>
+</blockquote>
+<p>fastText 提供了两种用于计算词表示的模型：<code>skipgram</code> 和 <code>cbow</code> (‘<strong>c</strong>ontinuous-<strong>b</strong>ag-<strong>o</strong>f-<strong>w</strong>ords’)。</p>
+<p><strong>上下文</strong>：指在目标词左边和右边的固定单词数和。</p>
+<p> <code>cbow</code> 模型是<strong>根据目标词的上下文来预测目标词</strong>。<code>skipgram</code> 模型是<strong>学习近邻的单词来预测目标单词</strong>。</p>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/cbo_vs_skipgram.png" class="" title="cbow vs skipgram">
+<blockquote>
+<p><code>skipgram</code> 模型会比 <code>cbow</code> 模型在 subword information（子词信息）方面效果更好。</p>
+</blockquote>
+<h3 id="神经语言模型"><a href="#神经语言模型" class="headerlink" title="神经语言模型"></a>神经语言模型</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273776416.png" class="" width="1554273776416">
+<p>神经语言模型又常常被简记为下图：</p>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273816475.png" class="" width="1554273816475">
+<h3 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554273658779.png" class="" width="1554273658779">
+<h3 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h3><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554275902231.png" class="" width="1554275902231">
+<h2 id="层次softmax"><a href="#层次softmax" class="headerlink" title="层次softmax"></a>层次softmax</h2><img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/20180206115602122.jpg" class="" title="层次softmax">
+<h2 id="N-gram"><a href="#N-gram" class="headerlink" title="N-gram"></a>N-gram</h2><p>来源于马尔可夫链。</p>
+<p><img data-src="https://cdn-images-1.medium.com/max/1600/1*tufb2Ea4ZBVydTuvrIUT5A.png" alt="img"></p>
+<p><strong>N-gram features</strong>：</p>
+<ul>
+<li>只用unigram的话会丢掉word order信息，所以通过加入N-gram features进行补充</li>
+<li>用hashing来减少N-gram的存储</li>
+</ul>
+<p>由于n-gram的量远比word大的多，完全存下所有的n-gram也不现实。Fasttext采用了Hash桶的方式，把所有的n-gram都哈希到buckets个桶中，哈希到同一个桶的所有n-gram共享一个embedding vector。如下图所示：</p>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1554292920220.png" class="" width="1554292920220">
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>fastText在实现上很考究。源码采用<code>C++</code>实现。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://heleifz.github.io/14732610572844.html"><strong>fastText <font color=red>源码分析</font>- Helei’s Tech Notes</strong></a></p>
+</blockquote>
+<h1 id="Text-Classification-文本分类"><a href="#Text-Classification-文本分类" class="headerlink" title="Text Classification 文本分类"></a>Text Classification 文本分类</h1><p>确认进入实验目录：<code>***/***/fastTest</code>.</p>
+<p>运行以下命令：（不加参数）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./fasttext</span><br></pre></td></tr></table></figure>
+<p>则可以显示功能列表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext</span><br><span class="line">usage: fasttext &lt;command&gt; &lt;args&gt;</span><br><span class="line"></span><br><span class="line">The commands supported by fasttext are:</span><br><span class="line"></span><br><span class="line">  supervised              训练一个监督分类器</span><br><span class="line">  quantize                量化模型以减少内存使用量</span><br><span class="line">  test                    评估一个监督分类器</span><br><span class="line">  predict                 预测最有可能的标签</span><br><span class="line">  predict-prob            用概率预测最可能的标签</span><br><span class="line">  skipgram                训练一个 skipgram 模型</span><br><span class="line">  cbow                    训练一个 cbow 模型</span><br><span class="line">  print-word-vectors      给定一个训练好的模型，打印出所有的单词向量</span><br><span class="line">  print-sentence-vectors  给定一个训练好的模型，打印出所有的句子向量</span><br><span class="line">  nn                      查询最近邻居</span><br><span class="line">  analogies               查找所有同类词</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>supervised</td>
+<td>分类任务，训练模型</td>
+</tr>
+<tr>
+<td>quantize</td>
+<td>压缩模型</td>
+</tr>
+<tr>
+<td>test</td>
+<td>分类任务，测试模型</td>
+</tr>
+<tr>
+<td>predict</td>
+<td>分类任务，预测</td>
+</tr>
+<tr>
+<td>predict-prob</td>
+<td>分类任务，预测，并带着预测概率输出</td>
+</tr>
+<tr>
+<td>skipgram</td>
+<td>词embedding任务，skipgram模型</td>
+</tr>
+<tr>
+<td>cbow</td>
+<td>词embedding任务，cbow 模型</td>
+</tr>
+<tr>
+<td>print-word-vectors</td>
+<td>打印词embedding向量，需要输入一个模型</td>
+</tr>
+<tr>
+<td>print-sentence-vectors</td>
+<td>打印句子embedding向量，需要输入一个模型</td>
+</tr>
+<tr>
+<td>print-ngrams</td>
+<td>打印ngram，需要输入一个模型和一个词</td>
+</tr>
+<tr>
+<td>nn</td>
+<td>搜索最近邻向量</td>
+</tr>
+<tr>
+<td>analogies</td>
+<td>对向量做一些加减运算，比如“北京 - 中国 + 日本”，会搜出“东京”</td>
+</tr>
+<tr>
+<td>dump</td>
+<td>导出训练的参数和模型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>文本分类教程中, we mainly use the <strong><code>supervised</code>, <code>test</code> and <code>predict</code>subcommands</strong>, which corresponds to <strong>learning (and using) text classifier</strong>. </p>
+<blockquote>
+<p>For an introduction to the other functionalities of fastText, please see the <a target="_blank" rel="noopener external nofollow noreferrer" href="https://fasttext.cc/docs/en/unsupervised-tutorial.html">tutorial about learning word vectors</a>.</p>
+</blockquote>
+<h2 id="Cooking-实验"><a href="#Cooking-实验" class="headerlink" title="Cooking 实验"></a>Cooking 实验</h2><h3 id="获得数据"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wget https://dl.fbaipublicfiles.com/fasttext/data/cooking.stackexchange.tar.gz &amp;&amp; tar xvzf cooking.stackexchange.tar.gz</span><br><span class="line">&gt;&gt; head cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <strong><font color=red>All the labels start by the <code>__label__</code> prefix</font>, which is how fastText recognize what is a label or what is a word.</strong>（其实后面也可以在训练里通过<code>-label</code>参数改改）</p>
+<p> <code>wget [url]</code>获取云端文件，<code>&amp;&amp;</code>是<strong>短路</strong>写法，<code>tar xvzf</code>解压缩。</p>
+<p> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/peida/archive/2012/11/06/2756278.html">每天一个linux命令（14）：head 命令</a></p>
+<blockquote>
+<p>head 用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。 </p>
+</blockquote>
+<p> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjvxOSCvqbhAhVmwIsBHc0ADRwQFjAAegQIARAB&amp;url=https%3A%2F%2Fmy.oschina.net%2Fhanzhankang%2Fblog%2F202754&amp;usg=AOvVaw2-ngL-D3pyNY1wVSLao1yo">Linux Shell的&amp; 、&amp;&amp; 、 || - 华兹格的个人空间- 开源中国</a></p>
+</blockquote>
+<h3 id="数据切分"><a href="#数据切分" class="headerlink" title="数据切分"></a>数据切分</h3><p>观测数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; wc cooking.stackexchange.txt</span><br><span class="line">  15404  169582 1401900 cooking.stackexchange.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>输出说明：</strong>行数 单词数 字节数 文件名</p>
+</blockquote>
+<p>切分：（Our full dataset contains <code>15404</code> examples.）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; head -n 12404 cooking.stackexchange.txt &gt; cooking.train</span><br><span class="line">&gt;&gt; tail -n 3000 cooking.stackexchange.txt &gt; cooking.valid</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>-n</code>输入行数，<code>&gt;</code>输出重定向。</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjrr_i0yKbhAhUKK6YKHawuDA4QFjAAegQIBhAB&amp;url=http%3A%2F%2Fwww.runoob.com%2Flinux%2Flinux-shell-io-redirections.html&amp;usg=AOvVaw0EPa5TYCZV-HZDxp9Ke4eU">Shell 输入/输出重定向| 菜鸟教程</a></p>
+</blockquote>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext supervised -input cooking.train -output model_cooking</span><br><span class="line">Read 0M words</span><br><span class="line">Number of words:  14598</span><br><span class="line">Number of labels: 734</span><br><span class="line">Progress: 100.0%  words/sec/thread: 75109  lr: 0.000000  loss: 5.708354  eta: 0h0m </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>The <code>-input</code> command line option indicates the file containing the training examples, while the <code>-output</code> option indicates where to save the model. At the end of training, a file <code>model_cooking.bin</code>, containing the trained classifier, is created in the current directory.</p>
+</blockquote>
+<p>训练参数表：（Or <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bookstack.cn/read/fasttext-doc-zh/doc-zh-options.md">here</a>）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><font color=red>-input</font></strong></td>
+<td>训练数据</td>
+<td></td>
+</tr>
+<tr>
+<td><strong><font color=red>-output</font></strong></td>
+<td>模型输出，会输出模型和embedding结果，后缀是.vec和.bin</td>
+<td></td>
+</tr>
+<tr>
+<td><strong><font color=red>-lr</font></strong></td>
+<td>学习率</td>
+<td><strong>0.1</strong></td>
+</tr>
+<tr>
+<td><strong><font color=red>-epoch</font></strong></td>
+<td>迭代次数</td>
+<td><strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>-neg</strong></td>
+<td>负采样个数</td>
+<td><strong>5</strong></td>
+</tr>
+<tr>
+<td><strong>-label</strong></td>
+<td>类别前缀</td>
+<td><strong><code>__label__</code></strong></td>
+</tr>
+<tr>
+<td><strong>-loss</strong></td>
+<td>损失函数 {ns, <strong>hs</strong>, <strong>softmax</strong>}，负采样, 霍夫曼层次softmax，softmax</td>
+<td>softmax</td>
+</tr>
+<tr>
+<td>-ws</td>
+<td>学习embedding模型时，考虑上下文词的个数，窗口宽度</td>
+<td>5</td>
+</tr>
+<tr>
+<td>-pretrainedVectors</td>
+<td>引入预训练的词向量</td>
+<td></td>
+</tr>
+<tr>
+<td>-dim</td>
+<td>embedding的向量维度</td>
+<td>100</td>
+</tr>
+<tr>
+<td><strong>-bucket</strong></td>
+<td>哈希桶（样本量很大时提速）</td>
+<td></td>
+</tr>
+<tr>
+<td>-thread</td>
+<td>线程数</td>
+<td>12</td>
+</tr>
+<tr>
+<td>-saveOutput</td>
+<td>是否输出参数需要保存</td>
+<td>false</td>
+</tr>
+<tr>
+<td>-verbose</td>
+<td>冗长等级</td>
+<td>2</td>
+</tr>
+<tr>
+<td>-minCount</td>
+<td>最小词频过滤</td>
+<td>0</td>
+</tr>
+<tr>
+<td>-minCountLabel</td>
+<td>最小类别样本数过滤</td>
+<td></td>
+</tr>
+<tr>
+<td>-wordNgrams</td>
+<td>最大ngram</td>
+<td>1</td>
+</tr>
+<tr>
+<td>-minn</td>
+<td>字符ngram最小长度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>-maxn</td>
+<td>字符ngram最大长度</td>
+<td>0</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>采样阈值</td>
+<td>0.0001</td>
+</tr>
+<tr>
+<td>-lrUpdateRate</td>
+<td>多少次更新后改变学习率</td>
+<td>100</td>
+</tr>
+<tr>
+<td>-cutoff</td>
+<td>最大保留的词和ngram串数量</td>
+<td>0</td>
+</tr>
+<tr>
+<td>-retrain</td>
+<td>如果 cutoff 设置了，是否需要优化embedding输出</td>
+<td>false</td>
+</tr>
+<tr>
+<td>-qnorm</td>
+<td>whether the norm is quantized separately</td>
+<td>false</td>
+</tr>
+<tr>
+<td>-qout</td>
+<td>分类器是否需要quantized</td>
+<td>false</td>
+</tr>
+<tr>
+<td>-dsub</td>
+<td>每个子向量的数量</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><h4 id="直接测试"><a href="#直接测试" class="headerlink" title="直接测试"></a>直接测试</h4><p>It is possible to directly test our classifier interactively, by running the command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext predict model_cooking.bin -</span><br></pre></td></tr></table></figure>
+<p>and then typing a sentence.  Let’s first try the sentence:</p>
+<p><em>Which baking dish is best to bake a banana bread ?</em></p>
+<p>The predicted tag is <code>baking</code>  which fits well to this question. Let us now try a second example:</p>
+<p><em>Why not put knives in the dishwasher?</em></p>
+<p>The label predicted by the model is <code>food-safety</code>, which  is not relevant. （实测这里也是<code>baking</code>，而且，该模型似乎对大小写敏感，见下图）Somehow, the model seems to fail on simple examples.</p>
+<img data-src="/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/1553827693158.png" class="" width="1553827693158">
+<p>To  get a better sense of its quality, let’s test it on the validation data  by running:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext test model_cooking.bin cooking.valid                 </span><br><span class="line">N  3000</span><br><span class="line">P@1  0.124</span><br><span class="line">R@1  0.0541</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
+<p>The output of fastText are <strong><font color=red>the precision at one (<code>P@1</code>) and the recall at one (<code>R@1</code>)</font></strong>. We can also compute the precision at five and recall at five with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; ./fasttext <span class="built_in">test</span> model_cooking.bin cooking.valid 5 0.1              </span><br><span class="line">N  3000</span><br><span class="line">P@5  0.0668</span><br><span class="line">R@5  0.146</span><br><span class="line">Number of examples: 3000</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwitpt3_q6bhAhVuyosBHe2FAw4QFjAAegQIAxAB&amp;url=https%3A%2F%2Fdatascience.stackexchange.com%2Fquestions%2F13327%2Fwhat-does-prec1-in-fasttext-mean&amp;usg=AOvVaw0ndx98AGbKY-PDVy4Gk0dy">machine learning - What does Prec@1 in fastText mean? - Data …</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval">Evaluation measures (information retrieval) - Wikipedia</a>#Precision_at_K) </p>
+</blockquote>
+<h2 id="文本分类实验"><a href="#文本分类实验" class="headerlink" title="文本分类实验"></a>文本分类实验</h2><h3 id="实验记录表"><a href="#实验记录表" class="headerlink" title="实验记录表"></a>实验记录表</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">实验</th>
+<th style="text-align:center">分词方式</th>
+<th style="text-align:center">测试结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">无分词</td>
+<td style="text-align:center">N    61363<br>P@1    0.264<br>R@1    0.264</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">分字[default]</td>
+<td style="text-align:center">N    61363<br>P@1    <strong>0.772</strong><br>R@1    <strong>0.772</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Jieba[common]</td>
+<td style="text-align:center">N    61363<br>P@1    0.768<br>R@1    0.768</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">分字[default] + <code>-epoch 25</code></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.827</font></strong><br>R@1    <strong><font color=red>0.827</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">分字[default] + <code>-lr 0.3</code></td>
+<td style="text-align:center">N    61363<br>P@1    0.748<br>R@1    0.748</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">分字[default] + <code>-epoch 30 -wordNgrams 2</code><br>运行速度骤降</td>
+<td style="text-align:center">N    61363<br>P@1    <strong>0.821</strong><br>R@1    <strong>0.821</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">分字[default] + <code>-epoch 30 -wordNgrams 2 -loss hs</code><br/>运行速度明显提升，性能下降<br>层次sortmax</td>
+<td style="text-align:center">N    61363<br>P@1    0.761<br>R@1    0.761</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">分字[default] + 标点过滤 +<code>-epoch 25</code></td>
+<td style="text-align:center">N    61363<br>P@1    0.801<br>R@1    0.801</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">分字[default] + 预训练词向量[300维]<br><code>-dim 300</code></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.862</font></strong><br/>R@1    <strong><font color=red>0.862</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">分字[default] + 预训练词向量[300维]+<code>-epoch 30 -wordNgrams 2</code></td>
+<td style="text-align:center">N    61363<br>P@1    <strong><font color=red>0.909</font></strong><br>R@1    <strong><font color=red>0.909</font></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>实验的测试结果波动在5%左右。</p>
+<p>分层 softmax 是完全 softmax 损失函数的一种近似, 它能够在大量类的数据上高效训练. 这通常会损失一些精确度.</p>
+</blockquote>
+<h3 id="实验流程"><a href="#实验流程" class="headerlink" title="实验流程"></a>实验流程</h3><p>将修改后的文件传到服务器上。</p>
+<blockquote>
+<p>先修改意图label的形式，与fastText的API进行配对。</p>
+</blockquote>
+<h4 id="分字"><a href="#分字" class="headerlink" title="分字"></a>分字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="built_in">list</span>)	</span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="string">&quot; &quot;</span>.join)</span><br></pre></td></tr></table></figure>
+<h4 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h4><p>类似的。用<code>jieba</code>。</p>
+<h3 id="输出概率"><a href="#输出概率" class="headerlink" title="输出概率"></a>输出概率</h3><p><code>predict-prob</code> + <code>&gt;</code>输出重定向到文件。</p>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae">http://fasttext.apachecn.org/#/doc/zh/supervised-tutorial?id=%e8%8e%b7%e5%8f%96%e5%92%8c%e5%87%86%e5%a4%87%e6%95%b0%e6%8d%ae</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/265357659">在文本分类任务中，有哪些论文中很少提及却对性能有重要影响的tricks？</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://ver217.github.io/2018/04/23/nlp-text-classification/"><strong>NLP 文本分类问题</strong></a></p>
+</blockquote>
+<ul>
+<li>预处理数据 ;</li>
+<li>改变迭代次数 (使用选项 <code>-epoch</code>, 标准范围 <code>[5 - 50]</code>) ;</li>
+<li>改变学习速率 (使用选项 <code>-lr</code>, 标准范围 <code>[0.1 - 1.0]</code>) ;</li>
+<li>使用 word n-grams (使用选项 <code>-wordNgrams</code>, 标准范围 <code>[1 - 5]</code>).</li>
+<li>引入预训练的字向量</li>
+</ul>
+<h2 id="预处理数据"><a href="#预处理数据" class="headerlink" title="预处理数据"></a>预处理数据</h2><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/spring_willow/article/details/80211243">NLP-中文文本去除标点符号</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/qq_35203425/article/details/80830939"><strong>NLP文本预处理去除标点符号</strong></a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">punc = punctuation + <span class="string">r&quot; u‘.,;《》？！“”‘’@#￥%…&amp;×（）——+【】&#123;&#125;;；●，。&amp;～、|\s:：‘&quot;</span></span><br><span class="line">df[<span class="string">&quot;raw_query&quot;</span>] = df[<span class="string">&quot;raw_query&quot;</span>].apply(<span class="keyword">lambda</span> line: re.sub(<span class="string">r&quot;[&#123;&#125;]+&quot;</span>.<span class="built_in">format</span>(punc),<span class="string">&quot; &quot;</span>,line))</span><br></pre></td></tr></table></figure>
+<p>实测没有明显效果。</p>
+<h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p>fasttext存在过拟合问题，在训练集上的精度（98）远高于测试集（90%）。</p>
+<p>但fasttext并没有引入正则化。</p>
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">深度学习笔记</a></li><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83%E8%90%A5/">深度学习训练营</a></li><li><a href="https://stellarkey.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/">深度学习 by Andrew Ng.</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/" title="FastText体验笔记">https://stellarkey.github.io/fastText体验笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%AC%AC21%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B-%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" rel="prev" title="第21人工智能前沿学生论坛-数据挖掘">
+      <i class="fa fa-chevron-left"></i> 第21人工智能前沿学生论坛-数据挖掘
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="深度学习笔记">
+      深度学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E8%A1%A8"><span class="nav-number">2.1.</span> <span class="nav-text">特性表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">2.2.1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">2.2.2.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">模型架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">3.1.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAN-deep-averaging-network"><span class="nav-number">3.1.2.</span> <span class="nav-text">DAN (deep averaging network)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastText"><span class="nav-number">3.1.3.</span> <span class="nav-text">fastText</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2vec"><span class="nav-number">3.2.</span> <span class="nav-text">Word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.1.</span> <span class="nav-text">神经语言模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CBOW"><span class="nav-number">3.2.2.</span> <span class="nav-text">CBOW</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Skip-gram"><span class="nav-number">3.2.3.</span> <span class="nav-text">Skip-gram</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1softmax"><span class="nav-number">3.3.</span> <span class="nav-text">层次softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N-gram"><span class="nav-number">3.4.</span> <span class="nav-text">N-gram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Text-Classification-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">Text Classification 文本分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cooking-%E5%AE%9E%E9%AA%8C"><span class="nav-number">5.1.</span> <span class="nav-text">Cooking 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E6%95%B0%E6%8D%AE"><span class="nav-number">5.1.1.</span> <span class="nav-text">获得数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%87%E5%88%86"><span class="nav-number">5.1.2.</span> <span class="nav-text">数据切分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83"><span class="nav-number">5.1.3.</span> <span class="nav-text">训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.1.4.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">5.1.4.1.</span> <span class="nav-text">直接测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%AE%9E%E9%AA%8C"><span class="nav-number">5.2.</span> <span class="nav-text">文本分类实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95%E8%A1%A8"><span class="nav-number">5.2.1.</span> <span class="nav-text">实验记录表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">5.2.2.</span> <span class="nav-text">实验流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%AD%97"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">分字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E8%AF%8D"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">分词</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A6%82%E7%8E%87"><span class="nav-number">5.2.3.</span> <span class="nav-text">输出概率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE"><span class="nav-number">6.1.</span> <span class="nav-text">预处理数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-number">6.2.</span> <span class="nav-text">过拟合问题</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/fastText%E4%BD%93%E9%AA%8C%E7%AC%94%E8%AE%B0/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1196,7 +1196,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #1ca29d;
+  background: #b1fabd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2430,6 +2430,9 @@ hr {
     width: auto;
   }
 }
+.header {
+  background: var(--content-bg-color);
+}
 .header-inner {
   align-items: center;
   display: flex;
@@ -2482,6 +2485,9 @@ hr {
 .use-motion .logo-line-after i {
   right: -100%;
 }
+.site-subtitle {
+  display: none;
+}
 .site-nav {
   flex-grow: 1;
 }
@@ -2522,7 +2528,7 @@ hr {
 }
 .posts-expand.index .post-title,
 .posts-expand.index .post-meta {
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-title,
@@ -2544,7 +2550,7 @@ hr {
   text-align: center;
 }
 .posts-expand .post-body img {
-  text-align: center;
+  margin-left: 0;
 }
 .posts-expand .post-tags {
   text-align: left;

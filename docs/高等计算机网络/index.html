@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="高等计算机网络。深入学习计算机网络体系结构、协议和算法，了解掌握计算机网络的最新研究成果，学习计算机网络的基本研究方法并能够初步开展计算机网络领域的相关研究。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等计算机网络">
+<meta property="og:url" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="高等计算机网络。深入学习计算机网络体系结构、协议和算法，了解掌握计算机网络的最新研究成果，学习计算机网络的基本研究方法并能够初步开展计算机网络领域的相关研究。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921115302298.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png">
+<meta property="og:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png">
+<meta property="article:published_time" content="2020-09-13T10:42:29.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:57:28.237Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>高等计算机网络 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高等计算机网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高等计算机网络。深入学习计算机网络体系结构、协议和算法，了解掌握计算机网络的最新研究成果，学习计算机网络的基本研究方法并能够初步开展计算机网络领域的相关研究。<span id="more"></span></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>课程：《高等计算机网络》，徐恪</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.cs.tsinghua.edu.cn/publish/cs/4616/2012/20120713164828239751432/20120713164828239751432_.html">徐恪</a>：计算机网络体系结构与高性能路由器、网络空间安全、赛博智能经济与区块链。</p>
+<h2 id="课程目标"><a href="#课程目标" class="headerlink" title="课程目标"></a>课程目标</h2><ul>
+<li>深入学习计算网络体系结构、协议和算法</li>
+<li>了解掌握计算机网络的最新研究成果（论文讨论）</li>
+<li>学习计算机网络的基本研究方法</li>
+<li>初步开展计算机网络领域的相关研究（课程项目）</li>
+</ul>
+<h2 id="相关课程"><a href="#相关课程" class="headerlink" title="相关课程"></a>相关课程</h2><p>《计算机网络体系结构》——内容相当（最初的课，人数太多，为了开新课才有了“高等计算机网络”）</p>
+<p>《计算机网络前沿研究》——注重SDN，数据中心网络，网络与AI等</p>
+<p>《下一代互联网》——网研院的课，IPv6为核心的下一代互联网技术</p>
+<h2 id="主要教学内容"><a href="#主要教学内容" class="headerlink" title="主要教学内容"></a>主要教学内容</h2><ul>
+<li>介绍网络基础知识</li>
+<li>互联网发展历史</li>
+<li>网络体系结构详细介绍（强调基本算法和基本协议）</li>
+<li>课堂讨论、分组调研及课堂报告</li>
+</ul>
+<p>注重系统性和整体性，形成网络大局观。</p>
+<h2 id="教材和参考书"><a href="#教材和参考书" class="headerlink" title="教材和参考书"></a>教材和参考书</h2><p>《高级计算机网络》——徐恪、徐明伟</p>
+<blockquote>
+<p>正在出新版，旧版已经脱销了。没有太大的必要看。</p>
+</blockquote>
+<p>《计算机网络体系结构——设计、建模、分析与优化》</p>
+<p>《Computer Networks》</p>
+<h2 id="考核方式"><a href="#考核方式" class="headerlink" title="考核方式"></a>考核方式</h2><ul>
+<li>论文阅读（30%）<ul>
+<li>6篇500字+的阅读报告<ul>
+<li>多交可以酌情加分（<del>开始卷了</del>）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>技术专题讨论（30%）<ul>
+<li>45分钟专题报告</li>
+</ul>
+</li>
+<li>课程项目（40%）<ul>
+<li>选定研究/开发型项目，并完成课程报告</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络研究的基本问题"><a href="#网络研究的基本问题" class="headerlink" title="网络研究的基本问题"></a>网络研究的基本问题</h2><h3 id="网络体系结构-Architecture"><a href="#网络体系结构-Architecture" class="headerlink" title="网络体系结构 Architecture"></a>网络体系结构 Architecture</h3><p>体系结构的准确描述是很难的。 网络的基本原则和机制?</p>
+<ul>
+<li><strong>状态</strong>：状态的维护、更新和存储</li>
+<li><strong>实名</strong>：实体如何命名。比如IP地址、域名</li>
+<li><strong>名字、寻址、路由</strong>：这些功能函数的设计</li>
+<li><strong>协议分层</strong>：Modularity of the protocol stack</li>
+<li><strong>资源分配</strong>：公平性和（congestion control）</li>
+<li><strong>安全性</strong>：网络安全</li>
+<li><strong>管理</strong>：互联网的管理</li>
+<li><strong>服务质量</strong>（QoS）：如何获得和请求服务质量</li>
+</ul>
+<p>网络可以分为两大技术主题：</p>
+<ul>
+<li><strong>网络基础理论</strong>：容量与可扩展性；最优化设计；控制理论；博弈论与机制设计；流量模型和网络行为学</li>
+<li><strong>网络体系结构</strong>：网络分层与跨层设计；软件定义网络、主动网络、可编程网络、应用层网络、无线与移动网络、网络虚拟化；对组播和服务质量的支持；IPv6与下一代互联网</li>
+</ul>
+<p>网络也可以分为三大应用主题：</p>
+<ul>
+<li><strong>资源管理和分配</strong>：QoS，拥塞控制、流量工程</li>
+<li><strong>网络管理</strong>：失效管理、配置管理、计费管理、性能管理、安全管理</li>
+<li><strong>网络安全</strong>：完整性、机密性、可用性</li>
+</ul>
+<h3 id="网络与分布式系统"><a href="#网络与分布式系统" class="headerlink" title="网络与分布式系统"></a>网络与分布式系统</h3><p><strong><font color=purple>网络与分布式系统的界限日益模糊</font></strong>：</p>
+<ul>
+<li><strong>网络本质上就是分布式系统</strong></li>
+<li><strong>互联网服务已经成为信息服务的基本模式</strong></li>
+</ul>
+<p>数据中心网络的资源管理和调度：</p>
+<ul>
+<li>数据中心分布式系统资源管理与网络流控和拥塞控制深度融合</li>
+<li>计算广告、推荐算法等也与网络资源使用密切相关</li>
+</ul>
+<p>比特币与区块链：</p>
+<ul>
+<li>比特币就是运行在网络之上的P2P系统</li>
+<li>区块链是P2P网络、分布式共识、密码算法等多种技术融合的产物</li>
+</ul>
+<h4 id="网络与分布式系统的基础科学问题"><a href="#网络与分布式系统的基础科学问题" class="headerlink" title="网络与分布式系统的基础科学问题"></a>网络与分布式系统的基础科学问题</h4><p>网络领域科学问题：</p>
+<ul>
+<li>安全性</li>
+<li><mark>开放性</mark>（扩展性）</li>
+<li>实时性</li>
+</ul>
+<blockquote>
+<p>相互制约，相互平衡。</p>
+</blockquote>
+<p>分布式系统领域科学问题：</p>
+<ul>
+<li>易用性和可编程性问题</li>
+<li>安全性问题</li>
+<li>一致性问题（共识问题）</li>
+<li>可靠性和可用性问题</li>
+<li>性能提升问题</li>
+</ul>
+<hr>
+<p><strong>通用人工智能</strong>：朱松纯老师正在准备搞这个方向，用小样本、小数据集来进行推理等操作。</p>
+<h2 id="网络研究的基本方法"><a href="#网络研究的基本方法" class="headerlink" title="网络研究的基本方法"></a>网络研究的基本方法</h2><h3 id="文献阅读"><a href="#文献阅读" class="headerlink" title="文献阅读"></a>文献阅读</h3><ul>
+<li>了解新领域，应该从综述论文入手<ul>
+<li>ACM Computing Surveys, IEEE Communications Surveys and Tutorials</li>
+<li>Proceedings of the IEEE</li>
+<li>Communications of the ACM, IEEE Computer</li>
+<li>IEEE Personal Communications, IEEE Communications Magazine, IEEE Network</li>
+</ul>
+</li>
+<li>通过顶级国际会议了解最新的研究成果<ul>
+<li>SIGCOMM，INFOCOM，MOBICOM，MOBIHOC，SIGMETRICS，GLOBECOM，ICNP</li>
+</ul>
+</li>
+<li>充分利用网络资源<ul>
+<li>图书馆电子资源（IEEE，ACM全文库）</li>
+<li>google.com</li>
+<li>scholar.google.com</li>
+</ul>
+</li>
+<li>文献阅读<ul>
+<li>【精致的笔记】</li>
+<li>关注作者和研究小组</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络模型与实验"><a href="#网络模型与实验" class="headerlink" title="网络模型与实验"></a>网络模型与实验</h2><p>模型：</p>
+<ul>
+<li>性能模型：排队论，Petri网（任丰原老师的课程）</li>
+<li>形式化模型：自动机，SDL（尹霞老师的课程）</li>
+<li>数学模型：优化理论（数学系相关课程），控制理论（自动化系相关课程），博弈论（网络科学与策略机制），图论，网络微积分</li>
+</ul>
+<p>实验：</p>
+<ul>
+<li>测量、模拟、仿真和实现</li>
+<li>算法研究中，模拟最方便：ns-2, OPNET, MATLAB</li>
+<li>研究实际网络的行为，需要进行实际测量和观察</li>
+<li>协议研究需要仿真和实现：PlanetLab</li>
+</ul>
+<h2 id="Top-10-tips-for-writing-a-paper"><a href="#Top-10-tips-for-writing-a-paper" class="headerlink" title="Top-10 tips for writing a paper"></a>Top-10 tips for writing a paper</h2><ol>
+<li>Every paper tells a story</li>
+<li>Write top down</li>
+<li>Introduction: crucial, formulaic</li>
+<li>Master the basics of organized writing</li>
+<li>Put yourself in place of the reader</li>
+<li>No one (not even your mother) is as interested in this topic as you</li>
+<li>State the results carefully</li>
+<li>Don’t overstate/understate your results</li>
+<li>Study the art of writing</li>
+<li>Good writing takes times</li>
+</ol>
+<h1 id="The-Internet"><a href="#The-Internet" class="headerlink" title="The Internet"></a>The Internet</h1><p>根据排队论，分组交换的效率较高。</p>
+<h2 id="互联网组织"><a href="#互联网组织" class="headerlink" title="互联网组织"></a>互联网组织</h2><h3 id="Internet-Society-ISOC"><a href="#Internet-Society-ISOC" class="headerlink" title="Internet Society (ISOC)"></a>Internet Society (ISOC)</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.internetsociety.org/">https://www.internetsociety.org/</a></p>
+</blockquote>
+<h4 id="Internet-Hall-of-Fame"><a href="#Internet-Hall-of-Fame" class="headerlink" title="Internet Hall of Fame"></a>Internet Hall of Fame</h4><p><strong>Pioneers</strong>: design and development of the Internet with exceptional achievements</p>
+<p><strong>Innovators</strong>: made outstanding technological, commercial, regulatory or policy advances and helped to expand the Internet’s positive impact on the lives of others</p>
+<p><strong>Global Connectors</strong>: who have made major contributions to the growth, connectivity, and use of the Internet</p>
+<h3 id="Internet-Engineering-Task-Force-IETF"><a href="#Internet-Engineering-Task-Force-IETF" class="headerlink" title="Internet Engineering Task Force (IETF)"></a>Internet Engineering Task Force (IETF)</h3><p>The IETF is the protocol engineering and development arm of the Internet</p>
+<p>Subdivided into many working groups, which specify <strong>Request For Comments or RFCs</strong></p>
+<h4 id="The-Internet-Engineering-Steering-Group-IESG"><a href="#The-Internet-Engineering-Steering-Group-IESG" class="headerlink" title="The Internet Engineering Steering Group (IESG)"></a>The Internet Engineering Steering Group (IESG)</h4><p>The IESG is responsible for technical management of IETF activities and the Internet standards process</p>
+<p>Composed of the <strong>Area Directors</strong> of the IETF working groups</p>
+<p>看起来很民主很透明，但IETF实际上仍然是一个中心化组织，其中最重要的部门就是IESG。下面的这些主席对标准化工作有几乎绝对的话语权。</p>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921105404457.png" class="" title="image-20200921105404457">
+<blockquote>
+<p>Futurewei 跟华为关系比较密切，常常道华为开会来跟进新技术的标准化工作。</p>
+</blockquote>
+<h3 id="Internet-Research-Task-Force-IRTF"><a href="#Internet-Research-Task-Force-IRTF" class="headerlink" title="Internet Research Task Force (IRTF)"></a>Internet Research Task Force (IRTF)</h3><p>做一些标准化的工作。</p>
+<p>The Internet Research Task Force is composed of a number of focused, long-term and small Research Groups</p>
+<h3 id="Internet-Architecture-Board-IAB"><a href="#Internet-Architecture-Board-IAB" class="headerlink" title="Internet Architecture Board (IAB)"></a>Internet Architecture Board (IAB)</h3><p>互联网一个元老院QAQ荣誉很高。</p>
+<p>The IAB is responsible for defining the overall architecture of the Internet, providing guidance and broad direction to the IETF</p>
+<p>目前有做一些funding。</p>
+<h3 id="Internet-Corporation-for-Assigned-Names-and-Numbers-ICANN"><a href="#Internet-Corporation-for-Assigned-Names-and-Numbers-ICANN" class="headerlink" title="Internet Corporation for Assigned Names and Numbers (ICANN)"></a>Internet Corporation for Assigned Names and Numbers (ICANN)</h3><p>协调地址、域名等等。</p>
+<ul>
+<li>To reach another person on the Internet you have to type an address into your computer — <strong>a name or a number</strong></li>
+<li>That address must be unique so computers know where to find each other</li>
+<li>ICANN coordinates these unique identifiers across the world. Without that coordination, we wouldn’t have one global Internet</li>
+</ul>
+<h2 id="边缘论"><a href="#边缘论" class="headerlink" title="边缘论"></a>边缘论</h2><blockquote>
+<p><em>“核心简单，边缘复杂”。</em></p>
+</blockquote>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20200921115302298.png" class="" title="image-20200921115302298">
+<p>边缘论的解释：</p>
+<ul>
+<li>One interpretation: <ul>
+<li>A function can only be completely and correctly implemented with the knowledge and help of the applications <em>standing at the communication endpoints</em></li>
+</ul>
+</li>
+<li>Another: (more precise…)<ul>
+<li>a system (or subsystem level) should consider only functions that can be <em>completely and correctly</em> implemented within it</li>
+</ul>
+</li>
+<li>Alternative interpretation: (also correct …)<ul>
+<li>Think twice before implementing a functionality that you believe that is useful to an application at a lower layer </li>
+<li>If the application can implement a functionality correctly, implement it a lower layer <em>only</em> as a performance enhancement</li>
+</ul>
+</li>
+</ul>
+<h3 id="层次化选择"><a href="#层次化选择" class="headerlink" title="层次化选择"></a>层次化选择</h3><p>拥塞控制究竟应该放在哪一层?</p>
+<ul>
+<li>应用层<ul>
+<li>交给软件来做，那么有的人可能根本不会去管拥塞控制，每个人写的也不一样</li>
+</ul>
+</li>
+<li>链路层<ul>
+<li>交给交换机/路由器，很可能不是所有人都用得到，那么对底层硬件资源的消耗是不太理想的（需要维护大量额外的参数和控制信号）。比如，一些传输流媒体的用户可能不太care拥塞控制</li>
+</ul>
+</li>
+</ul>
+<h1 id="Internet-传输层"><a href="#Internet-传输层" class="headerlink" title="Internet 传输层"></a>Internet 传输层</h1><img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012100532317.png" class="" title="TCP&#x2F;IP协议栈">
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>早期UDP在以太网上是广播，所以很占带宽，也就是说，只要有一些视频媒体的流量，其他人可能就做不了什么事情了。</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>分组交换没法解决拥塞问题。</p>
+<blockquote>
+<p>——提出TCP的<strong>自适应</strong>的想法。</p>
+</blockquote>
+<p>拥塞控制和拥塞避免。</p>
+<ul>
+<li>避免：尽量别出事<ul>
+<li>93年TCP Vegas</li>
+</ul>
+</li>
+</ul>
+<p>BIC：快速找最合适的窗口大小。</p>
+<h3 id="TCP-Header"><a href="#TCP-Header" class="headerlink" title="TCP Header"></a>TCP Header</h3><p>Flags：<code>RESET</code>可以用来断开连接，所以常常用来干扰某个TCP连接。</p>
+<h3 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>可靠数据传输：IP层是不可靠的，需要在TCP中加入检查和确认等机制。</p>
+<p>两种冗余方式：</p>
+<ul>
+<li>空间冗余：在编码上的冗余</li>
+<li>时间冗余：确认+超时重传机制</li>
+</ul>
+<h4 id="可靠性机制"><a href="#可靠性机制" class="headerlink" title="可靠性机制"></a>可靠性机制</h4><p>Mechanisms:</p>
+<ul>
+<li>Checksum: detects corruption <em>in</em> <em>pkts</em> <em>&amp;</em> <em>acks</em></li>
+<li>ACK: “packet correctly received”</li>
+<li>Duplicate ACK: “packet <strong>incorrectly</strong> received”</li>
+<li>Sequence number</li>
+<li>Timeout only at sender</li>
+</ul>
+<p>Provides reliable transmission over:</p>
+<ul>
+<li>A <em>forward</em> <em>&amp; reverse</em> channel with <em>bit</em>-errors</li>
+<li>Detects <em>duplicates</em> of packets/acks</li>
+<li><em>NAKs eliminated</em></li>
+<li>A <em>forward &amp; reverse</em> channel with <em>packet</em>-errors (loss)</li>
+</ul>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>3-way-handshake</p>
+<h3 id="TCP窗口流控"><a href="#TCP窗口流控" class="headerlink" title="TCP窗口流控"></a>TCP窗口流控</h3><p>MSS：最大段长，默认536字节。</p>
+<blockquote>
+<p>越大效率越高，但同时如果丢包损失也越高。</p>
+<p>可以和MTU最大传输单元进行适配。避免中途重新分配的时延。</p>
+</blockquote>
+<p>TCP流控：发送的包不要超过接收窗口。</p>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>网络中堵塞之后，出现丢包问题，丢包又触发了重传……丢包、重传、丢包、重传……这便是TCP拥塞的特征。</p>
+<p>Van Jacobson: save the Internet.</p>
+<h4 id="拥塞控制和拥塞避免"><a href="#拥塞控制和拥塞避免" class="headerlink" title="拥塞控制和拥塞避免"></a>拥塞控制和拥塞避免</h4><p>让传输速率保持在knee附近是比较明智的选择。</p>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012105445850.png" class="" title="拥塞控制图">
+<h4 id="动态的自适应方案"><a href="#动态的自适应方案" class="headerlink" title="动态的自适应方案"></a>动态的自适应方案</h4><p>基于网络的模型：预先分配每个节点的网络流量限制。比如，ATM、故宫。</p>
+<p>拥塞控制的目标：</p>
+<ul>
+<li>稳定<ul>
+<li>一个动态系统的均衡点</li>
+</ul>
+</li>
+<li>有效</li>
+<li>公平<ul>
+<li>公平的问题比较复杂。。</li>
+<li>提前定义规则，按照可预测的方式去分配资源</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Max-min fairness：</p>
+<ul>
+<li>没有拥塞时：$f = max(x_i)$</li>
+<li>否则：$\sum_j \text{min}(x_i,f)=c$</li>
+</ul>
+<img data-src="/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20201012110447325.png" class="" title="Max-min fairness">
+<p>ACK自时钟控制分组收发：每收到一个包，发送一个ACK。保持进出均衡。</p>
+<blockquote>
+<p>保持在knee点附近波动。实现自适应。</p>
+</blockquote>
+<hr>
+<p>TCK：慢加快减。收敛到平衡点。</p>
+<hr>
+<p>TCK Reno：快重传，快恢复。（跳过了慢启动）</p>
+<p>TCK Vegas：平滑的发送窗口。不会丢包。（前提时buffer足够大）</p>
+<blockquote>
+<p>算法主要看延迟，即RTT时间梯度。</p>
+</blockquote>
+<p>BIC：对RTT最优窗口值进行二分查找。但RTT更小的人更容易拿到窗口，不公平。</p>
+<p>CUBIC：试图解决BIC的公平性问题，找到一种RTT无关的最优窗口查找算法。</p>
+<p>————————————————</p>
+<h4 id="BBR"><a href="#BBR" class="headerlink" title="BBR"></a>BBR</h4><p>找到带宽最大和延迟最小的点。但它们之间是相关的，所以研究人员一开始觉得是不可能的。</p>
+<p><strong><font color=red>BBR</font></strong>：分别估计，并计算<strong>时延带宽积</strong>。按照这个值去优化。</p>
+<blockquote>
+<p><strong>主动测量</strong>。测量短时间（10s内）的最小RTT。</p>
+<p>BBR的问题：</p>
+<ul>
+<li>公平性问题</li>
+<li>ACK压缩问题（一个ACK应答多个报文，如200个）</li>
+<li>应用重启时如何快速恢复带宽</li>
+<li>不匹配的接收窗口</li>
+</ul>
+<blockquote>
+<p>BBR对于数据中心网络的应用还存在一些问题。</p>
+</blockquote>
+</blockquote>
+<h4 id="RED等主动队列管理算法"><a href="#RED等主动队列管理算法" class="headerlink" title="RED等主动队列管理算法"></a>RED等主动队列管理算法</h4><p>提前在队列还没有满的时候，提供一些预警信号。</p>
+<p>随着队列变长，预警强度也随之增加。</p>
+<p>——关键是早一点有效沟通队列的信息。</p>
+<ul>
+<li>不是全体通知<ul>
+<li>引入概率，抽签通知，保证公平性</li>
+</ul>
+</li>
+</ul>
+<p>FRED：加入对flow rate的自适应。</p>
+<hr>
+<p>优化问题，求解全局用户效用之和的最大化。</p>
+<p>凸优化——对偶问题。变成一个机器学习的问题。</p>
+<p>TCP &amp; AQM。拥塞控制变成一个在互联网上求解最优化的问题。</p>
+<hr>
+<p>拥塞控制是Internet最重要的问题之一。</p>
+<h1 id="Internet-服务质量"><a href="#Internet-服务质量" class="headerlink" title="Internet 服务质量"></a>Internet 服务质量</h1><p>网络研究中主要关注网络<strong><font color=blue>保证性能</font></strong>的能力。</p>
+<p>和性能相关的主要的QoS参数：</p>
+<ul>
+<li>带宽</li>
+<li>延迟</li>
+<li>丢包率</li>
+</ul>
+<hr>
+<p>交叉流量是不可预测的。</p>
+<hr>
+<p>集成服务，对资源进行分发预留。</p>
+<h1 id="课程项目"><a href="#课程项目" class="headerlink" title="课程项目"></a>课程项目</h1><h2 id="项目调研"><a href="#项目调研" class="headerlink" title="项目调研"></a>项目调研</h2><h3 id="DDoS"><a href="#DDoS" class="headerlink" title="DDoS"></a>DDoS</h3><p>协作学习。然而协作学习其实就是无中心化的分布式学习。</p>
+<h3 id="NetFPGA"><a href="#NetFPGA" class="headerlink" title="NetFPGA"></a>NetFPGA</h3><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://netfpga.org/">https://netfpga.org/</a></p>
+</blockquote>
+<p>NetFPGA可以非常方便的使得研究人员或者高校学生搭建一个高速，硬件加速的网络系统。目前NetFPGA已经融入了斯坦福大学的课程中，教授学生如何设计硬件传送、传发数据的GigE的交换机与路由器。</p>
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/">912内容学习计划</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="高等计算机网络">https://stellarkey.github.io/高等计算机网络/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%9D%99%E6%80%81%E6%B2%B8%E8%85%BE/" rel="prev" title="静态沸腾">
+      <i class="fa fa-chevron-left"></i> 静态沸腾
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98%E7%BA%AA%E8%A6%81/" rel="next" title="中药说明书实体识别挑战纪要">
+      中药说明书实体识别挑战纪要 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87"><span class="nav-number">2.1.</span> <span class="nav-text">课程目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E8%AF%BE%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text">相关课程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%95%99%E5%AD%A6%E5%86%85%E5%AE%B9"><span class="nav-number">2.3.</span> <span class="nav-text">主要教学内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E6%9D%90%E5%92%8C%E5%8F%82%E8%80%83%E4%B9%A6"><span class="nav-number">2.4.</span> <span class="nav-text">教材和参考书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E6%A0%B8%E6%96%B9%E5%BC%8F"><span class="nav-number">2.5.</span> <span class="nav-text">考核方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%A0%94%E7%A9%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.</span> <span class="nav-text">网络研究的基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-Architecture"><span class="nav-number">2.6.1.</span> <span class="nav-text">网络体系结构 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.6.2.</span> <span class="nav-text">网络与分布式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%A7%91%E5%AD%A6%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">网络与分布式系统的基础科学问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%A0%94%E7%A9%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">2.7.</span> <span class="nav-text">网络研究的基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB"><span class="nav-number">2.7.1.</span> <span class="nav-text">文献阅读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.8.</span> <span class="nav-text">网络模型与实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-10-tips-for-writing-a-paper"><span class="nav-number">2.9.</span> <span class="nav-text">Top-10 tips for writing a paper</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Internet"><span class="nav-number">3.</span> <span class="nav-text">The Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%84%E7%BB%87"><span class="nav-number">3.1.</span> <span class="nav-text">互联网组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Society-ISOC"><span class="nav-number">3.1.1.</span> <span class="nav-text">Internet Society (ISOC)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Internet-Hall-of-Fame"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">Internet Hall of Fame</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Engineering-Task-Force-IETF"><span class="nav-number">3.1.2.</span> <span class="nav-text">Internet Engineering Task Force (IETF)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Internet-Engineering-Steering-Group-IESG"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">The Internet Engineering Steering Group (IESG)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Research-Task-Force-IRTF"><span class="nav-number">3.1.3.</span> <span class="nav-text">Internet Research Task Force (IRTF)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Architecture-Board-IAB"><span class="nav-number">3.1.4.</span> <span class="nav-text">Internet Architecture Board (IAB)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-Corporation-for-Assigned-Names-and-Numbers-ICANN"><span class="nav-number">3.1.5.</span> <span class="nav-text">Internet Corporation for Assigned Names and Numbers (ICANN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E8%AE%BA"><span class="nav-number">3.2.</span> <span class="nav-text">边缘论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.1.</span> <span class="nav-text">层次化选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internet-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">4.</span> <span class="nav-text">Internet 传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">4.1.</span> <span class="nav-text">UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">4.2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-Header"><span class="nav-number">4.2.1.</span> <span class="nav-text">TCP Header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="nav-number">4.2.2.</span> <span class="nav-text">可靠数据传输</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%9C%BA%E5%88%B6"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">可靠性机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">4.2.3.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E7%AA%97%E5%8F%A3%E6%B5%81%E6%8E%A7"><span class="nav-number">4.2.4.</span> <span class="nav-text">TCP窗口流控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="nav-number">4.2.5.</span> <span class="nav-text">TCP拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E5%92%8C%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D"><span class="nav-number">4.2.5.1.</span> <span class="nav-text">拥塞控制和拥塞避免</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94%E6%96%B9%E6%A1%88"><span class="nav-number">4.2.5.2.</span> <span class="nav-text">动态的自适应方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BBR"><span class="nav-number">4.2.5.3.</span> <span class="nav-text">BBR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RED%E7%AD%89%E4%B8%BB%E5%8A%A8%E9%98%9F%E5%88%97%E7%AE%A1%E7%90%86%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.5.4.</span> <span class="nav-text">RED等主动队列管理算法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internet-%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F"><span class="nav-number">5.</span> <span class="nav-text">Internet 服务质量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE"><span class="nav-number">6.</span> <span class="nav-text">课程项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%B0%83%E7%A0%94"><span class="nav-number">6.1.</span> <span class="nav-text">项目调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DDoS"><span class="nav-number">6.1.1.</span> <span class="nav-text">DDoS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetFPGA"><span class="nav-number">6.1.2.</span> <span class="nav-text">NetFPGA</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

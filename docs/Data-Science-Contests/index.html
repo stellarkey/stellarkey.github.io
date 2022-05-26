@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这个练习篇主要记录的是我在学习《机器学习》阶段所练习过的竞赛练习项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据竞赛-练习篇">
+<meta property="og:url" content="https://stellarkey.github.io/Data-Science-Contests/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="这个练习篇主要记录的是我在学习《机器学习》阶段所练习过的竞赛练习项目。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stellarkey.github.io/Data-Science-Contests/1550219963764.png">
+<meta property="og:image" content="https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png">
+<meta property="og:image" content="https://biendata-cdn.b0.upaiyun.com/media/competition/2019/02/14/20190214_NRMhEvI.png">
+<meta property="article:published_time" content="2019-01-04T13:49:10.000Z">
+<meta property="article:modified_time" content="2022-05-21T19:36:00.631Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="大数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stellarkey.github.io/Data-Science-Contests/1550219963764.png">
+
+<link rel="canonical" href="https://stellarkey.github.io/Data-Science-Contests/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>大数据竞赛-练习篇 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/Data-Science-Contests/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据竞赛-练习篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Think/" itemprop="url" rel="index"><span itemprop="name">Think</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这个练习篇主要记录的是我在<strong>学习《机器学习》阶段</strong>所练习过的竞赛练习项目。<span id="more"></span><br>按时间排序。</p>
+<blockquote>
+<p>你可以在<a href="https://stellarkey.github.io/Notes-of-Machine-Learning-Part1/"><strong>Here</strong></a>查看我关于机器学习的笔记。</p>
+<p>一些竞赛频道：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com"><strong>Kaggle</strong></a>，<a href="www.dcjingsai.com/static_page/cmpList.html"><strong>DataCastle</strong></a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.kdd.org/kdd-cup">KDDCUP</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://tianchi.aliyun.com/competition/gameList/activeList">天池</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.io/competitions.php"><strong>Sofasofa</strong></a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kesci.com/">Kesci</a>……</p>
+</blockquote>
+<h1 id="SF-公共自行车使用量预测-10k"><a href="#SF-公共自行车使用量预测-10k" class="headerlink" title="SF-公共自行车使用量预测 10k"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.io/competition.php?id=1#c1">SF-公共自行车使用量预测</a> 10k</h1><h2 id="问题简述"><a href="#问题简述" class="headerlink" title="问题简述"></a>问题简述</h2><p>回归问题，10k级数据量，较小。主要是看看已有的模型，自己尝试运行一下，了解基本函数的作用。</p>
+<p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.io/competition.php?id=1#c1">http://sofasofa.io/competition.php?id=1#c1</a></p>
+<p><strong>比赛信息</strong>：</p>
+<blockquote>
+<p>本比赛为个人练习赛，主要针对于于数据新人进行自我练习、自我提高，与大家切磋。 </p>
+<p>练习赛时限：2017-05-06 至 2019-05-06 </p>
+<p>任务类型：回归 </p>
+<p>背景介绍:<br>公共自行车低碳、环保、健康，并且解决了交通中“最后一公里”的痛点，在全国各个城市越来越受欢迎。本练习赛的数据取自于两个城市某街道上的几处公共自行车停车桩。我们希望根据时间、天气等信息，预测出该街区在一小时内的被借取的公共自行车的数量。 </p>
+<p>数据来源：<br>Laboratory of Artificial Intelligence and Decision Support (LIAAD), University of Porto, Portugal。为了公平起见，数据已经进行脱敏加工处理。标题图片来源：36氪。   </p>
+</blockquote>
+<h3 id="评价方法"><a href="#评价方法" class="headerlink" title="评价方法"></a>评价方法</h3><img data-src="/Data-Science-Contests/1550219963764.png" class="" width="1550219963764">
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>线性回归</code>、<code>xgboost回归</code>、<code>决策树</code>代码摘自比赛网站。为公开代码。</p>
+<h3 id="线性回归-39-132"><a href="#线性回归-39-132" class="headerlink" title="线性回归 39.132"></a>线性回归 39.132</h3><p>注意：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://segmentfault.com/a/1190000000322433">https://segmentfault.com/a/1190000000322433</a></p>
+<blockquote>
+<p>在python2中，map会直接返回结果，比如说:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(<span class="keyword">lambda</span> x: x, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p>可以直接返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>但是到了python3, 返回的就是一个map对象:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x7f381112ad50</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>如果要得到结果，必须用list作用于这个map对象。</p>
+<p>如果说计算结果已经出来了，只是要用list来打印结果，那就算了。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立线性回归模型</span></span><br><span class="line">reg = LinearRegression()</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若预测值是负数，则取0</span></span><br><span class="line">y_pred = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, y_pred))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LR_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;LR_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="岭回归-39-132"><a href="#岭回归-39-132" class="headerlink" title="岭回归 39.132"></a>岭回归 39.132</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Ridge</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立线性回归模型</span></span><br><span class="line">reg = Ridge(alpha=<span class="number">.5</span>)</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若预测值是负数，则取0</span></span><br><span class="line">y_pred = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, y_pred))</span><br><span class="line"><span class="built_in">print</span>(y_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LR_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;prediction_Ridge.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="贝叶斯岭回归"><a href="#贝叶斯岭回归" class="headerlink" title="贝叶斯岭回归"></a>贝叶斯岭回归</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> BayesianRidge</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立线性回归模型</span></span><br><span class="line">reg = BayesianRidge()</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若预测值是负数，则取0</span></span><br><span class="line">y_pred = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, y_pred))</span><br><span class="line"><span class="built_in">print</span>(y_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LR_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;prediction_BayesianRidge.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Lasso回归-39-294"><a href="#Lasso回归-39-294" class="headerlink" title="Lasso回归 39.294"></a>Lasso回归 39.294</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Lasso</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立回归模型</span></span><br><span class="line">reg = Lasso()</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若预测值是负数，则取0</span></span><br><span class="line">y_pred = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, y_pred))</span><br><span class="line"><span class="built_in">print</span>(y_pred)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LR_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;Lasso_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="决策树-28-818"><a href="#决策树-28-818" class="headerlink" title="决策树 28.818"></a>决策树 28.818</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立最大深度为5的决策树回归模型</span></span><br><span class="line">reg = DecisionTreeRegressor(max_depth=<span class="number">5</span>)</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_DT_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;prediction_DT.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="xgboost回归-18-947"><a href="#xgboost回归-18-947" class="headerlink" title="xgboost回归 18.947"></a>xgboost回归 18.947</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> xgboost <span class="keyword">import</span> XGBRegressor</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;id&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立一个默认的xgboost回归模型</span></span><br><span class="line">reg = XGBRegressor()</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_XGB_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;y&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;XGB_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>None.</p>
+<h1 id="SF-交通事故理赔审核-100k"><a href="#SF-交通事故理赔审核-100k" class="headerlink" title="SF-交通事故理赔审核 100k"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.io/competition.php?id=2#c1">SF-交通事故理赔审核</a> 100k</h1><p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.io/competition.php?id=2#c1">http://sofasofa.io/competition.php?id=2#c1</a></p>
+<h2 id="问题简述-1"><a href="#问题简述-1" class="headerlink" title="问题简述"></a>问题简述</h2><p>训练集中共有200000条样本，预测集中有80000条样本。</p>
+<h3 id="比赛概述"><a href="#比赛概述" class="headerlink" title="比赛概述"></a>比赛概述</h3><p> 本比赛为个人练习赛，适用于入门二元分类模型，主要针对于数据新人进行自我练习、自我提高，与大家切磋。 </p>
+<p> 练习赛时限：2017-06-03 至 2019-06-03 </p>
+<p> 任务类型：二元分类</p>
+<p> 背景介绍: </p>
+<p> 在交通摩擦（事故）发生后，理赔员会前往现场勘察、采集信息，这些信息往往影响着车主是否能够得到保险公司的理赔。训练集数据包括理赔人员在现场对该事故方采集的36条信息，信息已经被编码，以及该事故方最终是否获得理赔。我们的任务是根据这36条信息预测该事故方没有被理赔的概率。 </p>
+<p> 数据来源： </p>
+<p> 我们低调的合作方——某汽车大数据网站。标题图片来源：搜狐汽车。  </p>
+<h3 id="评价方法-1"><a href="#评价方法-1" class="headerlink" title="评价方法"></a>评价方法</h3><p> 你的提交结果为每个测试样本未通过审核的概率，也就是Evaluation为1的概率。评价方法为精度-召回曲线下面积(Precision-Recall AUC)，以下简称PR-AUC。 </p>
+<p> PR-AUC的取值范围是0到1。越接近1，说明模型预测的结果越接近真实结果。 </p>
+<p> 精度和召回的定义和计算方式可参考<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.24xi.org/forum_main_post.php?postid=1000597">问题：什么是混淆矩阵？</a>中的回答。 </p>
+<p> PR-AUC的定义可参考<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.24xi.org/forum_main_post.php?postid=1000768">问题：精度-召回AUC是什么？</a> </p>
+<p>PR-AUC的计算方法可以参考问题：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://sofasofa.24xi.org/forum_main_post.php?postid=1000577">Python里如何计算召回精度AUC？</a></p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><p>Lasso逻辑回归、随机森林分类模型为标杆模型。</p>
+<h3 id="逻辑回归-0-632113"><a href="#逻辑回归-0-632113" class="headerlink" title="逻辑回归 0.632113"></a>逻辑回归 0.632113</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的Evaluation</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;Evaluation&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立线性回归模型</span></span><br><span class="line">reg = LogisticRegression()</span><br><span class="line">reg.fit(train, y_train)</span><br><span class="line">y_pred = reg.predict(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若预测值是负数，则取0</span></span><br><span class="line">y_pred = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>, y_pred))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LR_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;Evaluation&#x27;</span>] = y_pred</span><br><span class="line"><span class="built_in">print</span>(submit)</span><br><span class="line">submit.to_csv(<span class="string">&#x27;LogisticRegression_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Lasso逻辑回归-0-714644"><a href="#Lasso逻辑回归-0-714644" class="headerlink" title="Lasso逻辑回归 0.714644"></a>Lasso逻辑回归 0.714644</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;Evaluation&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立LASSO逻辑回归模型</span></span><br><span class="line">clf = LogisticRegression(penalty=<span class="string">&#x27;l1&#x27;</span>, C=<span class="number">1.0</span>, random_state=<span class="number">0</span>)</span><br><span class="line">clf.fit(train, y_train)</span><br><span class="line">y_pred = clf.predict_proba(test)[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_LASSO_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;Evaluation&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;LASSO_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="随机森林分类模型-0-850897"><a href="#随机森林分类模型-0-850897" class="headerlink" title="随机森林分类模型 0.850897"></a>随机森林分类模型 0.850897</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">train = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">&quot;test.csv&quot;</span>)</span><br><span class="line">submit = pd.read_csv(<span class="string">&quot;sample_submit.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除id</span></span><br><span class="line">train.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">test.drop(<span class="string">&#x27;CaseId&#x27;</span>, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出训练集的y</span></span><br><span class="line">y_train = train.pop(<span class="string">&#x27;Evaluation&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立随机森林模型</span></span><br><span class="line">clf = RandomForestClassifier(n_estimators=<span class="number">100</span>, random_state=<span class="number">0</span>)</span><br><span class="line">clf.fit(train, y_train)</span><br><span class="line">y_pred = clf.predict_proba(test)[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出预测结果至my_RF_prediction.csv</span></span><br><span class="line">submit[<span class="string">&#x27;Evaluation&#x27;</span>] = y_pred</span><br><span class="line">submit.to_csv(<span class="string">&#x27;RF_prediction.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="更多-1"><a href="#更多-1" class="headerlink" title="更多"></a>更多</h2><h1 id="Kaggle-泰坦尼克Titanic-Disaster"><a href="#Kaggle-泰坦尼克Titanic-Disaster" class="headerlink" title="Kaggle-泰坦尼克Titanic: Disaster"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/titanic">Kaggle-泰坦尼克Titanic: Disaster</a></h1><h2 id="问题简述-2"><a href="#问题简述-2" class="headerlink" title="问题简述"></a>问题简述</h2><p>二分类。1k数据。</p>
+<p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/titanic">https://www.kaggle.com/c/titanic</a></p>
+<p><strong>比赛信息</strong>：</p>
+<blockquote>
+<h3 id="Competition-Description"><a href="#Competition-Description" class="headerlink" title="Competition Description"></a>Competition Description</h3><p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
+<p>One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.</p>
+<p>In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.</p>
+<h3 id="Practice-Skills"><a href="#Practice-Skills" class="headerlink" title="Practice Skills"></a>Practice Skills</h3><ul>
+<li>Binary classification</li>
+<li>Python and R basics</li>
+</ul>
+</blockquote>
+<p><strong>BUG</strong>：</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="更多-2"><a href="#更多-2" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/HanXiaoyang/Kaggle_Titanic/blob/master/Titanic.ipynb">机器学习系列(3)_逻辑回归应用之Kaggle泰坦尼克之灾</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/34213085">Kaggle 泰坦尼克号生存预测分析（入门）</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://bbs.huaweicloud.com/blogs/80ef17d5319c11e89fc57ca23e93a89f">Kaggle机器学习入门实战 — Titanic乘客生还预测</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/31743196">Kaggle Titanic 生存预测 — 详细流程吐血梳理</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/lvpeiyuan/titaniclvpeiyuan">泰坦尼克幸存者预测TitanicLvPeiyuan</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/27655949">Kaggle竞赛排名Top 6%——泰坦尼克号幸存预测</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/sashr07/kaggle-titanic-tutorial">Kaggle Titanic Supervised Learning Tutorial</a></p>
+<h1 id="Kaggle-房价预测House-Prices"><a href="#Kaggle-房价预测House-Prices" class="headerlink" title="Kaggle-房价预测House Prices"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">Kaggle-房价预测House Prices</a></h1><h2 id="问题简述-3"><a href="#问题简述-3" class="headerlink" title="问题简述"></a>问题简述</h2><p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">https://www.kaggle.com/c/house-prices-advanced-regression-techniques</a></p>
+<h3 id="Start-here-if…"><a href="#Start-here-if…" class="headerlink" title="Start here if…"></a>Start here if…</h3><p>You have some experience with R or Python and machine learning  basics. This is a perfect competition for data science students who have  completed an online course in machine learning and are looking to  expand their skill set before trying a featured competition. </p>
+<h3 id="Competition-Description-1"><a href="#Competition-Description-1" class="headerlink" title="Competition Description"></a>Competition Description</h3><p><img data-src="https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png" alt="img"></p>
+<p>Ask a home buyer to describe their dream house, and they probably  won’t begin with the height of the basement ceiling or the proximity to  an east-west railroad. But this playground competition’s dataset proves  that much more influences price negotiations than the number of bedrooms  or a white-picket fence.</p>
+<p>With 79 explanatory variables describing (almost) every aspect of  residential homes in Ames, Iowa, this competition challenges you to  predict the final price of each home.</p>
+<h3 id="Practice-Skills-1"><a href="#Practice-Skills-1" class="headerlink" title="Practice Skills"></a>Practice Skills</h3><ul>
+<li>Creative feature engineering </li>
+<li>Advanced regression techniques like random forest and gradient boosting</li>
+</ul>
+<h3 id="Acknowledgments"><a href="#Acknowledgments" class="headerlink" title="Acknowledgments"></a>Acknowledgments</h3><p>The <a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.amstat.org/publications/jse/v19n3/decock.pdf">Ames Housing dataset</a> was  compiled by Dean De Cock for use in data science education. It’s an  incredible alternative for data scientists looking for a modernized and  expanded version of the often cited Boston Housing dataset. </p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="更多-3"><a href="#更多-3" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/neviadomski/how-to-get-to-top-25-with-simple-model-sklearn">https://www.kaggle.com/neviadomski/how-to-get-to-top-25-with-simple-model-sklearn</a></p>
+<h1 id="Kaggle-数字识别Digit-Recognition"><a href="#Kaggle-数字识别Digit-Recognition" class="headerlink" title="Kaggle-数字识别Digit Recognition"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/digit-recognizer">Kaggle-数字识别Digit Recognition</a></h1><p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/c/digit-recognizer">https://www.kaggle.com/c/digit-recognizer</a></p>
+<h2 id="问题简述-4"><a href="#问题简述-4" class="headerlink" title="问题简述"></a>问题简述</h2><h3 id="Start-here-if…-1"><a href="#Start-here-if…-1" class="headerlink" title="Start here if…"></a>Start here if…</h3><p>You have some experience with <strong>R</strong> or <strong>Python</strong> and machine learning  basics, but you’re <strong>new to computer vision</strong>. This competition is the  perfect introduction to techniques like neural networks using a classic  dataset including pre-extracted features.</p>
+<h3 id="Competition-Description-2"><a href="#Competition-Description-2" class="headerlink" title="Competition Description"></a>Competition Description</h3><p><strong>MNIST</strong> (“Modified National Institute of Standards and Technology”) is  the de facto “hello world” dataset of computer vision. Since its release  in 1999, this classic dataset of handwritten images has served as the  basis for benchmarking classification algorithms. As new machine  learning techniques emerge, MNIST remains a reliable resource for  researchers and learners alike.</p>
+<p>In this competition, your goal is to correctly identify digits from a  dataset of tens of thousands of handwritten images. We’ve curated a set  of tutorial-style kernels which cover everything from regression to  neural networks. We encourage you to experiment with different  algorithms to learn first-hand what works well and how techniques  compare.</p>
+<h3 id="Practice-Skills-2"><a href="#Practice-Skills-2" class="headerlink" title="Practice Skills"></a>Practice Skills</h3><ul>
+<li>Computer vision fundamentals including simple <strong>neural networks</strong></li>
+<li><strong>Classification methods</strong> such as <strong>SVM</strong> and <strong>K-nearest neighbors</strong></li>
+</ul>
+<h3 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h3><p>More details about the dataset, including algorithms that have been tried on it and their levels of success, can be found at <a target="_blank" rel="noopener external nofollow noreferrer" href="http://yann.lecun.com/exdb/mnist/index.html">http://yann.lecun.com/exdb/mnist/index.html</a>. The dataset is made available under a <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 license</a>.</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;ved=2ahUKEwjHgsnAur3gAhXVdt4KHY-gCPYQFjAFegQIAxAB&amp;url=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F37613780&amp;usg=AOvVaw13hWb6wk8rymxDedlMsoKT">kaggle入门| Digit Recognizer准确度100% - 知乎</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="更多-4"><a href="#更多-4" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/u012162613/article/details/41929171">https://blog.csdn.net/u012162613/article/details/41929171</a></p>
+<h1 id="DC-“达观杯”文本智能处理挑战赛"><a href="#DC-“达观杯”文本智能处理挑战赛" class="headerlink" title="DC-“达观杯”文本智能处理挑战赛"></a><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.dcjingsai.com/common/cmpt/%E2%80%9C%E8%BE%BE%E8%A7%82%E6%9D%AF%E2%80%9D%E6%96%87%E6%9C%AC%E6%99%BA%E8%83%BD%E5%A4%84%E7%90%86%E6%8C%91%E6%88%98%E8%B5%9B_%E7%AB%9E%E8%B5%9B%E4%BF%A1%E6%81%AF.html">DC-“达观杯”文本智能处理挑战赛</a></h1><h2 id="问题简述-5"><a href="#问题简述-5" class="headerlink" title="问题简述"></a>问题简述</h2><p>多分类。100k级数据量。这是第一个练习项目，代码是已有的，只是熟悉数据竞赛的流程。</p>
+<p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.dcjingsai.com/common/cmpt/%E2%80%9C%E8%BE%BE%E8%A7%82%E6%9D%AF%E2%80%9D%E6%96%87%E6%9C%AC%E6%99%BA%E8%83%BD%E5%A4%84%E7%90%86%E6%8C%91%E6%88%98%E8%B5%9B_%E7%AB%9E%E8%B5%9B%E4%BF%A1%E6%81%AF.html">“达观杯”文本智能处理挑战赛</a>。</p>
+<p><strong>比赛信息</strong>：</p>
+<blockquote>
+<p>2018年人工智能的发展在运算智能和感知智能已经取得了很大的突破和优于人类的表现。而在以理解人类语言为入口的认知智能上，目前达观数据<strong>自然语言处理</strong>技术已经可以实现文档自动解析、关键信息提取、文本分类审核、文本智能纠错等一定基础性的文字处理工作，并在各行各业得到充分应用。</p>
+<p>自然语言处理一直是人工智能领域的重要话题，而人类语言的复杂性也给 NLP 布下了重重困难等待解决。长文本的智能解析就是颇具挑战性的任务，如何从纷繁多变、信息量庞杂的冗长文本中获取关键信息，一直是文本领域难题。随着深度学习的热潮来临，有许多新方法来到了 NLP 领域，给相关任务带来了更多优秀成果，也给大家带来了更多应用和想象的空间。</p>
+<p>此次比赛，达观数据提供了一批<strong>长文本数据和分类信息</strong>，希望选手动用自己的智慧，结合当下最先进的NLP和人工智能技术，深入分析文本内在结构和语义信息，构建文本分类模型，实现精准<strong>分类</strong>。未来文本自动化处理的技术突破和应用落地需要人工智能从业者和爱好者的共同努力，相信文本智能处理技术因为你的算法，变得更加智能！</p>
+<p>任务：<strong>建立模型通过长文本数据正文(article)，预测文本对应的类别(class)</strong>   </p>
+<p>数据：</p>
+<p>*注 : 报名参赛或加入队伍后，可获取数据下载权限。</p>
+<p>数据包含2个csv文件： </p>
+<ul>
+<li><strong>train_set.csv</strong>：此数据集用于训练模型，每一行对应一篇文章。文章分别在“字”和“词”的级别上做了脱敏处理。共有四列： 第一列是文章的索引(id)，第二列是文章正文在“字”级别上的表示，即字符相隔正文(article)；第三列是在“词”级别上的表示，即词语相隔正文(word_seg)；第四列是这篇文章的标注(class)。 注：每一个数字对应一个“字”，或“词”，或“标点符号”。“字”的编号与“词”的编号是独立的！  </li>
+<li><strong>test_set.csv</strong>：此数据用于测试。数据格式同train_set.csv，但不包含class。 注：test_set与train_test中文章id的编号是独立的。  友情提示：请不要尝试用excel打开这些文件！由于一篇文章太长，excel可能无法完整地读入某一行！</li>
+</ul>
+</blockquote>
+<p><strong>BUG</strong>：</p>
+<ul>
+<li><p><code>csv_read()</code><strong>读入时文件较大</strong>（1G），<strong>python停止工作</strong>，但是<strong>查看电脑内存最高却使用了不到50%</strong>（同时读入时内存激增/飙升）</p>
+<ul>
+<li><p><del>解决方案</del>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/weixin_39750084/article/details/81501395">解决Python memory error的问题（四种解决方案）</a>，似乎没有用！</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://docs.dask.org/en/latest/">Dask</a>也没啥用！</li>
+<li>还是<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/wld914674505/article/details/81431128">分块读取</a>吧！可能要使用Python<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.jianshu.com/p/3afe5305f6bd">并行循环</a>。</li>
+</ul>
+</li>
+<li><p><strong>【真】解决方案</strong>：（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://stackoverflow.com/questions/41303246/error-tokenizing-data-c-error-out-of-memory-pandas-python-large-file-csv"><strong>Here</strong></a>）</p>
+<ul>
+<li>首先<strong>分块读</strong><code>read_csv(&#39;xxx.csv&#39;, chunksize=XXX)</code></li>
+<li>然后<strong>边读边合并 </strong><code>concat([df, chunk])</code></li>
+<li>似乎本质上是因为<strong>内存调用过快</strong>引起的Python程序崩溃，只要放缓读入速度就能解决问题</li>
+<li>如果物理内存真的不够，则可以<a target="_blank" rel="noopener external nofollow noreferrer" href="https://jingyan.baidu.com/article/67508eb402aeb19cca1ce4a7.html">增加虚拟内存</a>（一般设为物理内存的1~3倍）</li>
+</ul>
+</li>
+<li><p><strong><font color=red>理论解释</font></strong>：<strong><font color=red>内存泄露</font></strong>（Memory leak）<del>也可能是<strong>内存溢出</strong></del></p>
+<ul>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/pandas-dev/pandas/issues/21516">https://github.com/pandas-dev/pandas/issues/21516</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/pandas-dev/pandas/issues/21353">https://github.com/pandas-dev/pandas/issues/21353</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://stackoverflow.com/questions/40454362/pandas-read-csv-1-2gb-file-out-of-memory-on-vm-with-140gb-ram">https://stackoverflow.com/questions/40454362/pandas-read-csv-1-2gb-file-out-of-memory-on-vm-with-140gb-ram</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://stackoverflow.com/questions/38487334/pandas-python-memory-spike-while-reading-3-2-gb-file">https://stackoverflow.com/questions/38487334/pandas-python-memory-spike-while-reading-3-2-gb-file</a></p>
+<ul>
+<li><p>根据楼主获得的新解决方案</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dtypes = &#123;<span class="string">&#x27;id&#x27;</span>: pd.np.int8,</span><br><span class="line">          <span class="string">&#x27;article&#x27;</span>:pd.np.<span class="built_in">str</span>,</span><br><span class="line">          <span class="string">&#x27;word_seg&#x27;</span>:pd.np.<span class="built_in">str</span>,</span><br><span class="line">          <span class="string">&#x27;class&#x27;</span>:pd.np.int8&#125;</span><br><span class="line">df_train = pd.read_csv(<span class="string">&#x27;./train_set.csv&#x27;</span>, dtype=dtypes)</span><br><span class="line">df_test = pd.read_csv(<span class="string">&#x27;./test_set.csv&#x27;</span>, dtype=dtypes)</span><br></pre></td></tr></table></figure>
+<p>奇怪的是，现在突然原版的<code>df_train = pd.read_csv(&#39;./train_set.csv&#39;)</code>也不报错了！<del>WTF！！！</del>读入表现得很平缓。</p>
+</li>
+<li><p>恐怕这是一个<strong>不可复现</strong>的程序漏洞……<del>折腾这么久突然自己好了，有毒啊</del></p>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://stackoverflow.com/questions/31886939/reduce-memory-usage-pandas/47577606#47577606">https://stackoverflow.com/questions/31886939/reduce-memory-usage-pandas/47577606#47577606</a></p>
+<ul>
+<li><p>pandas似乎有一个自动判断类型的过程，如果不用dtype事先指定，会额外消耗比较多的内存（但我实际测试感觉没什么区别，最后内存最大占用都3个g左右）</p>
+<blockquote>
+<ol>
+<li>Pandas loads in <strong>string</strong> columns as <strong>object</strong> type by default. For all the columns which have the type <strong>object</strong>, try to assign the type <strong>category</strong> to these columns by passing a dictionary to parameter <strong>dtypes</strong> of the <strong>read_csv</strong> function. Memory usage decreases dramatically for columns with 50% or less unique values.</li>
+<li>Pandas reads in numeric columns as <strong>float64</strong> by default. Use <strong>pd.to_numeric</strong> to downcast <strong>float64</strong> type to 32 or 16 if possible. This again saves you memory.</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Anyway，这个BUG就像<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/zh-hans/%E7%90%83%E7%8A%B6%E9%97%AA%E7%94%B5_(%E5%B0%8F%E8%AF%B4"><strong><font color=red>球状闪电</font></strong></a>)一样消失了……</p>
+</li>
+<li><p>拓展：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://wulc.me/2017/11/18/%E5%88%86%E6%89%B9%E8%AE%AD%E7%BB%83%E8%BF%87%E5%A4%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86/">分批训练过大的数据集</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/question/38034287">partial_fit增量式计算</a></p>
+</li>
+</ul>
+</li>
+<li><p>TypeError: drop() got an unexpected keyword argument ‘columns’</p>
+<ul>
+<li>Pandas<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ramp-kits/autism/issues/14">版本过低</a>，至少要<strong>0.21</strong>版本，使用<code>conda update pandas</code>命令更新<ul>
+<li>如果使用了镜像网站（更新源），<del>可能版本还是不够</del>，<code>使用pip install -U pandas</code>更新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Keword找不到错误</p>
+<ul>
+<li>如果在分块的时候，read_csv使用了奇怪的seg=’;‘参数则会出现此异常，从输出来看似乎是csv的表格系统被该分隔符所破坏，删去该参数即可</li>
+</ul>
+</li>
+<li><p>第1次提交得分：<strong><font color=red>5%</font></strong>（最后运行了<strong>40分钟</strong>orz）</p>
+<ul>
+<li>发现代码写错了：x<em>test = vetorizer.transform(df</em><font color=red>test</font>[‘word_seg’])（原来复制粘贴的是train，WTF）</li>
+</ul>
+</li>
+<li><p>CPU使用率只有25%</p>
+<ul>
+<li>4核，可能需要改写算法，形成多个thread（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://superuser.com/questions/679679/how-to-increase-pythons-cpu-usage">More</a>）</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><h3 id="逻辑回归-分块读入-73"><a href="#逻辑回归-分块读入-73" class="headerlink" title="逻辑回归+分块读入 73%"></a>逻辑回归+分块读入 73%</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#import dask.dataframe as dd</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment">#Data pre-process</span></span><br><span class="line">ChunkSize = <span class="number">10000</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> pd.read_csv(<span class="string">&#x27;./train_set.csv&#x27;</span>, chunksize=ChunkSize): <span class="comment">#分块合并</span></span><br><span class="line">	df_train = chunk <span class="keyword">if</span> i == <span class="number">1</span> <span class="keyword">else</span>	pd.concat([df_train, chunk])</span><br><span class="line">	i += <span class="number">1</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> pd.read_csv(<span class="string">&#x27;./test_set.csv&#x27;</span>, chunksize=ChunkSize):</span><br><span class="line">	df_test = chunk <span class="keyword">if</span> i == <span class="number">1</span> <span class="keyword">else</span>	pd.concat([df_test, chunk])</span><br><span class="line">	i += <span class="number">1</span></span><br><span class="line">df_train.drop(columns=[<span class="string">&#x27;article&#x27;</span>, <span class="string">&#x27;id&#x27;</span>], inplace=<span class="literal">True</span>)</span><br><span class="line">df_test.drop(columns=[<span class="string">&#x27;article&#x27;</span>], inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Feature Enginnering</span></span><br><span class="line">vetorizer = CountVectorizer(ngram_range=(<span class="number">1</span>, <span class="number">2</span>), min_df=<span class="number">3</span>,max_df=<span class="number">0.9</span>,max_features=<span class="number">100000</span>)</span><br><span class="line">vetorizer.fit(df_train[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line">x_train = vetorizer.transform(df_train[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line">x_test = vetorizer.transform(df_test[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line">y_train  = df_train[<span class="string">&#x27;class&#x27;</span>] - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Train a classifier</span></span><br><span class="line">lg = LogisticRegression(C=<span class="number">4</span>, dual=<span class="literal">True</span>)</span><br><span class="line">lg.fit(x_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Prediction</span></span><br><span class="line">y_test = lg.predict(x_test)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Save results</span></span><br><span class="line">df_test[<span class="string">&#x27;class&#x27;</span>] = y_test.tolist()</span><br><span class="line">df_test[<span class="string">&#x27;class&#x27;</span>] = df_test[<span class="string">&#x27;class&#x27;</span>] + <span class="number">1</span></span><br><span class="line">df_result = df_test.loc[:, [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;class&#x27;</span>] ]</span><br><span class="line">df_result.to_csv(<span class="string">&#x27;./result.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>注释版：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#import dask.dataframe as dd</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment">#Data pre-process</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Start...&#x27;</span>, time.clock())</span><br><span class="line">ChunkSize = <span class="number">10000</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> pd.read_csv(<span class="string">&#x27;./train_set.csv&#x27;</span>, chunksize=ChunkSize): <span class="comment">#分块合并</span></span><br><span class="line">	df_train = chunk <span class="keyword">if</span> i == <span class="number">1</span> <span class="keyword">else</span>	pd.concat([df_train, chunk])</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;Read Chunk...&#x27;</span>, i)</span><br><span class="line">	i += <span class="number">1</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> pd.read_csv(<span class="string">&#x27;./test_set.csv&#x27;</span>, chunksize=ChunkSize):</span><br><span class="line">	df_test = chunk <span class="keyword">if</span> i == <span class="number">1</span> <span class="keyword">else</span>	pd.concat([df_test, chunk])</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;Read Chunk...&#x27;</span>, i)</span><br><span class="line">	i += <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Read Complete...&#x27;</span>, time.clock())</span><br><span class="line">df_train.drop(columns=[<span class="string">&#x27;article&#x27;</span>, <span class="string">&#x27;id&#x27;</span>], inplace=<span class="literal">True</span>)</span><br><span class="line">df_test.drop(columns=[<span class="string">&#x27;article&#x27;</span>], inplace=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Drop Complete&#x27;</span>, time.clock())</span><br><span class="line"></span><br><span class="line"><span class="comment">#Feature Enginnering</span></span><br><span class="line">vetorizer = CountVectorizer(ngram_range=(<span class="number">1</span>, <span class="number">2</span>), min_df=<span class="number">3</span>,max_df=<span class="number">0.9</span>,max_features=<span class="number">100000</span>)</span><br><span class="line">vetorizer.fit(df_train[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;--&gt;vetorizer-fit...&#x27;</span>, time.clock())</span><br><span class="line">x_train = vetorizer.transform(df_train[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;--&gt;transform x_train...&#x27;</span>, time.clock())</span><br><span class="line">x_test = vetorizer.transform(df_test[<span class="string">&#x27;word_seg&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;--&gt;transform x_test...&#x27;</span>, time.clock())</span><br><span class="line">y_train  = df_train[<span class="string">&#x27;class&#x27;</span>] - <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Feature Enginnering Complete...&#x27;</span>, time.clock())</span><br><span class="line"></span><br><span class="line"><span class="comment">#Train a classifier</span></span><br><span class="line">lg = LogisticRegression(C=<span class="number">4</span>, dual=<span class="literal">True</span>)</span><br><span class="line">lg.fit(x_train, y_train)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Train Complete...&#x27;</span>, time.clock())</span><br><span class="line"></span><br><span class="line"><span class="comment">#Prediction</span></span><br><span class="line">y_test = lg.predict(x_test)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Prediction Complete...&#x27;</span>, time.clock())</span><br><span class="line"></span><br><span class="line"><span class="comment">#Save results</span></span><br><span class="line">df_test[<span class="string">&#x27;class&#x27;</span>] = y_test.tolist()</span><br><span class="line">df_test[<span class="string">&#x27;class&#x27;</span>] = df_test[<span class="string">&#x27;class&#x27;</span>] + <span class="number">1</span></span><br><span class="line">df_result = df_test.loc[:, [<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;class&#x27;</span>] ]</span><br><span class="line">df_result.to_csv(<span class="string">&#x27;./result.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="更多-5"><a href="#更多-5" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/29185180">什么是<strong>Baseline Model</strong>？记和硅谷大佬的一次吃饭</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/54030260">达观杯文本智能处理挑战赛冠军解决方案</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/52461173">“达观杯”挑战赛：单模型带你上前10</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/croso/p/5349517.html">11 款开放中文分词引擎评测</a></p>
+<p>文本分类任务基本框架：</p>
+<p>文本——<strong><font color=red>特征工程</font></strong>（上限）——<strong><font color=red>分类器</font></strong>（效能）——类别。</p>
+<p>文本特征提取：</p>
+<ul>
+<li>经典文本特征（前人研究）<ul>
+<li>TF，TF-IDF，Doc2vec，Word2vec<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/u012050154/article/details/60600499">https://blog.csdn.net/u012050154/article/details/60600499</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>手工构造（数据挖掘）<ul>
+<li>寻找可能影响分类的新特征<ul>
+<li>比如，文章的长度</li>
+</ul>
+</li>
+<li>相关构造<ul>
+<li>多项式扩展</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>神经网络提取（利用某一层输出作为文本特征）<ul>
+<li>对于10万量级，传统优于深度学习算法；当百万级数据时，反之。（不绝对）</li>
+</ul>
+</li>
+</ul>
+<p>特征选择：</p>
+<ul>
+<li>减少维数灾难，计算量降低</li>
+<li>降低学习任务难度</li>
+<li><strong>方法</strong>：包裹式，嵌入式，过滤式（见西瓜书特征选择部分）</li>
+</ul>
+<p>特征降维：</p>
+<ul>
+<li>有监督降维：LDA（西瓜书第三章）</li>
+<li>无监督降维：LSA，Ida，NMF</li>
+</ul>
+<hr>
+<p>主要分类器：</p>
+<ul>
+<li>基于sklearn实现<ul>
+<li><strong>逻辑回归</strong><ul>
+<li>简单快速，可解释（优先使用），稀疏特征</li>
+</ul>
+</li>
+<li>支持向量机</li>
+<li>朴素贝叶斯</li>
+<li>随机森林</li>
+<li>bagging</li>
+</ul>
+</li>
+<li><strong>Lightgbm</strong>（和xgboost一样，效果更好，杀器！基于GBDT算法实现，见《统计学习方法》8.4.3节）</li>
+<li><strong>xgboost</strong></li>
+<li>神经网络</li>
+</ul>
+<p>提分关键：<strong>多个单模型进行融合</strong>。（必做，见西瓜书第八章）</p>
+<ul>
+<li>投票法</li>
+<li>学习法</li>
+</ul>
+<blockquote>
+<p>前提，各个模型<strong>好而不同</strong>。</p>
+<p>保证差异：不同的数据集，不同的分类器。</p>
+</blockquote>
+<p>代码介绍：</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/MLjian/TextClassificationImplement">https://github.com/MLjian/TextClassificationImplement</a></p>
+<p>有两个方法，机器学习ML，和深度学习DL。</p>
+<blockquote>
+<p>可以先过一遍for beginner。</p>
+</blockquote>
+<h1 id="BD-短视频内容理解与推荐竞赛"><a href="#BD-短视频内容理解与推荐竞赛" class="headerlink" title="BD-短视频内容理解与推荐竞赛"></a>BD-短视频内容理解与推荐竞赛</h1><p><strong>比赛地址</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://biendata.com/competition/icmechallenge2019/">https://biendata.com/competition/icmechallenge2019/</a></p>
+<h2 id="问题简述-6"><a href="#问题简述-6" class="headerlink" title="问题简述"></a>问题简述</h2><h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a><strong>背景介绍</strong></h3><p>近年来，机器学习在图像识别、语音识别等领域取得了重大进步，但在视频内容理解领域仍有许多问题需要探索。字节跳动公司旗下的TikTok（抖音海外版）短视频APP在全球范围内的用户中获得非常多的好评，短视频的内容理解与推荐技术成为了我们关注的焦点。</p>
+<p>一图胜千言，仅一张图片就包含大量信息，难以用几个词来描述，更何况是短视频这种富媒体形态。面对短视频内容理解的难题，字节跳动作为一家拥有海量短视频素材和上亿级用户行为数据的公司，通过视频内容特征和用户行为数据，可以有充足的数据来预测用户对短视频的喜好。</p>
+<p>本次竞赛提供多模态的短视频内容特征，包括视觉特征、文本特征和音频特征，同时提供了脱敏后的用户点击、喜爱、关注等交互行为数据。参赛者需要通过一个视频及用户交互行为数据集对用户兴趣进行建模，然后预测该用户在另一视频数据集上的点击行为。</p>
+<p>竞赛最终根据参赛者提交的模型和预测结果，依据评分进行排名，具体见评估准则。</p>
+<h3 id="竞赛任务"><a href="#竞赛任务" class="headerlink" title="竞赛任务"></a><strong>竞赛任务</strong></h3><p>通过构建深度学习模型，预测测试数据中每个用户id在对应作品id上<strong>是否浏览完作品和是否对作品点赞的概率加权结果</strong>。 本次比赛使用 AUC（ROC曲线下面积）作为评估指标。AUC 越高，代表结果越优，排名越靠前。</p>
+<p><strong>赛道1</strong></p>
+<p>大规模数据集，亿级别的数据信息。</p>
+<p><strong>赛道2</strong></p>
+<p>小规模数据集，千万级别的数据信息。</p>
+<p>讨论区</p>
+<p>参赛队伍可以在比赛页面的讨论区进行讨论。如有赛题和数据方面的问题，请发邮件至AI-Lab-challenge@bytedance.com。如有竞赛提交方面的问题，请发邮件至support@biendata.com。</p>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>格式</th>
+<th>链接</th>
+<th>提取码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>track1_sample_submission.zip</td>
+<td>zip (377.7 MB)</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://pan.baidu.com/s/1QvoRbJMizWZtLvBIT2B9Bg">https://pan.baidu.com/s/1QvoRbJMizWZtLvBIT2B9Bg</a></td>
+<td>8qrs</td>
+</tr>
+<tr>
+<td>track2_sample_submission.zip</td>
+<td>zip (24.5 MB)</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://pan.baidu.com/s/1GeiRfQ0lV7NcC1JSQ5nTMA">https://pan.baidu.com/s/1GeiRfQ0lV7NcC1JSQ5nTMA</a></td>
+<td>667i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img data-src="https://biendata-cdn.b0.upaiyun.com/media/competition/2019/02/14/20190214_NRMhEvI.png" alt=""></p>
+<h3 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h3><blockquote>
+<p> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/challenge-ICME2019-Bytedance/Bytedance_ICME_challenge">https://github.com/challenge-ICME2019-Bytedance/Bytedance_ICME_challenge</a></p>
+</blockquote>
+<p>竞赛提供的baseline方法使用到以下5个特征：user_id, user_city, item_id，author_id，item_city</p>
+<p> <strong>- TRACK2 LIKE TASK:</strong><br>   auc: 86.5%<br>   #————————————params————————————-#<br>   embedding_size = 40<br>   optimizer = adam<br>   lr = 0.0005</p>
+<p> <strong>- TRACK FINISH TASK:</strong><br>   auc: 69.8%<br>   #————————————params————————————-#<br>   embedding_size = 40<br>   optimizer = adam<br>   lr = 0.0001</p>
+<p>主程序：（需要调用其它接口）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> utils.utils <span class="keyword">import</span> get_dataset_path_list</span><br><span class="line"><span class="keyword">from</span> common.model_args <span class="keyword">import</span> init_model_args</span><br><span class="line"><span class="keyword">from</span> models.model <span class="keyword">import</span> RecommendModelHandler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">  <span class="comment"># basic logging setup for tf</span></span><br><span class="line">  os.environ[<span class="string">&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;</span>] = <span class="string">&#x27;2&#x27;</span></span><br><span class="line">  tf.logging.set_verbosity(tf.logging.INFO)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># init necessary args</span></span><br><span class="line">  args = init_model_args()</span><br><span class="line"></span><br><span class="line">  <span class="comment">#train_dataset_path_list = get_dataset_path_list(train_dataset_path, sub_str=&quot;track2_train_time.txt&quot;)</span></span><br><span class="line">  train_dataset_path_list = [args.training_path]</span><br><span class="line"></span><br><span class="line">  val_dataset_path_list = [args.validation_path]</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;training path list: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(train_dataset_path_list)</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;training path list: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(val_dataset_path_list)</span><br><span class="line"></span><br><span class="line">  save_model_dir = args.save_model_dir</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;saving model in ... &#123;&#125;&quot;</span>.<span class="built_in">format</span>(save_model_dir)</span><br><span class="line"></span><br><span class="line">  optimizer = args.optimizer</span><br><span class="line">  learning_rate  = args.lr</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;we use &#123;&#125; as optimizer&quot;</span>.<span class="built_in">format</span>(optimizer)</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;learning rate is set as  &#123;&#125;&quot;</span>.<span class="built_in">format</span>(learning_rate)</span><br><span class="line"></span><br><span class="line">  batch_size = args.batch_size</span><br><span class="line">  embedding_size = args.embedding_size</span><br><span class="line">  num_epochs = args.num_epochs</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;batch size: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(batch_size)</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;embedding size: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(embedding_size)</span><br><span class="line"></span><br><span class="line">  task = args.task</span><br><span class="line">  track = args.track</span><br><span class="line">  <span class="built_in">print</span> <span class="string">&quot;track: &#123;&#125;, task: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(track, task)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  model = RecommendModelHandler(</span><br><span class="line">      train_dataset_path=train_dataset_path_list,</span><br><span class="line">      val_dataset_path=val_dataset_path_list,</span><br><span class="line">      save_model_dir=save_model_dir,</span><br><span class="line">      num_epochs=num_epochs,</span><br><span class="line">      optimizer=optimizer,</span><br><span class="line">      batch_size= batch_size,</span><br><span class="line">      embedding_size=embedding_size,</span><br><span class="line">      task=task,</span><br><span class="line">      track=track,</span><br><span class="line">      learning_rate=args.lr)</span><br><span class="line"></span><br><span class="line">  model.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<h2 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="更多-6"><a href="#更多-6" class="headerlink" title="更多"></a>更多</h2><h1 id="某某赛（待更新）"><a href="#某某赛（待更新）" class="headerlink" title="某某赛（待更新）"></a>某某赛（待更新）</h1><p><strong>比赛地址</strong>：</p>
+<h2 id="问题简述-7"><a href="#问题简述-7" class="headerlink" title="问题简述"></a>问题简述</h2><h2 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="更多-7"><a href="#更多-7" class="headerlink" title="更多"></a>更多</h2><div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E5%8D%95%E5%88%86%E7%B1%BB/">单分类（one-class classification）</a></li><li><a href="https://stellarkey.github.io/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E4%B8%8E%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">时间序列异常检测</a></li><li><a href="https://stellarkey.github.io/%E5%85%B3%E4%BA%8E%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC%E7%9A%84%E6%80%9D%E8%80%83/">关于对抗样本的思考</a></li><li><a href="https://stellarkey.github.io/%E7%9F%A5%E8%AF%86%E6%99%BA%E8%83%BD%E8%AE%B2%E5%BA%A7/">知识智能讲座</a></li><li><a href="https://stellarkey.github.io/%E7%AC%AC%E5%8D%81%E5%85%AB%E6%9C%9F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%89%8D%E6%B2%BF%E5%AD%A6%E7%94%9F%E8%AE%BA%E5%9D%9B%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/">第十八期人工智能前沿学生论坛——语音识别前沿技术</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/Data-Science-Contests/" title="大数据竞赛-练习篇">https://stellarkey.github.io/Data-Science-Contests/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-by-Andrew-Ng/" rel="prev" title="深度学习 by Andrew Ng.">
+      <i class="fa fa-chevron-left"></i> 深度学习 by Andrew Ng.
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/A-Few-Thoughts-on-Collision/" rel="next" title="理想碰撞问题">
+      理想碰撞问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SF-%E5%85%AC%E5%85%B1%E8%87%AA%E8%A1%8C%E8%BD%A6%E4%BD%BF%E7%94%A8%E9%87%8F%E9%A2%84%E6%B5%8B-10k"><span class="nav-number">1.</span> <span class="nav-text">SF-公共自行车使用量预测 10k</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">评价方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-39-132"><span class="nav-number">1.2.1.</span> <span class="nav-text">线性回归 39.132</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B2%AD%E5%9B%9E%E5%BD%92-39-132"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">岭回归 39.132</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%B2%AD%E5%9B%9E%E5%BD%92"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">贝叶斯岭回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lasso%E5%9B%9E%E5%BD%92-39-294"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Lasso回归 39.294</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91-28-818"><span class="nav-number">1.2.2.</span> <span class="nav-text">决策树 28.818</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xgboost%E5%9B%9E%E5%BD%92-18-947"><span class="nav-number">1.2.3.</span> <span class="nav-text">xgboost回归 18.947</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">1.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SF-%E4%BA%A4%E9%80%9A%E4%BA%8B%E6%95%85%E7%90%86%E8%B5%94%E5%AE%A1%E6%A0%B8-100k"><span class="nav-number">2.</span> <span class="nav-text">SF-交通事故理赔审核 100k</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E6%A6%82%E8%BF%B0"><span class="nav-number">2.1.1.</span> <span class="nav-text">比赛概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">评价方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92-0-632113"><span class="nav-number">2.2.1.</span> <span class="nav-text">逻辑回归 0.632113</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lasso%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92-0-714644"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Lasso逻辑回归 0.714644</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B-0-850897"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机森林分类模型 0.850897</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-1"><span class="nav-number">2.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kaggle-%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8BTitanic-Disaster"><span class="nav-number">3.</span> <span class="nav-text">Kaggle-泰坦尼克Titanic: Disaster</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Competition-Description"><span class="nav-number">3.1.1.</span> <span class="nav-text">Competition Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice-Skills"><span class="nav-number">3.1.2.</span> <span class="nav-text">Practice Skills</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">3.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-2"><span class="nav-number">3.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kaggle-%E6%88%BF%E4%BB%B7%E9%A2%84%E6%B5%8BHouse-Prices"><span class="nav-number">4.</span> <span class="nav-text">Kaggle-房价预测House Prices</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-3"><span class="nav-number">4.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-here-if%E2%80%A6"><span class="nav-number">4.1.1.</span> <span class="nav-text">Start here if…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Competition-Description-1"><span class="nav-number">4.1.2.</span> <span class="nav-text">Competition Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice-Skills-1"><span class="nav-number">4.1.3.</span> <span class="nav-text">Practice Skills</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Acknowledgments"><span class="nav-number">4.1.4.</span> <span class="nav-text">Acknowledgments</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">4.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-3"><span class="nav-number">4.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kaggle-%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%ABDigit-Recognition"><span class="nav-number">5.</span> <span class="nav-text">Kaggle-数字识别Digit Recognition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-4"><span class="nav-number">5.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-here-if%E2%80%A6-1"><span class="nav-number">5.1.1.</span> <span class="nav-text">Start here if…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Competition-Description-2"><span class="nav-number">5.1.2.</span> <span class="nav-text">Competition Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice-Skills-2"><span class="nav-number">5.1.3.</span> <span class="nav-text">Practice Skills</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.1.4.</span> <span class="nav-text">Acknowledgements</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-4"><span class="nav-number">5.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-4"><span class="nav-number">5.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DC-%E2%80%9C%E8%BE%BE%E8%A7%82%E6%9D%AF%E2%80%9D%E6%96%87%E6%9C%AC%E6%99%BA%E8%83%BD%E5%A4%84%E7%90%86%E6%8C%91%E6%88%98%E8%B5%9B"><span class="nav-number">6.</span> <span class="nav-text">DC-“达观杯”文本智能处理挑战赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-5"><span class="nav-number">6.1.</span> <span class="nav-text">问题简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-5"><span class="nav-number">6.2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92-%E5%88%86%E5%9D%97%E8%AF%BB%E5%85%A5-73"><span class="nav-number">6.2.1.</span> <span class="nav-text">逻辑回归+分块读入 73%</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-5"><span class="nav-number">6.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BD-%E7%9F%AD%E8%A7%86%E9%A2%91%E5%86%85%E5%AE%B9%E7%90%86%E8%A7%A3%E4%B8%8E%E6%8E%A8%E8%8D%90%E7%AB%9E%E8%B5%9B"><span class="nav-number">7.</span> <span class="nav-text">BD-短视频内容理解与推荐竞赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-6"><span class="nav-number">7.1.</span> <span class="nav-text">问题简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">7.1.1.</span> <span class="nav-text">背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%9E%E8%B5%9B%E4%BB%BB%E5%8A%A1"><span class="nav-number">7.1.2.</span> <span class="nav-text">竞赛任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">7.1.3.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Baseline"><span class="nav-number">7.1.4.</span> <span class="nav-text">Baseline</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-6"><span class="nav-number">7.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-6"><span class="nav-number">7.3.</span> <span class="nav-text">更多</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%90%E6%9F%90%E8%B5%9B%EF%BC%88%E5%BE%85%E6%9B%B4%E6%96%B0%EF%BC%89"><span class="nav-number">8.</span> <span class="nav-text">某某赛（待更新）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0-7"><span class="nav-number">8.1.</span> <span class="nav-text">问题简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-7"><span class="nav-number">8.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A-7"><span class="nav-number">8.3.</span> <span class="nav-text">更多</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/Data-Science-Contests/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

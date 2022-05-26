@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="ucore实验记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ucore实验">
+<meta property="og:url" content="https://stellarkey.github.io/ucore%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="ucore实验记录。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-28T08:12:17.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:06:16.804Z">
+<meta property="article:author" content="工云">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://stellarkey.github.io/ucore%E5%AE%9E%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>ucore实验 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/ucore%E5%AE%9E%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ucore实验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index"><span itemprop="name">Learn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>ucore实验记录。<span id="more"></span></p>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.gitbook.com/book/chyyuu/ucore_os_docs/details">实验指导书</a>。</p>
+<blockquote>
+<p>因为时间不够所以实验没来得及做了~建议留出足够时间。</p>
+</blockquote>
+</blockquote>
+<h1 id="实验0-环境"><a href="#实验0-环境" class="headerlink" title="实验0 环境"></a>实验0 环境</h1><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.shiyanlou.com/courses/reports/1368923/">https://www.shiyanlou.com/courses/reports/1368923/</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/kiukotsu/ucore">https://github.com/kiukotsu/ucore</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhanghuimeng.github.io/post/os-mooc-lecture-2-summary/">https://zhanghuimeng.github.io/post/os-mooc-lecture-2-summary/</a></p>
+</blockquote>
+<p><code>qemu</code>的安装需要特别注意。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install qemu</span><br></pre></td></tr></table></figure>
+<p>在完成安装以后，直接<code>qemu</code>可能<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/u013045749/article/details/53575639">找不到命令</a>。运行以下语句进行链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/kiukotsu/ucore">实验环境（5种）</a></p>
+<p>踩坑：x86架构的unbantu不能装在arm架构的树莓派上。</p>
+</blockquote>
+<p><strong>装虚拟机太慢</strong>。弃。</p>
+<p><strong>在树莓派上跑</strong>，gcc版本不对，装gcc遇到极大困难。弃。</p>
+<blockquote>
+<p>使用了<strong>树莓派</strong>而window平台上搭载虚拟机的方法来做实验。</p>
+<p>Raspbian需要更换软件下载源（更新源）。搜索即可。</p>
+<p>OS系统：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/wiki/Raspbian">Raspbian</a>。（基于<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/wiki/Debian">Debian</a>的操作系统，linux系）</p>
+</blockquote>
+<p>准备<strong>在电脑上装ubantu</strong>。</p>
+<blockquote>
+<p>成功。</p>
+<ul>
+<li>网上下载ubuntu14.04 iso文件</li>
+<li>准备一个U（闪）盘<ul>
+<li>利用<em>SD Card Formatter 5.0.1 Setup（格式化工具）</em> 进行格式化</li>
+<li>用 <em>Universal-USB（刻录工具）</em> 将ubuntu14.04刻录到闪盘</li>
+<li>插入U盘，重启电脑</li>
+</ul>
+</li>
+<li>在开机完成前，按快捷键进入BOOT模式<ul>
+<li>在设置中找到，修改BOOT启动顺序，将从U盘硬件启动设到第1位</li>
+<li>保存设置，退出，开始装ubuntu</li>
+</ul>
+</li>
+<li>按<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/kiukotsu/ucore">实验环境（5种）</a>一键安装相应软件</li>
+<li>开始做实验</li>
+</ul>
+</blockquote>
+<hr>
+<p>关于understand：</p>
+<ul>
+<li>到<a target="_blank" rel="noopener external nofollow noreferrer" href="http://scitools.com/download/all-builds/">此处</a>下载4.0版本</li>
+<li>安装教程：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://scitools.com/documents/unix_install.php">Here</a></li>
+<li>registery code: D59E41A3360B<br>E-mail: a123@163.com</li>
+</ul>
+<h1 id="实验1-启动"><a href="#实验1-启动" class="headerlink" title="实验1 启动"></a>实验1 启动</h1><blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.cnblogs.com/linkzijun/p/9249743.html">关于ucore实验一的资料查找</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/jasonyuchen/article/details/76254480">Makefile代码分析</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://yuerer.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-uCore-Lab-1/">操作系统 uCore Lab 1 含 Challenge</a> 比较完整 and <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/twd2/ucore_os_lab/blob/master/labcodes/lab1/report.md">Here</a>[sim]</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://xr1s.me/2018/05/15/ucore-lab1-report/">ucore lab1 实验报告</a> 比较通俗</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://qiaoin.github.io/ucore-ex1-notes.html">uCore实验1笔记整理</a> 比较通俗</p>
+</blockquote>
+<p>等设备~到了~</p>
+<hr>
+<font color=red>**Caution：lab1的答案里面都有`report`文件，挺详细，记录参考答案。**</font>
+
+<h2 id="附录-lab1参考答案"><a href="#附录-lab1参考答案" class="headerlink" title="附录 lab1参考答案"></a>附录 lab1参考答案</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="[练习1]"></a>[练习1]</h3><p>[练习1.1] 操作系统镜像文件 ucore.img 是如何一步一步生成的?(需要比较详细地解释 Makefile 中<br>每一条相关命令和命令参数的含义,以及说明命令导致的结果)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">bin/ucore.img</span><br><span class="line">| 生成ucore.img的相关代码为</span><br><span class="line">| $(UCOREIMG): $(kernel) $(bootblock)</span><br><span class="line">|	$(V)dd if=/dev/zero of=$@ count=10000</span><br><span class="line">|	$(V)dd if=$(bootblock) of=$@ conv=notrunc</span><br><span class="line">|	$(V)dd if=$(kernel) of=$@ seek=1 conv=notrunc</span><br><span class="line">|</span><br><span class="line">| 为了生成ucore.img，首先需要生成bootblock、kernel</span><br><span class="line">|</span><br><span class="line">|&gt;	bin/bootblock</span><br><span class="line">|	| 生成bootblock的相关代码为</span><br><span class="line">|	| $(bootblock): $(call toobj,$(bootfiles)) | $(call totarget,sign)</span><br><span class="line">|	|	@echo + ld $@</span><br><span class="line">|	|	$(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 $^ \</span><br><span class="line">|	|		-o $(call toobj,bootblock)</span><br><span class="line">|	|	@$(OBJDUMP) -S $(call objfile,bootblock) &gt; \</span><br><span class="line">|	|		$(call asmfile,bootblock)</span><br><span class="line">|	|	@$(OBJCOPY) -S -O binary $(call objfile,bootblock) \</span><br><span class="line">|	|		$(call outfile,bootblock)</span><br><span class="line">|	|	@$(call totarget,sign) $(call outfile,bootblock) $(bootblock)</span><br><span class="line">|	|</span><br><span class="line">|	| 为了生成bootblock，首先需要生成bootasm.o、bootmain.o、sign</span><br><span class="line">|	|</span><br><span class="line">|	|&gt;	obj/boot/bootasm.o, obj/boot/bootmain.o</span><br><span class="line">|	|	| 生成bootasm.o,bootmain.o的相关makefile代码为</span><br><span class="line">|	|	| bootfiles = $(call listf_cc,boot) </span><br><span class="line">|	|	| $(foreach f,$(bootfiles),$(call cc_compile,$(f),$(CC),\</span><br><span class="line">|	|	|	$(CFLAGS) -Os -nostdinc))</span><br><span class="line">|	|	| 实际代码由宏批量生成</span><br><span class="line">|	|	| </span><br><span class="line">|	|	| 生成bootasm.o需要bootasm.S</span><br><span class="line">|	|	| 实际命令为</span><br><span class="line">|	|	| gcc -Iboot/ -fno-builtin -Wall -ggdb -m32 -gstabs \</span><br><span class="line">|	|	| 	-nostdinc  -fno-stack-protector -Ilibs/ -Os -nostdinc \</span><br><span class="line">|	|	| 	-c boot/bootasm.S -o obj/boot/bootasm.o</span><br><span class="line">|	|	| 其中关键的参数为</span><br><span class="line">|	|	| 	-ggdb  生成可供gdb使用的调试信息。这样才能用qemu+gdb来调试bootloader or ucore。</span><br><span class="line">|	|	|	-m32  生成适用于32位环境的代码。我们用的模拟硬件是32bit的80386，所以ucore也要是32位的软件。</span><br><span class="line">|	|	| 	-gstabs  生成stabs格式的调试信息。这样要ucore的monitor可以显示出便于开发者阅读的函数调用栈信息</span><br><span class="line">|	|	| 	-nostdinc  不使用标准库。标准库是给应用程序用的，我们是编译ucore内核，OS内核是提供服务的，所以所有的服务要自给自足。</span><br><span class="line">|	|	|	-fno-stack-protector  不生成用于检测缓冲区溢出的代码。这是for 应用程序的，我们是编译内核，ucore内核好像还用不到此功能。</span><br><span class="line">|	|	| 	-Os  为减小代码大小而进行优化。根据硬件spec，主引导扇区只有512字节，我们写的简单bootloader的最终大小不能大于510字节。</span><br><span class="line">|	|	| 	-I&lt;dir&gt;  添加搜索头文件的路径</span><br><span class="line">|	|	| </span><br><span class="line">|	|	| 生成bootmain.o需要bootmain.c</span><br><span class="line">|	|	| 实际命令为</span><br><span class="line">|	|	| gcc -Iboot/ -fno-builtin -Wall -ggdb -m32 -gstabs -nostdinc \</span><br><span class="line">|	|	| 	-fno-stack-protector -Ilibs/ -Os -nostdinc \</span><br><span class="line">|	|	| 	-c boot/bootmain.c -o obj/boot/bootmain.o</span><br><span class="line">|	|	| 新出现的关键参数有</span><br><span class="line">|	|	| 	-fno-builtin  除非用__builtin_前缀，</span><br><span class="line">|	|	|	              否则不进行builtin函数的优化</span><br><span class="line">|	|</span><br><span class="line">|	|&gt;	bin/sign</span><br><span class="line">|	|	| 生成sign工具的makefile代码为</span><br><span class="line">|	|	| $(call add_files_host,tools/sign.c,sign,sign)</span><br><span class="line">|	|	| $(call create_target_host,sign,sign)</span><br><span class="line">|	|	| </span><br><span class="line">|	|	| 实际命令为</span><br><span class="line">|	|	| gcc -Itools/ -g -Wall -O2 -c tools/sign.c \</span><br><span class="line">|	|	| 	-o obj/sign/tools/sign.o</span><br><span class="line">|	|	| gcc -g -Wall -O2 obj/sign/tools/sign.o -o bin/sign</span><br><span class="line">|	|</span><br><span class="line">|	| 首先生成bootblock.o</span><br><span class="line">|	| ld -m    elf_i386 -nostdlib -N -e start -Ttext 0x7C00 \</span><br><span class="line">|	|	obj/boot/bootasm.o obj/boot/bootmain.o -o obj/bootblock.o</span><br><span class="line">|	| 其中关键的参数为</span><br><span class="line">|	|	-m &lt;emulation&gt;  模拟为i386上的连接器</span><br><span class="line">|	|	-nostdlib  不使用标准库</span><br><span class="line">|	|	-N  设置代码段和数据段均可读写</span><br><span class="line">|	|	-e &lt;entry&gt;  指定入口</span><br><span class="line">|	|	-Ttext  制定代码段开始位置</span><br><span class="line">|	|</span><br><span class="line">|	| 拷贝二进制代码bootblock.o到bootblock.out</span><br><span class="line">|	| objcopy -S -O binary obj/bootblock.o obj/bootblock.out</span><br><span class="line">|	| 其中关键的参数为</span><br><span class="line">|	|	-S  移除所有符号和重定位信息</span><br><span class="line">|	|	-O &lt;bfdname&gt;  指定输出格式</span><br><span class="line">|	|</span><br><span class="line">|	| 使用sign工具处理bootblock.out，生成bootblock</span><br><span class="line">|	| bin/sign obj/bootblock.out bin/bootblock</span><br><span class="line">|</span><br><span class="line">|&gt;	bin/kernel</span><br><span class="line">|	| 生成kernel的相关代码为</span><br><span class="line">|	| $(kernel): tools/kernel.ld</span><br><span class="line">|	| $(kernel): $(KOBJS)</span><br><span class="line">|	| 	@echo + ld $@</span><br><span class="line">|	| 	$(V)$(LD) $(LDFLAGS) -T tools/kernel.ld -o $@ $(KOBJS)</span><br><span class="line">|	| 	@$(OBJDUMP) -S $@ &gt; $(call asmfile,kernel)</span><br><span class="line">|	| 	@$(OBJDUMP) -t $@ | $(SED) &#x27;1,/SYMBOL TABLE/d; s/ .* / /; \</span><br><span class="line">|	| 		/^$$/d&#x27; &gt; $(call symfile,kernel)</span><br><span class="line">|	| </span><br><span class="line">|	| 为了生成kernel，首先需要 kernel.ld init.o readline.o stdio.o kdebug.o</span><br><span class="line">|	|	kmonitor.o panic.o clock.o console.o intr.o picirq.o trap.o</span><br><span class="line">|	|	trapentry.o vectors.o pmm.o  printfmt.o string.o</span><br><span class="line">|	| kernel.ld已存在</span><br><span class="line">|	|</span><br><span class="line">|	|&gt;	obj/kern/*/*.o </span><br><span class="line">|	|	| 生成这些.o文件的相关makefile代码为</span><br><span class="line">|	|	| $(call add_files_cc,$(call listf_cc,$(KSRCDIR)),kernel,\</span><br><span class="line">|	|	|	$(KCFLAGS))</span><br><span class="line">|	|	| 这些.o生成方式和参数均类似，仅举init.o为例，其余不赘述</span><br><span class="line">|	|&gt;	obj/kern/init/init.o</span><br><span class="line">|	|	| 编译需要init.c</span><br><span class="line">|	|	| 实际命令为</span><br><span class="line">|	|	|	gcc -Ikern/init/ -fno-builtin -Wall -ggdb -m32 \</span><br><span class="line">|	|	|		-gstabs -nostdinc  -fno-stack-protector \</span><br><span class="line">|	|	|		-Ilibs/ -Ikern/debug/ -Ikern/driver/ \</span><br><span class="line">|	|	|		-Ikern/trap/ -Ikern/mm/ -c kern/init/init.c \</span><br><span class="line">|	|	|		-o obj/kern/init/init.o</span><br><span class="line">|	| </span><br><span class="line">|	| 生成kernel时，makefile的几条指令中有@前缀的都不必需</span><br><span class="line">|	| 必需的命令只有</span><br><span class="line">|	| ld -m    elf_i386 -nostdlib -T tools/kernel.ld -o bin/kernel \</span><br><span class="line">|	| 	obj/kern/init/init.o obj/kern/libs/readline.o \</span><br><span class="line">|	| 	obj/kern/libs/stdio.o obj/kern/debug/kdebug.o \</span><br><span class="line">|	| 	obj/kern/debug/kmonitor.o obj/kern/debug/panic.o \</span><br><span class="line">|	| 	obj/kern/driver/clock.o obj/kern/driver/console.o \</span><br><span class="line">|	| 	obj/kern/driver/intr.o obj/kern/driver/picirq.o \</span><br><span class="line">|	| 	obj/kern/trap/trap.o obj/kern/trap/trapentry.o \</span><br><span class="line">|	| 	obj/kern/trap/vectors.o obj/kern/mm/pmm.o \</span><br><span class="line">|	| 	obj/libs/printfmt.o obj/libs/string.o</span><br><span class="line">|	| 其中新出现的关键参数为</span><br><span class="line">|	|	-T &lt;scriptfile&gt;  让连接器使用指定的脚本</span><br><span class="line">|</span><br><span class="line">| 生成一个有10000个块的文件，每个块默认512字节，用0填充</span><br><span class="line">| dd if=/dev/zero of=bin/ucore.img count=10000</span><br><span class="line">|</span><br><span class="line">| 把bootblock中的内容写到第一个块</span><br><span class="line">| dd if=bin/bootblock of=bin/ucore.img conv=notrunc</span><br><span class="line">|</span><br><span class="line">| 从第二个块开始写kernel中的内容</span><br><span class="line">| dd if=bin/kernel of=bin/ucore.img seek=1 conv=notrunc</span><br></pre></td></tr></table></figure>
+<p>[练习1.2] 一个被系统认为是符合规范的硬盘主引导扇区的特征是什么?</p>
+<p>从sign.c的代码来看，一个磁盘主引导扇区只有512字节。且<br>第510个（倒数第二个）字节是0x55，<br>第511个（倒数第一个）字节是0xAA。</p>
+<h3 id="练习2"><a href="#练习2" class="headerlink" title="[练习2]"></a>[练习2]</h3><p>[练习2.1] 从 CPU 加电后执行的第一条指令开始,单步跟踪 BIOS 的执行。</p>
+<p>练习2可以单步跟踪，方法如下：</p>
+<p>1 修改 lab1/tools/gdbinit,内容为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set architecture i8086</span><br><span class="line">target remote :1234</span><br></pre></td></tr></table></figure>
+<p>2 在 lab1目录下，执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make debug</span><br></pre></td></tr></table></figure>
+<p>3 在看到gdb的调试界面(gdb)后，在gdb调试界面下执行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">si</span><br></pre></td></tr></table></figure>
+<p>即可单步跟踪BIOS了。</p>
+<p>4 在gdb界面下，可通过如下命令来看BIOS的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x /2i $pc  //显示当前eip处的汇编指令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[进一步的补充]</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">改写Makefile文件</span><br><span class="line">	debug: $(UCOREIMG)</span><br><span class="line">		$(V)$(TERMINAL) -e &quot;$(QEMU) -S -s -d in_asm -D $(BINDIR)/q.log -parallel stdio -hda $&lt; -serial null&quot;</span><br><span class="line">		$(V)sleep 2</span><br><span class="line">		$(V)$(TERMINAL) -e &quot;gdb -q -tui -x tools/gdbinit&quot;</span><br></pre></td></tr></table></figure>
+<p>在调用qemu时增加<code>-d in_asm -D q.log</code>参数，便可以将运行的汇编指令保存在q.log中。<br>为防止qemu在gdb连接后立即开始执行，删除了<code>tools/gdbinit</code>中的<code>continue</code>行。</p>
+<p>[练习2.2] 在初始化位置0x7c00 设置实地址断点,测试断点正常。</p>
+<p>在tools/gdbinit结尾加上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   set architecture i8086  //设置当前调试的CPU是8086</span><br><span class="line">b *0x7c00  //在0x7c00处设置断点。此地址是bootloader入口点地址，可看boot/bootasm.S的start地址处</span><br><span class="line">c          //continue简称，表示继续执行</span><br><span class="line">x /2i $pc  //显示当前eip处的汇编指令</span><br><span class="line">set architecture i386  //设置当前调试的CPU是80386</span><br></pre></td></tr></table></figure>
+<p>运行”make debug”便可得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Breakpoint 2, 0x00007c00 in ?? ()</span><br><span class="line">=&gt; 0x7c00:      cli    </span><br><span class="line">   0x7c01:      cld    </span><br><span class="line">   0x7c02:      xor    %eax,%eax</span><br><span class="line">   0x7c04:      mov    %eax,%ds</span><br><span class="line">   0x7c06:      mov    %eax,%es</span><br><span class="line">   0x7c08:      mov    %eax,%ss </span><br><span class="line">   0x7c0a:      in     $0x64,%al</span><br><span class="line">   0x7c0c:      test   $0x2,%al</span><br><span class="line">   0x7c0e:      jne    0x7c0a</span><br><span class="line">   0x7c10:      mov    $0xd1,%al</span><br></pre></td></tr></table></figure>
+<p>[练习2.3] 在调用qemu 时增加-d in_asm -D q.log 参数，便可以将运行的汇编指令保存在q.log 中。<br>将执行的汇编代码与bootasm.S 和 bootblock.asm 进行比较，看看二者是否一致。</p>
+<p>在tools/gdbinit结尾加上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b *0x7c00</span><br><span class="line">c</span><br><span class="line">x /10i $pc</span><br></pre></td></tr></table></figure>
+<p>便可以在q.log中读到”call bootmain”前执行的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c00:  cli    </span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c01:  cld    </span><br><span class="line">0x00007c02:  xor    %ax,%ax</span><br><span class="line">0x00007c04:  mov    %ax,%ds</span><br><span class="line">0x00007c06:  mov    %ax,%es</span><br><span class="line">0x00007c08:  mov    %ax,%ss</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c0a:  in     $0x64,%al</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c0c:  test   $0x2,%al</span><br><span class="line">0x00007c0e:  jne    0x7c0a</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c10:  mov    $0xd1,%al</span><br><span class="line">0x00007c12:  out    %al,$0x64</span><br><span class="line">0x00007c14:  in     $0x64,%al</span><br><span class="line">0x00007c16:  test   $0x2,%al</span><br><span class="line">0x00007c18:  jne    0x7c14</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c1a:  mov    $0xdf,%al</span><br><span class="line">0x00007c1c:  out    %al,$0x60</span><br><span class="line">0x00007c1e:  lgdtw  0x7c6c</span><br><span class="line">0x00007c23:  mov    %cr0,%eax</span><br><span class="line">0x00007c26:  or     $0x1,%eax</span><br><span class="line">0x00007c2a:  mov    %eax,%cr0</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c2d:  ljmp   $0x8,$0x7c32</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c32:  mov    $0x10,%ax</span><br><span class="line">0x00007c36:  mov    %eax,%ds</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c38:  mov    %eax,%es</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c3a:  mov    %eax,%fs</span><br><span class="line">0x00007c3c:  mov    %eax,%gs</span><br><span class="line">0x00007c3e:  mov    %eax,%ss</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c40:  mov    $0x0,%ebp</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007c45:  mov    $0x7c00,%esp</span><br><span class="line">0x00007c4a:  call   0x7d0d</span><br><span class="line"></span><br><span class="line">----------------</span><br><span class="line">IN: </span><br><span class="line">0x00007d0d:  push   %ebp</span><br></pre></td></tr></table></figure>
+<p>其与bootasm.S和bootblock.asm中的代码相同。</p>
+<h3 id="练习3"><a href="#练习3" class="headerlink" title="[练习3]"></a>[练习3]</h3><p>分析bootloader 进入保护模式的过程。</p>
+<p>从<code>%cs=0 $pc=0x7c00</code>，进入后</p>
+<p>首先清理环境：包括将flag置0和将段寄存器置0</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.code16</span><br><span class="line">    cli</span><br><span class="line">    cld</span><br><span class="line">    xorw %ax, %ax</span><br><span class="line">    movw %ax, %ds</span><br><span class="line">    movw %ax, %es</span><br><span class="line">    movw %ax, %ss</span><br></pre></td></tr></table></figure>
+<p>开启A20：通过将键盘控制器上的A20线置于高电位，全部32条地址线可用，<br>可以访问4G的内存空间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">seta20.1:               ## 等待8042键盘控制器不忙</span><br><span class="line">    inb $0x64, %al      ## </span><br><span class="line">    testb $0x2, %al     #</span><br><span class="line">    jnz seta20.1        #</span><br><span class="line"></span><br><span class="line">    movb $0xd1, %al     ## 发送写8042输出端口的指令</span><br><span class="line">    outb %al, $0x64     #</span><br><span class="line"></span><br><span class="line">seta20.1:               ## 等待8042键盘控制器不忙</span><br><span class="line">    inb $0x64, %al      ## </span><br><span class="line">    testb $0x2, %al     #</span><br><span class="line">    jnz seta20.1        #</span><br><span class="line"></span><br><span class="line">    movb $0xdf, %al     ## 打开A20</span><br><span class="line">    outb %al, $0x60     ## </span><br></pre></td></tr></table></figure>
+<p>初始化GDT表：一个简单的GDT表和其描述符已经静态储存在引导区中，载入即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lgdt gdtdesc</span><br></pre></td></tr></table></figure>
+<p>进入保护模式：通过将cr0寄存器PE位置1便开启了保护模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movl %cr0, %eax</span><br><span class="line">orl $CR0_PE_ON, %eax</span><br><span class="line">movl %eax, %cr0</span><br></pre></td></tr></table></figure>
+<p>通过长跳转更新cs的基地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> ljmp $PROT_MODE_CSEG, $protcseg</span><br><span class="line">.code32</span><br><span class="line">protcseg:</span><br></pre></td></tr></table></figure>
+<p>设置段寄存器，并建立堆栈</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">movw $PROT_MODE_DSEG, %ax</span><br><span class="line">movw %ax, %ds</span><br><span class="line">movw %ax, %es</span><br><span class="line">movw %ax, %fs</span><br><span class="line">movw %ax, %gs</span><br><span class="line">movw %ax, %ss</span><br><span class="line">movl $0x0, %ebp</span><br><span class="line">movl $start, %esp</span><br></pre></td></tr></table></figure>
+<p>转到保护模式完成，进入boot主方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call bootmain</span><br></pre></td></tr></table></figure>
+<h3 id="练习4"><a href="#练习4" class="headerlink" title="[练习4]"></a>[练习4]</h3><p>分析bootloader加载ELF格式的OS的过程。</p>
+<p>首先看readsect函数，<br><code>readsect</code>从设备的第secno扇区读取数据到dst位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">static void</span><br><span class="line">readsect(void *dst, uint32_t secno) &#123;</span><br><span class="line">    waitdisk();</span><br><span class="line"></span><br><span class="line">    outb(0x1F2, 1);                         // 设置读取扇区的数目为1</span><br><span class="line">    outb(0x1F3, secno &amp; 0xFF);</span><br><span class="line">    outb(0x1F4, (secno &gt;&gt; 8) &amp; 0xFF);</span><br><span class="line">    outb(0x1F5, (secno &gt;&gt; 16) &amp; 0xFF);</span><br><span class="line">    outb(0x1F6, ((secno &gt;&gt; 24) &amp; 0xF) | 0xE0);</span><br><span class="line">        // 上面四条指令联合制定了扇区号</span><br><span class="line">        // 在这4个字节线联合构成的32位参数中</span><br><span class="line">        //   29-31位强制设为1</span><br><span class="line">        //   28位(=0)表示访问&quot;Disk 0&quot;</span><br><span class="line">        //   0-27位是28位的偏移量</span><br><span class="line">    outb(0x1F7, 0x20);                      // 0x20命令，读取扇区</span><br><span class="line"></span><br><span class="line">    waitdisk();</span><br><span class="line"></span><br><span class="line">    insl(0x1F0, dst, SECTSIZE / 4);         // 读取到dst位置，</span><br><span class="line">                                            // 幻数4因为这里以DW为单位</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>readseg简单包装了readsect，可以从设备读取任意长度的内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">static void</span><br><span class="line">readseg(uintptr_t va, uint32_t count, uint32_t offset) &#123;</span><br><span class="line">    uintptr_t end_va = va + count;</span><br><span class="line"></span><br><span class="line">    va -= offset % SECTSIZE;</span><br><span class="line"></span><br><span class="line">    uint32_t secno = (offset / SECTSIZE) + 1; </span><br><span class="line">    // 加1因为0扇区被引导占用</span><br><span class="line">    // ELF文件从1扇区开始</span><br><span class="line"></span><br><span class="line">    for (; va &lt; end_va; va += SECTSIZE, secno ++) &#123;</span><br><span class="line">        readsect((void *)va, secno);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在bootmain函数中，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">void</span><br><span class="line">bootmain(void) &#123;</span><br><span class="line">    // 首先读取ELF的头部</span><br><span class="line">    readseg((uintptr_t)ELFHDR, SECTSIZE * 8, 0);</span><br><span class="line"></span><br><span class="line">    // 通过储存在头部的幻数判断是否是合法的ELF文件</span><br><span class="line">    if (ELFHDR-&gt;e_magic != ELF_MAGIC) &#123;</span><br><span class="line">        goto bad;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    struct proghdr *ph, *eph;</span><br><span class="line"></span><br><span class="line">    // ELF头部有描述ELF文件应加载到内存什么位置的描述表，</span><br><span class="line">    // 先将描述表的头地址存在ph</span><br><span class="line">    ph = (struct proghdr *)((uintptr_t)ELFHDR + ELFHDR-&gt;e_phoff);</span><br><span class="line">    eph = ph + ELFHDR-&gt;e_phnum;</span><br><span class="line"></span><br><span class="line">    // 按照描述表将ELF文件中数据载入内存</span><br><span class="line">    for (; ph &lt; eph; ph ++) &#123;</span><br><span class="line">        readseg(ph-&gt;p_va &amp; 0xFFFFFF, ph-&gt;p_memsz, ph-&gt;p_offset);</span><br><span class="line">    &#125;</span><br><span class="line">    // ELF文件0x1000位置后面的0xd1ec比特被载入内存0x00100000</span><br><span class="line">    // ELF文件0xf000位置后面的0x1d20比特被载入内存0x0010e000</span><br><span class="line"></span><br><span class="line">    // 根据ELF头部储存的入口信息，找到内核的入口</span><br><span class="line">    ((void (*)(void))(ELFHDR-&gt;e_entry &amp; 0xFFFFFF))();</span><br><span class="line"></span><br><span class="line">bad:</span><br><span class="line">    outw(0x8A00, 0x8A00);</span><br><span class="line">    outw(0x8A00, 0x8E00);</span><br><span class="line">    while (1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习5"><a href="#练习5" class="headerlink" title="[练习5]"></a>[练习5]</h3><p>实现函数调用堆栈跟踪函数 </p>
+<p>ss:ebp指向的堆栈位置储存着caller的ebp，以此为线索可以得到所有使用堆栈的函数ebp。<br>ss:ebp+4指向caller调用时的eip，ss:ebp+8等是（可能的）参数。</p>
+<p>输出中，堆栈最深一层为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ebp:0x00007bf8 eip:0x00007d68 \</span><br><span class="line">	args:0x00000000 0x00000000 0x00000000 0x00007c4f</span><br><span class="line">    &lt;unknow&gt;: -- 0x00007d67 --</span><br></pre></td></tr></table></figure>
+<p>其对应的是第一个使用堆栈的函数，bootmain.c中的bootmain。<br>bootloader设置的堆栈从0x7c00开始，使用”call bootmain”转入bootmain函数。<br>call指令压栈，所以bootmain中ebp为0x7bf8。</p>
+<h3 id="练习6"><a href="#练习6" class="headerlink" title="[练习6]"></a>[练习6]</h3><p>完善中断初始化和处理</p>
+<p>[练习6.1] 中断向量表中一个表项占多少字节？其中哪几位代表中断处理代码的入口？</p>
+<p>中断向量表一个表项占用8字节，其中2-3字节是段选择子，0-1字节和6-7字节拼成位移，<br>两者联合便是中断处理程序的入口地址。</p>
+<p>[练习6.2] 请编程完善kern/trap/trap.c中对中断向量表进行初始化的函数idt_init。</p>
+<p>见代码</p>
+<p>[练习6.3] 请编程完善trap.c中的中断处理函数trap，在对时钟中断进行处理的部分填写trap函数</p>
+<p>见代码</p>
+<h3 id="练习7"><a href="#练习7" class="headerlink" title="[练习7]"></a>[练习7]</h3><p>增加syscall功能，即增加一用户态函数（可执行一特定系统调用：获得时钟计数值），<br>当内核初始完毕后，可从内核态返回到用户态的函数，而用户态的函数又通过系统调用得到内核态的服务</p>
+<p>在idt_init中，将用户态调用SWITCH_TOK中断的权限打开。<br>    SETGATE(idt[T_SWITCH_TOK], 1, KERNEL_CS, __vectors[T_SWITCH_TOK], 3);</p>
+<p>在trap_dispatch中，将iret时会从堆栈弹出的段寄存器进行修改<br>    对TO User</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tf-&gt;tf_cs = USER_CS;</span><br><span class="line">tf-&gt;tf_ds = USER_DS;</span><br><span class="line">tf-&gt;tf_es = USER_DS;</span><br><span class="line">tf-&gt;tf_ss = USER_DS;</span><br></pre></td></tr></table></figure>
+<pre><code>对TO Kernel
+</code></pre><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf-&gt;tf_cs = KERNEL_CS;</span><br><span class="line">tf-&gt;tf_ds = KERNEL_DS;</span><br><span class="line">tf-&gt;tf_es = KERNEL_DS;</span><br></pre></td></tr></table></figure>
+<p>在lab1_switch_to_user中，调用T_SWITCH_TOU中断。<br>注意从中断返回时，会多pop两位，并用这两位的值更新ss,sp，损坏堆栈。<br>所以要先把栈压两位，并在从中断返回后修复esp。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">asm volatile (</span><br><span class="line">    &quot;sub $0x8, %%esp \n&quot;</span><br><span class="line">    &quot;int %0 \n&quot;</span><br><span class="line">    &quot;movl %%ebp, %%esp&quot;</span><br><span class="line">    : </span><br><span class="line">    : &quot;i&quot;(T_SWITCH_TOU)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在lab1_switch_to_kernel中，调用T_SWITCH_TOK中断。<br>注意从中断返回时，esp仍在TSS指示的堆栈中。所以要在从中断返回后修复esp。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">asm volatile (</span><br><span class="line">    &quot;int %0 \n&quot;</span><br><span class="line">    &quot;movl %%ebp, %%esp \n&quot;</span><br><span class="line">    : </span><br><span class="line">    : &quot;i&quot;(T_SWITCH_TOK)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>但这样不能正常输出文本。根据提示，在trap_dispatch中转User态时，将调用io所需权限降低。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf-&gt;tf_eflags |= 0x3000;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/ucore%E5%AE%9E%E9%AA%8C/" title="ucore实验">https://stellarkey.github.io/ucore实验/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E9%9A%8F%E6%83%B3/" rel="prev" title="随想">
+      <i class="fa fa-chevron-left"></i> 随想
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%B9%B4%E5%85%B3%E9%9A%8F%E6%83%B3/" rel="next" title="年关随想">
+      年关随想 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C0-%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">实验0 环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C1-%E5%90%AF%E5%8A%A8"><span class="nav-number">2.</span> <span class="nav-text">实验1 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95-lab1%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="nav-number">2.1.</span> <span class="nav-text">附录 lab1参考答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A01"><span class="nav-number">2.1.1.</span> <span class="nav-text">[练习1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A02"><span class="nav-number">2.1.2.</span> <span class="nav-text">[练习2]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A03"><span class="nav-number">2.1.3.</span> <span class="nav-text">[练习3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A04"><span class="nav-number">2.1.4.</span> <span class="nav-text">[练习4]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A05"><span class="nav-number">2.1.5.</span> <span class="nav-text">[练习5]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A06"><span class="nav-number">2.1.6.</span> <span class="nav-text">[练习6]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A07"><span class="nav-number">2.1.7.</span> <span class="nav-text">[练习7]</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/ucore%E5%AE%9E%E9%AA%8C/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

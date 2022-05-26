@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stellarkey.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"P1TCRNQBR7","apiKey":"501e087ded257acc9dc481944c14c248","indexName":"云端","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文为写给学堂在线的一篇912学习指南，旨在帮助更多对考研（912）有想法的人尽快入门。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="912内容学习计划">
+<meta property="og:url" content="https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/index.html">
+<meta property="og:site_name" content="思维之海">
+<meta property="og:description" content="本文为写给学堂在线的一篇912学习指南，旨在帮助更多对考研（912）有想法的人尽快入门。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-27T05:59:55.000Z">
+<meta property="article:modified_time" content="2021-01-04T15:54:34.863Z">
+<meta property="article:author" content="工云">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="912">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="计算机组成">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>912内容学习计划 | 思维之海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async defer data-website-id="d07df043-7587-49c8-bc01-ac5ebfdafee5" src="https://stellarkey.asia/umami.js"></script>
+<link rel="alternate" href="/atom.xml" title="思维之海" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思维之海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">——在云端，寻找我的星匙。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-anchor fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="https://vel.life/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-wiki">
+
+    <a href="https://vel.wiki/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fas fa-link fa-fw"></i> </a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i> </a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+    
+    
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/stellarkey.gif">
+      <meta itemprop="name" content="工云">
+      <meta itemprop="description" content="Never stop thinking.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思维之海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          912内容学习计划
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Think/" itemprop="url" rel="index"><span itemprop="name">Think</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文为写给学堂在线的一篇912学习指南，旨在帮助更多对考研（912）有想法的人尽快入门。<span id="more"></span></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stellarkey/912_project">912_project</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/PKUanonym/REKCARC-TSC-UHT">REKCARC-TSC-UHT</a></p>
+<h1 id="学习总览"><a href="#学习总览" class="headerlink" title="学习总览"></a>学习总览</h1><p>考研究生从来不是一件易事。在明确了方向以后，信息和道路也十分关键。这对于自主命题高校来说，尤其重要。考研对于很多人来说是一场信息战，但是，要想达到理想的学习情况，应该要对自己想要报考的学校、专业、老师、课程内容和历史有充分的了解。确定这是自己真正想要的。</p>
+<p>作为一名二战的跨专业考生，我在第一次考研的过程中，就深刻地感受到信息不对称和环境所带来的困扰，一方面，学堂在线丰富的计算机课程和训练营体系，给了我一个真正入门的机会——我有时候会暗自思考，如果仅仅靠自己慢慢摸索，我是否可以坚持这么远，坚持这么久，去追求我理想中的“球状闪电”？然后，唏嘘以后，却仍然对另一条路充满了不确定性。</p>
+<p>在另一方面，虽然我入了门，对于研究生入学考试所要求的专业水平，却还是相去甚远，这是由于我在大学期间没有一个良好的学习体系，只是盲目地根据兴趣挑挑拣拣计算机课程，而在研究生入学所需的课程上有明显的不足。比如，在我第一次学习算法的时候，我甚至没有学习任何的数据结构。就算以后，我系统地学习一些基础算法和数据结构，在参加多次算法比赛中都展现了惨不忍睹的成绩。路漫漫其修远兮。</p>
+<p>计算机科学的道路是非常漫长的，无论是从纵向的时间还是横向的知识延展来说。从入门开始，到考研，到研究生阶段，每一个阶段你都会明显感觉自身的一个质变。然而，千里之堤，一步一砖，只有埋头努力。</p>
+<p>每个人对于计算机科学的热爱，都有不同的发源地，以不同的方式表现。每个人的经验也往往不同，然而，只有自己走出的路才是适合自己的路——而这是一条你在走之前无法确定的路。但是，所有的经验终究是建立现实的基础上，在这样的意义上被影射为万千的知识库。也许没有办法做到，复制一条确保成功的路，但是所有一切通向成功的基石，都可以展露无遗。那么，最后的选择权将完完全全地落在你们的手上。我以为，这就是学习经验的最好的表现形式。网上经常会涌现很多经验贴，但是多数经验帖的承载内容和专注形式通常在于个人经历的描述，这自然不能看作学习经验，因为你很可能无法复现。</p>
+<p>我们需要着重于学习经验的积累和消化，这些学习经验应该包括知识、课程、练习、实验、解惑、测试等等一系列资源。这些资源既需要丰富，也需要简洁——毕竟这是一场争分夺秒、坚持以恒的人生旅程。<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stellarkey/912_project"><code>912_project</code></a>就是在这样的思想下诞生的产物，它几乎包括了考研以来项目维护者所使用的所有资源。我相信，在资源和信息收集的意义上，它已经足够全面了。但是，除了这些资源以外，一点工程式的经验也许在某种程度上产生非凡的效果——我是说，它们虽然足够丰富，但是却未必足够简洁。把书读厚通常是一件简单事，但是，把书读薄却要困难上许多许多。</p>
+<p>总的来说，考研的四门专业课：数据结构、操作系统、计算机原理、计算机网络。这四门课是非常值得花费精力认真学习的；只要时间允许，就决不要想着偷工减料。四门课程之间相互渗透，相互促进；在学完了一部分内容以后，会逐渐形成系统，体会到不同学科之间的联系。</p>
+<p>学习专业课的顺序，建议应该按照常规的学习顺序，即一般的大学课程体系的参考顺序。但是，对于考研来说，各个科目之间仍然有一些相对独立性，多线并行也是可行的。这时候需要自行调整最合适的学习方针。所有的资料都已经维护在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stellarkey/912_project"><code>912_project</code></a>中。下面，分方向进行简单的介绍。</p>
+<h1 id="计算机原理"><a href="#计算机原理" class="headerlink" title="计算机原理"></a>计算机原理</h1><p>计算机原理，在考研的范围内可以理解为叫做计算机组成。计算机组成描述的是计算机科学的物理底层，学习它可以更加理解计算机可以做什么、做不到什么。这便是计算思维的起点。因此作为复习的第一门课我觉得是比较合适的。学习它需要花费的精力比计算机网络稍微多一些，但明显少于数据结构和操作系统。你学习这门课的速度也可以作为参考来调整之后的专业课复习计划。</p>
+<p>计算机原理可以分为计算机系统概述、数据表示和运算、存储系统、指令系统、CPU/流水线、总线。</p>
+<p>清华大学的计算机原理有公开<strong>MOOC</strong>可供学习：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av58129929">计算机组成原理</a>。这个MOOC内容是清华本科课堂的公开录像，建议一定要全程跟下来，并记录下其中的重点（有一些实验和架构细节部分可以略过）。清华大学的912考研真题较少，并且计算机原理的内容更少，可以提前查看试题内容，并了解到考试中的重点，这样方便在听课时做记录。计算机原理整体考的并不难，但是需要对已知的考察类型做充分的了解，否则其中的很多细节便会捉摸不清。912的计算机原理题目中常常会考到过去曾经出现的真题、习题、期末题等等，因此对真题、习题的掌握是重中之重，一定要保证这部分内容的复习质量。</p>
+<p>清华大学的计算机原理使用的学习<strong>教材</strong>：《计算机组成PPT》，《 计算机组成：软硬件接口》。这两本书，《计算机组成PPT》中包含了大部分知识点，建议作为核心参考教材使用，遇到陌生的概念在PPT搜索往往会得到答案。《软硬件接口》则是专用的课程教材，其上的内容更为详细，讲解也很细致，遇到难懂的知识点，在这本书上查阅往往可以获得比较详细直白的解释。当然，还有一本书叫做《深入理解计算机系统（CSAPP）》，这本书的流水线部分可能有助于相关知识、过程的理解，但这本书使用的是x86汇编，可以作为简单的参考书使用。</p>
+<p>注意，清华大学所使用的计算机原理汇编语言和操作系统的汇编语言不相同，在计算机原理中使用MIPS汇编，而在旧版操作系统（2020年以前）中使用x86汇编，在最新的操作系统课中则使用RISC-V汇编。如果对<strong>MIPS汇编</strong>不熟悉，可以看《软硬件接口》第2章，或者学堂在线的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.xuetangx.com/courses/TsinghuaX/20240103X/2015_T2/about">汇编语言程序设计</a>第5章，以及其他的相关材料。你应该熟悉常见的MIPS汇编指令以及格式，因为流水线计算中一定会涉及到这方面的内容。</p>
+<p>除此之外，王诚老师的蓝皮书（《计算机组成与体系结构-第3版》）（或刘卫东老师的红皮书？这个可以自行到购书应用上搜索）也可适当参考，但是并不特别推荐，因为其中包含了许多本科的实验内容，而这些在考研中几乎不涉及。</p>
+<p>在练习题方面，如之前所说，包括计算机原理在内的多数清华计算机系课程的历年期中、期末题、习题可以在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/PKUanonym/REKCARC-TSC-UHT">清华大学计算机系课程攻略</a>中找到。还有其他的计组练习题，比如袁春风老师的计算机组成课后习题及答案，王道408的计组部分课后习题，都有一定程度的参考价值，可以根据复习时间来自行选取和安排。</p>
+<p>下面是一个简单的、近些年912中的计算机原理考点整理，方便你有一个直观的认识：</p>
+<h2 id="计算机原理考点整理"><a href="#计算机原理考点整理" class="headerlink" title="计算机原理考点整理"></a>计算机原理考点整理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>2020</th>
+<th style="text-align:center">2019</th>
+<th style="text-align:center">2018</th>
+<th style="text-align:center">2017</th>
+<th style="text-align:center">2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>流水线相关计算</td>
+<td>★★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+</tr>
+<tr>
+<td>流水线冲突</td>
+<td>★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>浮点数表示</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Cache缺失/映射</td>
+<td>★★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>RAID</td>
+<td>★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>补码表示</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>CPU指标(CPI/主频)</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Cache相关计算</td>
+<td>★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>指令的概念</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>异常处理/中断</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>虚拟内存</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>C语言</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>总线</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>显存带宽计算</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>RAM</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>冯诺依曼架构</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>时序/组合逻辑</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>海明码检错/纠错</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在看完了上面的考点整理以后，相信你对考试内容的重点、难点已经有了一个总体的认识。流水线相关的考题几乎是必考题，而且常常以计算、压轴的形式给出，需要重视。此外，简单的数据表示、Cache高速缓存、RAID磁盘冗余阵列相关知识也几乎必考，然后便是大量零散的小知识点，比如指令、异常、总线、编码等知识。以上考过的知识并不代表所以可能会考到的知识点，但它表现出的倾向性是明显的。</p>
+<p>时间如何分配，内容和知识点如何学习，这些，你应该已经有所了解。但考研，贵在坚持，如果不能持之以恒，把这些内容尽快、高效地学完，那么再多的资料也没有意义。另外，你还需要对学习过程做足够的笔记，这样的笔记应该便于检索和查阅——这会为你后期的巩固和多轮复习带来巨大的优势，这里我建议有条件的同学可以使用类似ipad平板电脑上的Margin Note 3软件，将学习过程逐步数字化、信息化，在这样记笔记过程中形成的脑图会帮助你构建知识体系、快速解决问题。</p>
+<p>计算机原理的部分暂时先介绍到这里。</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构内容丰富，并且进阶知识系统及其庞大。但在考察上，通常侧重于对知识点原理性的深入理解，而不是工程上的实现细节。清华大学的数据结构有非常鲜明的风格与特点。</p>
+<p>数据结构按章节主要分为：绪论、向量、列表、栈与队列、二叉树、图、二叉搜索树、高级搜索树、词典、优先级队列、串、排序。其中，高级搜索树、词典和排序应该算是比较难掌握的章节，需要投入更多精力。</p>
+<p>同理，在课程上数据结构也有<strong>MOOC</strong>：包括<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184+sp/about">数据结构-上</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184_2X+sp/about">数据结构-下</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av64451297?spm_id_from=333.999.b_62696c692d6865616465722d6d.28">算法训练营</a>。其中数据结构免费向公众开放，而算法训练营需要单独购课。但是，对于考研，至少初试阶段来说，对算法的需求并不大，只要掌握了邓公在数据结构中的课程，便能起到几乎完备的效果。数据结构的课程内容已然很充足，从内容上来说甚至被分成了上、下两门课，足以窥见其知识点之多、学科的复杂性。数据结构中，理论性、结论性的内容很多，因此在复习过程过要善于总结，对不同的算法和数据结构也要有比较意识，对它们的应用场景有一定的了解。比如，败者树和锦标赛树，Splay单层和双层伸展，KMP和蛮力算法等等。在这样的比较过程中，加深对数据结构的理解。</p>
+<p>清华大学数据结构使用的<strong>教材</strong>是《数据结构PPT》和《数据结构（第3版）》，其中PPT作为了本科学习的一个类似讲义的存在，是重中之重，其中有很多教材上并未涉及，近年来新增的知识点，包括前面提到的败者树、线段树等等。配套的习题集是《数据结构习题集》，这本习题集中的典型结论必须一一牢固掌握，并且与相应的课程章节联系在一起。</p>
+<p>其余的参考书还有诸如《算法导论》，《具体数学》等。《算法导论》可以提供一些更详细的某些算法的解释，但建议浅尝辄止。912的考题中曾经考到《具体数学》中的某道判断复杂度的习题，不过仍然建议浅尝辄止。</p>
+<p>为了得到及时的最新资料，还应该关注邓公的官网：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://dsa.cs.tsinghua.edu.cn/~deng/">https://dsa.cs.tsinghua.edu.cn/~deng/</a>。其中会提供包括教材、习题集、PPT讲义、数据结构在线演示（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://dsa.cs.tsinghua.edu.cn/~deng/ds/demo/index.htm">https://dsa.cs.tsinghua.edu.cn/~deng/ds/demo/index.htm</a>）等一系列数据结构方面的资源，请务必重视。</p>
+<p>数据结构方面的练习题，请以邓公习题集、PPT课后思考题、期中期末考提、912真题这几类为准。</p>
+<p>下面给出近年来912中数据结构的考点分析：</p>
+<h2 id="数据结构考点整理"><a href="#数据结构考点整理" class="headerlink" title="数据结构考点整理"></a>数据结构考点整理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th style="text-align:left">2020</th>
+<th style="text-align:left">2019</th>
+<th style="text-align:left">2018</th>
+<th style="text-align:left">2017</th>
+<th>2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BBST（红黑/AVL/Splay/B树）</td>
+<td style="text-align:left">★★★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★★★★</td>
+<td style="text-align:left">★★</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>散列表</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>BST遍历/PFS</td>
+<td style="text-align:left">★★★★x2</td>
+<td style="text-align:left">★★★★★★</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★★★★★★</td>
+<td>★★★×3</td>
+</tr>
+<tr>
+<td>排序（冒/插/选/基/归/锦/败、CBA）</td>
+<td style="text-align:left">★★★★</td>
+<td style="text-align:left">★★★★★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★★★★</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>串匹配（KMP/BM）</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★</td>
+<td></td>
+</tr>
+<tr>
+<td>复杂度</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left">★</td>
+<td></td>
+</tr>
+<tr>
+<td>编码树（Huffman/PFC）</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td></td>
+</tr>
+<tr>
+<td>RPN</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td></td>
+</tr>
+<tr>
+<td>减治</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★★★</td>
+<td style="text-align:left"></td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>Catalan</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★</td>
+<td></td>
+</tr>
+<tr>
+<td>堆（完全、左式堆）</td>
+<td style="text-align:left">★★★★★</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left">★★</td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td>栈（调用栈、栈混洗）</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td>★</td>
+</tr>
+<tr>
+<td>Dijkstra算法</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td>★</td>
+</tr>
+<tr>
+<td>跳转表</td>
+<td style="text-align:left">★</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td>二分、Fib查找</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★★★★★</td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td>最小生成树（Prim）</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>非法表达式</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">★</td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td>逻辑地址</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以看到，关于高级搜索树、散列表、二叉树遍历、排序、串匹配等知识，几乎是年年必考；而一些较为冷门的知识点，比如跳转表、表达式、左式堆、栈混洗等，则有时出没。如果想在数据结构上取得高分，则必须在完整掌握常见考点的基础上，对大量的冷门知识、结论做归纳。一定要编织严密的知识网，才能自如地应付考研。尤其是，在912考试中，因为题量较大，而且数据结构作为试卷上的第一门并且是分值最大的科目，如果不够熟练，那么将直接影响后面科目的得分，尤其是计算机网路。比如，我考试的时候，对于KMP的next数组的计算等等便不够娴熟，导致我做题速度偏慢，后面的计算机网络题目就几乎来不及做了。因此，你应该注意把控答题的时间，不要在某一道题上纠结太久，因小失大。</p>
+<p>数据结构的部分暂时先介绍到这里。</p>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>计算机网络在某种意义上独立性较高，它的内容相对规范化，因此知识固定容易掌握。计算机网络还相对简单，考试分值也低，只需记忆和理解各种各样的体系和协议即可。</p>
+<p>计算机网络方面清华并没有在线的<strong>MOOC</strong>，但是王道的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av70228743">计算机网络</a>课程在大部分内容上已经足够代替。只需跟着看完课程即可，难度不高。</p>
+<p>计算机网络的<strong>教材</strong>方面，推荐王道的计算机网络配套的PPT，以及清华大学的课程课件《计算机网络PPT》。王道PPT的课件质量很高，大部分网络知识都可以在上面找到答案，并且通俗易懂，整理得很好；但是另一方面，在清华的课件上可以找到一些冷门知识点的答案，比如水平分裂算法、SNMP简单网络管理协议，SONET/SDH系统等。</p>
+<p>计算机网络的参考书包括《计算机网络（第5版）》，《计算机网络：自顶向下方法》，《计算机网络（第7版）-谢希仁》。其中，《计算机网络（第5版）》是重点，有时间可以看，但是这本书很厚，时间不够的同学，可以按照考察重点来学习，比如912中曾经考到的蜂窝网络，在这本书中就有涉及到（当然，在清华习题课件中也有提到）。</p>
+<p>计算机网络的练习题，包括期中期末考题、平时的练习题、王道上的习题等等。建议多做一些，熟悉题型。912的计算机网络部分常常考到原题，所以已有的资料请务必做完做懂。</p>
+<p>下面给出近年来912中计算机网络的考点分析：</p>
+<h2 id="计算机网络考点整理"><a href="#计算机网络考点整理" class="headerlink" title="计算机网络考点整理"></a>计算机网络考点整理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>2020</th>
+<th style="text-align:center">2019</th>
+<th style="text-align:center">2018</th>
+<th style="text-align:center">2017</th>
+<th style="text-align:center">2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCP(拥塞/握手/报文等)</td>
+<td>★★★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+</tr>
+<tr>
+<td>路由器计算</td>
+<td></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+</tr>
+<tr>
+<td>信道利用率</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>ARQ(停等/后退/选择)</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>网桥转发</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>ARP</td>
+<td>★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>物理层设备</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>调制/解调</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>水平分裂</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>蜂窝</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>最小帧长</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>以太网</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>分组转发</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>OSI&amp;TCP/IP</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>奈奎斯特定理</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>数据链路层概念</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>SNMP</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以看到，大题通常考察TCP协议相关问题和路由器，其它的考点随机性较强，所以需要全面复习。</p>
+<p>计算机网络的部分暂时先介绍到这里。</p>
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><p>操作系统实际上是四门课程中最复杂最难掌握的一门课。它知识点多，并且实验细节特别多，需要很多额外的知识，比如汇编语言设计、软件工程等。</p>
+<p>清华大学操作系统的课程<strong>MOOC</strong>可以在学堂在线上找到：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.xuetangx.com/courses/course-v1:TsinghuaX+30240243X+sp/courseware/be5b8d4fec0c4c329d19845020bc67b2/"><strong>操作系统</strong></a>（另有b站<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av30708793">资源</a>，以及<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av30708793">旧版</a>，或<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/av70156862">王道操作系统</a>）。另外，今年（2020）又出了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://next.xuetangx.com/course/thu08091002729/3175284"><strong>操作系统(RISC-V)</strong></a>新版在线课程，即基于RISC-V和Rust架构的rCore教学操作系统，需要留意。因为操作系统在考题中常常涉及当年授课过程中的新问题（比如，当年piaaza平台上发布的问题被解决后可能会作为考题出现在试卷中），在学习上要尽量与时俱进。操作系统在学习上还是应该以uCore为主（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://learningos.github.io/ucore_os_webdocs/">在线ucore操作系统实验任务书</a>），但新版rCore的教程（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://rcore-os.github.io/rCore_tutorial_doc/">在线rCore操作系统实验任务书</a>）的代码已经逐渐成熟了，考察的可能性也不是没有。两者在架构上是很类似的，所以看懂了uCore那么学习rCore将不会耗费过多的时间。在实践方面，如果时间不足，可以选择只分析代码而不做具体实验，但实验指导书上的内容应该仔细阅读并理解。</p>
+<p>清华大学操作系统的<strong>教材</strong>包括：《操作系统PPT》，《操作系统实验书》。《操作系统PPT》今年也出了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/LearningOS/os-lectures">新版</a>，除了uCore版的实验书，今年可能需要看一看<a target="_blank" rel="noopener external nofollow noreferrer" href="https://rcore-os.github.io/rCore-Tutorial-deploy/">rCore-Tutorial</a>（这是V3最新维护版）。</p>
+<p>清华大学操作系统官方提供了三本参考书：《操作系统：精髓与设计》，《操作系统概念》，《现代操作系统》。除此之外，也可以适当参考《<a target="_blank" rel="noopener external nofollow noreferrer" href="https://chyyuu.gitbooks.io/simple_os_book/content/">simple_os_book</a>》等。</p>
+<p>操作系统提供了一个<strong>讨论区</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240243X_2015_T2+2015_T2/xblock/block-v1:TsinghuaX+30240243X_2015_T2+2015_T2+type@lti+block@7d025ede0dfe484da35b09a863a50507/handler/preview_handler"><strong>pizza</strong></a>。在上面有历年操作系统课的所有答疑，请务必在遇到难题和不解时记得使用，往往在上面可以找到解答——当然你可能需要一些搜索技巧。</p>
+<p>操作系统还提供了一些练习：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://chyyuu.gitbooks.io/os_course_exercises/content/">习题集</a>，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/chyyuu/os_course_exercise_library">操作系统-题库</a>。除了这些之外，和其他科目一样也有期中期末试卷、真题等。这些题目基本可以满足考研复习的需求了。</p>
+<p>操作系统的相关课程信息见：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/chyyuu/os_course_info">课程信息(2019)-Github</a>。注意跟进每年的新进展，在<a target="_blank" rel="noopener external nofollow noreferrer" href="http://os.cs.tsinghua.edu.cn/oscourse/#A.2BbgVTTlknW2aLoXuXZzp8.2B2TNT1x8.2B37ffPtSF4v.2BegtOO5h1-">清华大学计算机系操作系统系列课程主页</a>上可以找到最新的课程信息。点击进入具体的某个课程，便可以方便地获取包括课程介绍、课程教材、课程讲义及视频、教学交流和讨论社区、教学实验、<a target="_blank" rel="noopener external nofollow noreferrer" href="http://xuyongjiande.gitbooks.io/os-qa/content/index.html">操作系统课程常见问题及回答</a>等等丰富的资源。</p>
+<p>操作系统的实验平台包括：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.shiyanlou.com/courses/221"><strong>操作系统实验 - 实验楼</strong></a>，或虚拟机，或装机，或……环境搭建方式很多。之前已经提到，做实验对于初试来说并不是必须的，但理解实验内容却是非常必须的，这里请自行斟酌。</p>
+<p>从上面的介绍可以看出，操作系统方面的资料非常丰富，甚至有点太多了。你在复习的过程中要有所取舍，围绕初试来学习，要首先把核心的考点掌握，对于比如uCore的代码题，可以稍稍放一放，等到后期有时间剩余时在批量解决。</p>
+<p>下面给出近年来912中操作系统的考点分析：</p>
+<h2 id="操作系统考点整理"><a href="#操作系统考点整理" class="headerlink" title="操作系统考点整理"></a>操作系统考点整理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>2020</th>
+<th style="text-align:center">2019</th>
+<th style="text-align:center">2018</th>
+<th style="text-align:center">2017</th>
+<th style="text-align:center">2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uCore代码</td>
+<td>★★★</td>
+<td style="text-align:center">★★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>虚/实地址(转换/扩展)</td>
+<td></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>进程控制/系统调用</td>
+<td>★★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+</tr>
+<tr>
+<td>管程</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★★★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>belady</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>x86硬件</td>
+<td>★</td>
+<td style="text-align:center">★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>信号量</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>死锁</td>
+<td>★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+</tr>
+<tr>
+<td>线程</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+</tr>
+<tr>
+<td>文件系统</td>
+<td>★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+</tr>
+<tr>
+<td>调度算法</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>僵尸/孤儿进程</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>中断</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+</tr>
+<tr>
+<td>哲学家就餐</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★★★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>硬/软链接</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>stride算法</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>x86特权级</td>
+<td></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>优先级反置</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>伙伴系统</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>自旋锁</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>动态分区算法</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>RAID</td>
+<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">★</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果想要在操作系统上取得高分，实验代码是一道绕不过去的坎，除了代码理解题以外，实验还会以其他的题型考查，比如曾考到uCore的时钟中断，这意味着实验部分的分值不仅仅只有代码题的分，这一点要引起重视。</p>
+<p>操作系统的部分暂时先介绍到这里。</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>单独把算法这一部分拿出来说，一是因为初试的专业课中考察算法实在不多或者不难，二是因为复试中将不可避免地涉及到机试算法题。</p>
+<p>在初试中数据结构中所可能涉及到的算法题，常常比较简单。大概有以下几类：二分、减治、递归，动态规划。并且一般只会考察数据结构课程上所涉及到的“代码精致”的算法（因为这样才可能在考试中通过手写的方式呈现出来），它既要足够有区分度，又要足够简单。在这样的约束下，剩下的选择其实不多。</p>
+<p>对于复试，机试难度大约在 【<strong><font color=blue>提高组</font></strong>，<strong><font color=purple>省选</font></strong>】 之间（这里的提高组、省选是参考的OI信息竞赛的难度标准，实际上912机试的风格和OI竞赛风格非常类似）。这意味着你需要对这个难度层次的题型有完整的了解和足够的题量训练。建议有机会可以参加学堂在线<code>Code+</code>比赛。</p>
+<p>下面列出适合复试er的常见的 <code>OJ</code>：</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://oj.thusaac.com/#!/">2020机试OJ</a> 2020年机试环境</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://dsa.cs.tsinghua.edu.cn/oj/foyer.shtml">TsOJ（慕课）</a> 校内教学</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.acwing.com/problem/search/1/?csrfmiddlewaretoken=yJvfsrzPiXIkzRaHzGoIc6ydZpSRgI0AuFGm9OxWxA8ULa8Gq8lPp1a1aC1ZAqed&amp;search_content=%E6%B8%85%E5%8D%8E">AcWing</a> 清华推研机试题</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://noobdream.com/Major/school_show/">N诺</a> 清华往年机试题</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.nowcoder.com/kaoyan/retest/1001">牛客网</a> 考研专题</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.luogu.org/">洛谷</a> 题量训练和模板积累</li>
+</ul>
+<p>机试允许携带模板，这意味着你应该在初始结束后甚至更早开始积累模板。模板应该尽量简洁易懂，便于在考场上查阅。你还可以通过做模板题来积累题型模板（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.luogu.com.cn/problem/list?keyword=%E6%A8%A1%E6%9D%BF">洛谷模板题</a>）。机试还允许使用标准模板库STL，这意味着很多算法和数据结构不需要你去手写，比如快速排序、优先队列、字典、栈和队列等，它们的使用方法需要熟练掌握。</p>
+<blockquote>
+<p>更多的信息可见于：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stellarkey/912_project/tree/master/6%20%E5%A4%8D%E8%AF%95/1%20%E6%9C%BA%E8%AF%95">912_project - 复试 - 机试</a>。</p>
+</blockquote>
+<h1 id="科研"><a href="#科研" class="headerlink" title="科研"></a>科研</h1><p>作为一个研究生，或者将要考研究生。拥有一些科研经历，似乎也是名副其实，这些经历在复试中显然会给你带来很大的加分。毕竟，研究生的主要任务，就是搞科研。如果你的目标是学术硕士，那么科研经历就可能更为重要。</p>
+<p>你应该尽早开始一些有科研性质的项目的准备，包括有理论性工作性质的实习经历，在本科实验室或者其他科研院所的研究经历，发表或参与发表的学术论文。即使没有适合的途径，也应该提前了解报考的方向，清华大学计算机系的大部分老师都有个人主页，在他们的主页上你可以了解到他们的科研方向、论文专著甚至硕士名额，你可以在这些研究方向上有所了解，进一步做一些简单的开源项目或者实验等。这些都可以体现出你对科研的兴趣和培养你在科研方面的实践基础。</p>
+<p>最后，如果一切顺利的话，欢迎开启人生的新阶段。希望这是你真正想要的。</p>
+<div><hr><font size=5>相关文章</font><ul><li><a href="https://stellarkey.github.io/%E9%AB%98%E7%AD%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">高等计算机网络</a></li><li><a href="https://stellarkey.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9A%91%E6%9C%9F%E9%A1%B9%E7%9B%AE/">操作系统暑期项目</a></li><li><a href="https://stellarkey.github.io/912/">912真题解析</a></li><li><a href="https://stellarkey.github.io/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%BA%94%E7%94%A8%E7%B3%BB%E5%88%97%E8%AE%B2%E5%BA%A7/">《大数据科学与应用系列讲座》笔记</a></li><li><a href="https://stellarkey.github.io/%E7%AE%97%E6%B3%95-%E5%9B%BE%E8%AE%BA-%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/">欧拉回路拓展</a></li></ul></div>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>工云
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/" title="912内容学习计划">https://stellarkey.github.io/学堂在线-912学习内容计划/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/912/" rel="tag"><i class="fa fa-tag"></i> 912</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag"><i class="fa fa-tag"></i> 计算机组成</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E7%AE%80%E8%AE%B0/" rel="prev" title="博客折腾简记">
+      <i class="fa fa-chevron-left"></i> 博客折腾简记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%8D%97%E5%9B%BD%E8%A1%8C%E8%AE%B0/" rel="next" title="南国行记">
+      南国行记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">1.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%80%BB%E8%A7%88"><span class="nav-number">2.</span> <span class="nav-text">学习总览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">计算机原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86"><span class="nav-number">3.1.</span> <span class="nav-text">计算机原理考点整理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">数据结构考点整理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">5.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">计算机网络考点整理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">操作系统考点整理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%91%E7%A0%94"><span class="nav-number">8.</span> <span class="nav-text">科研</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="工云"
+      src="/images/stellarkey.gif">
+  <p class="site-author-name" itemprop="name">工云</p>
+  <div class="site-description" itemprop="description">Never stop thinking.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://vel.life/" title="Life → https:&#x2F;&#x2F;vel.life&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-star-of-life fa-fw"></i>Life</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://vel.wiki/" title="Wiki → https:&#x2F;&#x2F;vel.wiki&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wiki</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/stellarkey" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;stellarkey" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:velocfc@gmail.com" title="E-Mail → mailto:velocfc@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fas fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/huo-shu-93/" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;huo-shu-93&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/18738090/" title="B站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;18738090&#x2F;" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-bilibili fa-fw"></i>B站</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      云海之上
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.iszy.cc/" title="https:&#x2F;&#x2F;www.iszy.cc&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">随遇而安</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://asdfv1929.github.io/" title="https:&#x2F;&#x2F;asdfv1929.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">asdfv1929</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://printempw.github.io/" title="https:&#x2F;&#x2F;printempw.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">PRIN BLOG</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.cfzhao.com/" title="http:&#x2F;&#x2F;www.cfzhao.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">ZHAOYUWEI</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hanherbert.github.io/" title="https:&#x2F;&#x2F;hanherbert.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">知青</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://louieworth.github.io/" title="https:&#x2F;&#x2F;louieworth.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">louieworth</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://hgen27.github.io/" title="https:&#x2F;&#x2F;hgen27.github.io&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">Hgen</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-chart-line"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vel</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">546k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27281,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+  <script src="//unpkg.com/quicklink@2.2.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://stellarkey.github.io/%E5%AD%A6%E5%A0%82%E5%9C%A8%E7%BA%BF-912%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%E8%AE%A1%E5%88%92/',]
+      });
+      });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
